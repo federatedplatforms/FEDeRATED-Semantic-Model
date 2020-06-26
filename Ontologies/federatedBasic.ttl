@@ -1,0 +1,653 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.federatedBasic.com/"
+     xml:base="http://www.federatedBasic.com/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.federatedBasic.com/"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.federatedBasic.com/Actor -->
+
+    <owl:Class rdf:about="http://www.federatedBasic.com/Actor">
+        <rdfs:subClassOf rdf:resource="http://www.federatedBasic.com/DigitalTwin"/>
+        <rdfs:comment>The role of a Person is context dependant, and therefore should be described using the Actor class.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.federatedBasic.com/Airplane -->
+
+    <owl:Class rdf:about="http://www.federatedBasic.com/Airplane">
+        <rdfs:subClassOf rdf:resource="http://www.federatedBasic.com/TransportMeans"/>
+        <rdfs:comment>Transport means by air.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.federatedBasic.com/Airport -->
+
+    <owl:Class rdf:about="http://www.federatedBasic.com/Airport">
+        <rdfs:subClassOf rdf:resource="http://www.federatedBasic.com/LogisticalFunction"/>
+        <rdfs:comment>Location where airplanes pick or drop of freight.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.federatedBasic.com/Area -->
+
+    <owl:Class rdf:about="http://www.federatedBasic.com/Area">
+        <rdfs:subClassOf rdf:resource="http://www.federatedBasic.com/InfrastructuralFunction"/>
+        <rdfs:comment>Any area relevant to logistics operations.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.federatedBasic.com/Barge -->
+
+    <owl:Class rdf:about="http://www.federatedBasic.com/Barge">
+        <rdfs:subClassOf rdf:resource="http://www.federatedBasic.com/TransportMeans"/>
+        <rdfs:comment>Vessel used for transporting cargo on inland waterways.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.federatedBasic.com/Booking -->
+
+    <owl:Class rdf:about="http://www.federatedBasic.com/Booking">
+        <rdfs:subClassOf rdf:resource="http://www.federatedBasic.com/BusinessTransaction"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.federatedBasic.com/BulkCargo -->
+
+    <owl:Class rdf:about="http://www.federatedBasic.com/BulkCargo">
+        <rdfs:subClassOf rdf:resource="http://www.federatedBasic.com/#Cargo"/>
+        <rdfs:comment>Any bulk product transported in large quantities.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.federatedBasic.com/BulkFeeder -->
+
+    <owl:Class rdf:about="http://www.federatedBasic.com/BulkFeeder">
+        <rdfs:subClassOf rdf:resource="http://www.federatedBasic.com/Feeder"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.federatedBasic.com/BulkProduct -->
+
+    <owl:Class rdf:about="http://www.federatedBasic.com/BulkProduct">
+        <rdfs:subClassOf rdf:resource="http://www.federatedBasic.com/Product"/>
+        <rdfs:comment>Unpackaged raw material.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.federatedBasic.com/BusinessService -->
+
+    <owl:Class rdf:about="http://www.federatedBasic.com/BusinessService">
+        <rdfs:subClassOf rdf:resource="http://www.federatedBasic.com/BusinessServiceOverview"/>
+        <rdfs:comment>The commercial relation between any two enterprises in a chain of business transactions.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.federatedBasic.com/BusinessServiceOverview -->
+
+    <owl:Class rdf:about="http://www.federatedBasic.com/BusinessServiceOverview"/>
+    
+
+
+    <!-- http://www.federatedBasic.com/BusinessTransaction -->
+
+    <owl:Class rdf:about="http://www.federatedBasic.com/BusinessTransaction">
+        <rdfs:subClassOf rdf:resource="http://www.federatedBasic.com/BusinessServiceOverview"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.federatedBasic.com/City -->
+
+    <owl:Class rdf:about="http://www.federatedBasic.com/City">
+        <rdfs:subClassOf rdf:resource="http://www.federatedBasic.com/InfrastructuralFunction"/>
+        <rdfs:comment>A generic geographical location.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.federatedBasic.com/CommericialProduct -->
+
+    <owl:Class rdf:about="http://www.federatedBasic.com/CommericialProduct">
+        <rdfs:subClassOf rdf:resource="http://www.federatedBasic.com/Product"/>
+        <rdfs:comment>Any product destined for use by enterprise.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.federatedBasic.com/ConsumerProduct -->
+
+    <owl:Class rdf:about="http://www.federatedBasic.com/ConsumerProduct">
+        <rdfs:subClassOf rdf:resource="http://www.federatedBasic.com/Product"/>
+        <rdfs:comment>Any product destined for use by consumers.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.federatedBasic.com/Container -->
+
+    <owl:Class rdf:about="http://www.federatedBasic.com/Container">
+        <rdfs:subClassOf rdf:resource="http://www.federatedBasic.com/Equipment"/>
+        <rdfs:comment>Transport containers serve to containerize products.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.federatedBasic.com/ContainerFeeder -->
+
+    <owl:Class rdf:about="http://www.federatedBasic.com/ContainerFeeder">
+        <rdfs:subClassOf rdf:resource="http://www.federatedBasic.com/Feeder"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.federatedBasic.com/ContainerizedCargo -->
+
+    <owl:Class rdf:about="http://www.federatedBasic.com/ContainerizedCargo">
+        <rdfs:subClassOf rdf:resource="http://www.federatedBasic.com/#Cargo"/>
+        <rdfs:comment>Any products or packages of products that are stuffed into containers or ULDs.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.federatedBasic.com/CustomsItem -->
+
+    <owl:Class rdf:about="http://www.federatedBasic.com/CustomsItem">
+        <rdfs:comment>The classification of products or cargo for customs purposes according the
+Harmonised Systems codes (HS).</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.federatedBasic.com/DeepseaBulkVessel -->
+
+    <owl:Class rdf:about="http://www.federatedBasic.com/DeepseaBulkVessel">
+        <rdfs:subClassOf rdf:resource="http://www.federatedBasic.com/DeepseaVessel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.federatedBasic.com/DeepseaContainerVessel -->
+
+    <owl:Class rdf:about="http://www.federatedBasic.com/DeepseaContainerVessel">
+        <rdfs:subClassOf rdf:resource="http://www.federatedBasic.com/DeepseaVessel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.federatedBasic.com/DeepseaVessel -->
+
+    <owl:Class rdf:about="http://www.federatedBasic.com/DeepseaVessel">
+        <rdfs:subClassOf rdf:resource="http://www.federatedBasic.com/Vessel"/>
+        <rdfs:comment>Used for ocean transport.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.federatedBasic.com/DigitalTwin -->
+
+    <owl:Class rdf:about="http://www.federatedBasic.com/DigitalTwin">
+        <rdfs:comment>Any real-world physical object.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.federatedBasic.com/DryBulkCargo -->
+
+    <owl:Class rdf:about="http://www.federatedBasic.com/DryBulkCargo">
+        <rdfs:subClassOf rdf:resource="http://www.federatedBasic.com/BulkCargo"/>
+        <owl:disjointWith rdf:resource="http://www.federatedBasic.com/LiquidBulkCargo"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.federatedBasic.com/Equipment -->
+
+    <owl:Class rdf:about="http://www.federatedBasic.com/Equipment">
+        <rdfs:subClassOf rdf:resource="http://www.federatedBasic.com/DigitalTwin"/>
+        <rdfs:comment>Any asset used to facilitate transport and handling of cargo.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.federatedBasic.com/Feeder -->
+
+    <owl:Class rdf:about="http://www.federatedBasic.com/Feeder">
+        <rdfs:subClassOf rdf:resource="http://www.federatedBasic.com/Vessel"/>
+        <rdfs:comment>Used for short range transport  via sea.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.federatedBasic.com/Ferry -->
+
+    <owl:Class rdf:about="http://www.federatedBasic.com/Ferry">
+        <rdfs:subClassOf rdf:resource="http://www.federatedBasic.com/Vessel"/>
+        <rdfs:comment>Used for transport of other transport means like trucks and/or trailers.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.federatedBasic.com/FrameworkContract -->
+
+    <owl:Class rdf:about="http://www.federatedBasic.com/FrameworkContract">
+        <rdfs:subClassOf rdf:resource="http://www.federatedBasic.com/BusinessTransaction"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.federatedBasic.com/FreighterAircraft -->
+
+    <owl:Class rdf:about="http://www.federatedBasic.com/FreighterAircraft">
+        <rdfs:subClassOf rdf:resource="http://www.federatedBasic.com/Airplane"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.federatedBasic.com/GeneralCargo -->
+
+    <owl:Class rdf:about="http://www.federatedBasic.com/GeneralCargo">
+        <rdfs:subClassOf rdf:resource="http://www.federatedBasic.com/#Cargo"/>
+        <rdfs:comment>Any product is packaged for transport purposes.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.federatedBasic.com/GroupageService -->
+
+    <owl:Class rdf:about="http://www.federatedBasic.com/GroupageService">
+        <rdfs:subClassOf rdf:resource="http://www.federatedBasic.com/BusinessService"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.federatedBasic.com/Hub -->
+
+    <owl:Class rdf:about="http://www.federatedBasic.com/Hub">
+        <rdfs:subClassOf rdf:resource="http://www.federatedBasic.com/LogisticalFunction"/>
+        <rdfs:comment>A place cargo is exchanged between vehicles or/and between transport modes.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.federatedBasic.com/InfrastructuralFunction -->
+
+    <owl:Class rdf:about="http://www.federatedBasic.com/InfrastructuralFunction">
+        <rdfs:subClassOf rdf:resource="http://www.federatedBasic.com/Location"/>
+        <owl:disjointWith rdf:resource="http://www.federatedBasic.com/LogisticalFunction"/>
+        <rdfs:comment>Any part of an infrastructure used for performing logistical activities.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.federatedBasic.com/LiquidBulkCargo -->
+
+    <owl:Class rdf:about="http://www.federatedBasic.com/LiquidBulkCargo">
+        <rdfs:subClassOf rdf:resource="http://www.federatedBasic.com/BulkCargo"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.federatedBasic.com/Location -->
+
+    <owl:Class rdf:about="http://www.federatedBasic.com/Location">
+        <rdfs:subClassOf rdf:resource="http://www.federatedBasic.com/DigitalTwin"/>
+        <rdfs:comment>A terminal, location, port, city centre, etc. where a cargo physical activity like transhipment or storage can take place.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.federatedBasic.com/Locomotive -->
+
+    <owl:Class rdf:about="http://www.federatedBasic.com/Locomotive">
+        <rdfs:subClassOf rdf:resource="http://www.federatedBasic.com/TransportMeans"/>
+        <rdfs:comment>Any traction for a train composed of one or more wagons.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.federatedBasic.com/LogisticalFunction -->
+
+    <owl:Class rdf:about="http://www.federatedBasic.com/LogisticalFunction">
+        <rdfs:subClassOf rdf:resource="http://www.federatedBasic.com/Location"/>
+        <rdfs:comment>Any location where a logistical activity is performed.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.federatedBasic.com/Order -->
+
+    <owl:Class rdf:about="http://www.federatedBasic.com/Order">
+        <rdfs:subClassOf rdf:resource="http://www.federatedBasic.com/BusinessTransaction"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.federatedBasic.com/Part -->
+
+    <owl:Class rdf:about="http://www.federatedBasic.com/Part">
+        <rdfs:subClassOf rdf:resource="http://www.federatedBasic.com/Product"/>
+        <rdfs:comment>Products destined for use in machines owned by consumers or enterprises.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.federatedBasic.com/PassengerAircraft -->
+
+    <owl:Class rdf:about="http://www.federatedBasic.com/PassengerAircraft">
+        <rdfs:subClassOf rdf:resource="http://www.federatedBasic.com/Airplane"/>
+        <rdfs:comment>Cargo can be stored in belly space of the aircraft.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.federatedBasic.com/Person -->
+
+    <owl:Class rdf:about="http://www.federatedBasic.com/Person">
+        <rdfs:subClassOf rdf:resource="http://www.federatedBasic.com/DigitalTwin"/>
+        <rdfs:comment>Any individual that is a crew on board of a transport means.</rdfs:comment>
+        <rdfs:comment>The role of a Person should not be defined here, but in its linked Actor class.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.federatedBasic.com/Port -->
+
+    <owl:Class rdf:about="http://www.federatedBasic.com/Port">
+        <rdfs:subClassOf rdf:resource="http://www.federatedBasic.com/LogisticalFunction"/>
+        <rdfs:comment>Location where vessels pick or drop of freight.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.federatedBasic.com/Product -->
+
+    <owl:Class rdf:about="http://www.federatedBasic.com/Product">
+        <rdfs:subClassOf rdf:resource="http://www.federatedBasic.com/DigitalTwin"/>
+        <rdfs:comment>The actual objects that change ownership between a seller to a buyer.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.federatedBasic.com/RailwayWagon -->
+
+    <owl:Class rdf:about="http://www.federatedBasic.com/RailwayWagon">
+        <rdfs:subClassOf rdf:resource="http://www.federatedBasic.com/Equipment"/>
+        <rdfs:comment>Unpowered railway vehicles that are used for the transportation of cargo.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.federatedBasic.com/StorageServiceCargo -->
+
+    <owl:Class rdf:about="http://www.federatedBasic.com/StorageServiceCargo">
+        <rdfs:subClassOf rdf:resource="http://www.federatedBasic.com/BusinessService"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.federatedBasic.com/StorageServiceProduct -->
+
+    <owl:Class rdf:about="http://www.federatedBasic.com/StorageServiceProduct">
+        <rdfs:subClassOf rdf:resource="http://www.federatedBasic.com/BusinessService"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.federatedBasic.com/SwapBody -->
+
+    <owl:Class rdf:about="http://www.federatedBasic.com/SwapBody">
+        <rdfs:subClassOf rdf:resource="http://www.federatedBasic.com/Equipment"/>
+        <rdfs:comment>Types of standard freight containers for road and rail transport.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.federatedBasic.com/Terminal -->
+
+    <owl:Class rdf:about="http://www.federatedBasic.com/Terminal">
+        <rdfs:subClassOf rdf:resource="http://www.federatedBasic.com/LogisticalFunction"/>
+        <rdfs:comment>A freight terminal for different modes is a processing node for freight.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.federatedBasic.com/Trailer -->
+
+    <owl:Class rdf:about="http://www.federatedBasic.com/Trailer">
+        <rdfs:subClassOf rdf:resource="http://www.federatedBasic.com/Equipment"/>
+        <rdfs:comment>Unpowered road vehicles that are used for the transportation of cargo.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.federatedBasic.com/Trajectory -->
+
+    <owl:Class rdf:about="http://www.federatedBasic.com/Trajectory">
+        <rdfs:subClassOf rdf:resource="http://www.federatedBasic.com/InfrastructuralFunction"/>
+        <rdfs:comment>Any part of an infrastructure identified by its infrastructure manager.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.federatedBasic.com/TransportMeans -->
+
+    <owl:Class rdf:about="http://www.federatedBasic.com/TransportMeans">
+        <rdfs:subClassOf rdf:resource="http://www.federatedBasic.com/DigitalTwin"/>
+        <rdfs:comment>These are the vehicles that transport the cargo, such as tricks, vessels,
+trains, airplanes, barges etc.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.federatedBasic.com/TransportService -->
+
+    <owl:Class rdf:about="http://www.federatedBasic.com/TransportService">
+        <rdfs:subClassOf rdf:resource="http://www.federatedBasic.com/BusinessService"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.federatedBasic.com/Transshipment -->
+
+    <owl:Class rdf:about="http://www.federatedBasic.com/Transshipment">
+        <rdfs:subClassOf rdf:resource="http://www.federatedBasic.com/LogisticalFunction"/>
+        <rdfs:comment>An intermediate destination for transiting cargo to another destination.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.federatedBasic.com/TransshipmentService -->
+
+    <owl:Class rdf:about="http://www.federatedBasic.com/TransshipmentService">
+        <rdfs:subClassOf rdf:resource="http://www.federatedBasic.com/BusinessService"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.federatedBasic.com/Truck -->
+
+    <owl:Class rdf:about="http://www.federatedBasic.com/Truck">
+        <rdfs:subClassOf rdf:resource="http://www.federatedBasic.com/TransportMeans"/>
+        <rdfs:comment>Any transport means for road transport.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.federatedBasic.com/ULD -->
+
+    <owl:Class rdf:about="http://www.federatedBasic.com/ULD">
+        <rdfs:subClassOf rdf:resource="http://www.federatedBasic.com/Equipment"/>
+        <rdfs:comment>Unit Load Devices are light weight containers for air transport and facilitate loading cargo into aircraft.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.federatedBasic.com/Vessel -->
+
+    <owl:Class rdf:about="http://www.federatedBasic.com/Vessel">
+        <rdfs:subClassOf rdf:resource="http://www.federatedBasic.com/TransportMeans"/>
+        <rdfs:comment>Any transport means used for transporting cargo by sea/ocean.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.federatedBasic.com/#Cargo -->
+
+    <owl:Class rdf:about="http://www.federatedBasic.com/#Cargo">
+        <rdfs:subClassOf rdf:resource="http://www.federatedBasic.com/DigitalTwin"/>
+        <rdfs:comment>The goods that are transported from origin to destination.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.federatedBasic.com/#Event -->
+
+    <owl:Class rdf:about="http://www.federatedBasic.com/#Event">
+        <rdfs:comment>Represent actions, milestones, transactions or any other real-world activity. These will typically involve one or more interactions or associations between location, business service, transport means and cargo.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.federatedBasic.com/Actor"/>
+            <rdf:Description rdf:about="http://www.federatedBasic.com/Equipment"/>
+            <rdf:Description rdf:about="http://www.federatedBasic.com/Location"/>
+            <rdf:Description rdf:about="http://www.federatedBasic.com/Person"/>
+            <rdf:Description rdf:about="http://www.federatedBasic.com/Product"/>
+            <rdf:Description rdf:about="http://www.federatedBasic.com/TransportMeans"/>
+            <rdf:Description rdf:about="http://www.federatedBasic.com/#Cargo"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.federatedBasic.com/Airplane"/>
+            <rdf:Description rdf:about="http://www.federatedBasic.com/Barge"/>
+            <rdf:Description rdf:about="http://www.federatedBasic.com/Locomotive"/>
+            <rdf:Description rdf:about="http://www.federatedBasic.com/Truck"/>
+            <rdf:Description rdf:about="http://www.federatedBasic.com/Vessel"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.federatedBasic.com/Airport"/>
+            <rdf:Description rdf:about="http://www.federatedBasic.com/Hub"/>
+            <rdf:Description rdf:about="http://www.federatedBasic.com/Port"/>
+            <rdf:Description rdf:about="http://www.federatedBasic.com/Terminal"/>
+            <rdf:Description rdf:about="http://www.federatedBasic.com/Transshipment"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.federatedBasic.com/Area"/>
+            <rdf:Description rdf:about="http://www.federatedBasic.com/City"/>
+            <rdf:Description rdf:about="http://www.federatedBasic.com/Trajectory"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.federatedBasic.com/Booking"/>
+            <rdf:Description rdf:about="http://www.federatedBasic.com/FrameworkContract"/>
+            <rdf:Description rdf:about="http://www.federatedBasic.com/Order"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.federatedBasic.com/BulkCargo"/>
+            <rdf:Description rdf:about="http://www.federatedBasic.com/ContainerizedCargo"/>
+            <rdf:Description rdf:about="http://www.federatedBasic.com/GeneralCargo"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.federatedBasic.com/BulkProduct"/>
+            <rdf:Description rdf:about="http://www.federatedBasic.com/CommericialProduct"/>
+            <rdf:Description rdf:about="http://www.federatedBasic.com/ConsumerProduct"/>
+            <rdf:Description rdf:about="http://www.federatedBasic.com/Part"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.federatedBasic.com/BusinessServiceOverview"/>
+            <rdf:Description rdf:about="http://www.federatedBasic.com/CustomsItem"/>
+            <rdf:Description rdf:about="http://www.federatedBasic.com/DigitalTwin"/>
+            <rdf:Description rdf:about="http://www.federatedBasic.com/#Event"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.federatedBasic.com/Container"/>
+            <rdf:Description rdf:about="http://www.federatedBasic.com/RailwayWagon"/>
+            <rdf:Description rdf:about="http://www.federatedBasic.com/SwapBody"/>
+            <rdf:Description rdf:about="http://www.federatedBasic.com/Trailer"/>
+            <rdf:Description rdf:about="http://www.federatedBasic.com/ULD"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.federatedBasic.com/DeepseaVessel"/>
+            <rdf:Description rdf:about="http://www.federatedBasic.com/Feeder"/>
+            <rdf:Description rdf:about="http://www.federatedBasic.com/Ferry"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.federatedBasic.com/GroupageService"/>
+            <rdf:Description rdf:about="http://www.federatedBasic.com/StorageServiceCargo"/>
+            <rdf:Description rdf:about="http://www.federatedBasic.com/StorageServiceProduct"/>
+            <rdf:Description rdf:about="http://www.federatedBasic.com/TransportService"/>
+            <rdf:Description rdf:about="http://www.federatedBasic.com/TransshipmentService"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
