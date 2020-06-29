@@ -1,0 +1,392 @@
+# baseURI: http://www.unknown.com/federatedBasic.ttl
+
+@prefix : <http://www.federatedBasic.com/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+:
+  rdf:type owl:Ontology ;
+.
+<http://www.federatedBasic.com/#Cargo>
+  rdf:type owl:Class ;
+  rdfs:comment "The goods that are transported from origin to destination." ;
+  rdfs:subClassOf :DigitalTwin ;
+.
+<http://www.federatedBasic.com/#Event>
+  rdf:type owl:Class ;
+  rdfs:comment "Represent actions, milestones, transactions or any other real-world activity. These will typically involve one or more interactions or associations between location, business service, transport means and cargo." ;
+.
+:Actor
+  rdf:type owl:Class ;
+  rdfs:comment "The role of a Person is context dependant, and therefore should be described using the Actor class." ;
+  rdfs:subClassOf :DigitalTwin ;
+.
+:Airplane
+  rdf:type owl:Class ;
+  rdfs:comment "Transport means by air." ;
+  rdfs:subClassOf :TransportMeans ;
+.
+:Airport
+  rdf:type owl:Class ;
+  rdfs:comment "Location where airplanes pick or drop of freight." ;
+  rdfs:subClassOf :LogisticalFunction ;
+.
+:Area
+  rdf:type owl:Class ;
+  rdfs:comment "Any area relevant to logistics operations." ;
+  rdfs:subClassOf :InfrastructuralFunction ;
+.
+:Barge
+  rdf:type owl:Class ;
+  rdfs:comment "Vessel used for transporting cargo on inland waterways." ;
+  rdfs:subClassOf :TransportMeans ;
+.
+:Booking
+  rdf:type owl:Class ;
+  rdfs:subClassOf :BusinessTransaction ;
+.
+:BulkCargo
+  rdf:type owl:Class ;
+  rdfs:comment "Any bulk product transported in large quantities." ;
+  rdfs:subClassOf <http://www.federatedBasic.com/#Cargo> ;
+.
+:BulkFeeder
+  rdf:type owl:Class ;
+  rdfs:subClassOf :Feeder ;
+.
+:BulkProduct
+  rdf:type owl:Class ;
+  rdfs:comment "Unpackaged raw material." ;
+  rdfs:subClassOf :Product ;
+.
+:BusinessService
+  rdf:type owl:Class ;
+  rdfs:comment "The commercial relation between any two enterprises in a chain of business transactions." ;
+  rdfs:subClassOf :BusinessServiceOverview ;
+.
+:BusinessServiceOverview
+  rdf:type owl:Class ;
+.
+:BusinessTransaction
+  rdf:type owl:Class ;
+  rdfs:subClassOf :BusinessServiceOverview ;
+.
+:City
+  rdf:type owl:Class ;
+  rdfs:comment "A generic geographical location." ;
+  rdfs:subClassOf :InfrastructuralFunction ;
+.
+:CommericialProduct
+  rdf:type owl:Class ;
+  rdfs:comment "Any product destined for use by enterprise." ;
+  rdfs:subClassOf :Product ;
+.
+:ConsumerProduct
+  rdf:type owl:Class ;
+  rdfs:comment "Any product destined for use by consumers." ;
+  rdfs:subClassOf :Product ;
+.
+:Container
+  rdf:type owl:Class ;
+  rdfs:comment "Transport containers serve to containerize products." ;
+  rdfs:subClassOf :Equipment ;
+.
+:ContainerFeeder
+  rdf:type owl:Class ;
+  rdfs:subClassOf :Feeder ;
+.
+:ContainerizedCargo
+  rdf:type owl:Class ;
+  rdfs:comment "Any products or packages of products that are stuffed into containers or ULDs." ;
+  rdfs:subClassOf <http://www.federatedBasic.com/#Cargo> ;
+.
+:CustomsItem
+  rdf:type owl:Class ;
+  rdfs:comment """The classification of products or cargo for customs purposes according the
+Harmonised Systems codes (HS).""" ;
+.
+:DeepseaBulkVessel
+  rdf:type owl:Class ;
+  rdfs:subClassOf :DeepseaVessel ;
+.
+:DeepseaContainerVessel
+  rdf:type owl:Class ;
+  rdfs:subClassOf :DeepseaVessel ;
+.
+:DeepseaVessel
+  rdf:type owl:Class ;
+  rdfs:comment "Used for ocean transport." ;
+  rdfs:subClassOf :Vessel ;
+.
+:DigitalTwin
+  rdf:type owl:Class ;
+  rdfs:comment "Any real-world physical object." ;
+.
+:DryBulkCargo
+  rdf:type owl:Class ;
+  rdfs:subClassOf :BulkCargo ;
+  owl:disjointWith :LiquidBulkCargo ;
+.
+:Equipment
+  rdf:type owl:Class ;
+  rdfs:comment "Any asset used to facilitate transport and handling of cargo." ;
+  rdfs:subClassOf :DigitalTwin ;
+.
+:Feeder
+  rdf:type owl:Class ;
+  rdfs:comment "Used for short range transport  via sea." ;
+  rdfs:subClassOf :Vessel ;
+.
+:Ferry
+  rdf:type owl:Class ;
+  rdfs:comment "Used for transport of other transport means like trucks and/or trailers." ;
+  rdfs:subClassOf :Vessel ;
+.
+:FrameworkContract
+  rdf:type owl:Class ;
+  rdfs:subClassOf :BusinessTransaction ;
+.
+:FreighterAircraft
+  rdf:type owl:Class ;
+  rdfs:subClassOf :Airplane ;
+.
+:GeneralCargo
+  rdf:type owl:Class ;
+  rdfs:comment "Any product is packaged for transport purposes." ;
+  rdfs:subClassOf <http://www.federatedBasic.com/#Cargo> ;
+.
+:GroupageService
+  rdf:type owl:Class ;
+  rdfs:subClassOf :BusinessService ;
+.
+:Hub
+  rdf:type owl:Class ;
+  rdfs:comment "A place cargo is exchanged between vehicles or/and between transport modes." ;
+  rdfs:subClassOf :LogisticalFunction ;
+.
+:InfrastructuralFunction
+  rdf:type owl:Class ;
+  rdfs:comment "Any part of an infrastructure used for performing logistical activities." ;
+  rdfs:subClassOf :Location ;
+  owl:disjointWith :LogisticalFunction ;
+.
+:LiquidBulkCargo
+  rdf:type owl:Class ;
+  rdfs:subClassOf :BulkCargo ;
+.
+:Location
+  rdf:type owl:Class ;
+  rdfs:comment "A terminal, location, port, city centre, etc. where a cargo physical activity like transhipment or storage can take place." ;
+  rdfs:subClassOf :DigitalTwin ;
+.
+:Locomotive
+  rdf:type owl:Class ;
+  rdfs:comment "Any traction for a train composed of one or more wagons." ;
+  rdfs:subClassOf :TransportMeans ;
+.
+:LogisticalFunction
+  rdf:type owl:Class ;
+  rdfs:comment "Any location where a logistical activity is performed." ;
+  rdfs:subClassOf :Location ;
+.
+:Order
+  rdf:type owl:Class ;
+  rdfs:subClassOf :BusinessTransaction ;
+.
+:Part
+  rdf:type owl:Class ;
+  rdfs:comment "Products destined for use in machines owned by consumers or enterprises." ;
+  rdfs:subClassOf :Product ;
+.
+:PassengerAircraft
+  rdf:type owl:Class ;
+  rdfs:comment "Cargo can be stored in belly space of the aircraft." ;
+  rdfs:subClassOf :Airplane ;
+.
+:Person
+  rdf:type owl:Class ;
+  rdfs:comment "Any individual that is a crew on board of a transport means." ;
+  rdfs:comment "The role of a Person should not be defined here, but in its linked Actor class." ;
+  rdfs:subClassOf :DigitalTwin ;
+.
+:Port
+  rdf:type owl:Class ;
+  rdfs:comment "Location where vessels pick or drop of freight." ;
+  rdfs:subClassOf :LogisticalFunction ;
+.
+:Product
+  rdf:type owl:Class ;
+  rdfs:comment "The actual objects that change ownership between a seller to a buyer." ;
+  rdfs:subClassOf :DigitalTwin ;
+.
+:RailwayWagon
+  rdf:type owl:Class ;
+  rdfs:comment "Unpowered railway vehicles that are used for the transportation of cargo." ;
+  rdfs:subClassOf :Equipment ;
+.
+:StorageServiceCargo
+  rdf:type owl:Class ;
+  rdfs:subClassOf :BusinessService ;
+.
+:StorageServiceProduct
+  rdf:type owl:Class ;
+  rdfs:subClassOf :BusinessService ;
+.
+:SwapBody
+  rdf:type owl:Class ;
+  rdfs:comment "Types of standard freight containers for road and rail transport." ;
+  rdfs:subClassOf :Equipment ;
+.
+:Terminal
+  rdf:type owl:Class ;
+  rdfs:comment "A freight terminal for different modes is a processing node for freight." ;
+  rdfs:subClassOf :LogisticalFunction ;
+.
+:Trailer
+  rdf:type owl:Class ;
+  rdfs:comment "Unpowered road vehicles that are used for the transportation of cargo." ;
+  rdfs:subClassOf :Equipment ;
+.
+:Trajectory
+  rdf:type owl:Class ;
+  rdfs:comment "Any part of an infrastructure identified by its infrastructure manager." ;
+  rdfs:subClassOf :InfrastructuralFunction ;
+.
+:TransportMeans
+  rdf:type owl:Class ;
+  rdfs:comment """These are the vehicles that transport the cargo, such as tricks, vessels,
+trains, airplanes, barges etc.""" ;
+  rdfs:subClassOf :DigitalTwin ;
+.
+:TransportService
+  rdf:type owl:Class ;
+  rdfs:subClassOf :BusinessService ;
+.
+:Transshipment
+  rdf:type owl:Class ;
+  rdfs:comment "An intermediate destination for transiting cargo to another destination." ;
+  rdfs:subClassOf :LogisticalFunction ;
+.
+:TransshipmentService
+  rdf:type owl:Class ;
+  rdfs:subClassOf :BusinessService ;
+.
+:Truck
+  rdf:type owl:Class ;
+  rdfs:comment "Any transport means for road transport." ;
+  rdfs:subClassOf :TransportMeans ;
+.
+:ULD
+  rdf:type owl:Class ;
+  rdfs:comment "Unit Load Devices are light weight containers for air transport and facilitate loading cargo into aircraft." ;
+  rdfs:subClassOf :Equipment ;
+.
+:Vessel
+  rdf:type owl:Class ;
+  rdfs:comment "Any transport means used for transporting cargo by sea/ocean." ;
+  rdfs:subClassOf :TransportMeans ;
+.
+[
+  rdf:type owl:AllDisjointClasses ;
+  owl:members (
+      :Actor
+      :Equipment
+      :Location
+      :Person
+      :Product
+      :TransportMeans
+      <http://www.federatedBasic.com/#Cargo>
+    ) ;
+].
+[
+  rdf:type owl:AllDisjointClasses ;
+  owl:members (
+      :Airplane
+      :Barge
+      :Locomotive
+      :Truck
+      :Vessel
+    ) ;
+].
+[
+  rdf:type owl:AllDisjointClasses ;
+  owl:members (
+      :Airport
+      :Hub
+      :Port
+      :Terminal
+      :Transshipment
+    ) ;
+].
+[
+  rdf:type owl:AllDisjointClasses ;
+  owl:members (
+      :Area
+      :City
+      :Trajectory
+    ) ;
+].
+[
+  rdf:type owl:AllDisjointClasses ;
+  owl:members (
+      :Booking
+      :FrameworkContract
+      :Order
+    ) ;
+].
+[
+  rdf:type owl:AllDisjointClasses ;
+  owl:members (
+      :BulkCargo
+      :ContainerizedCargo
+      :GeneralCargo
+    ) ;
+].
+[
+  rdf:type owl:AllDisjointClasses ;
+  owl:members (
+      :BulkProduct
+      :CommericialProduct
+      :ConsumerProduct
+      :Part
+    ) ;
+].
+[
+  rdf:type owl:AllDisjointClasses ;
+  owl:members (
+      :BusinessServiceOverview
+      :CustomsItem
+      :DigitalTwin
+      <http://www.federatedBasic.com/#Event>
+    ) ;
+].
+[
+  rdf:type owl:AllDisjointClasses ;
+  owl:members (
+      :Container
+      :RailwayWagon
+      :SwapBody
+      :Trailer
+      :ULD
+    ) ;
+].
+[
+  rdf:type owl:AllDisjointClasses ;
+  owl:members (
+      :DeepseaVessel
+      :Feeder
+      :Ferry
+    ) ;
+].
+[
+  rdf:type owl:AllDisjointClasses ;
+  owl:members (
+      :GroupageService
+      :StorageServiceCargo
+      :StorageServiceProduct
+      :TransportService
+      :TransshipmentService
+    ) ;
+].
