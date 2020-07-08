@@ -9,10 +9,9 @@
 
 :
   rdf:type owl:Ontology ;
-  dcterms:created "2015-02-10"^^xsd:date ;
-  dcterms:creator "dena"^^xsd:string ;
-  dcterms:issued "2020-06-20"^^xsd:date ;
-  dcterms:modified "2020-07-06"^^xsd:date ;
+  dcterms:created "2020-06-20"^^xsd:date ;
+  dcterms:creator "Dena"^^xsd:string ;
+  dcterms:modified "2020-07-08"^^xsd:date ;
   dcterms:title "FederatedSemanticModel"^^xsd:string ;
   owl:versionInfo "1.1.0"^^xsd:string ;
 .
@@ -123,10 +122,6 @@
   rdf:type owl:Class ;
   rdfs:subClassOf :classifications ;
 .
-:Date
-  rdf:type owl:Class ;
-  rdfs:subClassOf owl:Thing ;
-.
 :DeepseaBulkVessel
   rdf:type owl:Class ;
   rdfs:subClassOf :DeepseaVessel ;
@@ -168,6 +163,9 @@
   rdfs:comment "Any asset used to facilitate transport and handling of cargo." ;
   rdfs:subClassOf :DigitalTwin ;
 .
+:Equipment_1
+  rdf:type :Equipment ;
+.
 :Event
   rdf:type owl:Class ;
   rdfs:comment """Represent actions, milestones, transactions or any other real-world activity. These will typically involve one or more interactions or associations between location, business service, transport means and cargo. 		
@@ -190,6 +188,14 @@ With this definition of event in LogiCO, we specialize the concept of Event defi
       owl:minCardinality "1"^^xsd:nonNegativeInteger ;
       owl:onProperty :eventTime ;
     ] ;
+.
+:EventDate
+  rdf:type owl:Class ;
+  rdfs:subClassOf owl:Thing ;
+.
+:EventTime
+  rdf:type owl:Class ;
+  rdfs:subClassOf owl:Thing ;
 .
 :Feeder
   rdf:type owl:Class ;
@@ -222,6 +228,7 @@ With this definition of event in LogiCO, we specialize the concept of Event defi
 .
 :Groupage_service
   rdf:type :BusinessService ;
+  :Contains :booking ;
 .
 :Hazard_Class_ID
   rdf:type owl:DatatypeProperty ;
@@ -263,7 +270,7 @@ With this definition of event in LogiCO, we specialize the concept of Event defi
 :Location
   rdf:type owl:Class ;
   rdfs:comment "A terminal, location, port, city centre, etc. where a cargo physical activity like transhipment or storage can take place." ;
-  rdfs:subClassOf owl:Thing ;
+  rdfs:subClassOf :DigitalTwin ;
 .
 :Locomotive
   rdf:type owl:Class ;
@@ -282,11 +289,6 @@ With this definition of event in LogiCO, we specialize the concept of Event defi
 :MileStone
   rdf:type owl:Class ;
   rdfs:subClassOf owl:Thing ;
-.
-:MileStone_detail
-  rdf:type rdf:Property ;
-  rdfs:domain :Event ;
-  rdfs:range :MileStone ;
 .
 :Organization
   rdf:type owl:Class ;
@@ -320,7 +322,6 @@ With this definition of event in LogiCO, we specialize the concept of Event defi
 :Person_instance
   rdf:type :Person ;
   :Performs :piloting ;
-  :employee_of :organization_instance ;
   :has_role :carrier ;
 .
 :Pilot
@@ -363,10 +364,6 @@ With this definition of event in LogiCO, we specialize the concept of Event defi
   rdf:type owl:Class ;
   rdfs:comment "A freight terminal for different modes is a processing node for freight." ;
   rdfs:subClassOf :LogisticalFunction ;
-.
-:Time
-  rdf:type owl:Class ;
-  rdfs:subClassOf owl:Thing ;
 .
 :Trailer
   rdf:type owl:Class ;
@@ -442,12 +439,11 @@ trains, airplanes, barges etc.""" ;
 :X
   rdf:type :ATA_event ;
   rdf:type :Event ;
-  :MileStone_detail :start ;
   :eventDate :actual_Date ;
   :eventTime :actual_time ;
-  :event_role_detail :carrier ;
-  :location_detail :Geographic_id ;
-  :transport_means_detail :ship ;
+  :event_location_detail :Geographic_id ;
+  :event_mileStone_detail :start ;
+  :event_transport_means_detail :ship ;
 .
 :X1
   rdf:type :ATD_event ;
@@ -456,19 +452,22 @@ trains, airplanes, barges etc.""" ;
 :X2
   rdf:type :Event ;
   rdf:type :containerDischarged_event ;
-  :MileStone_detail :end ;
+  :event_mileStone_detail :end ;
 .
 :actor_detail
   rdf:type owl:ObjectProperty ;
-  rdfs:domain :Role ;
+  rdfs:domain :Transportation_role ;
+  rdfs:domain :business_roles ;
+  rdfs:domain :infrastructural_roles ;
+  rdfs:domain :orgnizational_roles ;
   rdfs:range :Actor ;
   owl:inverseOf :has_role ;
 .
 :actual_Date
-  rdf:type :Date ;
+  rdf:type :EventDate ;
 .
 :actual_time
-  rdf:type :Time ;
+  rdf:type :EventTime ;
 .
 :anchorage
   rdf:type owl:Class ;
@@ -480,14 +479,11 @@ trains, airplanes, barges etc.""" ;
   rdfs:domain :BusinessTransaction ;
   rdfs:range xsd:string ;
 .
+:authority_instance
+  rdf:type :Authority ;
+.
 :booking
   rdf:type :BusinessTransaction ;
-.
-:buisnessTransaction_detail
-  rdf:type rdf:Property ;
-  rdfs:domain :Event ;
-  rdfs:range :BusinessTransaction ;
-  owl:inverseOf :event_detail ;
 .
 :bulkCargo
   rdf:type owl:Class ;
@@ -522,13 +518,11 @@ trains, airplanes, barges etc.""" ;
   rdfs:domain :containerizedCargo ;
   rdfs:range xsd:string ;
 .
-:cargo_detail
-  rdf:type rdf:Property ;
-  rdfs:domain :Event ;
-  rdfs:range :Cargo ;
-.
 :carrier
   rdf:type :business_roles ;
+.
+:certification_authority_instance
+  rdf:type :CertificationAuthority ;
 .
 :classifications
   rdf:type owl:Class ;
@@ -551,11 +545,6 @@ trains, airplanes, barges etc.""" ;
 :containerLoaded_event
   rdf:type owl:Class ;
   rdfs:subClassOf :Event ;
-.
-:container_detail
-  rdf:type rdf:Property ;
-  rdfs:domain :Event ;
-  rdfs:range :Container ;
 .
 :containerizedCargo
   rdf:type owl:Class ;
@@ -597,8 +586,22 @@ trains, airplanes, barges etc.""" ;
 :employer
   rdf:type :orgnizational_roles ;
 .
+:employer_of
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain :Organization ;
+  rdfs:range :Person ;
+  owl:inverseOf :employee_of ;
+.
 :end
   rdf:type :MileStone ;
+.
+:enterprise_instance
+  rdf:type :Enterprise ;
+.
+:equipment_actor_detail
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain :Equipment ;
+  rdfs:range :Actor ;
 .
 :equipment_container_ITU_code
   rdf:type owl:DatatypeProperty ;
@@ -620,16 +623,11 @@ trains, airplanes, barges etc.""" ;
   rdfs:domain :Container ;
   rdfs:range xsd:string ;
 .
-:equipment_detail
-  rdf:type rdf:Property ;
-  rdfs:domain :Event ;
-  rdfs:range :Equipment ;
-.
 :estimated_date
-  rdf:type :Date ;
+  rdf:type :EventDate ;
 .
 :estimated_time
-  rdf:type :Time ;
+  rdf:type :EventTime ;
 .
 :euqipment_trailer_license_plate
   rdf:type owl:DatatypeProperty ;
@@ -639,28 +637,59 @@ trains, airplanes, barges etc.""" ;
 :eventDate
   rdf:type owl:DatatypeProperty ;
   rdfs:domain :Event ;
-  rdfs:range :Date ;
+  rdfs:range :EventDate ;
 .
 :eventTime
   rdf:type owl:DatatypeProperty ;
   rdfs:domain :Event ;
-  rdfs:range :Time ;
+  rdfs:range :EventTime ;
 .
-:event_detail
-  rdf:type owl:ObjectProperty ;
-  rdfs:domain :BusinessTransaction ;
-  rdfs:range :Event ;
+:event_buisnessTransaction_detail
+  rdf:type rdf:Property ;
+  rdfs:domain :Event ;
+  rdfs:range :BusinessTransaction ;
+  owl:inverseOf :transaction_event_detail ;
+.
+:event_cargo_detail
+  rdf:type rdf:Property ;
+  rdfs:domain :Event ;
+  rdfs:range :Cargo ;
+.
+:event_container_detail
+  rdf:type rdf:Property ;
+  rdfs:domain :Event ;
+  rdfs:range :Container ;
+.
+:event_equipment_detail
+  rdf:type rdf:Property ;
+  rdfs:domain :Event ;
+  rdfs:range :Equipment ;
+.
+:event_location_detail
+  rdf:type rdf:Property ;
+  rdfs:domain :Event ;
+  rdfs:range :Location ;
+.
+:event_mileStone_detail
+  rdf:type rdf:Property ;
+  rdfs:domain :Event ;
+  rdfs:range :MileStone ;
 .
 :event_role_detail
   rdf:type owl:ObjectProperty ;
   rdfs:domain :Event ;
   rdfs:range :Role ;
 .
+:event_transport_means_detail
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain :Event ;
+  rdfs:range :Transportmeans ;
+.
 :expected_date
-  rdf:type :Date ;
+  rdf:type :EventDate ;
 .
 :expected_time
-  rdf:type :Time ;
+  rdf:type :EventTime ;
 .
 :generalCargo
   rdf:type owl:Class ;
@@ -732,14 +761,29 @@ trains, airplanes, barges etc.""" ;
   rdfs:domain :BusinessTransaction ;
   rdfs:range xsd:string ;
 .
-:location_detail
-  rdf:type rdf:Property ;
-  rdfs:domain :Event ;
-  rdfs:range :Location ;
-.
 :location_role
   rdf:type owl:Class ;
   rdfs:subClassOf :Role ;
+.
+:location_role_cargo_detail
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain :location_role ;
+  rdfs:range :Cargo ;
+.
+:location_role_event_detail
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain :location_role ;
+  rdfs:range :Event ;
+.
+:location_role_modality_detail
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain :location_role ;
+  rdfs:range :Transportmeans ;
+.
+:location_role_place_detail
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain :location_role ;
+  rdfs:range :Location ;
 .
 :locomotive_brake_type
   rdf:type owl:DatatypeProperty ;
@@ -819,9 +863,6 @@ trains, airplanes, barges etc.""" ;
 :order
   rdf:type :BusinessTransaction ;
 .
-:organization_instance
-  rdf:type :Organization ;
-.
 :orgnizational_roles
   rdf:type rdfs:Class ;
   rdfs:subClassOf :Role ;
@@ -829,6 +870,9 @@ trains, airplanes, barges etc.""" ;
 :other
   rdf:type owl:Class ;
   rdfs:subClassOf :InfrastructuralFunction ;
+.
+:owner
+  rdf:type :infrastructural_roles ;
 .
 :package_level_type
   rdf:type owl:DatatypeProperty ;
@@ -851,15 +895,24 @@ trains, airplanes, barges etc.""" ;
 .
 :piloting
   rdf:type :LogisticService ;
-  :event_detail :X ;
-  :event_detail :X1 ;
   :is_related_to :Transport_service ;
+  :transaction_event_detail :X ;
+  :transaction_event_detail :X1 ;
 .
 :place_of_acceptance
   rdf:type :location_role ;
+  :location_role_cargo_detail :Cargo_1 ;
+  :location_role_event_detail :X ;
+  :location_role_place_detail :Geographic_id ;
+  :role_transaction_detail :order ;
+  rdfs:comment "A place of acceptance is the place where the cargo is offered for transport by a business transaction to a service provider organizing the transport. The cargo and the transport means have to be at that location." ;
 .
 :place_of_arrival
   rdf:type :location_role ;
+  :location_role_event_detail :X ;
+  :location_role_modality_detail :ship ;
+  :location_role_place_detail :Geographic_id ;
+  :role_transaction_detail :order ;
 .
 :place_of_delivery
   rdf:type :location_role ;
@@ -877,10 +930,10 @@ trains, airplanes, barges etc.""" ;
   rdf:type :location_role ;
 .
 :planned_date
-  rdf:type :Date ;
+  rdf:type :EventDate ;
 .
 :planned_time
-  rdf:type :Time ;
+  rdf:type :EventTime ;
 .
 :product_ID
   rdf:type owl:DatatypeProperty ;
@@ -893,10 +946,15 @@ trains, airplanes, barges etc.""" ;
   rdfs:range xsd:string ;
 .
 :requested_date
-  rdf:type :Date ;
+  rdf:type :EventDate ;
 .
 :requested_time
-  rdf:type :Time ;
+  rdf:type :EventTime ;
+.
+:role_transaction_detail
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain :Role ;
+  rdfs:range :BusinessTransaction ;
 .
 :security_level
   rdf:type owl:DatatypeProperty ;
@@ -946,10 +1004,10 @@ trains, airplanes, barges etc.""" ;
   rdfs:domain :Transportation_role ;
   rdfs:range :Person ;
 .
-:transport_means_detail
+:transaction_event_detail
   rdf:type owl:ObjectProperty ;
-  rdfs:domain :Event ;
-  rdfs:range :Transportmeans ;
+  rdfs:domain :BusinessTransaction ;
+  rdfs:range :Event ;
 .
 :transshipment_service
   rdf:type :BusinessService ;
