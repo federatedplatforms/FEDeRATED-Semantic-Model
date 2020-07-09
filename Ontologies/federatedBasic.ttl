@@ -10,7 +10,7 @@
 :
   rdf:type owl:Ontology ;
   dcterms:created "2015-02-10"^^xsd:date ;
-  dcterms:creator "Dena, Cornelis"^^xsd:string ;
+  dcterms:creator "Dena"^^xsd:string ;
   dcterms:issued "2020-06-20"^^xsd:date ;
   dcterms:modified "2020-07-06"^^xsd:date ;
   dcterms:title "FederatedSemanticModel"^^xsd:string ;
