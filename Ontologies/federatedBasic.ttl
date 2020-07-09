@@ -9,9 +9,10 @@
 
 :
   rdf:type owl:Ontology ;
-  dcterms:created "2020-06-20"^^xsd:date ;
-  dcterms:creator "Dena"^^xsd:string ;
-  dcterms:modified "2020-07-08"^^xsd:date ;
+  dcterms:created "2015-02-10"^^xsd:date ;
+  dcterms:creator "Dena, Cornelis"^^xsd:string ;
+  dcterms:issued "2020-06-20"^^xsd:date ;
+  dcterms:modified "2020-07-06"^^xsd:date ;
   dcterms:title "FederatedSemanticModel"^^xsd:string ;
   owl:versionInfo "1.1.0"^^xsd:string ;
 .
@@ -27,6 +28,13 @@
   rdf:type owl:Class ;
   rdfs:comment "The role of a Person is context dependant, and therefore should be described using the Actor class." ;
   rdfs:subClassOf :DigitalTwin ;
+.
+:Actor_1
+  rdf:type :Actor ;
+  rdf:type :Person ;
+  :Performs :logisticService_1 ;
+  :employee_of :organization_1 ;
+  :has_role :Role_1 ;
 .
 :Additional_Hazard_Claasification_ID
   rdf:type owl:DatatypeProperty ;
@@ -85,7 +93,6 @@
 .
 :Captain
   rdf:type :Transportation_role ;
-  :actor_detail :Person_instance ;
 .
 :Cargo
   rdf:type owl:Class ;
@@ -322,7 +329,8 @@ With this definition of event in LogiCO, we specialize the concept of Event defi
 :Person_instance
   rdf:type :Person ;
   :Performs :piloting ;
-  :has_role :carrier ;
+  :employee_of :enterprise_instance ;
+  :has_role :Captain ;
 .
 :Pilot
   rdf:type :Transportation_role ;
@@ -350,6 +358,9 @@ With this definition of event in LogiCO, we specialize the concept of Event defi
 :Role
   rdf:type rdfs:Class ;
   rdfs:subClassOf :DigitalTwin ;
+.
+:Role_1
+  rdf:type :Role ;
 .
 :Shipping_name
   rdf:type owl:DatatypeProperty ;
@@ -498,6 +509,11 @@ trains, airplanes, barges etc.""" ;
   rdf:type owl:DatatypeProperty ;
   rdfs:domain :bulkCargo ;
   rdfs:range xsd:integer ;
+.
+:businessTransaction_event_detail
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain :BusinessTransaction ;
+  rdfs:range :Event ;
 .
 :business_roles
   rdf:type rdfs:Class ;
@@ -648,6 +664,7 @@ trains, airplanes, barges etc.""" ;
   rdf:type rdf:Property ;
   rdfs:domain :Event ;
   rdfs:range :BusinessTransaction ;
+  owl:inverseOf :businessTransaction_event_detail ;
   owl:inverseOf :transaction_event_detail ;
 .
 :event_cargo_detail
@@ -669,6 +686,12 @@ trains, airplanes, barges etc.""" ;
   rdf:type rdf:Property ;
   rdfs:domain :Event ;
   rdfs:range :Location ;
+.
+:event_logistic_service_detail
+  rdf:type rdf:Property ;
+  rdfs:domain :Event ;
+  rdfs:range :LogisticService ;
+  owl:inverseOf :transaction_event_detail ;
 .
 :event_mileStone_detail
   rdf:type rdf:Property ;
@@ -815,6 +838,9 @@ trains, airplanes, barges etc.""" ;
   rdfs:domain :Locomotive ;
   rdfs:range xsd:string ;
 .
+:logisticService_1
+  rdf:type :LogisticService ;
+.
 :marks_number
   rdf:type owl:DatatypeProperty ;
   rdfs:domain :generalCargo ;
@@ -862,6 +888,9 @@ trains, airplanes, barges etc.""" ;
 .
 :order
   rdf:type :BusinessTransaction ;
+.
+:organization_1
+  rdf:type :Organization ;
 .
 :orgnizational_roles
   rdf:type rdfs:Class ;
