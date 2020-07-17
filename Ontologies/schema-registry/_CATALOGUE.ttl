@@ -1,0 +1,35 @@
+# baseURI: http://tno.io/ontologies/BusinessService#
+
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix terms: <http://purl.org/dc/terms/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+
+<http://tno.io/ontologies/Classification>
+  rdf:type owl:Ontology ;
+  dc:source "Classifications.ttl" ;
+  terms:title "Classifications" ;
+.
+<http://tno.io/ontologies/DigitalTwin#>
+  rdf:type owl:Ontology ;
+  dc:source "DigitalTwin.ttl" ;
+  terms:title "Logistic Digital Twin" ;
+.
+<http://tno.io/ontologies/Event>
+  rdf:type owl:Ontology ;
+  dc:source "Event.ttl" ;
+  terms:title "Logistic Business Service" ;
+.
+<http://tno.io/ontologies/Governance>
+  rdf:type owl:Ontology ;
+  dc:source "Governance.ttl" ;
+  terms:title "Governance" ;
+.
+<http://tno.io/ontologies/BusinessService>
+  rdf:type owl:Ontology ;
+  dc:source "businessService.ttl" ;
+  terms:title "Business Service" ;
+.
