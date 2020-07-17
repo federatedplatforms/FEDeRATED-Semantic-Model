@@ -1,0 +1,124 @@
+# baseURI: http://tno.io/BusinessService
+# imports: http://tno.io/Classifications
+# imports: http://tno.io/DigitalTwin
+# imports: http://tno.io/Event
+
+@prefix : <http://tno.io/BusinessService#> .
+@prefix Classifications: <http://tno.io/Classifications#> .
+@prefix DT: <http://tno.io/DigitalTwin#> .
+@prefix businessService: <http://tno.io/BusinessService#> .
+@prefix classifications: <http://tno.io/Classifications#> .
+@prefix event: <http://tno.io/Event#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://tno.io/BusinessService>
+  rdf:type owl:Ontology ;
+  owl:imports <http://tno.io/Classifications> ;
+  owl:imports <http://tno.io/DigitalTwin> ;
+  owl:imports <http://tno.io/Event> ;
+.
+businessService:
+  rdf:type owl:Ontology ;
+  owl:imports classifications: ;
+  owl:imports DT: ;
+  owl:imports event: ;
+  owl:imports <http://www.w3.org/2004/02/skos/core> ;
+  owl:versionInfo "Created with TopBraid Composer"^^xsd:string ;
+.
+businessService:Anchorage
+  rdf:type owl:Class ;
+  rdfs:subClassOf businessService:BusinessService ;
+.
+businessService:BusinessService
+  rdf:type owl:Class ;
+  rdfs:comment "The commercial relation between any two enterprises in a chain of business transactions." ;
+  rdfs:subClassOf owl:Thing ;
+.
+businessService:BusinessTransaction
+  rdf:type owl:Class ;
+  rdfs:subClassOf owl:Thing ;
+.
+businessService:COD_amount
+  rdf:type owl:DatatypeProperty ;
+  rdfs:comment "The monetary value of the COD (Cash On Delivery) amount to be collected by the carrier upon delivery of this consignment."^^xsd:string ;
+  rdfs:domain businessService:BusinessTransaction ;
+  rdfs:range xsd:integer ;
+.
+businessService:GroupageService
+  rdf:type owl:Class ;
+  rdfs:subClassOf businessService:BusinessService ;
+.
+businessService:Transaction_ID
+  rdf:type owl:DatatypeProperty ;
+  rdfs:comment "Unique identification of a business transaction (synonyms: consignment number, shipment number)"^^xsd:string ;
+  rdfs:domain businessService:BusinessTransaction ;
+  rdfs:range xsd:string ;
+.
+businessService:Transaction_date
+  rdf:type owl:DatatypeProperty ;
+  rdfs:comment "Date/time at which the transaction has been initiated"^^xsd:string ;
+  rdfs:domain businessService:BusinessTransaction ;
+  rdfs:range xsd:date ;
+.
+businessService:TransportService
+  rdf:type owl:Class ;
+  rdfs:subClassOf businessService:BusinessService ;
+.
+businessService:TransshipmenService
+  rdf:type owl:Class ;
+  rdfs:subClassOf businessService:BusinessService ;
+.
+businessService:businessTransaction_event_detail
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain businessService:BusinessTransaction ;
+  rdfs:range event:Event ;
+.
+businessService:handling_information
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain businessService:BusinessTransaction ;
+  rdfs:range xsd:string ;
+.
+businessService:insurance_instruction
+  rdf:type owl:DatatypeProperty ;
+  rdfs:comment "Cargo insurance instructions, expressed as text, for this consignment."^^xsd:string ;
+  rdfs:domain businessService:BusinessTransaction ;
+  rdfs:range xsd:string ;
+.
+businessService:is_FCL_type
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain businessService:BusinessTransaction ;
+  rdfs:range xsd:boolean ;
+.
+businessService:is_LCL_type
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain businessService:BusinessTransaction ;
+  rdfs:range xsd:boolean ;
+.
+businessService:movement_type
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain businessService:BusinessTransaction ;
+  rdfs:range xsd:boolean ;
+  rdfs:subPropertyOf businessService:is_FCL_type ;
+  rdfs:subPropertyOf businessService:is_LCL_type ;
+.
+businessService:resultsIn
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain businessService:BusinessService ;
+  rdfs:range businessService:BusinessTransaction ;
+.
+businessService:serviceProvider
+  rdf:type rdf:Property ;
+  rdfs:domain businessService:BusinessTransaction ;
+  rdfs:range DT:Enterprise ;
+.
+businessService:storageServiceCargo
+  rdf:type owl:Class ;
+  rdfs:subClassOf businessService:BusinessService ;
+.
+businessService:storageServiceProduct
+  rdf:type owl:Class ;
+  rdfs:subClassOf businessService:BusinessService ;
+.
