@@ -1,0 +1,75 @@
+# baseURI: http://tno.io/Classifications
+# imports: http://www.w3.org/2004/02/skos/core
+
+@prefix : <http://tno.io/Classifications#> .
+@prefix classifications: <http://tno.io/Classifications#> .
+@prefix DT: <http://tno.io/DigitalTwin#> .
+@prefix businessService: <http://tno.io/BusinessService#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+classifications: 
+  rdf:type owl:Ontology ;
+  owl:imports <http://www.w3.org/2004/02/skos/core> ;
+  owl:imports DT: ;
+  owl:imports businessService: ;
+  owl:versionInfo "Created with TopBraid Composer"^^xsd:string ;
+.
+
+
+classifications:DangerouseGoodClassification  a     owl:Class ;
+        rdfs:subClassOf  owl:Thing .
+
+
+classifications:Additional_Hazard_Claasification_ID
+        a            owl:DatatypeProperty ;
+        rdfs:domain  classifications:DangerouseGoodClassification ;
+        rdfs:range   xsd:string .
+        
+ 
+classifications:Flashpoint  a       owl:DatatypeProperty ;
+        rdfs:domain  classifications:DangerouseGoodClassification ;
+        rdfs:range   xsd:string .
+        
+classifications:Hazard_Class_ID  a  owl:DatatypeProperty ;
+        rdfs:domain  classifications:DangerouseGoodClassification ;
+        rdfs:range   xsd:string .
+        
+classifications:Hazard_Type_code_IMDG
+        a            owl:DatatypeProperty ;
+        rdfs:domain  classifications:DangerouseGoodClassification ;
+        rdfs:range   xsd:string .
+ 
+classifications:Limited_Quantity_Code
+        a            owl:DatatypeProperty ;
+        rdfs:domain  classifications:DangerouseGoodClassification ;
+        rdfs:range   xsd:string .
+    
+        
+classifications:Packaging_Danger_Level_Code
+        a            owl:DatatypeProperty ;
+        rdfs:domain  classifications:DangerouseGoodClassification ;
+        rdfs:range   xsd:string .
+
+classifications:Regulation_code  a  owl:DatatypeProperty ;
+        rdfs:domain  classifications:DangerouseGoodClassification ;
+        rdfs:range   xsd:string .
+        
+classifications:Shipping_name  a    owl:DatatypeProperty ;
+        rdfs:domain  classifications:DangerouseGoodClassification ;
+        rdfs:range   xsd:string .
+        
+:UNDG_ID  a          owl:DatatypeProperty ;
+        rdfs:domain  classifications:DangerouseGoodClassification .
+      
+        
+
+
+
+
+
+
+
+
