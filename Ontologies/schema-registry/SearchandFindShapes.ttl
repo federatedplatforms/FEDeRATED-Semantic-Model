@@ -26,6 +26,9 @@
   owl:imports sh: ;
   owl:versionInfo "Created with TopBraid Composer"^^xsd:string ;
 .
+##################################
+#rules for Cargo in Digital DigitalTwin
+###############################
 :natureofCargo_shape a sh:NodeShape;
   sh:targetSubjectOf Classifictions:Nature_of_Cargo ;
   
@@ -92,11 +95,39 @@
 		sh:datatype xsd:string;
    ];
    .
-   
+ #############################################################  
    #Rulesfor: Transport Modality 
-   #Rules for Service Provider, if event is x then the role is Service provider. 
+   ##############################################################
+   #Rules for Roles :: Service Provider, if event is x then the role is Service provider. 
    #Rules for Customer, 
-   
+
+ #######################################
+   #[Rule] Transport Booking and Order, Contract: 
+
+  #########################################################
+ #[example Rule for using sh:SPARQLConstraint] If a cargo is of type Dangerouse Good, then it must be either code 1 or code 2. 
+
+
+:cargo_shape a sh:NodeShape ;
+sh:targetSubjectsOf DT:classification_detail ;
+sh:property [
+        sh:path DT:classification_detail ;
+        sh:sparql [
+           a sh:SPARQLConstraint ;
+           sh:message "Cargo should be either code 1 or code 2" ;
+           sh:prefixes DT: ;
+           sh:select """
+            SELECT $this ?value
+            WHERE {
+             $this dt:classification_detail ?type_detail;
+              $PATH ?value.
+            filter (?type_detail = Classifications:DangerouseGoods && ?value != Classifications:Code_1 && ?value != Classifications:code_2)
+            }
+            """ ;
+        ] ;
+    ] ;
+.
+
     
    
    
