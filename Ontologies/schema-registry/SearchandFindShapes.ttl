@@ -1,0 +1,55 @@
+# baseURI: http://tno.io/SearchFindShape.shape.ttl
+# imports: http://tno.io/BusinessService
+# imports: http://tno.io/Classifications
+# imports: http://tno.io/DigitalTwin
+# imports: http://tno.io/Event
+# imports: http://tno.io/ontologies/BusinessService#
+# imports: http://www.w3.org/2004/02/skos/core
+# imports: http://www.w3.org/ns/shacl#
+
+@prefix : <http://tno.io/SearchFindShape.shape.ttl#> .
+@prefix DigitalTwin: <http://tno.io/DigitalTwin#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://tno.io/SearchFindShape.shape.ttl>
+  rdf:type owl:Ontology ;
+  owl:imports <http://tno.io/BusinessService> ;
+  owl:imports <http://tno.io/Classifications> ;
+  owl:imports <http://tno.io/DigitalTwin> ;
+  owl:imports <http://tno.io/Event> ;
+  owl:imports <http://tno.io/ontologies/BusinessService#> ;
+  owl:imports <http://www.w3.org/2004/02/skos/core> ;
+  owl:imports sh: ;
+  owl:versionInfo "Created with TopBraid Composer"^^xsd:string ;
+.
+:natureofCargo_shape a sh:NodeShape;
+  sh:targetClass DT:Cargo ;
+
+  sh:property [
+        sh:path DT:natureofCargo ;
+		sh:minCount 1 ;
+   ];
+   .
+
+ :Country_Code_Shape a sh:NodeShape;
+  sh:targetClass DT:Country;
+
+  sh:property [
+        sh:path DT:Country_Code ;
+		sh:minLength 5 ;
+   ];
+   .
+
+
+  :Country_Name_Shape a sh:NodeShape;
+  sh:targetClass DT:Country;
+
+  sh:property [
+        sh:path DT:Country_Code ;
+		sh:datatype xsd:string;
+   ];
+   .
