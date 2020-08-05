@@ -27,29 +27,76 @@
   owl:versionInfo "Created with TopBraid Composer"^^xsd:string ;
 .
 :natureofCargo_shape a sh:NodeShape;
-  sh:targetClass DT:Cargo ;
-
+  sh:targetSubjectOf Classifictions:Nature_of_Cargo ;
+  
   sh:property [
         sh:path DT:natureofCargo ;
 		sh:minCount 1 ;
    ];
    .
-
- :Country_Code_Shape a sh:NodeShape;
+   
+ :Country_Code_iso2_shape a sh:NodeShape;
   sh:targetClass DT:Country;
-
+  
   sh:property [
-        sh:path DT:Country_Code ;
-		sh:minLength 5 ;
+        sh:path DT:Country_Code_iso2 ;
+		sh:pattern "^[A-Z]{2}$" ;
+		sh:description "Coutnry Code in ISO Representation";
    ];
-   .
-
-
+   . 
+   
+    :City_Name_shape a sh:NodeShape;
+  sh:targetClass DT:City;
+  
+  sh:property [
+        sh:path DT:City_Name ;
+		sh:pattern "" ;
+		sh:description "City Name in ISO Representation";
+   ];
+   . 
+   
+   :City_locode_shape a sh:NodeShape;
+  sh:targetClass DT:City;
+  
+  sh:property [
+        sh:path DT:City_locode ;
+		sh:pattern "" ;
+		sh:description "City Code in  Representation";
+		sh:length 6;
+   ];
+   . 
+    
   :Country_Name_Shape a sh:NodeShape;
   sh:targetClass DT:Country;
-
+  
   sh:property [
         sh:path DT:Country_Code ;
 		sh:datatype xsd:string;
    ];
    .
+   
+     :Corridor_Name_Shape a sh:NodeShape;
+  sh:targetClass DT:Corridor;
+  
+  sh:property [
+        sh:path DT:CorridorName ;
+		sh:datatype xsd:string;
+   ];
+   .
+   
+      :Corridor_Code_Shape a sh:NodeShape;
+  sh:targetClass DT:Corridor;
+  
+  sh:property [
+        sh:path DT:CorridorCode ;
+		sh:datatype xsd:string;
+   ];
+   .
+   
+   #Rulesfor: Transport Modality 
+   #Rules for Service Provider, if event is x then the role is Service provider. 
+   #Rules for Customer, 
+   
+    
+   
+   
