@@ -1,112 +1,32 @@
-# baseURI: http://tno.io/SearchFindShape.shape.ttl
-# imports: http://tno.io/BusinessService
-# imports: http://tno.io/Classifications
-# imports: http://tno.io/DigitalTwin
-# imports: http://tno.io/Event
-# imports: http://tno.io/ontologies/BusinessService#
-# imports: http://www.w3.org/2004/02/skos/core
-# imports: http://www.w3.org/ns/shacl#
+# baseURI: http://tno.io/SFShape
+# imports: http://datashapes.org/dash
+# prefix: SFShape
 
-@prefix : <http://tno.io/SearchFindShape.shape.ttl#> .
-@prefix DigitalTwin: <http://tno.io/DigitalTwin#> .
+@prefix SFShape: <http://tno.io/SFShape#> .
+@prefix : <http://tno.io/SFShape#> .
+@prefix dash: <http://datashapes.org/dash#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix DT: <http://tno.io/DigitalTwin#> .
+@prefix businessServicee: <http://tno.io/BusinessService#> .
+@prefix event: <http://tno.io/Event#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<http://tno.io/SearchFindShape.shape.ttl>
+<http://tno.io/SFShape>
   rdf:type owl:Ontology ;
+  owl:imports <http://datashapes.org/dash> ;
   owl:imports <http://tno.io/BusinessService> ;
   owl:imports <http://tno.io/Classifications> ;
   owl:imports <http://tno.io/DigitalTwin> ;
   owl:imports <http://tno.io/Event> ;
-  owl:imports <http://tno.io/ontologies/BusinessService#> ;
   owl:imports <http://www.w3.org/2004/02/skos/core> ;
   owl:imports sh: ;
   owl:versionInfo "Created with TopBraid Composer"^^xsd:string ;
 .
-##################################
-#rules for Cargo in Digital DigitalTwin
-###############################
-:natureofCargo_shape a sh:NodeShape;
-  sh:targetSubjectOf Classifictions:Nature_of_Cargo ;
-  
-  sh:property [
-        sh:path DT:natureofCargo ;
-		sh:minCount 1 ;
-   ];
-   .
-   
- :Country_Code_iso2_shape a sh:NodeShape;
-  sh:targetClass DT:Country;
-  
-  sh:property [
-        sh:path DT:Country_Code_iso2 ;
-		sh:pattern "^[A-Z]{2}$" ;
-		sh:description "Coutnry Code in ISO Representation";
-   ];
-   . 
-   
-    :City_Name_shape a sh:NodeShape;
-  sh:targetClass DT:City;
-  
-  sh:property [
-        sh:path DT:City_Name ;
-		sh:pattern "" ;
-		sh:description "City Name in ISO Representation";
-   ];
-   . 
-   
-   :City_locode_shape a sh:NodeShape;
-  sh:targetClass DT:City;
-  
-  sh:property [
-        sh:path DT:City_locode ;
-		sh:pattern "" ;
-		sh:description "City Code in  Representation";
-		sh:length 6;
-   ];
-   . 
-    
-  :Country_Name_Shape a sh:NodeShape;
-  sh:targetClass DT:Country;
-  
-  sh:property [
-        sh:path DT:Country_Code ;
-		sh:datatype xsd:string;
-   ];
-   .
-   
-     :Corridor_Name_Shape a sh:NodeShape;
-  sh:targetClass DT:Corridor;
-  
-  sh:property [
-        sh:path DT:CorridorName ;
-		sh:datatype xsd:string;
-   ];
-   .
-   
-      :Corridor_Code_Shape a sh:NodeShape;
-  sh:targetClass DT:Corridor;
-  
-  sh:property [
-        sh:path DT:CorridorCode ;
-		sh:datatype xsd:string;
-   ];
-   .
- #############################################################  
-   #Rulesfor: Transport Modality 
-   ##############################################################
-   #Rules for Roles :: Service Provider, if event is x then the role is Service provider. 
-   #Rules for Customer, 
 
- #######################################
-   #[Rule] Transport Booking and Order, Contract: 
-
-  #########################################################
- #[example Rule for using sh:SPARQLConstraint] If a cargo is of type Dangerouse Good, then it must be either code 1 or code 2. 
-
+ #[exampleRuleforusingsh:SPARQLConstraint]IfacargoisoftypeDangerouseGood,thenitmustbeeithercode1orcode2. 
 
 :cargo_shape a sh:NodeShape ;
 sh:targetSubjectsOf DT:classification_detail ;
@@ -128,6 +48,13 @@ sh:property [
     ] ;
 .
 
-    
+:natureofCargo_shape a sh:NodeShape;
+sh:targetSubjectOf DT:natureofCargo ;
+  
+sh:property [
+        sh:path DT:natureofCargo ;
+		sh:minCount 1 ;
+   ];
+   .
    
-   
+
