@@ -2,6 +2,7 @@
 # imports: http://tno.io/BusinessService
 # imports: http://tno.io/Classifications
 # imports: http://tno.io/Event
+# prefix: DT
 
 @prefix : <http://tno.io/DigitalTwin#> .
 @prefix DT: <http://tno.io/DigitalTwin#> .
@@ -22,13 +23,6 @@
   owl:imports <http://tno.io/BusinessService> ;
   owl:imports <http://tno.io/Classifications> ;
   owl:imports <http://tno.io/Event> ;
-.
-DT:
-  rdf:type owl:Ontology ;
-  owl:imports businessService: ;
-  owl:imports event: ;
-  owl:imports <http://www.w3.org/2004/02/skos/core> ;
-  owl:versionInfo "Created with TopBraid Composer"^^xsd:string ;
 .
 DT:Address
   rdf:type owl:Class ;
@@ -206,7 +200,7 @@ DT:Port
 .
 DT:Product
   rdf:type owl:Class ;
-  rdfs:comment "The actual objects that change ownership between a seller to a buyer. Any commercial goods that is bought and sold."^^xsd:string ;
+  rdfs:comment "The actual objects that change ownership between a seller to a buyer. Any commercial goods that is bought and sold." ;
   rdfs:subClassOf DT:DigitalTwin ;
   owl:disjointWith DT:Address ;
   owl:disjointWith DT:Cargo ;
@@ -258,12 +252,12 @@ DT:Trajectory
 .
 DT:TransportServiceProvider
   rdf:type owl:Class ;
-  rdfs:comment "the organization providing the transport. Within in an invoice this role is called the â€˜Seller Supplierâ€™."^^xsd:string ;
+  rdfs:comment "the organization providing the transport. Within in an invoice this role is called the ‘Seller Supplier’." ;
   rdfs:subClassOf DT:logisticActor ;
 .
 DT:Transport_user
   rdf:type owl:Class ;
-  rdfs:comment "the organization ordering the transport. Within an invoice this role is called the â€˜Buyer Customerâ€™."^^xsd:string ;
+  rdfs:comment "the organization ordering the transport. Within an invoice this role is called the ‘Buyer Customer’." ;
   rdfs:subClassOf DT:logisticActor ;
 .
 DT:Transportmeans
@@ -317,7 +311,7 @@ DT:bulkCargo
 .
 DT:bulkProduct
   rdf:type owl:Class ;
-  rdfs:comment "Any unpackaged raw material"^^xsd:string ;
+  rdfs:comment "Any unpackaged raw material" ;
   rdfs:subClassOf DT:Product ;
 .
 DT:bulk_volume
@@ -347,22 +341,22 @@ DT:cargo_container_type
 .
 DT:commercialProduct
   rdf:type owl:Class ;
-  rdfs:comment "Any product destined for use by enterprise. Consumer products may be packaged in quantities."^^xsd:string ;
+  rdfs:comment "Any product destined for use by enterprise. Consumer products may be packaged in quantities." ;
   rdfs:subClassOf DT:Product ;
 .
 DT:consignee
   rdf:type owl:Class ;
-  rdfs:comment "the organization responsible for receiving the cargo"^^xsd:string ;
+  rdfs:comment "the organization responsible for receiving the cargo" ;
   rdfs:subClassOf DT:logisticActor ;
 .
 DT:consignor
   rdf:type owl:Class ;
-  rdfs:comment "the organization responsible for sending the cargo"^^xsd:string ;
+  rdfs:comment "the organization responsible for sending the cargo" ;
   rdfs:subClassOf DT:logisticActor ;
 .
 DT:consumerProduct
   rdf:type owl:Class ;
-  rdfs:comment "Any product destined for consumption or use by consumers. Consumer products might be packaged in quantities."^^xsd:string ;
+  rdfs:comment "Any product destined for consumption or use by consumers. Consumer products might be packaged in quantities." ;
   rdfs:subClassOf DT:Product ;
 .
 DT:containerizedCargo
@@ -592,7 +586,7 @@ DT:package_type
 .
 DT:partProduct
   rdf:type owl:Class ;
-  rdfs:comment "Products destined for use in machines owned by consumers or enterprises"^^xsd:string ;
+  rdfs:comment "Products destined for use in machines owned by consumers or enterprises" ;
   rdfs:subClassOf DT:Product ;
 .
 DT:place_of_acceptance
@@ -610,12 +604,12 @@ DT:postal_code
 .
 DT:product_ID
   rdf:type owl:DatatypeProperty ;
-  rdfs:comment "Code uniquely identifying a product from either customer or service provider (supplier) perspective."^^xsd:string ;
+  rdfs:comment "Code uniquely identifying a product from either customer or service provider (supplier) perspective." ;
   rdfs:range xsd:string ;
 .
 DT:product_Name
   rdf:type owl:DatatypeProperty ;
-  rdfs:comment "Name of the product related to the code"^^xsd:string ;
+  rdfs:comment "Name of the product related to the code" ;
   rdfs:range xsd:string ;
 .
 DT:provider
