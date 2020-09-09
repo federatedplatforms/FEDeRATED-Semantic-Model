@@ -1,60 +1,205 @@
-# baseURI: http://tno.io/SFShape
+# baseURI: http://tno.io/searchFind
 # imports: http://datashapes.org/dash
-# prefix: SFShape
+# imports: http://tno.io/BusinessService
+# imports: http://tno.io/Classifications
+# imports: http://tno.io/DigitalTwin
+# imports: http://tno.io/Event
+# imports: http://topbraid.org/schema/schema-single-range
+# imports: http://www.w3.org/2004/02/skos/core
+# prefix: searchFind
 
-@prefix SFShape: <http://tno.io/SFShape#> .
-@prefix : <http://tno.io/SFShape#> .
+@prefix : <http://tno.io/searchFind#> .
+@prefix BusinessService: <http://tno.io/BusinessService#> .
+@prefix Classifications: <http://tno.io/Classifications#> .
+@prefix DT: <http://tno.io/DigitalTwin#> .
+@prefix businessService: <http://tno.io/BusinessService#> .
 @prefix dash: <http://datashapes.org/dash#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix event: <http://tno.io/Event#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/> .
+@prefix schemax: <http://topbraid.org/schemax/> .
+@prefix searchFind: <http://tno.io/searchFind#> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
-@prefix DT: <http://tno.io/DigitalTwin#> .
-@prefix businessServicee: <http://tno.io/BusinessService#> .
-@prefix event: <http://tno.io/Event#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix swa: <http://topbraid.org/swa#> .
+@prefix tosh: <http://topbraid.org/tosh#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<http://tno.io/SFShape>
+
+<http://tno.io/searchFind>
   rdf:type owl:Ontology ;
   owl:imports <http://datashapes.org/dash> ;
   owl:imports <http://tno.io/BusinessService> ;
   owl:imports <http://tno.io/Classifications> ;
   owl:imports <http://tno.io/DigitalTwin> ;
   owl:imports <http://tno.io/Event> ;
+  owl:imports <http://topbraid.org/schema/schema-single-range> ;
   owl:imports <http://www.w3.org/2004/02/skos/core> ;
-  owl:imports sh: ;
-  owl:versionInfo "Created with TopBraid Composer"^^xsd:string ;
+  owl:versionInfo "Created with TopBraid Composer" ;
 .
-
- #[exampleRuleforusingsh:SPARQLConstraint]IfacargoisoftypeDangerouseGood,thenitmustbeeithercode1orcode2. 
-
-:cargo_shape a sh:NodeShape ;
-sh:targetSubjectsOf DT:classification_detail ;
-sh:property [
-        sh:path DT:classification_detail ;
-        sh:sparql [
-           a sh:SPARQLConstraint ;
-           sh:message "Cargo should be either code 1 or code 2" ;
-           sh:prefixes DT: ;
-           sh:select """
-            SELECT $this ?value
-            WHERE {
-             $this dt:classification_detail ?type_detail;
-              $PATH ?value.
-            filter (?type_detail = Classifications:DangerouseGoods && ?value != Classifications:Code_1 && ?value != Classifications:code_2)
-            }
-            """ ;
-        ] ;
+searchFind:CargoShape
+  rdf:type sh:NodeShape ;
+  sh:or (
+      [
+        sh:not [
+            sh:property [
+                sh:path rdf:type ;
+                sh:hasValue classifications:D ;
+              ] ;
+          ] ;
+      ]
+      [
+        sh:property [
+            sh:path classifications:dangerouseGoodsClassification ;
+            sh:class classifications:DangerouseGoodClassification ;
+            sh:minCount 1 ;
+          ] ;
+      ]
+    ) ;
+  sh:property [
+      rdf:type sh:PropertyShape ;
+      sh:path DT:CargoSize ;
+      sh:datatype xsd:string ;
+      sh:description """Any instance of Cargo must have at least of property DT:cargoSize whose value must be xsd:string.
+""" ;
+      sh:minCount 1 ;
+      sh:name "Cargo size" ;
+      sh:node dash:ClosedByTypesConstraintComponent-closedByTypes ;
+    ] ;
+  sh:property [
+      rdf:type sh:PropertyShape ;
+      sh:path DT:CargoTemperature ;
+      sh:datatype xsd:integer ;
+      sh:description "Temperature of the Cargo (maximum or minimum)" ;
+      sh:minCount 1 ;
+      sh:name "Cargo temperature" ;
+    ] ;
+  sh:property [
+      rdf:type sh:PropertyShape ;
+      sh:path DT:TypeOfCargo ;
+      sh:class classifications:CargoType ;
+      sh:minCount 1 ;
+      sh:name "Type of cargo" ;
+    ] ;
+  sh:property [
+      rdf:type sh:PropertyShape ;
+      sh:path DT:cargoMaximumVolume ;
+      sh:datatype xsd:integer ;
+      sh:description """Any instance of Cargo class must have at least one property DT:cargoMaximumVolume whose datatyep must be xsd:integer literals. 
+""" ;
+      sh:minCount 1 ;
+      sh:name "cargo maximum volume" ;
+    ] ;
+  sh:property [
+      rdf:type sh:PropertyShape ;
+      sh:path DT:natureofCargo ;
+      sh:class classifications:Nature_of_Cargo ;
+      sh:description "Any instance of Cargo must of at least one property DT:natureofCargo with values of type classifications:Nature_of_Cargo" ;
+      sh:minCount 1 ;
+      sh:name "natureof cargo" ;
+    ] ;
+  sh:property [
+      sh:path DT:CargoMinimumVolume ;
+      dash:coExistsWith DT:cargoMaximumVolume ;
+      sh:datatype xsd:integer ;
+      sh:description "Any intance of Cargo must have at least one property DT:cargoMinimumVolume whose value of datatype xsd:intger" ;
+      sh:minCount 1 ;
+    ] ;
+  sh:property [
+      sh:path DT:cargo_container_size ;
+      sh:datatype xsd:integer ;
+      sh:description "Any intance of Cargo must have at least one property DT:cargo_container_size whose value of datatype xsd:intger" ;
+      sh:minCount 1 ;
+    ] ;
+  sh:targetClass DT:Cargo ;
+.
+searchFind:ContainerSizeShape
+  rdf:type sh:NodeShape ;
+.
+searchFind:CorridorShape
+  rdf:type sh:NodeShape ;
+  sh:property [
+      rdf:type sh:PropertyShape ;
+      sh:path DT:corridorName ;
+      sh:class classifications:CorridorCodeList ;
+      sh:description "Any Instance of the class Corridor must have at least one property DT:corridorName with values of type classifications:corridoeCodeList" ;
+      sh:maxCount 1 ;
+      sh:name "corridor name" ;
+    ] ;
+  sh:targetClass DT:Corridor ;
+.
+searchFind:ItenianryShape
+  rdf:type sh:NodeShape ;
+.
+searchFind:LSPShape
+  rdf:type sh:NodeShape ;
+  sh:property [
+      rdf:type sh:PropertyShape ;
+      sh:path DT:LSPName ;
+      sh:datatype xsd:string ;
+      sh:maxCount 1 ;
+      sh:minCount 1 ;
+      sh:name "LSPName" ;
+    ] ;
+  sh:property [
+      rdf:type sh:PropertyShape ;
+      sh:path DT:LSPWebSite ;
+      sh:datatype xsd:string ;
+      sh:maxCount 1 ;
+      sh:minCount 1 ;
+      sh:name "LSPWeb site" ;
     ] ;
 .
-
-:natureofCargo_shape a sh:NodeShape;
-sh:targetSubjectOf DT:natureofCargo ;
-  
-sh:property [
-        sh:path DT:natureofCargo ;
-		sh:minCount 1 ;
-   ];
-   .
-   
-
+searchFind:PareclShape
+  rdf:type sh:NodeShape ;
+.
+searchFind:TempratureShape
+  rdf:type sh:NodeShape ;
+.
+searchFind:TransportEventShape
+  rdf:type sh:NodeShape ;
+  sh:property [
+      rdf:type sh:PropertyShape ;
+      sh:path event:eventDate ;
+      sh:datatype xsd:dateTime ;
+      sh:maxCount 1 ;
+      sh:minCount 1 ;
+      sh:name "event date" ;
+    ] ;
+  sh:property [
+      rdf:type sh:PropertyShape ;
+      sh:path event:eventDate ;
+      sh:datatype xsd:dateTime ;
+      sh:maxCount 1 ;
+      sh:minCount 1 ;
+      sh:name "event date" ;
+    ] ;
+  sh:property [
+      rdf:type sh:PropertyShape ;
+      sh:path event:event_mileStone_detail ;
+      sh:class event:MileStone ;
+      sh:maxCount 1 ;
+      sh:minCount 1 ;
+      sh:name "event mile stone detail" ;
+    ] ;
+  sh:targetClass event:DropOffEvent ;
+  sh:targetClass event:PickupEvent ;
+.
+searchFind:TransportModalityShape
+  rdf:type sh:NodeShape ;
+.
+searchFind:TransportServiceDurationShape
+  rdf:type sh:NodeShape ;
+.
+searchFind:TransportServiceEventShape
+  rdf:type sh:NodeShape ;
+.
+searchFind:TransportTrack
+  rdf:type sh:NodeShape ;
+.
+searchFind:packageShape
+  rdf:type sh:NodeShape ;
+.
