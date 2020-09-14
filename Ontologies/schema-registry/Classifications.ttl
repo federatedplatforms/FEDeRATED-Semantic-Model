@@ -1,6 +1,7 @@
 # baseURI: http://tno.io/Classifications
 # imports: http://www.w3.org/2004/02/skos/core
 # imports: http://www.w3.org/ns/shacl#
+# prefix: classifications
 
 @prefix : <http://tno.io/Classifications#> .
 @prefix DT: <http://tno.io/DigitalTwin#> .
@@ -22,111 +23,111 @@ classifications:
   owl:imports businessService: ;
   owl:imports DT: ;
   owl:imports <http://www.w3.org/2004/02/skos/core> ;
-  owl:versionInfo "Created with TopBraid Composer"^^xsd:string ;
+  owl:versionInfo "Created with TopBraid Composer" ;
 .
 classifications:Air
-  rdf:type classifications:TransportMode ;
+  rdf:type classifications:transportModality ;
+.
+classifications:Classifications
+  rdf:type owl:Class ;
+  rdfs:subClassOf owl:Thing ;
 .
 classifications:D
-  rdf:type classifications:Nature_of_Cargo ;
-  rdfs:label "Dangerous"^^xsd:string ;
+  rdf:type classifications:natureOfCargo ;
+  rdfs:label "Dangerous" ;
 .
 classifications:D_1
-  rdfs:label "Reefer"^^xsd:string ;
-.
-classifications:DangerouseGoodClassification
-  rdf:type owl:Class ;
-  rdfs:subClassOf classifications:classifications ;
+  rdfs:label "Reefer" ;
 .
 classifications:E
-  rdf:type classifications:Nature_of_Cargo ;
-  rdfs:label "Excise"^^xsd:string ;
+  rdf:type classifications:natureOfCargo ;
+  rdfs:label "Excise" ;
 .
 classifications:Flashpoint
   rdf:type owl:DatatypeProperty ;
-  rdfs:domain classifications:DangerouseGoodClassification ;
+  rdfs:domain classifications:dangerousGoodsClassification ;
   rdfs:range xsd:string ;
 .
 classifications:Hazard_type_code_IMDG
-  rdf:type classifications:DangerouseGoodClassification ;
+  rdf:type classifications:dangerousGoodsClassification ;
   rdf:type skos:Concept ;
 .
 classifications:LCL
-  rdf:type classifications:TransportMovementType ;
-.
-classifications:Nature_of_Cargo
-  rdf:type owl:Class ;
-  rdfs:subClassOf classifications:classifications ;
+  rdf:type classifications:transportMovementType ;
 .
 classifications:R
-  rdf:type classifications:Nature_of_Cargo ;
-  rdfs:label "Reefer"^^xsd:string ;
+  rdf:type classifications:natureOfCargo ;
+  rdfs:label "Reefer" ;
 .
 classifications:Requiement_code_1
   rdf:type classifications:Requirements ;
 .
 classifications:Requirements
   rdf:type owl:Class ;
-  rdfs:subClassOf classifications:classifications ;
+  rdfs:subClassOf classifications:Classifications ;
 .
 classifications:Road
-  rdf:type classifications:TransportMode ;
+  rdf:type classifications:transportModality ;
 .
 classifications:SI
-  rdf:type classifications:Unit_of_Measure ;
+  rdf:type classifications:unitOfMeasure ;
 .
 classifications:Sea
-  rdf:type classifications:TransportMode ;
-.
-classifications:Shipping_name
-  rdf:type owl:DatatypeProperty ;
-  rdfs:domain classifications:DangerouseGoodClassification ;
-  rdfs:range xsd:string ;
-.
-classifications:TransportMode
-  rdf:type owl:Class ;
-  rdfs:subClassOf classifications:classifications ;
-.
-classifications:TransportMovementType
-  rdf:type owl:Class ;
-  rdfs:subClassOf classifications:classifications ;
+  rdf:type classifications:transportModality ;
 .
 classifications:UNDG_id
-  rdf:type classifications:DangerouseGoodClassification ;
+  rdf:type classifications:dangerousGoodsClassification ;
   rdf:type skos:Concept ;
 .
-classifications:Unit_of_Measure
-  rdf:type owl:Class ;
-  rdfs:subClassOf classifications:classifications ;
-.
 classifications:W
-  rdf:type classifications:Nature_of_Cargo ;
-  rdfs:label "Waste"^^xsd:string ;
+  rdf:type classifications:natureOfCargo ;
+  rdfs:label "Waste" ;
 .
 classifications:additional_hazard_classification_ID
-  rdf:type classifications:DangerouseGoodClassification ;
+  rdf:type classifications:dangerousGoodsClassification ;
   rdf:type skos:Concept ;
 .
 classifications:appliesTo
   rdf:type owl:ObjectProperty ;
 .
-classifications:classifications
+classifications:dangerousGoodsClassification
   rdf:type owl:Class ;
-  rdfs:subClassOf owl:Thing ;
+  rdfs:subClassOf classifications:Classifications ;
 .
 classifications:hazard_class_ID
-  rdf:type classifications:DangerouseGoodClassification ;
+  rdf:type classifications:dangerousGoodsClassification ;
   rdf:type skos:Concept ;
 .
 classifications:limited_quantity_code
-  rdf:type classifications:DangerouseGoodClassification ;
+  rdf:type classifications:dangerousGoodsClassification ;
   rdf:type skos:Concept ;
 .
+classifications:natureOfCargo
+  rdf:type owl:Class ;
+  rdfs:subClassOf classifications:Classifications ;
+.
 classifications:packaging_danger_level_code
-  rdf:type classifications:DangerouseGoodClassification ;
+  rdf:type classifications:dangerousGoodsClassification ;
   rdf:type skos:Concept ;
 .
 classifications:regulation_code
-  rdf:type classifications:DangerouseGoodClassification ;
+  rdf:type classifications:dangerousGoodsClassification ;
   rdf:type skos:Concept ;
+.
+classifications:shippingName
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain classifications:dangerousGoodsClassification ;
+  rdfs:range xsd:string ;
+.
+classifications:transportModality
+  rdf:type owl:Class ;
+  rdfs:subClassOf classifications:Classifications ;
+.
+classifications:transportMovementType
+  rdf:type owl:Class ;
+  rdfs:subClassOf classifications:Classifications ;
+.
+classifications:unitOfMeasure
+  rdf:type owl:Class ;
+  rdfs:subClassOf classifications:Classifications ;
 .

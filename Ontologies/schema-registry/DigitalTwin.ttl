@@ -14,9 +14,61 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<http://tno.io/Classifications#classifications_detail>
+businessService:Anchorage
+  rdfs:label "Anchorage" ;
+.
+businessService:businessService
+  rdfs:label "Business Service" ;
+.
+businessService:businessServiceOverview
+  rdfs:label "Business Service Overview" ;
+.
+businessService:businessTransaction
+  rdfs:label "Business Transaction" ;
+.
+businessService:groupageService
+  rdfs:label "Groupage Service" ;
+.
+businessService:storageServiceCargo
+  rdfs:label "Storage Service Cargo" ;
+.
+businessService:storageServiceProduct
+  rdfs:label "Storage Service Product" ;
+.
+businessService:transshipmentService
+  rdfs:label "Transshipment Service" ;
+.
+<http://tno.io/Classifications#Classifications>
+  rdfs:label "Classifications" ;
+.
+<http://tno.io/Classifications#Flashpoint>
+  rdfs:label "Flashpoint" ;
+.
+<http://tno.io/Classifications#Requirements>
+  rdfs:label "Requirements Classification" ;
+.
+<http://tno.io/Classifications#classificationsDetail>
   rdf:type rdf:Property ;
-  rdfs:range <http://tno.io/Classifications#DangerouseGoodClassification> ;
+  rdfs:label "Classifications Detail" ;
+  rdfs:range <http://tno.io/Classifications#dangerousGoodsClassification> ;
+.
+<http://tno.io/Classifications#dangerousGoodsClassification>
+  rdfs:label "Dangerous Goods Classification" ;
+.
+<http://tno.io/Classifications#natureOfCargo>
+  rdfs:label "Nature of Cargo Classification" ;
+.
+<http://tno.io/Classifications#shippingName>
+  rdfs:label "Shipping Name Classification" ;
+.
+<http://tno.io/Classifications#transportModality>
+  rdfs:label "Transport Modality Classification" ;
+.
+<http://tno.io/Classifications#transportMovementType>
+  rdfs:label "Transport Movement Type Classification" ;
+.
+<http://tno.io/Classifications#unitOfMeasure>
+  rdfs:label "Unit of Measure Classification" ;
 .
 <http://tno.io/DigitalTwin>
   rdf:type owl:Ontology ;
@@ -26,55 +78,51 @@
 .
 DT:Address
   rdf:type owl:Class ;
+  rdfs:label "Addres" ;
   rdfs:subClassOf DT:DigitalTwin ;
   owl:disjointWith DT:Cargo ;
   owl:disjointWith DT:Equipment ;
   owl:disjointWith DT:Location ;
   owl:disjointWith DT:Product ;
   owl:disjointWith DT:Role ;
-  owl:disjointWith DT:Transportmeans ;
   owl:disjointWith DT:logisticActor ;
+  owl:disjointWith DT:transportMeans ;
 .
 DT:Airplane
   rdf:type owl:Class ;
   rdfs:comment "Transport means by air." ;
-  rdfs:subClassOf DT:Transportmeans ;
+  rdfs:label "Airplane" ;
+  rdfs:subClassOf DT:transportMeans ;
 .
 DT:Airport
   rdf:type owl:Class ;
   rdfs:comment "Location where airplanes pick or drop of freight." ;
-  rdfs:subClassOf DT:LogisticalFunction ;
+  rdfs:subClassOf DT:logisticalFunction ;
 .
 DT:Area
   rdf:type owl:Class ;
   rdfs:comment "Any area relevant to logistics operations." ;
-  rdfs:subClassOf DT:InfrastructuralFunction ;
+  rdfs:label "Area" ;
+  rdfs:subClassOf DT:infrastructuralFunction ;
 .
 DT:Barge
   rdf:type owl:Class ;
   rdfs:comment "Vessel used for transporting cargo on inland waterways." ;
-  rdfs:subClassOf DT:Transportmeans ;
-.
-DT:BulkFeeder
-  rdf:type owl:Class ;
-  rdfs:subClassOf DT:Feeder ;
+  rdfs:label "Barge" ;
+  rdfs:subClassOf DT:transportMeans ;
 .
 DT:Cargo
   rdf:type owl:Class ;
   rdfs:comment "The goods that are transported from origin to destination." ;
+  rdfs:label "Cargo" ;
   rdfs:subClassOf DT:DigitalTwin ;
   owl:disjointWith DT:Address ;
   owl:disjointWith DT:Equipment ;
   owl:disjointWith DT:Location ;
   owl:disjointWith DT:Product ;
   owl:disjointWith DT:Role ;
-  owl:disjointWith DT:Transportmeans ;
   owl:disjointWith DT:logisticActor ;
-.
-DT:CargoSize
-  rdf:type owl:DatatypeProperty ;
-  rdfs:domain DT:Cargo ;
-  rdfs:range xsd:integer ;
+  owl:disjointWith DT:transportMeans ;
 .
 DT:Cargo_1
   rdf:type DT:Cargo ;
@@ -82,158 +130,165 @@ DT:Cargo_1
 DT:City
   rdf:type owl:Class ;
   rdfs:comment "A generic geographical location." ;
-  rdfs:subClassOf DT:InfrastructuralFunction ;
+  rdfs:label "City" ;
+  rdfs:subClassOf DT:infrastructuralFunction ;
+.
+DT:Consignee
+  rdf:type owl:Class ;
+  rdfs:comment "the organization responsible for receiving the cargo" ;
+  rdfs:label "Consignee" ;
+  rdfs:subClassOf DT:logisticActor ;
+.
+DT:Consignor
+  rdf:type owl:Class ;
+  rdfs:comment "the organization responsible for sending the cargo" ;
+  rdfs:label "Consignor" ;
+  rdfs:subClassOf DT:logisticActor ;
 .
 DT:Container
   rdf:type owl:Class ;
   rdfs:comment "Transport containers serve to containerize products." ;
+  rdfs:label "Container" ;
   rdfs:subClassOf DT:Equipment ;
-.
-DT:ContainerFeeder
-  rdf:type owl:Class ;
-  rdfs:subClassOf DT:Feeder ;
 .
 DT:Corridor
   rdf:type owl:Class ;
-  rdfs:subClassOf DT:InfrastructuralFunction ;
+  rdfs:label "Corridor" ;
+  rdfs:subClassOf DT:infrastructuralFunction ;
 .
 DT:Country
   rdf:type owl:Class ;
+  rdfs:label "Country" ;
   rdfs:subClassOf DT:Address ;
-.
-DT:Country_Code_iso2
-  rdf:type owl:DatatypeProperty ;
-.
-DT:Country_Name
-  rdf:type owl:DatatypeProperty ;
 .
 DT:Customer
   rdf:type rdfs:Class ;
-  rdfs:subClassOf DT:business_roles ;
-.
-DT:DeepseaBulkVessel
-  rdf:type owl:Class ;
-  rdfs:subClassOf DT:DeepseaVessel ;
-.
-DT:DeepseaContainerVessel
-  rdf:type owl:Class ;
-  rdfs:subClassOf DT:DeepseaVessel ;
-.
-DT:DeepseaVessel
-  rdf:type owl:Class ;
-  rdfs:comment "Used for ocean transport." ;
-  rdfs:subClassOf DT:Vessel ;
+  rdfs:label "Customer" ;
+  rdfs:subClassOf DT:businessRoles ;
 .
 DT:DigitalTwin
   rdf:type owl:Class ;
+  rdfs:label "Digital Twin" ;
   rdfs:subClassOf owl:Thing ;
 .
 DT:Equipment
   rdf:type owl:Class ;
   rdfs:comment "Any asset used to facilitate transport and handling of cargo." ;
+  rdfs:label "Equipment" ;
   rdfs:subClassOf DT:DigitalTwin ;
   owl:disjointWith DT:Address ;
   owl:disjointWith DT:Cargo ;
   owl:disjointWith DT:Location ;
   owl:disjointWith DT:Product ;
   owl:disjointWith DT:Role ;
-  owl:disjointWith DT:Transportmeans ;
   owl:disjointWith DT:logisticActor ;
+  owl:disjointWith DT:transportMeans ;
 .
 DT:Event_1
   rdf:type event:Event ;
-  event:event_cargo_detail DT:Cargo_1 ;
-  event:event_mileStone_detail event:start ;
-  event:event_transportmeans_detail DT:Transportmeans_1 ;
+  event:eventCargoDetail DT:Cargo_1 ;
+  event:eventMilestoneDetail event:start ;
+  event:eventTransportMeansDetail DT:Transportmeans_1 ;
 .
 DT:Feeder
   rdf:type owl:Class ;
   rdfs:comment "Used for short range transport  via sea." ;
+  rdfs:label "Feeder" ;
   rdfs:subClassOf DT:Vessel ;
 .
 DT:Ferry
   rdf:type owl:Class ;
   rdfs:comment "Used for transport of other transport means like trucks and/or trailers." ;
+  rdfs:label "Ferry" ;
   rdfs:subClassOf DT:Vessel ;
 .
 DT:Hub
   rdf:type owl:Class ;
   rdfs:comment "A place cargo is exchanged between vehicles or/and between transport modes." ;
-  rdfs:subClassOf DT:LogisticalFunction ;
+  rdfs:subClassOf DT:logisticalFunction ;
 .
-DT:InfrastructuralFunction
+DT:Landmark
   rdf:type owl:Class ;
-  rdfs:comment "Any part of an infrastructure used for performing logistical activities." ;
+  rdfs:label "Landmark" ;
   rdfs:subClassOf DT:Location ;
-  owl:disjointWith DT:LogisticalFunction ;
-.
-DT:InfrastructuralObject
-  rdf:type owl:Class ;
-  rdfs:subClassOf DT:InfrastructuralFunction ;
 .
 DT:Location
   rdf:type owl:Class ;
   rdfs:comment "A terminal, location, port, city centre, etc. where a cargo physical activity like transhipment or storage can take place." ;
+  rdfs:label "Location" ;
   rdfs:subClassOf DT:DigitalTwin ;
   owl:disjointWith DT:Address ;
   owl:disjointWith DT:Cargo ;
   owl:disjointWith DT:Equipment ;
   owl:disjointWith DT:Product ;
   owl:disjointWith DT:Role ;
-  owl:disjointWith DT:Transportmeans ;
   owl:disjointWith DT:logisticActor ;
+  owl:disjointWith DT:transportMeans ;
 .
 DT:Locomotive
   rdf:type owl:Class ;
   rdfs:comment "Any traction for a train composed of one or more wagons." ;
-  rdfs:subClassOf DT:Transportmeans ;
+  rdfs:label "Locomotive" ;
+  rdfs:subClassOf DT:transportMeans ;
 .
-DT:LogisticalFunction
-  rdf:type owl:Class ;
-  rdfs:comment "Any location where a logistical activity is performed." ;
-  rdfs:subClassOf DT:Location ;
+DT:Measure
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain DT:generalCargo ;
+  rdfs:label "Measure" ;
+  rdfs:range xsd:integer ;
+.
+DT:Modality
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain DT:transportMeans ;
+  rdfs:label "Modality" ;
+  rdfs:range xsd:string ;
+.
+DT:Name
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain DT:logisticActor ;
+  rdfs:label "Name" ;
+  rdfs:range xsd:string ;
 .
 DT:Port
   rdf:type owl:Class ;
   rdfs:comment "Location where vessels pick or drop of freight." ;
-  rdfs:subClassOf DT:LogisticalFunction ;
+  rdfs:subClassOf DT:logisticalFunction ;
 .
 DT:Product
   rdf:type owl:Class ;
   rdfs:comment "The actual objects that change ownership between a seller to a buyer. Any commercial goods that is bought and sold." ;
+  rdfs:label "Product" ;
   rdfs:subClassOf DT:DigitalTwin ;
   owl:disjointWith DT:Address ;
   owl:disjointWith DT:Cargo ;
   owl:disjointWith DT:Equipment ;
   owl:disjointWith DT:Location ;
   owl:disjointWith DT:Role ;
-  owl:disjointWith DT:Transportmeans ;
   owl:disjointWith DT:logisticActor ;
+  owl:disjointWith DT:transportMeans ;
+.
+DT:Provider
+  rdf:type rdfs:Class ;
+  rdfs:label "Provider" ;
+  rdfs:subClassOf DT:businessRoles ;
 .
 DT:Qualification
   rdf:type owl:Class ;
+  rdfs:label "Qualification" ;
   rdfs:subClassOf owl:Thing ;
-.
-DT:RailwayWagon
-  rdf:type owl:Class ;
-  rdfs:comment "Unpowered railway vehicles that are used for the transportation of cargo." ;
-  rdfs:subClassOf DT:Equipment ;
 .
 DT:Role
   rdf:type rdfs:Class ;
   rdfs:comment "" ;
+  rdfs:label "Role" ;
   rdfs:subClassOf DT:DigitalTwin ;
   owl:disjointWith DT:Address ;
   owl:disjointWith DT:Cargo ;
   owl:disjointWith DT:Equipment ;
   owl:disjointWith DT:Location ;
   owl:disjointWith DT:Product ;
-  owl:disjointWith DT:Transportmeans ;
   owl:disjointWith DT:logisticActor ;
-.
-DT:Swapbody
-  rdf:type owl:Class ;
-  rdfs:subClassOf DT:Equipment ;
+  owl:disjointWith DT:transportMeans ;
 .
 DT:Terminal
   rdf:type owl:Class ;
@@ -243,177 +298,212 @@ DT:Terminal
 DT:Trailer
   rdf:type owl:Class ;
   rdfs:comment "Unpowered road vehicles that are used for the transportation of cargo." ;
+  rdfs:label "Trailer" ;
   rdfs:subClassOf DT:Equipment ;
 .
 DT:Trajectory
   rdf:type owl:Class ;
   rdfs:comment "Any part of an infrastructure identified by its infrastructure manager." ;
-  rdfs:subClassOf DT:InfrastructuralFunction ;
-.
-DT:TransportServiceProvider
-  rdf:type owl:Class ;
-  rdfs:comment "the organization providing the transport. Within in an invoice this role is called the ‘Seller Supplier’." ;
-  rdfs:subClassOf DT:logisticActor ;
-.
-DT:Transport_user
-  rdf:type owl:Class ;
-  rdfs:comment "the organization ordering the transport. Within an invoice this role is called the ‘Buyer Customer’." ;
-  rdfs:subClassOf DT:logisticActor ;
-.
-DT:Transportmeans
-  rdf:type owl:Class ;
-  rdfs:comment """These are the vehicles that transport the cargo, such as tricks, vessels,
-trains, airplanes, barges etc.""" ;
-  rdfs:subClassOf DT:DigitalTwin ;
-  owl:disjointWith DT:Address ;
-  owl:disjointWith DT:Cargo ;
-  owl:disjointWith DT:Equipment ;
-  owl:disjointWith DT:Location ;
-  owl:disjointWith DT:Product ;
-  owl:disjointWith DT:Role ;
-  owl:disjointWith DT:logisticActor ;
+  rdfs:label "Trajectory" ;
+  rdfs:subClassOf DT:infrastructuralFunction ;
 .
 DT:Transportmeans_1
-  rdf:type DT:Transportmeans ;
+  rdf:type DT:transportMeans ;
 .
 DT:Transshipment
   rdf:type owl:Class ;
   rdfs:comment "An intermediate destination for transiting cargo to another destination." ;
-  rdfs:subClassOf DT:LogisticalFunction ;
+  rdfs:subClassOf DT:logisticalFunction ;
 .
 DT:Truck
   rdf:type owl:Class ;
   rdfs:comment "Any transport means for road transport." ;
-  rdfs:subClassOf DT:Transportmeans ;
+  rdfs:label "Truck" ;
+  rdfs:subClassOf DT:transportMeans ;
 .
 DT:ULD
   rdf:type owl:Class ;
   rdfs:comment "Unit Load Devices are light weight containers for air transport and facilitate loading cargo into aircraft." ;
+  rdfs:label "ULD" ;
   rdfs:subClassOf DT:Equipment ;
 .
 DT:Vessel
   rdf:type owl:Class ;
   rdfs:comment "Any transport means used for transporting cargo by sea/ocean." ;
-  rdfs:subClassOf DT:Transportmeans ;
+  rdfs:label "Vessel" ;
+  rdfs:subClassOf DT:transportMeans ;
 .
-DT:actor_role_detail
+DT:actorRoleDetail
   rdf:type owl:ObjectProperty ;
   rdfs:domain DT:logisticActor ;
+  rdfs:label "Actor Role Detail" ;
   rdfs:range DT:Role ;
 .
 DT:anchorage
   rdf:type owl:Class ;
-  rdfs:subClassOf DT:LogisticalFunction ;
+  rdfs:subClassOf DT:logisticalFunction ;
 .
 DT:bulkCargo
   rdf:type owl:Class ;
+  rdfs:label "Bulk Cargo" ;
   rdfs:subClassOf DT:Cargo ;
+.
+DT:bulkFeeder
+  rdf:type owl:Class ;
+  rdfs:label "Bulk Feeder" ;
+  rdfs:subClassOf DT:Feeder ;
 .
 DT:bulkProduct
   rdf:type owl:Class ;
   rdfs:comment "Any unpackaged raw material" ;
+  rdfs:label "Bulk Product" ;
   rdfs:subClassOf DT:Product ;
 .
-DT:bulk_volume
+DT:bulkVolume
   rdf:type owl:DatatypeProperty ;
   rdfs:domain DT:bulkCargo ;
+  rdfs:label "Bulk Volume" ;
   rdfs:range xsd:integer ;
 .
-DT:business_roles
+DT:businessRoles
   rdf:type rdfs:Class ;
+  rdfs:label "Business Roles" ;
   rdfs:subClassOf DT:Role ;
 .
-DT:cargo_container_number
+DT:cargoContainerNumber
   rdf:type owl:DatatypeProperty ;
   rdfs:domain DT:containerizedCargo ;
+  rdfs:label "Cargo Container Number" ;
   rdfs:range xsd:string ;
   owl:someValuesFrom DT:Equipment ;
 .
-DT:cargo_container_size
+DT:cargoContainerSize
   rdf:type owl:DatatypeProperty ;
   rdfs:domain DT:containerizedCargo ;
+  rdfs:label "Cargo Container Size" ;
   rdfs:range xsd:integer ;
 .
-DT:cargo_container_type
+DT:cargoContainerType
   rdf:type owl:DatatypeProperty ;
   rdfs:domain DT:containerizedCargo ;
+  rdfs:label "Cargo Container Type" ;
   rdfs:range xsd:string ;
+.
+DT:cargoSize
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain DT:Cargo ;
+  rdfs:label "Cargo Size" ;
+  rdfs:range xsd:integer ;
 .
 DT:commercialProduct
   rdf:type owl:Class ;
   rdfs:comment "Any product destined for use by enterprise. Consumer products may be packaged in quantities." ;
+  rdfs:label "Commercial Product" ;
   rdfs:subClassOf DT:Product ;
-.
-DT:consignee
-  rdf:type owl:Class ;
-  rdfs:comment "the organization responsible for receiving the cargo" ;
-  rdfs:subClassOf DT:logisticActor ;
-.
-DT:consignor
-  rdf:type owl:Class ;
-  rdfs:comment "the organization responsible for sending the cargo" ;
-  rdfs:subClassOf DT:logisticActor ;
 .
 DT:consumerProduct
   rdf:type owl:Class ;
   rdfs:comment "Any product destined for consumption or use by consumers. Consumer products might be packaged in quantities." ;
+  rdfs:label "Consumer Product" ;
   rdfs:subClassOf DT:Product ;
+.
+DT:containerFeeder
+  rdf:type owl:Class ;
+  rdfs:label "Container Feeder" ;
+  rdfs:subClassOf DT:Feeder ;
 .
 DT:containerizedCargo
   rdf:type owl:Class ;
+  rdfs:label "Containerized Cargo" ;
   rdfs:subClassOf DT:Cargo ;
 .
 DT:corridorCode
   rdf:type owl:DatatypeProperty ;
   rdfs:domain DT:Corridor ;
+  rdfs:label "Corridor Code" ;
   rdfs:range xsd:string ;
 .
 DT:corridorName
   rdf:type owl:DatatypeProperty ;
   rdfs:domain DT:Corridor ;
+  rdfs:label "Corridor Name" ;
   rdfs:range xsd:string ;
 .
-DT:damage_location
+DT:countryCode
+  rdf:type owl:DatatypeProperty ;
+  rdfs:comment "ISO2" ;
+  rdfs:label "Country Code" ;
+.
+DT:countryName
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Country Name" ;
+.
+DT:damageLocation
   rdf:type owl:DatatypeProperty ;
   rdfs:domain DT:containerizedCargo ;
+  rdfs:label "Damage Location" ;
   rdfs:range xsd:string ;
 .
-DT:damage_remarks
+DT:damageRemarks
   rdf:type owl:DatatypeProperty ;
   rdfs:domain DT:containerizedCargo ;
+  rdfs:label "Damage Remarks" ;
   rdfs:range xsd:string ;
 .
-DT:driving_certificate_number
+DT:deepSeaBulkVessel
+  rdf:type owl:Class ;
+  rdfs:label "Deep Sea Bulk Vessel" ;
+  rdfs:subClassOf DT:deepSeaVessel ;
+.
+DT:deepSeaContainerVessel
+  rdf:type owl:Class ;
+  rdfs:label "Deep Sea Container Vessel" ;
+  rdfs:subClassOf DT:deepSeaVessel ;
+.
+DT:deepSeaVessel
+  rdf:type owl:Class ;
+  rdfs:comment "Used for ocean transport." ;
+  rdfs:label "Deep Sea Vessel" ;
+  rdfs:subClassOf DT:Vessel ;
+.
+DT:drivingCertificateNumber
   rdf:type owl:DatatypeProperty ;
   rdfs:domain DT:Qualification ;
+  rdfs:label "Driving Certificate Number" ;
   rdfs:range xsd:string ;
 .
-DT:employee_detail
+DT:employeeDetail
   rdf:type owl:ObjectProperty ;
+  rdfs:label "Employee Detail" ;
 .
-DT:equipment_container_ITU_code
+DT:equipmentContainerITUCode
   rdf:type owl:DatatypeProperty ;
   rdfs:domain DT:Container ;
+  rdfs:label "Equipment Container ITU Code" ;
   rdfs:range xsd:string ;
 .
-DT:equipment_container_size
+DT:equipmentContainerSize
   rdf:type owl:DatatypeProperty ;
   rdfs:domain DT:Container ;
+  rdfs:label "Equipment Container Size" ;
   rdfs:range xsd:string ;
 .
-DT:equipment_container_tare_weight
+DT:equipmentContainerTareWeight
   rdf:type owl:DatatypeProperty ;
   rdfs:domain DT:Container ;
+  rdfs:label "Equipment Container Tare Weight" ;
   rdfs:range xsd:integer ;
 .
-DT:equipment_container_type
+DT:equipmentContainerType
   rdf:type owl:DatatypeProperty ;
   rdfs:domain DT:Container ;
+  rdfs:label "Equipment Container Type" ;
   rdfs:range xsd:string ;
 .
-DT:euqipment_trailer_license_plate
+DT:equipmentTrailerLicensePlate
   rdf:type owl:DatatypeProperty ;
   rdfs:domain DT:Trailer ;
+  rdfs:label "Equipment Trailer License Plate" ;
   rdfs:range xsd:string ;
 .
 DT:fullfils
@@ -423,104 +513,132 @@ DT:fullfils
 .
 DT:generalCargo
   rdf:type owl:Class ;
+  rdfs:label "General Cargo" ;
   rdfs:subClassOf DT:Cargo ;
 .
-DT:goods_description
+DT:goodsDescription
   rdf:type owl:DatatypeProperty ;
   rdfs:domain DT:generalCargo ;
+  rdfs:label "Goods Description" ;
   rdfs:range xsd:string ;
 .
 DT:grossMass
   rdf:type owl:DatatypeProperty ;
   rdfs:domain DT:generalCargo ;
+  rdfs:label "Gross Mass" ;
   rdfs:range xsd:integer ;
 .
 DT:hasAddress
   rdf:type owl:ObjectProperty ;
   rdfs:domain DT:Location ;
+  rdfs:label "Has Address" ;
   rdfs:range DT:Address ;
 .
-DT:infrastructural_roles
+DT:infrastructuralFunction
+  rdf:type owl:Class ;
+  rdfs:comment "Any part of an infrastructure used for performing logistical activities." ;
+  rdfs:label "Infrastructural Function" ;
+  rdfs:subClassOf DT:Location ;
+  owl:disjointWith DT:logisticalFunction ;
+.
+DT:infrastructuralObject
+  rdf:type owl:Class ;
+  rdfs:label "Infrastructural Object" ;
+  rdfs:subClassOf DT:infrastructuralFunction ;
+.
+DT:infrastructuralRoles
   rdf:type rdfs:Class ;
+  rdfs:label "Infrastructural Roles" ;
   rdfs:subClassOf DT:Role ;
 .
-DT:is_empty
+DT:isEmpty
   rdf:type owl:DatatypeProperty ;
-  rdfs:domain DT:RailwayWagon ;
   rdfs:domain DT:containerizedCargo ;
+  rdfs:domain DT:railwayWagon ;
+  rdfs:label "Is Empty" ;
   rdfs:range xsd:boolean ;
 .
-DT:is_full
+DT:isFull
   rdf:type owl:DatatypeProperty ;
-  rdfs:domain DT:RailwayWagon ;
+  rdfs:domain DT:railwayWagon ;
+  rdfs:label "Is Full" ;
   rdfs:range xsd:boolean ;
 .
-DT:landmark
+DT:locationRole
   rdf:type owl:Class ;
-  rdfs:subClassOf DT:Location ;
+  rdfs:label "Location Role" ;
+  rdfs:subClassOf DT:Role ;
 .
-DT:locationRole_cargo_detail
+DT:locationRoleCargoDetail
   rdf:type owl:ObjectProperty ;
-  rdfs:domain DT:location_role ;
+  rdfs:domain DT:locationRole ;
+  rdfs:label "Location Role Cargo Detail" ;
   rdfs:range DT:Cargo ;
 .
-DT:locationRole_event_detail
+DT:locationRoleEventDetail
   rdf:type owl:ObjectProperty ;
-  rdfs:domain DT:location_role ;
+  rdfs:domain DT:locationRole ;
+  rdfs:label "Location Role Event Detail" ;
   rdfs:range event:Event ;
 .
-DT:locationRole_location_detail
+DT:locationRoleLocationDetail
   rdf:type owl:ObjectProperty ;
-  rdfs:domain DT:location_role ;
+  rdfs:domain DT:locationRole ;
+  rdfs:label "Location Role Location Detail" ;
   rdfs:range DT:Location ;
 .
-DT:locationRole_transaction_detail
+DT:locationRoleTransactionDetail
   rdf:type owl:ObjectProperty ;
-  rdfs:domain DT:location_role ;
+  rdfs:domain DT:locationRole ;
+  rdfs:label "Location Role Transaction Detail" ;
   rdfs:range businessService:LogisticsTransaction ;
 .
-DT:locationRole_transport_detail
+DT:locationRoleTransportDetail
   rdf:type owl:ObjectProperty ;
-  rdfs:domain DT:location_role ;
-  rdfs:range DT:Transportmeans ;
+  rdfs:domain DT:locationRole ;
+  rdfs:label "Location Role Transport Detail" ;
+  rdfs:range DT:transportMeans ;
 .
-DT:location_role
-  rdf:type owl:Class ;
-  rdfs:subClassOf DT:Role ;
-.
-DT:locomotive_brake_type
+DT:locomotiveBrakeType
   rdf:type owl:DatatypeProperty ;
   rdfs:domain DT:Locomotive ;
+  rdfs:label "Locomotive Brake Type" ;
   rdfs:range xsd:string ;
 .
-DT:locomotive_brake_weight
+DT:locomotiveBrakeWeight
   rdf:type owl:DatatypeProperty ;
   rdfs:domain DT:Locomotive ;
+  rdfs:label "Locomotive Brake Weight" ;
   rdfs:range xsd:string ;
 .
-DT:locomotive_driver_indication
+DT:locomotiveDriverIndication
   rdf:type owl:DatatypeProperty ;
   rdfs:domain DT:Locomotive ;
+  rdfs:label "Locomotive Driver Indication" ;
   rdfs:range xsd:string ;
 .
-DT:locomotive_identifier
+DT:locomotiveIdentifier
   rdf:type owl:DatatypeProperty ;
   rdfs:domain DT:Locomotive ;
+  rdfs:label "Locomotive Identifier" ;
   rdfs:range xsd:string ;
 .
-DT:locomotive_traction_type
+DT:locomotiveTractionType
   rdf:type owl:DatatypeProperty ;
   rdfs:domain DT:Locomotive ;
+  rdfs:label "Locomotive Traction Type" ;
   rdfs:range xsd:string ;
 .
-DT:locomotive_type_number
+DT:locomotiveTypeNumber
   rdf:type owl:DatatypeProperty ;
   rdfs:domain DT:Locomotive ;
+  rdfs:label "Locomotive Type Number" ;
   rdfs:range xsd:string ;
 .
 DT:logisticActor
   rdf:type owl:Class ;
   rdfs:comment "The role of a Person is context dependant, and therefore should be described using the Actor class." ;
+  rdfs:label "Logistic Actor" ;
   rdfs:subClassOf DT:DigitalTwin ;
   owl:disjointWith DT:Address ;
   owl:disjointWith DT:Cargo ;
@@ -528,148 +646,266 @@ DT:logisticActor
   owl:disjointWith DT:Location ;
   owl:disjointWith DT:Product ;
   owl:disjointWith DT:Role ;
-  owl:disjointWith DT:Transportmeans ;
+  owl:disjointWith DT:transportMeans ;
 .
-DT:marks_number
+DT:logisticalFunction
+  rdf:type owl:Class ;
+  rdfs:comment "Any location where a logistical activity is performed." ;
+  rdfs:label "Logistical Function" ;
+  rdfs:subClassOf DT:Location ;
+.
+DT:marksNumber
   rdf:type owl:DatatypeProperty ;
   rdfs:domain DT:generalCargo ;
-  rdfs:range xsd:string ;
-.
-DT:measure
-  rdf:type owl:DatatypeProperty ;
-  rdfs:domain DT:generalCargo ;
-  rdfs:range xsd:integer ;
-.
-DT:modality
-  rdf:type owl:DatatypeProperty ;
-  rdfs:domain DT:Transportmeans ;
-  rdfs:range xsd:string ;
-.
-DT:name
-  rdf:type owl:DatatypeProperty ;
-  rdfs:domain DT:logisticActor ;
+  rdfs:label "Marks Number" ;
   rdfs:range xsd:string ;
 .
 DT:natureofCargo
   rdf:type owl:ObjectProperty ;
   rdfs:domain DT:Cargo ;
-  rdfs:range <http://tno.io/Classifications#Nature_of_Cargo> ;
+  rdfs:label "Nature of Cargo" ;
+  rdfs:range <http://tno.io/Classifications#natureOfCargo> ;
 .
 DT:netLoad
   rdf:type owl:DatatypeProperty ;
   rdfs:domain DT:containerizedCargo ;
+  rdfs:label "Net Load" ;
   rdfs:range xsd:integer ;
 .
 DT:netMass
   rdf:type owl:DatatypeProperty ;
   rdfs:domain DT:generalCargo ;
+  rdfs:label "Net Mass" ;
   rdfs:range xsd:integer ;
 .
-DT:numberofPackages
+DT:numberOfPackages
   rdf:type owl:DatatypeProperty ;
   rdfs:domain DT:generalCargo ;
+  rdfs:label "Number of Packages" ;
   rdfs:range xsd:integer ;
 .
-DT:other_InfrastructuralLocation
+DT:otherInfrastructuralLocation
   rdf:type owl:Class ;
-  rdfs:subClassOf DT:InfrastructuralFunction ;
+  rdfs:label "Other Infrastructural Location" ;
+  rdfs:subClassOf DT:infrastructuralFunction ;
 .
-DT:package_level_type
+DT:packageLevelType
   rdf:type owl:DatatypeProperty ;
   rdfs:domain DT:generalCargo ;
+  rdfs:label "Package Level Type" ;
   rdfs:range xsd:string ;
 .
-DT:package_type
+DT:packageType
   rdf:type owl:DatatypeProperty ;
   rdfs:domain DT:generalCargo ;
+  rdfs:label "Package Type" ;
   rdfs:range xsd:string ;
 .
 DT:partProduct
   rdf:type owl:Class ;
   rdfs:comment "Products destined for use in machines owned by consumers or enterprises" ;
+  rdfs:label "Part Product" ;
   rdfs:subClassOf DT:Product ;
 .
-DT:place_of_acceptance
+DT:placeOfAcceptance
   rdf:type owl:Class ;
-  rdfs:subClassOf DT:location_role ;
+  rdfs:label "Place of Acceptance" ;
+  rdfs:subClassOf DT:locationRole ;
 .
-DT:place_of_delivery
+DT:placeOfDelivery
   rdf:type owl:Class ;
-  rdfs:subClassOf DT:location_role ;
+  rdfs:label "Place of Delivery" ;
+  rdfs:subClassOf DT:locationRole ;
 .
-DT:postal_code
+DT:postalCode
   rdf:type owl:DatatypeProperty ;
   rdfs:domain DT:Address ;
+  rdfs:label "Postal Code" ;
   rdfs:range xsd:string ;
 .
-DT:product_ID
+DT:productID
   rdf:type owl:DatatypeProperty ;
   rdfs:comment "Code uniquely identifying a product from either customer or service provider (supplier) perspective." ;
+  rdfs:label "Product ID" ;
   rdfs:range xsd:string ;
 .
-DT:product_Name
+DT:productName
   rdf:type owl:DatatypeProperty ;
   rdfs:comment "Name of the product related to the code" ;
+  rdfs:label "Product Name" ;
   rdfs:range xsd:string ;
 .
-DT:provider
-  rdf:type rdfs:Class ;
-  rdfs:subClassOf DT:business_roles ;
+DT:railwayWagon
+  rdf:type owl:Class ;
+  rdfs:comment "Unpowered railway vehicles that are used for the transportation of cargo." ;
+  rdfs:label "Railway Wagon" ;
+  rdfs:subClassOf DT:Equipment ;
 .
-DT:security_level
+DT:securityLevel
   rdf:type owl:DatatypeProperty ;
   rdfs:domain DT:Port ;
+  rdfs:label "Security Level" ;
   rdfs:range xsd:string ;
 .
-DT:security_measure
+DT:securityMeasure
   rdf:type owl:DatatypeProperty ;
   rdfs:domain DT:Port ;
+  rdfs:label "Security Measure" ;
   rdfs:range xsd:string ;
 .
-DT:shipping_marks
+DT:shippingMarks
   rdf:type owl:DatatypeProperty ;
   rdfs:domain DT:generalCargo ;
+  rdfs:label "Shipping Marks" ;
   rdfs:range xsd:string ;
 .
-DT:truck_license_plate
+DT:swapBody
+  rdf:type owl:Class ;
+  rdfs:label "Swap Body" ;
+  rdfs:subClassOf DT:Equipment ;
+.
+DT:transportMeans
+  rdf:type owl:Class ;
+  rdfs:comment """These are the vehicles that transport the cargo, such as tricks, vessels,
+trains, airplanes, barges etc.""" ;
+  rdfs:label "Transport Means" ;
+  rdfs:subClassOf DT:DigitalTwin ;
+  owl:disjointWith DT:Address ;
+  owl:disjointWith DT:Cargo ;
+  owl:disjointWith DT:Equipment ;
+  owl:disjointWith DT:Location ;
+  owl:disjointWith DT:Product ;
+  owl:disjointWith DT:Role ;
+  owl:disjointWith DT:logisticActor ;
+.
+DT:transportServiceProvider
+  rdf:type owl:Class ;
+  rdfs:comment "the organization providing the transport. Within in an invoice this role is called the ‘Seller Supplier’." ;
+  rdfs:label "Transport Service Provider" ;
+  rdfs:subClassOf DT:logisticActor ;
+.
+DT:transportUser
+  rdf:type owl:Class ;
+  rdfs:comment "the organization ordering the transport. Within an invoice this role is called the ‘Buyer Customer’." ;
+  rdfs:label "Transport User" ;
+  rdfs:subClassOf DT:logisticActor ;
+.
+DT:truckLicensePlate
   rdf:type owl:DatatypeProperty ;
   rdfs:domain DT:Truck ;
+  rdfs:label "Truck License Plate" ;
   rdfs:range xsd:string ;
 .
-DT:vessel_name
+DT:vesselName
   rdf:type owl:DatatypeProperty ;
   rdfs:domain DT:Vessel ;
+  rdfs:label "Vessel Name" ;
   rdfs:range xsd:string ;
 .
-DT:vessel_type
+DT:vesselType
   rdf:type owl:DatatypeProperty ;
   rdfs:domain DT:Vessel ;
+  rdfs:label "Vessel Type" ;
   rdfs:range xsd:string ;
 .
-DT:wagon_brake_type
+DT:wagonBrakeType
   rdf:type owl:DatatypeProperty ;
-  rdfs:domain DT:RailwayWagon ;
+  rdfs:domain DT:railwayWagon ;
+  rdfs:label "Wagon Brake Type" ;
   rdfs:range xsd:string ;
 .
-DT:wagon_brake_weight
+DT:wagonBrakeWeight
   rdf:type owl:DatatypeProperty ;
-  rdfs:domain DT:RailwayWagon ;
+  rdfs:domain DT:railwayWagon ;
+  rdfs:label "Wagon Brake Weight" ;
   rdfs:range xsd:integer ;
 .
-DT:wagon_maximum_speed
+DT:wagonMaximumSpeed
   rdf:type owl:DatatypeProperty ;
-  rdfs:domain DT:RailwayWagon ;
+  rdfs:domain DT:railwayWagon ;
+  rdfs:label "Wagon Maximum Speed" ;
   rdfs:range xsd:integer ;
 .
-DT:wagon_nr_axel
+DT:wagonNrAxel
   rdf:type owl:DatatypeProperty ;
-  rdfs:domain DT:RailwayWagon ;
+  rdfs:domain DT:railwayWagon ;
+  rdfs:label "Wagon Nr Axel" ;
   rdfs:range xsd:string ;
 .
-event:event_transportmeans_detail
+event:ATAEvent
+  rdfs:label "ATA Event" ;
+.
+event:ATDEvent
+  rdfs:label "ATD Event" ;
+.
+event:ETAEvent
+  rdfs:label "ETA Event" ;
+.
+event:ETDEvent
+  rdfs:label "ETD Event" ;
+.
+event:Event
+  rdfs:label "Event" ;
+.
+event:Milestone
+  rdfs:label "Milestone" ;
+.
+event:containerDischargedEvent
+  rdfs:label "Container Discharged Event" ;
+.
+event:containerLoadedEvent
+  rdfs:label "Container Loaded Event" ;
+.
+event:dischargeEvent
+  rdfs:label "Discharge Event" ;
+.
+event:dropOffTimeWindow
+  rdfs:label "Drop Off Time Window" ;
+.
+event:eventBusinessTransactionDetail
+  rdfs:label "Event Business Transaction Detail" ;
+.
+event:eventCargoDetail
+  rdfs:label "Event Cargo Detail" ;
+.
+event:eventContainerDetail
+  rdfs:label "Event Container Detail" ;
+.
+event:eventDate
+  rdfs:label "Event Date" ;
+.
+event:eventEquipmentDetail
+  rdfs:label "Event Equipment Detail" ;
+.
+event:eventLocationDetail
+  rdfs:label "Event Location Detail" ;
+.
+event:eventLogisticServiceDetail
+  rdfs:label "Event Logistic Service Detail" ;
+.
+event:eventMilestoneDetail
+  rdfs:label "Event Milestone Detail" ;
+.
+event:eventTime
+  rdfs:label "Event Time" ;
+.
+event:eventTransportMeansDetail
   rdf:type rdf:Property ;
   rdfs:domain event:Event ;
-  rdfs:range DT:Transportmeans ;
+  rdfs:label "Event Transport Means Detail" ;
+  rdfs:range DT:transportMeans ;
   owl:inverseOf <http://tno.io/BusinessService#:businessTransaction_event_detail> ;
   owl:inverseOf event:transaction_event_detail ;
+.
+event:loadEvent
+  rdfs:label "Load Event" ;
+.
+event:packEvent
+  rdfs:label "Pack Event" ;
+.
+event:pickupTimeWindow
+  rdfs:label "Pickup Time Window" ;
+.
+event:unpackEvent
+  rdfs:label "Unpack Event" ;
 .

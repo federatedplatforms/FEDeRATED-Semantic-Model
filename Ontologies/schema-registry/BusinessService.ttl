@@ -1,7 +1,5 @@
 # baseURI: http://tno.io/BusinessService
-# imports: http://tno.io/DigitalTwin#
-# imports: http://tno.io/Event#
-# imports: http://www.w3.org/2004/02/skos/core
+# prefix: businessService
 
 @prefix : <http://tno.io/BusinessService#> .
 @prefix businessService: <http://tno.io/BusinessService#> .
@@ -10,55 +8,49 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-businessService: 
+businessService:
   rdf:type owl:Ontology ;
   owl:imports <http://tno.io/DigitalTwin#> ;
   owl:imports <http://tno.io/Event#> ;
   owl:imports <http://www.w3.org/2004/02/skos/core> ;
-  owl:versionInfo "Created with TopBraid Composer"^^xsd:string ;
+  owl:versionInfo "Created with TopBraid Composer" ;
 .
-
-:BusinessServiceOverview
-        a       owl:Class .
-        
-:BusinessService  a      owl:Class ;
-        rdfs:comment     "The commercial relation between any two enterprises in a chain of business transactions." ;
-        rdfs:subClassOf  :BusinessServiceOverview .
-    
-    
-
-:Anchorage  a            owl:Class ;
-        rdfs:subClassOf  :BusinessService .
-    
-    
-    
-    
-:GroupageService  a      owl:Class ;
-        rdfs:subClassOf  :BusinessService .
-    
-    
-    
-:storageServiceCargo  a  owl:Class ;
-        rdfs:subClassOf  :BusinessService .
-    
-    
-    
-:storageServiceProduct
-        a                owl:Class ;
-        rdfs:subClassOf  :BusinessService .
-    
-    
-:TransportService  a     owl:Class ;
-        rdfs:subClassOf  :BusinessService .
-    
-    
-:TransshipmenService  a  owl:Class ;
-        rdfs:subClassOf  :BusinessService .
-    
-
-:BusinessTransaction  a  owl:Class ;
-        rdfs:subClassOf  :BusinessServiceOverview .
-    
-:piloting  a                       :BusinessService ;      
-        
-        
+businessService:Anchorage
+  rdf:type owl:Class ;
+  rdfs:subClassOf businessService:businessService ;
+.
+businessService:businessService
+  rdf:type owl:Class ;
+  rdfs:comment "The commercial relation between any two enterprises in a chain of business transactions." ;
+  rdfs:subClassOf businessService:businessServiceOverview ;
+.
+businessService:businessServiceOverview
+  rdf:type owl:Class ;
+.
+businessService:businessTransaction
+  rdf:type owl:Class ;
+  rdfs:subClassOf businessService:businessServiceOverview ;
+.
+businessService:groupageService
+  rdf:type owl:Class ;
+  rdfs:subClassOf businessService:businessService ;
+.
+businessService:piloting
+  rdf:type businessService:businessService ;
+.
+businessService:storageServiceCargo
+  rdf:type owl:Class ;
+  rdfs:subClassOf businessService:businessService ;
+.
+businessService:storageServiceProduct
+  rdf:type owl:Class ;
+  rdfs:subClassOf businessService:businessService ;
+.
+businessService:transportService
+  rdf:type owl:Class ;
+  rdfs:subClassOf businessService:businessService ;
+.
+businessService:transshipmentService
+  rdf:type owl:Class ;
+  rdfs:subClassOf businessService:businessService ;
+.
