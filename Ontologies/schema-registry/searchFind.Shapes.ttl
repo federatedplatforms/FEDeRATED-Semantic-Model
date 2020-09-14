@@ -203,3 +203,45 @@ searchFind:TransportTrack
 searchFind:packageShape
   rdf:type sh:NodeShape ;
 .
+searchFind:LocationShape
+  rdf:type sh:NodeShape ;
+  sh:targetClass DT:Location ;
+  sh:property [
+    sh:path DT:isoCode ;
+	rdf:type sh:PropertyShape ;
+	sh:description "Any instance of Location must have at exactly one property DT:isoCode with values of type eu/ece:countryISOCode." ;
+	sh:datatype xsd:integer ;
+	sh:minCount 1; 
+	sh:maxCount 1 ;
+	sh:name "Location ISO-code" ;
+  ] ;
+  sh:property [
+    sh:path DT:countryName ;
+	rdf:type sh:PropertyShape ;
+	sh:datatype xsd:string ;
+	sh:minCount 1 ;
+	sh:maxCount 1 ;
+	sh:description "Any instance of a Location must have exactly one property DT:countryName with a string literal as its value." ;
+	sh:name "Location country name" ;
+  ] ;
+  sh:property [
+    sh:path DT:cityName ;
+	rdf:type sh:PropertyShape ;
+	sh:datatype xsd:string ;
+	sh:minCount 1 ;
+	sh:maxCount 1 ;
+	sh:description "Any instance of a Location must have exactly one property DT:cityName with a string literal as its value." ;
+	sh:name "Location city name" ;
+  ] ;
+  sh:property [
+    sh:path DT:cityLocode ;
+	rdf:type sh:PropertyShape ;
+	sh:datatype xsd:string ;
+	sh:minCount 1 ;
+	sh:maxCount 1 ;
+	sh:pattern "[A-Z]{3}" ;
+	sh:description "Any instance of a Location must have exactly one property DT:cityLocode with a string literal as its value. The string should be three capitalized characters." ;
+	sh:name "Location city locode" ;
+  ] ;
+.
+	
