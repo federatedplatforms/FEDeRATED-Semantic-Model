@@ -10,7 +10,7 @@
 
 @prefix : <http://tno.io/searchFind#> .
 @prefix BusinessService: <http://tno.io/BusinessService#> .
-@prefix Classifications: <http://tno.io/Classifications#> .
+@prefix classifications: <http://tno.io/Classifications#> .
 @prefix DT: <http://tno.io/DigitalTwin#> .
 @prefix businessService: <http://tno.io/BusinessService#> .
 @prefix dash: <http://datashapes.org/dash#> .
