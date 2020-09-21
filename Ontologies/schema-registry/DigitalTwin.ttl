@@ -86,7 +86,6 @@ promote modal integration and interoperability.""" ;
 .
 DT:Country
   rdf:type owl:Class ;
-  rdf:type sh:NodeShape ;
   rdfs:comment "a geographic division -- Country" ;
   rdfs:subClassOf DT:Location ;
 .

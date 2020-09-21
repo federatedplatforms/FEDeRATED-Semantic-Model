@@ -21,7 +21,6 @@
   rdf:type owl:Ontology ;
   owl:imports <http://www.ontology-of-units-of-measure.org/resource/om-2/> ;
   owl:imports <http://www.w3.org/2004/02/skos/core> ;
-  owl:imports sh: ;
 .
 classifications:Air
   rdf:type classifications:transportModality ;
