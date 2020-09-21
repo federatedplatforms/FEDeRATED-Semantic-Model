@@ -53,6 +53,7 @@ DT:Barge
 .
 DT:BulkFeeder
   rdf:type owl:Class ;
+  rdfs:comment "are common devices used to feed individual component parts for assembly on industrial production lines." ;
   rdfs:label "Bulk Feeder" ;
   rdfs:subClassOf DT:Feeder ;
 .
@@ -65,23 +66,8 @@ DT:Cargo
   owl:disjointWith DT:Location ;
   owl:disjointWith DT:Product ;
   owl:disjointWith DT:TransportMeans ;
-  owl:disjointWith DT:logisticsActor ;
 .
-DT:Cargo_instance
-  rdf:type DT:Cargo ;
-.
-DT:Consignee
-  rdf:type owl:Class ;
-  rdfs:comment "the organization responsible for receiving the cargo" ;
-  rdfs:label "Consignee" ;
-  rdfs:subClassOf DT:logisticsActor ;
-.
-DT:Consignor
-  rdf:type owl:Class ;
-  rdfs:comment "the organization responsible for sending the cargo" ;
-  rdfs:label "Consignor" ;
-  rdfs:subClassOf DT:logisticsActor ;
-.
+
 DT:Container
   rdf:type owl:Class ;
   rdfs:comment "Transport containers serve to containerize products." ;
@@ -91,7 +77,6 @@ DT:Container
 DT:Corridor
   rdf:type owl:Class ;
   rdfs:comment """Core network corridors\" were introduced to facilitate the coordinated implementation of the core network. They bring together public and private resources and concentrate EU support from the CEF, particularly to:
-
 remove bottlenecks,
 build missing cross-border connections and
 promote modal integration and interoperability.""" ;
@@ -102,14 +87,10 @@ promote modal integration and interoperability.""" ;
 DT:Country
   rdf:type owl:Class ;
   rdf:type sh:NodeShape ;
-  rdfs:comment "Country" ;
+  rdfs:comment "a geographic division -- Country" ;
   rdfs:subClassOf DT:Location ;
 .
-DT:Customer
-  rdf:type owl:Class ;
-  rdfs:label "Customer" ;
-  rdfs:subClassOf DT:logisticsActor ;
-.
+
 DT:DigitalTwin
   rdf:type owl:Class ;
   rdfs:comment "Digital Twin is any real world object (physical) and/or concept (non-physical) that can have digital (coded) replica." ;
@@ -125,7 +106,6 @@ DT:Equipment
   owl:disjointWith DT:Location ;
   owl:disjointWith DT:Product ;
   owl:disjointWith DT:TransportMeans ;
-  owl:disjointWith DT:logisticsActor ;
 .
 DT:Feeder
   rdf:type owl:Class ;
@@ -145,20 +125,7 @@ DT:Hub
   rdfs:label "Hub" ;
   rdfs:subClassOf DT:logisticalFunction ;
 .
-DT:LSPName
-  rdf:type owl:DatatypeProperty ;
-  rdfs:domain DT:logisticsServiceProvider ;
-  rdfs:label "Logistic Service Provider Name" ;
-  rdfs:range xsd:string ;
-  rdfs:subPropertyOf DT:actorProperties ;
-.
-DT:LSPWebSite
-  rdf:type owl:DatatypeProperty ;
-  rdfs:domain DT:logisticsServiceProvider ;
-  rdfs:label "Logistics Service Provider WebSite" ;
-  rdfs:range xsd:string ;
-  rdfs:subPropertyOf DT:actorProperties ;
-.
+
 DT:Landmark
   rdf:type owl:Class ;
   rdfs:label "Land Mark" ;
@@ -173,7 +140,6 @@ DT:Location
   owl:disjointWith DT:Equipment ;
   owl:disjointWith DT:Product ;
   owl:disjointWith DT:TransportMeans ;
-  owl:disjointWith DT:logisticsActor ;
 .
 DT:Locomotive
   rdf:type owl:Class ;
@@ -209,7 +175,6 @@ DT:Product
   owl:disjointWith DT:Equipment ;
   owl:disjointWith DT:Location ;
   owl:disjointWith DT:TransportMeans ;
-  owl:disjointWith DT:logisticsActor ;
 .
 DT:RailwayWagon
   rdf:type owl:Class ;
@@ -251,10 +216,6 @@ trains, airplanes, barges etc.""" ;
   owl:disjointWith DT:Equipment ;
   owl:disjointWith DT:Location ;
   owl:disjointWith DT:Product ;
-  owl:disjointWith DT:logisticsActor ;
-.
-DT:Transportmeans_1
-  rdf:type DT:TransportMeans ;
 .
 DT:Transshipment
   rdf:type owl:Class ;
@@ -280,11 +241,7 @@ DT:Vessel
   rdfs:label "Vessel" ;
   rdfs:subClassOf DT:TransportMeans ;
 .
-DT:actorProperties
-  rdf:type owl:DatatypeProperty ;
-  rdfs:domain DT:logisticsActor ;
-  rdfs:comment  "do not instantiate." ;
-.
+
 DT:bulkCargo
   rdf:type owl:Class ;
   rdfs:comment "BUlk cargo is typically material stacked on pallets and lifted into and out of the hold of a vessel by cranes on the dock or aboard the ship itself. The volume of break bulk cargo has declined dramatically worldwide as containerization has grown." ;
@@ -301,6 +258,7 @@ DT:bulkVolume
   rdf:type owl:DatatypeProperty ;
   rdfs:domain DT:bulkCargo ;
   rdfs:range xsd:integer ;
+  rdfs:comment "the measure of volume expressed in m3" ;
   rdfs:label "Bulk Volume" ;
   rdfs:subPropertyOf DT:cargoProperties ;
 .
@@ -309,6 +267,7 @@ DT:cargoContainerNumber
   rdfs:domain DT:containerizedCargo ;
   rdfs:range xsd:string ;
   rdfs:label "Cargo Container Number" ;
+  rdfs:comment "TO ADD" ;
   rdfs:subPropertyOf DT:cargoProperties ;
   owl:someValuesFrom DT:Equipment ;
 .
@@ -619,22 +578,7 @@ DT:logisticalFunction
   rdfs:label "Logistical Function" ;
   rdfs:subClassOf DT:Location ;
 .
-DT:logisticsActor
-  rdf:type owl:Class ;
-  rdfs:comment "The role of a Person is context dependant, and therefore should be described using the Actor class." ;
-  rdfs:label "Logistics Actor" ;
-  rdfs:subClassOf DT:DigitalTwin ;
-  owl:disjointWith DT:Cargo ;
-  owl:disjointWith DT:Equipment ;
-  owl:disjointWith DT:Location ;
-  owl:disjointWith DT:Product ;
-  owl:disjointWith DT:TransportMeans ;
-.
-DT:logisticsServiceProvider
-  rdf:type owl:Class ;
-  rdfs:label "Logistics Service Provider -LSP" ;
-  rdfs:subClassOf DT:logisticsActor ;
-.
+
 DT:marksNumber
   rdf:type owl:DatatypeProperty ;
   rdfs:domain DT:generalCargo ;
