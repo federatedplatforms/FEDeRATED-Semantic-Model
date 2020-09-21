@@ -7,7 +7,7 @@
 @prefix : <http://tno.io/Classifications#> .
 @prefix DT: <http://tno.io/DigitalTwin#> .
 @prefix MathM: <http://www.w3.org/1998/Math/MathML> .
-@prefix businessService: <http://tno.io/BusinessService#> .
+@prefix Service: <http://tno.io/Service#> .
 @prefix classifications: <http://tno.io/Classifications#> .
 @prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
@@ -21,16 +21,15 @@
   rdf:type owl:Ontology ;
   owl:imports <http://www.ontology-of-units-of-measure.org/resource/om-2/> ;
   owl:imports <http://www.w3.org/2004/02/skos/core> ;
-  owl:imports sh: ;
 .
 classifications:Air
   rdf:type classifications:transportModality ;
 .
 classifications:Atlantic_Corridor
-  rdf:type classifications:corridorCode ;
+  rdf:type classifications:corridorName ;
 .
 classifications:Baltic-Adriatic_Corridor
-  rdf:type classifications:corridorCode ;
+  rdf:type classifications:corridorName ;
 .
 classifications:D
   rdf:type classifications:natureOfCargo ;
@@ -79,16 +78,16 @@ classifications:LCL-LCL
   rdfs:comment "Defines the movement of cargo packed in and unpacked from containers by the carrier on behalf of the shipper/consignee. 'LCL' means Less than Container Load." ;
 .
 classifications:Mediterranean_Corridor
-  rdf:type classifications:corridorCode ;
+  rdf:type classifications:corridorName ;
 .
 classifications:North_Sea-Baltic_Corridor
-  rdf:type classifications:corridorCode ;
+  rdf:type classifications:corridorName ;
 .
 classifications:North_Sea-Mediterranean_Corridor
-  rdf:type classifications:corridorCode ;
+  rdf:type classifications:corridorName ;
 .
 classifications:Orient_East-Med_Corridor
-  rdf:type classifications:corridorCode ;
+  rdf:type classifications:corridorName ;
 .
 classifications:Palletized
   rdf:type classifications:packageType ;
@@ -98,19 +97,19 @@ classifications:R
   rdfs:label "Reefer" ;
 .
 classifications:Rhine-Alpine_Corridor
-  rdf:type classifications:corridorCode ;
+  rdf:type classifications:corridorName ;
 .
 classifications:Rhine-Danube_Corridor
-  rdf:type classifications:corridorCode ;
+  rdf:type classifications:corridorName ;
 .
 classifications:Rhine_Alpine_Corridor
-  rdf:type classifications:corridorCode ;
+  rdf:type classifications:corridorName ;
 .
 classifications:Road
   rdf:type classifications:transportModality ;
 .
 classifications:Scandinavian-Mediterranean_Corridor
-  rdf:type classifications:corridorCode ;
+  rdf:type classifications:corridorName ;
 .
 classifications:Sea
   rdf:type classifications:transportModality ;
@@ -131,7 +130,7 @@ classifications:classifications
   rdf:type owl:Class ;
   rdfs:subClassOf owl:Thing ;
 .
-classifications:corridorCode
+classifications:corridorName
   rdf:type owl:Class ;
   rdfs:comment """Core network corridors\" were introduced to facilitate the coordinated implementation of the core network in Europe. 
 

@@ -1,6 +1,6 @@
 # baseURI: http://tno.io/searchFind
 # imports: http://datashapes.org/dash
-# imports: http://tno.io/BusinessService
+# imports: http://tno.io/Service
 # imports: http://tno.io/Classifications
 # imports: http://tno.io/DigitalTwin
 # imports: http://tno.io/Event
@@ -9,10 +9,10 @@
 # prefix: searchFind
 
 @prefix : <http://tno.io/searchFind#> .
-@prefix BusinessService: <http://tno.io/BusinessService#> .
-@prefix classifications: <http://tno.io/Classifications#> .
+@prefix Service: <http://tno.io/Service#> .
 @prefix DT: <http://tno.io/DigitalTwin#> .
-@prefix businessService: <http://tno.io/BusinessService#> .
+@prefix Service: <http://tno.io/Service#> .
+@prefix classifications: <http://tno.io/Classifications#> .
 @prefix dash: <http://datashapes.org/dash#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix event: <http://tno.io/Event#> .
@@ -28,11 +28,10 @@
 @prefix tosh: <http://topbraid.org/tosh#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-
 <http://tno.io/searchFind>
   rdf:type owl:Ontology ;
   owl:imports <http://datashapes.org/dash> ;
-  owl:imports <http://tno.io/BusinessService> ;
+  owl:imports <http://tno.io/Service> ;
   owl:imports <http://tno.io/Classifications> ;
   owl:imports <http://tno.io/DigitalTwin> ;
   owl:imports <http://tno.io/Event> ;
@@ -153,6 +152,47 @@ searchFind:LSPShape
       sh:name "LSPWeb site" ;
     ] ;
 .
+searchFind:LocationShape
+  rdf:type sh:NodeShape ;
+  sh:property [
+      rdf:type sh:PropertyShape ;
+      sh:path DT:cityLocode ;
+      sh:datatype xsd:string ;
+      sh:description "Any instance of a Location must have exactly one property DT:cityLocode with a string literal as its value. The string should be three capitalized characters." ;
+      sh:maxCount 1 ;
+      sh:minCount 1 ;
+      sh:name "Location city locode" ;
+      sh:pattern "[A-Z]{3}" ;
+    ] ;
+  sh:property [
+      rdf:type sh:PropertyShape ;
+      sh:path DT:cityName ;
+      sh:datatype xsd:string ;
+      sh:description "Any instance of a Location must have exactly one property DT:cityName with a string literal as its value." ;
+      sh:maxCount 1 ;
+      sh:minCount 1 ;
+      sh:name "Location city name" ;
+    ] ;
+  sh:property [
+      rdf:type sh:PropertyShape ;
+      sh:path DT:countryName ;
+      sh:datatype xsd:string ;
+      sh:description "Any instance of a Location must have exactly one property DT:countryName with a string literal as its value." ;
+      sh:maxCount 1 ;
+      sh:minCount 1 ;
+      sh:name "Location country name" ;
+    ] ;
+  sh:property [
+      rdf:type sh:PropertyShape ;
+      sh:path DT:isoCode ;
+      sh:datatype xsd:integer ;
+      sh:description "Any instance of Location must have at exactly one property DT:isoCode with values of type eu/ece:countryISOCode." ;
+      sh:maxCount 1 ;
+      sh:minCount 1 ;
+      sh:name "Location ISO-code" ;
+    ] ;
+  sh:targetClass DT:Location ;
+.
 searchFind:PareclShape
   rdf:type sh:NodeShape ;
 .
@@ -186,13 +226,31 @@ searchFind:TransportEventShape
       sh:name "event mile stone detail" ;
     ] ;
   sh:targetClass event:DropOffEvent ;
-  sh:targetClass event:PickupEvent ;
+  sh:targetClass event:pickupEvent ;
 .
 searchFind:TransportModalityShape
   rdf:type sh:NodeShape ;
+  sh:property [
+      rdf:type sh:PropertyShape ;
+      sh:path DT:tarnsportModality_detail ;
+      sh:class classifications:transportModality ;
+      sh:minCount 1 ;
+      sh:name "tarnsport modality detail" ;
+      sh:nodeKind sh:BlankNode ;
+    ] ;
+  sh:targetClass DT:TransportMeans ;
 .
 searchFind:TransportServiceDurationShape
   rdf:type sh:NodeShape ;
+  sh:property [
+      rdf:type sh:PropertyShape ;
+      sh:path Service:tarnsportServiceDuration ;
+      sh:datatype xsd:decimal ;
+      sh:maxCount 1 ;
+      sh:minCount 1 ;
+      sh:name "Transport service duration" ;
+    ] ;
+  sh:targetClass Service:TransportService ;
 .
 searchFind:TransportServiceEventShape
   rdf:type sh:NodeShape ;
@@ -202,57 +260,4 @@ searchFind:TransportTrack
 .
 searchFind:packageShape
   rdf:type sh:NodeShape ;
-.
-searchFind:LocationShape
-  rdf:type sh:NodeShape ;
-  sh:targetClass DT:Location ;
-  sh:property [
-    sh:path DT:isoCode ;
-	rdf:type sh:PropertyShape ;
-	sh:description "Any instance of Location must have at exactly one property DT:isoCode with values of type eu/ece:countryISOCode." ;
-	sh:datatype xsd:integer ;
-	sh:minCount 1; 
-	sh:maxCount 1 ;
-	sh:name "Location ISO-code" ;
-  ] ;
-  sh:property [
-    sh:path DT:countryName ;
-	rdf:type sh:PropertyShape ;
-	sh:datatype xsd:string ;
-	sh:minCount 1 ;
-	sh:maxCount 1 ;
-	sh:description "Any instance of a Location must have exactly one property DT:countryName with a string literal as its value." ;
-	sh:name "Location country name" ;
-  ] ;
-  sh:property [
-    sh:path DT:cityName ;
-	rdf:type sh:PropertyShape ;
-	sh:datatype xsd:string ;
-	sh:minCount 1 ;
-	sh:maxCount 1 ;
-	sh:description "Any instance of a Location must have exactly one property DT:cityName with a string literal as its value." ;
-	sh:name "Location city name" ;
-  ] ;
-  sh:property [
-    sh:path DT:cityLocode ;
-	rdf:type sh:PropertyShape ;
-	sh:datatype xsd:string ;
-	sh:minCount 1 ;
-	sh:maxCount 1 ;
-	sh:pattern "[A-Z]{3}" ;
-	sh:description "Any instance of a Location must have exactly one property DT:cityLocode with a string literal as its value. The string should be three capitalized characters." ;
-	sh:name "Location city locode" ;
-  ] ;
-.
-	searchFind:transportServiceDurationShape
-  rdf:type sh:NodeShape ;
-  sh:property [
-      rdf:type sh:PropertyShape ;
-      sh:path businessService:tarnsportServiceDuration ;
-      sh:datatype xsd:decimal ;
-      sh:maxCount 1 ;
-      sh:minCount 1 ;
-      sh:name "Transport service duration" ;
-    ] ;
-  sh:targetClass businessService:TransportService ;
 .
