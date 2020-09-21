@@ -244,4 +244,15 @@ searchFind:LocationShape
 	sh:name "Location city locode" ;
   ] ;
 .
-	
+	searchFind:transportServiceDurationShape
+  rdf:type sh:NodeShape ;
+  sh:property [
+      rdf:type sh:PropertyShape ;
+      sh:path businessService:tarnsportServiceDuration ;
+      sh:datatype xsd:decimal ;
+      sh:maxCount 1 ;
+      sh:minCount 1 ;
+      sh:name "Transport service duration" ;
+    ] ;
+  sh:targetClass businessService:TransportService ;
+.
