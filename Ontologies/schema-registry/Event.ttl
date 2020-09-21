@@ -1,10 +1,10 @@
 # baseURI: http://tno.io/Event
-# imports: http://www.w3.org/2004/02/skos/core
+# prefix: event
 
 @prefix : <http://tno.io/Event#> .
-@prefix event: <http://tno.io/Event#> .
 @prefix DT: <http://tno.io/DigitalTwin#> .
 @prefix businessService: <http://tno.io/BusinessService#> .
+@prefix event: <http://tno.io/Event#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -12,175 +12,171 @@
 
 event:
   rdf:type owl:Ontology ;
-  owl:imports <http://www.w3.org/2004/02/skos/core> ;
-  owl:imports DT: ;
   owl:imports businessService: ;
-  owl:versionInfo "Created with TopBraid Composer"^^xsd:string ;
+  owl:imports DT: ;
+  owl:imports <http://www.w3.org/2004/02/skos/core> ;
+  owl:versionInfo "Created with TopBraid Composer" ;
 .
+event:ATAEvent
+  rdf:type owl:Class ;
+  rdfs:subClassOf event:Event ;
+.
+event:ATDEvent
+  rdf:type owl:Class ;
+  rdfs:subClassOf event:Event ;
+.
+event:ETAEvent
+  rdf:type owl:Class ;
+  rdfs:subClassOf event:Event ;
+.
+event:ETDEvent
+  rdf:type owl:Class ;
+  rdfs:subClassOf event:Event ;
+.
+event:Event
+  rdf:type owl:Class ;
+  rdfs:comment """Represent actions, milestones, transactions or any other real-world activity. These will typically involve one or more interactions or associations between location, business service, transport means and cargo. 		
 
+\"An event is a trigger that can be used to synchronize two or more activities. Events and their properties can further get specialized in another modul.\"
 
-##################################
-###Classes#####
-
-
-event:Event  a                owl:Class ;
-        rdfs:comment     "Represent actions, milestones, transactions or any other real-world activity. These will typically involve one or more interactions or associations between location, business service, transport means and cargo. \t\t\r\n\r\n\"An event is a trigger that can be used to synchronize two or more activities. Events and their properties can further get specialized in another modul.\"\r\n\r\nWith this definition of event in LogiCO, we specialize the concept of Event defined in a general way (on purpose) in the DOLCE UltraLite (DUL) ontology. According to the DUL definition, an event consists of any physical, social, or mental process, event, or state.\""^^xsd:string ;
-        rdfs:subClassOf  [ a                   owl:Restriction ;
-                           owl:minCardinality  "1"^^xsd:nonNegativeInteger ;
-                           owl:onProperty      :DigitalTwin_detail
-                         ] ;
-        rdfs:subClassOf  [ a                   owl:Restriction ;
-                           owl:minCardinality  "1"^^xsd:nonNegativeInteger ;
-                           owl:onProperty      :eventDate
-                         ] ;
-        rdfs:subClassOf  [ a                   owl:Restriction ;
-                           owl:minCardinality  "1"^^xsd:nonNegativeInteger ;
-                           owl:onProperty      :eventTime
-                         ] .
-
-event:ATA_event  a            owl:Class ;
-        rdfs:subClassOf  :Event .
-
-
-event:ATD_event  a            owl:Class ;
-        rdfs:subClassOf  :Event .
-
-
-
-event:containerDischarged_event
-        a                owl:Class ;
-        rdfs:subClassOf  :Event .
-
-event:containerLoaded_event
-        a                owl:Class ;
-        rdfs:subClassOf  :Event .
-
-
-event:Discharge  a            owl:Class ;
-        rdfs:subClassOf  :Event .
-
-
-event:dropOffTimeWindow  a    owl:Class ;
-        rdfs:subClassOf  :Event .
-
-
-event:ETA_event  a            owl:Class ;
-        rdfs:subClassOf  :Event .
-
-
-
-event:ETD_event  a            owl:Class ;
-        rdfs:subClassOf  :Event .
-
-event:Load_event  a           owl:Class ;
-        rdfs:subClassOf  :Event .
-
-
-
-event:Pack_event  a           owl:Class ;
-        rdfs:subClassOf  :Event .
-
-event:pickupTimeWindow  a     owl:Class ;
-        rdfs:subClassOf  :Event .
-
-
-event:Unpack_event  a         owl:Class ;
-        rdfs:subClassOf  :Event .
-        
-        
-        
-        
-event:EventDate  a            owl:Class ;
-        rdfs:subClassOf  owl:Thing .
-        
-event:actual_Date  a  :EventDate .
-        
-event:estimated_date  a  :EventDate .
-
-event:expected_date  a  :EventDate .
-
-event:planned_date  a  :EventDate .
-
-event:requested_date  a  :EventDate .
-
-
-event:EventTime  a            owl:Class ;
-        rdfs:subClassOf  owl:Thing .
-
-event:actual_time  a  :EventTime .
- 
-event:estimated_time  a  :EventTime .
-
-event:expected_time  a  :EventTime .
-
-:planned_time  a  :EventTime .
-
-:requested_time  a  :EventTime .
- 
- :MileStone  a            owl:Class ;
-        rdfs:subClassOf  owl:Thing .
- 
- 
-:end    a       :MileStone .
- 
-:start    a       :MileStone .
- 
- #########################
- ###datatypes
- 
-event:eventDate  a        owl:DatatypeProperty ;
-        rdfs:domain  event:Event ;
-        rdfs:range   event:EventDate .
- 
- 
-event:eventTime  a        owl:DatatypeProperty ;
-        rdfs:domain  event:Event ;
-        rdfs:range   event:EventTime .
- 
- 
- #################objectProperties
-  
-event:event_buisnessTransaction_detail
-        a              rdf:Property ;
-        rdfs:domain    event:Event ;
-        rdfs:range     businessService:BusinessTransaction ;
-        owl:inverseOf  businessService::businessTransaction_event_detail , :transaction_event_detail .
-  
-  
-event:event_cargo_detail  a  rdf:Property ;
-        rdfs:domain  event:Event ;
-        rdfs:range   DT:Cargo .
-  
-event:event_container_detail
-        a            rdf:Property ;
-        rdfs:domain  event:Event ;
-        rdfs:range   DT:Container .
-  
-  
-   
-event:event_equipment_detail
-        a            rdf:Property ;
-        rdfs:domain  event:Event ;
-        rdfs:range   DT:Equipment .
-   
-   
-event:event_location_detail
-        a            rdf:Property ;
-        rdfs:domain  event:Event ;
-        rdfs:range   DT:Location .
-        
-event:event_logistic_service_detail
-        a              rdf:Property ;
-        rdfs:domain    event:Event ;
-        rdfs:range     businessService::LogisticService ;
-        owl:inverseOf  businessService:transaction_event_detail .
-        
-   
-event:event_mileStone_detail
-        a            rdf:Property ;
-        rdfs:domain  :Event ;
-        rdfs:range   :MileStone .
-        
-        
-        
-        
+With this definition of event in LogiCO, we specialize the concept of Event defined in a general way (on purpose) in the DOLCE UltraLite (DUL) ontology. According to the DUL definition, an event consists of any physical, social, or mental process, event, or state.\"""" ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty event:DigitalTwin_detail ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty event:eventDate ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty event:eventTime ;
+    ] ;
+.
+event:Milestone
+  rdf:type owl:Class ;
+  rdfs:subClassOf owl:Thing ;
+.
+event:actual_Date
+  rdf:type event:eventDate ;
+.
+event:actual_time
+  rdf:type event:eventTime ;
+.
+event:containerDischargedEvent
+  rdf:type owl:Class ;
+  rdfs:subClassOf event:Event ;
+.
+event:containerLoadedEvent
+  rdf:type owl:Class ;
+  rdfs:subClassOf event:Event ;
+.
+event:dischargeEvent
+  rdf:type owl:Class ;
+  rdfs:subClassOf event:Event ;
+.
+event:dropOffTimeWindow
+  rdf:type owl:Class ;
+  rdfs:subClassOf event:Event ;
+.
+event:end
+  rdf:type event:Milestone ;
+.
+event:estimated_date
+  rdf:type event:eventDate ;
+.
+event:estimated_time
+  rdf:type event:eventTime ;
+.
+event:eventBusinessTransactionDetail
+  rdf:type rdf:Property ;
+  rdfs:domain event:Event ;
+  rdfs:range businessService:businessTransaction ;
+  owl:inverseOf <http://tno.io/BusinessService#:businessTransaction_event_detail> ;
+  owl:inverseOf event:transaction_event_detail ;
+.
+event:eventCargoDetail
+  rdf:type rdf:Property ;
+  rdfs:domain event:Event ;
+  rdfs:range DT:Cargo ;
+.
+event:eventContainerDetail
+  rdf:type rdf:Property ;
+  rdfs:domain event:Event ;
+  rdfs:range DT:Container ;
+.
+event:eventDate
+  rdf:type owl:Class ;
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain event:Event ;
+  rdfs:range event:eventDate ;
+  rdfs:subClassOf owl:Thing ;
+.
+event:eventEquipmentDetail
+  rdf:type rdf:Property ;
+  rdfs:domain event:Event ;
+  rdfs:range DT:Equipment ;
+.
+event:eventLocationDetail
+  rdf:type rdf:Property ;
+  rdfs:domain event:Event ;
+  rdfs:range DT:Location ;
+.
+event:eventLogisticServiceDetail
+  rdf:type rdf:Property ;
+  rdfs:domain event:Event ;
+  rdfs:range <http://tno.io/BusinessService#:LogisticService> ;
+  owl:inverseOf businessService:transaction_event_detail ;
+.
+event:eventMilestoneDetail
+  rdf:type rdf:Property ;
+  rdfs:domain event:Event ;
+  rdfs:range event:Milestone ;
+.
+event:eventTime
+  rdf:type owl:Class ;
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain event:Event ;
+  rdfs:range event:eventTime ;
+  rdfs:subClassOf owl:Thing ;
+.
+event:expected_date
+  rdf:type event:eventDate ;
+.
+event:expected_time
+  rdf:type event:eventTime ;
+.
+event:loadEvent
+  rdf:type owl:Class ;
+  rdfs:subClassOf event:Event ;
+.
+event:packEvent
+  rdf:type owl:Class ;
+  rdfs:subClassOf event:Event ;
+.
+event:pickupTimeWindow
+  rdf:type owl:Class ;
+  rdfs:subClassOf event:Event ;
+.
+event:planned_date
+  rdf:type event:eventDate ;
+.
+event:planned_time
+  rdf:type event:eventTime ;
+.
+event:requested_date
+  rdf:type event:eventDate ;
+.
+event:requested_time
+  rdf:type event:eventTime ;
+.
+event:start
+  rdf:type event:Milestone ;
+.
+event:unpackEvent
+  rdf:type owl:Class ;
+  rdfs:subClassOf event:Event ;
+.

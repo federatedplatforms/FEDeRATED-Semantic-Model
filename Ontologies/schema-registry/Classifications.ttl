@@ -1,132 +1,173 @@
 # baseURI: http://tno.io/Classifications
+# imports: http://www.ontology-of-units-of-measure.org/resource/om-2/
 # imports: http://www.w3.org/2004/02/skos/core
 # imports: http://www.w3.org/ns/shacl#
+# prefix: classifications
 
 @prefix : <http://tno.io/Classifications#> .
 @prefix DT: <http://tno.io/DigitalTwin#> .
+@prefix MathM: <http://www.w3.org/1998/Math/MathML> .
 @prefix businessService: <http://tno.io/BusinessService#> .
 @prefix classifications: <http://tno.io/Classifications#> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <http://tno.io/Classifications>
   rdf:type owl:Ontology ;
+  owl:imports <http://www.ontology-of-units-of-measure.org/resource/om-2/> ;
   owl:imports <http://www.w3.org/2004/02/skos/core> ;
-  owl:imports <http://www.w3.org/ns/shacl#> ;
-.
-classifications:
-  rdf:type owl:Ontology ;
-  owl:imports businessService: ;
-  owl:imports DT: ;
-  owl:imports <http://www.w3.org/2004/02/skos/core> ;
-  owl:versionInfo "Created with TopBraid Composer"^^xsd:string ;
+  owl:imports sh: ;
 .
 classifications:Air
-  rdf:type classifications:TransportMode ;
+  rdf:type classifications:transportModality ;
+.
+classifications:Atlantic_Corridor
+  rdf:type classifications:corridorName ;
+.
+classifications:Baltic-Adriatic_Corridor
+  rdf:type classifications:corridorName ;
 .
 classifications:D
-  rdf:type classifications:Nature_of_Cargo ;
-  rdfs:label "Dangerous"^^xsd:string ;
+  rdf:type classifications:natureOfCargo ;
+  rdfs:label "Dangerous" ;
 .
 classifications:D_1
-  rdfs:label "Reefer"^^xsd:string ;
-.
-classifications:DangerouseGoodClassification
-  rdf:type owl:Class ;
-  rdfs:subClassOf classifications:classifications ;
+  rdfs:label "Reefer" ;
 .
 classifications:E
-  rdf:type classifications:Nature_of_Cargo ;
-  rdfs:label "Excise"^^xsd:string ;
+  rdf:type classifications:natureOfCargo ;
+  rdfs:label "Excise" ;
 .
-classifications:Flashpoint
-  rdf:type owl:DatatypeProperty ;
-  rdfs:domain classifications:DangerouseGoodClassification ;
-  rdfs:range xsd:string ;
-.
-classifications:Hazard_type_code_IMDG
-  rdf:type classifications:DangerouseGoodClassification ;
+classifications:Explosives
+  rdf:type classifications:dangerouseGoodCode ;
   rdf:type skos:Concept ;
+  rdf:type skos:ConceptScheme ;
 .
-classifications:LCL
-  rdf:type classifications:TransportMovementType ;
+classifications:FCL-FCL
+  rdf:type classifications:transportMovementType ;
+  rdfs:comment """FCL/FCL
+Defines the movement of cargo packed by the shipper or shipper's agent and unpacked by the consignee or consignee's agent. 'FCL' means Full Container Load.""" ;
 .
-classifications:Nature_of_Cargo
-  rdf:type owl:Class ;
-  rdfs:subClassOf classifications:classifications ;
+classifications:Flammable_Gases
+  rdf:type classifications:dangerouseGoodCode ;
+  rdf:type skos:Concept ;
+  rdf:type skos:ConceptScheme ;
+.
+classifications:H200
+  rdf:type classifications:dangerouseGoodCode ;
+  rdf:type skos:Concept ;
+  rdfs:comment "based on https://www.unece.org/fileadmin/DAM/trans/danger/publi/ghs/ghs_rev07/English/05e_annex1.pdf" ;
+  skos:topConceptOf classifications:Explosives ;
+.
+classifications:H201
+  rdf:type classifications:dangerouseGoodCode ;
+  rdf:type skos:Concept ;
+  skos:broader classifications:Explosives ;
+.
+classifications:H220
+  rdf:type classifications:dangerouseGoodCode ;
+  rdf:type skos:Concept ;
+  skos:topConceptOf classifications:Flammable_Gases ;
+.
+classifications:LCL-LCL
+  rdf:type classifications:transportMovementType ;
+  rdfs:comment "Defines the movement of cargo packed in and unpacked from containers by the carrier on behalf of the shipper/consignee. 'LCL' means Less than Container Load." ;
+.
+classifications:Mediterranean_Corridor
+  rdf:type classifications:corridorName ;
+.
+classifications:North_Sea-Baltic_Corridor
+  rdf:type classifications:corridorName ;
+.
+classifications:North_Sea-Mediterranean_Corridor
+  rdf:type classifications:corridorName ;
+.
+classifications:Orient_East-Med_Corridor
+  rdf:type classifications:corridorName ;
+.
+classifications:Palletized
+  rdf:type classifications:packageType ;
 .
 classifications:R
-  rdf:type classifications:Nature_of_Cargo ;
-  rdfs:label "Reefer"^^xsd:string ;
+  rdf:type classifications:natureOfCargo ;
+  rdfs:label "Reefer" ;
 .
-classifications:Requiement_code_1
-  rdf:type classifications:Requirements ;
+classifications:Rhine-Alpine_Corridor
+  rdf:type classifications:corridorName ;
 .
-classifications:Requirements
-  rdf:type owl:Class ;
-  rdfs:subClassOf classifications:classifications ;
+classifications:Rhine-Danube_Corridor
+  rdf:type classifications:corridorName ;
+.
+classifications:Rhine_Alpine_Corridor
+  rdf:type classifications:corridorName ;
 .
 classifications:Road
-  rdf:type classifications:TransportMode ;
+  rdf:type classifications:transportModality ;
 .
-classifications:SI
-  rdf:type classifications:Unit_of_Measure ;
+classifications:Scandinavian-Mediterranean_Corridor
+  rdf:type classifications:corridorName ;
 .
 classifications:Sea
-  rdf:type classifications:TransportMode ;
-.
-classifications:Shipping_name
-  rdf:type owl:DatatypeProperty ;
-  rdfs:domain classifications:DangerouseGoodClassification ;
-  rdfs:range xsd:string ;
-.
-classifications:TransportMode
-  rdf:type owl:Class ;
-  rdfs:subClassOf classifications:classifications ;
-.
-classifications:TransportMovementType
-  rdf:type owl:Class ;
-  rdfs:subClassOf classifications:classifications ;
-.
-classifications:UNDG_id
-  rdf:type classifications:DangerouseGoodClassification ;
-  rdf:type skos:Concept ;
-.
-classifications:Unit_of_Measure
-  rdf:type owl:Class ;
-  rdfs:subClassOf classifications:classifications ;
+  rdf:type classifications:transportModality ;
 .
 classifications:W
-  rdf:type classifications:Nature_of_Cargo ;
-  rdfs:label "Waste"^^xsd:string ;
-.
-classifications:additional_hazard_classification_ID
-  rdf:type classifications:DangerouseGoodClassification ;
-  rdf:type skos:Concept ;
+  rdf:type classifications:natureOfCargo ;
+  rdfs:label "Waste" ;
 .
 classifications:appliesTo
   rdf:type owl:ObjectProperty ;
+.
+classifications:cargoType
+  rdf:type owl:Class ;
+  rdfs:comment "classifies types of cargo. For instance large freight container." ;
+  rdfs:subClassOf classifications:classifications ;
 .
 classifications:classifications
   rdf:type owl:Class ;
   rdfs:subClassOf owl:Thing ;
 .
-classifications:hazard_class_ID
-  rdf:type classifications:DangerouseGoodClassification ;
-  rdf:type skos:Concept ;
+classifications:corridorName
+  rdf:type owl:Class ;
+  rdfs:comment """Core network corridors\" were introduced to facilitate the coordinated implementation of the core network in Europe. 
+
+Nine core network corridors are identified in the annex to the CEF Regulation, which includes a list of projects pre-identified for possible EU funding during the period 2014 â€“ 2020, based on their added value for TEN-T development and their maturity status.""" ;
+  rdfs:subClassOf classifications:classifications ;
 .
-classifications:limited_quantity_code
-  rdf:type classifications:DangerouseGoodClassification ;
-  rdf:type skos:Concept ;
+classifications:dangerouseGoodCode
+  rdf:type owl:Class ;
+  rdfs:comment """Danger and Hazard classification, labeling and codification based on UN classifications -- https://www.unece.org/fileadmin/DAM/trans/danger/publi/ghs/ghs_rev07/English/05e_annex1.pdf
+For the scope of proof of concept we selected only few example just to demonstrate the capability of the model.""" ;
+  rdfs:subClassOf classifications:classifications ;
 .
-classifications:packaging_danger_level_code
-  rdf:type classifications:DangerouseGoodClassification ;
-  rdf:type skos:Concept ;
+classifications:dangerouseGoodsClassification
+  rdf:type owl:ObjectProperty ;
 .
-classifications:regulation_code
-  rdf:type classifications:DangerouseGoodClassification ;
-  rdf:type skos:Concept ;
+classifications:large_freight_container
+  rdf:type classifications:cargoType ;
+.
+classifications:natureOfCargo
+  rdf:type owl:Class ;
+  rdfs:comment "This class classifies the codes or vocbualries that express the nature of cargo." ;
+  rdfs:subClassOf classifications:classifications ;
+.
+classifications:packageType
+  rdf:type owl:Class ;
+  rdfs:comment "It classifies the vocbularies for expressing types of packages." ;
+  rdfs:subClassOf classifications:classifications ;
+.
+classifications:transportModality
+  rdf:type owl:Class ;
+  rdfs:comment """The various modes used for a movement. For each mode, there are several means of transport. They are: a. inland surface transportation (rail, road, and inland waterway); b. sea transport (coastal and ocean); c. air transportation; and d. pipelines. 
+For the purpose of the usecase, we encode the top individulas only. Sea, Road, Air.""" ;
+  rdfs:subClassOf classifications:classifications ;
+.
+classifications:transportMovementType
+  rdf:type owl:Class ;
+  rdfs:comment "This is to specify transport movement details for a goods item or equipment. For the purpose of this project ,we selected only few examples to demonstrate in the proof of concept -- the complete list can be found here:https://www.stylusstudio.com/edifact/D04B/8335.htm" ;
+  rdfs:subClassOf classifications:classifications ;
 .
