@@ -1,42 +1,35 @@
 # baseURI: http://tno.io/searchFind
-# imports: http://datashapes.org/dash
-# imports: http://tno.io/Service
-# imports: http://tno.io/Classifications
-# imports: http://tno.io/DigitalTwin
-# imports: http://tno.io/Event
-# imports: http://topbraid.org/schema/schema-single-range
-# imports: http://www.w3.org/2004/02/skos/core
+# imports: http://tno.io/BusinessService
+# imports: http://www.w3.org/ns/shacl#
 # prefix: searchFind
 
 @prefix : <http://tno.io/searchFind#> .
-@prefix Service: <http://tno.io/Service#> .
+@prefix Classifications: <http://tno.io/Classifications#> .
 @prefix DT: <http://tno.io/DigitalTwin#> .
+@prefix DigitaTwin: <http://tno.io/DigitalTwin#> .
+@prefix DigitalTwin: <http://tno.io/DigitalTwin#> .
+@prefix Event: <http://tno.io/Event#> .
+@prefix MathM: <http://www.w3.org/1998/Math/MathML> .
 @prefix Service: <http://tno.io/Service#> .
+@prefix businessService: <http://tno.io/BusinessService#> .
 @prefix classifications: <http://tno.io/Classifications#> .
-@prefix dash: <http://datashapes.org/dash#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix event: <http://tno.io/Event#> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix schema: <http://schema.org/> .
-@prefix schemax: <http://topbraid.org/schemax/> .
 @prefix searchFind: <http://tno.io/searchFind#> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-@prefix swa: <http://topbraid.org/swa#> .
-@prefix tosh: <http://topbraid.org/tosh#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+DigitalTwin:cargoMaximumVolume
+  owl:versionInfo "TODO(1): Redefine the dangerousGoodClassification object proeprty in DT" ;
+.
 <http://tno.io/searchFind>
   rdf:type owl:Ontology ;
-  owl:imports <http://datashapes.org/dash> ;
-  owl:imports <http://tno.io/Service> ;
-  owl:imports <http://tno.io/Classifications> ;
-  owl:imports <http://tno.io/DigitalTwin> ;
-  owl:imports <http://tno.io/Event> ;
-  owl:imports <http://topbraid.org/schema/schema-single-range> ;
-  owl:imports <http://www.w3.org/2004/02/skos/core> ;
+  owl:imports <http://tno.io/BusinessService> ;
+  owl:imports sh: ;
   owl:versionInfo "Created with TopBraid Composer" ;
 .
 searchFind:CargoShape
@@ -60,204 +53,172 @@ searchFind:CargoShape
     ) ;
   sh:property [
       rdf:type sh:PropertyShape ;
-      sh:path DT:CargoSize ;
-      sh:datatype xsd:string ;
-      sh:description """Any instance of Cargo must have at least of property DT:cargoSize whose value must be xsd:string.
-""" ;
+      sh:path businessService:tarnsportServiceDuration ;
+      sh:datatype xsd:decimal ;
       sh:minCount 1 ;
-      sh:name "Cargo size" ;
-      sh:node dash:ClosedByTypesConstraintComponent-closedByTypes ;
+      sh:name "tarnsport service duration" ;
     ] ;
   sh:property [
       rdf:type sh:PropertyShape ;
-      sh:path DT:CargoTemperature ;
-      sh:datatype xsd:integer ;
-      sh:description "Temperature of the Cargo (maximum or minimum)" ;
-      sh:minCount 1 ;
-      sh:name "Cargo temperature" ;
-    ] ;
-  sh:property [
-      rdf:type sh:PropertyShape ;
-      sh:path DT:TypeOfCargo ;
-      sh:class classifications:CargoType ;
-      sh:minCount 1 ;
-      sh:name "Type of cargo" ;
-    ] ;
-  sh:property [
-      rdf:type sh:PropertyShape ;
-      sh:path DT:cargoMaximumVolume ;
-      sh:datatype xsd:integer ;
-      sh:description """Any instance of Cargo class must have at least one property DT:cargoMaximumVolume whose datatyep must be xsd:integer literals. 
-""" ;
-      sh:minCount 1 ;
-      sh:name "cargo maximum volume" ;
-    ] ;
-  sh:property [
-      rdf:type sh:PropertyShape ;
-      sh:path DT:natureofCargo ;
-      sh:class classifications:Nature_of_Cargo ;
-      sh:description "Any instance of Cargo must of at least one property DT:natureofCargo with values of type classifications:Nature_of_Cargo" ;
+      sh:path DigitalTwin:natureofCargo ;
+      sh:class classifications:natureOfCargo ;
       sh:minCount 1 ;
       sh:name "natureof cargo" ;
+      sh:nodeKind sh:BlankNode ;
     ] ;
   sh:property [
-      sh:path DT:CargoMinimumVolume ;
-      dash:coExistsWith DT:cargoMaximumVolume ;
-      sh:datatype xsd:integer ;
-      sh:description "Any intance of Cargo must have at least one property DT:cargoMinimumVolume whose value of datatype xsd:intger" ;
+      rdf:type sh:PropertyShape ;
+      sh:path DigitalTwin:packagingType ;
+      sh:class classifications:packageType ;
       sh:minCount 1 ;
+      sh:name "packaging type" ;
+      sh:nodeKind sh:BlankNode ;
     ] ;
   sh:property [
-      sh:path DT:cargo_container_size ;
-      sh:datatype xsd:integer ;
-      sh:description "Any intance of Cargo must have at least one property DT:cargo_container_size whose value of datatype xsd:intger" ;
+      rdf:type sh:PropertyShape ;
+      sh:path DigitalTwin:typeOfCargo ;
+      sh:class classifications:cargoType ;
       sh:minCount 1 ;
+      sh:name "type of cargo" ;
+      sh:nodeKind sh:BlankNode ;
     ] ;
-  sh:targetClass DT:Cargo ;
-.
-searchFind:ContainerSizeShape
-  rdf:type sh:NodeShape ;
+  sh:property [
+      sh:path DigitalTwin:bulkVolume ;
+      sh:datatype xsd:decimal ;
+      sh:minCount 1 ;
+      sh:name "bulk Volume" ;
+    ] ;
+  sh:property [
+      sh:path DigitalTwin:cargoContainerNumber ;
+      sh:datatype xsd:string ;
+      sh:minCount 1 ;
+      sh:name "Cargo Container Number" ;
+    ] ;
+  sh:property [
+      sh:path DigitalTwin:cargoContainerSize ;
+      sh:datatype xsd:decimal ;
+      sh:minCount 1 ;
+      sh:name "Cargo Container Size" ;
+    ] ;
+  sh:property [
+      sh:path DigitalTwin:cargoGrossMass ;
+      sh:datatype xsd:decimal ;
+      sh:minCount 1 ;
+      sh:name "Cargo Gross Mass" ;
+    ] ;
+  sh:property [
+      sh:path DigitalTwin:cargoMaximumTemperature ;
+      sh:datatype xsd:decimal ;
+      sh:minCount 1 ;
+      sh:name "cargo max temperature" ;
+    ] ;
+  sh:targetClass DigitalTwin:Cargo ;
 .
 searchFind:CorridorShape
   rdf:type sh:NodeShape ;
   sh:property [
       rdf:type sh:PropertyShape ;
-      sh:path DT:corridorName ;
-      sh:class classifications:CorridorCodeList ;
-      sh:description "Any Instance of the class Corridor must have at least one property DT:corridorName with values of type classifications:corridoeCodeList" ;
-      sh:maxCount 1 ;
+      sh:path DigitalTwin:corridorName ;
+      sh:class classifications:corridorName ;
+      sh:minCount 1 ;
       sh:name "corridor name" ;
-    ] ;
-  sh:targetClass DT:Corridor ;
-.
-searchFind:ItenianryShape
-  rdf:type sh:NodeShape ;
-.
-searchFind:LSPShape
-  rdf:type sh:NodeShape ;
-  sh:property [
-      rdf:type sh:PropertyShape ;
-      sh:path DT:LSPName ;
-      sh:datatype xsd:string ;
-      sh:maxCount 1 ;
-      sh:minCount 1 ;
-      sh:name "LSPName" ;
-    ] ;
-  sh:property [
-      rdf:type sh:PropertyShape ;
-      sh:path DT:LSPWebSite ;
-      sh:datatype xsd:string ;
-      sh:maxCount 1 ;
-      sh:minCount 1 ;
-      sh:name "LSPWeb site" ;
+      sh:nodeKind sh:BlankNode ;
     ] ;
 .
 searchFind:LocationShape
   rdf:type sh:NodeShape ;
+  sh:pattern "[A-Z]{3}" ;
   sh:property [
-      rdf:type sh:PropertyShape ;
-      sh:path DT:cityLocode ;
+      sh:path DigitalTwin:cityLoCode ;
       sh:datatype xsd:string ;
-      sh:description "Any instance of a Location must have exactly one property DT:cityLocode with a string literal as its value. The string should be three capitalized characters." ;
+      sh:description "Any instance of a Location must have exactly one property DT:cityLocode with a string literal as its value. The string should be three capitalized characters" ;
       sh:maxCount 1 ;
       sh:minCount 1 ;
-      sh:name "Location city locode" ;
-      sh:pattern "[A-Z]{3}" ;
+      sh:name "City LoCode" ;
     ] ;
   sh:property [
-      rdf:type sh:PropertyShape ;
-      sh:path DT:cityName ;
+      sh:path DigitalTwin:cityName ;
       sh:datatype xsd:string ;
       sh:description "Any instance of a Location must have exactly one property DT:cityName with a string literal as its value." ;
       sh:maxCount 1 ;
       sh:minCount 1 ;
-      sh:name "Location city name" ;
+      sh:name "City Name" ;
     ] ;
   sh:property [
-      rdf:type sh:PropertyShape ;
-      sh:path DT:countryName ;
+      sh:path DigitalTwin:countryName ;
       sh:datatype xsd:string ;
       sh:description "Any instance of a Location must have exactly one property DT:countryName with a string literal as its value." ;
-      sh:maxCount 1 ;
       sh:minCount 1 ;
-      sh:name "Location country name" ;
+      sh:name "Country Name" ;
     ] ;
-  sh:property [
-      rdf:type sh:PropertyShape ;
-      sh:path DT:isoCode ;
-      sh:datatype xsd:integer ;
-      sh:description "Any instance of Location must have at exactly one property DT:isoCode with values of type eu/ece:countryISOCode." ;
-      sh:maxCount 1 ;
-      sh:minCount 1 ;
-      sh:name "Location ISO-code" ;
-    ] ;
-  sh:targetClass DT:Location ;
 .
-searchFind:PareclShape
+searchFind:ParcelShape
   rdf:type sh:NodeShape ;
-.
-searchFind:TempratureShape
-  rdf:type sh:NodeShape ;
-.
-searchFind:TransportEventShape
-  rdf:type sh:NodeShape ;
-  sh:property [
-      rdf:type sh:PropertyShape ;
-      sh:path event:eventDate ;
-      sh:datatype xsd:dateTime ;
-      sh:maxCount 1 ;
-      sh:minCount 1 ;
-      sh:name "event date" ;
-    ] ;
-  sh:property [
-      rdf:type sh:PropertyShape ;
-      sh:path event:eventDate ;
-      sh:datatype xsd:dateTime ;
-      sh:maxCount 1 ;
-      sh:minCount 1 ;
-      sh:name "event date" ;
-    ] ;
-  sh:property [
-      rdf:type sh:PropertyShape ;
-      sh:path event:event_mileStone_detail ;
-      sh:class event:MileStone ;
-      sh:maxCount 1 ;
-      sh:minCount 1 ;
-      sh:name "event mile stone detail" ;
-    ] ;
-  sh:targetClass event:DropOffEvent ;
-  sh:targetClass event:pickupEvent ;
 .
 searchFind:TransportModalityShape
   rdf:type sh:NodeShape ;
   sh:property [
       rdf:type sh:PropertyShape ;
-      sh:path DT:tarnsportModality_detail ;
+      sh:path DigitalTwin:tarnsportModality_detail ;
       sh:class classifications:transportModality ;
       sh:minCount 1 ;
       sh:name "tarnsport modality detail" ;
       sh:nodeKind sh:BlankNode ;
     ] ;
-  sh:targetClass DT:TransportMeans ;
 .
 searchFind:TransportServiceDurationShape
   rdf:type sh:NodeShape ;
+  sh:property [] ;
   sh:property [
       rdf:type sh:PropertyShape ;
-      sh:path Service:tarnsportServiceDuration ;
-      sh:datatype xsd:decimal ;
-      sh:maxCount 1 ;
+      sh:path businessService:tarnsportServiceDuration ;
+      sh:datatype xsd:string ;
       sh:minCount 1 ;
-      sh:name "Transport service duration" ;
+      sh:name "tarnsport service duration" ;
     ] ;
-  sh:targetClass Service:TransportService ;
 .
 searchFind:TransportServiceEventShape
   rdf:type sh:NodeShape ;
+  sh:property [
+      sh:path Event:Event_Location_detail ;
+      sh:class DigitalTwin:Location ;
+    ] ;
+  sh:property [
+      sh:path Event:Event_businessTransaction_detail ;
+      sh:class businessService:BusinessTransaction ;
+    ] ;
+  sh:property [
+      sh:path Event:Event_detail ;
+      sh:class DigitalTwin:DigitalTwin ;
+      sh:minCount 1 ;
+    ] ;
+  sh:property [
+      sh:path Event:Event_mileStone_detail ;
+      sh:class Event:MileStone ;
+      sh:minCount 1 ;
+    ] ;
 .
-searchFind:TransportTrack
+searchFind:TransportServiceShape
   rdf:type sh:NodeShape ;
+.
+searchFind:businessTransactionEvent
+  rdf:type owl:Class ;
+  rdf:type sh:NodeShape ;
+  rdfs:subClassOf Event:Event ;
+.
+searchFind:logisticsServiceShape
+  rdf:type sh:NodeShape ;
+  sh:property [
+      sh:path businessService:LSPName ;
+      sh:datatype xsd:string ;
+      sh:minCount 1 ;
+    ] ;
+  sh:targetClass businessService:logisticsService ;
 .
 searchFind:packageShape
   rdf:type sh:NodeShape ;
+  sh:property [
+      sh:path DigitalTwin:Package ;
+      sh:datatype xsd:string ;
+    ] ;
 .
