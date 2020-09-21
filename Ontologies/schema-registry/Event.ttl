@@ -1,35 +1,52 @@
 # baseURI: http://tno.io/Event
+# imports: http://tno.io/Service
+# imports: http://tno.io/Classifications
+# imports: http://tno.io/DigitalTwin
 # prefix: event
 
 @prefix : <http://tno.io/Event#> .
 @prefix DT: <http://tno.io/DigitalTwin#> .
-@prefix businessService: <http://tno.io/BusinessService#> .
+@prefix Service: <http://tno.io/Service#> .
 @prefix event: <http://tno.io/Event#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+<http://tno.io/Event>
+  rdf:type owl:Ontology ;
+  owl:imports <http://tno.io/Service> ;
+  owl:imports <http://tno.io/Classifications> ;
+  owl:imports <http://tno.io/DigitalTwin> ;
+.
 event:
   rdf:type owl:Ontology ;
-  owl:imports businessService: ;
+  owl:imports Service: ;
   owl:imports DT: ;
   owl:imports <http://www.w3.org/2004/02/skos/core> ;
   owl:versionInfo "Created with TopBraid Composer" ;
 .
-event:ATAEvent
+event:ATA_event
   rdf:type owl:Class ;
   rdfs:subClassOf event:Event ;
 .
-event:ATDEvent
+event:ATD_event
   rdf:type owl:Class ;
   rdfs:subClassOf event:Event ;
 .
-event:ETAEvent
+event:Discharge
   rdf:type owl:Class ;
   rdfs:subClassOf event:Event ;
 .
-event:ETDEvent
+event:DropOffEvent
+  rdf:type owl:Class ;
+  rdfs:subClassOf event:Event ;
+.
+event:ETA_event
+  rdf:type owl:Class ;
+  rdfs:subClassOf event:Event ;
+.
+event:ETD_event
   rdf:type owl:Class ;
   rdfs:subClassOf event:Event ;
 .
@@ -56,25 +73,41 @@ With this definition of event in LogiCO, we specialize the concept of Event defi
       owl:onProperty event:eventTime ;
     ] ;
 .
-event:Milestone
+event:EventDate
   rdf:type owl:Class ;
   rdfs:subClassOf owl:Thing ;
 .
+event:EventTime
+  rdf:type owl:Class ;
+  rdfs:subClassOf owl:Thing ;
+.
+event:Load_event
+  rdf:type owl:Class ;
+  rdfs:subClassOf event:Event ;
+.
+event:MileStone
+  rdf:type owl:Class ;
+  rdfs:subClassOf owl:Thing ;
+.
+event:Pack_event
+  rdf:type owl:Class ;
+  rdfs:subClassOf event:Event ;
+.
+event:Unpack_event
+  rdf:type owl:Class ;
+  rdfs:subClassOf event:Event ;
+.
 event:actual_Date
-  rdf:type event:eventDate ;
+  rdf:type event:EventDate ;
 .
 event:actual_time
-  rdf:type event:eventTime ;
+  rdf:type event:EventTime ;
 .
-event:containerDischargedEvent
+event:containerDischarged_event
   rdf:type owl:Class ;
   rdfs:subClassOf event:Event ;
 .
-event:containerLoadedEvent
-  rdf:type owl:Class ;
-  rdfs:subClassOf event:Event ;
-.
-event:dischargeEvent
+event:containerLoaded_event
   rdf:type owl:Class ;
   rdfs:subClassOf event:Event ;
 .
@@ -82,78 +115,83 @@ event:dropOffTimeWindow
   rdf:type owl:Class ;
   rdfs:subClassOf event:Event ;
 .
+event:dropoffevent1
+  rdf:type event:DropOffEvent ;
+.
 event:end
-  rdf:type event:Milestone ;
+  rdf:type event:MileStone ;
 .
 event:estimated_date
-  rdf:type event:eventDate ;
+  rdf:type event:EventDate ;
 .
 event:estimated_time
-  rdf:type event:eventTime ;
+  rdf:type event:EventTime ;
 .
-event:eventBusinessTransactionDetail
+event:eventDate
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain event:Event ;
+  rdfs:range event:EventDate ;
+.
+event:eventTime
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain event:Event ;
+  rdfs:range event:EventTime ;
+.
+event:event_buisnessTransaction_detail
   rdf:type rdf:Property ;
   rdfs:domain event:Event ;
-  rdfs:range businessService:businessTransaction ;
-  owl:inverseOf <http://tno.io/BusinessService#:businessTransaction_event_detail> ;
-  owl:inverseOf event:transaction_event_detail ;
+  rdfs:range Service:BusinessTransaction ;
+  rdfs:subPropertyOf event:event_detail ;
 .
-event:eventCargoDetail
+event:event_cargo_detail
   rdf:type rdf:Property ;
   rdfs:domain event:Event ;
   rdfs:range DT:Cargo ;
+  rdfs:subPropertyOf event:event_detail ;
 .
-event:eventContainerDetail
+event:event_container_detail
   rdf:type rdf:Property ;
   rdfs:domain event:Event ;
   rdfs:range DT:Container ;
+  rdfs:subPropertyOf event:event_detail ;
 .
-event:eventDate
-  rdf:type owl:Class ;
-  rdf:type owl:DatatypeProperty ;
+event:event_detail
+  rdf:type rdf:Property ;
   rdfs:domain event:Event ;
-  rdfs:range event:eventDate ;
-  rdfs:subClassOf owl:Thing ;
+  rdfs:range DT:DigitalTwin
 .
-event:eventEquipmentDetail
+event:event_equipment_detail
   rdf:type rdf:Property ;
   rdfs:domain event:Event ;
   rdfs:range DT:Equipment ;
+  rdfs:subPropertyOf event:event_detail ;
 .
-event:eventLocationDetail
+event:event_location_detail
   rdf:type rdf:Property ;
   rdfs:domain event:Event ;
   rdfs:range DT:Location ;
+  rdfs:subPropertyOf event:event_detail ;
 .
-event:eventLogisticServiceDetail
+event:event_logistic_service_detail
   rdf:type rdf:Property ;
   rdfs:domain event:Event ;
-  rdfs:range <http://tno.io/BusinessService#:LogisticService> ;
-  owl:inverseOf businessService:transaction_event_detail ;
+  rdfs:range Service:logisticsService ;
+  rdfs:subPropertyOf event:event_detail ;
+  owl:inverseOf Service:transaction_event_detail ;
 .
-event:eventMilestoneDetail
+event:event_mileStone_detail
   rdf:type rdf:Property ;
   rdfs:domain event:Event ;
-  rdfs:range event:Milestone ;
-.
-event:eventTime
-  rdf:type owl:Class ;
-  rdf:type owl:DatatypeProperty ;
-  rdfs:domain event:Event ;
-  rdfs:range event:eventTime ;
-  rdfs:subClassOf owl:Thing ;
+  rdfs:range event:MileStone ;
+  rdfs:subPropertyOf event:event_detail ;
 .
 event:expected_date
-  rdf:type event:eventDate ;
+  rdf:type event:EventDate ;
 .
 event:expected_time
-  rdf:type event:eventTime ;
+  rdf:type event:EventTime ;
 .
-event:loadEvent
-  rdf:type owl:Class ;
-  rdfs:subClassOf event:Event ;
-.
-event:packEvent
+event:pickupEvent
   rdf:type owl:Class ;
   rdfs:subClassOf event:Event ;
 .
@@ -162,21 +200,17 @@ event:pickupTimeWindow
   rdfs:subClassOf event:Event ;
 .
 event:planned_date
-  rdf:type event:eventDate ;
+  rdf:type event:EventDate ;
 .
 event:planned_time
-  rdf:type event:eventTime ;
+  rdf:type event:EventTime ;
 .
 event:requested_date
-  rdf:type event:eventDate ;
+  rdf:type event:EventDate ;
 .
 event:requested_time
-  rdf:type event:eventTime ;
+  rdf:type event:EventTime ;
 .
 event:start
-  rdf:type event:Milestone ;
-.
-event:unpackEvent
-  rdf:type owl:Class ;
-  rdfs:subClassOf event:Event ;
+  rdf:type event:MileStone ;
 .

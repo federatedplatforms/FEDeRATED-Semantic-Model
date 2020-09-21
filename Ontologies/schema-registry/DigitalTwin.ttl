@@ -1,12 +1,12 @@
 # baseURI: http://tno.io/DigitalTwin
-# imports: http://tno.io/BusinessService
+# imports: http://tno.io/Service
 # imports: http://tno.io/Classifications
 # imports: http://tno.io/Event
 # prefix: DT
 
 @prefix : <http://tno.io/DigitalTwin#> .
 @prefix DT: <http://tno.io/DigitalTwin#> .
-@prefix businessService: <http://tno.io/BusinessService#> .
+@prefix Service: <http://tno.io/Service#> .
 @prefix classification: <http://example.org/file1#> .
 @prefix event: <http://tno.io/Event#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
@@ -17,7 +17,7 @@
 
 <http://tno.io/DigitalTwin>
   rdf:type owl:Ontology ;
-  owl:imports <http://tno.io/BusinessService> ;
+  owl:imports <http://tno.io/Service> ;
   owl:imports <http://tno.io/Classifications> ;
   owl:imports <http://tno.io/Event> ;
 .
