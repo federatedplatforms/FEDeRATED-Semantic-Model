@@ -28,11 +28,6 @@ Event:ATD_Event
   rdf:type owl:Class ;
   rdfs:subClassOf Event:Event ;
 .
-Event:DateTime
-  rdf:type owl:ObjectProperty ;
-  rdfs:domain Event:Event ;
-  rdfs:range Event:EventDateTime ;
-.
 Event:Discharge
   rdf:type owl:Class ;
   rdfs:subClassOf Event:Event ;
@@ -48,6 +43,15 @@ Event:ETA_Event
 Event:ETD_Event
   rdf:type owl:Class ;
   rdfs:subClassOf Event:Event ;
+.
+Event:BusinessTransactionEvent
+  rdf:type owl:Class ;
+  rdfs:subClassOf Event:Event ;
+.
+Event:DateTime
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain Event:Event ;
+  rdfs:range Event:EventDateTime ;
 .
 Event:Event
   rdf:type owl:Class ;
@@ -69,8 +73,6 @@ With this definition of Event in LogiCO, we specialize the concept of Event defi
 .
 Event:EventDateTime
   rdf:type owl:Class ;
-  rdfs:domain Event:Event ;
-  rdfs:range Event:EventDateTime ;
   rdfs:subClassOf owl:Thing ;
 .
 Event:Event_buisnessTransaction_detail
@@ -121,10 +123,6 @@ Event:Event_mileStone_detail
   rdfs:range Event:MileStone ;
   rdfs:subPropertyOf Event:Event_detail ;
 .
-Event:Load_Event
-  rdf:type owl:Class ;
-  rdfs:subClassOf Event:Event ;
-.
 Event:MileStone
   rdf:type owl:Class ;
   rdfs:subClassOf owl:Thing ;
@@ -133,27 +131,8 @@ Event:Pack_Event
   rdf:type owl:Class ;
   rdfs:subClassOf Event:Event ;
 .
-Event:Unpack_Event
-  rdf:type owl:Class ;
-  rdfs:subClassOf Event:Event ;
-.
 Event:actual_time
   rdf:type Event:EventDateTime ;
-.
-Event:containerDischarged_Event
-  rdf:type owl:Class ;
-  rdfs:subClassOf Event:Event ;
-.
-Event:containerLoaded_Event
-  rdf:type owl:Class ;
-  rdfs:subClassOf Event:Event ;
-.
-Event:dropOffTimeWindow
-  rdf:type owl:Class ;
-  rdfs:subClassOf Event:Event ;
-.
-Event:dropoffEvent1
-  rdf:type Event:DropOffEvent ;
 .
 Event:end
   rdf:type Event:MileStone ;
@@ -164,14 +143,6 @@ Event:estimated_time
 Event:expected_time
   rdf:type Event:EventDateTime ;
 .
-Event:pickupEvent
-  rdf:type owl:Class ;
-  rdfs:subClassOf Event:Event ;
-.
-Event:pickupTimeWindow
-  rdf:type owl:Class ;
-  rdfs:subClassOf Event:Event ;
-.
 Event:planned_time
   rdf:type Event:EventDateTime ;
 .
@@ -181,3 +152,4 @@ Event:requested_time
 Event:start
   rdf:type Event:MileStone ;
 .
+

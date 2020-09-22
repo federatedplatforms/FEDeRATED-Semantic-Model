@@ -4,7 +4,7 @@
 @prefix : <http://tno.io/BusinessService#> .
 @prefix businessService: <http://tno.io/BusinessService#> .
 @prefix Classifications: <http://tno.io/Classifications#> .
-@prefix DigitaTwin: <http://tno.io/DigitalTwin#> .
+@prefix DigitalTwin: <http://tno.io/DigitalTwin#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -83,7 +83,6 @@ businessService:customerName
   rdfs:range xsd:string ;
    rdfs:subPropertyOf businessService:actorProperties ;
   . 
-  
  businessService:actorProperties
   rdf:type owl:DatatypeProperty ;
   rdfs:domain businessService:logisticsActor ;

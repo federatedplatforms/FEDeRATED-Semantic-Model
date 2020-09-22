@@ -166,6 +166,14 @@ searchFind:TransportModalityShape
       sh:nodeKind sh:BlankNode ;
     ] ;
 .
+searchFind:TransportMovementTypeShape
+  rdf:type sh:NodeShape ;
+  sh:property [
+      sh:path DigitalTwin:transportMovement_detail ;
+      sh:class classifications:transportMovementType ;
+      sh:minCount 1 ;
+    ] ;
+.
 searchFind:TransportServiceDurationShape
   rdf:type sh:NodeShape ;
   sh:property [] ;

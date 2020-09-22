@@ -4,8 +4,8 @@
 # prefix: classifications
 
 @prefix : <http://tno.io/Classifications#> .
-@prefix DT: <http://tno.io/DigitalTwin#> .
-@prefix Service: <http://tno.io/Service#> .
+@prefix DigitalTwin: <http://tno.io/DigitalTwin#> .
+@prefix businessService: <http://tno.io/businessService#> .
 @prefix classifications: <http://tno.io/Classifications#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
