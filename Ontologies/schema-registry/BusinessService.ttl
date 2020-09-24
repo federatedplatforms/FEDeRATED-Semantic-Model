@@ -1,56 +1,128 @@
 # baseURI: http://tno.io/BusinessService
+# imports: http://tno.io/DigitalTwin
+# imports: http://www.w3.org/2004/02/skos/core
 # prefix: businessService
 
 @prefix : <http://tno.io/BusinessService#> .
+@prefix Classifications: <http://tno.io/Classifications#> .
+@prefix DigitalTwin: <http://tno.io/DigitalTwin#> .
 @prefix businessService: <http://tno.io/BusinessService#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-businessService:
+<http://tno.io/BusinessService>
   rdf:type owl:Ontology ;
-  owl:imports <http://tno.io/DigitalTwin#> ;
-  owl:imports <http://tno.io/Event#> ;
+  owl:imports <http://tno.io/DigitalTwin> ;
   owl:imports <http://www.w3.org/2004/02/skos/core> ;
   owl:versionInfo "Created with TopBraid Composer" ;
 .
-businessService:Anchorage
+businessService:BusinessTransaction
   rdf:type owl:Class ;
-  rdfs:subClassOf businessService:businessService ;
+  rdfs:subClassOf owl:Thing ;
 .
-businessService:businessService
+businessService:Consignee
   rdf:type owl:Class ;
-  rdfs:comment "The commercial relation between any two enterprises in a chain of business transactions." ;
-  rdfs:subClassOf businessService:businessServiceOverview ;
+  rdfs:comment "the organization responsible for receiving the cargo" ;
+  rdfs:label "Consignee" ;
+  rdfs:subClassOf businessService:logisticsActor ;
 .
-businessService:businessServiceOverview
+businessService:Consignor
   rdf:type owl:Class ;
+  rdfs:comment "the organization responsible for sending the cargo" ;
+  rdfs:label "Consignor" ;
+  rdfs:subClassOf businessService:logisticsActor ;
 .
-businessService:businessTransaction
+businessService:Customer
   rdf:type owl:Class ;
-  rdfs:subClassOf businessService:businessServiceOverview ;
+  rdfs:comment "Logisitcs Customer" ;
+  rdfs:label "Customer" ;
+  rdfs:subClassOf businessService:logisticsActor ;
 .
-businessService:groupageService
+businessService:LSPName
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain businessService:logisticsServiceProvider ;
+  rdfs:label "Logistic Service Provider Name" ;
+  rdfs:range xsd:string ;
+  rdfs:subPropertyOf businessService:actorProperties ;
+.
+businessService:LSPWebSite
+  rdf:type owl:DatatypeProperty ;
+  rdfs:comment "Logistics Service Provider Website infomration (link)" ;
+  rdfs:domain businessService:logisticsServiceProvider ;
+  rdfs:label "Logistics Service Provider WebSite" ;
+  rdfs:range xsd:string ;
+  rdfs:subPropertyOf businessService:actorProperties ;
+.
+businessService:TransportService
   rdf:type owl:Class ;
-  rdfs:subClassOf businessService:businessService ;
+  rdfs:subClassOf businessService:logisticsService ;
+.
+businessService:actorProperties
+  rdf:type owl:DatatypeProperty ;
+  rdfs:comment "do not instantiate -- Only for grouping." ;
+  rdfs:domain businessService:logisticsActor ;
+.
+businessService:customerName
+  rdf:type owl:DatatypeProperty ;
+  rdfs:comment "Logistics Service customer name" ;
+  rdfs:domain businessService:customer ;
+  rdfs:label "Logistics Service Provider WebSite" ;
+  rdfs:range xsd:string ;
+  rdfs:subPropertyOf businessService:actorProperties ;
+.
+businessService:deviationDuration
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain businessService:TransportService ;
+  rdfs:range xsd:decimal ;
+.
+businessService:location_detail
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain businessService:logisticsService ;
+  rdfs:range DigitalTwin:Location ;
+.
+businessService:logisticsActor
+  rdf:type owl:Class ;
+  rdfs:comment "The role of a Person is context dependant, and therefore should be described using the Actor class." ;
+  rdfs:label "Logistics Actor" ;
+.
+businessService:logisticsService
+  rdf:type owl:Class ;
+  rdfs:subClassOf owl:Thing ;
+.
+businessService:logisticsServiceProvider
+  rdf:type owl:Class ;
+  rdfs:comment "The organization that provides the logistics service" ;
+  rdfs:label "Logistics Service Provider - LSP" ;
+  rdfs:subClassOf businessService:logisticsActor ;
 .
 businessService:piloting
-  rdf:type businessService:businessService ;
+  rdf:type businessService:logisticsService ;
+.
+businessService:serviceName
+  rdf:type owl:DatatypeProperty ;
 .
 businessService:storageServiceCargo
   rdf:type owl:Class ;
-  rdfs:subClassOf businessService:businessService ;
+  rdfs:subClassOf businessService:logisticsService ;
 .
 businessService:storageServiceProduct
   rdf:type owl:Class ;
-  rdfs:subClassOf businessService:businessService ;
+  rdfs:subClassOf businessService:logisticsService ;
 .
-businessService:transportService
-  rdf:type owl:Class ;
-  rdfs:subClassOf businessService:businessService ;
+businessService:transportModality_detail
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain businessService:TransportService ;
+  rdfs:range Classifications:transportModality ;
 .
-businessService:transshipmentService
-  rdf:type owl:Class ;
-  rdfs:subClassOf businessService:businessService ;
+businessService:transportMovement_detail
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain businessService:TransportService ;
+  rdfs:range Classifications:transportMovementType ;
+.
+businessService:transportServiceDurationAverage
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain businessService:TransportService ;
+  rdfs:range xsd:decimal ;
 .

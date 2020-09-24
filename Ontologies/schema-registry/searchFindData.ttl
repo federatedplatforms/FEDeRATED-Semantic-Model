@@ -3,17 +3,56 @@
 # imports: http://tno.io/Classifications
 # imports: http://tno.io/DigitalTwin
 # imports: http://tno.io/Event
+# prefix: data
 
 @prefix : <http://tno.io/data#> .
 @prefix BusinessService: <http://tno.io/BusinessService#> .
+@prefix DigitalTwin: <http://tno.io/DigitalTwin> .
 @prefix Event: <http://tno.io/Event#> .
 @prefix data: <http://tno.io/data#> .
-@prefix  DigitalTwin: <http://tno.io/DigitalTwin> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+BusinessService:TransportService
+  BusinessService:LSPName "Rhine-Alpine container service" ;
+  BusinessService:deviationDuration "24"^^xsd:decimal ;
+  BusinessService:location_detail <http://tno.io/DigitalTwin#corridor> ;
+  BusinessService:transportModality_detail <http://tno.io/Classifications#Road> ;
+  BusinessService:transportMovement_detail <http://tno.io/Classifications#LCL-LCL> ;
+  BusinessService:transportServiceDurationAverage "48"^^xsd:decimal ;
+.
+BusinessService:logisticsService
+  BusinessService:serviceName """
+""" ;
+.
+BusinessService:logisticsServiceProvider
+  BusinessService:LSPName """CKG
+""" ;
+.
+BusinessService:transportServiceDurationAverage
+  owl:versionInfo "TODO(1): Units of Measrues for duration -- Hours" ;
+.
+<http://tno.io/DigitalTwin#Cargo>
+  <http://tno.io/DigitalTwin#typeOfCargo> <http://tno.io/Classifications#container> ;
+.
+<http://tno.io/DigitalTwin#Corridor>
+  <http://tno.io/DigitalTwin#AreaDescription> "Rhine-Alp corridor" ;
+.
+<http://tno.io/DigitalTwin#containerizedCargo>
+  <http://tno.io/DigitalTwin#Danegrous> "true"^^xsd:boolean ;
+  <http://tno.io/DigitalTwin#Excise> "false"^^xsd:boolean ;
+  <http://tno.io/DigitalTwin#Reefer> "true"^^xsd:boolean ;
+  <http://tno.io/DigitalTwin#Waste> "false"^^xsd:boolean ;
+  <http://tno.io/DigitalTwin#cargoContainerNumber> "hb234" ;
+  <http://tno.io/DigitalTwin#cargoContainerSize> 40 ;
+  <http://tno.io/DigitalTwin#cargoMinWeight> 19.958 ;
+  <http://tno.io/DigitalTwin#natureofCargo> <http://tno.io/Classifications#D> ;
+  <http://tno.io/DigitalTwin#natureofCargo> <http://tno.io/Classifications#R> ;
+  <http://tno.io/DigitalTwin#typeOfCargo> <http://tno.io/Classifications#container> ;
+  owl:versionInfo "TODO(1): Make Units of measure for Volume, Size, and weight of Cargo" ;
+.
 <http://tno.io/data>
   rdf:type owl:Ontology ;
   owl:imports <http://tno.io/BusinessService> ;
@@ -22,4 +61,3 @@
   owl:imports <http://tno.io/Event> ;
   owl:versionInfo "Created with TopBraid Composer" ;
 .
-

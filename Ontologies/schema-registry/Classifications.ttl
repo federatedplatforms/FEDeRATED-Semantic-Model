@@ -1,15 +1,12 @@
 # baseURI: http://tno.io/Classifications
-# imports: http://www.ontology-of-units-of-measure.org/resource/om-2/
+# imports: http://tno.io/DigitalTwin
 # imports: http://www.w3.org/2004/02/skos/core
-# imports: http://www.w3.org/ns/shacl#
 # prefix: classifications
 
 @prefix : <http://tno.io/Classifications#> .
-@prefix DT: <http://tno.io/DigitalTwin#> .
-@prefix MathM: <http://www.w3.org/1998/Math/MathML> .
-@prefix businessService: <http://tno.io/BusinessService#> .
+@prefix DigitalTwin: <http://tno.io/DigitalTwin#> .
+@prefix businessService: <http://tno.io/businessService#> .
 @prefix classifications: <http://tno.io/Classifications#> .
-@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -19,9 +16,23 @@
 
 <http://tno.io/Classifications>
   rdf:type owl:Ontology ;
-  owl:imports <http://www.ontology-of-units-of-measure.org/resource/om-2/> ;
+  owl:imports <http://tno.io/DigitalTwin> ;
   owl:imports <http://www.w3.org/2004/02/skos/core> ;
-  owl:imports sh: ;
+.
+<http://tno.io/Classifications#0>
+  rdf:type classifications:dangerouseGoodCode ;
+.
+<http://tno.io/Classifications#1>
+  rdf:type classifications:dangerouseGoodCode ;
+.
+<http://tno.io/Classifications#2>
+  rdf:type classifications:dangerouseGoodCode ;
+.
+<http://tno.io/Classifications#3>
+  rdf:type classifications:dangerouseGoodCode ;
+.
+<http://tno.io/Classifications#8>
+  rdf:type classifications:dangerouseGoodCode ;
 .
 classifications:Air
   rdf:type classifications:transportModality ;
@@ -131,6 +142,9 @@ classifications:classifications
   rdf:type owl:Class ;
   rdfs:subClassOf owl:Thing ;
 .
+classifications:container
+  rdf:type classifications:cargoType ;
+.
 classifications:corridorName
   rdf:type owl:Class ;
   rdfs:comment """Core network corridors\" were introduced to facilitate the coordinated implementation of the core network in Europe. 
@@ -146,9 +160,6 @@ For the scope of proof of concept we selected only few example just to demonstra
 .
 classifications:dangerouseGoodsClassification
   rdf:type owl:ObjectProperty ;
-.
-classifications:large_freight_container
-  rdf:type classifications:cargoType ;
 .
 classifications:natureOfCargo
   rdf:type owl:Class ;
