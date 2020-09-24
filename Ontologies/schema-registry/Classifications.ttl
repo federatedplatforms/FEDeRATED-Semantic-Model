@@ -1,15 +1,12 @@
 # baseURI: http://tno.io/Classifications
-# imports: http://www.ontology-of-units-of-measure.org/resource/om-2/
 # imports: http://www.w3.org/2004/02/skos/core
 # imports: http://www.w3.org/ns/shacl#
 # prefix: classifications
 
 @prefix : <http://tno.io/Classifications#> .
-@prefix DT: <http://tno.io/DigitalTwin#> .
-@prefix MathM: <http://www.w3.org/1998/Math/MathML> .
-@prefix Service: <http://tno.io/Service#> .
+@prefix DigitalTwin: <http://tno.io/DigitalTwin#> .
+@prefix businessService: <http://tno.io/businessService#> .
 @prefix classifications: <http://tno.io/Classifications#> .
-@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -19,7 +16,7 @@
 
 <http://tno.io/Classifications>
   rdf:type owl:Ontology ;
-  owl:imports <http://www.ontology-of-units-of-measure.org/resource/om-2/> ;
+  owl:imports <http://tno.io/DigitalTwin> ;
   owl:imports <http://www.w3.org/2004/02/skos/core> ;
 .
 classifications:Air
