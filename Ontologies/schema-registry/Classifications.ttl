@@ -108,6 +108,9 @@ classifications:R
   rdf:type classifications:natureOfCargo ;
   rdfs:label "Reefer" ;
 .
+classifications:RO-RO
+  rdf:type classifications:containerType ;
+.
 classifications:Rhine-Alpine_Corridor
   rdf:type classifications:corridorName ;
 .
@@ -142,7 +145,11 @@ classifications:classifications
   rdf:type owl:Class ;
   rdfs:subClassOf owl:Thing ;
 .
-classifications:container
+classifications:containerType
+  rdf:type owl:Class ;
+  rdfs:subClassOf classifications:classifications ;
+.
+classifications:containers
   rdf:type classifications:cargoType ;
 .
 classifications:corridorName
@@ -170,6 +177,10 @@ classifications:packageType
   rdf:type owl:Class ;
   rdfs:comment "It classifies the vocbularies for expressing types of packages." ;
   rdfs:subClassOf classifications:classifications ;
+.
+classifications:pallets
+  rdf:type classifications:cargoType ;
+  rdfs:label "Number of TEU" ;
 .
 classifications:transportModality
   rdf:type owl:Class ;

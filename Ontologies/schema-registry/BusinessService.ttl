@@ -1,11 +1,13 @@
 # baseURI: http://tno.io/BusinessService
 # imports: http://tno.io/DigitalTwin
+# imports: http://tno.io/Event
 # imports: http://www.w3.org/2004/02/skos/core
 # prefix: businessService
 
 @prefix : <http://tno.io/BusinessService#> .
 @prefix Classifications: <http://tno.io/Classifications#> .
 @prefix DigitalTwin: <http://tno.io/DigitalTwin#> .
+@prefix Event: <http://tno.io/Event#> .
 @prefix businessService: <http://tno.io/BusinessService#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -15,8 +17,13 @@
 <http://tno.io/BusinessService>
   rdf:type owl:Ontology ;
   owl:imports <http://tno.io/DigitalTwin> ;
+  owl:imports <http://tno.io/Event> ;
   owl:imports <http://www.w3.org/2004/02/skos/core> ;
   owl:versionInfo "Created with TopBraid Composer" ;
+.
+businessService:Booking
+  rdf:type owl:Class ;
+  rdfs:subClassOf businessService:BusinessTransaction ;
 .
 businessService:BusinessTransaction
   rdf:type owl:Class ;
@@ -39,6 +46,11 @@ businessService:Customer
   rdfs:comment "Logisitcs Customer" ;
   rdfs:label "Customer" ;
   rdfs:subClassOf businessService:logisticsActor ;
+.
+businessService:InvolvedEvent
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain businessService:BusinessTransaction ;
+  rdfs:range Event:Event ;
 .
 businessService:LSPName
   rdf:type owl:DatatypeProperty ;
@@ -63,6 +75,11 @@ businessService:actorProperties
   rdf:type owl:DatatypeProperty ;
   rdfs:comment "do not instantiate -- Only for grouping." ;
   rdfs:domain businessService:logisticsActor ;
+.
+businessService:bookingNumber
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain businessService:Booking ;
+  rdfs:range xsd:string ;
 .
 businessService:customerName
   rdf:type owl:DatatypeProperty ;
@@ -97,11 +114,13 @@ businessService:logisticsServiceProvider
   rdfs:label "Logistics Service Provider - LSP" ;
   rdfs:subClassOf businessService:logisticsActor ;
 .
-businessService:piloting
-  rdf:type businessService:logisticsService ;
-.
 businessService:serviceName
   rdf:type owl:DatatypeProperty ;
+.
+businessService:service_detail
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain businessService:BusinessTransaction ;
+  rdfs:range businessService:logisticsService ;
 .
 businessService:storageServiceCargo
   rdf:type owl:Class ;

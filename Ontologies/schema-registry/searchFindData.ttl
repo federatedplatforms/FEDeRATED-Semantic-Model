@@ -9,20 +9,13 @@
 @prefix BusinessService: <http://tno.io/BusinessService#> .
 @prefix DigitalTwin: <http://tno.io/DigitalTwin> .
 @prefix Event: <http://tno.io/Event#> .
+@prefix classifications: <http://tno.io/Classifications#> .
 @prefix data: <http://tno.io/data#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-BusinessService:TransportService
-  BusinessService:LSPName "Rhine-Alpine container service" ;
-  BusinessService:deviationDuration "24"^^xsd:decimal ;
-  BusinessService:location_detail <http://tno.io/DigitalTwin#corridor> ;
-  BusinessService:transportModality_detail <http://tno.io/Classifications#Road> ;
-  BusinessService:transportMovement_detail <http://tno.io/Classifications#LCL-LCL> ;
-  BusinessService:transportServiceDurationAverage "48"^^xsd:decimal ;
-.
 BusinessService:logisticsService
   BusinessService:serviceName """
 """ ;
@@ -33,9 +26,6 @@ BusinessService:logisticsServiceProvider
 .
 BusinessService:transportServiceDurationAverage
   owl:versionInfo "TODO(1): Units of Measrues for duration -- Hours" ;
-.
-<http://tno.io/DigitalTwin#Cargo>
-  <http://tno.io/DigitalTwin#typeOfCargo> <http://tno.io/Classifications#container> ;
 .
 <http://tno.io/DigitalTwin#Corridor>
   <http://tno.io/DigitalTwin#AreaDescription> "Rhine-Alp corridor" ;
@@ -48,9 +38,9 @@ BusinessService:transportServiceDurationAverage
   <http://tno.io/DigitalTwin#cargoContainerNumber> "hb234" ;
   <http://tno.io/DigitalTwin#cargoContainerSize> 40 ;
   <http://tno.io/DigitalTwin#cargoMinWeight> 19.958 ;
-  <http://tno.io/DigitalTwin#natureofCargo> <http://tno.io/Classifications#D> ;
-  <http://tno.io/DigitalTwin#natureofCargo> <http://tno.io/Classifications#R> ;
-  <http://tno.io/DigitalTwin#typeOfCargo> <http://tno.io/Classifications#container> ;
+  <http://tno.io/DigitalTwin#natureofCargo> classifications:D ;
+  <http://tno.io/DigitalTwin#natureofCargo> classifications:R ;
+  <http://tno.io/DigitalTwin#typeOfCargo> classifications:containers ;
   owl:versionInfo "TODO(1): Make Units of measure for Volume, Size, and weight of Cargo" ;
 .
 <http://tno.io/data>
@@ -61,3 +51,52 @@ BusinessService:transportServiceDurationAverage
   owl:imports <http://tno.io/Event> ;
   owl:versionInfo "Created with TopBraid Composer" ;
 .
+
+data:Service1
+  rdf:type BusinessService:TransportService ;
+  BusinessService:LSPName "CKG" ;
+  BusinessService:deviationDuration "4"^^xsd:decimal ;
+  BusinessService:location_detail <http://tno.io/DigitalTwin#corridor> ;
+  BusinessService:serviceName "Rhine-Alpine container service" ;
+  BusinessService:transportModality_detail classifications:Road ;
+  BusinessService:transportServiceDurationAverage "24"^^xsd:decimal ;
+  <http://tno.io/DigitalTwin#corridorCode> classifications:Rhine_Alpine_Corridor ;
+  <http://tno.io/DigitalTwin#typeOfCargo> classifications:containers ;
+.
+data:Service2
+  rdf:type BusinessService:TransportService ;
+  BusinessService:LSPName "CKG" ;
+  BusinessService:deviationDuration "1"^^xsd:decimal ;
+  BusinessService:location_detail <http://tno.io/DigitalTwin#country> ;
+  BusinessService:serviceName "Pallet service" ;
+  BusinessService:transportModality_detail classifications:Road ;
+  BusinessService:transportServiceDurationAverage "4"^^xsd:decimal ;
+  <http://tno.io/DigitalTwin#Danegrous> "false"^^xsd:boolean ;
+  <http://tno.io/DigitalTwin#Excise> "false"^^xsd:boolean ;
+  <http://tno.io/DigitalTwin#Reefer> "false"^^xsd:boolean ;
+  <http://tno.io/DigitalTwin#Waste> "false"^^xsd:boolean ;
+  <http://tno.io/DigitalTwin#cargoMinWeight> "100"^^xsd:decimal ;
+  <http://tno.io/DigitalTwin#countryName> "Netherlands" ;
+  <http://tno.io/DigitalTwin#typeOfCargo> classifications:pallets ;
+.
+data:bookingforService1
+  rdf:type BusinessService:Booking ;
+  BusinessService:InvolvedEvent data:pickupforService1 ;
+  BusinessService:bookingNumber "123456jj" ;
+  BusinessService:service_detail data:Service1 ;
+  <http://tno.io/DigitalTwin#NumberOfTEU> 2 ;
+  <http://tno.io/DigitalTwin#containerType> classifications:RO-RO ;
+.
+data:containerizedCargo1
+  rdf:type <http://tno.io/DigitalTwin#containerizedCargo> ;
+  classifications:dangerouseGoodsClassification <http://tno.io/Classifications#8> ;
+  <http://tno.io/DigitalTwin#Danegrous> "true"^^xsd:boolean ;
+  <http://tno.io/DigitalTwin#Excise> "false"^^xsd:boolean ;
+  <http://tno.io/DigitalTwin#Reefer> "true"^^xsd:boolean ;
+  <http://tno.io/DigitalTwin#Waste> "false"^^xsd:boolean ;
+  <http://tno.io/DigitalTwin#cargoContainerNumber> "234353" ;
+  <http://tno.io/DigitalTwin#cargoContainerSize> 140 ;
+  <http://tno.io/DigitalTwin#natureofCargo> classifications:D ;
+  <http://tno.io/DigitalTwin#typeOfCargo> classifications:containers ;
+.
+

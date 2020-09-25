@@ -28,6 +28,15 @@ Event:ATD_Event
   rdf:type owl:Class ;
   rdfs:subClassOf Event:Event ;
 .
+Event:BusinessTransactionEvent
+  rdf:type owl:Class ;
+  rdfs:subClassOf Event:Event ;
+.
+Event:DateTime
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain Event:Event ;
+  rdfs:range Event:EventDateTime ;
+.
 Event:Discharge
   rdf:type owl:Class ;
   rdfs:subClassOf Event:Event ;
@@ -43,15 +52,6 @@ Event:ETA_Event
 Event:ETD_Event
   rdf:type owl:Class ;
   rdfs:subClassOf Event:Event ;
-.
-Event:BusinessTransactionEvent
-  rdf:type owl:Class ;
-  rdfs:subClassOf Event:Event ;
-.
-Event:DateTime
-  rdf:type owl:ObjectProperty ;
-  rdfs:domain Event:Event ;
-  rdfs:range Event:EventDateTime ;
 .
 Event:Event
   rdf:type owl:Class ;
@@ -75,47 +75,15 @@ Event:EventDateTime
   rdf:type owl:Class ;
   rdfs:subClassOf owl:Thing ;
 .
-Event:Event_buisnessTransaction_detail
-  rdf:type rdf:Property ;
-  rdfs:domain Event:Event ;
-  rdfs:range businessService:BusinessTransaction ;
-  rdfs:subPropertyOf Event:Event_detail ;
-.
-Event:Event_cargo_detail
-  rdf:type rdf:Property ;
-  rdfs:domain Event:Event ;
-  rdfs:range DigitalTwin:Cargo ;
-  rdfs:subPropertyOf Event:Event_detail ;
-.
-Event:Event_container_detail
-  rdf:type rdf:Property ;
-  rdfs:domain Event:Event ;
-  rdfs:range DigitalTwin:Container ;
-  rdfs:subPropertyOf Event:Event_detail ;
-.
 Event:Event_detail
   rdf:type rdf:Property ;
   rdfs:domain Event:Event ;
-  rdfs:range DigitalTwin:DigitalTwin ;
+  rdfs:range rdfs:Resource ;
 .
-Event:Event_equipment_detail
-  rdf:type rdf:Property ;
-  rdfs:domain Event:Event ;
-  rdfs:range DigitalTwin:Equipment ;
-  rdfs:subPropertyOf Event:Event_detail ;
-.
-Event:Event_location_detail
-  rdf:type rdf:Property ;
-  rdfs:domain Event:Event ;
-  rdfs:range DigitalTwin:Location ;
-  rdfs:subPropertyOf Event:Event_detail ;
-.
-Event:Event_logistic_service_detail
+Event:Event_logisticsService
   rdf:type rdf:Property ;
   rdfs:domain Event:Event ;
   rdfs:range businessService:logisticsService ;
-  rdfs:subPropertyOf Event:Event_detail ;
-  owl:inverseOf businessService:transaction_Event_detail ;
 .
 Event:Event_mileStone_detail
   rdf:type rdf:Property ;
@@ -123,11 +91,45 @@ Event:Event_mileStone_detail
   rdfs:range Event:MileStone ;
   rdfs:subPropertyOf Event:Event_detail ;
 .
+Event:ExpectedDropOffDate
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain Event:DropOffEvent ;
+  rdfs:range xsd:date ;
+.
+Event:ExpectedDropoffTime_Earliest
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain Event:DropOffEvent ;
+  rdfs:range xsd:dateTime ;
+.
+Event:ExpectedDropoffTime_Latest
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain Event:DropOffEvent ;
+  rdfs:range xsd:dateTime ;
+.
+Event:ExpectedPickupDate
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain Event:PickupEvent ;
+  rdfs:range xsd:date ;
+.
+Event:ExpectedPickupTime_Earliest
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain Event:PickupEvent ;
+  rdfs:range xsd:dateTime ;
+.
+Event:ExpectedPickupTime_Latest
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain Event:PickupEvent ;
+  rdfs:range xsd:dateTime ;
+.
 Event:MileStone
   rdf:type owl:Class ;
   rdfs:subClassOf owl:Thing ;
 .
 Event:Pack_Event
+  rdf:type owl:Class ;
+  rdfs:subClassOf Event:Event ;
+.
+Event:PickupEvent
   rdf:type owl:Class ;
   rdfs:subClassOf Event:Event ;
 .
