@@ -19,9 +19,23 @@ WHERE {
 } ORDER BY ?subject
 
 # To retrieve Class hierarchy
-SELECT DISTINCT ?parent ?child ?grandchild 
+# Better query than previous, but still not perfect as it 
+# also returns a parent-child hit when it still has a grandchild, 
+# but I think that's forced by the open-world hypothesis.
+SELECT DISTINCT ?parent ?child ?grandchild ?greatgrandchild
 WHERE {
-    OPTIONAL { ?grandchild rdfs:subClassOf ?child } . 
-    OPTIONAL { ?child rdfs:subClassOf ?parent } . 
-    ?parent rdfs:subClassOf owl:Thing .
+	?parent rdfs:subClassOf owl:Thing . 
+	OPTIONAL {
+	{ ?parent rdfs:subClassOf owl:Thing .
+ 		?child rdfs:subClassOf ?parent . }
+		UNION
+	{  	?parent rdfs:subClassOf owl:Thing .
+ 		?child rdfs:subClassOf ?parent . 
+		?grandchild rdfs:subClassOf ?child . }
+		UNION
+	{  	?parent rdfs:subClassOf owl:Thing .
+ 		?child rdfs:subClassOf ?parent . 
+		?grandchild rdfs:subClassOf ?child . 
+		?greatgrandchild rdfs:subClassOf ?grandchild . }
+		}
 }
