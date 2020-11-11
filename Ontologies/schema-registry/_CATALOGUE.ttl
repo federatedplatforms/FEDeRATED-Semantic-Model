@@ -13,20 +13,30 @@
   rdf:type owl:Ontology ;
   dc:source "Classifications.ttl" ;
   terms:title "Classifications" ;
+  terms:namespace "classification";
 .
 <http://tno.io/ontologies/DigitalTwin#>
   rdf:type owl:Ontology ;
   dc:source "DigitalTwin.ttl" ;
-  terms:title "Logistic Digital Twin" ;
+  terms:title "Digital Twin" ;
+  terms:namespace "DigitalTwin";
 .
 <http://tno.io/ontologies/Event>
   rdf:type owl:Ontology ;
   dc:source "Event.ttl" ;
   terms:title "Logistic Business Service" ;
+  terms:namespace "Event";
 .
 
-<http://tno.io/ontologies/Service>
+<http://tno.io/ontologies/businessService>
   rdf:type owl:Ontology ;
-  dc:source "Service.ttl" ;
-  terms:title "Service" ;
+  dc:source "bsuinessService.ttl" ;
+  terms:title "Business Service" ;
+  terms:namespace "businessService";
+.
+<http://tno.io/ontologies/PhysicalInfrastructure>
+  rdf:type owl:Ontology ;
+  dc:source "PhysicalInfrastructure.ttl" ;
+  terms:title "Business Service" ;
+  terms:namespace "pf";
 .

@@ -1,6 +1,6 @@
 # baseURI: http://tno.io/Classifications
+# imports: http://tno.io/DigitalTwin
 # imports: http://www.w3.org/2004/02/skos/core
-# imports: http://www.w3.org/ns/shacl#
 # prefix: classifications
 
 @prefix : <http://tno.io/Classifications#> .
@@ -19,6 +19,21 @@
   owl:imports <http://tno.io/DigitalTwin> ;
   owl:imports <http://www.w3.org/2004/02/skos/core> ;
 .
+<http://tno.io/Classifications#0>
+  rdf:type classifications:dangerouseGoodCode ;
+.
+<http://tno.io/Classifications#1>
+  rdf:type classifications:dangerouseGoodCode ;
+.
+<http://tno.io/Classifications#2>
+  rdf:type classifications:dangerouseGoodCode ;
+.
+<http://tno.io/Classifications#3>
+  rdf:type classifications:dangerouseGoodCode ;
+.
+<http://tno.io/Classifications#8>
+  rdf:type classifications:dangerouseGoodCode ;
+.
 classifications:Air
   rdf:type classifications:transportModality ;
 .
@@ -27,6 +42,11 @@ classifications:Atlantic_Corridor
 .
 classifications:Baltic-Adriatic_Corridor
   rdf:type classifications:corridorName ;
+.
+classifications:Breakbulk
+  rdf:type classifications:transportMovementType ;
+  rdfs:comment "Defines the movement of general cargo not carried in ISO standard containers." ;
+  rdfs:label "break bulk" ;
 .
 classifications:D
   rdf:type classifications:natureOfCargo ;
@@ -46,8 +66,9 @@ classifications:Explosives
 .
 classifications:FCL-FCL
   rdf:type classifications:transportMovementType ;
-  rdfs:comment """FCL/FCL
-Defines the movement of cargo packed by the shipper or shipper's agent and unpacked by the consignee or consignee's agent. 'FCL' means Full Container Load.""" ;
+  rdfs:comment """Defines the movement of cargo packed by the shipper or
+              shipper's agent and unpacked by the consignee or
+              consignee's agent. 'FCL' means Full Container Load.""" ;
 .
 classifications:Flammable_Gases
   rdf:type classifications:dangerouseGoodCode ;
@@ -72,7 +93,14 @@ classifications:H220
 .
 classifications:LCL-LCL
   rdf:type classifications:transportMovementType ;
-  rdfs:comment "Defines the movement of cargo packed in and unpacked from containers by the carrier on behalf of the shipper/consignee. 'LCL' means Less than Container Load." ;
+  rdfs:comment """ Defines the movement of cargo packed in and unpacked
+              from containers by the carrier on behalf of the
+              shipper/consignee. 'LCL' means Less than Container Load.""" ;
+.
+classifications:LogisticsServiceDocument
+  rdf:type owl:Class ;
+  rdfs:label "Logistics Service Document" ;
+  rdfs:subClassOf classifications:classifications ;
 .
 classifications:Mediterranean_Corridor
   rdf:type classifications:corridorName ;
@@ -105,6 +133,11 @@ classifications:Rhine_Alpine_Corridor
 classifications:Road
   rdf:type classifications:transportModality ;
 .
+classifications:Safety_and_hazard_data_sheet
+  rdf:type classifications:LogisticsServiceDocument ;
+  rdfs:comment "A statement of an account containing the booked items as in the ledger of the account servicing financial institution." ;
+  rdfs:label "Safety and hazard data sheet" ;
+.
 classifications:Scandinavian-Mediterranean_Corridor
   rdf:type classifications:corridorName ;
 .
@@ -118,14 +151,27 @@ classifications:W
 classifications:appliesTo
   rdf:type owl:ObjectProperty ;
 .
+classifications:bulk
+  rdf:type classifications:cargoType ;
+  rdfs:comment "Typical examples of dry bulk transport are building materials such as sand and gravel or grain and fodder. But also wet bulk such as oil, gas and ore are examples of bulk commodities." ;
+.
 classifications:cargoType
   rdf:type owl:Class ;
-  rdfs:comment "classifies types of cargo. For instance large freight container." ;
+  rdfs:comment """A classification of cargo carried, or intended
+to be carried, on means of transport, based on its general
+appearance.""" ;
   rdfs:subClassOf classifications:classifications ;
 .
 classifications:classifications
   rdf:type owl:Class ;
   rdfs:subClassOf owl:Thing ;
+.
+classifications:containerType
+  rdf:type owl:Class ;
+  rdfs:subClassOf classifications:classifications ;
+.
+classifications:containers
+  rdf:type classifications:cargoType ;
 .
 classifications:corridorName
   rdf:type owl:Class ;
@@ -143,8 +189,10 @@ For the scope of proof of concept we selected only few example just to demonstra
 classifications:dangerouseGoodsClassification
   rdf:type owl:ObjectProperty ;
 .
-classifications:large_freight_container
+classifications:generalCargo
   rdf:type classifications:cargoType ;
+  rdfs:comment "Contrary to mass or bulk goods, general cargo comprises materials of which the quantity is not registered per size or weight  but per individual item. General cargo is transported in boxes, crates, drums or bales. Examples of general cargo are cars, paper, kerbstone and machinery." ;
+  rdfs:label "visualisation" ;
 .
 classifications:natureOfCargo
   rdf:type owl:Class ;
@@ -153,7 +201,10 @@ classifications:natureOfCargo
 .
 classifications:packageType
   rdf:type owl:Class ;
-  rdfs:comment "It classifies the vocbularies for expressing types of packages." ;
+  rdfs:comment """packaging Materials and components used in any
+packaging operation to wrap, contain and protect articles
+or substances during transport.  In also includes the shape or configuration of a package
+as it appears for transport.""" ;
   rdfs:subClassOf classifications:classifications ;
 .
 classifications:transportModality
