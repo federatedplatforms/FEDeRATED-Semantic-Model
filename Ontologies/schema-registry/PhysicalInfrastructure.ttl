@@ -1,0 +1,231 @@
+# baseURI: http://tno.io/PhysicalInfrastructure
+# imports: http://tno.io/BusinessService
+# imports: http://tno.io/Classifications
+# imports: http://tno.io/DigitalTwin
+# imports: http://tno.io/Event
+# imports: http://www.w3.org/2004/02/skos/core
+# prefix: pf
+
+@prefix : <http://tno.io/PhysicalInfrastructure#> .
+@prefix BusinessService: <http://tno.io/BusinessService#> .
+@prefix DigitalTwin: <http://tno.io/DigitalTwin#> .
+@prefix PhysicalInfrastructure: <http://tno.io/PhysicalInfrastructure#> .
+@prefix classifications: <http://tno.io/Classifications#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix pf: <http://tno.io/PhysicalInfrastructure#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://tno.io/PhysicalInfrastructure>
+  rdf:type owl:Ontology ;
+  owl:imports <http://tno.io/BusinessService> ;
+  owl:imports <http://tno.io/Classifications> ;
+  owl:imports <http://tno.io/DigitalTwin> ;
+  owl:imports <http://tno.io/Event> ;
+  owl:imports <http://www.w3.org/2004/02/skos/core> ;
+  owl:versionInfo "Created with TopBraid Composer" ;
+.
+pf:Airport
+  rdf:type owl:Class ;
+  rdfs:comment "Location where airplanes pick or drop of freight." ;
+  rdfs:label "Airport" ;
+  rdfs:subClassOf pf:logisticalFunction ;
+.
+pf:Anchorage
+  rdf:type owl:Class ;
+  rdfs:label "Anchorage" ;
+  rdfs:subClassOf pf:logisticalFunction ;
+.
+pf:Area
+  rdf:type owl:Class ;
+  rdfs:comment "Any area relevant to logistics operations." ;
+  rdfs:label "Area" ;
+  rdfs:subClassOf pf:infrastructuralFunction ;
+  rdfs:subClassOf pf:logisticalFunction ;
+.
+pf:Bridge
+  rdf:type owl:Class ;
+  rdfs:label "Bridge" ;
+  rdfs:subClassOf pf:infrastructuralObject ;
+.
+pf:City
+  rdf:type owl:Class ;
+  rdfs:comment "A generic geographical location that may have ports, seaports, terminals etc." ;
+  rdfs:label "City" ;
+  rdfs:subClassOf pf:infrastructuralFunction ;
+.
+pf:Country
+  rdf:type owl:Class ;
+  rdfs:comment "a geographic division -- Country" ;
+  rdfs:subClassOf pf:infrastructuralFunction ;
+.
+pf:Hub
+  rdf:type owl:Class ;
+  rdfs:comment "A place cargo is exchanged between vehicles or/and between transport modes." ;
+  rdfs:label "Hub" ;
+  rdfs:subClassOf pf:logisticalFunction ;
+.
+pf:Landmark
+  rdf:type owl:Class ;
+  rdfs:label "Land Mark" ;
+  rdfs:subClassOf pf:infrastructuralFunction ;
+.
+pf:Location
+  rdf:type owl:Class ;
+  rdfs:comment "A terminal, location, port, city centre, etc. where a cargo physical activity like transhipment or storage can take place." ;
+  rdfs:label "Location" ;
+  rdfs:subClassOf pf:Thing ;
+.
+pf:PlaceOfArrival
+  rdf:type pf:locationRole ;
+  rdfs:comment "A place of a call of a transport means following (in time) the last place of departure (milestone value is departure)" ;
+  rdfs:label "Place of Departure" ;
+.
+pf:Port
+  rdf:type owl:Class ;
+  rdfs:comment "Location where vessels pick or drop of freight." ;
+  rdfs:label "Port" ;
+  rdfs:subClassOf pf:logisticalFunction ;
+.
+pf:Road
+  rdf:type owl:Class ;
+  rdfs:label "Road" ;
+  rdfs:subClassOf pf:Trajectory ;
+.
+pf:Terminal
+  rdf:type owl:Class ;
+  rdfs:comment "A freight terminal for different modes is a processing node for freight." ;
+  rdfs:label "Terminal" ;
+  rdfs:subClassOf pf:Hub ;
+.
+pf:TrajecotryProperties
+  rdf:type rdf:Property ;
+  rdfs:comment "DO NOT Instantiate -- superProperty for grouping" ;
+  rdfs:label "Trajectory Properties" ;
+.
+pf:Trajectory
+  rdf:type owl:Class ;
+  rdfs:comment "Any part of an infrastructure identified by its infrastructure manager." ;
+  rdfs:label "Trajectory" ;
+  rdfs:subClassOf pf:infrastructuralFunction ;
+.
+pf:Transshipment
+  rdf:type owl:Class ;
+  rdfs:comment "An intermediate destination for transiting cargo to another destination." ;
+  rdfs:label "Transshipment" ;
+  rdfs:subClassOf pf:logisticalFunction ;
+.
+pf:Warehouse
+  rdf:type owl:Class ;
+  rdfs:comment "A place where cargo or its content (products) is stored for a longer period of time" ;
+  rdfs:label "Warehouse" ;
+  rdfs:subClassOf pf:logisticalFunction ;
+.
+pf:businessTransaction
+  rdf:type rdf:Property ;
+  rdfs:domain pf:locationRole ;
+  rdfs:label "digitalTwin" ;
+  rdfs:range BusinessService:BusinessTransaction ;
+  rdfs:subPropertyOf pf:loctionRole ;
+.
+pf:digitalTwin
+  rdf:type rdf:Property ;
+  rdfs:domain pf:locationRole ;
+  rdfs:label "digitalTwin" ;
+  rdfs:range DigitalTwin:DigitalTwin ;
+  rdfs:subPropertyOf pf:loctionRole ;
+.
+pf:hasEvent
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain pf:locationRole ;
+  rdfs:label "Has Event" ;
+  rdfs:range <http://tno.io/Event#Event> ;
+  rdfs:subPropertyOf pf:loctionRole ;
+.
+pf:hasRole
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain pf:Location ;
+  rdfs:label "Has Role" ;
+  rdfs:range pf:locationRole ;
+.
+pf:infrastructuralFunction
+  rdf:type owl:Class ;
+  rdfs:comment "Any part of an infrastructure used for performing logistical activities." ;
+  rdfs:label "Infrastructural Function" ;
+  rdfs:subClassOf pf:Location ;
+  owl:disjointWith pf:logisticalFunction ;
+.
+pf:infrastructuralObject
+  rdf:type owl:Class ;
+  rdfs:comment "Any element in an infrastructure that might cause for a delay (e.g. bridge, lock)." ;
+  rdfs:label "Insfrastructural Object" ;
+  rdfs:subClassOf pf:infrastructuralFunction ;
+.
+pf:location
+  rdf:type rdf:Property ;
+  rdfs:domain pf:locationRole ;
+  rdfs:label "location" ;
+  rdfs:range pf:Location ;
+  rdfs:subPropertyOf pf:loctionRole ;
+.
+pf:locationRole
+  rdf:type owl:Class ;
+  rdfs:comment "Abstract Class to express different types of Roles that a location can fullfill. By role we mean the functionality of the building." ;
+  rdfs:label "Location Role" ;
+  rdfs:subClassOf pf:Thing ;
+.
+pf:loctionRole
+  rdf:type owl:ObjectProperty ;
+  rdfs:comment "This is a superproperty -DO NOT INSTANTITE. Only for Grouping." ;
+  rdfs:label "Location Role" ;
+.
+pf:logisticalFunction
+  rdf:type owl:Class ;
+  rdfs:comment "Any location where a logistical activity is performed." ;
+  rdfs:label "Logistical Function" ;
+  rdfs:subClassOf pf:Location ;
+.
+pf:placeOfAcceptance
+  rdf:type pf:locationRole ;
+  rdfs:comment "Place at which the goods are taken over by the carrier." ;
+  rdfs:label "Place of Acceptance" ;
+.
+pf:placeOfBorderCrossing
+  rdf:type pf:locationRole ;
+  rdfs:comment "A place where a new customs domain is entered by a transport means during its itinerary " ;
+  rdfs:label "Place of Departure" ;
+.
+pf:placeOfDelivery
+  rdf:type pf:locationRole ;
+  rdfs:comment "Place to which the goods are to be finally delivered under transport contract terms (operational term)." ;
+  rdfs:label "City" ;
+.
+pf:placeOfDeparture
+  rdf:type pf:locationRole ;
+  rdfs:comment "A place where a transport means arrived (milestone value: arrival) and is able to depart." ;
+  rdfs:label "Place of Departure" ;
+.
+pf:placeOfLoading
+  rdf:type pf:locationRole ;
+  rdfs:comment "Seaport, airport, freight terminal, rail station or other place at which the goods (cargo) are loaded on to the means of transport being used for their carriage." ;
+  rdfs:label "Place of Departure" ;
+.
+pf:placeOfReceipt
+  rdf:type pf:locationRole ;
+  rdfs:comment "A place of receipt is the place where the cargo is offered for transport by a business transaction to the service provider that is the carrier and has to be transported by that carrier to the place of loading of the main transport. The cargo has to be at that location." ;
+  rdfs:label "Place of Receipt" ;
+.
+pf:placeOfUnloading
+  rdf:type pf:locationRole ;
+  rdfs:comment "A place of unloading is the place to where the cargo has to be transported by a business transaction to the service provider that is the carrier and will be discharged/unloaded from that transport means. The cargo and the transport means have to be at that location." ;
+  rdfs:label "Place of Departure" ;
+.
+pf:roadName
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain pf:Road ;
+  rdfs:label "Road Name" ;
+  rdfs:range xsd:string ;
+  rdfs:subPropertyOf pf:TrajecotryProperties ;
+.
