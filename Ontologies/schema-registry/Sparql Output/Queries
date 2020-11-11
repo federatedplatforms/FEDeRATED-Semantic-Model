@@ -1,0 +1,19 @@
+#To retireive properties and their domain and range
+
+select ?domain ?property ?range 
+where {
+
+  ?property rdfs:domain ?domain ;
+               rdfs:range ?range .
+}
+
+#To retrieve Class Hierarchy
+SELECT DISTINCT ?subject ?label ?comment ?supertype
+WHERE {
+    { ?subject a owl:Class . } 
+   UNION
+   { ?individual a ?subject . } .
+    OPTIONAL { ?subject rdfs:subClassOf ?supertype } .
+    OPTIONAL { ?subject rdfs:label ?label } .
+    OPTIONAL {?subject rdfs:comment ?comment}.
+} ORDER BY ?subject
