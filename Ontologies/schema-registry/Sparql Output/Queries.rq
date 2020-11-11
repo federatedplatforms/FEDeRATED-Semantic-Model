@@ -7,7 +7,7 @@ where {
                rdfs:range ?range .
 }
 
-#To retrieve Class Hierarchy
+#To retrieve Class Information
 SELECT DISTINCT ?subject ?label ?comment ?supertype
 WHERE {
     { ?subject a owl:Class . } 
@@ -17,3 +17,11 @@ WHERE {
     OPTIONAL { ?subject rdfs:label ?label } .
     OPTIONAL {?subject rdfs:comment ?comment}.
 } ORDER BY ?subject
+
+# To retrieve Class hierarchy
+SELECT DISTINCT ?parent ?child ?grandchild 
+WHERE {
+    OPTIONAL { ?grandchild rdfs:subClassOf ?child } . 
+    OPTIONAL { ?child rdfs:subClassOf ?parent } . 
+    ?parent rdfs:subClassOf owl:Thing .
+}
