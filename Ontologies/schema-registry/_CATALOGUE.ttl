@@ -1,5 +1,6 @@
-# baseURI: http://tno.io/ontologies/BusinessService#
+# baseURI: 
 
+@prefix : <#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -12,24 +13,30 @@
   rdf:type owl:Ontology ;
   dc:source "Classifications.ttl" ;
   terms:title "Classifications" ;
+  terms:namespace "classification";
 .
 <http://tno.io/ontologies/DigitalTwin#>
   rdf:type owl:Ontology ;
   dc:source "DigitalTwin.ttl" ;
-  terms:title "Logistic Digital Twin" ;
+  terms:title "Digital Twin" ;
+  terms:namespace "DigitalTwin";
 .
 <http://tno.io/ontologies/Event>
   rdf:type owl:Ontology ;
   dc:source "Event.ttl" ;
   terms:title "Logistic Business Service" ;
+  terms:namespace "Event";
 .
-<http://tno.io/ontologies/Governance>
+
+<http://tno.io/ontologies/businessService>
   rdf:type owl:Ontology ;
-  dc:source "Governance.ttl" ;
-  terms:title "Governance" ;
-.
-<http://tno.io/ontologies/BusinessService>
-  rdf:type owl:Ontology ;
-  dc:source "businessService.ttl" ;
+  dc:source "bsuinessService.ttl" ;
   terms:title "Business Service" ;
+  terms:namespace "businessService";
+.
+<http://tno.io/ontologies/PhysicalInfrastructure>
+  rdf:type owl:Ontology ;
+  dc:source "PhysicalInfrastructure.ttl" ;
+  terms:title "Business Service" ;
+  terms:namespace "pf";
 .

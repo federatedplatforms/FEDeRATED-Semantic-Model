@@ -2,11 +2,14 @@
 # imports: http://tno.io/BusinessService
 # imports: http://tno.io/Classifications
 # imports: http://tno.io/DigitalTwin
+# imports: http://tno.io/PhysicalInfrastructure
+
 # prefix: Event
 
 @prefix : <http://tno.io/Event#> .
 @prefix DigitalTwin: <http://tno.io/DigitalTwin#> .
 @prefix Event: <http://tno.io/Event#> .
+prefix PhysicalInfrastructure: <http://tno.io/PhysicalInfrastructure#> .
 @prefix businessService: <http://tno.io/BusinessService#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -18,138 +21,227 @@
   owl:imports <http://tno.io/BusinessService> ;
   owl:imports <http://tno.io/Classifications> ;
   owl:imports <http://tno.io/DigitalTwin> ;
+  owl:imports <http://tno.io/PhysicalInfrastructure> ;
   owl:versionInfo "Created with TopBraid Composer" ;
 .
-Event:ATA_Event
+Event:ATA
   rdf:type owl:Class ;
+  rdfs:comment "this even is Actual date/time of arrival. This event is in association of location-event-digital twin (transport means (ship)) and milestone = start" ;
+  rdfs:label "Actual date/time of arrival (ATA)" ;
   rdfs:subClassOf Event:Event ;
 .
-Event:ATD_Event
+Event:ATAevent
+  rdf:type Event:ATA ;
+  Event:DateTime Event:actual ;
+  Event:Event_mileStone_detail Event:start ;
+  rdfs:label "ATA" ;
+.
+Event:ATD
   rdf:type owl:Class ;
+  rdfs:label "Actual date/time of departure (ATD)" ;
   rdfs:subClassOf Event:Event ;
 .
-Event:BusinessTransactionEvent
+Event:ATDevent
+  rdf:type Event:ATD ;
+  rdfs:label "ATA" ;
+.
+Event:Date
   rdf:type owl:Class ;
-  rdfs:subClassOf Event:Event ;
+  rdfs:subClassOf owl:Thing ;
 .
 Event:DateTime
   rdf:type owl:ObjectProperty ;
   rdfs:domain Event:Event ;
-  rdfs:range Event:EventDateTime ;
+  rdfs:range Event:Date ;
 .
 Event:Discharge
   rdf:type owl:Class ;
+  rdfs:comment "digital twin (transport means) - event-digital twin (cargo)" ;
+  rdfs:label "Discharge" ;
   rdfs:subClassOf Event:Event ;
 .
-Event:DropOffEvent
+Event:DischargeEvent
+  rdf:type Event:Discharge ;
+  rdfs:label "ATA" ;
+.
+Event:Dropoff
   rdf:type owl:Class ;
   rdfs:subClassOf Event:Event ;
 .
-Event:ETA_Event
+Event:DropoffEvent
+  rdf:type Event:Dropoff ;
+  rdfs:label "ATA" ;
+.
+Event:ETA
   rdf:type owl:Class ;
+  rdfs:comment "location-event-digital twin (transport means (ship)) and date/time - estimated" ;
+  rdfs:label "Estimated date/time of arrival (ETA)" ;
   rdfs:subClassOf Event:Event ;
 .
-Event:ETD_Event
+Event:ETAEvent
+  rdf:type Event:ETA ;
+  rdfs:label "ATA" ;
+.
+Event:ETD
   rdf:type owl:Class ;
+  rdfs:comment "location-event-digital twin (transport means (ship)) and date/time - estimated and milestone = end" ;
+  rdfs:label "Estimated date/time of departure (ETD)" ;
   rdfs:subClassOf Event:Event ;
+.
+Event:ETDevent
+  rdf:type Event:ETD ;
+  rdfs:label "ATA" ;
+.
+Event:End
+  rdf:type Event:Milestone ;
+  rdfs:label "start" ;
 .
 Event:Event
   rdf:type owl:Class ;
-  rdfs:comment """Represent actions, milestones, transactions or any other real-world activity. These will typically involve one or more interactions or associations between location, business service, transport means and cargo. 		
-
-\"An Event is a trigger that can be used to synchronize two or more activities. Events and their properties can further get specialized in another modul.\"
-
-With this definition of Event in LogiCO, we specialize the concept of Event defined in a general way (on purpose) in the DOLCE UltraLite (DUL) ontology. According to the DUL definition, an Event consists of any physical, social, or mental process, Event, or state.\"""" ;
+  rdfs:comment """An event reflects any physical activity in the real world, creating, updating, or 'deleting' an association between physical objects or entities. There are many synomyms based on combinations of entities, date/time, and physical activities. 				
+""" ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty Event:Date ;
+    ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:minCardinality "1"^^xsd:nonNegativeInteger ;
       owl:onProperty Event:DigitalTwin_detail ;
     ] ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:minCardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onProperty Event:EventDateTime ;
-    ] ;
-.
-Event:EventDateTime
-  rdf:type owl:Class ;
-  rdfs:subClassOf owl:Thing ;
-.
-Event:Event_detail
-  rdf:type rdf:Property ;
-  rdfs:domain Event:Event ;
-  rdfs:range rdfs:Resource ;
-.
-Event:Event_logisticsService
-  rdf:type rdf:Property ;
-  rdfs:domain Event:Event ;
-  rdfs:range businessService:logisticsService ;
 .
 Event:Event_mileStone_detail
   rdf:type rdf:Property ;
   rdfs:domain Event:Event ;
   rdfs:range Event:MileStone ;
-  rdfs:subPropertyOf Event:Event_detail ;
+  rdfs:subPropertyOf Event:involvedDigitalTwin ;
 .
 Event:ExpectedDropOffDate
   rdf:type owl:DatatypeProperty ;
-  rdfs:domain Event:DropOffEvent ;
   rdfs:range xsd:date ;
 .
 Event:ExpectedDropoffTime_Earliest
   rdf:type owl:DatatypeProperty ;
-  rdfs:domain Event:DropOffEvent ;
   rdfs:range xsd:dateTime ;
 .
 Event:ExpectedDropoffTime_Latest
   rdf:type owl:DatatypeProperty ;
-  rdfs:domain Event:DropOffEvent ;
   rdfs:range xsd:dateTime ;
 .
 Event:ExpectedPickupDate
   rdf:type owl:DatatypeProperty ;
-  rdfs:domain Event:PickupEvent ;
+  rdfs:domain Event:Pickup ;
   rdfs:range xsd:date ;
 .
 Event:ExpectedPickupTime_Earliest
   rdf:type owl:DatatypeProperty ;
-  rdfs:domain Event:PickupEvent ;
+  rdfs:domain Event:Pickup ;
   rdfs:range xsd:dateTime ;
 .
 Event:ExpectedPickupTime_Latest
   rdf:type owl:DatatypeProperty ;
-  rdfs:domain Event:PickupEvent ;
+  rdfs:domain Event:Pickup ;
   rdfs:range xsd:dateTime ;
 .
-Event:MileStone
+Event:Milestone
   rdf:type owl:Class ;
   rdfs:subClassOf owl:Thing ;
 .
-Event:Pack_Event
+Event:Pack
+  rdf:type owl:Class ;
+  rdfs:label "Stuff" ;
+  rdfs:subClassOf Event:Event ;
+.
+Event:PackEvent
+  rdf:type Event:Pack ;
+  rdfs:label "ATA" ;
+.
+Event:Pickup
   rdf:type owl:Class ;
   rdfs:subClassOf Event:Event ;
 .
 Event:PickupEvent
+  rdf:type Event:Pickup ;
+  rdfs:label "ATA" ;
+.
+Event:Start
+  rdf:type Event:Milestone ;
+  rdfs:label "start" ;
+.
+Event:Stuff
   rdf:type owl:Class ;
+  rdfs:label "Stuff" ;
   rdfs:subClassOf Event:Event ;
 .
-Event:actual_time
-  rdf:type Event:EventDateTime ;
+Event:StuffEvent
+  rdf:type Event:Stuff ;
+  rdfs:label "ATA" ;
+.
+Event:Unpack
+  rdf:type owl:Class ;
+  rdfs:label "Stuff" ;
+  rdfs:subClassOf Event:Event ;
+.
+Event:UnpackEvent
+  rdf:type Event:Unpack ;
+  rdfs:label "unpack" ;
+.
+Event:actual
+  rdf:type Event:Date ;
+.
+Event:containerIsDischarged
+  rdf:type owl:Class ;
+  rdfs:label "container is discharged" ;
+  rdfs:subClassOf Event:Event ;
+.
+Event:containerIsDischargedEvent
+  rdf:type Event:containerIsDischarged ;
+  rdfs:label "ATA" ;
+.
+Event:containerIsLoaded
+  rdf:type owl:Class ;
+  rdfs:label "container is loaded" ;
+  rdfs:subClassOf Event:Event ;
+.
+Event:containerIsLoadedEvent
+  rdf:type Event:containerIsLoaded ;
+  rdfs:label "ATA" ;
+.
+Event:dropoffTimeWindow
+  rdf:type owl:Class ;
+  rdfs:label "drop off time window" ;
+  rdfs:subClassOf Event:Event ;
 .
 Event:end
   rdf:type Event:MileStone ;
 .
-Event:estimated_time
-  rdf:type Event:EventDateTime ;
+Event:estimated
+  rdf:type Event:Date ;
 .
-Event:expected_time
-  rdf:type Event:EventDateTime ;
+Event:expected
+  rdf:type Event:Date ;
 .
-Event:planned_time
-  rdf:type Event:EventDateTime ;
+Event:involvedDigitalTwin
+  rdf:type rdf:Property ;
+  rdfs:domain Event:Event ;
+  rdfs:range DigitalTwin:DigitalTwin ;
 .
-Event:requested_time
-  rdf:type Event:EventDateTime ;
+Event:involvedLogisticsService
+  rdf:type rdf:Property ;
+  rdfs:domain Event:Event ;
+  rdfs:range businessService:logisticsService ;
+.
+Event:pickupTimeWindow
+  rdf:type owl:Class ;
+  rdfs:label "pick up time window" ;
+  rdfs:subClassOf Event:Event ;
+.
+Event:planned
+  rdf:type Event:Date ;
+.
+Event:requested
+  rdf:type Event:Date ;
 .
 Event:start
   rdf:type Event:MileStone ;

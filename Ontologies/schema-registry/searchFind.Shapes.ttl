@@ -228,4 +228,175 @@ searchFind:packageShape
       sh:path DigitalTwin:Package ;
       sh:datatype xsd:string ;
     ] ;
+  sh:property [
+      rdf:type sh:PropertyShape ;
+      sh:path DT:cargoMaximumVolume ;
+      sh:datatype xsd:integer ;
+      sh:description """Any instance of Cargo class must have at least one property DT:cargoMaximumVolume whose datatyep must be xsd:integer literals. 
+""" ;
+      sh:minCount 1 ;
+      sh:name "cargo maximum volume" ;
+    ] ;
+  sh:property [
+      rdf:type sh:PropertyShape ;
+      sh:path DT:natureofCargo ;
+      sh:class classifications:Nature_of_Cargo ;
+      sh:description "Any instance of Cargo must of at least one property DT:natureofCargo with values of type classifications:Nature_of_Cargo" ;
+      sh:minCount 1 ;
+      sh:name "natureof cargo" ;
+    ] ;
+  sh:property [
+      sh:path DT:CargoMinimumVolume ;
+      dash:coExistsWith DT:cargoMaximumVolume ;
+      sh:datatype xsd:integer ;
+      sh:description "Any intance of Cargo must have at least one property DT:cargoMinimumVolume whose value of datatype xsd:intger" ;
+      sh:minCount 1 ;
+    ] ;
+  sh:property [
+      sh:path DT:cargo_container_size ;
+      sh:datatype xsd:integer ;
+      sh:description "Any intance of Cargo must have at least one property DT:cargo_container_size whose value of datatype xsd:intger" ;
+      sh:minCount 1 ;
+    ] ;
+  sh:targetClass DT:Cargo ;
+.
+searchFind:ContainerSizeShape
+  rdf:type sh:NodeShape ;
+.
+searchFind:CorridorShape
+  rdf:type sh:NodeShape ;
+  sh:property [
+      rdf:type sh:PropertyShape ;
+      sh:path DT:corridorName ;
+      sh:class classifications:CorridorCodeList ;
+      sh:description "Any Instance of the class Corridor must have at least one property DT:corridorName with values of type classifications:corridoeCodeList" ;
+      sh:maxCount 1 ;
+      sh:name "corridor name" ;
+    ] ;
+  sh:targetClass DT:Corridor ;
+.
+searchFind:ItenianryShape
+  rdf:type sh:NodeShape ;
+.
+searchFind:LSPShape
+  rdf:type sh:NodeShape ;
+  sh:property [
+      rdf:type sh:PropertyShape ;
+      sh:path DT:LSPName ;
+      sh:datatype xsd:string ;
+      sh:maxCount 1 ;
+      sh:minCount 1 ;
+      sh:name "LSPName" ;
+    ] ;
+  sh:property [
+      rdf:type sh:PropertyShape ;
+      sh:path DT:LSPWebSite ;
+      sh:datatype xsd:string ;
+      sh:maxCount 1 ;
+      sh:minCount 1 ;
+      sh:name "LSPWeb site" ;
+    ] ;
+.
+searchFind:PareclShape
+  rdf:type sh:NodeShape ;
+.
+searchFind:TempratureShape
+  rdf:type sh:NodeShape ;
+.
+searchFind:TransportEventShape
+  rdf:type sh:NodeShape ;
+  sh:property [
+      rdf:type sh:PropertyShape ;
+      sh:path event:eventDate ;
+      sh:datatype xsd:dateTime ;
+      sh:maxCount 1 ;
+      sh:minCount 1 ;
+      sh:name "event date" ;
+    ] ;
+  sh:property [
+      rdf:type sh:PropertyShape ;
+      sh:path event:eventDate ;
+      sh:datatype xsd:dateTime ;
+      sh:maxCount 1 ;
+      sh:minCount 1 ;
+      sh:name "event date" ;
+    ] ;
+  sh:property [
+      rdf:type sh:PropertyShape ;
+      sh:path event:event_mileStone_detail ;
+      sh:class event:MileStone ;
+      sh:maxCount 1 ;
+      sh:minCount 1 ;
+      sh:name "event mile stone detail" ;
+    ] ;
+  sh:targetClass event:DropOffEvent ;
+  sh:targetClass event:PickupEvent ;
+.
+searchFind:TransportModalityShape
+  rdf:type sh:NodeShape ;
+.
+searchFind:TransportServiceDurationShape
+  rdf:type sh:NodeShape ;
+.
+searchFind:TransportServiceEventShape
+  rdf:type sh:NodeShape ;
+.
+searchFind:TransportTrack
+  rdf:type sh:NodeShape ;
+.
+searchFind:packageShape
+  rdf:type sh:NodeShape ;
+.
+searchFind:LocationShape
+  rdf:type sh:NodeShape ;
+  sh:targetClass DT:Location ;
+  sh:property [
+    sh:path DT:isoCode ;
+	rdf:type sh:PropertyShape ;
+	sh:description "Any instance of Location must have at exactly one property DT:isoCode with values of type eu/ece:countryISOCode." ;
+	sh:datatype xsd:integer ;
+	sh:minCount 1; 
+	sh:maxCount 1 ;
+	sh:name "Location ISO-code" ;
+  ] ;
+  sh:property [
+    sh:path DT:countryName ;
+	rdf:type sh:PropertyShape ;
+	sh:datatype xsd:string ;
+	sh:minCount 1 ;
+	sh:maxCount 1 ;
+	sh:description "Any instance of a Location must have exactly one property DT:countryName with a string literal as its value." ;
+	sh:name "Location country name" ;
+  ] ;
+  sh:property [
+    sh:path DT:cityName ;
+	rdf:type sh:PropertyShape ;
+	sh:datatype xsd:string ;
+	sh:minCount 1 ;
+	sh:maxCount 1 ;
+	sh:description "Any instance of a Location must have exactly one property DT:cityName with a string literal as its value." ;
+	sh:name "Location city name" ;
+  ] ;
+  sh:property [
+    sh:path DT:cityLocode ;
+	rdf:type sh:PropertyShape ;
+	sh:datatype xsd:string ;
+	sh:minCount 1 ;
+	sh:maxCount 1 ;
+	sh:pattern "[A-Z]{3}" ;
+	sh:description "Any instance of a Location must have exactly one property DT:cityLocode with a string literal as its value. The string should be three capitalized characters." ;
+	sh:name "Location city locode" ;
+  ] ;
+.
+	searchFind:transportServiceDurationShape
+  rdf:type sh:NodeShape ;
+  sh:property [
+      rdf:type sh:PropertyShape ;
+      sh:path businessService:tarnsportServiceDuration ;
+      sh:datatype xsd:decimal ;
+      sh:maxCount 1 ;
+      sh:minCount 1 ;
+      sh:name "Transport service duration" ;
+    ] ;
+  sh:targetClass businessService:TransportService ;
 .

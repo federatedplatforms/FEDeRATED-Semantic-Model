@@ -1,6 +1,7 @@
 # baseURI: http://tno.io/BusinessService
 # imports: http://tno.io/DigitalTwin
 # imports: http://tno.io/Event
+# imports: http://tno.io/PhysicalInfrastructure
 # imports: http://www.w3.org/2004/02/skos/core
 # prefix: businessService
 
@@ -18,26 +19,46 @@
   rdf:type owl:Ontology ;
   owl:imports <http://tno.io/DigitalTwin> ;
   owl:imports <http://tno.io/Event> ;
+  owl:imports <http://tno.io/PhysicalInfrastructure> ;
   owl:imports <http://www.w3.org/2004/02/skos/core> ;
   owl:versionInfo "Created with TopBraid Composer" ;
+  owl:versionInfo "TODO(1): Discuss Cargo" ;
+  owl:versionInfo "TODO(1): Push to gitHub" ;
+  owl:versionInfo "TODO(1): Sparql out the class hierarchy and proeprty domain and range in the Graph entirley" ;
+  owl:versionInfo "TODO(1):Discuss DigitalTwin and its generic proeprties" ;
+  owl:versionInfo "TODO(1):Populate the excel " ;
+  owl:versionInfo "TODO(1):Write an Evaluation Plan" ;
+.
+businessService:ActorDigitalTwin
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain businessService:logisticsActor ;
+  rdfs:label "Actor DigitalTwin" ;
+  rdfs:range DigitalTwin:DigitalTwin ;
+  rdfs:subPropertyOf businessService:LogisticsActorProperties ;
+.
+businessService:ActorLocationRole
+  rdfs:domain businessService:logisticsActor ;
+  rdfs:range <http://tno.io/PhysicalInfrastructure#locationRole> ;
 .
 businessService:Booking
   rdf:type owl:Class ;
+  rdfs:comment "Agreement with a limited validity period between two enterprises for one or more orders" ;
   rdfs:subClassOf businessService:BusinessTransaction ;
 .
 businessService:BusinessTransaction
   rdf:type owl:Class ;
+  rdfs:comment "All data shared by interactions for executing a business service" ;
   rdfs:subClassOf owl:Thing ;
 .
 businessService:Consignee
   rdf:type owl:Class ;
-  rdfs:comment "the organization responsible for receiving the cargo" ;
+  rdfs:comment "A consignee is the role of an enterprise where it is the operator and/or owner of a logistical function at a place with the role 'place of delivery'. A consignee can act as customer (e.g. Terms of Delivery is 'ex works')." ;
   rdfs:label "Consignee" ;
   rdfs:subClassOf businessService:logisticsActor ;
 .
 businessService:Consignor
   rdf:type owl:Class ;
-  rdfs:comment "the organization responsible for sending the cargo" ;
+  rdfs:comment "A consignor is the role of an enterprise where it is the operator and/or owner of a logistical function at a place with the role 'place of acceptance'. A consignor can act as customer." ;
   rdfs:label "Consignor" ;
   rdfs:subClassOf businessService:logisticsActor ;
 .
@@ -46,6 +67,18 @@ businessService:Customer
   rdfs:comment "Logisitcs Customer" ;
   rdfs:label "Customer" ;
   rdfs:subClassOf businessService:logisticsActor ;
+.
+businessService:Driver
+  rdf:type owl:Class ;
+  rdfs:comment "The person responsible for operating a transport means, hired or employee of the operator of that transport means -- Can be Mater, Driver, Captain, Pilot" ;
+  rdfs:label "Driver" ;
+  rdfs:subClassOf businessService:logisticsActor ;
+.
+businessService:FrameworkContract
+  rdf:type owl:Class ;
+  rdfs:comment "A contract with a long term validity period between any two enterprise with agreements of business service delivery" ;
+  rdfs:label "Framework Contract" ;
+  rdfs:subClassOf businessService:BusinessTransaction ;
 .
 businessService:InvolvedEvent
   rdf:type owl:ObjectProperty ;
@@ -67,8 +100,37 @@ businessService:LSPWebSite
   rdfs:range xsd:string ;
   rdfs:subPropertyOf businessService:actorProperties ;
 .
+businessService:Operator
+  rdf:type owl:Class ;
+  rdfs:comment "An enterprise exploiting a logistical function at a location" ;
+  rdfs:label "Operator" ;
+  rdfs:subClassOf businessService:logisticsActor ;
+.
+businessService:Order
+  rdf:type owl:Class ;
+  rdfs:comment "Agreement between two enterprise for actual execution of a business service according a booking or framework contract." ;
+  rdfs:label "Order" ;
+  rdfs:subClassOf businessService:BusinessTransaction ;
+.
+businessService:Organization
+  rdf:type owl:Class ;
+  rdfs:label "Organization" ;
+  rdfs:subClassOf businessService:logisticsActor ;
+.
+businessService:Person
+  rdf:type owl:Class ;
+  rdfs:label "Person" ;
+  rdfs:subClassOf businessService:logisticsActor ;
+.
 businessService:TransportService
   rdf:type owl:Class ;
+  rdfs:comment "A service provided by a logistics for transport of cargo" ;
+  rdfs:subClassOf businessService:logisticsService ;
+.
+businessService:TransshipmentService
+  rdf:type owl:Class ;
+  rdfs:comment "A service for transshipping cargo from one transport means to another" ;
+  rdfs:label "Transshipment Service" ;
   rdfs:subClassOf businessService:logisticsService ;
 .
 businessService:actorProperties
@@ -106,7 +168,14 @@ businessService:logisticsActor
 .
 businessService:logisticsService
   rdf:type owl:Class ;
+  rdfs:comment "Any service that is provided to a customer by a logistics or transport service provider." ;
   rdfs:subClassOf owl:Thing ;
+.
+businessService:logisticsServiceGroupage
+  rdf:type owl:Class ;
+  rdfs:comment "A service for grouping of cargo into equipment" ;
+  rdfs:label "Groupage Service" ;
+  rdfs:subClassOf businessService:logisticsService ;
 .
 businessService:logisticsServiceProvider
   rdf:type owl:Class ;
@@ -124,10 +193,12 @@ businessService:service_detail
 .
 businessService:storageServiceCargo
   rdf:type owl:Class ;
+  rdfs:comment "A service for (temporary) storage of cargo. This may include special cargo storage such as cool storage, animal hotels, and dangerous goods storage." ;
   rdfs:subClassOf businessService:logisticsService ;
 .
 businessService:storageServiceProduct
   rdf:type owl:Class ;
+  rdfs:comment "A service for storage of products (warehousing)" ;
   rdfs:subClassOf businessService:logisticsService ;
 .
 businessService:transportModality_detail
