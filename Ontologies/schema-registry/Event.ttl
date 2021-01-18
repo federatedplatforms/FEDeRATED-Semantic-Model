@@ -3,12 +3,13 @@
 # imports: http://tno.io/Classifications
 # imports: http://tno.io/DigitalTwin
 # imports: http://tno.io/PhysicalInfrastructure
+
 # prefix: Event
 
 @prefix : <http://tno.io/Event#> .
 @prefix DigitalTwin: <http://tno.io/DigitalTwin#> .
 @prefix Event: <http://tno.io/Event#> .
-@prefix PhysicalInfrastructure: <http://tno.io/PhysicalInfrastructure#> .
+prefix PhysicalInfrastructure: <http://tno.io/PhysicalInfrastructure#> .
 @prefix businessService: <http://tno.io/BusinessService#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .

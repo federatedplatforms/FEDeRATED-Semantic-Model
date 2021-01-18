@@ -1,5 +1,4 @@
 # baseURI: http://tno.io/DigitalTwin
-# imports: http://tno.io/BusinessService
 # imports: http://tno.io/Classifications
 # imports: http://tno.io/Event
 # imports: http://tno.io/PhysicalInfrastructure
@@ -27,7 +26,6 @@
 .
 <http://tno.io/DigitalTwin>
   rdf:type owl:Ontology ;
-  owl:imports <http://tno.io/BusinessService> ;
   owl:imports <http://tno.io/Classifications> ;
   owl:imports <http://tno.io/Event> ;
   owl:imports <http://tno.io/PhysicalInfrastructure> ;
@@ -40,8 +38,27 @@ DigitalTwin:Airplane
   rdfs:label "Airplane" ;
   rdfs:subClassOf DigitalTwin:TransportMeans ;
 .
+DigitalTwin:Airport
+  rdf:type owl:Class ;
+  rdfs:comment "Location where airplanes pick or drop of freight." ;
+  rdfs:label "Airport" ;
+  rdfs:subClassOf DigitalTwin:logisticalFunction ;
+.
+DigitalTwin:Anchorage
+  rdf:type owl:Class ;
+  rdfs:label "Anchorage" ;
+  rdfs:subClassOf DigitalTwin:logisticalFunction ;
+.
+DigitalTwin:Area
+  rdf:type owl:Class ;
+  rdfs:comment "Any area relevant to logistics operations." ;
+  rdfs:label "Area" ;
+  rdfs:subClassOf DigitalTwin:infrastructuralFunction ;
+  rdfs:subClassOf DigitalTwin:logisticalFunction ;
+.
 DigitalTwin:AreaDescription
   rdf:type owl:DatatypeProperty ;
+  rdfs:domain DigitalTwin:Corridor ;
   rdfs:range xsd:string ;
 .
 DigitalTwin:Barge
@@ -63,6 +80,7 @@ another means of transport. In economics, the words cargo and freight refer in p
   rdfs:label "Cargo" ;
   rdfs:subClassOf DigitalTwin:physicalObject ;
   owl:disjointWith DigitalTwin:Equipment ;
+  owl:disjointWith DigitalTwin:Location ;
   owl:disjointWith DigitalTwin:Product ;
   owl:disjointWith DigitalTwin:TransportMeans ;
 .
@@ -90,6 +108,7 @@ DigitalTwin:Equipment
   rdfs:label "Equipment" ;
   rdfs:subClassOf DigitalTwin:physicalObject ;
   owl:disjointWith DigitalTwin:Cargo ;
+  owl:disjointWith DigitalTwin:Location ;
   owl:disjointWith DigitalTwin:Product ;
   owl:disjointWith DigitalTwin:TransportMeans ;
 .
@@ -111,23 +130,26 @@ DigitalTwin:Ferry
   rdfs:label "Ferry" ;
   rdfs:subClassOf DigitalTwin:Vessel ;
 .
-DigitalTwin:Iternerary
+DigitalTwin:Hub
   rdf:type owl:Class ;
-  rdfs:comment "A timed sequence of places of call of a transport means. Potentially, an itinerary has a unique ID, e.g. voyage number and flight number." ;
-  rdfs:label "Iternerary" ;
-  rdfs:subClassOf owl:Thing ;
+  rdfs:comment "A place cargo is exchanged between vehicles or/and between transport modes." ;
+  rdfs:label "Hub" ;
+  rdfs:subClassOf DigitalTwin:logisticalFunction ;
 .
-DigitalTwin:IterneraryPlace
-  rdf:type owl:ObjectProperty ;
-  rdfs:domain DigitalTwin:Iternerary ;
-  rdfs:label "Iternerary Logistic Function" ;
-  rdfs:range <http://tno.io/PhysicalInfrastructure#logisticalFunction> ;
-  rdfs:subPropertyOf DigitalTwin:IterneraryProperties ;
+DigitalTwin:Landmark
+  rdf:type owl:Class ;
+  rdfs:label "Land Mark" ;
+  rdfs:subClassOf DigitalTwin:Location ;
 .
-DigitalTwin:IterneraryProperties
-  rdf:type owl:ObjectProperty ;
-  rdfs:comment "Only for Grouping prorperites related to concept Itenerary -DO NOT INSTANTIATE. " ;
-  rdfs:label "Iternerary Properties" ;
+DigitalTwin:Location
+  rdf:type owl:Class ;
+  rdfs:comment "A terminal, location, port, city centre, etc. where a cargo physical activity like transhipment or storage can take place." ;
+  rdfs:label "Location" ;
+  rdfs:subClassOf DigitalTwin:DigitalTwin ;
+  owl:disjointWith DigitalTwin:Cargo ;
+  owl:disjointWith DigitalTwin:Equipment ;
+  owl:disjointWith DigitalTwin:Product ;
+  owl:disjointWith DigitalTwin:TransportMeans ;
 .
 DigitalTwin:Locomotive
   rdf:type owl:Class ;
@@ -137,6 +159,9 @@ DigitalTwin:Locomotive
 .
 DigitalTwin:Modularity
   rdf:type owl:DatatypeProperty ;
+  rdfs:domain DigitalTwin:Cargo ;
+  rdfs:label "Number of TEU" ;
+  rdfs:range xsd:integer ;
 .
 DigitalTwin:NumberOfTEU
   rdf:type owl:DatatypeProperty ;
@@ -163,6 +188,7 @@ DigitalTwin:Product
   rdfs:subClassOf DigitalTwin:physicalObject ;
   owl:disjointWith DigitalTwin:Cargo ;
   owl:disjointWith DigitalTwin:Equipment ;
+  owl:disjointWith DigitalTwin:Location ;
   owl:disjointWith DigitalTwin:TransportMeans ;
 .
 DigitalTwin:RailwayWagon
@@ -404,6 +430,7 @@ DigitalTwin:countryISOCode
 .
 DigitalTwin:countryName
   rdf:type owl:DatatypeProperty ;
+  rdfs:domain DigitalTwin:Location ;
   rdfs:label "Country Name" ;
   rdfs:range xsd:string ;
   rdfs:subPropertyOf DigitalTwin:locationProperties ;
@@ -508,20 +535,6 @@ DigitalTwin:isFull
   rdfs:domain DigitalTwin:Equipment ;
   rdfs:label "Is Full" ;
   rdfs:range xsd:boolean ;
-.
-DigitalTwin:iteneraryDigitalTwin
-  rdf:type owl:ObjectProperty ;
-  rdfs:domain DigitalTwin:Iternerary ;
-  rdfs:label "Iternerary DigitalTwin" ;
-  rdfs:range DigitalTwin:DigitalTwin ;
-  rdfs:subPropertyOf DigitalTwin:IterneraryProperties ;
-.
-DigitalTwin:iteneraryEvent
-  rdf:type owl:ObjectProperty ;
-  rdfs:domain DigitalTwin:Iternerary ;
-  rdfs:label "Iternerary DigitalTwin" ;
-  rdfs:range Event:Event ;
-  rdfs:subPropertyOf DigitalTwin:IterneraryProperties ;
 .
 DigitalTwin:liquidBulk
   rdf:type owl:DatatypeProperty ;
@@ -695,6 +708,7 @@ DigitalTwin:rollOn-rollOff
 .
 DigitalTwin:securityMeasure
   rdf:type owl:DatatypeProperty ;
+  rdfs:domain DigitalTwin:Port ;
   rdfs:label "Security Measure" ;
   rdfs:range xsd:string ;
   rdfs:subPropertyOf DigitalTwin:locationProperties ;

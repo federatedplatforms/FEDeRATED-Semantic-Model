@@ -121,6 +121,9 @@ classifications:R
   rdf:type classifications:natureOfCargo ;
   rdfs:label "Reefer" ;
 .
+classifications:RO-RO
+  rdf:type classifications:containerType ;
+.
 classifications:Rhine-Alpine_Corridor
   rdf:type classifications:corridorName ;
 .
@@ -206,6 +209,10 @@ packaging operation to wrap, contain and protect articles
 or substances during transport.  In also includes the shape or configuration of a package
 as it appears for transport.""" ;
   rdfs:subClassOf classifications:classifications ;
+.
+classifications:pallets
+  rdf:type classifications:cargoType ;
+  rdfs:label "Number of TEU" ;
 .
 classifications:transportModality
   rdf:type owl:Class ;
