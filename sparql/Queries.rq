@@ -1,0 +1,53 @@
+#To retireive properties and their domain and range
+
+select ?domain ?property ?range 
+where {
+
+  ?property rdfs:domain ?domain ;
+               rdfs:range ?range .
+}
+
+#To retrieve Class Information
+SELECT DISTINCT ?subject ?label ?comment ?supertype
+WHERE {
+    { ?subject a owl:Class . } 
+   UNION
+   { ?individual a ?subject . } .
+    OPTIONAL { ?subject rdfs:subClassOf ?supertype } .
+    OPTIONAL { ?subject rdfs:label ?label } .
+    OPTIONAL {?subject rdfs:comment ?comment}.
+} ORDER BY ?subject
+
+# To retrieve Class hierarchy
+# Better query than previous, but still not perfect as it 
+# also returns a parent-child hit when it still has a grandchild, 
+# but I think that's forced by the open-world hypothesis.
+SELECT DISTINCT ?parent ?child ?grandchild ?greatgrandchild
+WHERE {
+	?parent rdfs:subClassOf owl:Thing . 
+	OPTIONAL {
+	{ ?parent rdfs:subClassOf owl:Thing .
+ 		?child rdfs:subClassOf ?parent . }
+		UNION
+	{  	?parent rdfs:subClassOf owl:Thing .
+ 		?child rdfs:subClassOf ?parent . 
+		?grandchild rdfs:subClassOf ?child . }
+		UNION
+	{  	?parent rdfs:subClassOf owl:Thing .
+ 		?child rdfs:subClassOf ?parent . 
+		?grandchild rdfs:subClassOf ?child . 
+		?greatgrandchild rdfs:subClassOf ?grandchild . }
+		}
+}
+
+
+#Query 3 
+Give me all the properties of Cargo: 
+
+SELECT ?p ?o
+{ 
+  <<https://ontology.tno.nl/logistics/federated/DigitalTwin#cargo> ?p ?o
+}
+
+
+

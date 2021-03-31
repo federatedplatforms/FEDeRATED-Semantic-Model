@@ -1,0 +1,509 @@
+{
+  "@graph" : [ {
+    "@id" : "http://tno.io/BusinessService",
+    "@type" : "owl:Ontology",
+    "status" : "metadata:UnderDevelopmentStatus",
+    "defaultNamespace" : "http://example.org/ontologies/new#",
+    "comment" : "Test to import",
+    "label" : "Federated ontology",
+    "imports" : "http://datashapes.org/dash",
+    "versionInfo" : "Created with TopBraid Composer"
+  }, {
+    "@id" : "businessService:Booking",
+    "@type" : "owl:Class",
+    "subClassOf" : "businessService:BusinessTransaction"
+  }, {
+    "@id" : "businessService:BusinessTransaction",
+    "@type" : "owl:Class",
+    "subClassOf" : "owl:Thing"
+  }, {
+    "@id" : "businessService:Consignee",
+    "@type" : "owl:Class",
+    "comment" : "the organization responsible for receiving the cargo",
+    "label" : "Consignee",
+    "subClassOf" : "businessService:logisticsActor"
+  }, {
+    "@id" : "businessService:Consignor",
+    "@type" : "owl:Class",
+    "comment" : "the organization responsible for sending the cargo",
+    "label" : "Consignor",
+    "subClassOf" : "businessService:logisticsActor"
+  }, {
+    "@id" : "businessService:Customer",
+    "@type" : "owl:Class",
+    "comment" : "Logisitcs Customer",
+    "label" : "Customer",
+    "subClassOf" : "businessService:logisticsActor"
+  }, {
+    "@id" : "businessService:InvolvedEvent",
+    "@type" : "owl:ObjectProperty",
+    "domain" : "businessService:BusinessTransaction",
+    "range" : "Event:Event"
+  }, {
+    "@id" : "businessService:LSPName",
+    "@type" : "owl:DatatypeProperty",
+    "domain" : "businessService:logisticsServiceProvider",
+    "label" : "Logistic Service Provider Name",
+    "range" : "xsd:string",
+    "subPropertyOf" : "businessService:actorProperties"
+  }, {
+    "@id" : "businessService:LSPWebSite",
+    "@type" : "owl:DatatypeProperty",
+    "comment" : "Logistics Service Provider Website infomration (link)",
+    "domain" : "businessService:logisticsServiceProvider",
+    "label" : "Logistics Service Provider WebSite",
+    "range" : "xsd:string",
+    "subPropertyOf" : "businessService:actorProperties"
+  }, {
+    "@id" : "businessService:TransportService",
+    "@type" : "owl:Class",
+    "subClassOf" : "businessService:logisticsService"
+  }, {
+    "@id" : "businessService:actorProperties",
+    "@type" : "owl:DatatypeProperty",
+    "comment" : "do not instantiate -- Only for grouping.",
+    "domain" : "businessService:logisticsActor"
+  }, {
+    "@id" : "businessService:bookingNumber",
+    "@type" : "owl:DatatypeProperty",
+    "domain" : "businessService:Booking",
+    "range" : "xsd:string"
+  }, {
+    "@id" : "businessService:customerName",
+    "@type" : "owl:DatatypeProperty",
+    "comment" : "Logistics Service customer name",
+    "domain" : "businessService:customer",
+    "label" : "Logistics Service Provider WebSite",
+    "range" : "xsd:string",
+    "subPropertyOf" : "businessService:actorProperties"
+  }, {
+    "@id" : "businessService:deviationDuration",
+    "@type" : "owl:DatatypeProperty",
+    "domain" : "businessService:TransportService",
+    "range" : "xsd:decimal"
+  }, {
+    "@id" : "businessService:location_detail",
+    "@type" : "owl:ObjectProperty",
+    "domain" : "businessService:logisticsService",
+    "range" : "DigitalTwin:Location"
+  }, {
+    "@id" : "businessService:logisticsActor",
+    "@type" : "owl:Class",
+    "comment" : "The role of a Person is context dependant, and therefore should be described using the Actor class.",
+    "label" : "Logistics Actor",
+    "subClassOf" : "owl:Thing"
+  }, {
+    "@id" : "businessService:logisticsService",
+    "@type" : "owl:Class",
+    "serviceName" : "\n",
+    "subClassOf" : "owl:Thing"
+  }, {
+    "@id" : "businessService:logisticsServiceProvider",
+    "@type" : "owl:Class",
+    "LSPName" : "CKG\n",
+    "comment" : "The organization that provides the logistics service",
+    "label" : "Logistics Service Provider - LSP",
+    "subClassOf" : "businessService:logisticsActor"
+  }, {
+    "@id" : "businessService:serviceName",
+    "@type" : "owl:DatatypeProperty"
+  }, {
+    "@id" : "businessService:service_detail",
+    "@type" : "owl:ObjectProperty",
+    "domain" : "businessService:BusinessTransaction",
+    "range" : "businessService:logisticsService"
+  }, {
+    "@id" : "businessService:storageServiceCargo",
+    "@type" : "owl:Class",
+    "subClassOf" : "businessService:logisticsService"
+  }, {
+    "@id" : "businessService:storageServiceProduct",
+    "@type" : "owl:Class",
+    "subClassOf" : "businessService:logisticsService"
+  }, {
+    "@id" : "businessService:transportModality_detail",
+    "@type" : "owl:ObjectProperty",
+    "domain" : "businessService:TransportService",
+    "range" : "Classifications:transportModality"
+  }, {
+    "@id" : "businessService:transportMovement_detail",
+    "@type" : "owl:ObjectProperty",
+    "domain" : "businessService:TransportService",
+    "range" : "Classifications:transportMovementType"
+  }, {
+    "@id" : "businessService:transportServiceDurationAverage",
+    "@type" : "owl:DatatypeProperty",
+    "domain" : "businessService:TransportService",
+    "range" : "xsd:decimal",
+    "versionInfo" : "TODO(1): Units of Measrues for duration -- Hours"
+  }, {
+    "@id" : "Classifications:0",
+    "@type" : "Classifications:dangerouseGoodCode"
+  }, {
+    "@id" : "Classifications:1",
+    "@type" : "Classifications:dangerouseGoodCode"
+  }, {
+    "@id" : "Classifications:2",
+    "@type" : "Classifications:dangerouseGoodCode"
+  }, {
+    "@id" : "Classifications:3",
+    "@type" : "Classifications:dangerouseGoodCode"
+  }, {
+    "@id" : "Classifications:8",
+    "@type" : "Classifications:dangerouseGoodCode"
+  }, {
+    "@id" : "Classifications:Air",
+    "@type" : "Classifications:transportModality"
+  }, {
+    "@id" : "Classifications:Atlantic_Corridor",
+    "@type" : "Classifications:corridorName"
+  }, {
+    "@id" : "Classifications:Baltic-Adriatic_Corridor",
+    "@type" : "Classifications:corridorName"
+  }, {
+    "@id" : "Classifications:D",
+    "@type" : "Classifications:natureOfCargo",
+    "label" : "Dangerous"
+  }, {
+    "@id" : "Classifications:D_1",
+    "label" : "Reefer"
+  }, {
+    "@id" : "Classifications:E",
+    "@type" : "Classifications:natureOfCargo",
+    "label" : "Excise"
+  }, {
+    "@id" : "Classifications:Explosives",
+    "@type" : [ "Classifications:dangerouseGoodCode", "http://www.w3.org/2004/02/skos/core#ConceptScheme", "http://www.w3.org/2004/02/skos/core#Concept" ]
+  }, {
+    "@id" : "Classifications:FCL-FCL",
+    "@type" : "Classifications:transportMovementType",
+    "comment" : "FCL/FCL\nDefines the movement of cargo packed by the shipper or shipper's agent and unpacked by the consignee or consignee's agent. 'FCL' means Full Container Load."
+  }, {
+    "@id" : "Classifications:Flammable_Gases",
+    "@type" : [ "Classifications:dangerouseGoodCode", "http://www.w3.org/2004/02/skos/core#ConceptScheme", "http://www.w3.org/2004/02/skos/core#Concept" ]
+  }, {
+    "@id" : "Classifications:H200",
+    "@type" : [ "Classifications:dangerouseGoodCode", "http://www.w3.org/2004/02/skos/core#Concept" ],
+    "comment" : "based on https://www.unece.org/fileadmin/DAM/trans/danger/publi/ghs/ghs_rev07/English/05e_annex1.pdf",
+    "topConceptOf" : "Classifications:Explosives"
+  }, {
+    "@id" : "Classifications:H201",
+    "@type" : [ "Classifications:dangerouseGoodCode", "http://www.w3.org/2004/02/skos/core#Concept" ],
+    "broader" : "Classifications:Explosives"
+  }, {
+    "@id" : "Classifications:H220",
+    "@type" : [ "Classifications:dangerouseGoodCode", "http://www.w3.org/2004/02/skos/core#Concept" ],
+    "topConceptOf" : "Classifications:Flammable_Gases"
+  }, {
+    "@id" : "Classifications:LCL-LCL",
+    "@type" : "Classifications:transportMovementType",
+    "comment" : "Defines the movement of cargo packed in and unpacked from containers by the carrier on behalf of the shipper/consignee. 'LCL' means Less than Container Load."
+  }, {
+    "@id" : "Classifications:Mediterranean_Corridor",
+    "@type" : "Classifications:corridorName"
+  }, {
+    "@id" : "Classifications:North_Sea-Baltic_Corridor",
+    "@type" : "Classifications:corridorName"
+  }, {
+    "@id" : "Classifications:North_Sea-Mediterranean_Corridor",
+    "@type" : "Classifications:corridorName"
+  }, {
+    "@id" : "Classifications:Orient_East-Med_Corridor",
+    "@type" : "Classifications:corridorName"
+  }, {
+    "@id" : "Classifications:Palletized",
+    "@type" : "Classifications:packageType"
+  }, {
+    "@id" : "Classifications:R",
+    "@type" : "Classifications:natureOfCargo",
+    "label" : "Reefer"
+  }, {
+    "@id" : "Classifications:RO-RO",
+    "@type" : "Classifications:containerType"
+  }, {
+    "@id" : "Classifications:Rhine-Alpine_Corridor",
+    "@type" : "Classifications:corridorName"
+  }, {
+    "@id" : "Classifications:Rhine-Danube_Corridor",
+    "@type" : "Classifications:corridorName"
+  }, {
+    "@id" : "Classifications:Rhine_Alpine_Corridor",
+    "@type" : "Classifications:corridorName"
+  }, {
+    "@id" : "Classifications:Road",
+    "@type" : "Classifications:transportModality"
+  }, {
+    "@id" : "Classifications:Scandinavian-Mediterranean_Corridor",
+    "@type" : "Classifications:corridorName"
+  }, {
+    "@id" : "Classifications:Sea",
+    "@type" : "Classifications:transportModality"
+  }, {
+    "@id" : "Classifications:W",
+    "@type" : "Classifications:natureOfCargo",
+    "label" : "Waste"
+  }, {
+    "@id" : "Classifications:appliesTo",
+    "@type" : "owl:ObjectProperty"
+  }, {
+    "@id" : "Classifications:cargoType",
+    "@type" : "owl:Class",
+    "comment" : "classifies types of cargo. For instance large freight container.",
+    "subClassOf" : "Classifications:classifications"
+  }, {
+    "@id" : "Classifications:classifications",
+    "@type" : "owl:Class",
+    "subClassOf" : "owl:Thing"
+  }, {
+    "@id" : "Classifications:containerType",
+    "@type" : "owl:Class",
+    "subClassOf" : "Classifications:classifications"
+  }, {
+    "@id" : "Classifications:containers",
+    "@type" : "Classifications:cargoType"
+  }, {
+    "@id" : "Classifications:corridorName",
+    "@type" : "owl:Class",
+    "comment" : "Core network corridors\" were introduced to facilitate the coordinated implementation of the core network in Europe. \n\nNine core network corridors are identified in the annex to the CEF Regulation, which includes a list of projects pre-identified for possible EU funding during the period 2014 – 2020, based on their added value for TEN-T development and their maturity status.",
+    "subClassOf" : "Classifications:classifications"
+  }, {
+    "@id" : "Classifications:dangerouseGoodCode",
+    "@type" : "owl:Class",
+    "comment" : "Danger and Hazard classification, labeling and codification based on UN classifications -- https://www.unece.org/fileadmin/DAM/trans/danger/publi/ghs/ghs_rev07/English/05e_annex1.pdf\nFor the scope of proof of concept we selected only few example just to demonstrate the capability of the model.",
+    "subClassOf" : "Classifications:classifications"
+  }, {
+    "@id" : "Classifications:dangerouseGoodsClassification",
+    "@type" : "owl:ObjectProperty"
+  }, {
+    "@id" : "Classifications:natureOfCargo",
+    "@type" : "owl:Class",
+    "comment" : "This class classifies the codes or vocbualries that express the nature of cargo.",
+    "subClassOf" : "Classifications:classifications"
+  }, {
+    "@id" : "Classifications:packageType",
+    "@type" : "owl:Class",
+    "comment" : "It classifies the vocbularies for expressing types of packages.",
+    "subClassOf" : "Classifications:classifications"
+  }, {
+    "@id" : "Classifications:pallets",
+    "@type" : "Classifications:cargoType",
+    "label" : "Number of TEU"
+  }, {
+    "@id" : "Classifications:transportModality",
+    "@type" : "owl:Class",
+    "comment" : "The various modes used for a movement. For each mode, there are several means of transport. They are: a. inland surface transportation (rail, road, and inland waterway); b. sea transport (coastal and ocean); c. air transportation; and d. pipelines. \nFor the purpose of the usecase, we encode the top individulas only. Sea, Road, Air.",
+    "subClassOf" : "Classifications:classifications"
+  }, {
+    "@id" : "Classifications:transportMovementType",
+    "@type" : "owl:Class",
+    "comment" : "This is to specify transport movement details for a goods item or equipment. For the purpose of this project ,we selected only few examples to demonstrate in the proof of concept -- the complete list can be found here:https://www.stylusstudio.com/edifact/D04B/8335.htm",
+    "subClassOf" : "Classifications:classifications"
+  }, {
+    "@id" : "DigitalTwin:Corridor",
+    "AreaDescription" : "Rhine-Alp corridor"
+  }, {
+    "@id" : "DigitalTwin:containerizedCargo",
+    "DigitalTwin:Danegrous" : true,
+    "DigitalTwin:Excise" : false,
+    "DigitalTwin:Reefer" : true,
+    "DigitalTwin:Waste" : false,
+    "cargoContainerNumber" : "hb234",
+    "DigitalTwin:cargoContainerSize" : 40,
+    "cargoMinWeight" : "19.958",
+    "natureofCargo" : [ "Classifications:R", "Classifications:D" ],
+    "typeOfCargo" : "Classifications:containers",
+    "versionInfo" : "TODO(1): Make Units of measure for Volume, Size, and weight of Cargo"
+  }, {
+    "@id" : "http://tno.io/data#Service1",
+    "@type" : "businessService:TransportService",
+    "LSPName" : "CKG",
+    "deviationDuration" : "4",
+    "location_detail" : "DigitalTwin:corridor",
+    "serviceName" : "Rhine-Alpine container service",
+    "transportModality_detail" : "Classifications:Road",
+    "transportServiceDurationAverage" : "24",
+    "corridorCode" : "Classifications:Rhine_Alpine_Corridor",
+    "typeOfCargo" : "Classifications:containers"
+  }, {
+    "@id" : "http://tno.io/data#Service2",
+    "@type" : "businessService:TransportService",
+    "LSPName" : "CKG",
+    "deviationDuration" : "1",
+    "location_detail" : "DigitalTwin:country",
+    "serviceName" : "Pallet service",
+    "transportModality_detail" : "Classifications:Road",
+    "transportServiceDurationAverage" : "4",
+    "DigitalTwin:Danegrous" : false,
+    "DigitalTwin:Excise" : false,
+    "DigitalTwin:Reefer" : false,
+    "DigitalTwin:Waste" : false,
+    "cargoMinWeight" : "100",
+    "countryName" : "Netherlands",
+    "typeOfCargo" : "Classifications:pallets"
+  }, {
+    "@id" : "http://tno.io/data#bookingforService1",
+    "@type" : "businessService:Booking",
+    "InvolvedEvent" : "http://tno.io/data#pickupforService1",
+    "bookingNumber" : "123456jj",
+    "service_detail" : "http://tno.io/data#Service1",
+    "DigitalTwin:NumberOfTEU" : 2,
+    "containerType" : "Classifications:RO-RO"
+  }, {
+    "@id" : "http://tno.io/data#containerizedCargo1",
+    "@type" : "DigitalTwin:containerizedCargo",
+    "dangerouseGoodsClassification" : "Classifications:8",
+    "DigitalTwin:Danegrous" : true,
+    "DigitalTwin:Excise" : false,
+    "DigitalTwin:Reefer" : true,
+    "DigitalTwin:Waste" : false,
+    "cargoContainerNumber" : "234353",
+    "DigitalTwin:cargoContainerSize" : 140,
+    "natureofCargo" : "Classifications:D",
+    "typeOfCargo" : "Classifications:containers"
+  } ],
+  "@context" : {
+    "range" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#range",
+      "@type" : "@id"
+    },
+    "domain" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#domain",
+      "@type" : "@id"
+    },
+    "versionInfo" : {
+      "@id" : "http://www.w3.org/2002/07/owl#versionInfo"
+    },
+    "subClassOf" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
+      "@type" : "@id"
+    },
+    "comment" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#comment"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label"
+    },
+    "serviceName" : {
+      "@id" : "http://tno.io/BusinessService#serviceName"
+    },
+    "subPropertyOf" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#subPropertyOf",
+      "@type" : "@id"
+    },
+    "LSPName" : {
+      "@id" : "http://tno.io/BusinessService#LSPName"
+    },
+    "broader" : {
+      "@id" : "http://www.w3.org/2004/02/skos/core#broader",
+      "@type" : "@id"
+    },
+    "topConceptOf" : {
+      "@id" : "http://www.w3.org/2004/02/skos/core#topConceptOf",
+      "@type" : "@id"
+    },
+    "InvolvedEvent" : {
+      "@id" : "http://tno.io/BusinessService#InvolvedEvent",
+      "@type" : "@id"
+    },
+    "service_detail" : {
+      "@id" : "http://tno.io/BusinessService#service_detail",
+      "@type" : "@id"
+    },
+    "bookingNumber" : {
+      "@id" : "http://tno.io/BusinessService#bookingNumber"
+    },
+    "containerType" : {
+      "@id" : "http://tno.io/DigitalTwin#containerType",
+      "@type" : "@id"
+    },
+    "NumberOfTEU" : {
+      "@id" : "http://tno.io/DigitalTwin#NumberOfTEU",
+      "@type" : "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "transportServiceDurationAverage" : {
+      "@id" : "http://tno.io/BusinessService#transportServiceDurationAverage",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "deviationDuration" : {
+      "@id" : "http://tno.io/BusinessService#deviationDuration",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "transportModality_detail" : {
+      "@id" : "http://tno.io/BusinessService#transportModality_detail",
+      "@type" : "@id"
+    },
+    "location_detail" : {
+      "@id" : "http://tno.io/BusinessService#location_detail",
+      "@type" : "@id"
+    },
+    "typeOfCargo" : {
+      "@id" : "http://tno.io/DigitalTwin#typeOfCargo",
+      "@type" : "@id"
+    },
+    "corridorCode" : {
+      "@id" : "http://tno.io/DigitalTwin#corridorCode",
+      "@type" : "@id"
+    },
+    "Excise" : {
+      "@id" : "http://tno.io/DigitalTwin#Excise",
+      "@type" : "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "countryName" : {
+      "@id" : "http://tno.io/DigitalTwin#countryName"
+    },
+    "Waste" : {
+      "@id" : "http://tno.io/DigitalTwin#Waste",
+      "@type" : "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "Danegrous" : {
+      "@id" : "http://tno.io/DigitalTwin#Danegrous",
+      "@type" : "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "Reefer" : {
+      "@id" : "http://tno.io/DigitalTwin#Reefer",
+      "@type" : "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "cargoMinWeight" : {
+      "@id" : "http://tno.io/DigitalTwin#cargoMinWeight",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "dangerouseGoodsClassification" : {
+      "@id" : "http://tno.io/Classifications#dangerouseGoodsClassification",
+      "@type" : "@id"
+    },
+    "cargoContainerSize" : {
+      "@id" : "http://tno.io/DigitalTwin#cargoContainerSize",
+      "@type" : "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "natureofCargo" : {
+      "@id" : "http://tno.io/DigitalTwin#natureofCargo",
+      "@type" : "@id"
+    },
+    "cargoContainerNumber" : {
+      "@id" : "http://tno.io/DigitalTwin#cargoContainerNumber"
+    },
+    "AreaDescription" : {
+      "@id" : "http://tno.io/DigitalTwin#AreaDescription"
+    },
+    "status" : {
+      "@id" : "http://topbraid.org/metadata#status",
+      "@type" : "@id"
+    },
+    "imports" : {
+      "@id" : "http://www.w3.org/2002/07/owl#imports",
+      "@type" : "@id"
+    },
+    "defaultNamespace" : {
+      "@id" : "http://topbraid.org/swa#defaultNamespace"
+    },
+    "businessService" : "http://tno.io/BusinessService#",
+    "Classifications" : "http://tno.io/Classifications#",
+    "metadata" : "http://topbraid.org/metadata#",
+    "rdf" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "owl" : "http://www.w3.org/2002/07/owl#",
+    "DigitalTwin" : "http://tno.io/DigitalTwin#",
+    "xsd" : "http://www.w3.org/2001/XMLSchema#",
+    "Event" : "http://tno.io/Event#",
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#"
+  }
+}

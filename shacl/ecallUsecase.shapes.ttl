@@ -1,0 +1,312 @@
+# baseURI: https://ontology.tno.nl/logistics/federated/ecallUsecase
+# imports: http://datashapes.org/dash
+# imports: https://ontology.tno.nl/logistics/federated/BusinessService
+# imports: https://ontology.tno.nl/logistics/federated/Classifications
+# imports: https://ontology.tno.nl/logistics/federated/DigitalTwin
+# imports: https://ontology.tno.nl/logistics/federated/Event
+# imports: https://ontology.tno.nl/logistics/federated/PhysicalInfrastructure
+# imports: http://www.w3.org/2004/02/skos/core
+# imports: https://raw.githubusercontent.com/HajoRijgersberg/OM/master/om-2.0.rdf
+# prefix: ecall
+
+@prefix : <https://ontology.tno.nl/logistics/federated/ecallUsecase#> .
+@prefix DigitalTwin: <https://ontology.tno.nl/logistics/federated/DigitalTwin#> .
+@prefix dash: <http://datashapes.org/dash#> .
+@prefix Event: <https://ontology.tno.nl/logistics/federated/Event#> .
+@prefix businessService: <https://ontology.tno.nl/logistics/federated/BusinessService#> .
+@prefix classifications: <https://ontology.tno.nl/logistics/federated/Classifications#> .
+@prefix ecall: <https://ontology.tno.nl/logistics/federated/ecallUsecase#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://ontology.tno.nl/logistics/federated/ecallUsecase>
+  rdf:type owl:Ontology ;
+  owl:imports <http://datashapes.org/dash> ;
+  owl:imports <https://ontology.tno.nl/logistics/federated/BusinessService> ;
+  owl:imports <https://ontology.tno.nl/logistics/federated/Classifications> ;
+  owl:imports <https://ontology.tno.nl/logistics/federated/DigitalTwin> ;
+  owl:imports <https://ontology.tno.nl/logistics/federated/Event> ;
+  owl:imports <https://ontology.tno.nl/logistics/federated/PhysicalInfrastructure> ;
+  owl:imports <http://www.w3.org/2004/02/skos/core> ;
+  owl:imports <https://raw.githubusercontent.com/HajoRijgersberg/OM/master/om-2.0.rdf> ;
+  owl:versionInfo "Created with TopBraid Composer" ;
+.
+ecall:CargoShape
+  rdf:type sh:NodeShape ;
+  rdfs:label "CargoShape" ;
+  sh:property [
+      rdf:type sh:PropertyShape ;
+      sh:path <https://ontology.tno.nl/logistics/federated/Classifications#dangerouseGoodsClassification> ;
+      sh:class <https://ontology.tno.nl/logistics/federated/Classifications#dangerouseGoodCode> ;
+      sh:minCount 1 ;
+      sh:name "dangerouse goods classification" ;
+      sh:nodeKind sh:BlankNode ;
+    ] ;
+    sh:property [
+      rdf:type sh:PropertyShape ;
+      sh:path DigitalTwin:natureofCargo ;
+      sh:class classifications:natureOfCargo  ;
+      sh:minCount 1 ;
+      sh:name "dangerouse goods classification" ;
+      sh:nodeKind sh:BlankNode ;
+    ] ;
+  sh:property [
+      rdf:type sh:PropertyShape ;
+      sh:path DigitalTwin:cargoMaximumTemperature ;
+      sh:datatype xsd:decimal ;
+      sh:maxCount 1 ;
+      sh:minCount 1 ;
+      sh:name "cargo maximum temperature" ;
+    ] ;
+  sh:property [
+      rdf:type sh:PropertyShape ;
+      sh:path DigitalTwin:cargoMinimumTemperature ;
+      sh:datatype xsd:decimal ;
+      sh:maxCount 1 ;
+      sh:minCount 1 ;
+      sh:name "cargo minimum temperature" ;
+    ] ;
+  sh:property [
+      rdf:type sh:PropertyShape ;
+      sh:path DigitalTwin:cargoTarWeight ;
+      sh:datatype xsd:integer ;
+      sh:maxCount 1 ;
+      sh:minCount 1 ;
+      sh:name "cargo tar weight" ;
+    ] ;
+  
+  sh:property [
+      rdf:type sh:PropertyShape ;
+      sh:path DigitalTwin:numberOfPakcage ;
+      sh:datatype xsd:integer ;
+      sh:maxCount 1 ;
+      sh:minCount 1 ;
+      sh:name "number of pakcage" ;
+    ] ;
+  sh:property [
+      rdf:type sh:PropertyShape ;
+      sh:path DigitalTwin:packagingType ;
+      sh:class <https://ontology.tno.nl/logistics/federated/Classifications#packageType> ;
+      sh:maxCount 1 ;
+      sh:minCount 1 ;
+      sh:name "packaging type" ;
+      sh:nodeKind sh:BlankNode ;
+    ] ;
+  sh:property [
+      rdf:type sh:PropertyShape ;
+      sh:path DigitalTwin:GoodsDescription ;
+      sh:datatype xsd:string ;
+      sh:maxCount 1 ;
+      sh:minCount 1 ;
+      sh:name "Goods description" ;
+    ] ;
+  sh:property [
+      rdf:type sh:PropertyShape ;
+      sh:path DigitalTwin:hasUNNumber ;
+      sh:datatype xsd:string ;
+      sh:maxCount 1 ;
+      sh:minCount 1 ;
+      sh:name "UN Number" ;
+      sh:nodeKind sh:BlankNode ;
+    ] ;
+  sh:targetClass DigitalTwin:Cargo ;
+.
+ecall:cargoTarWeightShape
+  rdf:type sh:NodeShape ;
+  rdfs:label "Cargo Tare Weight Shape" ;
+  sh:property [
+      rdf:type sh:PropertyShape ;
+      sh:path DigitalTwin:hasUnitOfMeasure ;
+      sh:class <http://www.ontology-of-units-of-measure.org/resource/om-2/Unit> ;
+      sh:maxCount 1 ;
+      sh:minCount 1 ;
+      sh:name "has unit of measure" ;
+      sh:nodeKind sh:BlankNode ;
+    ] ;
+  sh:targetClass DigitalTwin:Cargo ;
+.
+ecall:cargoTemperatureShape
+  rdf:type sh:NodeShape ;
+  rdfs:label "Cargo Temperature Shape" ;
+  sh:property [
+      rdf:type sh:PropertyShape ;
+      sh:path DigitalTwin:hasUnitOfMeasure ;
+      sh:class <http://www.ontology-of-units-of-measure.org/resource/om-2/Unit> ;
+      sh:maxCount 1 ;
+      sh:minCount 1 ;
+      sh:name "has unit of measure" ;
+      sh:nodeKind sh:BlankNode ;
+    ] ;
+.
+
+ecall:EventTypeShape
+  rdf:type sh:NodeShape ;
+  rdfs:label "Event Shape" ;
+  sh:property [
+      rdf:type sh:PropertyShape ;
+      sh:path <https://ontology.tno.nl/logistics/federated/Event#ExpectedDropOffDate> ;
+      sh:datatype xsd:dateTime ;
+      sh:maxCount 1 ;
+      sh:minCount 1 ;
+      sh:name "Expected drop off date" ;
+    ] ;
+  sh:property [
+      rdf:type sh:PropertyShape ;
+      sh:path <https://ontology.tno.nl/logistics/federated/Event#hasDate> ;
+      sh:class <https://ontology.tno.nl/logistics/federated/Event#Date> ;
+      sh:minCount 1 ;
+      sh:name "has date" ;
+      sh:nodeKind sh:BlankNode ;
+    ] ;
+  sh:property [
+      rdf:type sh:PropertyShape ;
+      sh:path <https://ontology.tno.nl/logistics/federated/Event#hasDropOffTime> ;
+      sh:datatype xsd:dateTime ;
+      sh:maxCount 1 ;
+      sh:minCount 1 ;
+      sh:name "has drop off time" ;
+    ] ;
+  sh:property [
+      rdf:type sh:PropertyShape ;
+      sh:path <https://ontology.tno.nl/logistics/federated/Event#hasMilestone> ;
+      sh:class <https://ontology.tno.nl/logistics/federated/Event#Milestone> ;
+      sh:minCount 1 ;
+      sh:name "has milestone" ;
+      sh:nodeKind sh:BlankNode ;
+    ] ;
+  sh:property [
+      rdf:type sh:PropertyShape ;
+      sh:path <https://ontology.tno.nl/logistics/federated/Event#hasPickupTime> ;
+      sh:datatype xsd:dateTime ;
+      sh:maxCount 1 ;
+      sh:minCount 1 ;
+      sh:name "has pick UPTime" ;
+    ] ;
+  sh:property [
+      rdf:type sh:PropertyShape ;
+      sh:path <https://ontology.tno.nl/logistics/federated/Event#involvesBusinessTransaction> ;
+      sh:class <https://ontology.tno.nl/logistics/federated/BusinessService#BusinessTransaction> ;
+      sh:minCount 1 ;
+      sh:name "involves business transaction" ;
+      sh:nodeKind sh:BlankNode ;
+    ] ;
+  sh:property [
+      rdf:type sh:PropertyShape ;
+      sh:path <https://ontology.tno.nl/logistics/federated/Event#involvesDigitalTwin> ;
+      sh:class DigitalTwin:DigitalTwin ;
+      sh:minCount 1 ;
+      sh:name "involves digital twin" ;
+      sh:nodeKind sh:BlankNode ;
+    ] ;
+  sh:property [
+      rdf:type sh:PropertyShape ;
+      sh:path <https://ontology.tno.nl/logistics/federated/Event#involvesLogisticsActor> ;
+      sh:class <https://ontology.tno.nl/logistics/federated/BusinessService#logisticsActor> ;
+      sh:minCount 1 ;
+      sh:name "involves logistics actor" ;
+      sh:nodeKind sh:BlankNode ;
+    ] ;
+  sh:property [
+      rdf:type sh:PropertyShape ;
+      sh:path <https://ontology.tno.nl/logistics/federated/Event#involvesLocation> ;
+      sh:class <https://ontology.tno.nl/logistics/federated/PhysicalInfrastructure#Location> ;
+      sh:minCount 1 ;
+      sh:name "invovles location" ;
+      sh:nodeKind sh:BlankNode ;
+    ] ;
+  sh:property [
+      rdf:type sh:PropertyShape ;
+      sh:path Event:hasEventType ;
+      sh:class Event:Event ;
+      sh:minCount 1 ;
+      sh:name "has event type" ;
+      sh:nodeKind sh:BlankNode ;
+    ] ;
+     
+     sh:property [
+      rdf:type sh:PropertyShape ;
+      sh:path Event:hasTimestamp ;
+      sh:class <https://ontology.tno.nl/logistics/federated/Event#Event> ;
+      sh:minCount 1 ;
+      sh:name "has event type" ;
+      sh:nodeKind sh:BlankNode ;
+    ] ;
+  sh:targetClass <https://ontology.tno.nl/logistics/federated/Event#Event> ;
+.
+ecall:LocationShape
+  rdf:type sh:NodeShape ;
+  rdfs:label "Location Shape" ;
+  sh:property [
+      rdf:type sh:PropertyShape ;
+      sh:path <https://ontology.tno.nl/logistics/federated/PhysicalInfrastructure#LocationCoordinate> ;
+      sh:datatype xsd:decimal ;
+      sh:minCount 1 ;
+      sh:name "Location coordinate" ;
+    ] ;
+  sh:property [
+      rdf:type sh:PropertyShape ;
+      sh:path <https://ontology.tno.nl/logistics/federated/PhysicalInfrastructure#loctionRole> ;
+      sh:class <https://ontology.tno.nl/logistics/federated/PhysicalInfrastructure#locationRole> ;
+      sh:minCount 1 ;
+      sh:name "loction role" ;
+    ] ;
+  sh:targetClass <https://ontology.tno.nl/logistics/federated/PhysicalInfrastructure#Location> ;
+.
+ecall:TrailerShape
+  rdf:type sh:NodeShape ;
+  rdfs:label "Trailer Shape" ;
+  sh:equals DigitalTwin:hasLicensePlateNumber ;
+  sh:property [
+      rdf:type sh:PropertyShape ;
+      sh:path DigitalTwin:TrailerID ;
+      sh:datatype xsd:string ;
+      sh:minCount 1 ;
+    ] ;
+  sh:targetClass DigitalTwin:Trailer ;
+.
+ecall:TransportMeansShape
+  rdf:type sh:NodeShape ;
+  rdfs:label "Transport Means Shape" ;
+  sh:equals DigitalTwin:hasLicensePlateNumber ;
+  sh:equals <https://ontology.tno.nl/logistics/federated/PhysicalInfrastructure#countryISOCode> ;
+  sh:property [
+      rdf:type sh:PropertyShape ;
+      sh:path DigitalTwin:hasTransportMeansNationality ;
+      sh:datatype xsd:string ;
+      sh:minCount 1 ;
+      sh:name "has transport means nationality" ;
+    ] ;
+  sh:property [
+      rdf:type sh:PropertyShape ;
+      sh:path DigitalTwin:hasTransportMeasnID ;
+      sh:datatype xsd:string ;
+      sh:minCount 1 ;
+      sh:name "has transport measn ID" ;
+    ] ;
+  sh:targetClass DigitalTwin:TransportMeans ;
+.
+ecall:TransportMeansRoutShape
+rdf:type sh:NodeShape ;
+  rdfs:label "Rout Shape" ;
+  sh:sparql [
+    a sh:SPARQLConstraint ;
+    sh:message "" ;
+     sh:prefixes [
+     sh:declare [
+                sh:prefix    "DigitalTwin" ;
+                sh:prefix    "pf" ;
+                sh:namespace "https://ontology.tno.nl/logistics/federated/DigitalTwin"^^xsd:anyURI ;
+                sh:namespace "https://ontology.tno.nl/logistics/federated/PhysicalInfrastructure"^^xsd:anyURI ;
+        ]
+   ] ;
+   sh:select
+    """SELECT $this ?location 
+       WHERE {
+         $this pf:locatedAt  ?location .
+         $this Event:usedIn   Event:Event .
+        
+    }""" ;
+ ] .

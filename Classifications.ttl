@@ -1,0 +1,291 @@
+# baseURI: https://ontology.tno.nl/logistics/federated/Classifications
+# imports: http://www.w3.org/2004/02/skos/core
+# imports: https://ontology.tno.nl/logistics/federated/DigitalTwin
+# prefix: classifications
+
+@prefix : <https://ontology.tno.nl/logistics/federated/Classifications#> .
+@prefix DigitalTwin: <https://ontology.tno.nl/logistics/federated/DigitalTwin#> .
+@prefix businessService: <https://ontology.tno.nl/logistics/federated/businessService#> .
+@prefix classifications: <https://ontology.tno.nl/logistics/federated/Classifications#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://ontology.tno.nl/logistics/federated/Classifications>
+  rdf:type owl:Ontology ;
+  owl:imports <http://www.w3.org/2004/02/skos/core> ;
+  owl:imports <https://ontology.tno.nl/logistics/federated/DigitalTwin> ;
+.
+classifications:Air
+  rdf:type classifications:TransportModality ;
+.
+classifications:Atlantic_Corridor
+  rdf:type classifications:CorridorName ;
+.
+classifications:Baltic-Adriatic_Corridor
+  rdf:type classifications:CorridorName ;
+.
+classifications:Breakbulk
+  rdf:type classifications:TransportMovementType ;
+  rdfs:comment "Defines the movement of general cargo not carried in ISO standard containers." ;
+  rdfs:label "break bulk" ;
+.
+classifications:CargoType
+  rdf:type owl:Class ;
+  rdfs:comment "A classification of cargo carried, or intended to be carried, on means of transport, based on its general appearance." ;
+  rdfs:label "Cargo Type" ;
+  rdfs:subClassOf classifications:Classifications ;
+.
+classifications:Classifications
+  rdf:type owl:Class ;
+  rdfs:comment "Various classifications of different types of e.g. cargo or container, or codelists for standards such as dangerous goods codes or nature of cargo" ;
+  rdfs:label "Classifications" ;
+  rdfs:subClassOf owl:Thing ;
+.
+classifications:ContainerType
+  rdf:type owl:Class ;
+  rdfs:comment "A classification of container to represent types of container according to community standards." ;
+  rdfs:label "Container Type" ;
+  rdfs:subClassOf classifications:Classifications ;
+.
+classifications:CorridorName
+  rdf:type owl:Class ;
+  rdfs:comment """Core network corridors were introduced to facilitate the coordinated implementation of the core network in Europe. 
+
+Nine core network corridors are identified in the annex to the CEF Regulation, which includes a list of projects pre-identified for possible EU funding during the period 2014-2020, based on their added value for TEN-T development and their maturity status.""" ;
+  rdfs:label "Corridor Name" ;
+  rdfs:subClassOf classifications:Classifications ;
+.
+classifications:D
+  rdf:type classifications:NatureOfCargo ;
+  rdfs:label "Dangerous" ;
+.
+classifications:D_1
+  rdfs:label "Reefer" ;
+.
+classifications:DangerousGoods
+  rdf:type owl:Class ;
+  rdfs:comment "A hazardous or non-hazardous substance which may pose risks to people and/or the environment for which the transportation is regulated by dangerous goods regulations." ;
+  rdfs:label "Dangerous Goods" ;
+  rdfs:subClassOf classifications:Classifications ;
+.
+classifications:E
+  rdf:type classifications:NatureOfCargo ;
+  rdfs:label "Excise" ;
+.
+classifications:FCL-FCL
+  rdf:type classifications:TransportMovementType ;
+  rdfs:comment """Defines the movement of cargo packed by the shipper or
+              shipper's agent and unpacked by the consignee or
+              consignee's agent. 'FCL' means Full Container Load.""" ;
+.
+classifications:GoodsTypeCode
+  rdf:type owl:Class ;
+  rdfs:comment "A classification of codes that specify the different type of goods within the industry." ;
+  rdfs:label "Goods Type Code" ;
+  rdfs:subClassOf classifications:Classifications ;
+.
+classifications:LCL-LCL
+  rdf:type classifications:TransportMovementType ;
+  rdfs:comment """ Defines the movement of cargo packed in and unpacked
+              from containers by the carrier on behalf of the
+              shipper/consignee. 'LCL' means Less than Container Load.""" ;
+.
+classifications:LogisticsTransactionDocument
+  rdf:type owl:Class ;
+  rdfs:comment "A classification of the different types of documents used during logistics transactions." ;
+  rdfs:label "Logistics Transaction Document" ;
+  rdfs:subClassOf classifications:Classifications ;
+.
+classifications:Mediterranean_Corridor
+  rdf:type classifications:CorridorName ;
+.
+classifications:NatureOfCargo
+  rdf:type owl:Class ;
+  rdfs:comment "A classification of codes or vocabularies that express the nature of cargo." ;
+  rdfs:label "Nature of Cargo" ;
+  rdfs:subClassOf classifications:Classifications ;
+.
+classifications:North_Sea-Baltic_Corridor
+  rdf:type classifications:CorridorName ;
+.
+classifications:North_Sea-Mediterranean_Corridor
+  rdf:type classifications:CorridorName ;
+.
+classifications:Orient_East-Med_Corridor
+  rdf:type classifications:CorridorName ;
+.
+classifications:PackageType
+  rdf:type owl:Class ;
+  rdfs:comment """A classification of packaging materials and components used in any packaging operation to wrap, contain and protect articles or substances during transport. The shape or configuration of a package
+as it appears for transport is also specified.""" ;
+  rdfs:label "Package Type" ;
+  rdfs:subClassOf classifications:Classifications ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onDataRange xsd:string ;
+      owl:onProperty classifications:packageCode ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onDataRange xsd:string ;
+      owl:onProperty classifications:packageTypeName ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onDataRange xsd:string ;
+      owl:onProperty classifications:packageTypeNumericCode ;
+    ] ;
+.
+classifications:R
+  rdf:type classifications:NatureOfCargo ;
+  rdfs:label "Reefer" ;
+.
+classifications:RO-RO
+  rdf:type classifications:ContainerType ;
+.
+classifications:Rhine-Alpine_Corridor
+  rdf:type classifications:CorridorName ;
+.
+classifications:Rhine-Danube_Corridor
+  rdf:type classifications:CorridorName ;
+.
+classifications:Rhine_Alpine_Corridor
+  rdf:type classifications:CorridorName ;
+.
+classifications:Road
+  rdf:type classifications:TransportModality ;
+.
+classifications:Safety_and_hazard_data_sheet
+  rdf:type classifications:LogisticsTransactionDocument ;
+  rdfs:comment "A statement of an account containing the booked items as in the ledger of the account servicing financial institution." ;
+  rdfs:label "Safety and hazard data sheet" ;
+.
+classifications:Scandinavian-Mediterranean_Corridor
+  rdf:type classifications:CorridorName ;
+.
+classifications:Sea
+  rdf:type classifications:TransportModality ;
+.
+classifications:SealConditionCodeType
+  rdf:type owl:Class ;
+  rdfs:comment "A classification of codes that specify the conditions of seals e.g. damaged or in right condition." ;
+  rdfs:label "Seal Condition Code Type" ;
+  rdfs:subClassOf classifications:Classifications ;
+.
+classifications:TransportModality
+  rdf:type owl:Class ;
+  rdfs:comment "A classification of the various modes used for a transportation movement. For each mode, there are several means of transport. They are: a. inland surface transportation (rail, road, and inland waterway); b. sea transport (coastal and ocean); c. air transportation; and d. pipelines. For the purpose of the usecase, we encode the top individulas only. Sea, Road, Air." ;
+  rdfs:label "Transport Modality" ;
+  rdfs:subClassOf classifications:Classifications ;
+.
+classifications:TransportMovementType
+  rdf:type owl:Class ;
+  rdfs:comment "A classification which specifies transport movement details for a goods item or equipment. For the purpose of this project ,we selected only few examples to demonstrate in the proof of concept -- the complete list can be found here: https://www.stylusstudio.com/edifact/D04B/8335.htm" ;
+  rdfs:label "Transport Movement Type" ;
+  rdfs:subClassOf classifications:Classifications ;
+.
+classifications:UNDGCode
+  rdf:type owl:DatatypeProperty ;
+  rdfs:comment "Goods can be assigned a UNDG code to identify the hazardous nature of the goods." ;
+  rdfs:domain classifications:DangerousGoods ;
+  rdfs:label "UNDG code" ;
+  rdfs:range xsd:string ;
+.
+classifications:W
+  rdf:type classifications:NatureOfCargo ;
+  rdfs:label "Waste" ;
+.
+classifications:appliesTo
+  rdf:type owl:ObjectProperty ;
+.
+classifications:bulk
+  rdf:type classifications:CargoType ;
+  rdfs:comment "Typical examples of dry bulk transport are building materials such as sand and gravel or grain and fodder. But also wet bulk such as oil, gas and ore are examples of bulk commodities." ;
+.
+classifications:codeContent
+  rdf:type owl:DatatypeProperty ;
+  rdfs:comment "Classification of the seal code conditions type" ;
+  rdfs:domain classifications:SealConditionCodeType ;
+  rdfs:label "Code content" ;
+  rdfs:range xsd:integer ;
+.
+classifications:containers
+  rdf:type classifications:CargoType ;
+.
+classifications:dangerousGoodsClassification
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain DigitalTwin:Goods ;
+  rdfs:range classifications:DangerousGoods ;
+.
+classifications:dangerousGoodsRegulationCode
+  rdf:type owl:DatatypeProperty ;
+  rdfs:comment "Dangerous goods require a dangerous goods regulation code. The code consists of 3 characters." ;
+  rdfs:domain classifications:DangerousGoods ;
+  rdfs:label "Dangerous Goods Regulation Code" ;
+  rdfs:range xsd:string ;
+.
+classifications:generalCargo
+  rdf:type classifications:CargoType ;
+  rdfs:comment "Contrary to mass or bulk goods, general cargo comprises materials of which the quantity is not registered per size or weight  but per individual item. General cargo is transported in boxes, crates, drums or bales. Examples of general cargo are cars, paper, kerbstone and machinery." ;
+  rdfs:label "visualisation" ;
+.
+classifications:hazmatName
+  rdf:type owl:DatatypeProperty ;
+  rdfs:comment "Goods that are classified as dangerous are described in more detail using the hazardous materials UN code system. This is the corresponding name of the applicable UN code." ;
+  rdfs:domain classifications:DangerousGoods ;
+  rdfs:label "Dangerous Goods" ;
+  rdfs:range xsd:string ;
+.
+classifications:hazmatUNCode
+  rdf:type owl:DatatypeProperty ;
+  rdfs:comment "Goods that are classified as dangerous are described in more detail using the hazardous materials UN code" ;
+  rdfs:domain classifications:DangerousGoods ;
+  rdfs:label "Hazmat UN code" ;
+  rdfs:range xsd:string ;
+.
+classifications:packageCode
+  rdf:type owl:DatatypeProperty ;
+  rdfs:comment "Package code based on Unece Standardisations." ;
+  rdfs:domain DigitalTwin:Package ;
+  rdfs:label "Package Code" ;
+  rdfs:range xsd:string ;
+.
+classifications:packageTypeName
+  rdf:type owl:DatatypeProperty ;
+  rdfs:comment "Package type name based on UNECE standardisations. Retrieved from internal project ProfileData postgres database." ;
+  rdfs:domain classifications:PackageType ;
+  rdfs:label "Package Type Name" ;
+  rdfs:range xsd:string ;
+.
+classifications:packageTypeNumericCode
+  rdf:type owl:DatatypeProperty ;
+  rdfs:comment "Two digit numeric code for expressing types of package." ;
+  rdfs:domain classifications:PackageType ;
+  rdfs:label "Package Type Numeric Code" ;
+  rdfs:range xsd:integer ;
+.
+classifications:pallets
+  rdf:type classifications:CargoType ;
+  rdfs:label "Number of TEU" ;
+.
+classifications:transportMovementCode
+  rdf:type owl:DatatypeProperty ;
+  rdfs:comment "The code of the transport movement code." ;
+  rdfs:domain classifications:TransportMovementType ;
+  rdfs:label "Transport Movement Code" ;
+  rdfs:range xsd:string ;
+.
+classifications:transportMovementID
+  rdf:type owl:DatatypeProperty ;
+  rdfs:comment "The ID of the transport movement type." ;
+  rdfs:domain classifications:TransportMovementType ;
+  rdfs:label "Transport Movement Code" ;
+  rdfs:range xsd:string ;
+.

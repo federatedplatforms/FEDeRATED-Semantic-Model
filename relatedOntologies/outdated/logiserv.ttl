@@ -1,0 +1,737 @@
+# baseURI: http://ontology.tno.nl/logiserv
+# imports: http://ontology.tno.nl/logico
+
+# c14n-version: 3
+@prefix LogiCO: <http://ontology.tno.nl/logico#> .
+@prefix LogiServ: <http://ontology.tno.nl/logiserv#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix dul: <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://ontology.tno.nl/logiserv>
+  rdf:type owl:Ontology ;
+  dcterms:created "29-10-2013"^^xsd:string ;
+  dcterms:creator "Laura Daniele (laura.daniele@tno.nl)"^^xsd:string ;
+  dcterms:description "LogiServ (Logistics Service Ontology) models business activities (such as Transport, Transshipment, Load, Discharge, Storage, Consolidation, Deconsolidation, etc.) and their properties as the basis for specifying logistic services. LogiServ is an extension of LogiCO (Logistics Core Ontology)."^^xsd:string ;
+  dcterms:issued "04-06-2014"^^xsd:string ;
+  dcterms:publisher "TNO"^^xsd:string ;
+  dcterms:title "LogiServ: Logistics Service Ontology"^^xsd:string ;
+  rdfs:label "LogiServ"@en ;
+  owl:imports <http://ontology.tno.nl/logico> ;
+  owl:versionInfo "1.0"^^xsd:string ;
+.
+
+LogiCO:Activity
+  rdf:type owl:Class ;
+.
+LogiCO:Actor
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onClass LogiServ:BusinessServiceDescription ;
+      owl:onProperty LogiServ:describes ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onClass LogiServ:Role ;
+      owl:onProperty LogiServ:hasRole ;
+      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    ] ;
+.
+LogiCO:Actor_1
+  LogiServ:describes LogiServ:Service_1 ;
+  LogiServ:hasRole LogiServ:Provider_1 ;
+.
+LogiCO:Amount
+  rdf:type owl:Class ;
+.
+LogiCO:CodeIssuingAgency
+  rdf:type owl:Class ;
+.
+LogiCO:Currency
+  rdf:type owl:Class ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onProperty LogiServ:hasCurrency ;
+      owl:someValuesFrom LogiServ:Currency ;
+    ] ;
+.
+LogiCO:MoveableResource
+  rdf:type owl:Class ;
+.
+LogiCO:Object
+  rdf:type owl:Class ;
+.
+LogiCO:Requirement
+  rdf:type owl:Class ;
+.
+LogiCO:SpaceRegion
+  rdf:type owl:Class ;
+.
+LogiCO:TemporalRegion
+  rdf:type owl:Class ;
+.
+LogiCO:UnitOfMeasure
+  rdf:type owl:Class ;
+.
+LogiCO:contains
+  rdf:type owl:ObjectProperty ;
+.
+LogiCO:hasCode
+  rdf:type owl:DatatypeProperty ;
+.
+LogiCO:hasID
+  rdf:type owl:DatatypeProperty ;
+.
+LogiCO:hasRequirement
+  rdf:type owl:ObjectProperty ;
+.
+LogiCO:hasTrigger
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain LogiServ:Activity ;
+  rdfs:range LogiServ:Event ;
+  owl:inverseOf LogiCO:isTriggerOf ;
+.
+LogiCO:isTriggerOf
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain LogiServ:Event ;
+  rdfs:range LogiServ:Activity ;
+.
+
+LogiServ:Activity
+  rdf:type owl:Class ;
+  rdfs:comment """An Activity denotes an action that is relevant for the purpose of logistics and provides value for a potential customer. An Activity can be used as a basic building block to compose more complex activities.
+
+We have identified some relevant activity types for logistics, but the list can be further extended. The identified activity types are the following:
+- Transport, which denotes the activity of moving resources (namely, products and/or packages and/or pieces of equipment, but also empty containers) from an origin to a destination, in a certain time, using suitable transport mode and transport means;
+- Transhipment, which denotes the activity of changing transport mode at an intermediate destination and, consequently, transshipment implies a change of transport means (for example, from a truck to a vessel in a port);
+- Loading,  which denotes the activity of placing resources (namely, products and/or packages and/or pieces of equipment, but also empty containers) into/onto a transport means; 
+- Discharge, which denotes the activity of taking out resources (namely, products and/or packages and/or pieces of equipment, but also empty containers) from a transport means;
+- Storage, which denotes the activity of keeping in stock resources (namely, products and/or packages and/or pieces of equipment, but also empty containers) in a warehouse facility for a certain period of time;
+- Consolidation, which denotes the activity of assembling several (smaller) resource units into one (bigger) unit;
+- Deconsolidation, which denotes the activity of disassembling of one (bigger) unit of resources in several (smaller) units.
+- LoadTransportDischarge is an example of complex activity consisting of 1) Load a certain transport means with a container at an origin, 2) Transport the container using the transport means towards a destination; and 3) Discharge the transport means at destination
+
+Properties:
+- An Activity must have a Consumer (at least one)
+- An Activity must have a Provider (at least one)
+- An Activity must specify a Location (at least one)
+- An Activity must specify a Time interval or instant (at least one)
+- An Activity hasConstituent min 1 Activity. In other words, an activity has always as constituent at least itself (mandatory) and can have as constituent other activities (optional). For example, Transport hasConstituent Transport (itself).
+- An Activity isConstituentOf min 1 Activity. In other words, an activity is always constituent of at least itself (mandatory), but can be constituent of more complex activities (optional). For example, Transport isConstituentOf Transport (itself) and LoadTransportDischarge (complex activity). 
+"""^^xsd:string ;
+  rdfs:subClassOf LogiCO:Activity ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onClass LogiServ:Consumer ;
+      owl:onProperty LogiServ:hasConsumer ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onClass LogiServ:Provider ;
+      owl:onProperty LogiServ:hasProvider ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onClass LogiServ:Activity ;
+      owl:onProperty dul:hasConstituent ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onClass LogiServ:Activity ;
+      owl:onProperty dul:isConstituentOf ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onProperty LogiCO:hasLocation ;
+      owl:someValuesFrom LogiCO:Location ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onProperty LogiServ:hasTime ;
+      owl:someValuesFrom LogiCO:TemporalRegion ;
+    ] ;
+.
+LogiServ:Address_1
+  rdf:type LogiCO:Address ;
+  LogiCO:hasCountry LogiCO:Netherlands ;
+  rdfs:label "Address 1"^^xsd:string ;
+.
+LogiServ:Arrive
+  rdf:type owl:Class ;
+  rdfs:subClassOf LogiServ:Event ;
+.
+LogiServ:BusinessServiceDescription
+  rdf:type owl:Class ;
+  rdfs:label "business service description"^^xsd:string ;
+  rdfs:subClassOf LogiCO:Entity ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
+      owl:onClass LogiCO:PhysicalResource ;
+      owl:onProperty LogiServ:involves ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
+      owl:onClass LogiCO:TemporalRegion ;
+      owl:onProperty LogiServ:hasTime ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onClass LogiCO:Location ;
+      owl:onProperty LogiCO:hasLocation ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onClass LogiServ:Activity ;
+      owl:onProperty LogiServ:instantiates ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onClass LogiCO:Actor ;
+      owl:onProperty LogiServ:hasActor ;
+      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    ] ;
+.
+LogiServ:Cargo
+  rdf:type owl:Class ;
+  LogiServ:mappingToEDI <http://www.unece.org/fileadmin/DAM/trade/untdid/d12b/tred/tred7085.htm> ;
+  LogiServ:mappingToEDI """UN/EDIFACT D.12B Data Element 7085  Cargo type classification code       
+Desc: Code specifying the classification of a type of cargo.
+
+D.12B Core Component Library UN02000049""" ;
+  rdfs:subClassOf LogiCO:MoveableResource ;
+.
+LogiServ:Consolidation
+  rdf:type owl:Class ;
+  rdfs:comment "Consolidation denotes the activity of assembling several (smaller) resource units into one (bigger) unit"^^xsd:string ;
+  rdfs:subClassOf LogiServ:Activity ;
+  owl:disjointWith LogiServ:Deconsolidation ;
+  owl:disjointWith LogiServ:Discharge ;
+  owl:disjointWith LogiServ:Load ;
+  owl:disjointWith LogiServ:LoadTransportDischarge ;
+  owl:disjointWith LogiServ:MultimodalRoadSeaTransport ;
+  owl:disjointWith LogiServ:Storage ;
+  owl:disjointWith LogiServ:Transport ;
+  owl:disjointWith LogiServ:Transshipment ;
+.
+LogiServ:Consumer
+  rdf:type owl:Class ;
+  rdfs:subClassOf LogiServ:Role ;
+.
+LogiServ:Consumer_1
+  rdf:type LogiServ:Consumer ;
+  LogiServ:isConsumerOf LogiServ:Transport_1 ;
+  rdfs:label "Consumer 1"^^xsd:string ;
+.
+LogiServ:ContractRequirement
+  rdf:type owl:Class ;
+  LogiServ:mappingToEDI <http://www.unece.org/fileadmin/DAM/trade/untdid/d12b/tred/tred4065.htm> ;
+  LogiServ:mappingToEDI """UN/EDIFACT D.12B Data Element 4065  Contract and carriage condition code 
+Desc: Code to identify the conditions of contract and carriage""" ;
+  rdfs:subClassOf LogiCO:Requirement ;
+.
+LogiServ:Currency
+  rdf:type owl:Class ;
+  LogiServ:mappingToEDI <http://www.unece.org/fileadmin/DAM/trade/untdid/d12b/tred/tred6345.htm> ;
+  rdfs:comment """UN/EDIFACT D.12B Data Element 6345  Currency identification code  
+Desc: Code specifying a monetary unit.""" ;
+  rdfs:subClassOf LogiCO:UnitOfMeasure ;
+.
+LogiServ:Deconsolidation
+  rdf:type owl:Class ;
+  rdfs:comment "Deconsolidation denotes the activity of disassembling of one (bigger) unit of resources in several (smaller) units."^^xsd:string ;
+  rdfs:subClassOf LogiServ:Activity ;
+  owl:disjointWith LogiServ:Consolidation ;
+  owl:disjointWith LogiServ:Discharge ;
+  owl:disjointWith LogiServ:Load ;
+  owl:disjointWith LogiServ:LoadTransportDischarge ;
+  owl:disjointWith LogiServ:MultimodalRoadSeaTransport ;
+  owl:disjointWith LogiServ:Storage ;
+  owl:disjointWith LogiServ:Transport ;
+  owl:disjointWith LogiServ:Transshipment ;
+.
+LogiServ:Depart
+  rdf:type owl:Class ;
+  rdfs:subClassOf LogiServ:Event ;
+.
+LogiServ:Discharge
+  rdf:type owl:Class ;
+  rdfs:comment "Discharge denotes the activity of taking out resources (namely, products and/or packages and/or pieces of equipment, but also empty containers) from a transport means"^^xsd:string ;
+  rdfs:subClassOf LogiServ:Activity ;
+  owl:disjointWith LogiServ:Consolidation ;
+  owl:disjointWith LogiServ:Deconsolidation ;
+  owl:disjointWith LogiServ:Load ;
+  owl:disjointWith LogiServ:LoadTransportDischarge ;
+  owl:disjointWith LogiServ:MultimodalRoadSeaTransport ;
+  owl:disjointWith LogiServ:Storage ;
+  owl:disjointWith LogiServ:Transport ;
+  owl:disjointWith LogiServ:Transshipment ;
+.
+LogiServ:Drop
+  rdf:type owl:Class ;
+  rdfs:subClassOf LogiServ:Event ;
+.
+LogiServ:Event
+  rdf:type owl:Class ;
+  rdfs:comment """An event is a trigger that can be used to synchronize two or more logistics activities.  
+For example, consider an activity of road transport by truck, which is followed by the activity of discharge of this truck at destination. In this case, the departure of the truck can be regarded as a trigger for the activity of transport, while the arrival of this truck to its destination can be regarded as a trigger for the activity of discharge.
+"""^^xsd:string ;
+  rdfs:subClassOf LogiCO:Event ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty LogiServ:hasStatus ;
+    ] ;
+.
+LogiServ:GovernmentalRequirement
+  rdf:type owl:Class ;
+  rdfs:subClassOf LogiCO:Requirement ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onProperty LogiServ:governmentActionCode ;
+      owl:someValuesFrom xsd:int ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onProperty LogiServ:governmentInvolvmentCode ;
+      owl:someValuesFrom xsd:int ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onProperty LogiServ:governmentProcedureCode ;
+      owl:someValuesFrom xsd:int ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onProperty LogiServ:transportMovementCode ;
+      owl:someValuesFrom xsd:int ;
+    ] ;
+.
+LogiServ:Load
+  rdf:type owl:Class ;
+  rdfs:comment "Load denotes the activity of placing resources (namely, products and/or packages and/or pieces of equipment, but also empty containers) into/onto a transport means"^^xsd:string ;
+  rdfs:subClassOf LogiServ:Activity ;
+  owl:disjointWith LogiServ:Consolidation ;
+  owl:disjointWith LogiServ:Deconsolidation ;
+  owl:disjointWith LogiServ:Discharge ;
+  owl:disjointWith LogiServ:LoadTransportDischarge ;
+  owl:disjointWith LogiServ:MultimodalRoadSeaTransport ;
+  owl:disjointWith LogiServ:Storage ;
+  owl:disjointWith LogiServ:Transport ;
+  owl:disjointWith LogiServ:Transshipment ;
+.
+LogiServ:LoadTransportDischarge
+  rdf:type owl:Class ;
+  rdfs:comment """LoadTransportDischarge is an example of complex activity type, which we defined as follows:
+1) Load a certain transport means with a container at an origin
+2) Transport of the container using the transport means towards a destination
+3) Discharge of the transport means at destination"""^^xsd:string ;
+  rdfs:subClassOf LogiServ:Activity ;
+  rdfs:subClassOf [
+      rdf:type owl:Class ;
+      owl:unionOf (
+          LogiServ:Discharge
+          LogiServ:Load
+          [
+            rdf:type owl:Restriction ;
+            owl:onProperty dul:hasConstituent ;
+            owl:someValuesFrom LogiServ:Discharge ;
+          ]
+        ) ;
+    ] ;
+  owl:disjointWith LogiServ:Consolidation ;
+  owl:disjointWith LogiServ:Deconsolidation ;
+  owl:disjointWith LogiServ:Discharge ;
+  owl:disjointWith LogiServ:Load ;
+  owl:disjointWith LogiServ:MultimodalRoadSeaTransport ;
+  owl:disjointWith LogiServ:Storage ;
+  owl:disjointWith LogiServ:Transport ;
+  owl:disjointWith LogiServ:Transshipment ;
+.
+LogiServ:Location_1
+  rdf:type LogiCO:Location ;
+  rdfs:label "Location 1"^^xsd:string ;
+.
+LogiServ:MultimodalRoadSeaTransport
+  rdf:type owl:Class ;
+  rdfs:subClassOf LogiServ:Activity ;
+  owl:disjointWith LogiServ:Consolidation ;
+  owl:disjointWith LogiServ:Deconsolidation ;
+  owl:disjointWith LogiServ:Discharge ;
+  owl:disjointWith LogiServ:Load ;
+  owl:disjointWith LogiServ:LoadTransportDischarge ;
+  owl:disjointWith LogiServ:Storage ;
+  owl:disjointWith LogiServ:Transport ;
+  owl:disjointWith LogiServ:Transshipment ;
+.
+LogiServ:Netherlands
+  rdf:type LogiCO:Location ;
+  rdfs:label "Netherlands"^^xsd:string ;
+.
+LogiServ:Notify
+  rdf:type owl:Class ;
+  rdfs:subClassOf LogiServ:Event ;
+.
+LogiServ:Pick
+  rdf:type owl:Class ;
+  rdfs:subClassOf LogiServ:Event ;
+.
+LogiServ:Provider
+  rdf:type owl:Class ;
+  rdfs:subClassOf LogiServ:Role ;
+.
+LogiServ:Provider_1
+  rdf:type LogiServ:Provider ;
+  LogiServ:isProviderOf LogiServ:Transport_1 ;
+  rdfs:label "Provider 1"^^xsd:string ;
+.
+LogiServ:Resume
+  rdf:type owl:Class ;
+  rdfs:subClassOf LogiServ:Event ;
+.
+LogiServ:Role
+  rdf:type owl:Class ;
+  rdfs:subClassOf LogiCO:Entity ;
+.
+LogiServ:ServiceRequirement
+  rdf:type owl:Class ;
+  LogiServ:mappingToEDI <http://www.unece.org/fileadmin/DAM/trade/untdid/d12b/tred/tred7273.htm> ;
+  LogiServ:mappingToEDI """UN/EDIFACT D.12B Data Element 7273  Service requirement code 
+Desc: Code specifying a service requirement""" ;
+  rdfs:subClassOf LogiCO:Requirement ;
+.
+LogiServ:Service_1
+  rdf:type LogiServ:BusinessServiceDescription ;
+  LogiCO:hasLocation LogiServ:Netherlands ;
+  LogiServ:hasActor LogiServ:Provider_1 ;
+  LogiServ:instantiates LogiServ:Transport_1 ;
+  rdfs:label "Service 1"^^xsd:string ;
+.
+LogiServ:Storage
+  rdf:type owl:Class ;
+  rdfs:comment "Storage denotes the activity of keeping in stock resources (namely, products and/or packages and/or pieces of equipment, but also empty containers) in a warehouse facility for a certain period of time"^^xsd:string ;
+  rdfs:subClassOf LogiServ:Activity ;
+  owl:disjointWith LogiServ:Consolidation ;
+  owl:disjointWith LogiServ:Deconsolidation ;
+  owl:disjointWith LogiServ:Discharge ;
+  owl:disjointWith LogiServ:Load ;
+  owl:disjointWith LogiServ:LoadTransportDischarge ;
+  owl:disjointWith LogiServ:MultimodalRoadSeaTransport ;
+  owl:disjointWith LogiServ:Transport ;
+  owl:disjointWith LogiServ:Transshipment ;
+.
+LogiServ:Subscribe
+  rdf:type owl:Class ;
+  rdfs:subClassOf LogiServ:Event ;
+.
+LogiServ:Suspend
+  rdf:type owl:Class ;
+  rdfs:subClassOf LogiServ:Event ;
+.
+LogiServ:Transport
+  rdf:type owl:Class ;
+  rdfs:comment "Transport denotes the activity of moving resources (namely, products and/or packages and/or pieces of equipment, but also empty containers) from an origin to a destination, in a certain time, using suitable transport mode and transport means"^^xsd:string ;
+  rdfs:subClassOf LogiServ:Activity ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onProperty LogiServ:hasDestination ;
+      owl:someValuesFrom LogiCO:Location ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onProperty LogiServ:hasOrigin ;
+      owl:someValuesFrom LogiCO:Location ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onProperty time:hasBeginning ;
+      owl:someValuesFrom time:Instant ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onProperty time:hasEnd ;
+      owl:someValuesFrom time:Instant ;
+    ] ;
+  owl:disjointWith LogiServ:Consolidation ;
+  owl:disjointWith LogiServ:Deconsolidation ;
+  owl:disjointWith LogiServ:Discharge ;
+  owl:disjointWith LogiServ:Load ;
+  owl:disjointWith LogiServ:LoadTransportDischarge ;
+  owl:disjointWith LogiServ:MultimodalRoadSeaTransport ;
+  owl:disjointWith LogiServ:Storage ;
+  owl:disjointWith LogiServ:Transshipment ;
+.
+LogiServ:TransportRequirement
+  rdf:type owl:Class ;
+  rdfs:subClassOf LogiServ:ServiceRequirement ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onProperty LogiServ:deliveryTermsDescriptionCode ;
+      owl:someValuesFrom xsd:int ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onProperty LogiServ:deliveryTermsFunctionCode ;
+      owl:someValuesFrom xsd:int ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onProperty LogiServ:paymentyMethodCode ;
+      owl:someValuesFrom xsd:string ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onProperty LogiServ:transportPriorityCode ;
+      owl:someValuesFrom xsd:int ;
+    ] ;
+.
+LogiServ:Transport_1
+  rdf:type LogiServ:Transport ;
+  LogiCO:hasLocation LogiServ:pickup-location ;
+  LogiServ:hasDestination LogiCO:DenHaagCentralStationLocation ;
+  LogiServ:hasProvider LogiServ:Provider_1 ;
+  dul:hasConstituent LogiServ:Transport_1 ;
+  dul:isConstituentOf LogiServ:Transport_1 ;
+  rdfs:label "Transport 1"^^xsd:string ;
+.
+LogiServ:Transshipment
+  rdf:type owl:Class ;
+  rdfs:comment "Transhipment denotes the activity of changing transport mode at an intermediate destination and, consequently, transshipment implies a change of transport means (for example, from a truck to a vessel in a port)"^^xsd:string ;
+  rdfs:subClassOf LogiServ:Activity ;
+  owl:disjointWith LogiServ:Consolidation ;
+  owl:disjointWith LogiServ:Deconsolidation ;
+  owl:disjointWith LogiServ:Discharge ;
+  owl:disjointWith LogiServ:Load ;
+  owl:disjointWith LogiServ:LoadTransportDischarge ;
+  owl:disjointWith LogiServ:MultimodalRoadSeaTransport ;
+  owl:disjointWith LogiServ:Storage ;
+  owl:disjointWith LogiServ:Transport ;
+.
+LogiServ:currencyUsageCode
+  rdf:type owl:DatatypeProperty ;
+  LogiServ:mappingToEDI <http://www.unece.org/fileadmin/DAM/trade/untdid/d12b/tred/tred6345.htm> ;
+  LogiServ:mappingToEDI """UN/EDIFACT D.12B Data Element 6345  Currency identification code
+Desc: Code specifying a monetary unit.""" ;
+  rdfs:domain LogiServ:Currency ;
+  rdfs:range xsd:int ;
+  rdfs:subPropertyOf LogiCO:hasCode ;
+.
+LogiServ:deliveryTermsDescriptionCode
+  rdf:type owl:DatatypeProperty ;
+  LogiServ:mappingToEDI <http://www.unece.org/fileadmin/DAM/trade/untdid/d12b/tred/tred4053.htm> ;
+  LogiServ:mappingToEDI """UN/EDIFACT D.12B Data Element 4053  Delivery or transport terms description code
+Desc: Code specifying the delivery or transport terms.""" ;
+  rdfs:domain LogiServ:TransportRequirement ;
+  rdfs:range xsd:int ;
+  rdfs:subPropertyOf LogiCO:hasCode ;
+.
+LogiServ:deliveryTermsFunctionCode
+  rdf:type owl:DatatypeProperty ;
+  LogiServ:mappingToEDI <http://www.unece.org/fileadmin/DAM/trade/untdid/d12b/tred/tred4055.htm> ;
+  LogiServ:mappingToEDI """UN/EDIFACT D.12B Data Element 4055  Delivery or transport terms function code                 
+Desc: Code specifying the function of delivery or transport terms.""" ;
+  rdfs:domain LogiServ:TransportRequirement ;
+  rdfs:range xsd:int ;
+  rdfs:subPropertyOf LogiCO:hasCode ;
+.
+LogiServ:describes
+  rdf:type owl:ObjectProperty ;
+  rdfs:label "describes"^^xsd:string ;
+  rdfs:range LogiServ:BusinessServiceDescription ;
+.
+LogiServ:governmentActionCode
+  rdf:type owl:DatatypeProperty ;
+  LogiServ:mappingToEDI <http://www.unece.org/fileadmin/DAM/trade/untdid/d12b/tred/tred9417.htm> ;
+  LogiServ:mappingToEDI """UN/EDIFACT D.12B Data Element 9417  Government action code  
+Desc: Code specifying a type of government action such as inspection, detention, fumigation, security.""" ;
+  rdfs:domain LogiServ:GovernmentalRequirement ;
+  rdfs:range xsd:int ;
+  rdfs:subPropertyOf LogiCO:hasCode ;
+.
+LogiServ:governmentInvolvmentCode
+  rdf:type owl:DatatypeProperty ;
+  LogiServ:mappingToEDI <http://www.unece.org/fileadmin/DAM/trade/untdid/d12b/tred/tred9411.htm> ;
+  LogiServ:mappingToEDI """UN/EDIFACT D.12B Data Element 9411  Government involvement code  
+Desc: Code indicating the requirement and status of governmental involvement.""" ;
+  rdfs:domain LogiServ:GovernmentalRequirement ;
+  rdfs:range xsd:int ;
+  rdfs:subPropertyOf LogiCO:hasCode ;
+.
+LogiServ:governmentProcedureCode
+  rdf:type owl:DatatypeProperty ;
+  LogiServ:mappingToEDI <http://www.unece.org/fileadmin/DAM/trade/untdid/d12b/tred/tred9353.htm> ;
+  LogiServ:mappingToEDI """UN/EDIFACT D.12B Data Element 9353  Government procedure code  
+Desc: Code specifying a government procedure.""" ;
+  rdfs:domain LogiServ:GovernmentalRequirement ;
+  rdfs:range xsd:int ;
+  rdfs:subPropertyOf LogiCO:hasCode ;
+.
+LogiServ:hasActor
+  rdf:type owl:ObjectProperty ;
+  rdfs:label "has actor"^^xsd:string ;
+  rdfs:range LogiCO:Actor ;
+.
+LogiServ:hasConsumer
+  rdf:type owl:ObjectProperty ;
+  rdfs:range LogiServ:Consumer ;
+.
+LogiServ:hasCurrency
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain LogiCO:Currency ;
+  rdfs:range LogiServ:Currency ;
+.
+LogiServ:hasCurrencyType
+  rdf:type owl:DatatypeProperty ;
+  LogiServ:mappingToEDI <http://www.unece.org/fileadmin/DAM/trade/untdid/d12b/tred/tred6343.htm> ;
+  LogiServ:mappingToEDI """UN/EDIFACT D.12B Data Element 6343  Currency type code qualifier 
+Desc: Code qualifying the type of currency.""" ;
+  rdfs:domain LogiServ:Currency ;
+  rdfs:range xsd:int ;
+.
+LogiServ:hasDestination
+  rdf:type owl:ObjectProperty ;
+  rdfs:range LogiCO:Location ;
+.
+LogiServ:hasGoodsItemID
+  rdf:type owl:ObjectProperty ;
+  LogiServ:mappingToEDI <http://www.unece.org/fileadmin/DAM/trade/untdid/d12b/tred/tred1496.htm> ;
+  LogiServ:mappingToEDI """UN/EDIFACT D.12B Data Element 1496  Goods item number     
+Desc: To specify a goods item within a consignment.""" ;
+  rdfs:domain LogiServ:Cargo ;
+  rdfs:range LogiCO:Identifier ;
+  rdfs:subPropertyOf LogiCO:hasID ;
+.
+LogiServ:hasGovernmentAgency
+  rdf:type owl:ObjectProperty ;
+  rdfs:range LogiCO:CodeIssuingAgency ;
+.
+LogiServ:hasOrigin
+  rdf:type owl:ObjectProperty ;
+  rdfs:range LogiCO:Location ;
+.
+LogiServ:hasProvider
+  rdf:type owl:ObjectProperty ;
+  rdfs:range LogiServ:Provider ;
+.
+LogiServ:hasRole
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain LogiCO:Actor ;
+  rdfs:label "has role"^^xsd:string ;
+  rdfs:range LogiServ:Role ;
+.
+LogiServ:hasServiceRequirement
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain LogiServ:Activity ;
+  rdfs:range LogiServ:ServiceRequirement ;
+  rdfs:subPropertyOf LogiCO:hasRequirement ;
+.
+LogiServ:hasStatus
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "has status"^^xsd:string ;
+  rdfs:range [
+      rdf:type rdfs:Datatype ;
+      owl:oneOf (
+          "Requested"^^xsd:string
+          "Planned"^^xsd:string
+          "Actual"^^xsd:string
+        ) ;
+    ] ;
+.
+LogiServ:hasTime
+  rdf:type owl:ObjectProperty ;
+  rdfs:range LogiCO:TemporalRegion ;
+.
+LogiServ:hasTransportRequirement
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain LogiServ:Transport ;
+  rdfs:range LogiServ:TransportRequirement ;
+  rdfs:subPropertyOf LogiServ:hasServiceRequirement ;
+.
+LogiServ:instantiates
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain LogiServ:BusinessServiceDescription ;
+  rdfs:label "instantiates"^^xsd:string ;
+  rdfs:range LogiCO:Activity ;
+.
+LogiServ:involves
+  rdf:type owl:ObjectProperty ;
+  rdfs:label "involves"^^xsd:string ;
+  rdfs:range LogiCO:PhysicalResource ;
+.
+LogiServ:isConsumerOf
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain LogiServ:Consumer ;
+  rdfs:range LogiServ:Activity ;
+.
+LogiServ:isProviderOf
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain LogiServ:Provider ;
+  rdfs:range LogiServ:Activity ;
+.
+LogiServ:mappingToEDI
+  rdf:type owl:AnnotationProperty ;
+.
+LogiServ:paymentyMethodCode
+  rdf:type owl:DatatypeProperty ;
+  LogiServ:mappingToEDI <http://www.unece.org/fileadmin/DAM/trade/untdid/d12b/tred/tred4215.htm> ;
+  LogiServ:mappingToEDI """UN/EDIFACT D.12B Data Element 4215  Transport charges payment method code                 
+Desc: Code specifying the payment method for transport charges.     """ ;
+  rdfs:domain LogiServ:TransportRequirement ;
+  rdfs:range xsd:string ;
+  rdfs:subPropertyOf LogiCO:hasCode ;
+.
+LogiServ:pickup-location
+  rdf:type LogiCO:Location ;
+  LogiCO:hasAddress LogiServ:Address_1 ;
+  rdfs:label "pickup-location"^^xsd:string ;
+.
+LogiServ:transportMovementCode
+  rdf:type owl:DatatypeProperty ;
+  LogiServ:mappingToEDI <http://www.unece.org/fileadmin/DAM/trade/untdid/d12b/tred/tred8323.htm> ;
+  LogiServ:mappingToEDI """UN/EDIFACT D.12B Data Element 8323  Transport movement code
+Desc: Code specifying the transport movement.""" ;
+  rdfs:domain LogiServ:GovernmentalRequirement ;
+  rdfs:range xsd:int ;
+  rdfs:subPropertyOf LogiCO:hasCode ;
+.
+LogiServ:transportPriorityCode
+  rdf:type owl:DatatypeProperty ;
+  LogiServ:mappingToEDI <http://www.unece.org/fileadmin/DAM/trade/untdid/d12b/tred/tred4219.htm> ;
+  LogiServ:mappingToEDI """UN/EDIFACT D.12B Data Element 4219  Transport service priority code                 
+Desc: Code specifying the priority of a transport service""" ;
+  rdfs:domain LogiServ:TransportRequirement ;
+  rdfs:range xsd:int ;
+  rdfs:subPropertyOf LogiCO:hasCode ;
+.
+dul:hasConstituent
+  rdf:type owl:ObjectProperty ;
+  rdfs:comment "from DUL ontology" ;
+  rdfs:range LogiServ:Activity ;
+.
+dul:isConstituentOf
+  rdf:type owl:ObjectProperty ;
+  rdfs:range LogiCO:Activity ;
+  owl:inverseOf dul:hasConstituent ;
+.
+time:Instant
+  rdf:type owl:Class ;
+.
+time:hasBeginning
+  rdf:type owl:ObjectProperty ;
+.
+time:hasEnd
+  rdf:type owl:ObjectProperty ;
+.

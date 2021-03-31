@@ -1,0 +1,129 @@
+subject	label	comment	supertype
+skos:Concept  or skos:Collection			
+businessService:Booking		Agreement with a limited validity period between two enterprises for one or more orders	businessService:BusinessTransaction
+businessService:BusinessTransaction		All data shared by interactions for executing a business service	owl:Thing
+businessService:Consignee	Consignee	A consignee is the role of an enterprise where it is the operator and/or owner of a logistical function at a place with the role 'place of delivery'. A consignee can act as customer (e.g. Terms of Delivery is 'ex works').	businessService:logisticsActor
+businessService:Consignor	Consignor	A consignor is the role of an enterprise where it is the operator and/or owner of a logistical function at a place with the role 'place of acceptance'. A consignor can act as customer.	businessService:logisticsActor
+businessService:Customer	Customer	Logisitcs Customer	businessService:logisticsActor
+businessService:Driver	Driver	The person responsible for operating a transport means, hired or employee of the operator of that transport means -- Can be Mater, Driver, Captain, Pilot	businessService:logisticsActor
+businessService:FrameworkContract	Framework Contract	A contract with a long term validity period between any two enterprise with agreements of business service delivery	businessService:BusinessTransaction
+businessService:Operator	Operator	An enterprise exploiting a logistical function at a location	businessService:logisticsActor
+businessService:Order	Order	Agreement between two enterprise for actual execution of a business service according a booking or framework contract.	businessService:BusinessTransaction
+businessService:Organization	Organization		businessService:logisticsActor
+businessService:Person	Person		businessService:logisticsActor
+businessService:TransportService		A service provided by a logistics for transport of cargo	businessService:logisticsService
+businessService:TransshipmentService	Transshipment Service	A service for transshipping cargo from one transport means to another	businessService:logisticsService
+businessService:logisticsActor	Logistics Actor	The role of a Person is context dependant, and therefore should be described using the Actor class.	owl:Thing
+businessService:logisticsService		Any service that is provided to a customer by a logistics or transport service provider.	owl:Thing
+businessService:logisticsServiceGroupage	Groupage Service	A service for grouping of cargo into equipment	businessService:logisticsService
+businessService:logisticsServiceProvider	Logistics Service Provider - LSP	The organization that provides the logistics service	businessService:logisticsActor
+businessService:storageServiceCargo		A service for (temporary) storage of cargo. This may include special cargo storage such as cool storage, animal hotels, and dangerous goods storage.	businessService:logisticsService
+businessService:storageServiceProduct		A service for storage of products (warehousing)	businessService:logisticsService
+classifications:LogisticsServiceDocument	Logistics Service Document		classifications:classifications
+classifications:cargoType		A classification of cargo carried, or intended  to be carried, on means of transport, based on its general  appearance.	classifications:classifications
+classifications:classifications			owl:Thing
+classifications:containerType			classifications:classifications
+classifications:corridorName		Core network corridors" were introduced to facilitate the coordinated implementation of the core network in Europe.     Nine core network corridors are identified in the annex to the CEF Regulation, which includes a list of projects pre-identified for possible EU funding during the period 2014 – 2020, based on their added value for TEN-T development and their maturity status.	classifications:classifications
+classifications:dangerouseGoodCode		Danger and Hazard classification, labeling and codification based on UN classifications -- https://www.unece.org/fileadmin/DAM/trans/danger/publi/ghs/ghs_rev07/English/05e_annex1.pdf  For the scope of proof of concept we selected only few example just to demonstrate the capability of the model.	classifications:classifications
+classifications:natureOfCargo		This class classifies the codes or vocbualries that express the nature of cargo.	classifications:classifications
+classifications:packageType		packaging Materials and components used in any  packaging operation to wrap, contain and protect articles  or substances during transport.  In also includes the shape or configuration of a package  as it appears for transport.	classifications:classifications
+classifications:transportModality		The various modes used for a movement. For each mode, there are several means of transport. They are: a. inland surface transportation (rail, road, and inland waterway); b. sea transport (coastal and ocean); c. air transportation; and d. pipelines.   For the purpose of the usecase, we encode the top individulas only. Sea, Road, Air.	classifications:classifications
+classifications:transportMovementType		This is to specify transport movement details for a goods item or equipment. For the purpose of this project ,we selected only few examples to demonstrate in the proof of concept -- the complete list can be found here:https://www.stylusstudio.com/edifact/D04B/8335.htm	classifications:classifications
+DigitalTwin:Airplane	Airplane	Transport means by air.	DigitalTwin:TransportMeans
+DigitalTwin:Barge	Barge	Vessel used for transporting cargo on inland waterways.	DigitalTwin:TransportMeans
+DigitalTwin:BulkFeeder	Bulk Feeder	are common devices used to feed individual component parts for assembly on industrial production lines.	DigitalTwin:Feeder
+DigitalTwin:Cargo	Cargo	The load of goods carried on board a ship or on  another means of transport. In economics, the words cargo and freight refer in particular to goods or produce being conveyed—generally for commercial gain—by water, air or land. 	DigitalTwin:physicalObject
+DigitalTwin:Container	Container	Transport containers serve to containerize products.	DigitalTwin:Equipment
+DigitalTwin:DigitalTwin	Digital Twin	Digital Twin is any real world object (physical) and/or concept (non-physical) that can have digital (coded) replica.	owl:Thing
+DigitalTwin:Equipment	Equipment	Any asset used to facilitate transport and handling of cargo.	DigitalTwin:physicalObject
+DigitalTwin:Feeder	Feeder	Used for short range transport  via sea.	DigitalTwin:Vessel
+DigitalTwin:Ferry	Ferry	Used for transport of other transport means like trucks and/or trailers.	DigitalTwin:Vessel
+DigitalTwin:Iternerary	Iternerary	A timed sequence of places of call of a transport means. Potentially, an itinerary has a unique ID, e.g. voyage number and flight number.	owl:Thing
+DigitalTwin:Locomotive	Locomotive	Any traction for a train composed of one or more wagons.	DigitalTwin:TransportMeans
+DigitalTwin:Package	Package	The complete product of a packaging operation, as prepared for transport and consisting of the  packaging (receptacle, container) and its contained goods	DigitalTwin:physicalObject
+DigitalTwin:Parcel	Parcel		DigitalTwin:physicalObject
+DigitalTwin:Product	Product	The actual objects that change ownership between a seller to a buyer. Any commercial goods that is bought and sold.	DigitalTwin:physicalObject
+DigitalTwin:RailwayWagon	Railway Wagon	Unpowered railway vehicles that are used for the transportation of cargo.	DigitalTwin:Equipment
+DigitalTwin:Route	Route	A timed sequence of trajectories and objects of the infrastructure passed by a transport means between two adjacent (in time) places of call of an itinerary	owl:Thing
+DigitalTwin:Swapbody	Swap Body		DigitalTwin:Equipment
+DigitalTwin:Trailer	Trailer	Unpowered road vehicles that are used for the transportation of cargo.	DigitalTwin:Equipment
+DigitalTwin:TransportMeans	Transport Means	These are the vehicles that transport the cargo, such as tricks, vessels,  trains, airplanes, barges etc.	DigitalTwin:physicalObject
+DigitalTwin:Truck	Truck	A truck or lorry is a motor vehicle designed to transport cargo. Trucks vary greatly in size, power, and configuration.	DigitalTwin:TransportMeans
+DigitalTwin:ULD	Unit Load Devices	Unit Load Devices are light weight containers for air transport and facilitate loading cargo into aircraft.	DigitalTwin:Equipment
+DigitalTwin:Vessel	Vessel	Any transport means used for transporting cargo by sea/ocean. Watercraft, also known as water vessels or waterborne vessels, are vehicles used in water, including boats, ships, hovercraft and submarines. Watercraft usually have a propulsive capability (whether by sail, oar, paddle or engine) and hence are distinct from a simple device that merely floats, such as a log raft.	DigitalTwin:TransportMeans
+DigitalTwin:bulkCargo	Bulk Cargo	BUlk cargo is typically material stacked on pallets and lifted into and out of the hold of a vessel by cranes on the dock or aboard the ship itself. The volume of break bulk cargo has declined dramatically worldwide as containerization has grown.	DigitalTwin:Cargo
+DigitalTwin:bulkProduct	Bulk Product	Any unpackaged raw material	DigitalTwin:Product
+DigitalTwin:commercialProduct	Commercial Product	Any product destined for use by enterprise. Consumer products may be packaged in quantities.	DigitalTwin:Product
+DigitalTwin:consumerProduct	Consumer Product	Any product destined for consumption or use by consumers. Consumer products might be packaged in quantities.	DigitalTwin:Product
+DigitalTwin:containerFeeder	Container Feeder		DigitalTwin:Feeder
+DigitalTwin:containerizedCargo	Containerized Cargo	Cargo stowed or to be stowed in a container.	DigitalTwin:Cargo
+DigitalTwin:deepSeaBulkVessel	Deep Sea Bulk Vessel		DigitalTwin:Vessel
+DigitalTwin:deepSeaContainerVessel	Deep Sea Container Vessel		DigitalTwin:Vessel
+DigitalTwin:deepSeaVessel	Deep Sea Vessel	Used for ocean transport.	DigitalTwin:Vessel
+DigitalTwin:generalCargo	General Cargo		DigitalTwin:Cargo
+DigitalTwin:partProduct	Part Product	Products destined for use in machines owned by consumers or enterprises	DigitalTwin:Product
+DigitalTwin:physicalObject			DigitalTwin:DigitalTwin
+DigitalTwin:rollOn-rollOff	Roll On Roll Off	Roll-on/roll-off Cargo: Automobiles are handled at many ports and are usually carried on specialized roll-on/roll-off ships.	DigitalTwin:Cargo
+Event:ATA	Actual date/time of arrival (ATA)	this even is Actual date/time of arrival. This event is in association of location-event-digital twin (transport means (ship)) and milestone = start	Event:Event
+Event:ATD	Actual date/time of departure (ATD)		Event:Event
+Event:Date			owl:Thing
+Event:Discharge	Discharge	digital twin (transport means) - event-digital twin (cargo)	Event:Event
+Event:Dropoff			Event:Event
+Event:ETA	Estimated date/time of arrival (ETA)	location-event-digital twin (transport means (ship)) and date/time - estimated	Event:Event
+Event:ETD	Estimated date/time of departure (ETD)	location-event-digital twin (transport means (ship)) and date/time - estimated and milestone = end	Event:Event
+Event:Event		An event reflects any physical activity in the real world, creating, updating, or 'deleting' an association between physical objects or entities. There are many synomyms based on combinations of entities, date/time, and physical activities.       	Event:DigitalTwin_detail min 1
+Event:Event		An event reflects any physical activity in the real world, creating, updating, or 'deleting' an association between physical objects or entities. There are many synomyms based on combinations of entities, date/time, and physical activities.       	Event:Date min 1
+Event:Event		An event reflects any physical activity in the real world, creating, updating, or 'deleting' an association between physical objects or entities. There are many synomyms based on combinations of entities, date/time, and physical activities.       	owl:Thing
+Event:MileStone			
+Event:Milestone			owl:Thing
+Event:Pack	Stuff		Event:Event
+Event:Pickup			Event:Event
+Event:Stuff	Stuff		Event:Event
+Event:Unpack	Stuff		Event:Event
+Event:containerIsDischarged	container is discharged		Event:Event
+Event:containerIsLoaded	container is loaded		Event:Event
+Event:dropoffTimeWindow	drop off time window		Event:Event
+Event:pickupTimeWindow	pick up time window		Event:Event
+PhysicalInfrastructure:Airport	Airport	Location where airplanes pick or drop of freight.	PhysicalInfrastructure:logisticalFunction
+PhysicalInfrastructure:Anchorage	Anchorage		PhysicalInfrastructure:logisticalFunction
+PhysicalInfrastructure:Area	Area	Any area relevant to logistics operations.	PhysicalInfrastructure:infrastructuralFunction
+PhysicalInfrastructure:Area	Area	Any area relevant to logistics operations.	PhysicalInfrastructure:logisticalFunction
+PhysicalInfrastructure:Bridge	Bridge		PhysicalInfrastructure:infrastructuralObject
+PhysicalInfrastructure:City	City	A generic geographical location that may have ports, seaports, terminals etc.	PhysicalInfrastructure:infrastructuralFunction
+PhysicalInfrastructure:Country		a geographic division -- Country	PhysicalInfrastructure:infrastructuralFunction
+PhysicalInfrastructure:Hub	Hub	A place cargo is exchanged between vehicles or/and between transport modes.	PhysicalInfrastructure:logisticalFunction
+PhysicalInfrastructure:Landmark	Land Mark		PhysicalInfrastructure:infrastructuralFunction
+PhysicalInfrastructure:Location	Location	A terminal, location, port, city centre, etc. where a cargo physical activity like transhipment or storage can take place.	PhysicalInfrastructure:Thing
+PhysicalInfrastructure:Location	Location	A terminal, location, port, city centre, etc. where a cargo physical activity like transhipment or storage can take place.	owl:Thing
+PhysicalInfrastructure:Port	Port	Location where vessels pick or drop of freight.	PhysicalInfrastructure:logisticalFunction
+PhysicalInfrastructure:Road	Road		PhysicalInfrastructure:Trajectory
+PhysicalInfrastructure:Terminal	Terminal	A freight terminal for different modes is a processing node for freight.	PhysicalInfrastructure:Hub
+PhysicalInfrastructure:Trajectory	Trajectory	Any part of an infrastructure identified by its infrastructure manager.	PhysicalInfrastructure:infrastructuralFunction
+PhysicalInfrastructure:Transshipment	Transshipment	An intermediate destination for transiting cargo to another destination.	PhysicalInfrastructure:logisticalFunction
+PhysicalInfrastructure:Warehouse	Warehouse	A place where cargo or its content (products) is stored for a longer period of time	PhysicalInfrastructure:logisticalFunction
+PhysicalInfrastructure:infrastructuralFunction	Infrastructural Function	Any part of an infrastructure used for performing logistical activities.	PhysicalInfrastructure:Location
+PhysicalInfrastructure:infrastructuralObject	Insfrastructural Object	Any element in an infrastructure that might cause for a delay (e.g. bridge, lock).	PhysicalInfrastructure:infrastructuralFunction
+PhysicalInfrastructure:locationRole	Location Role	Abstract Class to express different types of Roles that a location can fullfill. By role we mean the functionality of the building.	PhysicalInfrastructure:Thing
+PhysicalInfrastructure:locationRole	Location Role	Abstract Class to express different types of Roles that a location can fullfill. By role we mean the functionality of the building.	owl:Thing
+PhysicalInfrastructure:logisticalFunction	Logistical Function	Any location where a logistical activity is performed.	PhysicalInfrastructure:Location
+rdf:List	List	The class of RDF Lists.	rdfs:Resource
+rdf:Property	Property	The class of RDF properties.	rdfs:Resource
+rdf:Statement	Statement	The class of RDF statements.	rdfs:Resource
+rdfs:Class	Class	The class of classes.	rdfs:Resource
+rdfs:Datatype	Datatype	The class of RDF datatypes.	rdfs:Class
+owl:AnnotationProperty	AnnotationProperty	The class of annotation properties.	rdf:Property
+owl:Class	Class	The class of OWL classes.	rdfs:Class
+owl:DatatypeProperty	DatatypeProperty	The class of data properties.	rdf:Property
+owl:FunctionalProperty	FunctionalProperty	The class of functional properties.	rdf:Property
+owl:Nothing	Nothing	This empty class.	owl:Thing
+owl:ObjectProperty	ObjectProperty	The class of object properties.	rdf:Property
+owl:Ontology	Ontology	The class of ontologies.	rdfs:Resource
+owl:OntologyProperty	OntologyProperty	The class of ontology properties.	rdf:Property
+owl:Restriction	Restriction	The class of property restrictions.	owl:Class
+owl:SymmetricProperty	SymmetricProperty	The class of symmetric properties.	owl:ObjectProperty
+owl:Thing	Thing	The class of OWL individuals.	rdfs:Resource
+owl:TransitiveProperty	TransitiveProperty	The class of transitive properties.	owl:ObjectProperty
+skos:Collection	Collection		owl:Thing
+skos:Concept	Concept		owl:Thing
+skos:ConceptScheme	Concept Scheme		owl:Thing
+skos:OrderedCollection	Ordered Collection		skos:Collection
