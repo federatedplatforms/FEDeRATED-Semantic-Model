@@ -68,7 +68,7 @@ Event:ContainerDischargeEvent
   rdf:type owl:Class ;
   rdfs:comment "In a Container Discharge Event an equipment of type Container is discharged from its transportation means." ;
   rdfs:label "Container Discharge Event" ;
-  rdfs:subClassOf Event:EquipmentEvent ;
+  rdfs:subClassOf Event:EquipmentTransportEvent ;
 .
 Event:ContainerLoadEvent
   rdf:type owl:Class ;
@@ -94,6 +94,10 @@ Event:DepartureEvent
   rdfs:comment "A Departure Event is an association between a Digital Twin type TransportMeans and a Location. It should have milestone End." ;
   rdfs:label "Departure Event" ;
   rdfs:subClassOf Event:Event ;
+.
+Event:DischargeEvent
+  rdf:type owl:Class ;
+  rdfs:subClassOf Event:CargoEvent ;
 .
 Event:DropOffEvent
   rdf:type owl:Class ;
@@ -124,17 +128,17 @@ Event:End
   rdfs:comment "Events have a milestone which can be either Start or End. This individual represents the milestone End." ;
   rdfs:label "start" ;
 .
-Event:EquipmentEvent
-  rdf:type owl:Class ;
-  rdfs:comment "In a Cargo Discharge Event the connection between equipment and transport means is released, since the equipment is discharged off the transport means." ;
-  rdfs:label "Cargo Discharge Event" ;
-  rdfs:subClassOf Event:CargoEvent ;
-.
 Event:EquipmentLoadEvent
   rdf:type owl:Class ;
   rdfs:comment "With a Cargo Load Event an association between equipment and transport means is established, because the equipment is loaded on the transport means." ;
   rdfs:label "Cargo Load Event" ;
-  rdfs:subClassOf Event:EquipmentEvent ;
+  rdfs:subClassOf Event:EquipmentTransportEvent ;
+.
+Event:EquipmentTransportEvent
+  rdf:type owl:Class ;
+  rdfs:comment "In a Cargo Discharge Event the connection between equipment and transport means is released, since the equipment is discharged off the transport means." ;
+  rdfs:label "Cargo Discharge Event" ;
+  rdfs:subClassOf Event:CargoEvent ;
 .
 Event:Event
   rdf:type owl:Class ;
@@ -165,7 +169,7 @@ Event:Goods-Container_2
 Event:GoodsDischargeEvent
   rdf:type owl:Class ;
   rdfs:label "Has Manager" ;
-  rdfs:subClassOf Event:GoodsEvent ;
+  rdfs:subClassOf Event:GoodsTransportEvent ;
 .
 Event:GoodsEquipmentEvent
   rdf:type owl:Class ;
@@ -173,22 +177,32 @@ Event:GoodsEquipmentEvent
   rdfs:label "Goods Equipment Event" ;
   rdfs:subClassOf Event:CargoEvent ;
 .
-Event:GoodsEvent
-  rdf:type owl:Class ;
-  rdfs:label "Has Manager" ;
-  rdfs:subClassOf Event:CargoEvent ;
-.
 Event:GoodsLoadEvent
   rdf:type owl:Class ;
   rdfs:comment "Association Transport Means - Goods. Load goods without intermediate equipment." ;
   rdfs:label "Has Manager" ;
-  rdfs:subClassOf Event:GoodsEvent ;
+  rdfs:subClassOf Event:GoodsTransportEvent ;
+.
+Event:GoodsStructuringEvent
+  rdf:type owl:Class ;
+  rdfs:comment "Events forming an association between two transportable objects (i.e., products or goods)." ;
+  rdfs:label "Transportable Object Event" ;
+  rdfs:subClassOf Event:Event ;
+.
+Event:GoodsTransportEvent
+  rdf:type owl:Class ;
+  rdfs:label "Has Manager" ;
+  rdfs:subClassOf Event:CargoEvent ;
+.
+Event:LoadEvent
+  rdf:type owl:Class ;
+  rdfs:subClassOf Event:CargoEvent ;
 .
 Event:MergeEvent
   rdf:type owl:Class ;
   rdfs:comment "Merge two sets of goods into a single combined set of goods. This Event contains an association meaning that the association with lesser volume is merged into the association with the higher volume. We expect the association with the higher volume to have several Merge Events associated with it, the sum of which is equal to the volume of that association." ;
   rdfs:label "Merge Event" ;
-  rdfs:subClassOf Event:TransportableObjectEvent ;
+  rdfs:subClassOf Event:GoodsStructuringEvent ;
 .
 Event:Milestone
   rdf:type owl:Class ;
@@ -203,7 +217,7 @@ Event:PackagingEvent
   rdf:type owl:Class ;
   rdfs:comment "An event assocation between transportable objects (Goods or Products) to show that one has been packaged into the other." ;
   rdfs:label "Packaging Event" ;
-  rdfs:subClassOf Event:TransportableObjectEvent ;
+  rdfs:subClassOf Event:GoodsStructuringEvent ;
 .
 Event:PickupEvent
   rdf:type owl:Class ;
@@ -232,7 +246,7 @@ Event:SplitEvent
   rdf:type owl:Class ;
   rdfs:comment "Split a set of transportable object into smaller sets of transportable object." ;
   rdfs:label "Split Event" ;
-  rdfs:subClassOf Event:TransportableObjectEvent ;
+  rdfs:subClassOf Event:GoodsStructuringEvent ;
 .
 Event:SplittingEvent_1
   rdf:type Event:SplitEvent ;
@@ -257,17 +271,11 @@ Event:StuffEvent
   rdfs:label "Stuff Event" ;
   rdfs:subClassOf Event:GoodsEquipmentEvent ;
 .
-Event:TransportableObjectEvent
-  rdf:type owl:Class ;
-  rdfs:comment "Events forming an association between two transportable objects (i.e., products or goods)." ;
-  rdfs:label "Transportable Object Event" ;
-  rdfs:subClassOf Event:Event ;
-.
 Event:UnpackEvent
   rdf:type owl:Class ;
   rdfs:comment "An unpack event means that goods/packaged products are unpacked into another packaging type of the goods/packaged products." ;
   rdfs:label "Unpack Event" ;
-  rdfs:subClassOf Event:TransportableObjectEvent ;
+  rdfs:subClassOf Event:GoodsStructuringEvent ;
 .
 Event:actual
   rdf:type Event:DateTimeType ;
