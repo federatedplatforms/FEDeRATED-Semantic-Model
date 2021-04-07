@@ -176,7 +176,7 @@ businessService:Itinerary
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onClass pi:logisticalFunction ;
+      owl:onClass pi:LogisticalFunction ;
       owl:onProperty businessService:involves ;
     ] ;
   rdfs:subClassOf [
@@ -285,7 +285,7 @@ businessService:Route
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onClass pi:infrastructuralFunction ;
+      owl:onClass pi:InfrastructuralFunction ;
       owl:onProperty businessService:involves ;
     ] ;
   ReusableTags:isDervied "true"^^xsd:boolean ;
