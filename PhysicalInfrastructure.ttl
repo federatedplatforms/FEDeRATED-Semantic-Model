@@ -41,25 +41,25 @@ pi:Airport
   rdf:type owl:Class ;
   rdfs:comment "Location where airplanes pick or drop off freight." ;
   rdfs:label "Airport" ;
-  rdfs:subClassOf pi:logisticalFunction ;
+  rdfs:subClassOf pi:LogisticalFunction ;
 .
 pi:Anchorage
   rdf:type owl:Class ;
   rdfs:comment "A location where a ship can 'park'." ;
   rdfs:label "Anchorage" ;
-  rdfs:subClassOf pi:logisticalFunction ;
+  rdfs:subClassOf pi:LogisticalFunction ;
 .
 pi:BargeTerminal
   rdf:type owl:Class ;
   rdfs:comment "A terminal with main modality waterways where cargo of barges can be loaded/discharged." ;
   rdfs:label "Barge Terminal" ;
-  rdfs:subClassOf pi:logisticalFunction ;
+  rdfs:subClassOf pi:LogisticalFunction ;
 .
 pi:Bridge
   rdf:type owl:Class ;
   rdfs:comment "A road crossing water." ;
   rdfs:label "Bridge" ;
-  rdfs:subClassOf pi:infrastructuralObject ;
+  rdfs:subClassOf pi:InfrastructuralObject ;
 .
 pi:City
   rdf:type owl:Class ;
@@ -93,7 +93,19 @@ pi:Hub
   rdf:type owl:Class ;
   rdfs:comment "A place where cargo is exchanged between vehicles or/and between transport modes." ;
   rdfs:label "Hub" ;
-  rdfs:subClassOf pi:logisticalFunction ;
+  rdfs:subClassOf pi:LogisticalFunction ;
+.
+pi:InfrastructuralFunction
+  rdf:type owl:Class ;
+  rdfs:comment "Any part of an infrastructure used for performing logistical activities." ;
+  rdfs:label "Infrastructural Function" ;
+  owl:disjointWith pi:LogisticalFunction ;
+.
+pi:InfrastructuralObject
+  rdf:type owl:Class ;
+  rdfs:comment "Any element in an infrastructure that might cause for a delay (e.g. bridge, lock)." ;
+  rdfs:label "Infrastructural Object" ;
+  rdfs:subClassOf pi:InfrastructuralFunction ;
 .
 pi:InfrastructurelFunctionProperty
   rdf:type owl:DatatypeProperty ;
@@ -104,7 +116,7 @@ pi:InlandTerminal
   rdf:type owl:Class ;
   rdfs:comment "An Inland Terminal can have an interface with more than one modality like inland waterways, rail and/or road (note: there are also inland terminals that have only road as modality (e.g. Interporto Bologna) or road and rail (e.g. Zaragoza Logistics Center)." ;
   rdfs:label "Inland Terminal" ;
-  rdfs:subClassOf pi:logisticalFunction ;
+  rdfs:subClassOf pi:LogisticalFunction ;
 .
 pi:Landmark
   rdf:type owl:Class ;
@@ -168,6 +180,12 @@ pi:LocationCoordinate
   rdfs:label "Location Coordinate" ;
   rdfs:range xsd:decimal ;
 .
+pi:LogisticalFunction
+  rdf:type owl:Class ;
+  rdfs:comment "Any location where a logistical activity is performed. A single location may have several logistical functions." ;
+  rdfs:label "Logistical Function" ;
+  rdfs:subClassOf <http://era.europa.eu/ns#MicroNode> ;
+.
 pi:LogisticalInterface
   rdf:type owl:Class ;
   rdfs:comment "An interface where the modality of a transport may change." ;
@@ -207,7 +225,7 @@ pi:Port
   rdf:type owl:Class ;
   rdfs:comment "Location where vessels pick or drop off freight." ;
   rdfs:label "Port" ;
-  rdfs:subClassOf pi:logisticalFunction ;
+  rdfs:subClassOf pi:LogisticalFunction ;
 .
 pi:Quay
   rdf:type owl:Class ;
@@ -250,7 +268,7 @@ pi:Trajectory
   rdfs:comment "Any part of an infrastructure identified by its infrastructure manager." ;
   rdfs:label "Trajectory" ;
   rdfs:subClassOf <http://era.europa.eu/ns#MicroLink> ;
-  rdfs:subClassOf pi:infrastructuralFunction ;
+  rdfs:subClassOf pi:InfrastructuralFunction ;
 .
 pi:TrajectoryProperty
   rdf:type owl:DatatypeProperty ;
@@ -264,13 +282,13 @@ pi:Transshipment
   rdf:type owl:Class ;
   rdfs:comment "An intermediate destination for transiting cargo to another destination." ;
   rdfs:label "Transshipment" ;
-  rdfs:subClassOf pi:logisticalFunction ;
+  rdfs:subClassOf pi:LogisticalFunction ;
 .
 pi:Warehouse
   rdf:type owl:Class ;
   rdfs:comment "A place where cargo or its content (products) is stored for a longer period of time" ;
   rdfs:label "Warehouse" ;
-  rdfs:subClassOf pi:logisticalFunction ;
+  rdfs:subClassOf pi:LogisticalFunction ;
 .
 pi:cityLoCode
   rdf:type owl:DatatypeProperty ;
@@ -333,7 +351,7 @@ pi:hasLocationRole
 pi:hasManager
   rdf:type owl:ObjectProperty ;
   rdfs:comment "The organisation that manages a specific logistical function" ;
-  rdfs:domain pi:logisticalFunction ;
+  rdfs:domain pi:LogisticalFunction ;
   rdfs:label "Has Manager" ;
   rdfs:range BusinessService:LogisticsActor ;
 .
@@ -355,18 +373,6 @@ pi:hasQuayNumber
   rdfs:range xsd:integer ;
   rdfs:subPropertyOf pi:LogisticalInterfaceProperty ;
 .
-pi:infrastructuralFunction
-  rdf:type owl:Class ;
-  rdfs:comment "Any part of an infrastructure used for performing logistical activities." ;
-  rdfs:label "Infrastructural Function" ;
-  owl:disjointWith pi:logisticalFunction ;
-.
-pi:infrastructuralObject
-  rdf:type owl:Class ;
-  rdfs:comment "Any element in an infrastructure that might cause for a delay (e.g. bridge, lock)." ;
-  rdfs:label "Infrastructural Object" ;
-  rdfs:subClassOf pi:infrastructuralFunction ;
-.
 pi:locationProperties
   rdf:type owl:DatatypeProperty ;
   rdfs:comment "Do not Instantiate. Only for the purpose of grouping. Each subproperty specifies a property of a location." ;
@@ -374,16 +380,10 @@ pi:locationProperties
   rdfs:label "Location Properties" ;
   rdfs:range xsd:anySimpleType ;
 .
-pi:logisticalFunction
-  rdf:type owl:Class ;
-  rdfs:comment "Any location where a logistical activity is performed. A single location may have several logistical functions." ;
-  rdfs:label "Logistical Function" ;
-  rdfs:subClassOf <http://era.europa.eu/ns#MicroNode> ;
-.
 pi:logisticalFunctionProperties
   rdf:type owl:DatatypeProperty ;
   rdfs:comment "This abstract property contains all properties intended for logistical functions." ;
-  rdfs:domain pi:logisticalFunction ;
+  rdfs:domain pi:LogisticalFunction ;
   rdfs:label "Logistical Function Properties" ;
   rdfs:range xsd:anySimpleType ;
 .
@@ -451,7 +451,7 @@ pi:roadName
 pi:securityMeasure
   rdf:type owl:DatatypeProperty ;
   rdfs:comment "This property specifies the security measures of a specific infrastuctural function." ;
-  rdfs:domain pi:infrastructuralFunction ;
+  rdfs:domain pi:InfrastructuralFunction ;
   rdfs:label "Security Measure" ;
   rdfs:range xsd:string ;
   rdfs:subPropertyOf pi:logisticalFunctionProperties ;
