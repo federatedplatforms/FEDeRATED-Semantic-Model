@@ -373,6 +373,13 @@ pi:hasQuayNumber
   rdfs:range xsd:integer ;
   rdfs:subPropertyOf pi:LogisticalInterfaceProperty ;
 .
+pi:locatedAt
+  rdf:type owl:ObjectProperty ;
+  rdfs:comment "This property specifies the geographical location that a Logistical Function has." ;
+  rdfs:domain pi:LogisticalFunction ;
+  rdfs:label "Located At" ;
+  rdfs:range pi:Location ;
+.
 pi:locationProperties
   rdf:type owl:DatatypeProperty ;
   rdfs:comment "Do not Instantiate. Only for the purpose of grouping. Each subproperty specifies a property of a location." ;
