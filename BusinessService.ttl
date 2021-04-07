@@ -398,6 +398,7 @@ businessService:involvedActor
   rdfs:domain businessService:BusinessTransaction ;
   rdfs:label "Involved actor" ;
   rdfs:range businessService:LogisticsActor ;
+  rdfs:subPropertyOf businessService:involves ;
 .
 businessService:involvedEvent
   rdf:type owl:ObjectProperty ;
@@ -405,6 +406,7 @@ businessService:involvedEvent
   rdfs:domain businessService:BusinessTransaction ;
   rdfs:label "Involved event" ;
   rdfs:range Event:Event ;
+  rdfs:subPropertyOf businessService:involves ;
 .
 businessService:involvedRole
   rdf:type owl:ObjectProperty ;
@@ -412,9 +414,11 @@ businessService:involvedRole
   rdfs:domain businessService:LogisticsActor ;
   rdfs:label "Involved role" ;
   rdfs:range LogisticsRoles:ActorRoles ;
+  rdfs:subPropertyOf businessService:involves ;
 .
 businessService:involves
   rdf:type owl:ObjectProperty ;
+  rdfs:comment "Abstract property -- do not instantiate" ;
 .
 businessService:itineraryID
   rdf:type owl:DatatypeProperty ;
