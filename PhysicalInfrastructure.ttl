@@ -1,5 +1,4 @@
 # baseURI: https://ontology.tno.nl/logistics/federated/PhysicalInfrastructure
-# imports: http://era.ilabt.imec.be/era-vocabulary/ontology.ttl
 # imports: http://www.geonames.org/ontology
 # imports: http://www.w3.org/2004/02/skos/core
 # imports: https://ontology.tno.nl/logistics/federated/BusinessService
@@ -26,7 +25,6 @@
 
 <https://ontology.tno.nl/logistics/federated/PhysicalInfrastructure>
   rdf:type owl:Ontology ;
-  owl:imports <http://era.ilabt.imec.be/era-vocabulary/ontology.ttl> ;
   owl:imports <http://www.geonames.org/ontology> ;
   owl:imports <http://www.w3.org/2004/02/skos/core> ;
   owl:imports <https://ontology.tno.nl/logistics/federated/BusinessService> ;
@@ -184,13 +182,11 @@ pi:LogisticalFunction
   rdf:type owl:Class ;
   rdfs:comment "Any location where a logistical activity is performed. A single location may have several logistical functions." ;
   rdfs:label "Logistical Function" ;
-  rdfs:subClassOf <http://era.europa.eu/ns#MicroNode> ;
 .
 pi:LogisticalInterface
   rdf:type owl:Class ;
   rdfs:comment "An interface where the modality of a transport may change." ;
   rdfs:label "Logistical Interface" ;
-  rdfs:subClassOf <http://era.europa.eu/ns#NodePort> ;
 .
 pi:LogisticalInterfaceProperty
   rdf:type owl:DatatypeProperty ;
@@ -267,8 +263,6 @@ pi:Trajectory
   rdf:type owl:Class ;
   rdfs:comment "Any part of an infrastructure identified by its infrastructure manager." ;
   rdfs:label "Trajectory" ;
-  rdfs:subClassOf <http://era.europa.eu/ns#MicroLink> ;
-  rdfs:subClassOf pi:InfrastructuralFunction ;
 .
 pi:TrajectoryProperty
   rdf:type owl:DatatypeProperty ;
