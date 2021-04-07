@@ -202,9 +202,6 @@ classifications:W
   rdf:type classifications:NatureOfCargo ;
   rdfs:label "Waste" ;
 .
-classifications:appliesTo
-  rdf:type owl:ObjectProperty ;
-.
 classifications:bulk
   rdf:type classifications:CargoType ;
   rdfs:comment "Typical examples of dry bulk transport are building materials such as sand and gravel or grain and fodder. But also wet bulk such as oil, gas and ore are examples of bulk commodities." ;
