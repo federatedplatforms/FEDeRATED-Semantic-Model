@@ -22,9 +22,6 @@
 BusinessService:Enterprise_x
   rdf:type BusinessService:Enterprise ;
 .
-BusinessService:hasID
-  rdf:type owl:DatatypeProperty ;
-.
 BusinessService:hasLocation
   rdf:type owl:ObjectProperty ;
   rdfs:label "Has Location" ;
