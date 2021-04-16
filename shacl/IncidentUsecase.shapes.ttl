@@ -111,6 +111,15 @@ ecallUsecase:CargoShape
             sh:class classifications:DangerouseGoodClassification ;
             sh:minCount 1 ;
           ] ;
+        sh:property [
+            rdf:type sh:PropertyShape ;
+            sh:path DigitalTwin:hasUNNumber ;
+            sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:name "UN Number" ;
+            sh:nodeKind sh:BlankNode ;
+    ] ;
       ]
     ) ;
   sh:property [
@@ -139,28 +148,19 @@ ecallUsecase:CargoShape
     ] ;
   sh:property [
       rdf:type sh:PropertyShape ;
-      sh:path DigitalTwin:cargoMinimumTemperature ;
+      sh:path DigitalTwin:minimumTemperature ;
       sh:datatype xsd:decimal ;
       sh:maxCount 1 ;
       sh:minCount 1 ;
-      sh:name "cargo minimum temperature" ;
+      sh:name "minimum temperature" ;
     ] ;
   sh:property [
       rdf:type sh:PropertyShape ;
-      sh:path DigitalTwin:cargoTareWeight ;
+      sh:path DigitalTwin:tareWeight ;
       sh:datatype xsd:integer ;
       sh:maxCount 1 ;
       sh:minCount 1 ;
       sh:name "cargo tar weight" ;
-    ] ;
-  sh:property [
-      rdf:type sh:PropertyShape ;
-      sh:path DigitalTwin:hasUNNumber ;
-      sh:datatype xsd:string ;
-      sh:maxCount 1 ;
-      sh:minCount 1 ;
-      sh:name "UN Number" ;
-      sh:nodeKind sh:BlankNode ;
     ] ;
   sh:property [
       rdf:type sh:PropertyShape ;
@@ -172,7 +172,7 @@ ecallUsecase:CargoShape
     ] ;
   sh:property [
       rdf:type sh:PropertyShape ;
-      sh:path DigitalTwin:numberOfPakcage ;
+      sh:path DigitalTwin:numberofPackages ;
       sh:datatype xsd:integer ;
       sh:maxCount 1 ;
       sh:minCount 1 ;
@@ -355,31 +355,4 @@ ecallUsecase:TransportMeansShape
       sh:name "has transport measn ID" ;
     ] ;
   sh:targetClass DigitalTwin:TransportMeans ;
-.
-ecallUsecase:cargoTarWeightShape
-  rdf:type sh:NodeShape ;
-  rdfs:label "Cargo Tare Weight Shape" ;
-  sh:property [
-      rdf:type sh:PropertyShape ;
-      sh:path DigitalTwin:hasUnitOfMeasure ;
-      sh:class om:Unit ;
-      sh:maxCount 1 ;
-      sh:minCount 1 ;
-      sh:name "has unit of measure" ;
-      sh:nodeKind sh:BlankNode ;
-    ] ;
-  sh:targetClass DigitalTwin:Cargo ;
-.
-ecallUsecase:cargoTemperatureShape
-  rdf:type sh:NodeShape ;
-  rdfs:label "Cargo Temperature Shape" ;
-  sh:property [
-      rdf:type sh:PropertyShape ;
-      sh:path DigitalTwin:hasUnitOfMeasure ;
-      sh:class om:Unit ;
-      sh:maxCount 1 ;
-      sh:minCount 1 ;
-      sh:name "has unit of measure" ;
-      sh:nodeKind sh:BlankNode ;
-    ] ;
 .
