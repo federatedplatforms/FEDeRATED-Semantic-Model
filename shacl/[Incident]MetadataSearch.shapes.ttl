@@ -1,4 +1,4 @@
-# baseURI: https://ontology.tno.nl/logistics/federated/ecallUsecase
+# baseURI: https://ontology.tno.nl/logistics/federated/search
 # imports: http://datashapes.org/dash
 # imports: http://www.w3.org/2004/02/skos/core
 # imports: https://ontology.tno.nl/logistics/federated/BusinessService
@@ -7,9 +7,9 @@
 # imports: https://ontology.tno.nl/logistics/federated/Event
 # imports: https://ontology.tno.nl/logistics/federated/PhysicalInfrastructure
 # imports: https://raw.githubusercontent.com/HajoRijgersberg/OM/master/om-2.0.rdf
-# prefix: ecall
+# prefix: search
 
-@prefix : <https://ontology.tno.nl/logistics/federated/ecallUsecase#> .
+@prefix : <https://ontology.tno.nl/logistics/federated/search#> .
 @prefix BusinessService: <https://ontology.tno.nl/logistics/federated/BusinessService#> .
 @prefix Classifications: <https://ontology.tno.nl/logistics/federated/Classifications#> .
 @prefix DigitalTwin: <https://ontology.tno.nl/logistics/federated/DigitalTwin#> .
@@ -17,6 +17,7 @@
 @prefix LogisticsRoles: <https://ontology.tno.nl/logistics/federated/LogisticsRoles#> .
 @prefix MathM: <http://www.w3.org/1998/Math/MathML> .
 @prefix ReusableTags: <https://ontology.tno.nl/logistics/federated/ReusableTags#> .
+@prefix Search: <https://ontology.tno.nl/logistics/federated/search#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix businessService: <https://ontology.tno.nl/logistics/federated/BusinessService#> .
 @prefix cc: <http://creativecommons.org/ns#> .
@@ -26,8 +27,6 @@
 @prefix dcam: <http://purl.org/dc/dcam/> .
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix ecall: <https://ontology.tno.nl/logistics/federated/ecallUsecase#> .
-@prefix ecallUsecase: <https://ontology.tno.nl/logistics/federated/ecallUsecase#> .
 @prefix era: <http://era.europa.eu/ns#> .
 @prefix era-am: <http://era.europa.eu/concepts/axle-monitoring#> .
 @prefix era-ap: <http://era.europa.eu/concepts/axle-positions#> .
@@ -67,6 +66,7 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix schema: <https://schema.org/> .
+@prefix search: <https://ontology.tno.nl/logistics/federated/search#> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix swa: <http://topbraid.org/swa#> .
@@ -76,7 +76,7 @@
 @prefix wv: <http://www.wurvoc.org/vocabularies/WV/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://ontology.tno.nl/logistics/federated/ecallUsecase>
+<https://ontology.tno.nl/logistics/federated/search>
   rdf:type owl:Ontology ;
   owl:imports <http://datashapes.org/dash> ;
   owl:imports <http://www.w3.org/2004/02/skos/core> ;
@@ -88,7 +88,7 @@
   owl:imports <https://raw.githubusercontent.com/HajoRijgersberg/OM/master/om-2.0.rdf> ;
   owl:versionInfo "Created with TopBraid Composer" ;
 .
-ecallUsecase:CargoShape
+search:CargoShape
   rdf:type sh:NodeShape ;
   rdfs:label "CargoShape" ;
   sh:or (
@@ -102,6 +102,15 @@ ecallUsecase:CargoShape
       ]
       [
         sh:property [
+            rdf:type sh:PropertyShape ;
+            sh:path DigitalTwin:hasUNNumber ;
+            sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:name "UN Number" ;
+            sh:nodeKind sh:BlankNode ;
+          ] ;
+        sh:property [
             sh:path classifications:HazmatCode ;
             sh:class classifications:DangerouseGoods ;
             sh:minCount 1 ;
@@ -111,15 +120,6 @@ ecallUsecase:CargoShape
             sh:class classifications:DangerouseGoodClassification ;
             sh:minCount 1 ;
           ] ;
-        sh:property [
-            rdf:type sh:PropertyShape ;
-            sh:path DigitalTwin:hasUNNumber ;
-            sh:datatype xsd:string ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:name "UN Number" ;
-            sh:nodeKind sh:BlankNode ;
-    ] ;
       ]
     ) ;
   sh:property [
@@ -156,14 +156,6 @@ ecallUsecase:CargoShape
     ] ;
   sh:property [
       rdf:type sh:PropertyShape ;
-      sh:path DigitalTwin:tareWeight ;
-      sh:datatype xsd:integer ;
-      sh:maxCount 1 ;
-      sh:minCount 1 ;
-      sh:name "cargo tar weight" ;
-    ] ;
-  sh:property [
-      rdf:type sh:PropertyShape ;
       sh:path DigitalTwin:natureofCargo ;
       sh:class classifications:natureOfCargo ;
       sh:minCount 1 ;
@@ -187,9 +179,49 @@ ecallUsecase:CargoShape
       sh:name "packaging type" ;
       sh:nodeKind sh:BlankNode ;
     ] ;
+  sh:property [
+      rdf:type sh:PropertyShape ;
+      sh:path DigitalTwin:tareWeight ;
+      sh:datatype xsd:integer ;
+      sh:maxCount 1 ;
+      sh:minCount 1 ;
+      sh:name "cargo tar weight" ;
+    ] ;
   sh:targetClass DigitalTwin:Cargo ;
 .
-ecallUsecase:EventTypeShape
+search:ContactShape
+  rdf:type sh:NodeShape ;
+  rdfs:label "ContactShape" ;
+  sh:property [
+      rdf:type sh:PropertyShape ;
+      sh:path businessService:actorName ;
+      sh:datatype xsd:string ;
+      sh:maxCount 1 ;
+      sh:name "actor name" ;
+    ] ;
+  sh:property [
+      rdf:type sh:PropertyShape ;
+      sh:path businessService:actorWebsite ;
+      sh:datatype xsd:string ;
+      sh:maxCount 1 ;
+      sh:name "actor website" ;
+    ] ;
+  sh:property [
+      rdf:type sh:PropertyShape ;
+      sh:path businessService:involvedRole ;
+      sh:class LogisticsRoles:ActorRoles ;
+      sh:maxCount 1 ;
+      sh:name "involved role" ;
+    ] ;
+  sh:property [
+      rdf:type sh:PropertyShape ;
+      sh:path businessService:phoneNumber ;
+      sh:datatype xsd:string ;
+      sh:maxCount 1 ;
+      sh:name "phone number" ;
+    ] ;
+.
+search:EventTypeShape
   rdf:type sh:NodeShape ;
   rdfs:label "Event Shape" ;
   sh:property [
@@ -282,7 +314,7 @@ ecallUsecase:EventTypeShape
     ] ;
   sh:targetClass Event:Event ;
 .
-ecallUsecase:LocationShape
+search:LocationShape
   rdf:type sh:NodeShape ;
   rdfs:label "Location Shape" ;
   sh:property [
@@ -301,7 +333,7 @@ ecallUsecase:LocationShape
     ] ;
   sh:targetClass pi:Location ;
 .
-ecallUsecase:TrailerShape
+search:TrailerShape
   rdf:type sh:NodeShape ;
   rdfs:label "Trailer Shape" ;
   sh:equals DigitalTwin:hasLicensePlateNumber ;
@@ -313,7 +345,7 @@ ecallUsecase:TrailerShape
     ] ;
   sh:targetClass DigitalTwin:Trailer ;
 .
-ecallUsecase:TransportMeansRoutShape
+search:TransportMeansRoutShape
   rdf:type sh:NodeShape ;
   rdfs:label "Rout Shape" ;
   sh:sparql [
@@ -335,7 +367,7 @@ ecallUsecase:TransportMeansRoutShape
     }""" ;
     ] ;
 .
-ecallUsecase:TransportMeansShape
+search:TransportMeansShape
   rdf:type sh:NodeShape ;
   rdfs:label "Transport Means Shape" ;
   sh:equals DigitalTwin:hasLicensePlateNumber ;
@@ -355,4 +387,23 @@ ecallUsecase:TransportMeansShape
       sh:name "has transport measn ID" ;
     ] ;
   sh:targetClass DigitalTwin:TransportMeans ;
+.
+search:TruckShape
+  rdf:type sh:NodeShape ;
+  rdfs:label "Truck Shape" ;
+  sh:pattern "[0-9]{2}-B[a-zA-Z]{2}-[0-9]" ;
+  sh:property [
+      rdf:type sh:PropertyShape ;
+      sh:path DigitalTwin:TruckLicensePlate ;
+      sh:datatype xsd:string ;
+      sh:maxCount 1 ;
+      sh:name "Truck licence plate" ;
+    ] ;
+  sh:property [
+      rdf:type sh:PropertyShape ;
+      sh:path DigitalTwin:VIN ;
+      sh:datatype xsd:string ;
+      sh:maxCount 1 ;
+      sh:name "VIN" ;
+    ] ;
 .
