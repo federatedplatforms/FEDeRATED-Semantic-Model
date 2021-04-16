@@ -95,7 +95,7 @@ ecallUsecase:CargoShape
       [
         sh:not [
             sh:property [
-                sh:path rdf:type ;
+                sh:path classifications:NatureOfCargo ;
                 sh:hasValue classifications:D ;
               ] ;
           ] ;
