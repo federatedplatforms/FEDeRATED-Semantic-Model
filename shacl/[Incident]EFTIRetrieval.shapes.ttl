@@ -1,4 +1,4 @@
-# baseURI: https://ontology.tno.nl/logistics/federated/search
+# baseURI: https://ontology.tno.nl/logistics/federated/retrieve
 # imports: http://datashapes.org/dash
 # imports: http://www.w3.org/2004/02/skos/core
 # imports: https://ontology.tno.nl/logistics/federated/BusinessService
@@ -7,9 +7,10 @@
 # imports: https://ontology.tno.nl/logistics/federated/Event
 # imports: https://ontology.tno.nl/logistics/federated/PhysicalInfrastructure
 # imports: https://raw.githubusercontent.com/HajoRijgersberg/OM/master/om-2.0.rdf
-# prefix: search
+# prefix: retrieve
 
-@prefix : <https://ontology.tno.nl/logistics/federated/search#> .
+@prefix : <https://ontology.tno.nl/logistics/federated/retrieve#> .
+@prefix retrieve: <https://ontology.tno.nl/logistics/federated/retrieve#> .
 @prefix BusinessService: <https://ontology.tno.nl/logistics/federated/BusinessService#> .
 @prefix Classifications: <https://ontology.tno.nl/logistics/federated/Classifications#> .
 @prefix DigitalTwin: <https://ontology.tno.nl/logistics/federated/DigitalTwin#> .
@@ -17,7 +18,7 @@
 @prefix LogisticsRoles: <https://ontology.tno.nl/logistics/federated/LogisticsRoles#> .
 @prefix MathM: <http://www.w3.org/1998/Math/MathML> .
 @prefix ReusableTags: <https://ontology.tno.nl/logistics/federated/ReusableTags#> .
-@prefix Search: <https://ontology.tno.nl/logistics/federated/search#> .
+@prefix retrieve: <https://ontology.tno.nl/logistics/federated/retrieve#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix businessService: <https://ontology.tno.nl/logistics/federated/BusinessService#> .
 @prefix cc: <http://creativecommons.org/ns#> .
@@ -66,7 +67,7 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix schema: <https://schema.org/> .
-@prefix search: <https://ontology.tno.nl/logistics/federated/search#> .
+@prefix retrieve: <https://ontology.tno.nl/logistics/federated/retrieve#> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix swa: <http://topbraid.org/swa#> .
@@ -76,7 +77,7 @@
 @prefix wv: <http://www.wurvoc.org/vocabularies/WV/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://ontology.tno.nl/logistics/federated/search>
+<https://ontology.tno.nl/logistics/federated/retrieve>
   rdf:type owl:Ontology ;
   owl:imports <http://datashapes.org/dash> ;
   owl:imports <http://www.w3.org/2004/02/skos/core> ;
@@ -88,7 +89,7 @@
   owl:imports <https://raw.githubusercontent.com/HajoRijgersberg/OM/master/om-2.0.rdf> ;
   owl:versionInfo "Created with TopBraid Composer" ;
 .
-search:CargoShape
+retrieve:CargoShape
   rdf:type sh:NodeShape ;
   rdfs:label "CargoShape" ;
   sh:or (
@@ -189,7 +190,7 @@ search:CargoShape
     ] ;
   sh:targetClass DigitalTwin:Cargo ;
 .
-search:ContactShape
+retrieve:ContactShape
   rdf:type sh:NodeShape ;
   rdfs:label "ContactShape" ;
   sh:property [
@@ -221,7 +222,7 @@ search:ContactShape
       sh:name "phone number" ;
     ] ;
 .
-search:EventTypeShape
+retrieve:EventTypeShape
   rdf:type sh:NodeShape ;
   rdfs:label "Event Shape" ;
   sh:property [
@@ -314,14 +315,14 @@ search:EventTypeShape
     ] ;
   sh:targetClass Event:Event ;
 .
-search:LocationShape
+retrieve:LocationShape
   rdf:type sh:NodeShape ;
   rdfs:label "Location Shape" ;
   sh:property [
       rdf:type sh:PropertyShape ;
-      sh:path pi:LocationCoordinates ;
+      sh:path pi:LocationCoordinate ;
       sh:datatype xsd:decimal ;
-      sh:maxCount 1 ;
+      sh:minCount 1 ;
       sh:name "Location coordinate" ;
     ] ;
   sh:property [
@@ -333,7 +334,7 @@ search:LocationShape
     ] ;
   sh:targetClass pi:Location ;
 .
-search:TrailerShape
+retrieve:TrailerShape
   rdf:type sh:NodeShape ;
   rdfs:label "Trailer Shape" ;
   sh:equals DigitalTwin:hasLicensePlateNumber ;
@@ -345,7 +346,7 @@ search:TrailerShape
     ] ;
   sh:targetClass DigitalTwin:Trailer ;
 .
-search:TransportMeansRoutShape
+retrieve:TransportMeansRoutShape
   rdf:type sh:NodeShape ;
   rdfs:label "Rout Shape" ;
   sh:sparql [
@@ -367,7 +368,7 @@ search:TransportMeansRoutShape
     }""" ;
     ] ;
 .
-search:TransportMeansShape
+retrieve:TransportMeansShape
   rdf:type sh:NodeShape ;
   rdfs:label "Transport Means Shape" ;
   sh:equals DigitalTwin:hasLicensePlateNumber ;
@@ -376,7 +377,7 @@ search:TransportMeansShape
       rdf:type sh:PropertyShape ;
       sh:path DigitalTwin:hasTransportMeansNationality ;
       sh:datatype xsd:string ;
-      sh:minCount 1 ;
+      sh:maxCount 1 ;
       sh:name "has transport means nationality" ;
     ] ;
   sh:property [
@@ -388,13 +389,13 @@ search:TransportMeansShape
     ] ;
   sh:targetClass DigitalTwin:TransportMeans ;
 .
-search:TruckShape
+retrieve:TruckShape
   rdf:type sh:NodeShape ;
   rdfs:label "Truck Shape" ;
   sh:pattern "[0-9]{2}-B[a-zA-Z]{2}-[0-9]" ;
   sh:property [
       rdf:type sh:PropertyShape ;
-      sh:path DigitalTwin:TruckLicensePlate ;
+      sh:path DigitalTwin:TruckLicencePlate ;
       sh:datatype xsd:string ;
       sh:maxCount 1 ;
       sh:name "Truck licence plate" ;
