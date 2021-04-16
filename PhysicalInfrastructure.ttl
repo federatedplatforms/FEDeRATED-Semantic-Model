@@ -131,7 +131,7 @@ pi:Lat
   rdfs:domain pi:Location ;
   rdfs:label "Latitude" ;
   rdfs:range xsd:decimal ;
-  rdfs:subPropertyOf pi:LocationCoordinate ;
+  rdfs:subPropertyOf pi:LocationCoordinates ;
 .
 pi:Location
   rdf:type owl:Class ;
@@ -174,7 +174,7 @@ pi:Location
       owl:onProperty pi:postalCode ;
     ] ;
 .
-pi:LocationCoordinate
+pi:LocationCoordinates
   rdf:type owl:DatatypeProperty ;
   rdfs:comment "The subproperties of this property specify the location coordinates of a specific location." ;
   rdfs:domain pi:Location ;

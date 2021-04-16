@@ -320,7 +320,7 @@ search:LocationShape
   sh:property [
       rdf:type sh:PropertyShape ;
       sh:path pi:LocationCoordinates ;
-      sh:datatype xsd:decimal ;
+      sh:class wgs:SpatialThing ;
       sh:maxCount 1 ;
       sh:name "Location coordinate" ;
     ] ;
@@ -377,7 +377,7 @@ search:TransportMeansShape
       sh:path DigitalTwin:hasTransportMeansNationality ;
       sh:datatype xsd:string ;
       sh:minCount 1 ;
-      sh:name "has transport means nationality" ;
+      sh:name "has nationality" ;
     ] ;
   sh:property [
       rdf:type sh:PropertyShape ;

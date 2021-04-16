@@ -320,8 +320,8 @@ retrieve:LocationShape
   rdfs:label "Location Shape" ;
   sh:property [
       rdf:type sh:PropertyShape ;
-      sh:path pi:LocationCoordinate ;
-      sh:datatype xsd:decimal ;
+      sh:path pi:LocationCoordinates ;
+      sh:class wgs:SpatialThing ;
       sh:minCount 1 ;
       sh:name "Location coordinate" ;
     ] ;
@@ -377,8 +377,8 @@ retrieve:TransportMeansShape
       rdf:type sh:PropertyShape ;
       sh:path DigitalTwin:hasTransportMeansNationality ;
       sh:datatype xsd:string ;
-      sh:maxCount 1 ;
-      sh:name "has transport means nationality" ;
+      sh:minCount 0 ;
+      sh:name "has nationality" ;
     ] ;
   sh:property [
       rdf:type sh:PropertyShape ;
