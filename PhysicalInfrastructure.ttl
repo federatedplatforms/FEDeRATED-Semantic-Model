@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # baseURI: https://ontology.tno.nl/logistics/federated/PhysicalInfrastructure
 # imports: http://www.geonames.org/ontology
 # imports: http://www.w3.org/2004/02/skos/core
