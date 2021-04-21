@@ -32,14 +32,15 @@ dcterms:MaaikeBurghoorn
 .
 <https://ontology.tno.nl/logistics/federated/DigitalTwin>
   rdf:type owl:Ontology ;
-  dcterms:created "TNO" ;
   dcterms:creator dcterms:CornelisBouter ;
   dcterms:creator dcterms:DenaTahvildari ;
   dcterms:creator dcterms:MaaikeBurghoorn ;
   dcterms:description "This is DigitalTwin ontology. It contains classes, attributes and relationships about logistics physical real world object. The usecase is two: 1. it is part of federated logistics ontology architecture that is referenced and used by Event module. 2. It will be evolved (extended) to cover digital Twin technologies requirements. " ;
-  dcterms:isRequiredBy "<https://ontology.tno.nl/logistics/federated/Event>" ;
+  dcterms:isRequiredBy <https://ontology.tno.nl/logistics/federated/Event> ;
+  dcterms:requires <https://ontology.tno.nl/logistics/federated/Classifications>
   dcterms:issued "2021-03-15" ;
   dcterms:language DigitalTwin:English ;
+  dcterms:created "2020-07-17";
   owl:imports <http://era.ilabt.imec.be/era-vocabulary/ontology.ttl> ;
   owl:imports <http://www.w3.org/2004/02/skos/core> ;
   owl:imports <https://ontology.tno.nl/logistics/federated/Classifications> ;
@@ -48,7 +49,6 @@ dcterms:MaaikeBurghoorn
   owl:imports <https://ontology.tno.nl/logistics/federated/ReusableTags> ;
   owl:imports <https://raw.githubusercontent.com/HajoRijgersberg/OM/master/om-2.0.rdf> ;
   owl:versionIRI <https://ontology.tno.nl/logistics/federated/DigitalTwinv-0.1> ;
-  owl:versionInfo "V 0.1 " ;
 .
 DigitalTwin:Airplane
   rdf:type owl:Class ;

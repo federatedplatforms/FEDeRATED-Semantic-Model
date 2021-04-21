@@ -18,6 +18,18 @@
   rdf:type owl:Ontology ;
   owl:imports <http://www.w3.org/2004/02/skos/core> ;
   owl:imports <https://ontology.tno.nl/logistics/federated/DigitalTwin> ;
+  dc:creator "Dena Tahvildari, Maaike Burghoorn, Cornelis Bouter" ;
+  dcterms:description """This ontology contains classes, attributes, relation about 
+  						 from established standards and vocabularies relevant in the
+  						 Logistics domain. It is intended to be reused by the other
+  						 ontologies in the namespace." ;
+  dcterms:isRequiredBy  <https://ontology.tno.nl/logistics/federated/DigitalTwin> ,
+    					<https://ontology.tno.nl/logistics/federated/BusinessService> ,
+    					<https://ontology.tno.nl/logistics/federated/PhysicalInfrastructure> ;
+  dcterms:language "en" ;
+  owl:versionIRI <https://ontology.tno.nl/logistics/federated/Classificationsv-0.1>;
+  dcterms:issued "2021-03-15"^^xsd:DateTime ;
+  dcterms:created "2020-07-17"^^xsd:DateTime ;
 .
 classifications:Air
   rdf:type classifications:TransportModality ;

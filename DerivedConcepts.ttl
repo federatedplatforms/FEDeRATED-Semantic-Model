@@ -24,6 +24,18 @@
   owl:imports <https://ontology.tno.nl/logistics/federated/Event> ;
   owl:imports <https://ontology.tno.nl/logistics/federated/PhysicalInfrastructure> ;
   owl:versionInfo "Created with TopBraid Composer" ;
+  dcterms:description """This ontology contains classes, attributes, relation about 
+  						 from Derived Concepts relevant in the
+  						 FEDeRATED ontology domain. The concepts in this ontology
+  						 are intended to be inferred through reasoning rules or
+  						 queries instead of directly instantiated." ;
+  dcterms:isRequiredBy  <https://ontology.tno.nl/logistics/federated/DigitalTwin> ,
+    					<https://ontology.tno.nl/logistics/federated/BusinessService> ,
+    					<https://ontology.tno.nl/logistics/federated/PhysicalInfrastructure> ;
+  dcterms:language "en" ;
+  owl:versionIRI <https://ontology.tno.nl/logistics/federated/DerivedConceptsv-0.1>;
+  dcterms:issued "2021-03-15"^^xsd:DateTime ;
+  dcterms:created "2021-02-11"^^xsd:DateTime ;
 .
 derivedConcept:CargoTrack
   rdf:type owl:Class ;

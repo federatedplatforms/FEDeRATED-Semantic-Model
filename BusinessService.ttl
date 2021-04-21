@@ -28,12 +28,15 @@
   owl:imports <https://ontology.tno.nl/logistics/federated/LogisticsRoles> ;
   owl:imports <https://ontology.tno.nl/logistics/federated/PhysicalInfrastructure> ;
   owl:versionInfo "Created with TopBraid Composer" ;
-  owl:versionInfo "TODO(1): Discuss Cargo" ;
-  owl:versionInfo "TODO(1): Push to gitHub" ;
-  owl:versionInfo "TODO(1): Sparql out the class hierarchy and proeprty domain and range in the Graph entirley" ;
-  owl:versionInfo "TODO(1):Discuss DigitalTwin and its generic proeprties" ;
-  owl:versionInfo "TODO(1):Populate the excel " ;
-  owl:versionInfo "TODO(1):Write an Evaluation Plan" ;
+  dc:creator "Dena Tahvildari, Maaike Burghoorn, Cornelis Bouter" ;
+  dcterms:description "This ontology contains classes, attributes, relation about business services that are used in Logistics events." ;
+  dcterms:isRequiredBy <https://ontology.tno.nl/logistics/federated/Event> ;
+  dcterms:requires <https://ontology.tno.nl/logistics/federated/LogisticsRoles> ,
+                   <https://ontology.tno.nl/logistics/federated/Classifications> ; 
+  dcterms:language "en" ;
+  owl:versionIRI <https://ontology.tno.nl/logistics/federated/BusinessServicev-0.1>;
+  dcterms:issued "2021-03-15"^^xsd:DateTime ;
+  dcterms:created "2020-07-20"^^xsd:DateTime ;
 .
 businessService:Booking
   rdf:type owl:Class ;

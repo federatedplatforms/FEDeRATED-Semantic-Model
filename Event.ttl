@@ -23,7 +23,15 @@
   owl:imports <https://ontology.tno.nl/logistics/federated/DigitalTwin> ;
   owl:imports <https://ontology.tno.nl/logistics/federated/PhysicalInfrastructure> ;
   owl:imports <https://ontology.tno.nl/logistics/federated/ReusableTags> ;
-  owl:versionInfo "Created with TopBraid Composer" ;
+  dc:creator "Dena Tahvildari, Maaike Burghoorn, Cornelis Bouter" ;
+  dcterms:description "This ontology contains classes, attributes, relation about logistic Events." ;
+  dcterms:requires <https://ontology.tno.nl/logistics/federated/DigitalTwin> ,
+	<https://ontology.tno.nl/logistics/federated/PhysicalInfrastructure> ,
+	<https://ontology.tno.nl/logistics/federated/BusinessService> ;
+  dcterms:language "en";
+  owl:versionIRI <https://ontology.tno.nl/logistics/federated/Eventv-0.1> ;
+  dcterms:issued "2021-03-15";
+  dcterms:created "2020-07-17";
 .
 Event:ATAEvent
   rdf:type owl:Class ;

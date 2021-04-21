@@ -36,7 +36,14 @@
   owl:imports <https://ontology.tno.nl/logistics/federated/Event> ;
   owl:imports <https://ontology.tno.nl/logistics/federated/LogisticsRoles> ;
   owl:imports <https://ontology.tno.nl/logistics/federated/ReusableTags> ;
-  owl:versionInfo "Created with TopBraid Composer" ;
+  dc:creator "Dena Tahvildari, Maaike Burghoorn, Cornelis Bouter" ;
+  dcterms:description "This ontology contains classes, attributes, relation about physical infrastructure objects that are used in Logistics Events. ;
+  dcterms:isRequiredBy <https://ontology.tno.nl/logistics/federated/Event> ;
+  dcterms:requires <https://ontology.tno.nl/logistics/federated/Classifications> ;
+  dcterms:language "en";
+  owl:versionIRI <https://ontology.tno.nl/logistics/federated/PhysicalInfrastructurev-0.1> ;
+  dcterms:issued "2021-03-15" ;
+  dcterms:created "2020-07-17";
 .
 pi:Airport
   rdf:type owl:Class ;
