@@ -18,6 +18,8 @@
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcterms: <http://purl.org/dc/terms> .
 
 BusinessService:Enterprise_x
   rdf:type BusinessService:Enterprise ;
@@ -37,7 +39,7 @@ BusinessService:hasLocation
   dc:creator "Dena Tahvildari, Maaike Burghoorn, Cornelis Bouter" ;
   dcterms:description "This ontology contains classes, attributes, relation about Logistics Roles that can be used in the Logistics domain." ;
   dcterms:isRequiredBy <https://ontology.tno.nl/logistics/federated/PhysicalInfrastructure> ,
-  						<https://ontology.tno.nl/logistics/federated/BusinessService>
+  						<https://ontology.tno.nl/logistics/federated/BusinessService> ;
   dcterms:language "en";
   owl:versionIRI <https://ontology.tno.nl/logistics/federated/LogisticRolesv-0.1> ;
   dcterms:issued "2021-03-15";

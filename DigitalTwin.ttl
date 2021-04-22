@@ -20,26 +20,17 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
 
-dcterms:CornelisBouter
-  rdf:type dcterms:Agent ;
-.
-dcterms:DenaTahvildari
-  rdf:type dcterms:Agent ;
-.
-dcterms:MaaikeBurghoorn
-  rdf:type dcterms:Agent ;
-.
 <https://ontology.tno.nl/logistics/federated/DigitalTwin>
   rdf:type owl:Ontology ;
-  dcterms:creator dcterms:CornelisBouter ;
-  dcterms:creator dcterms:DenaTahvildari ;
-  dcterms:creator dcterms:MaaikeBurghoorn ;
+  dc:creator "Dena Tahvildari, Cornelis Bouter, Maaike Burghoorn" ;
   dcterms:description "This is DigitalTwin ontology. It contains classes, attributes and relationships about logistics physical real world object. The usecase is two: 1. it is part of federated logistics ontology architecture that is referenced and used by Event module. 2. It will be evolved (extended) to cover digital Twin technologies requirements. " ;
   dcterms:isRequiredBy <https://ontology.tno.nl/logistics/federated/Event> ;
   dcterms:requires <https://ontology.tno.nl/logistics/federated/Classifications>
   dcterms:issued "2021-03-15" ;
-  dcterms:language DigitalTwin:English ;
+  dcterms:language "en" ;
   dcterms:created "2020-07-17";
   owl:imports <http://era.ilabt.imec.be/era-vocabulary/ontology.ttl> ;
   owl:imports <http://www.w3.org/2004/02/skos/core> ;
@@ -125,9 +116,7 @@ DigitalTwin:DeepSeaVessel
   rdfs:label "Deep Sea Vessel" ;
   rdfs:subClassOf DigitalTwin:Vessel ;
 .
-DigitalTwin:English
-  rdf:type dcterms:LinguisticSystem ;
-.
+
 DigitalTwin:Equipment
   rdf:type owl:Class ;
   rdfs:comment "Any asset used to facilitate transport and handling of cargo." ;
