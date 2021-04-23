@@ -109,7 +109,6 @@ retrieve:CargoShape
             sh:maxCount 1 ;
             sh:minCount 1 ;
             sh:name "UN Number" ;
-            sh:nodeKind sh:BlankNode ;
           ] ;
         sh:property [
             sh:path classifications:HazmatCode ;
