@@ -220,6 +220,7 @@ retrieve:ContactShape
       sh:maxCount 1 ;
       sh:name "phone number" ;
     ] ;
+  sh:targetClass LogisticsRoles:ContactPerson ;
 .
 retrieve:EventTypeShape
   rdf:type sh:NodeShape ;
