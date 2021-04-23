@@ -337,11 +337,11 @@ retrieve:LocationShape
 retrieve:TrailerShape
   rdf:type sh:NodeShape ;
   rdfs:label "Trailer Shape" ;
-  sh:equals DigitalTwin:hasLicensePlateNumber ;
   sh:property [
       rdf:type sh:PropertyShape ;
       sh:path DigitalTwin:TrailerID ;
       sh:datatype xsd:string ;
+      sh:equals DigitalTwin:hasLicensePlateNumber ;
       sh:minCount 1 ;
     ] ;
   sh:targetClass DigitalTwin:Trailer ;
@@ -371,11 +371,11 @@ retrieve:TransportMeansRoutShape
 retrieve:TransportMeansShape
   rdf:type sh:NodeShape ;
   rdfs:label "Transport Means Shape" ;
-  sh:equals DigitalTwin:hasLicensePlateNumber ;
-  sh:equals pi:countryISOCode ;
   sh:property [
       rdf:type sh:PropertyShape ;
       sh:path DigitalTwin:hasTransportMeansNationality ;
+      sh:equals DigitalTwin:hasLicensePlateNumber ;
+      sh:equals pi:countryISOCode ;
       sh:datatype xsd:string ;
       sh:minCount 0 ;
       sh:name "has nationality" ;
@@ -392,19 +392,19 @@ retrieve:TransportMeansShape
 retrieve:TruckShape
   rdf:type sh:NodeShape ;
   rdfs:label "Truck Shape" ;
-  sh:pattern "[0-9]{2}-B[a-zA-Z]{2}-[0-9]" ;
   sh:property [
       rdf:type sh:PropertyShape ;
       sh:path DigitalTwin:TruckLicencePlate ;
       sh:datatype xsd:string ;
-      sh:maxCount 1 ;
+      sh:maxCount 1 ;  
+      sh:pattern "[0-9]{2}-B[a-zA-Z]{2}-[0-9]" ;
       sh:name "Truck licence plate" ;
     ] ;
   sh:property [
       rdf:type sh:PropertyShape ;
       sh:path DigitalTwin:VIN ;
       sh:datatype xsd:string ;
-      sh:maxCount 1 ;
+      sh:minCount 1 ;
       sh:name "VIN" ;
     ] ;
 .
