@@ -128,7 +128,7 @@ retrieve:CargoShape
       sh:class classifications:dangerouseGoodCode ;
       sh:minCount 1 ;
       sh:name "dangerouse goods classification" ;
-      sh:nodeKind sh:BlankNode ;
+       sh:nodeKind sh:IRI
     ] ;
   sh:property [
       rdf:type sh:PropertyShape ;
@@ -160,7 +160,7 @@ retrieve:CargoShape
       sh:class classifications:natureOfCargo ;
       sh:minCount 1 ;
       sh:name "dangerouse goods classification" ;
-      sh:nodeKind sh:BlankNode ;
+       sh:nodeKind sh:IRI
     ] ;
   sh:property [
       rdf:type sh:PropertyShape ;
@@ -177,7 +177,7 @@ retrieve:CargoShape
       sh:maxCount 1 ;
       sh:minCount 1 ;
       sh:name "packaging type" ;
-      sh:nodeKind sh:BlankNode ;
+       sh:nodeKind sh:IRI
     ] ;
   sh:property [
       rdf:type sh:PropertyShape ;
@@ -239,7 +239,7 @@ retrieve:EventTypeShape
       sh:class Event:Date ;
       sh:minCount 1 ;
       sh:name "has date" ;
-      sh:nodeKind sh:BlankNode ;
+       sh:nodeKind sh:IRI
     ] ;
   sh:property [
       rdf:type sh:PropertyShape ;
@@ -255,7 +255,7 @@ retrieve:EventTypeShape
       sh:class Event:Event ;
       sh:minCount 1 ;
       sh:name "has event type" ;
-      sh:nodeKind sh:BlankNode ;
+       sh:nodeKind sh:IRI
     ] ;
   sh:property [
       rdf:type sh:PropertyShape ;
@@ -263,7 +263,7 @@ retrieve:EventTypeShape
       sh:class Event:Milestone ;
       sh:minCount 1 ;
       sh:name "has milestone" ;
-      sh:nodeKind sh:BlankNode ;
+       sh:nodeKind sh:IRI
     ] ;
   sh:property [
       rdf:type sh:PropertyShape ;
@@ -279,7 +279,7 @@ retrieve:EventTypeShape
       sh:class Event:Event ;
       sh:minCount 1 ;
       sh:name "has event type" ;
-      sh:nodeKind sh:BlankNode ;
+       sh:nodeKind sh:IRI
     ] ;
   sh:property [
       rdf:type sh:PropertyShape ;
@@ -287,7 +287,7 @@ retrieve:EventTypeShape
       sh:class businessService:BusinessTransaction ;
       sh:minCount 1 ;
       sh:name "involves business transaction" ;
-      sh:nodeKind sh:BlankNode ;
+      s sh:nodeKind sh:IRI
     ] ;
   sh:property [
       rdf:type sh:PropertyShape ;
@@ -295,7 +295,7 @@ retrieve:EventTypeShape
       sh:class DigitalTwin:DigitalTwin ;
       sh:minCount 1 ;
       sh:name "involves digital twin" ;
-      sh:nodeKind sh:BlankNode ;
+       sh:nodeKind sh:IRI
     ] ;
   sh:property [
       rdf:type sh:PropertyShape ;
@@ -303,7 +303,7 @@ retrieve:EventTypeShape
       sh:class pi:Location ;
       sh:minCount 1 ;
       sh:name "invovles location" ;
-      sh:nodeKind sh:BlankNode ;
+       sh:nodeKind sh:IRI
     ] ;
   sh:property [
       rdf:type sh:PropertyShape ;
@@ -311,7 +311,7 @@ retrieve:EventTypeShape
       sh:class businessService:logisticsActor ;
       sh:minCount 1 ;
       sh:name "involves logistics actor" ;
-      sh:nodeKind sh:BlankNode ;
+       sh:nodeKind sh:IRI
     ] ;
   sh:targetClass Event:Event ;
 .
