@@ -37,8 +37,8 @@
                    <https://ontology.tno.nl/logistics/federated/Classifications> ; 
   dcterms:language "en" ;
   owl:versionIRI <https://ontology.tno.nl/logistics/federated/BusinessServicev-0.1>;
-  dcterms:issued "2021-03-15"^^xsd:DateTime ;
-  dcterms:created "2020-07-20"^^xsd:DateTime ;
+  dcterms:issued "2021-03-15" ;
+  dcterms:created "2020-07-20" ;
 .
 businessService:Booking
   rdf:type owl:Class ;

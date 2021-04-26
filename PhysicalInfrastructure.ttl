@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # baseURI: https://ontology.tno.nl/logistics/federated/PhysicalInfrastructure
 # imports: http://www.geonames.org/ontology
 # imports: http://www.w3.org/2004/02/skos/core
@@ -40,7 +39,7 @@
   owl:imports <https://ontology.tno.nl/logistics/federated/LogisticsRoles> ;
   owl:imports <https://ontology.tno.nl/logistics/federated/ReusableTags> ;
   dc:creator "Dena Tahvildari, Maaike Burghoorn, Cornelis Bouter" ;
-  dcterms:description "This ontology contains classes, attributes, relation about physical infrastructure objects that are used in Logistics Events. ;
+  dcterms:description "This ontology contains classes, attributes, relation about physical infrastructure objects that are used in Logistics Events." ;
   dcterms:isRequiredBy <https://ontology.tno.nl/logistics/federated/Event> ;
   dcterms:requires <https://ontology.tno.nl/logistics/federated/Classifications> ;
   dcterms:language "en";

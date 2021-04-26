@@ -21,17 +21,12 @@
   owl:imports <http://www.w3.org/2004/02/skos/core> ;
   owl:imports <https://ontology.tno.nl/logistics/federated/DigitalTwin> ;
   dc:creator "Dena Tahvildari, Maaike Burghoorn, Cornelis Bouter" ;
-  dcterms:description """This ontology contains classes, attributes, relation about 
-  						 from established standards and vocabularies relevant in the
-  						 Logistics domain. It is intended to be reused by the other
-  						 ontologies in the namespace." ;
-  dcterms:isRequiredBy  <https://ontology.tno.nl/logistics/federated/DigitalTwin> ,
-    					<https://ontology.tno.nl/logistics/federated/BusinessService> ,
-    					<https://ontology.tno.nl/logistics/federated/PhysicalInfrastructure> ;
+  dcterms:description """This ontology contains classes, attributes, relation about from established standards and vocabularies relevant in the Logistics domain. It is intended to be reused by the other ontologies in the namespace.""" ;
+  dcterms:isRequiredBy  <https://ontology.tno.nl/logistics/federated/DigitalTwin>, <https://ontology.tno.nl/logistics/federated/BusinessService>, <https://ontology.tno.nl/logistics/federated/PhysicalInfrastructure> ;
   dcterms:language "en" ;
   owl:versionIRI <https://ontology.tno.nl/logistics/federated/Classificationsv-0.1>;
-  dcterms:issued "2021-03-15"^^xsd:DateTime ;
-  dcterms:created "2020-07-17"^^xsd:DateTime ;
+  dcterms:issued "2021-03-15";
+  dcterms:created "2020-07-17" ;
 .
 classifications:Air
   rdf:type classifications:TransportModality ;
@@ -68,7 +63,6 @@ classifications:ContainerType
 classifications:CorridorName
   rdf:type owl:Class ;
   rdfs:comment """Core network corridors were introduced to facilitate the coordinated implementation of the core network in Europe. 
-
 Nine core network corridors are identified in the annex to the CEF Regulation, which includes a list of projects pre-identified for possible EU funding during the period 2014-2020, based on their added value for TEN-T development and their maturity status.""" ;
   rdfs:label "Corridor Name" ;
   rdfs:subClassOf classifications:Classifications ;

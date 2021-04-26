@@ -15,11 +15,11 @@
   owl:imports <http://purl.org/dc/terms/> ;
   owl:imports <http://www.w3.org/2004/02/skos/core> ;
   dc:creator "Dena Tahvildari, Maaike Burghoorn, Cornelis Bouter" ;
-  dcterms:description "This ontology contains classes, attributes, relation about physical objects that are used in Logistics Event …" ;
+  dcterms:description "This ontology contains Reusable Tags that are used in Logistics Events." ;
   dcterms:language "en";
   owl:versionIRI <https://ontology.tno.nl/logistics/federated/ReusableTagsv-0.1> ;
-  dcterms:issued "2021-03-15";
-  dcterms:created "2021-02-18";
+  dcterms:issued "20210315";
+  dcterms:created "20210218";
 .
 :Tags
   rdf:type owl:Class ;
