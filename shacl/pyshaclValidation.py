@@ -2,15 +2,15 @@
 from pyshacl import validate
 import rdflib
 
-path = '../schema-registry/'
+path = '../'
 
 ### Load data graph ###
 data_graph = rdflib.Graph()
-data_graph.parse(path + 'searchFindData.ttl', format= "ttl")
+data_graph.parse(path + 'individuals/searchFindData.ttl', format= "ttl")
 
 ### Load shacl graph ###
 shapes_graph = rdflib.Graph()
-shapes_graph.parse(path + 'searchFind.Shapes.ttl', format="ttl")
+shapes_graph.parse('[Incident]MetadataSearch.shapes.ttl', format="ttl")
 
 ### Load all ontology graphs in one ###
 ont_graph = rdflib.Graph()
