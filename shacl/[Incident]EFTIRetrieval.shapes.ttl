@@ -287,7 +287,7 @@ retrieve:EventTypeShape
       sh:class businessService:BusinessTransaction ;
       sh:minCount 1 ;
       sh:name "involves business transaction" ;
-      s sh:nodeKind sh:IRI
+      sh:nodeKind sh:IRI
     ] ;
   sh:property [
       rdf:type sh:PropertyShape ;
