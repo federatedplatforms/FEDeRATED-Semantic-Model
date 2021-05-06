@@ -13,8 +13,8 @@
 @prefix Event: <https://ontology.tno.nl/logistics/federated/Event#> .
 @prefix MathM: <http://www.w3.org/1998/Math/MathML> .
 @prefix classifications: <https://ontology.tno.nl/logistics/federated/Classifications#> .
-@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix era: <http://era.europa.eu/ns#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -22,14 +22,16 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-
 <https://ontology.tno.nl/logistics/federated/DigitalTwin>
   rdf:type owl:Ontology ;
   dc:creator "Dena Tahvildari, Cornelis Bouter, Maaike Burghoorn" ;
+  dcterms:created "2020-07-17" ;
   dcterms:description "This is DigitalTwin ontology. It contains classes, attributes and relationships about logistics physical real world object. The usecase is two: 1. it is part of federated logistics ontology architecture that is referenced and used by Event module. 2. It will be evolved (extended) to cover digital Twin technologies requirements. " ;
   dcterms:isRequiredBy "<https://ontology.tno.nl/logistics/federated/Event>" ;
   dcterms:issued "2021-03-15" ;
   dcterms:language "en" ;
+  dcterms:requiredBy <https://ontology.tno.nl/logistics/federated/Event> ;
+  dcterms:requires <https://ontology.tno.nl/logistics/federated/Classifications> ;
   owl:imports <http://era.ilabt.imec.be/era-vocabulary/ontology.ttl> ;
   owl:imports <http://www.w3.org/2004/02/skos/core> ;
   owl:imports <https://ontology.tno.nl/logistics/federated/Classifications> ;
@@ -38,10 +40,6 @@
   owl:imports <https://ontology.tno.nl/logistics/federated/ReusableTags> ;
   owl:imports <https://raw.githubusercontent.com/HajoRijgersberg/OM/master/om-2.0.rdf> ;
   owl:versionIRI <https://ontology.tno.nl/logistics/federated/DigitalTwinv-0.1> ;
-  dcterms:issued "2021-03-15";
-  dcterms:requiredBy <https://ontology.tno.nl/logistics/federated/Event> ;
-  dcterms:requires <https://ontology.tno.nl/logistics/federated/Classifications> ;
-  dcterms:created "2020-07-17" ;
 .
 DigitalTwin:Airplane
   rdf:type owl:Class ;
@@ -89,12 +87,6 @@ DigitalTwin:ContainerFeeder
   rdf:type owl:Class ;
   rdfs:label "Container Feeder" ;
   rdfs:subClassOf DigitalTwin:Feeder ;
-.
-DigitalTwin:Container_1
-  rdf:type DigitalTwin:Container ;
-.
-DigitalTwin:Container_2
-  rdf:type DigitalTwin:Container ;
 .
 DigitalTwin:DanishContainer
   rdf:type owl:Class ;
@@ -238,10 +230,6 @@ DigitalTwin:Locomotive
       owl:onProperty DigitalTwin:locomotiveID ;
     ] ;
 .
-DigitalTwin:Main_goods
-  rdf:type DigitalTwin:Goods ;
-  DigitalTwin:goodsWeight 30 ;
-.
 DigitalTwin:MicroLink_1
   rdf:type era:MicroLink ;
 .
@@ -318,9 +306,6 @@ DigitalTwin:Product
     ] ;
   owl:disjointWith DigitalTwin:Equipment ;
   owl:disjointWith DigitalTwin:TransportMeans ;
-.
-DigitalTwin:Product_1
-  rdf:type DigitalTwin:Product ;
 .
 DigitalTwin:PushBarge
   rdf:type owl:Class ;
@@ -639,17 +624,6 @@ DigitalTwin:goodsWeight
   rdfs:domain DigitalTwin:Goods ;
   rdfs:range xsd:integer ;
   rdfs:subPropertyOf DigitalTwin:PhysicalObjectProperties ;
-.
-DigitalTwin:goods_1
-  rdf:type DigitalTwin:Goods ;
-  DigitalTwin:goodsWeight 10 ;
-.
-DigitalTwin:goods_2
-  rdf:type DigitalTwin:Goods ;
-  DigitalTwin:goodsWeight 20 ;
-.
-DigitalTwin:goods_3
-  rdf:type DigitalTwin:Goods ;
 .
 DigitalTwin:grossMass
   rdf:type owl:DatatypeProperty ;
