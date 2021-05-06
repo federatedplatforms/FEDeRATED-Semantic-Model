@@ -247,7 +247,6 @@ searchFind:packageShape
     ] ;
   sh:property [
       sh:path DT:CargoMinimumVolume ;
-      dash:coExistsWith DT:cargoMaximumVolume ;
       sh:datatype xsd:integer ;
       sh:description "Any intance of Cargo must have at least one property DT:cargoMinimumVolume whose value of datatype xsd:intger" ;
       sh:minCount 1 ;
