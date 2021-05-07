@@ -10,30 +10,30 @@
 @prefix DigitalTwin: <https://ontology.tno.nl/logistics/federated/DigitalTwin#> .
 @prefix Event: <https://ontology.tno.nl/logistics/federated/Event#> .
 @prefix businessService: <https://ontology.tno.nl/logistics/federated/BusinessService#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix pi: <https://ontology.tno.nl/logistics/federated/PhysicalInfrastructure#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix dc: <http://purl.org/dc/elements/1.1/> .
-@prefix dcterms: <http://purl.org/dc/terms/> .
 
 <https://ontology.tno.nl/logistics/federated/Event>
   rdf:type owl:Ontology ;
+  dc:creator "Dena Tahvildari, Maaike Burghoorn, Cornelis Bouter" ;
+  dcterms:created "2020-07-17" ;
+  dcterms:description "This ontology contains classes, attributes, relation about logistic Events." ;
+  dcterms:issued "2021-03-15" ;
+  dcterms:language "en" ;
+  dcterms:requires <https://ontology.tno.nl/logistics/federated/BusinessService> ;
+  dcterms:requires <https://ontology.tno.nl/logistics/federated/DigitalTwin> ;
+  dcterms:requires <https://ontology.tno.nl/logistics/federated/PhysicalInfrastructure> ;
   owl:imports <https://ontology.tno.nl/logistics/federated/BusinessService> ;
   owl:imports <https://ontology.tno.nl/logistics/federated/Classifications> ;
   owl:imports <https://ontology.tno.nl/logistics/federated/DigitalTwin> ;
   owl:imports <https://ontology.tno.nl/logistics/federated/PhysicalInfrastructure> ;
   owl:imports <https://ontology.tno.nl/logistics/federated/ReusableTags> ;
-  dc:creator "Dena Tahvildari, Maaike Burghoorn, Cornelis Bouter" ;
-  dcterms:description "This ontology contains classes, attributes, relation about logistic Events." ;
-  dcterms:requires <https://ontology.tno.nl/logistics/federated/DigitalTwin> ,
-	<https://ontology.tno.nl/logistics/federated/PhysicalInfrastructure> ,
-	<https://ontology.tno.nl/logistics/federated/BusinessService> ;
-  dcterms:language "en";
   owl:versionIRI <https://ontology.tno.nl/logistics/federated/Eventv-0.1> ;
-  dcterms:issued "2021-03-15";
-  dcterms:created "2020-07-17";
 .
 Event:ATAEvent
   rdf:type owl:Class ;
@@ -86,12 +86,6 @@ Event:ContainerLoadEvent
   rdfs:label "Container Load Event" ;
   rdfs:subClassOf Event:EquipmentLoadEvent ;
 .
-Event:ConvergeEvent_1
-  rdf:type Event:MergeEvent ;
-  Event:involvesDigitalTwin DigitalTwin:Main_goods ;
-  Event:involvesDigitalTwin DigitalTwin:goods_1 ;
-  Event:involvesDigitalTwin DigitalTwin:goods_2 ;
-.
 Event:DateTimeType
   rdf:type owl:Class ;
   rdfs:comment "This concept contains the various types of date that an event may have an association to: actual, estimated, expected, planned, and requested. These are all modelled as instances of this type." ;
@@ -133,11 +127,6 @@ Event:ETDEvent
   rdfs:label "Estimated Time of Departure Event" ;
   rdfs:subClassOf Event:DepartureEvent ;
 .
-Event:End
-  rdf:type Event:Milestone ;
-  rdfs:comment "Events have a milestone which can be either Start or End. This individual represents the milestone End." ;
-  rdfs:label "start" ;
-.
 Event:EquipmentLoadEvent
   rdf:type owl:Class ;
   rdfs:comment "With a Cargo Load Event an association between equipment and transport means is established, because the equipment is loaded on the transport means." ;
@@ -165,16 +154,6 @@ Event:Event
       owl:minCardinality "1"^^xsd:nonNegativeInteger ;
       owl:onProperty Event:DigitalTwin_detail ;
     ] ;
-.
-Event:Goods-Container_1
-  rdf:type Event:GoodsEquipmentEvent ;
-  Event:involvesDigitalTwin DigitalTwin:Container_1 ;
-  Event:involvesDigitalTwin DigitalTwin:goods_1 ;
-.
-Event:Goods-Container_2
-  rdf:type Event:GoodsEquipmentEvent ;
-  Event:involvesDigitalTwin DigitalTwin:Product_1 ;
-  Event:involvesDigitalTwin DigitalTwin:goods_1 ;
 .
 Event:GoodsDischargeEvent
   rdf:type owl:Class ;
@@ -219,10 +198,6 @@ Event:Milestone
   rdfs:comment "Each Event should have a Milestone associated with it. At the moment, only Start and End are allowed milestones. All allowed Milestone should be of this type." ;
   rdfs:subClassOf owl:Thing ;
 .
-Event:PackEvent
-  rdf:type Event:PackagingEvent ;
-  rdfs:label "ATA" ;
-.
 Event:PackagingEvent
   rdf:type owl:Class ;
   rdfs:comment "An event assocation between transportable objects (Goods or Products) to show that one has been packaged into the other." ;
@@ -258,17 +233,6 @@ Event:SplitEvent
   rdfs:label "Split Event" ;
   rdfs:subClassOf Event:GoodsStructuringEvent ;
 .
-Event:SplittingEvent_1
-  rdf:type Event:SplitEvent ;
-  Event:involvesDigitalTwin DigitalTwin:Main_goods ;
-  Event:involvesDigitalTwin DigitalTwin:goods_1 ;
-  Event:involvesDigitalTwin DigitalTwin:goods_2 ;
-.
-Event:Start
-  rdf:type Event:Milestone ;
-  rdfs:comment "Events have a milestone which can be either Start or End. This individual represents the milestone Start." ;
-  rdfs:label "start" ;
-.
 Event:StripEvent
   rdf:type owl:Class ;
   rdfs:comment "Association to unload a piece of equipment with goods." ;
@@ -287,25 +251,8 @@ Event:UnpackEvent
   rdfs:label "Unpack Event" ;
   rdfs:subClassOf Event:GoodsStructuringEvent ;
 .
-Event:actual
-  rdf:type Event:DateTimeType ;
-.
-Event:containerIsDischargedEvent
-  rdf:type Event:ContainerDischargeEvent ;
-  rdfs:label "ATA" ;
-.
-Event:containerIsLoadedEvent
-  rdf:type Event:ContainerLoadEvent ;
-  rdfs:label "ATA" ;
-.
 Event:end
   rdf:type Event:MileStone ;
-.
-Event:estimated
-  rdf:type Event:DateTimeType ;
-.
-Event:expected
-  rdf:type Event:DateTimeType ;
 .
 Event:expectedDropOffDate
   rdf:type owl:DatatypeProperty ;
@@ -407,12 +354,6 @@ Event:involvesLogisticsActor
   rdfs:label "Involves Logistics Actor" ;
   rdfs:range businessService:logisticsActor ;
   rdfs:subPropertyOf Event:involves ;
-.
-Event:planned
-  rdf:type Event:DateTimeType ;
-.
-Event:requested
-  rdf:type Event:DateTimeType ;
 .
 Event:start
   rdf:type Event:MileStone ;
