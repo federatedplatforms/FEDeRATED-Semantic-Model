@@ -187,7 +187,7 @@ search:CargoShape
       sh:minCount 1 ;
       sh:name "cargo tar weight" ;
     ] ;
-  sh:targetClass DigitalTwin:Cargo ;
+  sh:targetClass DigitalTwin:Goods ;
 .
 search:ContactShape
   rdf:type sh:NodeShape ;
