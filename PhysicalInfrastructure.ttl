@@ -4,7 +4,6 @@
 # imports: https://ontology.tno.nl/logistics/federated/BusinessService
 # imports: https://ontology.tno.nl/logistics/federated/Classifications
 # imports: https://ontology.tno.nl/logistics/federated/DigitalTwin
-# imports: https://ontology.tno.nl/logistics/federated/EraAlignment
 # imports: https://ontology.tno.nl/logistics/federated/Event
 # imports: https://ontology.tno.nl/logistics/federated/LogisticsRoles
 # imports: https://ontology.tno.nl/logistics/federated/ReusableTags
@@ -13,7 +12,6 @@
 @prefix : <https://ontology.tno.nl/logistics/federated/PhysicalInfrastructure#> .
 @prefix BusinessService: <https://ontology.tno.nl/logistics/federated/BusinessService#> .
 @prefix DigitalTwin: <https://ontology.tno.nl/logistics/federated/DigitalTwin#> .
-@prefix EraAlignment: <https://ontology.tno.nl/logistics/federated/EraAlignment#> .
 @prefix Event: <https://ontology.tno.nl/logistics/federated/Event#> .
 @prefix ReusableTags: <https://ontology.tno.nl/logistics/federated/ReusableTags#> .
 @prefix classifications: <https://ontology.tno.nl/logistics/federated/Classifications#> .
@@ -34,7 +32,6 @@
   owl:imports <https://ontology.tno.nl/logistics/federated/BusinessService> ;
   owl:imports <https://ontology.tno.nl/logistics/federated/Classifications> ;
   owl:imports <https://ontology.tno.nl/logistics/federated/DigitalTwin> ;
-  owl:imports <https://ontology.tno.nl/logistics/federated/EraAlignment> ;
   owl:imports <https://ontology.tno.nl/logistics/federated/Event> ;
   owl:imports <https://ontology.tno.nl/logistics/federated/LogisticsRoles> ;
   owl:imports <https://ontology.tno.nl/logistics/federated/ReusableTags> ;
