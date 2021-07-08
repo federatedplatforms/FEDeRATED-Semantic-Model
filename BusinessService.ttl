@@ -20,10 +20,11 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://ontology.tno.nl/logistics/federated/BusinessService>
-  rdf:type owl:Ontology ;
+  a owl:Ontology ;
   dc:creator "Dena Tahvildari, Maaike Burghoorn, Cornelis Bouter" ;
   dcterms:created "2020-07-20" ;
   dcterms:description "This ontology contains classes, attributes, relation about business services that are used in Logistics events." ;
@@ -41,100 +42,100 @@
   owl:versionInfo "Created with TopBraid Composer" ;
 .
 businessService:Booking
-  rdf:type owl:Class ;
+  a owl:Class ;
   rdfs:comment "Agreement with a limited validity period between two enterprises for one or more orders" ;
   rdfs:label "Booking" ;
   rdfs:subClassOf businessService:BusinessTransaction ;
 .
 businessService:BusinessTransaction
-  rdf:type owl:Class ;
+  a owl:Class ;
   rdfs:comment "All data shared by interactions for executing a business service" ;
   rdfs:label "Business Transaction" ;
   rdfs:subClassOf owl:Thing ;
 .
 businessService:Carrier_1
-  rdf:type LogisticsRoles:Carrier ;
+  a LogisticsRoles:Carrier ;
 .
 businessService:Carrier_2
-  rdf:type LogisticsRoles:Carrier ;
+  a LogisticsRoles:Carrier ;
 .
 businessService:Consignee_1
-  rdf:type LogisticsRoles:Consignee ;
+  a LogisticsRoles:Consignee ;
   businessService:logisticsRoleID "wer" ;
   businessService:logisticsRoleName "denaCompany" ;
 .
 businessService:Consignment
-  rdf:type owl:Class ;
-  rdf:type sh:NodeShape ;
+  a owl:Class ;
+  a sh:NodeShape ;
   rdfs:comment "A consignment is a business transaction of a shipper as customer with a service provider (e.g. a carrier or forwarder) for the transport of goods or containers from one location to another, where all goods and containers have to arrive in a given time period. The time period indicates that the goods or containers can arrive with different transport means at different times, but they all have to present after the period has ended." ;
   rdfs:label "Consignement" ;
   rdfs:subClassOf [
-      rdf:type owl:Restriction ;
+      a owl:Restriction ;
       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onClass businessService:LogisticsActor ;
+      owl:onClass businessService:LegalPerson ;
       owl:onProperty businessService:involvedActor ;
     ] ;
   rdfs:subClassOf [
-      rdf:type owl:Restriction ;
+      a owl:Restriction ;
       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
       owl:onClass Classifications:GoodsTypeCode ;
       owl:onProperty DigitalTwin:goodsTypeCode ;
     ] ;
   rdfs:subClassOf [
-      rdf:type owl:Restriction ;
+      a owl:Restriction ;
       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
       owl:onClass Classifications:TransportMovementType ;
       owl:onProperty businessService:partOfTransportMovementType ;
     ] ;
   rdfs:subClassOf [
-      rdf:type owl:Restriction ;
+      a owl:Restriction ;
       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
       owl:onClass DigitalTwin:Cargo ;
       owl:onProperty businessService:usedGoods ;
     ] ;
   rdfs:subClassOf [
-      rdf:type owl:Restriction ;
+      a owl:Restriction ;
       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
       owl:onClass DigitalTwin:Package ;
       owl:onProperty businessService:usedPackage ;
     ] ;
   rdfs:subClassOf [
-      rdf:type owl:Restriction ;
+      a owl:Restriction ;
       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
       owl:onClass DigitalTwin:TransportMeans ;
       owl:onProperty businessService:usedTransportEquipment ;
     ] ;
   rdfs:subClassOf [
-      rdf:type owl:Restriction ;
+      a owl:Restriction ;
       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
       owl:onDataRange xsd:integer ;
       owl:onProperty DigitalTwin:numberofPackages ;
     ] ;
   rdfs:subClassOf [
-      rdf:type owl:Restriction ;
+      a owl:Restriction ;
       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
       owl:onDataRange xsd:string ;
       owl:onProperty businessService:hasSequenceNumber ;
     ] ;
-  ReusableTags:isDervied "true"^^xsd:boolean ;
+  ReusableTags:isDervied true ;
 .
 businessService:Consignor
-  rdf:type LogisticsRoles:Consignor ;
+  a LogisticsRoles:Consignor ;
   businessService:logisticsRoleID "gfd" ;
   businessService:logisticsRoleName "dfgdf" ;
 .
 businessService:Declerant_1
-  rdf:type LogisticsRoles:Declerant ;
+  a LogisticsRoles:Declerant ;
   rdfs:label "Belongs To" ;
 .
 businessService:Enterprise
-  rdf:type owl:Class ;
+  a owl:Class ;
   rdfs:comment "A business or a company" ;
   rdfs:label "Enterprise" ;
-  rdfs:subClassOf businessService:LogisticsActor ;
+  rdfs:subClassOf businessService:LegalEntity ;
 .
 businessService:Enterprise_1
-  rdf:type businessService:Enterprise ;
+  a businessService:Enterprise ;
   businessService:actorAddress "RijkstraatWeg 222222" ;
   businessService:actorName "denaLogisticsCompany" ;
   businessService:actorWebsite "www.denaLogistics.com" ;
@@ -148,210 +149,216 @@ businessService:Enterprise_x
   businessService:involvedRole businessService:Declerant_1 ;
 .
 businessService:FrameworkContract
-  rdf:type owl:Class ;
+  a owl:Class ;
   rdfs:comment "A contract with a long term validity period between any two enterprise with agreements of business service delivery" ;
   rdfs:label "Framework Contract" ;
   rdfs:subClassOf businessService:BusinessTransaction ;
 .
 businessService:Itinerary
-  rdf:type owl:Class ;
-  rdf:type sh:NodeShape ;
+  a owl:Class ;
+  a sh:NodeShape ;
   rdfs:comment "A timed sequence of places of call of a transport means. Potentially, an itinerary has a unique ID, e.g. voyage number and flight number." ;
   rdfs:label "Itinerary" ;
   rdfs:subClassOf owl:Thing ;
   rdfs:subClassOf [
-      rdf:type owl:Restriction ;
+      a owl:Restriction ;
       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
       owl:onClass DigitalTwin:TransportMeans ;
       owl:onProperty businessService:involves ;
     ] ;
   rdfs:subClassOf [
-      rdf:type owl:Restriction ;
+      a owl:Restriction ;
       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
       owl:onClass Event:Event ;
       owl:onProperty businessService:involves ;
     ] ;
   rdfs:subClassOf [
-      rdf:type owl:Restriction ;
+      a owl:Restriction ;
       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
       owl:onClass pi:LogisticalFunction ;
       owl:onProperty businessService:involves ;
     ] ;
   rdfs:subClassOf [
-      rdf:type owl:Restriction ;
+      a owl:Restriction ;
       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
       owl:onDataRange xsd:string ;
       owl:onProperty businessService:itineraryID ;
     ] ;
-  ReusableTags:isDervied "true"^^xsd:boolean ;
+  ReusableTags:isDervied true ;
 .
-businessService:LogisticsActor
-  rdf:type owl:Class ;
+businessService:LegalEntity
+  a owl:Class ;
+  rdfs:label "Legal entity" ;
+  rdfs:subClassOf businessService:LegalPerson ;
+  skos:prefLabel "Legal entity" ;
+.
+businessService:LegalPerson
+  a owl:Class ;
   rdfs:comment "The role of a Person, Enterprise or Organization is context dependant, and therefore should be described using the LogisticsRoles:Roles class." ;
   rdfs:label "Logistics Actor" ;
   rdfs:subClassOf [
-      rdf:type owl:Restriction ;
+      a owl:Restriction ;
       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
       owl:onClass LogisticsRoles:ActorRoles ;
       owl:onProperty businessService:involvedRole ;
     ] ;
   rdfs:subClassOf [
-      rdf:type owl:Restriction ;
+      a owl:Restriction ;
       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
       owl:onDataRange xsd:string ;
       owl:onProperty businessService:actorName ;
     ] ;
   rdfs:subClassOf [
-      rdf:type owl:Restriction ;
+      a owl:Restriction ;
       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
       owl:onDataRange xsd:string ;
       owl:onProperty businessService:actorWebsite ;
     ] ;
   rdfs:subClassOf [
-      rdf:type owl:Restriction ;
+      a owl:Restriction ;
       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
       owl:onDataRange pi:Location ;
       owl:onProperty businessService:actorAddress ;
     ] ;
 .
 businessService:LogisticsService
-  rdf:type owl:Class ;
+  a owl:Class ;
   rdfs:comment "Any service that is provided to a customer by a logistics or transport service provider." ;
   rdfs:label "Logistics Service" ;
   rdfs:subClassOf owl:Thing ;
 .
 businessService:LogisticsServiceGroupage
-  rdf:type owl:Class ;
+  a owl:Class ;
   rdfs:comment "A service for grouping of cargo into equipment" ;
   rdfs:label "Groupage Service" ;
   rdfs:subClassOf businessService:LogisticsService ;
 .
+businessService:NaturalPerson
+  a owl:Class ;
+  rdfs:comment "An individual human being" ;
+  rdfs:label "Person" ;
+  rdfs:subClassOf businessService:LegalPerson ;
+.
 businessService:Order
-  rdf:type owl:Class ;
+  a owl:Class ;
   rdfs:comment "Agreement between two enterprise for actual execution of a business service according a booking or framework contract." ;
   rdfs:label "Order" ;
   rdfs:subClassOf businessService:BusinessTransaction ;
 .
 businessService:Organization
-  rdf:type owl:Class ;
+  a owl:Class ;
   rdfs:comment "An agent corresponding to social institutions such as companies, societies etc." ;
   rdfs:label "Organization" ;
-  rdfs:subClassOf businessService:LogisticsActor ;
-.
-businessService:Person
-  rdf:type owl:Class ;
-  rdfs:comment "An individual human being" ;
-  rdfs:label "Person" ;
-  rdfs:subClassOf businessService:LogisticsActor ;
+  rdfs:subClassOf businessService:LegalEntity ;
 .
 businessService:PrivateEnterprise
-  rdf:type owl:Class ;
-  rdf:type sh:NodeShape ;
+  a owl:Class ;
+  a sh:NodeShape ;
   rdfs:comment "A private business or company" ;
   rdfs:label "Private Enterprise" ;
   rdfs:subClassOf businessService:Enterprise ;
 .
 businessService:PublicEnterprise
-  rdf:type owl:Class ;
-  rdf:type sh:NodeShape ;
+  a owl:Class ;
+  a sh:NodeShape ;
   rdfs:comment "A public business or company" ;
   rdfs:label "Public Enterprise" ;
   rdfs:subClassOf businessService:Enterprise ;
 .
 businessService:Route
-  rdf:type owl:Class ;
-  rdf:type sh:NodeShape ;
+  a owl:Class ;
+  a sh:NodeShape ;
   rdfs:comment "The use of infrastructure (sea, road, rail etc.) taken by transport means between any two locations of its itinerary." ;
   rdfs:label "Route" ;
   rdfs:subClassOf owl:Thing ;
   rdfs:subClassOf [
-      rdf:type owl:Restriction ;
+      a owl:Restriction ;
       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
       owl:onClass DigitalTwin:TransportMeans ;
       owl:onProperty businessService:involves ;
     ] ;
   rdfs:subClassOf [
-      rdf:type owl:Restriction ;
+      a owl:Restriction ;
       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
       owl:onClass Event:Event ;
       owl:onProperty businessService:involves ;
     ] ;
   rdfs:subClassOf [
-      rdf:type owl:Restriction ;
+      a owl:Restriction ;
       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
       owl:onClass pi:InfrastructuralFunction ;
       owl:onProperty businessService:involves ;
     ] ;
-  ReusableTags:isDervied "true"^^xsd:boolean ;
+  ReusableTags:isDervied true ;
 .
 businessService:Shipment
-  rdf:type owl:Class ;
-  rdf:type sh:NodeShape ;
+  a owl:Class ;
+  a sh:NodeShape ;
   rdfs:comment "A shipment is a business transaction with a carrier for the transport of goods or containers from one location to another, where all goods and containers have to arrive in a given time period. This is similar to a consignment; however, it is always a carrier acting as service provider." ;
   rdfs:label "Shipment" ;
-  ReusableTags:isDervied "true"^^xsd:boolean ;
+  ReusableTags:isDervied true ;
 .
 businessService:StorageServiceCargo
-  rdf:type owl:Class ;
+  a owl:Class ;
   rdfs:comment "A service for (temporary) storage of cargo. This may include special cargo storage such as cool storage, animal hotels, and dangerous goods storage." ;
   rdfs:label "Storage Service Cargo" ;
   rdfs:subClassOf businessService:LogisticsService ;
 .
 businessService:StorageServiceProduct
-  rdf:type owl:Class ;
+  a owl:Class ;
   rdfs:comment "A service for storage of products (warehousing)" ;
   rdfs:label "Storage Service Product" ;
   rdfs:subClassOf businessService:LogisticsService ;
 .
 businessService:TransportService
-  rdf:type owl:Class ;
+  a owl:Class ;
   rdfs:comment "A service provided by a logistics for transport of cargo" ;
   rdfs:label "Transport Service" ;
   rdfs:subClassOf businessService:LogisticsService ;
 .
 businessService:TransshipmentService
-  rdf:type owl:Class ;
+  a owl:Class ;
   rdfs:comment "A service for transshipping cargo from one transport means to another" ;
   rdfs:label "Transshipment Service" ;
   rdfs:subClassOf businessService:LogisticsService ;
 .
 businessService:actorAddress
-  rdf:type owl:DatatypeProperty ;
+  a owl:DatatypeProperty ;
   rdfs:comment "Address of the logistics actor" ;
-  rdfs:domain businessService:LogisticsActor ;
+  rdfs:domain businessService:LegalPerson ;
   rdfs:label "Actor address" ;
   rdfs:range xsd:string ;
 .
 businessService:actorID
-  rdf:type owl:DatatypeProperty ;
+  a owl:DatatypeProperty ;
   rdfs:comment "ID of the logistics actor" ;
-  rdfs:domain businessService:LogisticsActor ;
+  rdfs:domain businessService:LegalPerson ;
   rdfs:label "Actor ID" ;
   rdfs:range xsd:string ;
 .
 businessService:actorName
-  rdf:type owl:DatatypeProperty ;
+  a owl:DatatypeProperty ;
   rdfs:comment "Name of the logistics actor" ;
-  rdfs:domain businessService:LogisticsActor ;
+  rdfs:domain businessService:LegalPerson ;
   rdfs:label "Actor name" ;
   rdfs:range xsd:string ;
 .
 businessService:actorWebsite
-  rdf:type owl:DatatypeProperty ;
+  a owl:DatatypeProperty ;
   rdfs:comment "URL of the website of the logistics actor" ;
-  rdfs:domain businessService:LogisticsActor ;
+  rdfs:domain businessService:LegalPerson ;
   rdfs:label "Actor website" ;
   rdfs:range xsd:string ;
 .
 businessService:bookingNumber
-  rdf:type owl:DatatypeProperty ;
+  a owl:DatatypeProperty ;
   rdfs:comment "Booking number of the booking business transaction" ;
   rdfs:domain businessService:Booking ;
   rdfs:label "Booking number" ;
   rdfs:range xsd:string ;
 .
 businessService:deviationDuration
-  rdf:type owl:DatatypeProperty ;
+  a owl:DatatypeProperty ;
   rdfs:comment "Deviation on the duration of the transport service" ;
   rdfs:domain businessService:TransportService ;
   rdfs:label "Deviation duration" ;
@@ -363,28 +370,28 @@ businessService:hasLocation
   rdfs:range pi:Location ;
 .
 businessService:hasSequenceNumber
-  rdf:type owl:DatatypeProperty ;
+  a owl:DatatypeProperty ;
   rdfs:domain businessService:BusinessTransaction ;
   rdfs:label "Has Sequence Number" ;
   rdfs:range xsd:string ;
 .
 businessService:hasService
-  rdf:type owl:ObjectProperty ;
+  a owl:ObjectProperty ;
   rdfs:comment "Business transaction is part of a logistics service" ;
   rdfs:domain businessService:BusinessTransaction ;
   rdfs:label "Has service" ;
   rdfs:range businessService:LogisticsService ;
 .
 businessService:involvedActor
-  rdf:type owl:ObjectProperty ;
+  a owl:ObjectProperty ;
   rdfs:comment "Actor involved in bussiness transaction" ;
   rdfs:domain businessService:BusinessTransaction ;
   rdfs:label "Involved actor" ;
-  rdfs:range businessService:LogisticsActor ;
+  rdfs:range businessService:LegalPerson ;
   rdfs:subPropertyOf businessService:involves ;
 .
 businessService:involvedEvent
-  rdf:type owl:ObjectProperty ;
+  a owl:ObjectProperty ;
   rdfs:comment "Event involved with business transaction" ;
   rdfs:domain businessService:BusinessTransaction ;
   rdfs:label "Involved event" ;
@@ -392,33 +399,33 @@ businessService:involvedEvent
   rdfs:subPropertyOf businessService:involves ;
 .
 businessService:involvedRole
-  rdf:type owl:ObjectProperty ;
+  a owl:ObjectProperty ;
   rdfs:comment "Role of logistics actor" ;
-  rdfs:domain businessService:LogisticsActor ;
+  rdfs:domain businessService:LegalPerson ;
   rdfs:label "Involved role" ;
   rdfs:range LogisticsRoles:ActorRoles ;
   rdfs:subPropertyOf businessService:involves ;
 .
 businessService:involves
-  rdf:type owl:ObjectProperty ;
+  a owl:ObjectProperty ;
   rdfs:comment "Abstract property -- do not instantiate" ;
 .
 businessService:itineraryID
-  rdf:type owl:DatatypeProperty ;
+  a owl:DatatypeProperty ;
   rdfs:comment "Each itinerary is assigned an unique ID" ;
   rdfs:domain businessService:Itinerary ;
   rdfs:label "Itinerary ID" ;
   rdfs:range xsd:string ;
 .
 businessService:logisticsRoleID
-  rdf:type owl:DatatypeProperty ;
+  a owl:DatatypeProperty ;
   rdfs:comment "Each logistics role is assigned an unique ID" ;
   rdfs:domain LogisticsRoles:ActorRoles ;
   rdfs:label "Logistics Role ID" ;
   rdfs:range xsd:string ;
 .
 businessService:logisticsRoleName
-  rdf:type owl:DatatypeProperty ;
+  a owl:DatatypeProperty ;
   rdfs:comment "Each logistics role has a unique name" ;
   rdfs:domain LogisticsRoles:ActorRoles ;
   rdfs:label "Logistics Role Name" ;
@@ -426,62 +433,62 @@ businessService:logisticsRoleName
   owl:equivalentProperty businessService:actorName ;
 .
 businessService:partOfTransportMovementType
-  rdf:type owl:ObjectProperty ;
+  a owl:ObjectProperty ;
   rdfs:comment "Describes if the business transaction if part of main-, on-, or precarriage" ;
   rdfs:domain businessService:BusinessTransaction ;
   rdfs:label "Transport movement type" ;
   rdfs:range Classifications:TransportMovementType ;
 .
 businessService:serviceName
-  rdf:type owl:DatatypeProperty ;
+  a owl:DatatypeProperty ;
   rdfs:comment "Each type of logistics service can be described using a name." ;
   rdfs:domain businessService:LogisticsService ;
   rdfs:label "Service name" ;
   rdfs:range xsd:string ;
 .
 businessService:transportServiceDurationAverage
-  rdf:type owl:DatatypeProperty ;
+  a owl:DatatypeProperty ;
   rdfs:comment "Each transport service has a average duration of completion" ;
   rdfs:domain businessService:TransportService ;
   rdfs:label "Transport service duration average" ;
   rdfs:range xsd:decimal ;
 .
 businessService:usedGoods
-  rdf:type owl:ObjectProperty ;
+  a owl:ObjectProperty ;
   rdfs:comment "Goods that are part of the logistics service" ;
   rdfs:domain businessService:LogisticsService ;
   rdfs:label "Used goods" ;
   rdfs:range DigitalTwin:Goods ;
 .
 businessService:usedPackage
-  rdf:type owl:ObjectProperty ;
+  a owl:ObjectProperty ;
   rdfs:comment "Package that is part of the logistics service" ;
   rdfs:domain businessService:LogisticsService ;
   rdfs:label "Used package" ;
   rdfs:range DigitalTwin:Package ;
 .
 businessService:usedPackagedProducts
-  rdf:type owl:ObjectProperty ;
+  a owl:ObjectProperty ;
   rdfs:comment "Packaged products that are part of the logistics service" ;
   rdfs:domain businessService:LogisticsService ;
   rdfs:label "Package products" ;
 .
 businessService:usedTransportEquipment
-  rdf:type owl:ObjectProperty ;
+  a owl:ObjectProperty ;
   rdfs:comment "Transport equipment involved with the logistics service" ;
   rdfs:domain businessService:LogisticsService ;
   rdfs:label "Used transport equipment" ;
   rdfs:range DigitalTwin:Equipment ;
 .
 businessService:usedTransportMeans
-  rdf:type owl:ObjectProperty ;
+  a owl:ObjectProperty ;
   rdfs:comment "Transports means involved with the logistics service" ;
   rdfs:domain businessService:LogisticsService ;
   rdfs:label "Used transport means" ;
   rdfs:range DigitalTwin:TransportMeans ;
 .
 businessService:usedTransportModality
-  rdf:type owl:ObjectProperty ;
+  a owl:ObjectProperty ;
   rdfs:comment "Describes transport modality of the transport service" ;
   rdfs:domain businessService:TransportService ;
   rdfs:label "Used transport modality" ;
@@ -489,13 +496,13 @@ businessService:usedTransportModality
 .
 LogisticsRoles:LogisticsRoles
   rdfs:subClassOf [
-      rdf:type owl:Restriction ;
+      a owl:Restriction ;
       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
       owl:onDataRange xsd:string ;
       owl:onProperty businessService:logisticsRoleID ;
     ] ;
   rdfs:subClassOf [
-      rdf:type owl:Restriction ;
+      a owl:Restriction ;
       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
       owl:onDataRange xsd:string ;
       owl:onProperty businessService:logisticsRoleName ;

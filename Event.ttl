@@ -376,7 +376,7 @@ Event:involvesLogisticsActor
   rdfs:comment "This relation establishes an association between an Event and a Logistics Actor. The exact meaning depends on the type of Event, which is inferred from this property and the second association the event has." ;
   rdfs:domain Event:Event ;
   rdfs:label "Involves Logistics Actor" ;
-  rdfs:range businessService:LogisticsActor ;
+  rdfs:range businessService:LegalPerson ;
   rdfs:subPropertyOf Event:involves ;
 .
 Event:start
