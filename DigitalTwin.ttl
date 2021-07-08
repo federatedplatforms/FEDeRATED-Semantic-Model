@@ -649,7 +649,7 @@ DigitalTwin:hasLicensePlateNumber
   rdfs:domain DigitalTwin:TransportMeans ;
   rdfs:label "License Plate Number" ;
   rdfs:range xsd:string ;
-  rdfs:subPropertyOf DigitalTwin:PhysicalObjectProperties ;
+  rdfs:subPropertyOf DigitalTwin:transportMeansProperties ;
 .
 DigitalTwin:hasTransportMeansID
   rdf:type owl:DatatypeProperty ;
@@ -906,7 +906,7 @@ DigitalTwin:trailerLicensePlate
   rdfs:domain DigitalTwin:Trailer ;
   rdfs:label "Equipment Trailer License Plate" ;
   rdfs:range xsd:string ;
-  rdfs:subPropertyOf DigitalTwin:transportMeansProperties ;
+  rdfs:subPropertyOf DigitalTwin:hasLicensePlateNumber ;
 .
 DigitalTwin:transportMeansProperties
   rdf:type owl:DatatypeProperty ;
@@ -918,7 +918,7 @@ DigitalTwin:truckLicensePlate
   rdfs:domain DigitalTwin:Truck ;
   rdfs:label "Truck License Plate" ;
   rdfs:range xsd:string ;
-  rdfs:subPropertyOf DigitalTwin:transportMeansProperties ;
+  rdfs:subPropertyOf DigitalTwin:hasLicensePlateNumber ;
 .
 DigitalTwin:typeOfCargo
   rdf:type owl:ObjectProperty ;
