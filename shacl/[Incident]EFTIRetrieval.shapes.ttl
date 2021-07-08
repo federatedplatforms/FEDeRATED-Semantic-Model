@@ -6,11 +6,11 @@
 # imports: https://ontology.tno.nl/logistics/federated/DigitalTwin
 # imports: https://ontology.tno.nl/logistics/federated/Event
 # imports: https://ontology.tno.nl/logistics/federated/PhysicalInfrastructure
+# imports: https://ontology.tno.nl/logistics/federated/shapes/event
 # imports: https://raw.githubusercontent.com/HajoRijgersberg/OM/master/om-2.0.rdf
 # prefix: retrieve
 
 @prefix : <https://ontology.tno.nl/logistics/federated/retrieve#> .
-@prefix retrieve: <https://ontology.tno.nl/logistics/federated/retrieve#> .
 @prefix BusinessService: <https://ontology.tno.nl/logistics/federated/BusinessService#> .
 @prefix Classifications: <https://ontology.tno.nl/logistics/federated/Classifications#> .
 @prefix DigitalTwin: <https://ontology.tno.nl/logistics/federated/DigitalTwin#> .
@@ -18,7 +18,6 @@
 @prefix LogisticsRoles: <https://ontology.tno.nl/logistics/federated/LogisticsRoles#> .
 @prefix MathM: <http://www.w3.org/1998/Math/MathML> .
 @prefix ReusableTags: <https://ontology.tno.nl/logistics/federated/ReusableTags#> .
-@prefix retrieve: <https://ontology.tno.nl/logistics/federated/retrieve#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix businessService: <https://ontology.tno.nl/logistics/federated/BusinessService#> .
 @prefix cc: <http://creativecommons.org/ns#> .
@@ -58,6 +57,7 @@
 @prefix era-tpls: <http://era.europa.eu/concepts/train-protection-legacy-systems#> .
 @prefix era-vehicle-types: <http://era.europa.eu/concepts/vehicle-types#> .
 @prefix eu-countries: <http://publications.europa.eu/resource/authority/country/> .
+@prefix event: <https://ontology.tno.nl/logistics/federated/shapes/event#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix geosparql: <http://www.opengis.net/ont/geosparql#> .
 @prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
@@ -66,8 +66,8 @@
 @prefix pi: <https://ontology.tno.nl/logistics/federated/PhysicalInfrastructure#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix schema: <https://schema.org/> .
 @prefix retrieve: <https://ontology.tno.nl/logistics/federated/retrieve#> .
+@prefix schema: <https://schema.org/> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix swa: <http://topbraid.org/swa#> .
@@ -78,7 +78,7 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://ontology.tno.nl/logistics/federated/retrieve>
-  rdf:type owl:Ontology ;
+  a owl:Ontology ;
   owl:imports <http://datashapes.org/dash> ;
   owl:imports <http://www.w3.org/2004/02/skos/core> ;
   owl:imports <https://ontology.tno.nl/logistics/federated/BusinessService> ;
@@ -86,11 +86,12 @@
   owl:imports <https://ontology.tno.nl/logistics/federated/DigitalTwin> ;
   owl:imports <https://ontology.tno.nl/logistics/federated/Event> ;
   owl:imports <https://ontology.tno.nl/logistics/federated/PhysicalInfrastructure> ;
+  owl:imports <https://ontology.tno.nl/logistics/federated/shapes/event> ;
   owl:imports <https://raw.githubusercontent.com/HajoRijgersberg/OM/master/om-2.0.rdf> ;
   owl:versionInfo "Created with TopBraid Composer" ;
 .
 retrieve:CargoShape
-  rdf:type sh:NodeShape ;
+  a sh:NodeShape ;
   rdfs:label "CargoShape" ;
   sh:or (
       [
@@ -103,7 +104,7 @@ retrieve:CargoShape
       ]
       [
         sh:property [
-            rdf:type sh:PropertyShape ;
+            a sh:PropertyShape ;
             sh:path DigitalTwin:hasUNNumber ;
             sh:datatype xsd:string ;
             sh:maxCount 1 ;
@@ -123,15 +124,15 @@ retrieve:CargoShape
       ]
     ) ;
   sh:property [
-      rdf:type sh:PropertyShape ;
+      a sh:PropertyShape ;
       sh:path classifications:dangerouseGoodsClassification ;
       sh:class classifications:dangerouseGoodCode ;
       sh:minCount 1 ;
       sh:name "dangerouse goods classification" ;
-       sh:nodeKind sh:IRI
+      sh:nodeKind sh:IRI ;
     ] ;
   sh:property [
-      rdf:type sh:PropertyShape ;
+      a sh:PropertyShape ;
       sh:path DigitalTwin:GoodsDescription ;
       sh:datatype xsd:string ;
       sh:maxCount 1 ;
@@ -139,7 +140,7 @@ retrieve:CargoShape
       sh:name "Goods description" ;
     ] ;
   sh:property [
-      rdf:type sh:PropertyShape ;
+      a sh:PropertyShape ;
       sh:path DigitalTwin:cargoMaximumTemperature ;
       sh:datatype xsd:decimal ;
       sh:maxCount 1 ;
@@ -147,7 +148,7 @@ retrieve:CargoShape
       sh:name "cargo maximum temperature" ;
     ] ;
   sh:property [
-      rdf:type sh:PropertyShape ;
+      a sh:PropertyShape ;
       sh:path DigitalTwin:minimumTemperature ;
       sh:datatype xsd:decimal ;
       sh:maxCount 1 ;
@@ -155,15 +156,15 @@ retrieve:CargoShape
       sh:name "minimum temperature" ;
     ] ;
   sh:property [
-      rdf:type sh:PropertyShape ;
+      a sh:PropertyShape ;
       sh:path DigitalTwin:natureofCargo ;
       sh:class classifications:natureOfCargo ;
       sh:minCount 1 ;
       sh:name "dangerouse goods classification" ;
-       sh:nodeKind sh:IRI
+      sh:nodeKind sh:IRI ;
     ] ;
   sh:property [
-      rdf:type sh:PropertyShape ;
+      a sh:PropertyShape ;
       sh:path DigitalTwin:numberofPackages ;
       sh:datatype xsd:integer ;
       sh:maxCount 1 ;
@@ -171,16 +172,16 @@ retrieve:CargoShape
       sh:name "number of pakcage" ;
     ] ;
   sh:property [
-      rdf:type sh:PropertyShape ;
+      a sh:PropertyShape ;
       sh:path DigitalTwin:packagingType ;
       sh:class classifications:packageType ;
       sh:maxCount 1 ;
       sh:minCount 1 ;
       sh:name "packaging type" ;
-       sh:nodeKind sh:IRI
+      sh:nodeKind sh:IRI ;
     ] ;
   sh:property [
-      rdf:type sh:PropertyShape ;
+      a sh:PropertyShape ;
       sh:path DigitalTwin:tareWeight ;
       sh:datatype xsd:integer ;
       sh:maxCount 1 ;
@@ -190,31 +191,31 @@ retrieve:CargoShape
   sh:targetClass DigitalTwin:Goods ;
 .
 retrieve:ContactShape
-  rdf:type sh:NodeShape ;
+  a sh:NodeShape ;
   rdfs:label "ContactShape" ;
   sh:property [
-      rdf:type sh:PropertyShape ;
+      a sh:PropertyShape ;
       sh:path businessService:actorName ;
       sh:datatype xsd:string ;
       sh:maxCount 1 ;
       sh:name "actor name" ;
     ] ;
   sh:property [
-      rdf:type sh:PropertyShape ;
+      a sh:PropertyShape ;
       sh:path businessService:actorWebsite ;
       sh:datatype xsd:string ;
       sh:maxCount 1 ;
       sh:name "actor website" ;
     ] ;
   sh:property [
-      rdf:type sh:PropertyShape ;
+      a sh:PropertyShape ;
       sh:path businessService:involvedRole ;
       sh:class LogisticsRoles:ActorRoles ;
       sh:maxCount 1 ;
       sh:name "involved role" ;
     ] ;
   sh:property [
-      rdf:type sh:PropertyShape ;
+      a sh:PropertyShape ;
       sh:path businessService:phoneNumber ;
       sh:datatype xsd:string ;
       sh:maxCount 1 ;
@@ -222,90 +223,18 @@ retrieve:ContactShape
     ] ;
   sh:targetClass LogisticsRoles:ContactPerson ;
 .
-retrieve:EventTypeShape
-  rdf:type sh:NodeShape ;
-  rdfs:label "Event Shape" ;
-  sh:property [
-      rdf:type sh:PropertyShape ;
-      sh:path Event:hasDateTimeType ;
-      sh:class Event:DateTimeType ;
-      sh:minCount 1 ;
-      sh:maxCount 1 ;
-      sh:name "has date" ;
-       sh:nodeKind sh:IRI
-    ] ;
-  sh:property [
-      rdf:type sh:PropertyShape ;
-      sh:path Event:hasMilestone ;
-      sh:class Event:Milestone ;
-      sh:minCount 1 ;
-      sh:maxCount 1;
-      sh:name "has milestone" ;
-       sh:nodeKind sh:IRI
-    ] ;
-  sh:property [
-      rdf:type sh:PropertyShape ;
-      sh:path Event:hasTimestamp ;
-      sh:datatype xsd:dateTime ;
-      sh:minCount 1 ;
-      sh:maxCount 1 ;
-      sh:name "has event type" ;
-    ] ;
-    sh:property [
-      rdf:type sh:PropertyShape ;
-      sh:path Event:involves ;
-      sh:nodeKind sh:IRI ;
-      sh:minCount 2;
-      sh:maxCount 2;
-      sh:name "has two associations";
-    ]
-% to be moved to a separate file    
-%  sh:property [
-%      rdf:type sh:PropertyShape ;
-%      sh:path Event:involvesBusinessTransaction ;
-%      sh:class businessService:BusinessTransaction ;
-%      sh:minCount 1 ;
-%      sh:name "involves business transaction" ;
-%      sh:nodeKind sh:IRI
-%    ] ;
-%  sh:property [
-%      rdf:type sh:PropertyShape ;
-%      sh:path Event:involvesDigitalTwin ;
-%      sh:class DigitalTwin:DigitalTwin ;
-%      sh:minCount 1 ;
-%      sh:name "involves digital twin" ;
-%       sh:nodeKind sh:IRI
-%    ] ;
-%  sh:property [
-%      rdf:type sh:PropertyShape ;
-%      sh:path Event:involvesLocation ;
-%      sh:class pi:Location ;
-%      sh:minCount 1 ;
-%      sh:name "invovles location" ;
-%       sh:nodeKind sh:IRI
-%    ] ;
-%  sh:property [
-%      rdf:type sh:PropertyShape ;
-%      sh:path Event:involvesLogisticsActor ;
-%      sh:class businessService:logisticsActor ;
-%      sh:minCount 1 ;
-%      sh:name "involves logistics actor" ;
-%       sh:nodeKind sh:IRI
-%    ] ;
-  sh:targetClass Event:Event ;
-.
 retrieve:LocationShape
-  rdf:type sh:NodeShape ;
+  a sh:NodeShape ;
   rdfs:label "Location Shape" ;
   sh:property [
-      rdf:type sh:PropertyShape ;
+      a sh:PropertyShape ;
       sh:path pi:LocationCoordinates ;
       sh:class wgs:SpatialThing ;
       sh:minCount 1 ;
       sh:name "Location coordinate" ;
     ] ;
   sh:property [
-      rdf:type sh:PropertyShape ;
+      a sh:PropertyShape ;
       sh:path pi:loctionRole ;
       sh:class pi:locationRole ;
       sh:minCount 1 ;
@@ -314,10 +243,10 @@ retrieve:LocationShape
   sh:targetClass pi:Location ;
 .
 retrieve:TrailerShape
-  rdf:type sh:NodeShape ;
+  a sh:NodeShape ;
   rdfs:label "Trailer Shape" ;
   sh:property [
-      rdf:type sh:PropertyShape ;
+      a sh:PropertyShape ;
       sh:path DigitalTwin:TrailerID ;
       sh:datatype xsd:string ;
       sh:equals DigitalTwin:hasLicensePlateNumber ;
@@ -326,10 +255,10 @@ retrieve:TrailerShape
   sh:targetClass DigitalTwin:Trailer ;
 .
 retrieve:TransportMeansRoutShape
-  rdf:type sh:NodeShape ;
+  a sh:NodeShape ;
   rdfs:label "Rout Shape" ;
   sh:sparql [
-      rdf:type sh:SPARQLConstraint ;
+      a sh:SPARQLConstraint ;
       sh:message "" ;
       sh:prefixes [
           sh:declare [
@@ -348,19 +277,19 @@ retrieve:TransportMeansRoutShape
     ] ;
 .
 retrieve:TransportMeansShape
-  rdf:type sh:NodeShape ;
+  a sh:NodeShape ;
   rdfs:label "Transport Means Shape" ;
   sh:property [
-      rdf:type sh:PropertyShape ;
+      a sh:PropertyShape ;
       sh:path DigitalTwin:hasTransportMeansNationality ;
+      sh:datatype xsd:string ;
       sh:equals DigitalTwin:hasLicensePlateNumber ;
       sh:equals pi:countryISOCode ;
-      sh:datatype xsd:string ;
       sh:minCount 0 ;
       sh:name "has nationality" ;
     ] ;
   sh:property [
-      rdf:type sh:PropertyShape ;
+      a sh:PropertyShape ;
       sh:path DigitalTwin:hasTransportMeasnID ;
       sh:datatype xsd:string ;
       sh:minCount 1 ;
@@ -369,18 +298,18 @@ retrieve:TransportMeansShape
   sh:targetClass DigitalTwin:TransportMeans ;
 .
 retrieve:TruckShape
-  rdf:type sh:NodeShape ;
+  a sh:NodeShape ;
   rdfs:label "Truck Shape" ;
   sh:property [
-      rdf:type sh:PropertyShape ;
+      a sh:PropertyShape ;
       sh:path DigitalTwin:TruckLicencePlate ;
       sh:datatype xsd:string ;
-      sh:maxCount 1 ;  
-      sh:pattern "[0-9]{2}-B[a-zA-Z]{2}-[0-9]" ;
+      sh:maxCount 1 ;
       sh:name "Truck licence plate" ;
+      sh:pattern "[0-9]{2}-B[a-zA-Z]{2}-[0-9]" ;
     ] ;
   sh:property [
-      rdf:type sh:PropertyShape ;
+      a sh:PropertyShape ;
       sh:path DigitalTwin:VIN ;
       sh:datatype xsd:string ;
       sh:minCount 1 ;

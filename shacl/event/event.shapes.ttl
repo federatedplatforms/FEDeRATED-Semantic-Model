@@ -1,0 +1,89 @@
+# baseURI: https://ontology.tno.nl/logistics/federated/shapes/event
+# imports: http://datashapes.org/dash
+
+@prefix : <https://ontology.tno.nl/logistics/federated/shapes/event#> .
+@prefix dash: <http://datashapes.org/dash#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://ontology.tno.nl/logistics/federated/shapes/event>
+  a owl:Ontology ;
+  owl:imports <http://datashapes.org/dash> ;
+  owl:versionInfo "Created with TopBraid Composer" ;
+.
+
+:EventTypeShape
+  rdf:type sh:NodeShape ;
+  rdfs:label "Event Shape" ;
+  sh:property [
+      rdf:type sh:PropertyShape ;
+      sh:path Event:hasDateTimeType ;
+      sh:class Event:DateTimeType ;
+      sh:minCount 1 ;
+      sh:maxCount 1 ;
+      sh:name "has date" ;
+       sh:nodeKind sh:IRI
+    ] ;
+  sh:property [
+      rdf:type sh:PropertyShape ;
+      sh:path Event:hasMilestone ;
+      sh:class Event:Milestone ;
+      sh:minCount 1 ;
+      sh:maxCount 1;
+      sh:name "has milestone" ;
+       sh:nodeKind sh:IRI
+    ] ;
+  sh:property [
+      rdf:type sh:PropertyShape ;
+      sh:path Event:hasTimestamp ;
+      sh:datatype xsd:dateTime ;
+      sh:minCount 1 ;
+      sh:maxCount 1 ;
+      sh:name "has event type" ;
+    ] ;
+    sh:property [
+      rdf:type sh:PropertyShape ;
+      sh:path Event:involves ;
+      sh:nodeKind sh:IRI ;
+      sh:minCount 2;
+      sh:maxCount 2;
+      sh:name "has two associations";
+    ]
+% to be moved to a separate file    
+%  sh:property [
+%      rdf:type sh:PropertyShape ;
+%      sh:path Event:involvesBusinessTransaction ;
+%      sh:class businessService:BusinessTransaction ;
+%      sh:minCount 1 ;
+%      sh:name "involves business transaction" ;
+%      sh:nodeKind sh:IRI
+%    ] ;
+%  sh:property [
+%      rdf:type sh:PropertyShape ;
+%      sh:path Event:involvesDigitalTwin ;
+%      sh:class DigitalTwin:DigitalTwin ;
+%      sh:minCount 1 ;
+%      sh:name "involves digital twin" ;
+%       sh:nodeKind sh:IRI
+%    ] ;
+%  sh:property [
+%      rdf:type sh:PropertyShape ;
+%      sh:path Event:involvesLocation ;
+%      sh:class pi:Location ;
+%      sh:minCount 1 ;
+%      sh:name "invovles location" ;
+%       sh:nodeKind sh:IRI
+%    ] ;
+%  sh:property [
+%      rdf:type sh:PropertyShape ;
+%      sh:path Event:involvesLogisticsActor ;
+%      sh:class businessService:logisticsActor ;
+%      sh:minCount 1 ;
+%      sh:name "involves logistics actor" ;
+%       sh:nodeKind sh:IRI
+%    ] ;
+  sh:targetClass Event:Event ;
+.
