@@ -153,6 +153,25 @@ sh:ArrivalEventShape
    sh:targetClass Event:DepartureEvent ;
  .
   
-
-
+sh:ATAEventShape 
+  rdf:type sh:NodeShape ;
+  sh:label "ATAEventShape" ;
+  sh:property [
+    rdf:type sh:PropertyShape ;
+    sh:path Event:hasDateTimeType ;
+    sh:equals Event:Actual ;
+  ] ;
+  sh:targetClass ATAEvent ;
+.
+ 
+sh:ETAEventShape 
+  rdf:type sh:NodeShape ;
+  sh:label "ETAEventShape" ;
+  sh:property [
+    rdf:type sh:PropertyShape ;
+    sh:path Event:hasDateTimeType ;
+    sh:equals Event:Expected ;
+  ] ;
+  sh:targetClass ETAEvent ;
+.
 
