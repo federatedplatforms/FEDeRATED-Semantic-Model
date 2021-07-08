@@ -333,7 +333,7 @@ Event:hasPickupTime
   rdfs:range xsd:dateTime ;
 .
 Event:hasTimestamp
-  a owl:ObjectProperty ;
+  a owl:DatatypeProperty ;
   rdfs:comment "This property relates an Event to the timestamp associated with it. A timestamp modifier can be entered via hasDateTimeType." ;
   rdfs:domain Event:Event ;
   rdfs:label "Has Timestamp" ;
