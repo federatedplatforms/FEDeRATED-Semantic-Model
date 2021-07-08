@@ -8,6 +8,9 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix DT: <https://ontology.tno.nl/logistics/federated/DigitalTwin#> .
+@prefix Event: <https://ontology.tno.nl/logistics/federated/Event#> .
+@prefix pi: <https://ontology.tno.nl/logistics/federated/PhysicalInfrastructure#> .
 
 <https://ontology.tno.nl/logistics/federated/shapes/event>
   a owl:Ontology ;
@@ -51,39 +54,105 @@
       sh:minCount 2;
       sh:maxCount 2;
       sh:name "has two associations";
-    ]
-% to be moved to a separate file    
-%  sh:property [
-%      rdf:type sh:PropertyShape ;
-%      sh:path Event:involvesBusinessTransaction ;
-%      sh:class businessService:BusinessTransaction ;
-%      sh:minCount 1 ;
-%      sh:name "involves business transaction" ;
-%      sh:nodeKind sh:IRI
-%    ] ;
-%  sh:property [
-%      rdf:type sh:PropertyShape ;
-%      sh:path Event:involvesDigitalTwin ;
-%      sh:class DigitalTwin:DigitalTwin ;
-%      sh:minCount 1 ;
-%      sh:name "involves digital twin" ;
-%       sh:nodeKind sh:IRI
-%    ] ;
-%  sh:property [
-%      rdf:type sh:PropertyShape ;
-%      sh:path Event:involvesLocation ;
-%      sh:class pi:Location ;
-%      sh:minCount 1 ;
-%      sh:name "invovles location" ;
-%       sh:nodeKind sh:IRI
-%    ] ;
-%  sh:property [
-%      rdf:type sh:PropertyShape ;
-%      sh:path Event:involvesLogisticsActor ;
-%      sh:class businessService:logisticsActor ;
-%      sh:minCount 1 ;
-%      sh:name "involves logistics actor" ;
-%       sh:nodeKind sh:IRI
-%    ] ;
-  sh:targetClass Event:Event ;
+    ] ;
+    sh:targetClass Event:Event ;
 .
+# to be moved to a separate shape  
+#  sh:property [
+#      rdf:type sh:PropertyShape ;
+#      sh:path Event:involvesBusinessTransaction ;
+#      sh:class businessService:BusinessTransaction ;
+#      sh:minCount 1 ;
+#      sh:name "involves business transaction" ;
+#      sh:nodeKind sh:IRI
+#    ] ;
+#  sh:property [
+#      rdf:type sh:PropertyShape ;
+#      sh:path Event:involvesDigitalTwin ;
+#      sh:class DT:DigitalTwin ;
+#      sh:minCount 1 ;
+#      sh:name "involves digital twin" ;
+#       sh:nodeKind sh:IRI
+#    ] ;
+#  sh:property [
+#      rdf:type sh:PropertyShape ;
+#      sh:path Event:involvesLocation ;
+#      sh:class pi:Location ;
+#      sh:minCount 1 ;
+#      sh:name "invovles location" ;
+#       sh:nodeKind sh:IRI
+#    ] ;
+#  sh:property [
+#      rdf:type sh:PropertyShape ;
+#      sh:path Event:involvesLogisticsActor ;
+#      sh:class businessService:logisticsActor ;
+#      sh:minCount 1 ;
+#      sh:name "involves logistics actor" ;
+#       sh:nodeKind sh:IRI
+#    ] ;
+
+sh:ArrivalEventShape 
+  rdf:type sh:NodeShape ;
+  sh:label "ArrivalEventShape" ;
+  sh:property [
+    rdf:type sh:PropertyShape ;
+    sh:path Event:involvesDigitalTwin ;
+    sh:class DT:DigitalTwin ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:nodeKind sh:IRI ;
+    sh:name "Involves Digital Twin"
+  ] ;
+  sh:property [
+    rdf:type sh:PropertyShape ;
+    sh:path Event:involvesPhysicalInfrastructure ;
+    sh:class pi:Location ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:nodeKind sh:IRI ;
+    sh:name "Involves Physical Infrastructure"
+  ] ;
+    sh:property [
+      rdf:type sh:PropertyShape ;
+      sh:path Event:hasMilestone ;
+      sh:equals Event:Start ;
+      sh:name "has milestone start" ;
+       sh:nodeKind sh:IRI
+   ] ;
+   sh:targetClass Event:ArrivalEvent ;
+ .
+ 
+ sh:DepartureEventShape 
+  rdf:type sh:NodeShape ;
+  sh:label "DepartureEventShape" ;
+  sh:property [
+    rdf:type sh:PropertyShape ;
+    sh:path Event:involvesDigitalTwin ;
+    sh:class DT:DigitalTwin ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:nodeKind sh:IRI ;
+    sh:name "Involves Digital Twin"
+  ] ;
+  sh:property [
+    rdf:type sh:PropertyShape ;
+    sh:path Event:involvesPhysicalInfrastructure ;
+    sh:class pi:Location ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:nodeKind sh:IRI ;
+    sh:name "Involves Physical Infrastructure"
+  ] ;
+    sh:property [
+      rdf:type sh:PropertyShape ;
+      sh:path Event:hasMilestone ;
+      sh:equals Event:End ;
+      sh:name "has milestone End" ;
+       sh:nodeKind sh:IRI
+   ] ;
+   sh:targetClass Event:DepartureEvent ;
+ .
+  
+
+
+
