@@ -227,34 +227,11 @@ retrieve:EventTypeShape
   rdfs:label "Event Shape" ;
   sh:property [
       rdf:type sh:PropertyShape ;
-      sh:path Event:ExpectedDropOffDate ;
-      sh:datatype xsd:dateTime ;
+      sh:path Event:hasDateTimeType ;
+      sh:class Event:DateTimeType ;
+      sh:minCount 1 ;
       sh:maxCount 1 ;
-      sh:minCount 1 ;
-      sh:name "Expected drop off date" ;
-    ] ;
-  sh:property [
-      rdf:type sh:PropertyShape ;
-      sh:path Event:hasDate ;
-      sh:class Event:Date ;
-      sh:minCount 1 ;
       sh:name "has date" ;
-       sh:nodeKind sh:IRI
-    ] ;
-  sh:property [
-      rdf:type sh:PropertyShape ;
-      sh:path Event:hasDropOffTime ;
-      sh:datatype xsd:dateTime ;
-      sh:maxCount 1 ;
-      sh:minCount 1 ;
-      sh:name "has drop off time" ;
-    ] ;
-  sh:property [
-      rdf:type sh:PropertyShape ;
-      sh:path Event:hasEventType ;
-      sh:class Event:Event ;
-      sh:minCount 1 ;
-      sh:name "has event type" ;
        sh:nodeKind sh:IRI
     ] ;
   sh:property [
@@ -262,57 +239,59 @@ retrieve:EventTypeShape
       sh:path Event:hasMilestone ;
       sh:class Event:Milestone ;
       sh:minCount 1 ;
+      sh:maxCount 1;
       sh:name "has milestone" ;
        sh:nodeKind sh:IRI
     ] ;
   sh:property [
       rdf:type sh:PropertyShape ;
-      sh:path Event:hasPickupTime ;
-      sh:datatype xsd:dateTime ;
-      sh:maxCount 1 ;
-      sh:minCount 1 ;
-      sh:name "has pick UPTime" ;
-    ] ;
-  sh:property [
-      rdf:type sh:PropertyShape ;
       sh:path Event:hasTimestamp ;
-      sh:class Event:Event ;
+      sh:datatype xsd:dateTime ;
       sh:minCount 1 ;
+      sh:maxCount 1 ;
       sh:name "has event type" ;
-       sh:nodeKind sh:IRI
     ] ;
-  sh:property [
+    sh:property [
       rdf:type sh:PropertyShape ;
-      sh:path Event:involvesBusinessTransaction ;
-      sh:class businessService:BusinessTransaction ;
-      sh:minCount 1 ;
-      sh:name "involves business transaction" ;
-      sh:nodeKind sh:IRI
-    ] ;
-  sh:property [
-      rdf:type sh:PropertyShape ;
-      sh:path Event:involvesDigitalTwin ;
-      sh:class DigitalTwin:DigitalTwin ;
-      sh:minCount 1 ;
-      sh:name "involves digital twin" ;
-       sh:nodeKind sh:IRI
-    ] ;
-  sh:property [
-      rdf:type sh:PropertyShape ;
-      sh:path Event:involvesLocation ;
-      sh:class pi:Location ;
-      sh:minCount 1 ;
-      sh:name "invovles location" ;
-       sh:nodeKind sh:IRI
-    ] ;
-  sh:property [
-      rdf:type sh:PropertyShape ;
-      sh:path Event:involvesLogisticsActor ;
-      sh:class businessService:logisticsActor ;
-      sh:minCount 1 ;
-      sh:name "involves logistics actor" ;
-       sh:nodeKind sh:IRI
-    ] ;
+      sh:path Event:involves ;
+      sh:nodeKind sh:IRI ;
+      sh:minCount 2;
+      sh:maxCount 2;
+      sh:name "has two associations";
+    ]
+% to be moved to a separate file    
+%  sh:property [
+%      rdf:type sh:PropertyShape ;
+%      sh:path Event:involvesBusinessTransaction ;
+%      sh:class businessService:BusinessTransaction ;
+%      sh:minCount 1 ;
+%      sh:name "involves business transaction" ;
+%      sh:nodeKind sh:IRI
+%    ] ;
+%  sh:property [
+%      rdf:type sh:PropertyShape ;
+%      sh:path Event:involvesDigitalTwin ;
+%      sh:class DigitalTwin:DigitalTwin ;
+%      sh:minCount 1 ;
+%      sh:name "involves digital twin" ;
+%       sh:nodeKind sh:IRI
+%    ] ;
+%  sh:property [
+%      rdf:type sh:PropertyShape ;
+%      sh:path Event:involvesLocation ;
+%      sh:class pi:Location ;
+%      sh:minCount 1 ;
+%      sh:name "invovles location" ;
+%       sh:nodeKind sh:IRI
+%    ] ;
+%  sh:property [
+%      rdf:type sh:PropertyShape ;
+%      sh:path Event:involvesLogisticsActor ;
+%      sh:class businessService:logisticsActor ;
+%      sh:minCount 1 ;
+%      sh:name "involves logistics actor" ;
+%       sh:nodeKind sh:IRI
+%    ] ;
   sh:targetClass Event:Event ;
 .
 retrieve:LocationShape
