@@ -306,7 +306,7 @@ searchFind:TransportEventShape
   rdf:type sh:NodeShape ;
   sh:property [
       rdf:type sh:PropertyShape ;
-      sh:path event:eventDate ;
+      sh:path Event:eventDate ;
       sh:datatype xsd:dateTime ;
       sh:maxCount 1 ;
       sh:minCount 1 ;
@@ -314,7 +314,7 @@ searchFind:TransportEventShape
     ] ;
   sh:property [
       rdf:type sh:PropertyShape ;
-      sh:path event:eventDate ;
+      sh:path Event:eventDate ;
       sh:datatype xsd:dateTime ;
       sh:maxCount 1 ;
       sh:minCount 1 ;
@@ -322,14 +322,14 @@ searchFind:TransportEventShape
     ] ;
   sh:property [
       rdf:type sh:PropertyShape ;
-      sh:path event:event_mileStone_detail ;
-      sh:class event:MileStone ;
+      sh:path Event:event_mileStone_detail ;
+      sh:class Event:MileStone ;
       sh:maxCount 1 ;
       sh:minCount 1 ;
       sh:name "event mile stone detail" ;
     ] ;
-  sh:targetClass event:DropOffEvent ;
-  sh:targetClass event:PickupEvent ;
+  sh:targetClass Event:DropOffEvent ;
+  sh:targetClass Event:PickupEvent ;
 .
 searchFind:TransportModalityShape
   rdf:type sh:NodeShape ;
