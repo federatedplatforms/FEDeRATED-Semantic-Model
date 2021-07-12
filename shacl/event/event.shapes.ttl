@@ -9,7 +9,7 @@
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix DT: <https://ontology.tno.nl/logistics/federated/DigitalTwin#> .
-@prefix Event: <https://ontology.tno.nl/logistics/federated/Event#> .
+@prefix event: <https://ontology.tno.nl/logistics/federated/Event#> .
 @prefix pi: <https://ontology.tno.nl/logistics/federated/PhysicalInfrastructure#> .
 
 <https://ontology.tno.nl/logistics/federated/shapes/event>
@@ -23,17 +23,17 @@
   rdfs:label "Event Shape" ;
   sh:property [
       rdf:type sh:PropertyShape ;
-      sh:path Event:hasDateTimeType ;
-      sh:class Event:DateTimeType ;
-      sh:minCount 1 ;
+      sh:path event:hasDateTimeType ;
+      sh:class event:DateTimeType ;
+      sh:minCount 2 ;
       sh:maxCount 1 ;
       sh:name "has date" ;
        sh:nodeKind sh:IRI
     ] ;
   sh:property [
       rdf:type sh:PropertyShape ;
-      sh:path Event:hasMilestone ;
-      sh:class Event:Milestone ;
+      sh:path event:hasMilestone ;
+      sh:class event:Milestone ;
       sh:minCount 1 ;
       sh:maxCount 1;
       sh:name "has milestone" ;
@@ -41,7 +41,7 @@
     ] ;
   sh:property [
       rdf:type sh:PropertyShape ;
-      sh:path Event:hasTimestamp ;
+      sh:path event:hasTimestamp ;
       sh:datatype xsd:dateTime ;
       sh:minCount 1 ;
       sh:maxCount 1 ;
@@ -49,18 +49,18 @@
     ] ;
     sh:property [
       rdf:type sh:PropertyShape ;
-      sh:path Event:involves ;
+      sh:path event:involves ;
       sh:nodeKind sh:IRI ;
       sh:minCount 2;
       sh:maxCount 2;
       sh:name "has two associations";
     ] ;
-    sh:targetClass Event:Event ;
+    sh:targetClass event:Event ;
 .
 # to be moved to a separate shape  
 #  sh:property [
 #      rdf:type sh:PropertyShape ;
-#      sh:path Event:involvesBusinessTransaction ;
+#      sh:path event:involvesBusinessTransaction ;
 #      sh:class businessService:BusinessTransaction ;
 #      sh:minCount 1 ;
 #      sh:name "involves business transaction" ;
@@ -68,7 +68,7 @@
 #    ] ;
 #  sh:property [
 #      rdf:type sh:PropertyShape ;
-#      sh:path Event:involvesDigitalTwin ;
+#      sh:path event:involvesDigitalTwin ;
 #      sh:class DT:DigitalTwin ;
 #      sh:minCount 1 ;
 #      sh:name "involves digital twin" ;
@@ -76,7 +76,7 @@
 #    ] ;
 #  sh:property [
 #      rdf:type sh:PropertyShape ;
-#      sh:path Event:involvesLocation ;
+#      sh:path event:involvesLocation ;
 #      sh:class pi:Location ;
 #      sh:minCount 1 ;
 #      sh:name "invovles location" ;
@@ -84,7 +84,7 @@
 #    ] ;
 #  sh:property [
 #      rdf:type sh:PropertyShape ;
-#      sh:path Event:involvesLogisticsActor ;
+#      sh:path event:involvesLogisticsActor ;
 #      sh:class businessService:logisticsActor ;
 #      sh:minCount 1 ;
 #      sh:name "involves logistics actor" ;
@@ -96,7 +96,7 @@
   sh:label "ArrivalEventShape" ;
   sh:property [
     rdf:type sh:PropertyShape ;
-    sh:path Event:involvesDigitalTwin ;
+    sh:path event:involvesDigitalTwin ;
     sh:class DT:DigitalTwin ;
     sh:minCount 1 ;
     sh:maxCount 1 ;
@@ -105,7 +105,7 @@
   ] ;
   sh:property [
     rdf:type sh:PropertyShape ;
-    sh:path Event:involvesPhysicalInfrastructure ;
+    sh:path event:involvesPhysicalInfrastructure ;
     sh:class pi:Location ;
     sh:minCount 1 ;
     sh:maxCount 1 ;
@@ -114,12 +114,12 @@
   ] ;
     sh:property [
       rdf:type sh:PropertyShape ;
-      sh:path Event:hasMilestone ;
-      sh:equals Event:Start ;
+      sh:path event:hasMilestone ;
+      sh:hasValue event:Start ;
       sh:name "has milestone start" ;
        sh:nodeKind sh:IRI
    ] ;
-   sh:targetClass Event:ArrivalEvent ;
+   sh:targetClass event:ArrivalEvent ;
  .
  
  :DepartureEventShape 
@@ -127,7 +127,7 @@
   sh:label "DepartureEventShape" ;
   sh:property [
     rdf:type sh:PropertyShape ;
-    sh:path Event:involvesDigitalTwin ;
+    sh:path event:involvesDigitalTwin ;
     sh:class DT:DigitalTwin ;
     sh:minCount 1 ;
     sh:maxCount 1 ;
@@ -136,7 +136,7 @@
   ] ;
   sh:property [
     rdf:type sh:PropertyShape ;
-    sh:path Event:involvesPhysicalInfrastructure ;
+    sh:path event:involvesPhysicalInfrastructure ;
     sh:class pi:Location ;
     sh:minCount 1 ;
     sh:maxCount 1 ;
@@ -145,12 +145,12 @@
   ] ;
     sh:property [
       rdf:type sh:PropertyShape ;
-      sh:path Event:hasMilestone ;
-      sh:equals Event:End ;
+      sh:path event:hasMilestone ;
+      sh:hasValue event:End ;
       sh:name "has milestone End" ;
        sh:nodeKind sh:IRI
    ] ;
-   sh:targetClass Event:DepartureEvent ;
+   sh:targetClass event:DepartureEvent ;
  .
   
 :ATAEventShape 
@@ -158,8 +158,8 @@
   sh:label "ATAEventShape" ;
   sh:property [
     rdf:type sh:PropertyShape ;
-    sh:path Event:hasDateTimeType ;
-    sh:equals Event:Actual ;
+    sh:path event:hasDateTimeType ;
+    sh:hasValue event:Actual ;
   ] ;
   sh:targetClass ATAEvent ;
 .
@@ -169,11 +169,17 @@
   sh:label "ETAEventShape" ;
   sh:property [
     rdf:type sh:PropertyShape ;
-    sh:path Event:hasDateTimeType ;
-    sh:equals Event:Expected ;
+    sh:path event:hasDateTimeType ;
+    sh:hasValue event:Expected ;
   ] ;
   sh:targetClass ETAEvent ;
 .
 
-
+:GoodsStructuringEventShape
+  rdf:type sh:NodeShape ;
+  sh:label "Goods Structuring Event Shape" ;
+  sh:property [
+    rdf:type sh:PropertyShape ;
+    sh:path event:involves
+  ] ;
 
