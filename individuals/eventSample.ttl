@@ -60,6 +60,7 @@
   DigitalTwin:goodsTypeCode :GoodsTypeCode_1 ;
   DigitalTwin:grossMass 50 ;
   DigitalTwin:grossWeight 50 ;
+  DigitalTwin:natureOfCargo classifications:E ;
 .
 :Location_1
   a pi:Location ;
@@ -89,4 +90,5 @@
   rdfs:label "Truck 1" ;
   DigitalTwin:damageRemarks "scratch rear bumper" ;
   DigitalTwin:hasLicensePlateNumber "00-BBB-1" ;
+  DigitalTwin:hasTransportMeansID "189493081928" ;
 .

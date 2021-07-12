@@ -6,7 +6,7 @@ path = '../'
 
 ### Load data graph ###
 data_graph = rdflib.Graph()
-data_graph.parse(path + 'individuals/searchFindData.ttl', format= "ttl")
+data_graph.parse(path + 'individuals/eventSample.ttl', format= "ttl")
 
 ### Load shacl graph ###
 shapes_graph = rdflib.Graph()
