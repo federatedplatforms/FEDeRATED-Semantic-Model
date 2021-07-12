@@ -91,7 +91,7 @@
 #       sh:nodeKind sh:IRI
 #    ] ;
 
-sh:ArrivalEventShape 
+:ArrivalEventShape 
   rdf:type sh:NodeShape ;
   sh:label "ArrivalEventShape" ;
   sh:property [
@@ -122,7 +122,7 @@ sh:ArrivalEventShape
    sh:targetClass Event:ArrivalEvent ;
  .
  
- sh:DepartureEventShape 
+ :DepartureEventShape 
   rdf:type sh:NodeShape ;
   sh:label "DepartureEventShape" ;
   sh:property [
@@ -153,7 +153,7 @@ sh:ArrivalEventShape
    sh:targetClass Event:DepartureEvent ;
  .
   
-sh:ATAEventShape 
+:ATAEventShape 
   rdf:type sh:NodeShape ;
   sh:label "ATAEventShape" ;
   sh:property [
@@ -164,7 +164,7 @@ sh:ATAEventShape
   sh:targetClass ATAEvent ;
 .
  
-sh:ETAEventShape 
+:ETAEventShape 
   rdf:type sh:NodeShape ;
   sh:label "ETAEventShape" ;
   sh:property [
@@ -174,4 +174,6 @@ sh:ETAEventShape
   ] ;
   sh:targetClass ETAEvent ;
 .
+
+
 
