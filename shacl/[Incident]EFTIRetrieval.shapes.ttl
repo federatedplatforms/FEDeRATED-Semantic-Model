@@ -283,17 +283,16 @@ retrieve:TransportMeansShape
       a sh:PropertyShape ;
       sh:path DigitalTwin:hasTransportMeansNationality ;
       sh:datatype xsd:string ;
-      sh:equals DigitalTwin:hasLicensePlateNumber ;
-      sh:equals pi:countryISOCode ;
-      sh:minCount 0 ;
+      sh:class pi:countryISOCode ;
+      sh:maxCount 1 ;
       sh:name "has nationality" ;
     ] ;
   sh:property [
       a sh:PropertyShape ;
-      sh:path DigitalTwin:hasTransportMeasnID ;
+      sh:path DigitalTwin:hasTransportMeansID ;
       sh:datatype xsd:string ;
       sh:minCount 1 ;
-      sh:name "has transport measn ID" ;
+      sh:name "has transport means ID" ;
     ] ;
   sh:targetClass DigitalTwin:TransportMeans ;
 .
