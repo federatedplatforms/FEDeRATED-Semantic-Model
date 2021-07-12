@@ -127,7 +127,6 @@ retrieve:CargoShape
       a sh:PropertyShape ;
       sh:path classifications:dangerouseGoodsClassification ;
       sh:class classifications:dangerouseGoodCode ;
-      sh:minCount 1 ;
       sh:name "dangerouse goods classification" ;
       sh:nodeKind sh:IRI ;
     ] ;
@@ -136,7 +135,7 @@ retrieve:CargoShape
       sh:path DigitalTwin:GoodsDescription ;
       sh:datatype xsd:string ;
       sh:maxCount 1 ;
-      sh:minCount 1 ;
+#      sh:minCount 1 ;
       sh:name "Goods description" ;
     ] ;
   sh:property [
@@ -144,21 +143,21 @@ retrieve:CargoShape
       sh:path DigitalTwin:cargoMaximumTemperature ;
       sh:datatype xsd:decimal ;
       sh:maxCount 1 ;
-      sh:minCount 1 ;
+#      sh:minCount 1 ;
       sh:name "cargo maximum temperature" ;
     ] ;
   sh:property [
       a sh:PropertyShape ;
-      sh:path DigitalTwin:minimumTemperature ;
+      sh:path DigitalTwin:cargoMinimumTemperature ;
       sh:datatype xsd:decimal ;
       sh:maxCount 1 ;
-      sh:minCount 1 ;
+#      sh:minCount 1 ;
       sh:name "minimum temperature" ;
     ] ;
   sh:property [
       a sh:PropertyShape ;
-      sh:path DigitalTwin:natureofCargo ;
-      sh:class classifications:natureOfCargo ;
+      sh:path DigitalTwin:natureOfCargo ;
+      sh:class classifications:NatureOfCargo ;
       sh:minCount 1 ;
       sh:name "dangerouse goods classification" ;
       sh:nodeKind sh:IRI ;
@@ -168,7 +167,7 @@ retrieve:CargoShape
       sh:path DigitalTwin:numberofPackages ;
       sh:datatype xsd:integer ;
       sh:maxCount 1 ;
-      sh:minCount 1 ;
+#      sh:minCount 1 ;
       sh:name "number of pakcage" ;
     ] ;
   sh:property [
@@ -176,7 +175,7 @@ retrieve:CargoShape
       sh:path DigitalTwin:packagingType ;
       sh:class classifications:packageType ;
       sh:maxCount 1 ;
-      sh:minCount 1 ;
+#      sh:minCount 1 ;
       sh:name "packaging type" ;
       sh:nodeKind sh:IRI ;
     ] ;
@@ -185,7 +184,7 @@ retrieve:CargoShape
       sh:path DigitalTwin:tareWeight ;
       sh:datatype xsd:integer ;
       sh:maxCount 1 ;
-      sh:minCount 1 ;
+#      sh:minCount 1 ;
       sh:name "cargo tar weight" ;
     ] ;
   sh:targetClass DigitalTwin:Goods ;
@@ -232,13 +231,15 @@ retrieve:LocationShape
       sh:class wgs:SpatialThing ;
       sh:minCount 1 ;
       sh:name "Location coordinate" ;
+      sh:deactivated true ;
     ] ;
   sh:property [
       a sh:PropertyShape ;
-      sh:path pi:loctionRole ;
+      sh:path pi:locationRole ;
       sh:class pi:locationRole ;
       sh:minCount 1 ;
-      sh:name "loction role" ;
+      sh:name "location role" ;
+      sh:deactivated true ;
     ] ;
   sh:targetClass pi:Location ;
 .
