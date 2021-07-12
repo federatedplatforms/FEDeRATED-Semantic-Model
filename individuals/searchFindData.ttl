@@ -31,29 +31,28 @@ BusinessService:transportServiceDurationAverage
   <https://ontology.tno.nl/logistics/federated/DigitalTwin#AreaDescription> "Rhine-Alp corridor" ;
 .
 <https://ontology.tno.nl/logistics/federated/DigitalTwin#containerizedCargo>
-  <https://ontology.tno.nl/logistics/federated/DigitalTwin#Danegrous> "true"^^xsd:boolean ;
-  <https://ontology.tno.nl/logistics/federated/DigitalTwin#Excise> "false"^^xsd:boolean ;
-  <https://ontology.tno.nl/logistics/federated/DigitalTwin#Reefer> "true"^^xsd:boolean ;
-  <https://ontology.tno.nl/logistics/federated/DigitalTwin#Waste> "false"^^xsd:boolean ;
+  owl:versionInfo "TODO(1): Make Units of measure for Volume, Size, and weight of Cargo" ;
+  <https://ontology.tno.nl/logistics/federated/DigitalTwin#Danegrous> true ;
+  <https://ontology.tno.nl/logistics/federated/DigitalTwin#Excise> false ;
+  <https://ontology.tno.nl/logistics/federated/DigitalTwin#Reefer> true ;
+  <https://ontology.tno.nl/logistics/federated/DigitalTwin#Waste> false ;
   <https://ontology.tno.nl/logistics/federated/DigitalTwin#cargoContainerNumber> "hb234" ;
   <https://ontology.tno.nl/logistics/federated/DigitalTwin#cargoContainerSize> 40 ;
   <https://ontology.tno.nl/logistics/federated/DigitalTwin#cargoMinWeight> 19.958 ;
-  <https://ontology.tno.nl/logistics/federated/DigitalTwin#natureofCargo> classifications:D ;
-  <https://ontology.tno.nl/logistics/federated/DigitalTwin#natureofCargo> classifications:R ;
+  <https://ontology.tno.nl/logistics/federated/DigitalTwin#natureOfCargo> classifications:D ;
+  <https://ontology.tno.nl/logistics/federated/DigitalTwin#natureOfCargo> classifications:R ;
   <https://ontology.tno.nl/logistics/federated/DigitalTwin#typeOfCargo> classifications:containers ;
-  owl:versionInfo "TODO(1): Make Units of measure for Volume, Size, and weight of Cargo" ;
 .
 <https://ontology.tno.nl/logistics/federated/data>
-  rdf:type owl:Ontology ;
+  a owl:Ontology ;
   owl:imports <https://ontology.tno.nl/logistics/federated/BusinessService> ;
   owl:imports <https://ontology.tno.nl/logistics/federated/Classifications> ;
   owl:imports <https://ontology.tno.nl/logistics/federated/DigitalTwin> ;
   owl:imports <https://ontology.tno.nl/logistics/federated/Event> ;
   owl:versionInfo "Created with TopBraid Composer" ;
 .
-
 data:Service1
-  rdf:type BusinessService:TransportService ;
+  a BusinessService:TransportService ;
   BusinessService:LSPName "CKG" ;
   BusinessService:deviationDuration "4"^^xsd:decimal ;
   BusinessService:location_detail <https://ontology.tno.nl/logistics/federated/DigitalTwin#corridor> ;
@@ -64,23 +63,23 @@ data:Service1
   <https://ontology.tno.nl/logistics/federated/DigitalTwin#typeOfCargo> classifications:containers ;
 .
 data:Service2
-  rdf:type BusinessService:TransportService ;
+  a BusinessService:TransportService ;
   BusinessService:LSPName "CKG" ;
   BusinessService:deviationDuration "1"^^xsd:decimal ;
   BusinessService:location_detail <https://ontology.tno.nl/logistics/federated/DigitalTwin#country> ;
   BusinessService:serviceName "Pallet service" ;
   BusinessService:transportModality_detail classifications:Road ;
   BusinessService:transportServiceDurationAverage "4"^^xsd:decimal ;
-  <https://ontology.tno.nl/logistics/federated/DigitalTwin#Danegrous> "false"^^xsd:boolean ;
-  <https://ontology.tno.nl/logistics/federated/DigitalTwin#Excise> "false"^^xsd:boolean ;
-  <https://ontology.tno.nl/logistics/federated/DigitalTwin#Reefer> "false"^^xsd:boolean ;
-  <https://ontology.tno.nl/logistics/federated/DigitalTwin#Waste> "false"^^xsd:boolean ;
+  <https://ontology.tno.nl/logistics/federated/DigitalTwin#Danegrous> false ;
+  <https://ontology.tno.nl/logistics/federated/DigitalTwin#Excise> false ;
+  <https://ontology.tno.nl/logistics/federated/DigitalTwin#Reefer> false ;
+  <https://ontology.tno.nl/logistics/federated/DigitalTwin#Waste> false ;
   <https://ontology.tno.nl/logistics/federated/DigitalTwin#cargoMinWeight> "100"^^xsd:decimal ;
   <https://ontology.tno.nl/logistics/federated/DigitalTwin#countryName> "Netherlands" ;
   <https://ontology.tno.nl/logistics/federated/DigitalTwin#typeOfCargo> classifications:pallets ;
 .
 data:bookingforService1
-  rdf:type BusinessService:Booking ;
+  a BusinessService:Booking ;
   BusinessService:InvolvedEvent data:pickupforService1 ;
   BusinessService:bookingNumber "123456jj" ;
   BusinessService:service_detail data:Service1 ;
@@ -88,15 +87,14 @@ data:bookingforService1
   <https://ontology.tno.nl/logistics/federated/DigitalTwin#containerType> classifications:RO-RO ;
 .
 data:containerizedCargo1
-  rdf:type <https://ontology.tno.nl/logistics/federated/DigitalTwin#containerizedCargo> ;
+  a <https://ontology.tno.nl/logistics/federated/DigitalTwin#containerizedCargo> ;
   classifications:dangerouseGoodsClassification <https://ontology.tno.nl/logistics/federated/Classifications#8> ;
-  <https://ontology.tno.nl/logistics/federated/DigitalTwin#Danegrous> "true"^^xsd:boolean ;
-  <https://ontology.tno.nl/logistics/federated/DigitalTwin#Excise> "false"^^xsd:boolean ;
-  <https://ontology.tno.nl/logistics/federated/DigitalTwin#Reefer> "true"^^xsd:boolean ;
-  <https://ontology.tno.nl/logistics/federated/DigitalTwin#Waste> "false"^^xsd:boolean ;
+  <https://ontology.tno.nl/logistics/federated/DigitalTwin#Danegrous> true ;
+  <https://ontology.tno.nl/logistics/federated/DigitalTwin#Excise> false ;
+  <https://ontology.tno.nl/logistics/federated/DigitalTwin#Reefer> true ;
+  <https://ontology.tno.nl/logistics/federated/DigitalTwin#Waste> false ;
   <https://ontology.tno.nl/logistics/federated/DigitalTwin#cargoContainerNumber> "234353" ;
   <https://ontology.tno.nl/logistics/federated/DigitalTwin#cargoContainerSize> 140 ;
-  <https://ontology.tno.nl/logistics/federated/DigitalTwin#natureofCargo> classifications:D ;
+  <https://ontology.tno.nl/logistics/federated/DigitalTwin#natureOfCargo> classifications:D ;
   <https://ontology.tno.nl/logistics/federated/DigitalTwin#typeOfCargo> classifications:containers ;
 .
-
