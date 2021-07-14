@@ -672,6 +672,14 @@ DigitalTwin:hasUnitsOfMeasure
   rdfs:label "has Units of Measure" ;
   rdfs:range <http://www.ontology-of-units-of-measure.org/resource/om-2/Unit> ;
 .
+DigitalTwin:hasVIN
+  a owl:DatatypeProperty ;
+  rdfs:domain DigitalTwin:TransportMeans ;
+  rdfs:label "has VIN" ;
+  rdfs:range xsd:integer ;
+  rdfs:subPropertyOf DigitalTwin:transportMeansProperties ;
+  skos:prefLabel "has VIN" ;
+.
 DigitalTwin:hazardouseMaterialDetail
   a owl:ObjectProperty ;
   rdfs:range classifications:DangerousGoods ;
