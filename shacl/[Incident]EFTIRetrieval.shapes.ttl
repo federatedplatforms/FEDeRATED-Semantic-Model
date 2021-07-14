@@ -14,7 +14,7 @@
 @prefix BusinessService: <https://ontology.tno.nl/logistics/federated/BusinessService#> .
 @prefix Classifications: <https://ontology.tno.nl/logistics/federated/Classifications#> .
 @prefix DigitalTwin: <https://ontology.tno.nl/logistics/federated/DigitalTwin#> .
-@prefix Event: <https://ontology.tno.nl/logistics/federated/Event#> .
+@prefix event: <https://ontology.tno.nl/logistics/federated/Event#> .
 @prefix LogisticsRoles: <https://ontology.tno.nl/logistics/federated/LogisticsRoles#> .
 @prefix MathM: <http://www.w3.org/1998/Math/MathML> .
 @prefix ReusableTags: <https://ontology.tno.nl/logistics/federated/ReusableTags#> .
@@ -252,6 +252,7 @@ retrieve:TrailerShape
       sh:datatype xsd:string ;
       sh:equals DigitalTwin:hasLicensePlateNumber ;
       sh:minCount 1 ;
+      sh:deactivated true ;
     ] ;
   sh:targetClass DigitalTwin:Trailer ;
 .
@@ -302,17 +303,65 @@ retrieve:TruckShape
   rdfs:label "Truck Shape" ;
   sh:property [
       a sh:PropertyShape ;
-      sh:path DigitalTwin:TruckLicencePlate ;
+      sh:path DigitalTwin:hasLicensePlateNumber ;
       sh:datatype xsd:string ;
+      sh:minCount 1 ;
       sh:maxCount 1 ;
       sh:name "Truck licence plate" ;
       sh:pattern "[0-9]{2}-B[a-zA-Z]{2}-[0-9]" ;
     ] ;
   sh:property [
       a sh:PropertyShape ;
-      sh:path DigitalTwin:VIN ;
+      sh:path DigitalTwin:hasVIN ;
       sh:datatype xsd:string ;
       sh:minCount 1 ;
+      sh:maxCount 1;
       sh:name "VIN" ;
     ] ;
+    sh:property [
+      a sh:PropertyShape ;
+      sh:path DigitalTwin:hasTransportMeansID ;
+      sh:equals DigitalTwin:hasVIN ;
+      sh:name "VIN equals ID" ;
+    ] ; 
+  sh:targetClass DigitalTwin:Truck ;
+.
+:EventTypeShape
+  rdf:type sh:NodeShape ;
+  rdfs:label "Event Shape" ;
+  sh:property [
+      rdf:type sh:PropertyShape ;
+      sh:path event:hasDateTimeType ;
+      sh:class event:DateTimeType ;
+      sh:minCount 2 ;
+      sh:maxCount 2 ;
+      sh:name "has date" ;
+       sh:nodeKind sh:IRI
+    ] ;
+  sh:property [
+      rdf:type sh:PropertyShape ;
+      sh:path event:hasMilestone ;
+      sh:class event:Milestone ;
+      sh:minCount 1 ;
+      sh:maxCount 1;
+      sh:name "has milestone" ;
+       sh:nodeKind sh:IRI
+    ] ;
+  sh:property [
+      rdf:type sh:PropertyShape ;
+      sh:path event:hasTimestamp ;
+      sh:datatype xsd:dateTime ;
+      sh:minCount 1 ;
+      sh:maxCount 1 ;
+      sh:name "has event type" ;
+    ] ;
+    sh:property [
+      rdf:type sh:PropertyShape ;
+      sh:path event:involves ;
+      sh:nodeKind sh:IRI ;
+      sh:minCount 2;
+      sh:maxCount 2;
+      sh:name "has two associations";
+    ] ;
+    sh:targetClass event:Event ;
 .
