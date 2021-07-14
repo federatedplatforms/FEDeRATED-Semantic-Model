@@ -7,26 +7,28 @@
 @prefix DigitalTwin: <https://ontology.tno.nl/logistics/federated/DigitalTwin#> .
 @prefix businessService: <https://ontology.tno.nl/logistics/federated/businessService#> .
 @prefix classifications: <https://ontology.tno.nl/logistics/federated/Classifications#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix dc: <http://purl.org/dc/elements/1.1/> .
-@prefix dcterms: <http://purl.org/dc/terms/> .
 
 <https://ontology.tno.nl/logistics/federated/Classifications>
   rdf:type owl:Ontology ;
+  dc:creator "Dena Tahvildari, Maaike Burghoorn, Cornelis Bouter" ;
+  dcterms:created "2020-07-17" ;
+  dcterms:description "This ontology contains classes, attributes, relation about from established standards and vocabularies relevant in the Logistics domain. It is intended to be reused by the other ontologies in the namespace." ;
+  dcterms:isRequiredBy <https://ontology.tno.nl/logistics/federated/BusinessService> ;
+  dcterms:isRequiredBy <https://ontology.tno.nl/logistics/federated/DigitalTwin> ;
+  dcterms:isRequiredBy <https://ontology.tno.nl/logistics/federated/PhysicalInfrastructure> ;
+  dcterms:issued "2021-03-15" ;
+  dcterms:language "en" ;
   owl:imports <http://www.w3.org/2004/02/skos/core> ;
   owl:imports <https://ontology.tno.nl/logistics/federated/DigitalTwin> ;
-  dc:creator "Dena Tahvildari, Maaike Burghoorn, Cornelis Bouter" ;
-  dcterms:description """This ontology contains classes, attributes, relation about from established standards and vocabularies relevant in the Logistics domain. It is intended to be reused by the other ontologies in the namespace.""" ;
-  dcterms:isRequiredBy  <https://ontology.tno.nl/logistics/federated/DigitalTwin>, <https://ontology.tno.nl/logistics/federated/BusinessService>, <https://ontology.tno.nl/logistics/federated/PhysicalInfrastructure> ;
-  dcterms:language "en" ;
-  owl:versionIRI <https://ontology.tno.nl/logistics/federated/Classificationsv-0.1>;
-  dcterms:issued "2021-03-15";
-  dcterms:created "2020-07-17" ;
+  owl:versionIRI <https://ontology.tno.nl/logistics/federated/Classificationsv-0.1> ;
 .
 classifications:Air
   rdf:type classifications:TransportModality ;
@@ -83,6 +85,12 @@ classifications:DangerousGoods
 classifications:E
   rdf:type classifications:NatureOfCargo ;
   rdfs:label "Excise" ;
+.
+classifications:EquipmentTypeCode
+  rdf:type owl:Class ;
+  rdfs:comment "an enumeration of euqipment type codes." ;
+  rdfs:label "Equipment Type Code" ;
+  rdfs:subClassOf classifications:Classifications ;
 .
 classifications:FCL-FCL
   rdf:type classifications:TransportMovementType ;

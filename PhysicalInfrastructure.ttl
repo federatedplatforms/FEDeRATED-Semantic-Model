@@ -26,7 +26,7 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://ontology.tno.nl/logistics/federated/PhysicalInfrastructure>
-  a owl:Ontology ;
+  rdf:type owl:Ontology ;
   dc:creator "Dena Tahvildari, Maaike Burghoorn, Cornelis Bouter" ;
   dcterms:created "2020-07-17" ;
   dcterms:description "This ontology contains classes, attributes, relation about physical infrastructure objects that are used in Logistics Events." ;
@@ -45,44 +45,44 @@
   owl:versionIRI <https://ontology.tno.nl/logistics/federated/PhysicalInfrastructurev-0.1> ;
 .
 pi:Airport
-  a owl:Class ;
+  rdf:type owl:Class ;
   rdfs:comment "Location where airplanes pick or drop off freight." ;
   rdfs:label "Airport" ;
   rdfs:subClassOf pi:LogisticalFunction ;
 .
 pi:Anchorage
-  a owl:Class ;
+  rdf:type owl:Class ;
   rdfs:comment "A location where a ship can 'park'." ;
   rdfs:label "Anchorage" ;
   rdfs:subClassOf pi:LogisticalFunction ;
 .
 pi:BargeTerminal
-  a owl:Class ;
+  rdf:type owl:Class ;
   rdfs:comment "A terminal with main modality waterways where cargo of barges can be loaded/discharged." ;
   rdfs:label "Barge Terminal" ;
   rdfs:subClassOf pi:LogisticalFunction ;
 .
 pi:Bridge
-  a owl:Class ;
+  rdf:type owl:Class ;
   rdfs:comment "A road crossing water." ;
   rdfs:label "Bridge" ;
   rdfs:subClassOf pi:InfrastructuralObject ;
 .
 pi:City
-  a owl:Class ;
+  rdf:type owl:Class ;
   rdfs:comment "A city is one of the various subtypes of Location." ;
   rdfs:label "City" ;
   rdfs:subClassOf pi:Location ;
 .
 pi:Corridor
-  a owl:Class ;
-  a sh:NodeShape ;
+  rdf:type owl:Class ;
+  rdf:type sh:NodeShape ;
   rdfs:comment "A logistic corridor is a generalised route. It may consist of several modalities. For example, the route between Europoort and Northern Italy is a corridor, since it's a comman and important route." ;
   rdfs:label "Corridor" ;
   rdfs:subClassOf pi:Trajectory ;
 .
 pi:Country
-  a owl:Class ;
+  rdf:type owl:Class ;
   rdfs:comment "A Country is a geographic division with national borders." ;
   rdfs:label "Country" ;
   rdfs:subClassOf pi:Location ;
@@ -91,48 +91,48 @@ pi:DropOffLocation
   rdfs:label "Drop Off Location" ;
 .
 pi:Gate
-  a owl:Class ;
+  rdf:type owl:Class ;
   rdfs:comment "An interface between road and air." ;
   rdfs:label "Gate" ;
   rdfs:subClassOf pi:LogisticalInterface ;
 .
 pi:Hub
-  a owl:Class ;
+  rdf:type owl:Class ;
   rdfs:comment "A place where cargo is exchanged between vehicles or/and between transport modes." ;
   rdfs:label "Hub" ;
   rdfs:subClassOf pi:LogisticalFunction ;
 .
 pi:InfrastructuralFunction
-  a owl:Class ;
+  rdf:type owl:Class ;
   rdfs:comment "Any part of an infrastructure used for performing logistical activities." ;
   rdfs:label "Infrastructural Function" ;
   owl:disjointWith pi:LogisticalFunction ;
 .
 pi:InfrastructuralObject
-  a owl:Class ;
+  rdf:type owl:Class ;
   rdfs:comment "Any element in an infrastructure that might cause for a delay (e.g. bridge, lock)." ;
   rdfs:label "Infrastructural Object" ;
   rdfs:subClassOf pi:InfrastructuralFunction ;
 .
 pi:InfrastructurelFunctionProperty
-  a owl:DatatypeProperty ;
+  rdf:type owl:DatatypeProperty ;
   rdfs:comment "A super property for all properties related to infrastructural functions. -- Abstract property, do not instantiate." ;
   rdfs:label "Infrastructural Function Property" ;
 .
 pi:InlandTerminal
-  a owl:Class ;
+  rdf:type owl:Class ;
   rdfs:comment "An Inland Terminal can have an interface with more than one modality like inland waterways, rail and/or road (note: there are also inland terminals that have only road as modality (e.g. Interporto Bologna) or road and rail (e.g. Zaragoza Logistics Center)." ;
   rdfs:label "Inland Terminal" ;
   rdfs:subClassOf pi:LogisticalFunction ;
 .
 pi:Landmark
-  a owl:Class ;
+  rdf:type owl:Class ;
   rdfs:comment "A Land Mark is a an object or feature of a landscape or town that is easily recognised from a distance." ;
   rdfs:label "Land Mark" ;
   rdfs:subClassOf pi:Location ;
 .
 pi:Lat
-  a owl:DatatypeProperty ;
+  rdf:type owl:DatatypeProperty ;
   rdfs:comment "This property specifies the latitude of a specific location." ;
   rdfs:domain pi:Location ;
   rdfs:label "Latitude" ;
@@ -140,70 +140,70 @@ pi:Lat
   rdfs:subPropertyOf pi:LocationCoordinate ;
 .
 pi:Location
-  a owl:Class ;
+  rdf:type owl:Class ;
   rdfs:comment "A geographical location where several objects with various logistical functions may be." ;
   rdfs:label "Location" ;
   rdfs:subClassOf [
-      a owl:Restriction ;
+      rdf:type owl:Restriction ;
       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
       owl:onDataRange xsd:string ;
       owl:onProperty pi:Lat ;
     ] ;
   rdfs:subClassOf [
-      a owl:Restriction ;
+      rdf:type owl:Restriction ;
       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
       owl:onDataRange xsd:string ;
       owl:onProperty pi:Long ;
     ] ;
   rdfs:subClassOf [
-      a owl:Restriction ;
+      rdf:type owl:Restriction ;
       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
       owl:onDataRange xsd:string ;
       owl:onProperty pi:cityLoCode ;
     ] ;
   rdfs:subClassOf [
-      a owl:Restriction ;
+      rdf:type owl:Restriction ;
       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
       owl:onDataRange xsd:string ;
       owl:onProperty pi:countryISOCode ;
     ] ;
   rdfs:subClassOf [
-      a owl:Restriction ;
+      rdf:type owl:Restriction ;
       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
       owl:onDataRange xsd:string ;
       owl:onProperty pi:countryName ;
     ] ;
   rdfs:subClassOf [
-      a owl:Restriction ;
+      rdf:type owl:Restriction ;
       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
       owl:onDataRange xsd:string ;
       owl:onProperty pi:postalCode ;
     ] ;
 .
 pi:LocationCoordinate
-  a owl:DatatypeProperty ;
+  rdf:type owl:DatatypeProperty ;
   rdfs:comment "The subproperties of this property specify the location coordinates of a specific location." ;
   rdfs:domain pi:Location ;
   rdfs:label "Location Coordinate" ;
   rdfs:range xsd:decimal ;
 .
 pi:LogisticalFunction
-  a owl:Class ;
+  rdf:type owl:Class ;
   rdfs:comment "Any location where a logistical activity is performed. A single location may have several logistical functions." ;
   rdfs:label "Logistical Function" ;
 .
 pi:LogisticalInterface
-  a owl:Class ;
+  rdf:type owl:Class ;
   rdfs:comment "An interface where the modality of a transport may change." ;
   rdfs:label "Logistical Interface" ;
 .
 pi:LogisticalInterfaceProperty
-  a owl:DatatypeProperty ;
+  rdf:type owl:DatatypeProperty ;
   rdfs:comment "A datatype property for a logistical interface. -- Abstract property, do not instantiate." ;
   rdfs:label "Logistical Interface Property" ;
 .
 pi:Long
-  a owl:DatatypeProperty ;
+  rdf:type owl:DatatypeProperty ;
   rdfs:comment "This property specifies the longitude of a specific location." ;
   rdfs:domain pi:Location ;
   rdfs:label "Longitude" ;
@@ -221,60 +221,60 @@ pi:PlaceOfCall
   rdfs:label "Place of Call" ;
 .
 pi:Platform
-  a owl:Class ;
+  rdf:type owl:Class ;
   rdfs:comment "An interface to or from the Railway modality." ;
   rdfs:label "Platform" ;
   rdfs:subClassOf pi:LogisticalInterface ;
 .
 pi:Port
-  a owl:Class ;
+  rdf:type owl:Class ;
   rdfs:comment "Location where vessels pick or drop off freight." ;
   rdfs:label "Port" ;
   rdfs:subClassOf pi:LogisticalFunction ;
 .
 pi:Quay
-  a owl:Class ;
+  rdf:type owl:Class ;
   rdfs:comment "An interface to or from sea and inland waterways." ;
   rdfs:label "Quay" ;
   rdfs:subClassOf pi:LogisticalInterface ;
 .
 pi:RailwayLine
-  a owl:Class ;
+  rdf:type owl:Class ;
   rdfs:comment "A trajectory with modality 'rail'." ;
   rdfs:label "Railway Line" ;
   rdfs:subClassOf pi:Trajectory ;
 .
 pi:RailwayStation
-  a owl:Class ;
+  rdf:type owl:Class ;
   rdfs:comment "A location where railway wagons and locomotives drop off or pick up freight." ;
   rdfs:label "Railway Station" ;
   rdfs:subClassOf pi:InlandTerminal ;
 .
 pi:RailwayTerminal
-  a owl:Class ;
+  rdf:type owl:Class ;
   rdfs:comment "An inland terminal managed by a railway infrastructure manager with main modality rail." ;
   rdfs:label "Railway Terminal" ;
   rdfs:subClassOf pi:InlandTerminal ;
 .
 pi:Road
-  a owl:Class ;
+  rdf:type owl:Class ;
   rdfs:comment "A trajectory with modality 'road'." ;
   rdfs:label "Road" ;
   rdfs:subClassOf pi:Trajectory ;
 .
 pi:Terminal
-  a owl:Class ;
+  rdf:type owl:Class ;
   rdfs:comment "A location interfacing with main modality sea." ;
   rdfs:label "Terminal" ;
   rdfs:subClassOf pi:Hub ;
 .
 pi:Trajectory
-  a owl:Class ;
+  rdf:type owl:Class ;
   rdfs:comment "Any part of an infrastructure identified by its infrastructure manager." ;
   rdfs:label "Trajectory" ;
 .
 pi:TrajectoryProperty
-  a owl:DatatypeProperty ;
+  rdf:type owl:DatatypeProperty ;
   rdfs:comment "DO NOT Instantiate -- superProperty for grouping. This datatype property contains all datatype properties for trajectories." ;
   rdfs:domain pi:Trajectory ;
   rdfs:label "Trajectory Property" ;
@@ -282,19 +282,19 @@ pi:TrajectoryProperty
   rdfs:subPropertyOf pi:InfrastructurelFunctionProperty ;
 .
 pi:Transshipment
-  a owl:Class ;
+  rdf:type owl:Class ;
   rdfs:comment "An intermediate destination for transiting cargo to another destination." ;
   rdfs:label "Transshipment" ;
   rdfs:subClassOf pi:LogisticalFunction ;
 .
 pi:Warehouse
-  a owl:Class ;
+  rdf:type owl:Class ;
   rdfs:comment "A place where cargo or its content (products) is stored for a longer period of time" ;
   rdfs:label "Warehouse" ;
   rdfs:subClassOf pi:LogisticalFunction ;
 .
 pi:cityLoCode
-  a owl:DatatypeProperty ;
+  rdf:type owl:DatatypeProperty ;
   rdfs:comment "Code uniquely identifying a City following the LoCode standard." ;
   rdfs:domain pi:City ;
   rdfs:label "City LoCode" ;
@@ -302,12 +302,12 @@ pi:cityLoCode
   rdfs:subPropertyOf pi:locationProperties ;
 .
 pi:cityName
-  a owl:DatatypeProperty ;
+  rdf:type owl:DatatypeProperty ;
   rdfs:label "Has Manager" ;
   rdfs:subPropertyOf pi:locationProperties ;
 .
 pi:countryISOCode
-  a owl:DatatypeProperty ;
+  rdf:type owl:DatatypeProperty ;
   rdfs:comment "This property identifies a country following the ISO2 codelist standard." ;
   rdfs:domain pi:Location ;
   rdfs:label "Country Code iso2" ;
@@ -315,7 +315,7 @@ pi:countryISOCode
   rdfs:subPropertyOf pi:locationProperties ;
 .
 pi:countryName
-  a owl:DatatypeProperty ;
+  rdf:type owl:DatatypeProperty ;
   rdfs:comment "This property contains the human readable name of the country where the specified location is located in." ;
   rdfs:domain pi:Location ;
   rdfs:label "Country Name" ;
@@ -323,21 +323,21 @@ pi:countryName
   rdfs:subPropertyOf pi:locationProperties ;
 .
 pi:geonamesReference
-  a owl:ObjectProperty ;
+  rdf:type owl:ObjectProperty ;
   rdfs:comment "Reference to a geonames feature corresponding to the Location that is the domain of this property." ;
   rdfs:domain pi:Location ;
   rdfs:label "Geonames Feature" ;
   rdfs:range <http://www.geonames.org/ontology#Feature> ;
 .
 pi:hasCorridorCode
-  a owl:ObjectProperty ;
+  rdf:type owl:ObjectProperty ;
   rdfs:comment "Each corridor has a code, which are collected in the classifications module." ;
   rdfs:domain pi:Corridor ;
   rdfs:label "Has Corridor Code" ;
   rdfs:range classifications:CorridorName ;
 .
 pi:hasGateNumber
-  a owl:DatatypeProperty ;
+  rdf:type owl:DatatypeProperty ;
   rdfs:comment "The number associated with a gate at a logistical function location of type Airport." ;
   rdfs:domain pi:Gate ;
   rdfs:label "Has Gate Number" ;
@@ -345,31 +345,31 @@ pi:hasGateNumber
   rdfs:subPropertyOf pi:LogisticalInterfaceProperty ;
 .
 pi:hasLocationRole
-  a owl:ObjectProperty ;
+  rdf:type owl:ObjectProperty ;
   rdfs:comment "This property describes the role a location plays in the context of an event." ;
   rdfs:domain pi:Location ;
   rdfs:label "Has Location Role" ;
   rdfs:range <https://ontology.tno.nl/logistics/federated/LogisticsRoles#LocationRoles> ;
 .
 pi:hasManager
-  a owl:ObjectProperty ;
+  rdf:type owl:ObjectProperty ;
   rdfs:comment "The organisation that manages a specific logistical function" ;
   rdfs:domain pi:LogisticalFunction ;
   rdfs:label "Has Manager" ;
   rdfs:range BusinessService:LegalPerson ;
 .
 pi:hasOperator
-  a owl:DatatypeProperty ;
+  rdf:type owl:DatatypeProperty ;
   rdfs:label "Has Operator" ;
 .
 pi:hasPlatformNumber
-  a owl:DatatypeProperty ;
+  rdf:type owl:DatatypeProperty ;
   rdfs:comment "The number associated with a platform at a logistical function location of type RailwayStation." ;
   rdfs:label "Has Platform Number" ;
   rdfs:subPropertyOf pi:LogisticalInterfaceProperty ;
 .
 pi:hasQuayNumber
-  a owl:DatatypeProperty ;
+  rdf:type owl:DatatypeProperty ;
   rdfs:comment "The number associated with a quay at a logistical function location of type Port." ;
   rdfs:domain pi:Quay ;
   rdfs:label "Has Quay Number" ;
@@ -377,21 +377,21 @@ pi:hasQuayNumber
   rdfs:subPropertyOf pi:LogisticalInterfaceProperty ;
 .
 pi:locatedAt
-  a owl:ObjectProperty ;
+  rdf:type owl:ObjectProperty ;
   rdfs:comment "This property specifies the geographical location that a Logistical Function has." ;
   rdfs:domain pi:LogisticalFunction ;
   rdfs:label "Located At" ;
   rdfs:range pi:Location ;
 .
 pi:locationProperties
-  a owl:DatatypeProperty ;
+  rdf:type owl:DatatypeProperty ;
   rdfs:comment "Do not Instantiate. Only for the purpose of grouping. Each subproperty specifies a property of a location." ;
   rdfs:domain pi:Location ;
   rdfs:label "Location Properties" ;
   rdfs:range xsd:anySimpleType ;
 .
 pi:logisticalFunctionProperties
-  a owl:DatatypeProperty ;
+  rdf:type owl:DatatypeProperty ;
   rdfs:comment "This abstract property contains all properties intended for logistical functions." ;
   rdfs:domain pi:LogisticalFunction ;
   rdfs:label "Logistical Function Properties" ;
@@ -426,7 +426,7 @@ pi:placeOfUnloading
   rdfs:label "Place of Departure" ;
 .
 pi:portNumber
-  a owl:DatatypeProperty ;
+  rdf:type owl:DatatypeProperty ;
   rdfs:comment "The identification number associated with a specific port." ;
   rdfs:domain pi:Port ;
   rdfs:label "Port Number" ;
@@ -434,7 +434,7 @@ pi:portNumber
   rdfs:subPropertyOf pi:logisticalFunctionProperties ;
 .
 pi:portSecurityLevel
-  a owl:DatatypeProperty ;
+  rdf:type owl:DatatypeProperty ;
   rdfs:comment "This property specifies the port security level of this specific port." ;
   rdfs:domain pi:Port ;
   rdfs:label "Port Security Level" ;
@@ -443,7 +443,7 @@ pi:portSecurityLevel
   rdfs:subPropertyOf pi:logisticalFunctionProperties ;
 .
 pi:postalCode
-  a owl:DatatypeProperty ;
+  rdf:type owl:DatatypeProperty ;
   rdfs:comment "This property specific the postal code or ZIP code of the location involved." ;
   rdfs:domain pi:Location ;
   rdfs:label "Postal Code" ;
@@ -451,7 +451,7 @@ pi:postalCode
   rdfs:subPropertyOf pi:locationProperties ;
 .
 pi:roadName
-  a owl:DatatypeProperty ;
+  rdf:type owl:DatatypeProperty ;
   rdfs:comment "This property specifies the name of a road." ;
   rdfs:domain pi:Road ;
   rdfs:label "Road Name" ;
@@ -459,10 +459,30 @@ pi:roadName
   rdfs:subPropertyOf pi:TrajectoryProperty ;
 .
 pi:securityMeasure
-  a owl:DatatypeProperty ;
+  rdf:type owl:DatatypeProperty ;
   rdfs:comment "This property specifies the security measures of a specific infrastuctural function." ;
   rdfs:domain pi:InfrastructuralFunction ;
   rdfs:label "Security Measure" ;
   rdfs:range xsd:string ;
   rdfs:subPropertyOf pi:logisticalFunctionProperties ;
+.
+pi:terminalDescription
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain pi:Terminal ;
+  rdfs:label "terminal Description" ;
+  rdfs:range xsd:string ;
+  rdfs:subPropertyOf pi:terminalProperties ;
+.
+pi:terminalName
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain pi:Terminal ;
+  rdfs:label "terminal Name" ;
+  rdfs:range xsd:string ;
+  rdfs:subPropertyOf pi:terminalProperties ;
+.
+pi:terminalProperties
+  rdf:type owl:DatatypeProperty ;
+  rdfs:comment "[for grouping not instantiation] abstract property defined as superProeprty to group terminal data properties." ;
+  rdfs:domain pi:Terminal ;
+  rdfs:label "terminal Properties" ;
 .

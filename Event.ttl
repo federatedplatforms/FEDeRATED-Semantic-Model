@@ -156,6 +156,16 @@ Event:Event
   rdfs:comment """An event reflects any physical activity in the real world, creating, updating, or 'deleting' an association between physical objects or entities. There are many synomyms based on combinations of entities, date/time, and physical activities. 				
 """ ;
   rdfs:label "Event" ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty Event:DateTimeType ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty Event:DigitalTwin_detail ;
+    ] ;
 .
 Event:Expected
   a Event:DateTimeType ;
