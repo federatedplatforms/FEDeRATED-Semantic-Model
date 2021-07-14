@@ -110,6 +110,12 @@ DigitalTwin:DeepSeaVessel
   rdfs:label "Deep Sea Vessel" ;
   rdfs:subClassOf DigitalTwin:Vessel ;
 .
+DigitalTwin:Document
+  rdf:type owl:Class ;
+  rdfs:comment "A legal document in event and business transactions." ;
+  rdfs:label "Document" ;
+  rdfs:subClassOf DigitalTwin:PhysicalObject ;
+.
 DigitalTwin:Equipment
   rdf:type owl:Class ;
   rdfs:comment "Any asset used to facilitate transport and handling of cargo." ;
@@ -396,13 +402,13 @@ trains, airplanes, barges etc.""" ;
       rdf:type owl:Restriction ;
       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
       owl:onDataRange xsd:string ;
-      owl:onProperty DigitalTwin:hasTransportMeansID ;
+      owl:onProperty DigitalTwin:hasTransportmeansID ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
       owl:onDataRange xsd:string ;
-      owl:onProperty DigitalTwin:hasTransportMeansNationality ;
+      owl:onProperty DigitalTwin:hasTransportmeansNationality ;
     ] ;
   owl:disjointWith DigitalTwin:Equipment ;
   owl:disjointWith DigitalTwin:Product ;
@@ -562,6 +568,24 @@ DigitalTwin:damageRemarks
   rdfs:range xsd:string ;
   rdfs:subPropertyOf DigitalTwin:PhysicalObjectProperties ;
 .
+DigitalTwin:documentID
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain DigitalTwin:Document ;
+  rdfs:range xsd:string ;
+  rdfs:subPropertyOf DigitalTwin:PhysicalObjectProperties ;
+.
+DigitalTwin:documentVersion
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain DigitalTwin:Document ;
+  rdfs:range xsd:string ;
+  rdfs:subPropertyOf DigitalTwin:PhysicalObjectProperties ;
+.
+DigitalTwin:documentbillOfLadingNumber
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain DigitalTwin:Document ;
+  rdfs:range xsd:string ;
+  rdfs:subPropertyOf DigitalTwin:PhysicalObjectProperties ;
+.
 DigitalTwin:dryBulk
   rdf:type owl:DatatypeProperty ;
   rdfs:label "Dry Bulk" ;
@@ -631,6 +655,7 @@ DigitalTwin:grossMass
   rdfs:label "Gross Mass" ;
   rdfs:range xsd:integer ;
   rdfs:subPropertyOf DigitalTwin:PhysicalObjectProperties ;
+  skos:altLabel "Verified Gross Mass" ;
 .
 DigitalTwin:grossWeight
   rdf:type owl:DatatypeProperty ;
@@ -639,6 +664,13 @@ DigitalTwin:grossWeight
   rdfs:range xsd:integer ;
   rdfs:subPropertyOf DigitalTwin:equipmentProperties ;
 .
+DigitalTwin:hasDocumentType
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain DigitalTwin:Document ;
+  rdfs:label "has Documnet Type" ;
+  rdfs:range classifications:DocumentType ;
+  rdfs:subPropertyOf DigitalTwin:PhysicalObjectProperties ;
+.
 DigitalTwin:hasLicensePlateNumber
   rdf:type owl:DatatypeProperty ;
   rdfs:domain DigitalTwin:TransportMeans ;
@@ -646,14 +678,14 @@ DigitalTwin:hasLicensePlateNumber
   rdfs:range xsd:string ;
   rdfs:subPropertyOf DigitalTwin:transportMeansProperties ;
 .
-DigitalTwin:hasTransportMeansID
+DigitalTwin:hasTransportmeansID
   rdf:type owl:DatatypeProperty ;
   rdfs:domain DigitalTwin:TransportMeans ;
   rdfs:label "Transport Means ID" ;
   rdfs:range xsd:string ;
   rdfs:subPropertyOf DigitalTwin:transportMeansProperties ;
 .
-DigitalTwin:hasTransportMeansNationality
+DigitalTwin:hasTransportmeansNationality
   rdf:type owl:DatatypeProperty ;
   rdfs:domain DigitalTwin:TransportMeans ;
   rdfs:label "Transport Means Nationality" ;
@@ -922,6 +954,12 @@ DigitalTwin:transportMeansProperties
   rdf:type owl:DatatypeProperty ;
   rdfs:domain DigitalTwin:TransportMeans ;
   rdfs:subPropertyOf DigitalTwin:PhysicalObjectProperties ;
+.
+DigitalTwin:transportmeansName
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain DigitalTwin:TransportMeans ;
+  rdfs:range xsd:string ;
+  rdfs:subPropertyOf DigitalTwin:transportMeansProperties ;
 .
 DigitalTwin:truckLicensePlate
   rdf:type owl:DatatypeProperty ;

@@ -36,6 +36,9 @@ classifications:Air
 classifications:Atlantic_Corridor
   rdf:type classifications:CorridorName ;
 .
+classifications:BILL_OF_LADING
+  rdf:type classifications:DocumentType ;
+.
 classifications:Baltic-Adriatic_Corridor
   rdf:type classifications:CorridorName ;
 .
@@ -80,6 +83,11 @@ classifications:DangerousGoods
   rdf:type owl:Class ;
   rdfs:comment "A hazardous or non-hazardous substance which may pose risks to people and/or the environment for which the transportation is regulated by dangerous goods regulations." ;
   rdfs:label "Dangerous Goods" ;
+  rdfs:subClassOf classifications:Classifications ;
+.
+classifications:DocumentType
+  rdf:type owl:Class ;
+  rdfs:label "Document" ;
   rdfs:subClassOf classifications:Classifications ;
 .
 classifications:E
@@ -178,6 +186,9 @@ classifications:Rhine_Alpine_Corridor
 classifications:Road
   rdf:type classifications:TransportModality ;
 .
+classifications:SEA_WAYBILL
+  rdf:type classifications:DocumentType ;
+.
 classifications:Safety_and_hazard_data_sheet
   rdf:type classifications:LogisticsTransactionDocument ;
   rdfs:comment "A statement of an account containing the booked items as in the ledger of the account servicing financial institution." ;
@@ -213,6 +224,9 @@ classifications:UNDGCode
   rdfs:domain classifications:DangerousGoods ;
   rdfs:label "UNDG code" ;
   rdfs:range xsd:string ;
+.
+classifications:VERIFY_COPY
+  rdf:type classifications:DocumentType ;
 .
 classifications:W
   rdf:type classifications:NatureOfCargo ;

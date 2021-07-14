@@ -53,17 +53,6 @@ businessService:BusinessTransaction
   rdfs:label "Business Transaction" ;
   rdfs:subClassOf owl:Thing ;
 .
-businessService:Carrier_1
-  rdf:type LogisticsRoles:Carrier ;
-.
-businessService:Carrier_2
-  rdf:type LogisticsRoles:Carrier ;
-.
-businessService:Consignee_1
-  rdf:type LogisticsRoles:Consignee ;
-  businessService:logisticsRoleID "wer" ;
-  businessService:logisticsRoleName "denaCompany" ;
-.
 businessService:Consignment
   rdf:type owl:Class ;
   rdf:type sh:NodeShape ;
@@ -124,29 +113,11 @@ businessService:Consignor
   businessService:logisticsRoleID "gfd" ;
   businessService:logisticsRoleName "dfgdf" ;
 .
-businessService:Declerant_1
-  rdf:type LogisticsRoles:Declerant ;
-  rdfs:label "Belongs To" ;
-.
 businessService:Enterprise
   rdf:type owl:Class ;
   rdfs:comment "A business or a company" ;
   rdfs:label "Enterprise" ;
   rdfs:subClassOf businessService:LegalEntity ;
-.
-businessService:Enterprise_1
-  rdf:type businessService:Enterprise ;
-  businessService:actorAddress "RijkstraatWeg 222222" ;
-  businessService:actorName "denaLogisticsCompany" ;
-  businessService:actorWebsite "www.denaLogistics.com" ;
-  businessService:involvedRole businessService:Consignor ;
-.
-businessService:Enterprise_x
-  businessService:actorAddress "address_1" ;
-  businessService:actorName "name_1" ;
-  businessService:actorWebsite "www.yourBestCarrier.nl" ;
-  businessService:involvedRole businessService:Carrier_1 ;
-  businessService:involvedRole businessService:Declerant_1 ;
 .
 businessService:FrameworkContract
   rdf:type owl:Class ;
@@ -357,11 +328,46 @@ businessService:bookingNumber
   rdfs:label "Booking number" ;
   rdfs:range xsd:string ;
 .
+businessService:bookingStatus
+  rdf:type owl:ObjectProperty ;
+  rdfs:comment "if the bookign is active, canceled, or combined" ;
+  rdfs:domain businessService:Booking ;
+  rdfs:label "consignment Creation Time" ;
+  rdfs:range [
+      rdf:type rdfs:Datatype ;
+      owl:oneOf (
+          "active"
+          "canceled"
+          "combined"
+        ) ;
+    ] ;
+.
+businessService:consignmentCreationTime
+  rdf:type owl:DatatypeProperty ;
+  rdfs:comment "Time that Consigment is created" ;
+  rdfs:domain businessService:Consignment ;
+  rdfs:label "consignment Creation Time" ;
+  rdfs:range xsd:dateTime ;
+.
+businessService:consignmentUpdateTime
+  rdf:type owl:DatatypeProperty ;
+  rdfs:comment "Time that Consigment is Updated" ;
+  rdfs:domain businessService:Consignment ;
+  rdfs:label "consignment Creation Time" ;
+  rdfs:range xsd:dateTime ;
+.
 businessService:contractCarriageCondition
   rdf:type owl:DatatypeProperty ;
   rdfs:domain businessService:BusinessTransaction ;
   rdfs:domain businessService:FrameworkContract ;
   rdfs:label "Contract Carriage Condition" ;
+.
+businessService:createdBy
+  rdf:type owl:DatatypeProperty ;
+  rdfs:comment "creator of Business Transaction and its types for example booking" ;
+  rdfs:domain businessService:BusinessTransaction ;
+  rdfs:label "Created By" ;
+  rdfs:range xsd:string ;
 .
 businessService:deviationDuration
   rdf:type owl:DatatypeProperty ;
@@ -422,6 +428,7 @@ businessService:itineraryID
   rdfs:domain businessService:Itinerary ;
   rdfs:label "Itinerary ID" ;
   rdfs:range xsd:string ;
+  skos:altLabel "voyageID" ;
 .
 businessService:logisticsRoleID
   rdf:type owl:DatatypeProperty ;

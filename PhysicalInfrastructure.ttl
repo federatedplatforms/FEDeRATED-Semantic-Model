@@ -314,6 +314,22 @@ pi:countryISOCode
   rdfs:range xsd:string ;
   rdfs:subPropertyOf pi:locationProperties ;
 .
+pi:countryISOCodeAlpha3
+  rdf:type owl:DatatypeProperty ;
+  rdfs:comment "ISO 3166-1 alpha-3 codes are three-letter country codes defined in ISO 3166-1, part of the ISO 3166 standard published by the International Organization for Standardization (ISO), to represent countries, dependent territories, and special areas of geographical interest" ;
+  rdfs:domain pi:Location ;
+  rdfs:label "country ISOCode Alpha3" ;
+  rdfs:range xsd:string ;
+  rdfs:subPropertyOf pi:locationProperties ;
+.
+pi:countryISOCodeNumeric
+  rdf:type owl:DatatypeProperty ;
+  rdfs:comment "Numeric country ISOCode" ;
+  rdfs:domain pi:Location ;
+  rdfs:label "country ISOCode Numeric" ;
+  rdfs:range xsd:string ;
+  rdfs:subPropertyOf pi:locationProperties ;
+.
 pi:countryName
   rdf:type owl:DatatypeProperty ;
   rdfs:comment "This property contains the human readable name of the country where the specified location is located in." ;
