@@ -1,0 +1,669 @@
+@prefix mapper: <http://www.ontotext.com/mapper/> .
+@prefix pi: <https://ontology.tno.nl/logistics/federated/PhysicalInfrastructure#> .
+@prefix classifications: <https://ontology.tno.nl/logistics/federated/Classifications#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix LogisticsRoles: <https://ontology.tno.nl/logistics/federated/LogisticsRoles#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix Event: <https://ontology.tno.nl/logistics/federated/Event#> .
+@prefix ReusableTags: <https://ontology.tno.nl/logistics/federated/ReusableTags#> .
+@prefix businessService: <https://ontology.tno.nl/logistics/federated/BusinessService#> .
+@prefix DigitalTwin: <https://ontology.tno.nl/logistics/federated/DigitalTwin#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix ex: <http://example.com/base#> .
+@prefix exDT: <http://example.com/base/digitalTwin#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix era: <http://era.europa.eu/ns#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdf4j: <http://rdf4j.org/schema/rdf4j#> .
+@prefix sesame: <http://www.openrdf.org/schema/sesame#> .
+@prefix fn: <http://www.w3.org/2005/xpath-functions#> .
+
+<http://example.com/base#Event/f7ed44a4-0ac1-42fc-820b-765bb2a70def> a Event:Event;
+  rdfs:label "GateOut";
+  Event:hasTimestamp "2019-09-22 06:00:00"^^xsd:dateTime;
+  Event:hasDateTimeType "planned";
+  Event:involvesDigitalTwin <http://example.com/base#DigitalTwin/f7ed44a4-0ac1-42fc-820b-765bb2a70def>;
+  Event:involvesLocation <http://example.com/base#Location/f7ed44a4-0ac1-42fc-820b-765bb2a70def>;
+  Event:involvesBusinessTransaction <http://example.com/base#businessTransaction/f7ed44a4-0ac1-42fc-820b-765bb2a70def>;
+  Event:hasName "Planned gate out";
+  Event:involves <http://example.com/base#physicalInfrastructure/f7ed44a4-0ac1-42fc-820b-765bb2a70def> .
+
+<http://example.com/base#DigitalTwin/f7ed44a4-0ac1-42fc-820b-765bb2a70def> a DigitalTwin:TransportMeans;
+  rdfs:label "" .
+
+<http://example.com/base#Location/f7ed44a4-0ac1-42fc-820b-765bb2a70def> a pi:Location;
+  pi:cityLoCode "UN/Locode";
+  pi:cityName "MXMLT";
+  rdfs:comment "Martinez de La Torre, MX" .
+
+<http://example.com/base#businessTransaction/f7ed44a4-0ac1-42fc-820b-765bb2a70def>
+  a businessService:Consignment;
+  businessService:consignmentCreationTime "2021-05-13 21:23:04"^^xsd:dateTime;
+  dc:creator "Maersk" .
+
+<http://example.com/base#physicalInfrastructure/f7ed44a4-0ac1-42fc-820b-765bb2a70def>
+  a pi:Terminal, pi:InfrastructuralObject .
+
+<http://example.com/base#Event/6bbb1c8b-26c4-47eb-99d6-8c5abb10ce72> a Event:Event;
+  rdfs:label "GateIn";
+  Event:hasTimestamp "2019-09-23 06:00:00"^^xsd:dateTime;
+  Event:hasDateTimeType "planned";
+  Event:involvesDigitalTwin <http://example.com/base#DigitalTwin/6bbb1c8b-26c4-47eb-99d6-8c5abb10ce72>;
+  Event:involvesLocation <http://example.com/base#Location/6bbb1c8b-26c4-47eb-99d6-8c5abb10ce72>;
+  Event:involvesBusinessTransaction <http://example.com/base#businessTransaction/6bbb1c8b-26c4-47eb-99d6-8c5abb10ce72>;
+  Event:hasName "Planned gate in";
+  Event:involves <http://example.com/base#physicalInfrastructure/6bbb1c8b-26c4-47eb-99d6-8c5abb10ce72> .
+
+<http://example.com/base#DigitalTwin/6bbb1c8b-26c4-47eb-99d6-8c5abb10ce72> a DigitalTwin:TransportMeans;
+  rdfs:label "" .
+
+<http://example.com/base#Location/6bbb1c8b-26c4-47eb-99d6-8c5abb10ce72> a pi:Location;
+  pi:cityLoCode "UN/Locode";
+  pi:cityName "MXVER";
+  rdfs:comment "Veracruz, MX" .
+
+<http://example.com/base#businessTransaction/6bbb1c8b-26c4-47eb-99d6-8c5abb10ce72>
+  a businessService:Consignment;
+  businessService:consignmentCreationTime "2021-05-13 21:23:04"^^xsd:dateTime;
+  dc:creator "Maersk" .
+
+<http://example.com/base#physicalInfrastructure/6bbb1c8b-26c4-47eb-99d6-8c5abb10ce72>
+  a pi:Terminal, pi:InfrastructuralObject .
+
+<http://example.com/base#Event/7a9087e9-b904-49c7-94b6-d2ac1727ddde> a Event:Event;
+  rdfs:label "Departure";
+  Event:hasTimestamp "2019-09-24 00:00:00"^^xsd:dateTime;
+  Event:hasDateTimeType "planned";
+  Event:involvesDigitalTwin <http://example.com/base#DigitalTwin/7a9087e9-b904-49c7-94b6-d2ac1727ddde>;
+  Event:involvesLocation <http://example.com/base#Location/7a9087e9-b904-49c7-94b6-d2ac1727ddde>;
+  Event:involvesBusinessTransaction <http://example.com/base#businessTransaction/7a9087e9-b904-49c7-94b6-d2ac1727ddde>;
+  Event:hasName "Planned vessel departure";
+  Event:involves <http://example.com/base#physicalInfrastructure/7a9087e9-b904-49c7-94b6-d2ac1727ddde> .
+
+<http://example.com/base#DigitalTwin/7a9087e9-b904-49c7-94b6-d2ac1727ddde> a DigitalTwin:TransportMeans;
+  rdfs:label "Vessel";
+  era:vehicleNumber "9225653" .
+
+<http://example.com/base#Location/7a9087e9-b904-49c7-94b6-d2ac1727ddde> a pi:Location;
+  pi:cityLoCode "UN/Locode";
+  pi:cityName "MXVER";
+  rdfs:comment "Veracruz, MX" .
+
+<http://example.com/base#businessTransaction/7a9087e9-b904-49c7-94b6-d2ac1727ddde>
+  a businessService:Consignment;
+  businessService:consignmentCreationTime "2021-05-13 21:23:04"^^xsd:dateTime;
+  dc:creator "Maersk" .
+
+<http://example.com/base#physicalInfrastructure/7a9087e9-b904-49c7-94b6-d2ac1727ddde>
+  a pi:Terminal, pi:InfrastructuralObject .
+
+<http://example.com/base#Event/8f9508dc-0a4f-430f-90c4-3e18409c81b8> a Event:Event;
+  rdfs:label "Arrival";
+  Event:hasTimestamp "2019-10-14 22:00:00"^^xsd:dateTime;
+  Event:hasDateTimeType "planned";
+  Event:involvesDigitalTwin <http://example.com/base#DigitalTwin/8f9508dc-0a4f-430f-90c4-3e18409c81b8>;
+  Event:involvesLocation <http://example.com/base#Location/8f9508dc-0a4f-430f-90c4-3e18409c81b8>;
+  Event:involvesBusinessTransaction <http://example.com/base#businessTransaction/8f9508dc-0a4f-430f-90c4-3e18409c81b8>;
+  Event:hasName "Planned vessel arrival";
+  Event:involves <http://example.com/base#physicalInfrastructure/8f9508dc-0a4f-430f-90c4-3e18409c81b8> .
+
+<http://example.com/base#DigitalTwin/8f9508dc-0a4f-430f-90c4-3e18409c81b8> a DigitalTwin:TransportMeans;
+  rdfs:label "Vessel";
+  era:vehicleNumber "9225653" .
+
+<http://example.com/base#Location/8f9508dc-0a4f-430f-90c4-3e18409c81b8> a pi:Location;
+  pi:cityLoCode "UN/Locode";
+  pi:cityName "BEANR";
+  rdfs:comment "Antwerpen, BE" .
+
+<http://example.com/base#businessTransaction/8f9508dc-0a4f-430f-90c4-3e18409c81b8>
+  a businessService:Consignment;
+  businessService:consignmentCreationTime "2021-05-13 21:23:04"^^xsd:dateTime;
+  dc:creator "Maersk" .
+
+<http://example.com/base#physicalInfrastructure/8f9508dc-0a4f-430f-90c4-3e18409c81b8>
+  a pi:Terminal, pi:InfrastructuralObject .
+
+<http://example.com/base#Event/3bc54ecf-c111-43b0-9437-09d6df211e37> a Event:Event;
+  rdfs:label "GateOut";
+  Event:hasTimestamp "2019-09-19 20:12:00"^^xsd:dateTime;
+  Event:hasDateTimeType "actual";
+  Event:involvesDigitalTwin <http://example.com/base#DigitalTwin/3bc54ecf-c111-43b0-9437-09d6df211e37>;
+  Event:involvesLocation <http://example.com/base#Location/3bc54ecf-c111-43b0-9437-09d6df211e37>;
+  Event:involvesBusinessTransaction <http://example.com/base#businessTransaction/3bc54ecf-c111-43b0-9437-09d6df211e37>;
+  Event:hasName "Actual gate out";
+  Event:involves <http://example.com/base#physicalInfrastructure/3bc54ecf-c111-43b0-9437-09d6df211e37> .
+
+<http://example.com/base#DigitalTwin/3bc54ecf-c111-43b0-9437-09d6df211e37> a DigitalTwin:TransportMeans;
+  rdfs:label "";
+  era:vehicleNumber "341524" .
+
+<http://example.com/base#Location/3bc54ecf-c111-43b0-9437-09d6df211e37> a pi:Location;
+  pi:cityLoCode "UN/Locode";
+  pi:cityName "MXVER";
+  rdfs:comment "Veracruz, MX" .
+
+<http://example.com/base#businessTransaction/3bc54ecf-c111-43b0-9437-09d6df211e37>
+  a businessService:Consignment;
+  businessService:consignmentCreationTime "2021-05-13 21:23:04"^^xsd:dateTime;
+  dc:creator "Maersk" .
+
+<http://example.com/base#physicalInfrastructure/3bc54ecf-c111-43b0-9437-09d6df211e37>
+  a pi:Terminal, pi:InfrastructuralObject .
+
+<http://example.com/base#Event/dfb5ddfa-2547-4caf-a81d-b1a5f2e3e674> a Event:Event;
+  rdfs:label "GateIn";
+  Event:hasTimestamp "2019-09-21 12:40:00"^^xsd:dateTime;
+  Event:hasDateTimeType "actual";
+  Event:involvesDigitalTwin <http://example.com/base#DigitalTwin/dfb5ddfa-2547-4caf-a81d-b1a5f2e3e674>;
+  Event:involvesLocation <http://example.com/base#Location/dfb5ddfa-2547-4caf-a81d-b1a5f2e3e674>;
+  Event:involvesBusinessTransaction <http://example.com/base#businessTransaction/dfb5ddfa-2547-4caf-a81d-b1a5f2e3e674>;
+  Event:hasName "Actual gate in";
+  Event:involves <http://example.com/base#physicalInfrastructure/dfb5ddfa-2547-4caf-a81d-b1a5f2e3e674> .
+
+<http://example.com/base#DigitalTwin/dfb5ddfa-2547-4caf-a81d-b1a5f2e3e674> a DigitalTwin:TransportMeans;
+  rdfs:label "";
+  era:vehicleNumber "341524" .
+
+<http://example.com/base#Location/dfb5ddfa-2547-4caf-a81d-b1a5f2e3e674> a pi:Location;
+  pi:cityLoCode "UN/Locode";
+  pi:cityName "MXVER";
+  rdfs:comment "Veracruz, MX" .
+
+<http://example.com/base#businessTransaction/dfb5ddfa-2547-4caf-a81d-b1a5f2e3e674>
+  a businessService:Consignment;
+  businessService:consignmentCreationTime "2021-05-13 21:23:04"^^xsd:dateTime;
+  dc:creator "Maersk" .
+
+<http://example.com/base#physicalInfrastructure/dfb5ddfa-2547-4caf-a81d-b1a5f2e3e674>
+  a pi:Terminal, pi:InfrastructuralObject .
+
+<http://example.com/base#Event/bf0041d6-d65e-42d7-b7f0-ea90d0a7253d> a Event:Event;
+  rdfs:label "LoadedOn";
+  Event:hasTimestamp "2019-09-23 20:22:00"^^xsd:dateTime;
+  Event:hasDateTimeType "actual";
+  Event:involvesDigitalTwin <http://example.com/base#DigitalTwin/bf0041d6-d65e-42d7-b7f0-ea90d0a7253d>;
+  Event:involvesLocation <http://example.com/base#Location/bf0041d6-d65e-42d7-b7f0-ea90d0a7253d>;
+  Event:involvesBusinessTransaction <http://example.com/base#businessTransaction/bf0041d6-d65e-42d7-b7f0-ea90d0a7253d>;
+  Event:hasName "Actual loaded on vessel";
+  Event:involves <http://example.com/base#physicalInfrastructure/bf0041d6-d65e-42d7-b7f0-ea90d0a7253d> .
+
+<http://example.com/base#DigitalTwin/bf0041d6-d65e-42d7-b7f0-ea90d0a7253d> a DigitalTwin:TransportMeans;
+  rdfs:label "";
+  era:vehicleNumber "9225653" .
+
+<http://example.com/base#Location/bf0041d6-d65e-42d7-b7f0-ea90d0a7253d> a pi:Location;
+  pi:cityLoCode "UN/Locode";
+  pi:cityName "MXVER";
+  rdfs:comment "Veracruz, MX" .
+
+<http://example.com/base#businessTransaction/bf0041d6-d65e-42d7-b7f0-ea90d0a7253d>
+  a businessService:Consignment;
+  businessService:consignmentCreationTime "2021-05-13 21:23:04"^^xsd:dateTime;
+  dc:creator "Maersk" .
+
+<http://example.com/base#physicalInfrastructure/bf0041d6-d65e-42d7-b7f0-ea90d0a7253d>
+  a pi:Terminal, pi:InfrastructuralObject .
+
+<http://example.com/base#Event/e1a93108-8ec8-4719-9638-2afb046f80f5> a Event:Event;
+  rdfs:label "Departure";
+  Event:hasTimestamp "2019-09-23 15:31:00"^^xsd:dateTime;
+  Event:hasDateTimeType "actual";
+  Event:involvesDigitalTwin <http://example.com/base#DigitalTwin/e1a93108-8ec8-4719-9638-2afb046f80f5>;
+  Event:involvesLocation <http://example.com/base#Location/e1a93108-8ec8-4719-9638-2afb046f80f5>;
+  Event:involvesBusinessTransaction <http://example.com/base#businessTransaction/e1a93108-8ec8-4719-9638-2afb046f80f5>;
+  Event:hasName "Actual vessel departure";
+  Event:involves <http://example.com/base#physicalInfrastructure/e1a93108-8ec8-4719-9638-2afb046f80f5> .
+
+<http://example.com/base#DigitalTwin/e1a93108-8ec8-4719-9638-2afb046f80f5> a DigitalTwin:TransportMeans;
+  rdfs:label "Vessel";
+  era:vehicleNumber "9225653" .
+
+<http://example.com/base#Location/e1a93108-8ec8-4719-9638-2afb046f80f5> a pi:Location;
+  pi:cityLoCode "UN/Locode";
+  pi:cityName "MXVER";
+  rdfs:comment "Veracruz, MX" .
+
+<http://example.com/base#businessTransaction/e1a93108-8ec8-4719-9638-2afb046f80f5>
+  a businessService:Consignment;
+  businessService:consignmentCreationTime "2021-05-13 21:23:04"^^xsd:dateTime;
+  dc:creator "Maersk" .
+
+<http://example.com/base#physicalInfrastructure/e1a93108-8ec8-4719-9638-2afb046f80f5>
+  a pi:Terminal, pi:InfrastructuralObject .
+
+<http://example.com/base#Event/2f1dc6f2-f2bf-4171-b8d9-ce006d94f00f> a Event:Event;
+  rdfs:label "Departure";
+  Event:hasTimestamp "2019-09-23 23:30:00"^^xsd:dateTime;
+  Event:hasDateTimeType "actual";
+  Event:involvesDigitalTwin <http://example.com/base#DigitalTwin/2f1dc6f2-f2bf-4171-b8d9-ce006d94f00f>;
+  Event:involvesLocation <http://example.com/base#Location/2f1dc6f2-f2bf-4171-b8d9-ce006d94f00f>;
+  Event:involvesBusinessTransaction <http://example.com/base#businessTransaction/2f1dc6f2-f2bf-4171-b8d9-ce006d94f00f>;
+  Event:hasName "Actual vessel departure";
+  Event:involves <http://example.com/base#physicalInfrastructure/2f1dc6f2-f2bf-4171-b8d9-ce006d94f00f> .
+
+<http://example.com/base#DigitalTwin/2f1dc6f2-f2bf-4171-b8d9-ce006d94f00f> a DigitalTwin:TransportMeans;
+  rdfs:label "Vessel";
+  era:vehicleNumber "9225653" .
+
+<http://example.com/base#Location/2f1dc6f2-f2bf-4171-b8d9-ce006d94f00f> a pi:Location;
+  pi:cityLoCode "UN/Locode";
+  pi:cityName "MXVER";
+  rdfs:comment "Veracruz, MX" .
+
+<http://example.com/base#businessTransaction/2f1dc6f2-f2bf-4171-b8d9-ce006d94f00f>
+  a businessService:Consignment;
+  businessService:consignmentCreationTime "2021-05-13 21:23:04"^^xsd:dateTime;
+  dc:creator "Maersk" .
+
+<http://example.com/base#physicalInfrastructure/2f1dc6f2-f2bf-4171-b8d9-ce006d94f00f>
+  a pi:Terminal, pi:InfrastructuralObject .
+
+<http://example.com/base#Event/dd754398-9cfb-4a55-bd12-af2ad792abce> a Event:Event;
+  rdfs:label "Departure";
+  Event:hasTimestamp "2019-09-23 23:32:00"^^xsd:dateTime;
+  Event:hasDateTimeType "actual";
+  Event:involvesDigitalTwin <http://example.com/base#DigitalTwin/dd754398-9cfb-4a55-bd12-af2ad792abce>;
+  Event:involvesLocation <http://example.com/base#Location/dd754398-9cfb-4a55-bd12-af2ad792abce>;
+  Event:involvesBusinessTransaction <http://example.com/base#businessTransaction/dd754398-9cfb-4a55-bd12-af2ad792abce>;
+  Event:hasName "Actual vessel departure";
+  Event:involves <http://example.com/base#physicalInfrastructure/dd754398-9cfb-4a55-bd12-af2ad792abce> .
+
+<http://example.com/base#DigitalTwin/dd754398-9cfb-4a55-bd12-af2ad792abce> a DigitalTwin:TransportMeans;
+  rdfs:label "Vessel";
+  era:vehicleNumber "9225653" .
+
+<http://example.com/base#Location/dd754398-9cfb-4a55-bd12-af2ad792abce> a pi:Location;
+  pi:cityLoCode "UN/Locode";
+  pi:cityName "MXVER";
+  rdfs:comment "Veracruz, MX" .
+
+<http://example.com/base#businessTransaction/dd754398-9cfb-4a55-bd12-af2ad792abce>
+  a businessService:Consignment;
+  businessService:consignmentCreationTime "2021-05-13 21:23:04"^^xsd:dateTime;
+  dc:creator "Maersk" .
+
+<http://example.com/base#physicalInfrastructure/dd754398-9cfb-4a55-bd12-af2ad792abce>
+  a pi:Terminal, pi:InfrastructuralObject .
+
+<http://example.com/base#Event/67e92cf5-04c2-421c-99bd-30540b9ecee5> a Event:Event;
+  rdfs:label "Departure";
+  Event:hasTimestamp "2019-09-24 00:00:00"^^xsd:dateTime;
+  Event:hasDateTimeType "estimated";
+  Event:involvesDigitalTwin <http://example.com/base#DigitalTwin/67e92cf5-04c2-421c-99bd-30540b9ecee5>;
+  Event:involvesLocation <http://example.com/base#Location/67e92cf5-04c2-421c-99bd-30540b9ecee5>;
+  Event:involvesBusinessTransaction <http://example.com/base#businessTransaction/67e92cf5-04c2-421c-99bd-30540b9ecee5>;
+  Event:hasName "Estimated vessel departure";
+  Event:involves <http://example.com/base#physicalInfrastructure/67e92cf5-04c2-421c-99bd-30540b9ecee5> .
+
+<http://example.com/base#DigitalTwin/67e92cf5-04c2-421c-99bd-30540b9ecee5> a DigitalTwin:TransportMeans;
+  rdfs:label "Vessel";
+  era:vehicleNumber "9225653" .
+
+<http://example.com/base#Location/67e92cf5-04c2-421c-99bd-30540b9ecee5> a pi:Location;
+  pi:cityLoCode "UN/Locode";
+  pi:cityName "MXVER";
+  rdfs:comment "Veracruz, MX" .
+
+<http://example.com/base#businessTransaction/67e92cf5-04c2-421c-99bd-30540b9ecee5>
+  a businessService:Consignment;
+  businessService:consignmentCreationTime "2021-05-13 21:23:04"^^xsd:dateTime;
+  dc:creator "Maersk" .
+
+<http://example.com/base#physicalInfrastructure/67e92cf5-04c2-421c-99bd-30540b9ecee5>
+  a pi:Terminal, pi:InfrastructuralObject .
+
+<http://example.com/base#Event/b5c051f5-2cdc-4795-b480-67c580ee50c2> a Event:Event;
+  rdfs:label "Arrival";
+  Event:hasTimestamp "2019-10-14 16:00:00"^^xsd:dateTime;
+  Event:hasDateTimeType "estimated";
+  Event:involvesDigitalTwin <http://example.com/base#DigitalTwin/b5c051f5-2cdc-4795-b480-67c580ee50c2>;
+  Event:involvesLocation <http://example.com/base#Location/b5c051f5-2cdc-4795-b480-67c580ee50c2>;
+  Event:involvesBusinessTransaction <http://example.com/base#businessTransaction/b5c051f5-2cdc-4795-b480-67c580ee50c2>;
+  Event:hasName "Estimated vessel arrival";
+  Event:involves <http://example.com/base#physicalInfrastructure/b5c051f5-2cdc-4795-b480-67c580ee50c2> .
+
+<http://example.com/base#DigitalTwin/b5c051f5-2cdc-4795-b480-67c580ee50c2> a DigitalTwin:TransportMeans;
+  rdfs:label "Vessel";
+  era:vehicleNumber "9225653" .
+
+<http://example.com/base#Location/b5c051f5-2cdc-4795-b480-67c580ee50c2> a pi:Location;
+  pi:cityLoCode "UN/Locode";
+  pi:cityName "BEANR";
+  rdfs:comment "Antwerpen, BE" .
+
+<http://example.com/base#businessTransaction/b5c051f5-2cdc-4795-b480-67c580ee50c2>
+  a businessService:Consignment;
+  businessService:consignmentCreationTime "2021-05-13 21:23:04"^^xsd:dateTime;
+  dc:creator "Maersk" .
+
+<http://example.com/base#physicalInfrastructure/b5c051f5-2cdc-4795-b480-67c580ee50c2>
+  a pi:Terminal, pi:InfrastructuralObject .
+
+<http://example.com/base#Event/94388f60-190a-4f20-8b77-60d41d5c5cb3> a Event:Event;
+  rdfs:label "Arrival";
+  Event:hasTimestamp "2019-10-14 22:00:00"^^xsd:dateTime;
+  Event:hasDateTimeType "estimated";
+  Event:involvesDigitalTwin <http://example.com/base#DigitalTwin/94388f60-190a-4f20-8b77-60d41d5c5cb3>;
+  Event:involvesLocation <http://example.com/base#Location/94388f60-190a-4f20-8b77-60d41d5c5cb3>;
+  Event:involvesBusinessTransaction <http://example.com/base#businessTransaction/94388f60-190a-4f20-8b77-60d41d5c5cb3>;
+  Event:hasName "Estimated vessel arrival";
+  Event:involves <http://example.com/base#physicalInfrastructure/94388f60-190a-4f20-8b77-60d41d5c5cb3> .
+
+<http://example.com/base#DigitalTwin/94388f60-190a-4f20-8b77-60d41d5c5cb3> a DigitalTwin:TransportMeans;
+  rdfs:label "Vessel";
+  era:vehicleNumber "9225653" .
+
+<http://example.com/base#Location/94388f60-190a-4f20-8b77-60d41d5c5cb3> a pi:Location;
+  pi:cityLoCode "UN/Locode";
+  pi:cityName "BEANR";
+  rdfs:comment "Antwerpen, BE" .
+
+<http://example.com/base#businessTransaction/94388f60-190a-4f20-8b77-60d41d5c5cb3>
+  a businessService:Consignment;
+  businessService:consignmentCreationTime "2021-05-13 21:23:04"^^xsd:dateTime;
+  dc:creator "Maersk" .
+
+<http://example.com/base#physicalInfrastructure/94388f60-190a-4f20-8b77-60d41d5c5cb3>
+  a pi:Terminal, pi:InfrastructuralObject .
+
+<http://example.com/base#Event/47c5c8b9-106b-4994-90f3-542a74bc6880> a Event:Event;
+  rdfs:label "Arrival";
+  Event:hasTimestamp "2019-10-15 02:00:00"^^xsd:dateTime;
+  Event:hasDateTimeType "estimated";
+  Event:involvesDigitalTwin <http://example.com/base#DigitalTwin/47c5c8b9-106b-4994-90f3-542a74bc6880>;
+  Event:involvesLocation <http://example.com/base#Location/47c5c8b9-106b-4994-90f3-542a74bc6880>;
+  Event:involvesBusinessTransaction <http://example.com/base#businessTransaction/47c5c8b9-106b-4994-90f3-542a74bc6880>;
+  Event:hasName "Estimated vessel arrival";
+  Event:involves <http://example.com/base#physicalInfrastructure/47c5c8b9-106b-4994-90f3-542a74bc6880> .
+
+<http://example.com/base#DigitalTwin/47c5c8b9-106b-4994-90f3-542a74bc6880> a DigitalTwin:TransportMeans;
+  rdfs:label "Vessel";
+  era:vehicleNumber "9225653" .
+
+<http://example.com/base#Location/47c5c8b9-106b-4994-90f3-542a74bc6880> a pi:Location;
+  pi:cityLoCode "UN/Locode";
+  pi:cityName "BEANR";
+  rdfs:comment "Antwerpen, BE" .
+
+<http://example.com/base#businessTransaction/47c5c8b9-106b-4994-90f3-542a74bc6880>
+  a businessService:Consignment;
+  businessService:consignmentCreationTime "2021-05-13 21:23:04"^^xsd:dateTime;
+  dc:creator "Maersk" .
+
+<http://example.com/base#physicalInfrastructure/47c5c8b9-106b-4994-90f3-542a74bc6880>
+  a pi:Terminal, pi:InfrastructuralObject .
+
+<http://example.com/base#Event/009700af-3343-421d-b7c4-5a175b4f9ec2> a Event:Event;
+  rdfs:label "DischargeFrom";
+  Event:hasTimestamp "2019-10-15 09:34:00"^^xsd:dateTime;
+  Event:hasDateTimeType "actual";
+  Event:involvesDigitalTwin <http://example.com/base#DigitalTwin/009700af-3343-421d-b7c4-5a175b4f9ec2>;
+  Event:involvesLocation <http://example.com/base#Location/009700af-3343-421d-b7c4-5a175b4f9ec2>;
+  Event:involvesBusinessTransaction <http://example.com/base#businessTransaction/009700af-3343-421d-b7c4-5a175b4f9ec2>;
+  Event:hasName "Actual discharge from vessel";
+  Event:involves <http://example.com/base#physicalInfrastructure/009700af-3343-421d-b7c4-5a175b4f9ec2> .
+
+<http://example.com/base#DigitalTwin/009700af-3343-421d-b7c4-5a175b4f9ec2> a DigitalTwin:TransportMeans;
+  rdfs:label "";
+  era:vehicleNumber "9225653" .
+
+<http://example.com/base#Location/009700af-3343-421d-b7c4-5a175b4f9ec2> a pi:Location;
+  pi:cityLoCode "UN/Locode";
+  pi:cityName "BEANR";
+  rdfs:comment "Antwerpen, BE" .
+
+<http://example.com/base#businessTransaction/009700af-3343-421d-b7c4-5a175b4f9ec2>
+  a businessService:Consignment;
+  businessService:consignmentCreationTime "2021-05-13 21:23:04"^^xsd:dateTime;
+  dc:creator "Maersk" .
+
+<http://example.com/base#physicalInfrastructure/009700af-3343-421d-b7c4-5a175b4f9ec2>
+  a pi:Terminal, pi:InfrastructuralObject;
+  rdfs:label "BEANR-K1742" .
+
+<http://example.com/base#Event/bd81e043-74cb-4a46-b1aa-e7232eeddda8> a Event:Event;
+  rdfs:label "Arrival";
+  Event:hasTimestamp "2019-10-15 02:31:00"^^xsd:dateTime;
+  Event:hasDateTimeType "actual";
+  Event:involvesDigitalTwin <http://example.com/base#DigitalTwin/bd81e043-74cb-4a46-b1aa-e7232eeddda8>;
+  Event:involvesLocation <http://example.com/base#Location/bd81e043-74cb-4a46-b1aa-e7232eeddda8>;
+  Event:involvesBusinessTransaction <http://example.com/base#businessTransaction/bd81e043-74cb-4a46-b1aa-e7232eeddda8>;
+  Event:hasName "Actual vessel arrival";
+  Event:involves <http://example.com/base#physicalInfrastructure/bd81e043-74cb-4a46-b1aa-e7232eeddda8> .
+
+<http://example.com/base#DigitalTwin/bd81e043-74cb-4a46-b1aa-e7232eeddda8> a DigitalTwin:TransportMeans;
+  rdfs:label "Vessel";
+  era:vehicleNumber "9225653" .
+
+<http://example.com/base#Location/bd81e043-74cb-4a46-b1aa-e7232eeddda8> a pi:Location;
+  pi:cityLoCode "UN/Locode";
+  pi:cityName "BEANR";
+  rdfs:comment "Antwerpen, BE" .
+
+<http://example.com/base#businessTransaction/bd81e043-74cb-4a46-b1aa-e7232eeddda8>
+  a businessService:Consignment;
+  businessService:consignmentCreationTime "2021-05-13 21:23:04"^^xsd:dateTime;
+  dc:creator "Maersk" .
+
+<http://example.com/base#physicalInfrastructure/bd81e043-74cb-4a46-b1aa-e7232eeddda8>
+  a pi:Terminal, pi:InfrastructuralObject .
+
+<http://example.com/base#Event/39d32627-449a-440b-8f0e-d7f5416702aa> a Event:Event;
+  rdfs:label "GateOut";
+  Event:hasTimestamp "2019-10-16 06:44:00"^^xsd:dateTime;
+  Event:hasDateTimeType "actual";
+  Event:involvesDigitalTwin <http://example.com/base#DigitalTwin/39d32627-449a-440b-8f0e-d7f5416702aa>;
+  Event:involvesLocation <http://example.com/base#Location/39d32627-449a-440b-8f0e-d7f5416702aa>;
+  Event:involvesBusinessTransaction <http://example.com/base#businessTransaction/39d32627-449a-440b-8f0e-d7f5416702aa>;
+  Event:hasName "Actual gate out";
+  Event:involves <http://example.com/base#physicalInfrastructure/39d32627-449a-440b-8f0e-d7f5416702aa> .
+
+<http://example.com/base#DigitalTwin/39d32627-449a-440b-8f0e-d7f5416702aa> a DigitalTwin:TransportMeans;
+  rdfs:label "";
+  era:vehicleNumber "MEITRK" .
+
+<http://example.com/base#Location/39d32627-449a-440b-8f0e-d7f5416702aa> a pi:Location;
+  pi:cityLoCode "UN/Locode";
+  pi:cityName "BEANR";
+  rdfs:comment "Antwerpen, BE" .
+
+<http://example.com/base#businessTransaction/39d32627-449a-440b-8f0e-d7f5416702aa>
+  a businessService:Consignment;
+  businessService:consignmentCreationTime "2021-05-13 21:23:04"^^xsd:dateTime;
+  dc:creator "Maersk" .
+
+<http://example.com/base#physicalInfrastructure/39d32627-449a-440b-8f0e-d7f5416702aa>
+  a pi:Terminal, pi:InfrastructuralObject;
+  rdfs:label "BEANR-K1742" .
+
+<http://example.com/base#Event/baaf4833-8a1a-4275-8395-d3d669d49a04> a Event:Event;
+  rdfs:label "DischargeFrom";
+  Event:hasTimestamp "2019-10-15 09:34:00"^^xsd:dateTime;
+  Event:hasDateTimeType "actual";
+  Event:involvesDigitalTwin <http://example.com/base#DigitalTwin/baaf4833-8a1a-4275-8395-d3d669d49a04>;
+  Event:involvesLocation <http://example.com/base#Location/baaf4833-8a1a-4275-8395-d3d669d49a04>;
+  Event:involvesBusinessTransaction <http://example.com/base#businessTransaction/baaf4833-8a1a-4275-8395-d3d669d49a04>;
+  Event:hasName "Actual discharge from vessel";
+  Event:involves <http://example.com/base#physicalInfrastructure/baaf4833-8a1a-4275-8395-d3d669d49a04> .
+
+<http://example.com/base#DigitalTwin/baaf4833-8a1a-4275-8395-d3d669d49a04> a DigitalTwin:TransportMeans;
+  rdfs:label "";
+  era:vehicleNumber "9225653" .
+
+<http://example.com/base#Location/baaf4833-8a1a-4275-8395-d3d669d49a04> a pi:Location;
+  pi:cityLoCode "UN/Locode";
+  pi:cityName "BEANR";
+  rdfs:comment "Antwerpen, BE" .
+
+<http://example.com/base#businessTransaction/baaf4833-8a1a-4275-8395-d3d669d49a04>
+  a businessService:Consignment;
+  businessService:consignmentCreationTime "2021-05-13 21:23:04"^^xsd:dateTime;
+  dc:creator "Maersk" .
+
+<http://example.com/base#physicalInfrastructure/baaf4833-8a1a-4275-8395-d3d669d49a04>
+  a pi:Terminal, pi:InfrastructuralObject .
+
+<http://example.com/base#Event/f99a5b51-039e-4f69-8238-2e11764f4835> a Event:Event;
+  rdfs:label "GateIn";
+  Event:hasTimestamp "2019-10-18 10:22:00"^^xsd:dateTime;
+  Event:hasDateTimeType "actual";
+  Event:involvesDigitalTwin <http://example.com/base#DigitalTwin/f99a5b51-039e-4f69-8238-2e11764f4835>;
+  Event:involvesLocation <http://example.com/base#Location/f99a5b51-039e-4f69-8238-2e11764f4835>;
+  Event:involvesBusinessTransaction <http://example.com/base#businessTransaction/f99a5b51-039e-4f69-8238-2e11764f4835>;
+  Event:hasName "Actual gate in";
+  Event:involves <http://example.com/base#physicalInfrastructure/f99a5b51-039e-4f69-8238-2e11764f4835> .
+
+<http://example.com/base#DigitalTwin/f99a5b51-039e-4f69-8238-2e11764f4835> a DigitalTwin:TransportMeans;
+  rdfs:label "" .
+
+<http://example.com/base#Location/f99a5b51-039e-4f69-8238-2e11764f4835> a pi:Location;
+  pi:cityLoCode "UN/Locode";
+  pi:cityName "BEKOU";
+  rdfs:comment "Kallo, BE" .
+
+<http://example.com/base#businessTransaction/f99a5b51-039e-4f69-8238-2e11764f4835>
+  a businessService:Consignment;
+  businessService:consignmentCreationTime "2021-05-13 21:23:04"^^xsd:dateTime;
+  dc:creator "Maersk" .
+
+<http://example.com/base#physicalInfrastructure/f99a5b51-039e-4f69-8238-2e11764f4835>
+  a pi:Terminal, pi:InfrastructuralObject .
+
+<http://example.com/base#Event/f1ea0631-284d-4241-8b31-943b4787d589> a Event:Event;
+  rdfs:label "GateOut";
+  Event:hasTimestamp "2019-10-17 14:41:00"^^xsd:dateTime;
+  Event:hasDateTimeType "actual";
+  Event:involvesDigitalTwin <http://example.com/base#DigitalTwin/f1ea0631-284d-4241-8b31-943b4787d589>;
+  Event:involvesLocation <http://example.com/base#Location/f1ea0631-284d-4241-8b31-943b4787d589>;
+  Event:involvesBusinessTransaction <http://example.com/base#businessTransaction/f1ea0631-284d-4241-8b31-943b4787d589>;
+  Event:hasName "Actual gate out";
+  Event:involves <http://example.com/base#physicalInfrastructure/f1ea0631-284d-4241-8b31-943b4787d589> .
+
+<http://example.com/base#DigitalTwin/f1ea0631-284d-4241-8b31-943b4787d589> a DigitalTwin:TransportMeans;
+  rdfs:label "";
+  era:vehicleNumber "MHATRK" .
+
+<http://example.com/base#Location/f1ea0631-284d-4241-8b31-943b4787d589> a pi:Location;
+  pi:cityLoCode "UN/Locode";
+  pi:cityName "BEANR";
+  rdfs:comment "Antwerpen, BE" .
+
+<http://example.com/base#businessTransaction/f1ea0631-284d-4241-8b31-943b4787d589>
+  a businessService:Consignment;
+  businessService:consignmentCreationTime "2021-05-13 21:23:04"^^xsd:dateTime;
+  dc:creator "Maersk" .
+
+<http://example.com/base#physicalInfrastructure/f1ea0631-284d-4241-8b31-943b4787d589>
+  a pi:Terminal, pi:InfrastructuralObject .
+
+<http://example.com/base#Event/82b464b0-96d6-44b9-a482-4966aa3f4052> a Event:Event;
+  rdfs:label "Created";
+  Event:hasDateTimeType "transport";
+  Event:involvesDigitalTwin <http://example.com/base#DigitalTwin/82b464b0-96d6-44b9-a482-4966aa3f4052>;
+  Event:involvesLocation <http://example.com/base#Location/82b464b0-96d6-44b9-a482-4966aa3f4052>;
+  Event:involvesBusinessTransaction <http://example.com/base#businessTransaction/82b464b0-96d6-44b9-a482-4966aa3f4052>;
+  Event:hasName "Transport equipment created/updated";
+  Event:involves <http://example.com/base#physicalInfrastructure/82b464b0-96d6-44b9-a482-4966aa3f4052> .
+
+<http://example.com/base#DigitalTwin/82b464b0-96d6-44b9-a482-4966aa3f4052> a DigitalTwin:TransportMeans;
+  rdfs:label "" .
+
+<http://example.com/base#Location/82b464b0-96d6-44b9-a482-4966aa3f4052> a pi:Location .
+
+<http://example.com/base#businessTransaction/82b464b0-96d6-44b9-a482-4966aa3f4052>
+  a businessService:Consignment;
+  businessService:consignmentCreationTime "2021-05-13 21:23:04"^^xsd:dateTime;
+  dc:creator "Maersk" .
+
+<http://example.com/base#physicalInfrastructure/82b464b0-96d6-44b9-a482-4966aa3f4052>
+  a pi:Terminal, pi:InfrastructuralObject .
+
+<http://example.com/base#Event/8d54cee7-fd9b-4671-bbd0-dffd547e75d6> a Event:Event;
+  rdfs:label "Reference";
+  Event:hasDateTimeType "transport";
+  Event:involvesDigitalTwin <http://example.com/base#DigitalTwin/8d54cee7-fd9b-4671-bbd0-dffd547e75d6>;
+  Event:involvesLocation <http://example.com/base#Location/8d54cee7-fd9b-4671-bbd0-dffd547e75d6>;
+  Event:involvesBusinessTransaction <http://example.com/base#businessTransaction/8d54cee7-fd9b-4671-bbd0-dffd547e75d6>;
+  Event:hasName "Transport equipment reference added";
+  Event:involves <http://example.com/base#physicalInfrastructure/8d54cee7-fd9b-4671-bbd0-dffd547e75d6> .
+
+<http://example.com/base#DigitalTwin/8d54cee7-fd9b-4671-bbd0-dffd547e75d6> a DigitalTwin:TransportMeans;
+  rdfs:label "" .
+
+<http://example.com/base#Location/8d54cee7-fd9b-4671-bbd0-dffd547e75d6> a pi:Location .
+
+<http://example.com/base#businessTransaction/8d54cee7-fd9b-4671-bbd0-dffd547e75d6>
+  a businessService:Consignment;
+  businessService:consignmentCreationTime "2021-05-13 21:23:04"^^xsd:dateTime;
+  dc:creator "Maersk" .
+
+<http://example.com/base#physicalInfrastructure/8d54cee7-fd9b-4671-bbd0-dffd547e75d6>
+  a pi:Terminal, pi:InfrastructuralObject .
+
+<http://example.com/base#Event/a89f5b20-78d7-4a06-afee-822a7018a460> a Event:Event;
+  Event:hasDateTimeType "consignment";
+  Event:involvesDigitalTwin <http://example.com/base#DigitalTwin/a89f5b20-78d7-4a06-afee-822a7018a460>;
+  Event:involvesLocation <http://example.com/base#Location/a89f5b20-78d7-4a06-afee-822a7018a460>;
+  Event:involvesBusinessTransaction <http://example.com/base#businessTransaction/a89f5b20-78d7-4a06-afee-822a7018a460>;
+  Event:hasName "Consignment created/updated";
+  Event:involves <http://example.com/base#physicalInfrastructure/a89f5b20-78d7-4a06-afee-822a7018a460> .
+
+<http://example.com/base#DigitalTwin/a89f5b20-78d7-4a06-afee-822a7018a460> a DigitalTwin:TransportMeans;
+  rdfs:label "" .
+
+<http://example.com/base#Location/a89f5b20-78d7-4a06-afee-822a7018a460> a pi:Location .
+
+<http://example.com/base#businessTransaction/a89f5b20-78d7-4a06-afee-822a7018a460>
+  a businessService:Consignment;
+  businessService:consignmentCreationTime "2021-05-13 21:23:04"^^xsd:dateTime;
+  dc:creator "Maersk" .
+
+<http://example.com/base#physicalInfrastructure/a89f5b20-78d7-4a06-afee-822a7018a460>
+  a pi:Terminal, pi:InfrastructuralObject .
+
+<http://example.com/base#Event/c70c0119-647f-4d2c-b0e3-690fb2ee001c> a Event:Event;
+  Event:hasDateTimeType "document";
+  Event:involvesDigitalTwin <http://example.com/base#DigitalTwin/c70c0119-647f-4d2c-b0e3-690fb2ee001c>;
+  Event:involvesLocation <http://example.com/base#Location/c70c0119-647f-4d2c-b0e3-690fb2ee001c>;
+  Event:involvesBusinessTransaction <http://example.com/base#businessTransaction/c70c0119-647f-4d2c-b0e3-690fb2ee001c>;
+  Event:hasName "Document Events";
+  Event:involves <http://example.com/base#physicalInfrastructure/c70c0119-647f-4d2c-b0e3-690fb2ee001c> .
+
+<http://example.com/base#DigitalTwin/c70c0119-647f-4d2c-b0e3-690fb2ee001c> a DigitalTwin:TransportMeans;
+  rdfs:label "" .
+
+<http://example.com/base#Location/c70c0119-647f-4d2c-b0e3-690fb2ee001c> a pi:Location .
+
+<http://example.com/base#businessTransaction/c70c0119-647f-4d2c-b0e3-690fb2ee001c>
+  a businessService:Consignment;
+  businessService:consignmentCreationTime "2021-05-13 21:23:04"^^xsd:dateTime;
+  dc:creator "Maersk" .
+
+<http://example.com/base#physicalInfrastructure/c70c0119-647f-4d2c-b0e3-690fb2ee001c>
+  a pi:Terminal, pi:InfrastructuralObject .
+
+<http://example.com/base#Event/da9cf003-3bca-43d3-8ac9-1351ddbd2992> a Event:Event;
+  rdfs:label "PartyAdded";
+  Event:hasDateTimeType "consignments";
+  Event:involvesDigitalTwin <http://example.com/base#DigitalTwin/da9cf003-3bca-43d3-8ac9-1351ddbd2992>;
+  Event:involvesLocation <http://example.com/base#Location/da9cf003-3bca-43d3-8ac9-1351ddbd2992>;
+  Event:involvesBusinessTransaction <http://example.com/base#businessTransaction/da9cf003-3bca-43d3-8ac9-1351ddbd2992>;
+  Event:hasName "Consignment visibility added";
+  Event:involves <http://example.com/base#physicalInfrastructure/da9cf003-3bca-43d3-8ac9-1351ddbd2992> .
+
+<http://example.com/base#DigitalTwin/da9cf003-3bca-43d3-8ac9-1351ddbd2992> a DigitalTwin:TransportMeans;
+  rdfs:label "" .
+
+<http://example.com/base#Location/da9cf003-3bca-43d3-8ac9-1351ddbd2992> a pi:Location .
+
+<http://example.com/base#businessTransaction/da9cf003-3bca-43d3-8ac9-1351ddbd2992>
+  a businessService:Consignment;
+  businessService:consignmentCreationTime "2021-05-13 21:23:04"^^xsd:dateTime;
+  dc:creator "Maersk" .
+
+<http://example.com/base#physicalInfrastructure/da9cf003-3bca-43d3-8ac9-1351ddbd2992>
+  a pi:Terminal, pi:InfrastructuralObject .

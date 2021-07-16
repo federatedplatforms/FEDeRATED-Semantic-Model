@@ -1,0 +1,79 @@
+
+BASE <http://example.com/base/>
+PREFIX mapper: <http://www.ontotext.com/mapper/>
+PREFIX pi: <https://ontology.tno.nl/logistics/federated/PhysicalInfrastructure#>
+PREFIX classifications: <https://ontology.tno.nl/logistics/federated/Classifications#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX LogisticsRoles: <https://ontology.tno.nl/logistics/federated/LogisticsRoles#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX Event: <https://ontology.tno.nl/logistics/federated/Event#>
+PREFIX ReusableTags: <https://ontology.tno.nl/logistics/federated/ReusableTags#>
+PREFIX businessService: <https://ontology.tno.nl/logistics/federated/BusinessService#>
+PREFIX DigitalTwin: <https://ontology.tno.nl/logistics/federated/DigitalTwin#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX ex: <http://example.com/base#>
+PREFIX exDT: <http://example.com/base/digitalTwin#>
+PREFIX time: <http://www.w3.org/2006/time#>
+PREFIX BusinessService: <https://ontology.tno.nl/logistics/federated/BusinessService#>
+PREFIX dc: <http://purl.org/dc/elements/1.1/>
+PREFIX era: <http://era.europa.eu/ns#>
+
+CONSTRUCT {
+    ?s1 a Event:Event ;
+        rdfs:label ?o_label ;
+        Event:hasTimestamp ?o_hasTimestamp ;
+        Event:hasDateTimeType ?o_hasDateTimeType ;
+        Event:involvesDigitalTwin ?o_involvesDigitalTwin .
+    ?o_involvesDigitalTwin a DigitalTwin:TransportMeans ;
+        rdfs:label ?o_label_2 ;
+        era:vehicleNumber ?o_vehicleNumber .
+    ?s1 Event:involvesLocation ?o_involvesLocation .
+    ?o_involvesLocation a pi:Location ;
+        pi:cityLoCode ?o_cityLoCode ;
+        pi:cityName ?o_cityName ;
+        rdfs:comment ?o_comment .
+    ?s1 Event:involvesBusinessTransaction ?o_involvesBusinessTransaction .
+    ?o_involvesBusinessTransaction a businessService:Consignment ;
+        BusinessService:consignmentCreationTime ?o_consignmentCreationTime ;
+        dc:creator ?o_creator .
+    ?s1 Event:hasName ?o_hasName ;
+        Event:involves ?o_involves .
+    ?o_involves a pi:Terminal, pi:InfrastructuralObject ;
+        rdfs:label ?o_label_3 ;
+        rdfs:comment ?o_comment_2 .
+} WHERE {
+    SERVICE <rdf-mapper:ontorefine:2185262590453> {
+        # Columns as variables:
+        #   ?c_consignmentId, ?c_eventTransactionId, ?c_eventSubmissionTime, ?c_eventName,
+        #   ?c_senderOrgName, ?c_originatorId, ?c_originatorName, ?c_carrierBookingNumber,
+        #   ?c_eventType, ?c_EventType, ?c_tranportmeans, ?c_dateTimeType, ?c_sentFromInternal,
+        #   ?c_subEvType, ?c_eventDownloadTime, ?c_eventOccurrenceTime, ?c_vehicleId,
+        #   ?c_voyageId, ?c_transportationPhase, ?c_terminal, ?c_terminalDescription,
+        #   ?c_transportPlanIssuanceTime, ?c_transportPlanSequenceNumber, ?c_transportPlanTotalNumber,
+        #   ?c_fullStatus, ?c_locationType, ?c_locationValue, ?c_locationDescription,
+        #   ?c_status, ?c_consignmentCreationTime, ?c_consignmentUpdateTime, ?c_createdBy,
+        #   ?c_consignmentDownloadTime
+        # Metadata as variables:
+        #   ?row_index, ?record_id
+        BIND(IRI(mapper:encode_iri(ex:Event\/, ?c_eventTransactionId)) as ?s1)
+        BIND(STRDT(?c_EventType, xsd:string) as ?o_label)
+        BIND(STRDT(?c_eventOccurrenceTime, xsd:dateTime) as ?o_hasTimestamp)
+        BIND(STRDT(?c_dateTimeType, xsd:string) as ?o_hasDateTimeType)
+        BIND(IRI(mapper:encode_iri(ex:DigitalTwin\/, ?c_eventTransactionId)) as ?o_involvesDigitalTwin)
+        BIND(STRDT(?c_tranportmeans, xsd:string) as ?o_label_2)
+        BIND(STRDT(?c_vehicleId, xsd:string) as ?o_vehicleNumber)
+        BIND(IRI(mapper:encode_iri(ex:Location\/, ?c_eventTransactionId)) as ?o_involvesLocation)
+        BIND(STRDT(?c_locationType, xsd:string) as ?o_cityLoCode)
+        BIND(STRDT(?c_locationValue, xsd:string) as ?o_cityName)
+        BIND(STRDT(?c_locationDescription, xsd:string) as ?o_comment)
+        BIND(IRI(mapper:encode_iri(ex:businessTransaction\/, ?c_eventTransactionId)) as ?o_involvesBusinessTransaction)
+        BIND(STRDT(?c_consignmentCreationTime, xsd:dateTime) as ?o_consignmentCreationTime)
+        BIND(STRDT(?c_createdBy, xsd:string) as ?o_creator)
+        BIND(STRDT(?c_eventName, xsd:string) as ?o_hasName)
+        BIND(IRI(mapper:encode_iri(ex:physicalInfrastructure\/, ?c_eventTransactionId)) as ?o_involves)
+        BIND(STRDT(?c_terminal, xsd:string) as ?o_label_3)
+        BIND(STRDT(?c_terminalDescription, xsd:string) as ?o_comment_2)
+    }
+}
