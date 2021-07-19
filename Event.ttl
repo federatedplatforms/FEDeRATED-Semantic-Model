@@ -1,4 +1,5 @@
 # baseURI: https://ontology.tno.nl/logistics/federated/Event
+# imports: http://datashapes.org/dash
 # imports: https://ontology.tno.nl/logistics/federated/BusinessService
 # imports: https://ontology.tno.nl/logistics/federated/Classifications
 # imports: https://ontology.tno.nl/logistics/federated/DigitalTwin
@@ -28,6 +29,7 @@
   dcterms:requires <https://ontology.tno.nl/logistics/federated/BusinessService> ;
   dcterms:requires <https://ontology.tno.nl/logistics/federated/DigitalTwin> ;
   dcterms:requires <https://ontology.tno.nl/logistics/federated/PhysicalInfrastructure> ;
+  owl:imports <http://datashapes.org/dash> ;
   owl:imports <https://ontology.tno.nl/logistics/federated/BusinessService> ;
   owl:imports <https://ontology.tno.nl/logistics/federated/Classifications> ;
   owl:imports <https://ontology.tno.nl/logistics/federated/DigitalTwin> ;
@@ -55,6 +57,11 @@ Event:ArrivalEvent
   rdf:type owl:Class ;
   rdfs:comment "An Arrival Event is an association between a Digital Twin type TransportMeans and a location. It should have milestone Start." ;
   rdfs:label "Arrival Event" ;
+  rdfs:subClassOf Event:AtomicEvent ;
+.
+Event:AtomicEvent
+  rdf:type owl:Class ;
+  rdfs:label "Located At" ;
   rdfs:subClassOf Event:Event ;
 .
 Event:BulkDischarge
@@ -74,10 +81,22 @@ Event:BulkTransportEvent
   rdfs:label "Has Manager" ;
   rdfs:subClassOf Event:CargoEvent ;
 .
+Event:CallEvent
+  rdf:type owl:Class ;
+  rdfs:comment "A Call Event contains the sequence of Events taking place at a place of call." ;
+  rdfs:label "Call Event" ;
+  rdfs:subClassOf Event:ComplexEvent ;
+.
 Event:CargoEvent
   rdf:type owl:Class ;
   rdfs:comment "A Cargo event is any event that associates goods, equipment or bulk products with the Digital Twin that transports it." ;
   rdfs:label "Cargo Event" ;
+  rdfs:subClassOf Event:AtomicEvent ;
+.
+Event:ComplexEvent
+  rdf:type owl:Class ;
+  rdfs:comment "A Complex Event creates an association between several Events." ;
+  rdfs:label "Complex Event" ;
   rdfs:subClassOf Event:Event ;
 .
 Event:ContainerDischargeEvent
@@ -104,7 +123,7 @@ Event:DepartureEvent
   rdf:type owl:Class ;
   rdfs:comment "A Departure Event is an association between a Digital Twin type TransportMeans and a Location. It should have milestone End." ;
   rdfs:label "Departure Event" ;
-  rdfs:subClassOf Event:Event ;
+  rdfs:subClassOf Event:AtomicEvent ;
 .
 Event:DischargeEvent
   rdf:type owl:Class ;
@@ -114,13 +133,13 @@ Event:DropOffEvent
   rdf:type owl:Class ;
   rdfs:comment "An Event for dropping off a piece of equipment at a particular location." ;
   rdfs:label "Drop Off Event" ;
-  rdfs:subClassOf Event:Event ;
+  rdfs:subClassOf Event:AtomicEvent ;
 .
 Event:DropOffTimeWindowEvent
   rdf:type owl:Class ;
   rdfs:comment "An event to cover the intended time window during which some cargo may be dropped off. So, an association between a time interval and an equipment." ;
   rdfs:label "Drop Off Time Window Event" ;
-  rdfs:subClassOf Event:Event ;
+  rdfs:subClassOf Event:AtomicEvent ;
 .
 Event:ETAEvent
   rdf:type owl:Class ;
@@ -198,7 +217,7 @@ Event:GoodsStructuringEvent
   rdf:type owl:Class ;
   rdfs:comment "Events forming an association between two transportable objects (i.e., products or goods)." ;
   rdfs:label "Transportable Object Event" ;
-  rdfs:subClassOf Event:Event ;
+  rdfs:subClassOf Event:AtomicEvent ;
 .
 Event:GoodsTransportEvent
   rdf:type owl:Class ;
@@ -220,6 +239,12 @@ Event:Milestone
   rdfs:comment "Each Event should have a Milestone associated with it. At the moment, only Start and End are allowed milestones. All allowed Milestone should be of this type." ;
   rdfs:subClassOf owl:Thing ;
 .
+Event:MilkRun
+  rdf:type owl:Class ;
+  rdfs:comment "A Milk Run is a sequence of places of call." ;
+  rdfs:label "Milk Run" ;
+  rdfs:subClassOf Event:ComplexEvent ;
+.
 Event:PackagingEvent
   rdf:type owl:Class ;
   rdfs:comment "An event assocation between transportable objects (Goods or Products) to show that one has been packaged into the other." ;
@@ -229,13 +254,13 @@ Event:PackagingEvent
 Event:PickupEvent
   rdf:type owl:Class ;
   rdfs:label "Pick Up Event" ;
-  rdfs:subClassOf Event:Event ;
+  rdfs:subClassOf Event:AtomicEvent ;
 .
 Event:PickupTimeWindowEvent
   rdf:type owl:Class ;
   rdfs:comment "Event for the time window between which a piece of equipment may be picked up." ;
   rdfs:label "Pick Up Time Window Event" ;
-  rdfs:subClassOf Event:Event ;
+  rdfs:subClassOf Event:AtomicEvent ;
 .
 Event:Planned
   rdf:type Event:DateTimeType ;
@@ -367,6 +392,14 @@ Event:involvesDigitalTwin
   rdfs:domain Event:Event ;
   rdfs:label "Involves Digital Twin" ;
   rdfs:range DigitalTwin:PhysicalObject ;
+  rdfs:subPropertyOf Event:involves ;
+.
+Event:involvesEvent
+  rdf:type owl:ObjectProperty ;
+  rdfs:comment "An association between a complex event and its associated event is made." ;
+  rdfs:domain Event:ComplexEvent ;
+  rdfs:label "Involves Event" ;
+  rdfs:range Event:Event ;
   rdfs:subPropertyOf Event:involves ;
 .
 Event:involvesLogisticsActor

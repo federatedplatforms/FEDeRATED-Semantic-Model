@@ -56,7 +56,7 @@
       sh:maxCount 2;
       sh:name "has two associations";
     ] ;
-    sh:targetClass event:Event ;
+    sh:targetClass event:AtomicEvent ;
 .
 # to be moved to a separate shape  
 #  sh:property [

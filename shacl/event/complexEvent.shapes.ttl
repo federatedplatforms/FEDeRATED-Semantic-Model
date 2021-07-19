@@ -1,0 +1,86 @@
+# baseURI: https://ontology.tno.nl/logistics/federated/complexEvent
+# imports: http://datashapes.org/dash
+# prefix: complexEvent
+
+@prefix : <https://ontology.tno.nl/logistics/federated/complexEvent#>
+@prefix complexEvent: <https://ontology.tno.nl/logistics/federated/complexEvent#> .
+@prefix dash: <http://datashapes.org/dash#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix event: <https://ontology.tno.nl/logistics/federated/Event#>
+
+<https://ontology.tno.nl/logistics/federated/complexEvent>
+  rdf:type owl:Ontology ;
+  owl:imports <http://datashapes.org/dash> ;
+  owl:versionInfo "Created with TopBraid Composer" ;
+.
+
+:ComplexEventShape 
+  rdf:type sh:NodeShape ;
+  sh:name "Complex Event Shape";
+  sh:description "A Complex Event contains several associations to other atomic or complex events. It cannot contain associations to DTs, Locations, etc.";
+  sh:property [
+    rdf:type sh:PropertyShape ;
+    sh:path event:involvesEvent ;
+    sh:class event:Event ;
+  ] ;
+  sh:targetClass event:ComplexEvent ;
+.
+
+:CallEventShape 
+  rdf:type sh:NodeShape ;
+  sh:name "Place of Call Event Shape";
+  sh:description "Example shape for the place of call described in Wout's flow diagram.";
+  sh:property [
+    rdf:type sh:PropertyShape ;
+    sh:description "This Event should contain an association to an actual ArrivalEvent.";
+    sh:path event:involvesEvent ;
+    sh:class event:ATAEvent ;
+    sh:minCount 1;
+    sh:maxCount 1;
+  ] ;
+  sh:property [
+    rdf:type sh:PropertyShape ;
+    sh:description "This Event should contain an association to an actual DepartureEvent.";
+    sh:path event:involvesEvent ;
+    sh:class event:ATDEvent;
+    sh:minCount 1;
+    sh:maxCount 1;
+  ] ;
+  sh:property [
+    rdf:type sh:PropertyShape ;
+    sh:description "At least one discharge or load should happen at the place of call.";
+    sh:path event:involvesEvent;
+    sh:or (
+      [sh:class event:DischargeEvent ;]
+      [sh:class event:LoadEvent ; ]
+    ) ;
+    sh:minCount 1;
+  ];
+  sh:property [
+    rdf:type sh:PropertyShape ;
+    sh:description "The Arrival Event should have the earliest timestamp.";
+    sh:deactivated true;
+  ] ;
+  sh:property [
+    rdf:type sh:PropertyShape ;
+    sh:description "The Departure Event should have the latest timestamp.";
+    sh:deactivated true;
+  ];
+  sh:targetClass event:CallEvent ;
+.
+
+:MilkRunShape
+  rdf:type sh:NodeShape ;
+  sh:name "Milk Run Shape";
+  sh:description "A Milk Run is a sequence of places of call (following Wout's example flow diagram).";
+  sh:property [
+    rdf:type sh:PropertyShape ;
+    sh:path event:involvesEvent ;
+    sh:class event:CallEvent ;
+  ] ;
+  sh:targetClass event:MilkRun ;
+]
