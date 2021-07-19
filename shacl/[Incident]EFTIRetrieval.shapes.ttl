@@ -57,7 +57,7 @@
 @prefix era-tpls: <http://era.europa.eu/concepts/train-protection-legacy-systems#> .
 @prefix era-vehicle-types: <http://era.europa.eu/concepts/vehicle-types#> .
 @prefix eu-countries: <http://publications.europa.eu/resource/authority/country/> .
-@prefix event: <https://ontology.tno.nl/logistics/federated/shapes/event#> .
+@prefix eventShacl: <https://ontology.tno.nl/logistics/federated/shapes/event#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix geosparql: <http://www.opengis.net/ont/geosparql#> .
 @prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
@@ -292,7 +292,7 @@ retrieve:TransportMeansShape
   sh:property [
       a sh:PropertyShape ;
       sh:path DigitalTwin:hasTransportMeansID ;
-      sh:datatype xsd:string ;
+      sh:datatype xsd:integer ;
       sh:minCount 1 ;
       sh:name "has transport means ID" ;
     ] ;
@@ -313,7 +313,7 @@ retrieve:TruckShape
   sh:property [
       a sh:PropertyShape ;
       sh:path DigitalTwin:hasVIN ;
-      sh:datatype xsd:string ;
+      sh:datatype xsd:integer ;
       sh:minCount 1 ;
       sh:maxCount 1;
       sh:name "VIN" ;
@@ -325,43 +325,4 @@ retrieve:TruckShape
       sh:name "VIN equals ID" ;
     ] ; 
   sh:targetClass DigitalTwin:Truck ;
-.
-:EventTypeShape
-  rdf:type sh:NodeShape ;
-  rdfs:label "Event Shape" ;
-  sh:property [
-      rdf:type sh:PropertyShape ;
-      sh:path event:hasDateTimeType ;
-      sh:class event:DateTimeType ;
-      sh:minCount 2 ;
-      sh:maxCount 2 ;
-      sh:name "has date" ;
-       sh:nodeKind sh:IRI
-    ] ;
-  sh:property [
-      rdf:type sh:PropertyShape ;
-      sh:path event:hasMilestone ;
-      sh:class event:Milestone ;
-      sh:minCount 1 ;
-      sh:maxCount 1;
-      sh:name "has milestone" ;
-       sh:nodeKind sh:IRI
-    ] ;
-  sh:property [
-      rdf:type sh:PropertyShape ;
-      sh:path event:hasTimestamp ;
-      sh:datatype xsd:dateTime ;
-      sh:minCount 1 ;
-      sh:maxCount 1 ;
-      sh:name "has event type" ;
-    ] ;
-    sh:property [
-      rdf:type sh:PropertyShape ;
-      sh:path event:involves ;
-      sh:nodeKind sh:IRI ;
-      sh:minCount 2;
-      sh:maxCount 2;
-      sh:name "has two associations";
-    ] ;
-    sh:targetClass event:Event ;
 .
