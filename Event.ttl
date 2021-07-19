@@ -59,7 +59,7 @@ Event:ArrivalEvent
 .
 Event:BulkDischarge
   rdf:type owl:Class ;
-  rdfs:label "Has Manager" ;
+  rdfs:label "Bulk Discharge" ;
   rdfs:subClassOf Event:BulkTransportEvent ;
   rdfs:subClassOf Event:DischargeEvent ;
 .
