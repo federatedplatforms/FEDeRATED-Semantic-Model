@@ -77,7 +77,7 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://ontology.tno.nl/logistics/federated/search>
-  a owl:Ontology ;
+  rdf:type owl:Ontology ;
   owl:imports <http://datashapes.org/dash> ;
   owl:imports <http://www.w3.org/2004/02/skos/core> ;
   owl:imports <https://ontology.tno.nl/logistics/federated/BusinessService> ;
@@ -89,7 +89,7 @@
   owl:versionInfo "Created with TopBraid Composer" ;
 .
 search:CargoShape
-  a sh:NodeShape ;
+  rdf:type sh:NodeShape ;
   rdfs:label "CargoShape" ;
   sh:or (
       [
@@ -102,7 +102,7 @@ search:CargoShape
       ]
       [
         sh:property [
-            a sh:PropertyShape ;
+            rdf:type sh:PropertyShape ;
             sh:path DigitalTwin:hasUNNumber ;
             sh:datatype xsd:string ;
             sh:maxCount 1 ;
@@ -122,7 +122,7 @@ search:CargoShape
       ]
     ) ;
   sh:property [
-      a sh:PropertyShape ;
+      rdf:type sh:PropertyShape ;
       sh:path classifications:dangerouseGoodsClassification ;
       sh:class classifications:dangerouseGoodCode ;
       sh:minCount 1 ;
@@ -130,7 +130,7 @@ search:CargoShape
       sh:nodeKind sh:IRI ;
     ] ;
   sh:property [
-      a sh:PropertyShape ;
+      rdf:type sh:PropertyShape ;
       sh:path DigitalTwin:GoodsDescription ;
       sh:datatype xsd:string ;
       sh:maxCount 1 ;
@@ -138,7 +138,7 @@ search:CargoShape
       sh:name "Goods description" ;
     ] ;
   sh:property [
-      a sh:PropertyShape ;
+      rdf:type sh:PropertyShape ;
       sh:path DigitalTwin:cargoMaximumTemperature ;
       sh:datatype xsd:decimal ;
       sh:maxCount 1 ;
@@ -146,7 +146,7 @@ search:CargoShape
       sh:name "cargo maximum temperature" ;
     ] ;
   sh:property [
-      a sh:PropertyShape ;
+      rdf:type sh:PropertyShape ;
       sh:path DigitalTwin:minimumTemperature ;
       sh:datatype xsd:decimal ;
       sh:maxCount 1 ;
@@ -154,7 +154,7 @@ search:CargoShape
       sh:name "minimum temperature" ;
     ] ;
   sh:property [
-      a sh:PropertyShape ;
+      rdf:type sh:PropertyShape ;
       sh:path DigitalTwin:natureOfCargo ;
       sh:class classifications:natureOfCargo ;
       sh:minCount 1 ;
@@ -162,7 +162,7 @@ search:CargoShape
       sh:nodeKind sh:IRI ;
     ] ;
   sh:property [
-      a sh:PropertyShape ;
+      rdf:type sh:PropertyShape ;
       sh:path DigitalTwin:numberofPackages ;
       sh:datatype xsd:integer ;
       sh:maxCount 1 ;
@@ -170,7 +170,7 @@ search:CargoShape
       sh:name "number of pakcage" ;
     ] ;
   sh:property [
-      a sh:PropertyShape ;
+      rdf:type sh:PropertyShape ;
       sh:path DigitalTwin:packagingType ;
       sh:class classifications:packageType ;
       sh:maxCount 1 ;
@@ -179,7 +179,7 @@ search:CargoShape
       sh:nodeKind sh:IRI ;
     ] ;
   sh:property [
-      a sh:PropertyShape ;
+      rdf:type sh:PropertyShape ;
       sh:path DigitalTwin:tareWeight ;
       sh:datatype xsd:integer ;
       sh:maxCount 1 ;
@@ -189,31 +189,31 @@ search:CargoShape
   sh:targetClass DigitalTwin:Goods ;
 .
 search:ContactShape
-  a sh:NodeShape ;
+  rdf:type sh:NodeShape ;
   rdfs:label "ContactShape" ;
   sh:property [
-      a sh:PropertyShape ;
+      rdf:type sh:PropertyShape ;
       sh:path businessService:actorName ;
       sh:datatype xsd:string ;
       sh:maxCount 1 ;
       sh:name "actor name" ;
     ] ;
   sh:property [
-      a sh:PropertyShape ;
+      rdf:type sh:PropertyShape ;
       sh:path businessService:actorWebsite ;
       sh:datatype xsd:string ;
       sh:maxCount 1 ;
       sh:name "actor website" ;
     ] ;
   sh:property [
-      a sh:PropertyShape ;
+      rdf:type sh:PropertyShape ;
       sh:path businessService:involvedRole ;
       sh:class LogisticsRoles:ActorRoles ;
       sh:maxCount 1 ;
       sh:name "involved role" ;
     ] ;
   sh:property [
-      a sh:PropertyShape ;
+      rdf:type sh:PropertyShape ;
       sh:path businessService:phoneNumber ;
       sh:datatype xsd:string ;
       sh:maxCount 1 ;
@@ -222,10 +222,10 @@ search:ContactShape
   sh:targetClass LogisticsRoles:ContactPerson ;
 .
 search:EventTypeShape
-  a sh:NodeShape ;
+  rdf:type sh:NodeShape ;
   rdfs:label "Event Shape" ;
   sh:property [
-      a sh:PropertyShape ;
+      rdf:type sh:PropertyShape ;
       sh:path Event:ExpectedDropOffDate ;
       sh:datatype xsd:dateTime ;
       sh:maxCount 1 ;
@@ -233,7 +233,7 @@ search:EventTypeShape
       sh:name "Expected drop off date" ;
     ] ;
   sh:property [
-      a sh:PropertyShape ;
+      rdf:type sh:PropertyShape ;
       sh:path Event:hasDate ;
       sh:class Event:Date ;
       sh:minCount 1 ;
@@ -241,7 +241,7 @@ search:EventTypeShape
       sh:nodeKind sh:IRI ;
     ] ;
   sh:property [
-      a sh:PropertyShape ;
+      rdf:type sh:PropertyShape ;
       sh:path Event:hasDropOffTime ;
       sh:datatype xsd:dateTime ;
       sh:maxCount 1 ;
@@ -249,7 +249,7 @@ search:EventTypeShape
       sh:name "has drop off time" ;
     ] ;
   sh:property [
-      a sh:PropertyShape ;
+      rdf:type sh:PropertyShape ;
       sh:path Event:hasEventType ;
       sh:class Event:Event ;
       sh:minCount 1 ;
@@ -257,7 +257,7 @@ search:EventTypeShape
       sh:nodeKind sh:IRI ;
     ] ;
   sh:property [
-      a sh:PropertyShape ;
+      rdf:type sh:PropertyShape ;
       sh:path Event:hasMilestone ;
       sh:class Event:Milestone ;
       sh:minCount 1 ;
@@ -265,7 +265,7 @@ search:EventTypeShape
       sh:nodeKind sh:IRI ;
     ] ;
   sh:property [
-      a sh:PropertyShape ;
+      rdf:type sh:PropertyShape ;
       sh:path Event:hasPickupTime ;
       sh:datatype xsd:dateTime ;
       sh:maxCount 1 ;
@@ -273,7 +273,7 @@ search:EventTypeShape
       sh:name "has pick UPTime" ;
     ] ;
   sh:property [
-      a sh:PropertyShape ;
+      rdf:type sh:PropertyShape ;
       sh:path Event:hasTimestamp ;
       sh:class Event:Event ;
       sh:minCount 1 ;
@@ -281,7 +281,7 @@ search:EventTypeShape
       sh:nodeKind sh:IRI ;
     ] ;
   sh:property [
-      a sh:PropertyShape ;
+      rdf:type sh:PropertyShape ;
       sh:path Event:involvesBusinessTransaction ;
       sh:class businessService:BusinessTransaction ;
       sh:minCount 1 ;
@@ -289,7 +289,7 @@ search:EventTypeShape
       sh:nodeKind sh:IRI ;
     ] ;
   sh:property [
-      a sh:PropertyShape ;
+      rdf:type sh:PropertyShape ;
       sh:path Event:involvesDigitalTwin ;
       sh:class DigitalTwin:DigitalTwin ;
       sh:minCount 1 ;
@@ -297,35 +297,35 @@ search:EventTypeShape
       sh:nodeKind sh:IRI ;
     ] ;
   sh:property [
-      a sh:PropertyShape ;
-      sh:path Event:involvesLocation ;
-      sh:class pi:Location ;
-      sh:minCount 1 ;
-      sh:name "invovles location" ;
-      sh:nodeKind sh:IRI ;
-    ] ;
-  sh:property [
-      a sh:PropertyShape ;
+      rdf:type sh:PropertyShape ;
       sh:path Event:involvesLogisticsActor ;
       sh:class businessService:logisticsActor ;
       sh:minCount 1 ;
       sh:name "involves logistics actor" ;
       sh:nodeKind sh:IRI ;
     ] ;
+  sh:property [
+      rdf:type sh:PropertyShape ;
+      sh:path Event:involvesPhysicalInfrastructure ;
+      sh:class pi:Location ;
+      sh:minCount 1 ;
+      sh:name "invovles location" ;
+      sh:nodeKind sh:IRI ;
+    ] ;
   sh:targetClass Event:Event ;
 .
 search:LocationShape
-  a sh:NodeShape ;
+  rdf:type sh:NodeShape ;
   rdfs:label "Location Shape" ;
   sh:property [
-      a sh:PropertyShape ;
+      rdf:type sh:PropertyShape ;
       sh:path pi:LocationCoordinates ;
       sh:class wgs:SpatialThing ;
       sh:minCount 1 ;
       sh:name "Location coordinate" ;
     ] ;
   sh:property [
-      a sh:PropertyShape ;
+      rdf:type sh:PropertyShape ;
       sh:path pi:loctionRole ;
       sh:class pi:locationRole ;
       sh:minCount 1 ;
@@ -334,10 +334,10 @@ search:LocationShape
   sh:targetClass pi:Location ;
 .
 search:TrailerShape
-  a sh:NodeShape ;
+  rdf:type sh:NodeShape ;
   rdfs:label "Trailer Shape" ;
   sh:property [
-      a sh:PropertyShape ;
+      rdf:type sh:PropertyShape ;
       sh:path DigitalTwin:TrailerID ;
       sh:datatype xsd:string ;
       sh:equals DigitalTwin:hasLicensePlateNumber ;
@@ -346,10 +346,10 @@ search:TrailerShape
   sh:targetClass DigitalTwin:Trailer ;
 .
 search:TransportMeansRoutShape
-  a sh:NodeShape ;
+  rdf:type sh:NodeShape ;
   rdfs:label "Rout Shape" ;
   sh:sparql [
-      a sh:SPARQLConstraint ;
+      rdf:type sh:SPARQLConstraint ;
       sh:message "" ;
       sh:prefixes [
           sh:declare [
@@ -368,10 +368,10 @@ search:TransportMeansRoutShape
     ] ;
 .
 search:TransportMeansShape
-  a sh:NodeShape ;
+  rdf:type sh:NodeShape ;
   rdfs:label "Transport Means Shape" ;
   sh:property [
-      a sh:PropertyShape ;
+      rdf:type sh:PropertyShape ;
       sh:path DigitalTwin:hasTransportMeansNationality ;
       sh:datatype xsd:string ;
       sh:equals DigitalTwin:hasLicensePlateNumber ;
@@ -380,7 +380,7 @@ search:TransportMeansShape
       sh:name "has nationality" ;
     ] ;
   sh:property [
-      a sh:PropertyShape ;
+      rdf:type sh:PropertyShape ;
       sh:path DigitalTwin:hasTransportMeasnID ;
       sh:datatype xsd:string ;
       sh:minCount 1 ;
@@ -389,10 +389,10 @@ search:TransportMeansShape
   sh:targetClass DigitalTwin:TransportMeans ;
 .
 search:TruckShape
-  a sh:NodeShape ;
+  rdf:type sh:NodeShape ;
   rdfs:label "Truck Shape" ;
   sh:property [
-      a sh:PropertyShape ;
+      rdf:type sh:PropertyShape ;
       sh:path DigitalTwin:TruckLicencePlate ;
       sh:datatype xsd:string ;
       sh:maxCount 1 ;
@@ -400,7 +400,7 @@ search:TruckShape
       sh:pattern "[0-9]{2}-B[a-zA-Z]{2}-[0-9]" ;
     ] ;
   sh:property [
-      a sh:PropertyShape ;
+      rdf:type sh:PropertyShape ;
       sh:path DigitalTwin:VIN ;
       sh:datatype xsd:string ;
       sh:minCount 1 ;
