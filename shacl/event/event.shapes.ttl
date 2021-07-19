@@ -25,7 +25,7 @@
       rdf:type sh:PropertyShape ;
       sh:path event:hasDateTimeType ;
       sh:class event:DateTimeType ;
-      sh:minCount 2 ;
+      sh:minCount 1 ;
       sh:maxCount 1 ;
       sh:name "has date" ;
        sh:nodeKind sh:IRI
@@ -97,11 +97,11 @@
   sh:property [
     rdf:type sh:PropertyShape ;
     sh:path event:involvesDigitalTwin ;
-    sh:class DT:DigitalTwin ;
+    sh:class DT:TransportMeans ;
     sh:minCount 1 ;
     sh:maxCount 1 ;
     sh:nodeKind sh:IRI ;
-    sh:name "Involves Digital Twin"
+    sh:name "Involves Transport Means"
   ] ;
   sh:property [
     rdf:type sh:PropertyShape ;
@@ -128,11 +128,11 @@
   sh:property [
     rdf:type sh:PropertyShape ;
     sh:path event:involvesDigitalTwin ;
-    sh:class DT:DigitalTwin ;
+    sh:class DT:TransportMeans ;
     sh:minCount 1 ;
     sh:maxCount 1 ;
     sh:nodeKind sh:IRI ;
-    sh:name "Involves Digital Twin"
+    sh:name "Involves Transport Means"
   ] ;
   sh:property [
     rdf:type sh:PropertyShape ;
@@ -161,7 +161,7 @@
     sh:path event:hasDateTimeType ;
     sh:hasValue event:Actual ;
   ] ;
-  sh:targetClass ATAEvent ;
+  sh:targetClass event:ATAEvent ;
 .
  
 :ETAEventShape 
@@ -172,7 +172,7 @@
     sh:path event:hasDateTimeType ;
     sh:hasValue event:Expected ;
   ] ;
-  sh:targetClass ETAEvent ;
+  sh:targetClass event:ETAEvent ;
 .
 
 :GoodsStructuringEventShape
@@ -182,4 +182,4 @@
     rdf:type sh:PropertyShape ;
     sh:path event:involves
   ] ;
-
+.

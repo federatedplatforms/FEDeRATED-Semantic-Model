@@ -20,7 +20,7 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://ontology.tno.nl/logistics/federated/data/eventSample>
-  a owl:Ontology ;
+  rdf:type owl:Ontology ;
   dcterms:description "This ttl file contains sample event data." ;
   owl:imports <http://purl.org/dc/elements/1.1/> ;
   owl:imports dcterms: ;
@@ -33,15 +33,15 @@
   owl:versionInfo "Created with TopBraid Composer" ;
 .
 :ATAEvent_1
-  a Event:ATAEvent ;
+  rdf:type Event:ATAEvent ;
   Event:hasDateTimeType Event:Actual ;
   Event:hasMilestone Event:Start ;
   Event:hasTimestamp "2021-06-28T11:55:37.567"^^xsd:dateTime ;
   Event:involvesDigitalTwin :Truck_1 ;
-  Event:involvesLocation :Location_1 ;
+  Event:involvesPhysicalInfrastructure :Location_1 ;
 .
 :DischargeEvent_1
-  a Event:DischargeEvent ;
+  rdf:type Event:DischargeEvent ;
   rdfs:label "Discharge event 1" ;
   Event:hasDateTimeType Event:Actual ;
   Event:hasMilestone Event:End ;
@@ -50,11 +50,11 @@
   Event:involvesDigitalTwin :Truck_1 ;
 .
 :GoodsTypeCode_1
-  a classifications:GoodsTypeCode ;
+  rdf:type classifications:GoodsTypeCode ;
   rdfs:label "Goods type code 1" ;
 .
 :Goods_1
-  a DigitalTwin:Goods ;
+  rdf:type DigitalTwin:Goods ;
   rdfs:label "Goods 1" ;
   DigitalTwin:cargoMaxSize 100 ;
   DigitalTwin:goodsTypeCode :GoodsTypeCode_1 ;
@@ -63,21 +63,21 @@
   DigitalTwin:natureOfCargo classifications:E ;
 .
 :Location_1
-  a pi:Location ;
+  rdf:type pi:Location ;
   rdfs:label "Location 1" ;
   pi:cityName "Rotterdam"^^xsd:anySimpleType ;
   pi:countryName "Netherlands" ;
 .
 :SeaContainer_1
-  a DigitalTwin:SeaContainer ;
+  rdf:type DigitalTwin:SeaContainer ;
   rdfs:label "Sea container 1" ;
   DigitalTwin:containerID "2847584DGBDK" ;
   DigitalTwin:damageRemarks "graffiti" ;
-  DigitalTwin:isEmpty false ;
-  DigitalTwin:isFull false ;
+  DigitalTwin:isEmpty "false"^^xsd:boolean ;
+  DigitalTwin:isFull "false"^^xsd:boolean ;
 .
 :StripEvent_1
-  a Event:StripEvent ;
+  rdf:type Event:StripEvent ;
   rdfs:label "Strip event 1" ;
   Event:hasDateTimeType Event:Expected ;
   Event:hasMilestone Event:End ;
@@ -86,9 +86,10 @@
   Event:involvesDigitalTwin :SeaContainer_1 ;
 .
 :Truck_1
-  a DigitalTwin:Truck ;
+  rdf:type DigitalTwin:Truck ;
   rdfs:label "Truck 1" ;
   DigitalTwin:damageRemarks "scratch rear bumper" ;
   DigitalTwin:hasLicensePlateNumber "00-BBB-1" ;
-  DigitalTwin:hasTransportMeansID "189493081928" ;
+  DigitalTwin:hasTransportMeansID 189493081928 ;
+  DigitalTwin:hasVIN 189493081928 ;
 .
