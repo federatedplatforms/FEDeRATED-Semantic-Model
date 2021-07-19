@@ -61,11 +61,13 @@ Event:BulkDischarge
   rdf:type owl:Class ;
   rdfs:label "Has Manager" ;
   rdfs:subClassOf Event:BulkTransportEvent ;
+  rdfs:subClassOf Event:DischargeEvent ;
 .
 Event:BulkLoadEvent
   rdf:type owl:Class ;
   rdfs:label "Has Manager" ;
   rdfs:subClassOf Event:BulkTransportEvent ;
+  rdfs:subClassOf Event:LoadEvent ;
 .
 Event:BulkTransportEvent
   rdf:type owl:Class ;
@@ -82,6 +84,7 @@ Event:ContainerDischargeEvent
   rdf:type owl:Class ;
   rdfs:comment "In a Container Discharge Event an equipment of type Container is discharged from its transportation means." ;
   rdfs:label "Container Discharge Event" ;
+  rdfs:subClassOf Event:DischargeEvent ;
   rdfs:subClassOf Event:EquipmentTransportEvent ;
 .
 Event:ContainerLoadEvent
@@ -140,6 +143,7 @@ Event:EquipmentLoadEvent
   rdfs:comment "With a Cargo Load Event an association between equipment and transport means is established, because the equipment is loaded on the transport means." ;
   rdfs:label "Cargo Load Event" ;
   rdfs:subClassOf Event:EquipmentTransportEvent ;
+  rdfs:subClassOf Event:LoadEvent ;
 .
 Event:EquipmentTransportEvent
   rdf:type owl:Class ;
@@ -174,6 +178,7 @@ Event:Expected
 Event:GoodsDischargeEvent
   rdf:type owl:Class ;
   rdfs:label "Has Manager" ;
+  rdfs:subClassOf Event:DischargeEvent ;
   rdfs:subClassOf Event:GoodsTransportEvent ;
 .
 Event:GoodsEquipmentEvent
@@ -187,6 +192,7 @@ Event:GoodsLoadEvent
   rdfs:comment "Association Transport Means - Goods. Load goods without intermediate equipment." ;
   rdfs:label "Has Manager" ;
   rdfs:subClassOf Event:GoodsTransportEvent ;
+  rdfs:subClassOf Event:LoadEvent ;
 .
 Event:GoodsStructuringEvent
   rdf:type owl:Class ;
