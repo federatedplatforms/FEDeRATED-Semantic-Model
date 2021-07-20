@@ -96,6 +96,7 @@ Event:CargoEvent
 Event:ComplexEvent
   rdf:type owl:Class ;
   rdfs:comment "A Complex Event creates an association between several Events." ;
+  rdfs:comment "Abstract class." ;
   rdfs:label "Complex Event" ;
   rdfs:subClassOf Event:Event ;
 .
