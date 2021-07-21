@@ -166,3 +166,19 @@ derivedConcept:contains
 derivedConcept:involves
   rdf:type owl:ObjectProperty ;
 .
+
+# shipment IS Modeled with SHACL entailment -- needs review.
+#:Shipment a sh:NodeShape, rdfs:Class ;
+ # sh:property [
+ #sh:path Event:hasLogisticActor ;
+ #  sh:class    LogisticsRoles:Carrier ;
+ #  sh:minCount 1
+ # ];
+ # sh:property [
+ #  sh:path rdf:type ;
+ #  sh:qualifiedValueShape [
+ #        sh:hasValue businessTransaction:BusinessTransaction ;
+ #  ] ;
+ #  sh:minCount 1
+ # ] .
+

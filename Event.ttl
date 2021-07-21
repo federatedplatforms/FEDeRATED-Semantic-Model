@@ -71,7 +71,7 @@ Event:BulkLoadEvent
 .
 Event:BulkTransportEvent
   rdf:type owl:Class ;
-  rdfs:label "Has Manager" ;
+  rdfs:label "Bulk Transport Event" ;
   rdfs:subClassOf Event:CargoEvent ;
 .
 Event:CargoEvent
