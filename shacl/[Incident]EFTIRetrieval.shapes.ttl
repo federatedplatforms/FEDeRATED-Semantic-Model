@@ -305,7 +305,7 @@ retrieve:TruckShape
       a sh:PropertyShape ;
       sh:path DigitalTwin:hasLicensePlateNumber ;
       sh:datatype xsd:string ;
-      sh:minCount 1 ;
+#      sh:minCount 1 ;
       sh:maxCount 1 ;
       sh:name "Truck licence plate" ;
       sh:pattern "[0-9]{2}-B[a-zA-Z]{2}-[0-9]" ;
