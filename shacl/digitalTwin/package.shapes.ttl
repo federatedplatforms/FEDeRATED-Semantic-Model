@@ -1,0 +1,54 @@
+# baseURI: https://ontology.tno.nl/logistics/federated/shapes/package
+# imports: http://datashapes.org/dash
+
+@prefix : <https://ontology.tno.nl/logistics/federated/shapes/package#> .
+@prefix dash: <http://datashapes.org/dash#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix DT: <https://ontology.tno.nl/logistics/federated/DigitalTwin#> .
+@prefix event: <https://ontology.tno.nl/logistics/federated/Event#> .
+@prefix pi: <https://ontology.tno.nl/logistics/federated/PhysicalInfrastructure#> .
+@prefix classifications: <https://ontology.tno.nl/logistics/federated/Classifications#> .
+
+<https://ontology.tno.nl/logistics/federated/shapes/package>
+    a owl:Ontology ;
+    owl:imports <http://datashapes.org/dash> ;
+    owl:versionInfo "Created with Topbraid Composer" ;
+.
+
+:PackageShape
+    rdf:type sh:NodeShape ;
+    sh:name "Package Shape" ;
+    sh:description "A Package has a package type numeric code, package code and package type name." ;
+    sh:property [
+        rdf:type sh:PropertyShape ;
+        sh:path DT:packageTypeNumericCode ;
+        sh:class classifications:PackageTypeNumericCode ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:name "has package type numeric code" ;
+        sh:nodeKind sh:IRI
+    ] ;
+    sh:property [
+        rdf:type sh:PropertyShape ;
+        sh:path DT:packageCode ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:name "has package code" ;
+        sh:nodeKind sh:IRI
+    ] ;
+    sh:property [
+        rdf:type sh:PropertyShape ;
+        sh:path DT:packageTypeName ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:name "has package type name" ;
+        sh:nodeKind sh:IRI
+    ] ;
+    sh:targetClass DT:Package ;
+.
