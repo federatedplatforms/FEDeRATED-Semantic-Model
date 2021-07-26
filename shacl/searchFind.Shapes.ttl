@@ -227,10 +227,10 @@ searchFind:LocationShape
 searchFind:ParcelShape
   a sh:NodeShape ;
 .
-searchFind:PareclShape
+searchFind:ParcelShape
   a sh:NodeShape ;
 .
-searchFind:TempratureShape
+searchFind:TemperatureShape
   a sh:NodeShape ;
 .
 searchFind:TransportEventShape

@@ -111,7 +111,7 @@ derivedConcept:Itinerary
 derivedConcept:LocatedAt
   rdf:type owl:ObjectProperty ;
 .
-derivedConcept:Rout
+derivedConcept:Route
   rdf:type owl:Class ;
   rdf:type sh:NodeShape ;
   rdfs:comment "the use of the infrastructure (sea, road, rail, etc.) taken by a transport means between any two locations of its itinerary. A route is also expressed as in data properties and associations of the semantic model. " ;

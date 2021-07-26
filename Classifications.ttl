@@ -96,7 +96,7 @@ classifications:E
 .
 classifications:EquipmentTypeCode
   rdf:type owl:Class ;
-  rdfs:comment "an enumeration of euqipment type codes." ;
+  rdfs:comment "an enumeration of equipment type codes." ;
   rdfs:label "Equipment Type Code" ;
   rdfs:subClassOf classifications:Classifications ;
 .
