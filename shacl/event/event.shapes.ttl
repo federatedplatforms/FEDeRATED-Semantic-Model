@@ -52,9 +52,6 @@
       rdf:type sh:PropertyShape ;
       sh:path event:involves ;
       sh:nodeKind sh:IRI ;
-      sh:minCount 2;
-      sh:maxCount 2;
-      sh:name "has two associations";
     ] ;
     sh:targetClass event:Event ;
 .
@@ -192,6 +189,8 @@
       [ sh:class DT:Package ; ]
       [ sh:class DT:Goods ; ]
     ) ;
+    sh:minCount 1;
+    sh:maxCount 1;
   ] ;
   sh:targetClass event:GoodsStructuringEvent ;
 .
