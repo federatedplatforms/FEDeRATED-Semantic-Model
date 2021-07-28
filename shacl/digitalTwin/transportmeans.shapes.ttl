@@ -1,0 +1,108 @@
+# baseURI: https://ontology.tno.nl/logistics/federated/shapes/transportmeans
+# imports: http://datashapes.org/dash
+
+@prefix : <https://ontology.tno.nl/logistics/federated/shapes/transportmeans#> .
+@prefix dash: <http://datashapes.org/dash#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix DT: <https://ontology.tno.nl/logistics/federated/DigitalTwin#> .
+@prefix event: <https://ontology.tno.nl/logistics/federated/Event#> .
+@prefix pi: <https://ontology.tno.nl/logistics/federated/PhysicalInfrastructure#> .
+@prefix classifications: <https://ontology.tno.nl/logistics/federated/Classifications#> .
+
+<https://ontology.tno.nl/logistics/federated/shapes/transportmeans>
+    a owl:Ontology ;
+    owl:imports <http://datashapes.org/dash> ;
+    owl:versionInfo "Created with Topbraid Composer" ;
+.
+
+:TransportMeansShape
+    rdf:type sh:NodeShape ;
+    sh:name "Transport Means Shape" ;
+    sh:description "A transportmeans has a transportmeans ID and a transport means nationality." ;
+    sh:property [
+        rdf:type sh:PropertyShape ;
+        sh:path DT:hasTransportMeansID ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:name "has transportmeans ID" ;
+        sh:nodeKind sh:IRI
+    ] ;
+    sh:property [
+        rdf:type sh:PropertyShape ;
+        sh:path DT:hasTransportMeansNationality ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:name "has transportmeans nationality" ;
+        sh:nodeKind sh:IRI
+    ] ;
+    sh:targetClass DT:TransportMeans ;
+.
+
+:LocomotiveShape
+    rdf:type sh:NodeShape ;
+    sh:description "A locomotive has a locomotive brake type and a locomotive ID." ;
+    sh:property [
+        rdf:type sh:PropertyShape ;
+        sh:path DT:locomotiveBrakeType ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:name "has locomotive brake type" ;
+        sh:nodeKind sh:IRI
+    ] ;
+    sh:property [
+        rdf:type sh:PropertyShape ;
+        sh:path DT:locomotiveID ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:name "has locomotive ID" ;
+        sh:nodeKind sh:IRI
+    ] ;
+    sh:targetClass DT:Locomotive ;
+.
+
+:Truck
+    rdf:type sh:NodeShape ;
+    sh:description "A truck has a truck license plate." ;
+    sh:property [
+        rdf:type sh:PropertyShape ;
+        sh:path DT:truckLicensePlate ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:name "has truck license plate" ;
+        sh:nodeKind sh:IRI
+    ] ;
+    sh:targetClass DT:Truck ;
+.
+
+:Vessel
+    rdf:type sh:NodeShape ;
+    sh:description "A vessel has a vessel name and a vessel type." ;
+    sh:property [
+        rdf:type sh:PropertyShape ;
+        sh:path DT:vesselName ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:name "has vessel name" ;
+        sh:nodeKind sh:IRI
+    ] ;
+    sh:property [
+        rdf:type sh:PropertyShape ;
+        sh:path DT:vesselType ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:name "has vessel type" ;
+        sh:nodeKind sh:IRI
+    ] ;
+    sh:targetClass DT:Vessel ;
+.
