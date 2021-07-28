@@ -1,0 +1,366 @@
+# baseURI: https://ontology.tno.nl/logistics/federated/tradelens1#
+
+@base          <https://ontology.tno.nl/logistics/federated/tradelens1#> .
+@prefix skostemplate: <http://topbraid.org/spin/skostemplates#> .
+@prefix tagger: <http://evn.topbraidlive.org/tagger#> .
+@prefix xmls:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix teamworkupdate: <http://teamworkAPI.topbraid.com/teamworkUpdate#> .
+@prefix ontologyprojects: <http://teamwork.topbraidlive.org/ontologyprojects#> .
+@prefix tops:  <http://www.topbraid.org/tops#> .
+@prefix corpus: <http://topbraid.org/corpus#> .
+@prefix swaclasses: <http://topbraid.org/swaclasses#> .
+@prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
+@prefix cgo:   <https://www.tno.nl/agrifood/ontology/common-greenhouse-ontology#> .
+@prefix spif:  <http://spinrdf.org/spif#> .
+@prefix safconfig: <http://topbraid.org/safconfig/> .
+@prefix tables: <http://topbraid.org/tables#> .
+@prefix crosswalkprojects: <http://teamwork.topbraidlive.org/crosswalkprojects#> .
+@prefix ui:    <http://uispin.org/ui#> .
+@prefix swaeditor: <http://topbraid.org/swaeditor#> .
+@prefix sm2wsdl: <http://topbraid.org/sparqlmotion/sm2wsdl.sms#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix html:  <http://uispin.org/html#> .
+@prefix spinmapl: <http://topbraid.org/spin/spinmapl#> .
+@prefix tasks: <http://topbraid.org/tasks#> .
+@prefix sosa:  <http://www.w3.org/ns/sosa/> .
+@prefix safm:  <http://saf.topbraidlive.org/metaschema/> .
+@prefix ReusableTags: <https://ontology.tno.nl/logistics/federated/ReusableTags#> .
+@prefix skosspin: <http://topbraid.org/spin/skosspin#> .
+@prefix edg:   <http://edg.topbraid.solutions/model/> .
+@prefix tbladmin: <http://server.topbraidlive.org/system-applications/tbladmin#> .
+@prefix spl:   <http://spinrdf.org/spl#> .
+@prefix classifications: <https://ontology.tno.nl/logistics/federated/Classifications#> .
+@prefix jfn:   <java:org.apache.jena.sparql.function.library.> .
+@prefix ex:    <http://example.com/base#> .
+@prefix spr:   <http://spinrdf.org/spr#> .
+@prefix lfunctions: <http://example.org/lfunctions#> .
+@prefix taxonomies: <http://evn.topbraidlive.org/evnprojects#> .
+@prefix DigitalTwin: <https://ontology.tno.nl/logistics/federated/DigitalTwin#> .
+@prefix fn:    <http://www.w3.org/2005/xpath-functions#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix sharepoint: <http://topbraid.org/sharepoint#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix datasetapp: <http://topbraid.org/swa/datasetapp#> .
+@prefix smf:   <http://topbraid.org/sparqlmotionfunctions#> .
+@prefix LogisticsRoles: <https://ontology.tno.nl/logistics/federated/LogisticsRoles#> .
+@prefix evnconstraints: <http://topbraid.org/spin/evnconstraints#> .
+@prefix swauml: <http://topbraid.org/swauml#> .
+@prefix tablesmap: <http://topbraid.org/spin/tablesmap#> .
+@prefix backspin: <http://topbraid.org/backspin#> .
+@prefix rdmprojects: <http://rdm.topbraidlive.org/rdmprojects#> .
+@prefix search: <http://topbraid.org/search#> .
+@prefix crosswalk: <http://topbraid.org/crosswalk#> .
+@prefix sml:   <http://topbraid.org/sparqlmotionlib#> .
+@prefix era:   <http://era.europa.eu/ns#> .
+@prefix savedQueries: <http://teamwork.topbraidlive.org/ui/savedQueries#> .
+@prefix tracker: <http://teamwork.topbraidlive.org/ui/tracker#> .
+@prefix sm:    <http://topbraid.org/sparqlmotion#> .
+@prefix spinmap: <http://spinrdf.org/spinmap#> .
+@prefix sp:    <http://spinrdf.org/sp#> .
+@prefix businessService: <https://ontology.tno.nl/logistics/federated/BusinessService#> .
+@prefix uix:   <http://topbraidlive.org/uix#> .
+@prefix afn:   <http://jena.hpl.hp.com/ARQ/function#> .
+@prefix swadoc: <http://topbraid.org/swadoc#> .
+@prefix lib-importer: <http://edg.topbraid.solutions/importer/lib#> .
+@prefix owlrl: <http://topbraid.org/spin/owlrl#> .
+@prefix crosswalk.spin: <http://topbraid.org/crosswalk.spin#> .
+@prefix tosh.ui: <http://topbraid.org/tosh.ui#> .
+@prefix swon:  <http://uispin.org/swon#> .
+@prefix teamwork: <http://topbraid.org/teamwork#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix pf:    <http://jena.hpl.hp.com/ARQ/property#> .
+@prefix evnui: <http://evn.topbraidlive.org/ui#> .
+@prefix spin:  <http://spinrdf.org/spin#> .
+@prefix spra:  <http://spinrdf.org/spra#> .
+@prefix Event: <https://ontology.tno.nl/logistics/federated/Event#> .
+@prefix pi:    <https://ontology.tno.nl/logistics/federated/PhysicalInfrastructure#> .
+@prefix luc:   <http://teamwork.topbraidlive.org/saf/lucene#> .
+@prefix time:  <http://www.w3.org/2006/time#> .
+@prefix swa:   <http://topbraid.org/swa#> .
+@prefix governance: <http://topbraid.org/teamworkgovernance.ui#> .
+@prefix dc:    <http://purl.org/dc/elements/1.1/> .
+
+ex:physicalInfrastructure-447850
+        a             pi:Terminal , pi:LogisticalFunction , owl:NamedIndividual ;
+        rdfs:label    "447850" ;
+        pi:locatedAt  ex:Location-USCHS .
+
+ex:Event-d971b558-69c1-4e7c-bfe6-f2c6a5aacec3
+        a                          Event:Event , owl:NamedIndividual ;
+        rdfs:label                 "Planned barge arrival" , "Arrival" ;
+        Event:hasDateTimeType      Event:Planned ;
+        Event:hasMilestone         Event:Start ;
+        Event:hasTimestamp         "2020-03-31T23:00:00"^^xsd:dateTime ;
+        Event:involvesBusinessTransaction
+                ex:businessTransaction-4c02a075-f622-4bd8-b00a-94573cd415df ;
+        Event:involvesDigitalTwin  ex:Equipment-4c02a075-f622-4bd8-b00a-94573cd415df , ex:DigitalTwin-d971b558-69c1-4e7c-bfe6-f2c6a5aacec3 ;
+        Event:involvesPhysicalInfrastructure
+                ex:physicalInfrastructure-BEWBK01 .
+
+ex:physicalInfrastructure-BEWBK01
+        a             pi:Terminal , pi:LogisticalFunction , owl:NamedIndividual ;
+        rdfs:label    "BEWBK01" ;
+        pi:locatedAt  ex:Location-BEWLB .
+
+ex:physicalInfrastructure-BEANR-K913
+        a             pi:Terminal , pi:LogisticalFunction , owl:NamedIndividual ;
+        rdfs:label    "BEANR-K913" ;
+        pi:locatedAt  ex:Location-BEANR .
+
+ex:Event-28e724ff-c8c3-403a-8b41-e6aa56349f12
+        a                          Event:Event , owl:NamedIndividual ;
+        rdfs:label                 "Arrival" , "Actual barge arrival" ;
+        Event:hasDateTimeType      Event:Actual ;
+        Event:hasMilestone         Event:Start ;
+        Event:hasTimestamp         "2019-12-13T06:34:00"^^xsd:dateTime ;
+        Event:involvesBusinessTransaction
+                ex:businessTransaction-dc1fd7fc-e02d-45a4-b193-1d8b4bffe3fe ;
+        Event:involvesDigitalTwin  ex:DigitalTwin-28e724ff-c8c3-403a-8b41-e6aa56349f12 , ex:Equipment-dc1fd7fc-e02d-45a4-b193-1d8b4bffe3fe ;
+        Event:involvesPhysicalInfrastructure
+                ex:physicalInfrastructure-BEANR-K913 .
+
+ex:DigitalTwin-917fd8fb-e530-45ce-8bc1-44985948998d
+        a           DigitalTwin:TransportMeans , owl:NamedIndividual , DigitalTwin:Barge ;
+        rdfs:label  "Barge" .
+
+ex:physicalInfrastructure-PACTBPANA
+        a             pi:Terminal , pi:LogisticalFunction , owl:NamedIndividual ;
+        rdfs:label    "PACTBPANA" ;
+        pi:locatedAt  ex:Location-PACTB .
+
+ex:DigitalTwin-083339ef-1def-4ea4-977c-726d1d499909
+        a                   DigitalTwin:TransportMeans , owl:NamedIndividual , DigitalTwin:Barge ;
+        rdfs:label          "Barge" ;
+        DigitalTwin:hasTransportMeansID
+                "8738134" ;
+        DigitalTwin:hasVIN  "8738134" .
+
+ex:DigitalTwin-6d633204-bcbd-464c-8d4f-d897fdd50384
+        a                   DigitalTwin:TransportMeans , owl:NamedIndividual , DigitalTwin:Vessel ;
+        rdfs:label          "Vessel" ;
+        DigitalTwin:hasTransportMeansID
+                "9484481" ;
+        DigitalTwin:hasVIN  "9484481" .
+
+ex:Event-f1a4d86a-dfde-4273-a524-721776b03cc7
+        a                          Event:Event , owl:NamedIndividual ;
+        rdfs:label                 "Estimated barge departure" , "Departure" ;
+        Event:hasDateTimeType      Event:Estimated ;
+        Event:hasMilestone         Event:End ;
+        Event:hasTimestamp         "2020-02-11T02:30:00"^^xsd:dateTime ;
+        Event:involvesBusinessTransaction
+                ex:businessTransaction-d5ae3f34-3279-4b80-9f4c-3773ae40325d ;
+        Event:involvesDigitalTwin  ex:Equipment-d5ae3f34-3279-4b80-9f4c-3773ae40325d , ex:DigitalTwin-f1a4d86a-dfde-4273-a524-721776b03cc7 ;
+        Event:involvesPhysicalInfrastructure
+                ex:physicalInfrastructure-JPYOK-APMYOK .
+
+ex:physicalInfrastructure-BEANR-K1742
+        a             pi:Terminal , pi:LogisticalFunction , owl:NamedIndividual ;
+        rdfs:label    "BEANR-K1742" ;
+        pi:locatedAt  ex:Location-BEANR .
+
+ex:DigitalTwin-424b5ad7-b8e8-4e5d-a108-efb181f576ff
+        a           DigitalTwin:TransportMeans , owl:NamedIndividual , DigitalTwin:Train ;
+        rdfs:label  "Train" .
+
+ex:Event-917fd8fb-e530-45ce-8bc1-44985948998d
+        a                          owl:NamedIndividual , Event:Event ;
+        rdfs:label                 "Departure" , "Planned barge departure" ;
+        Event:hasDateTimeType      Event:Planned ;
+        Event:hasMilestone         Event:End ;
+        Event:hasTimestamp         "2019-12-13T11:00:00"^^xsd:dateTime ;
+        Event:involvesBusinessTransaction
+                ex:businessTransaction-6c084968-29a0-4a83-963b-7715c182f89b ;
+        Event:involvesDigitalTwin  ex:Equipment-6c084968-29a0-4a83-963b-7715c182f89b , ex:DigitalTwin-917fd8fb-e530-45ce-8bc1-44985948998d ;
+        Event:involvesPhysicalInfrastructure
+                ex:physicalInfrastructure-FRSXBSUDX .
+
+ex:Event-6d633204-bcbd-464c-8d4f-d897fdd50384
+        a                          Event:Event , owl:NamedIndividual ;
+        rdfs:label                 "Arrival" , "Actual vessel arrival" ;
+        Event:hasDateTimeType      Event:Actual ;
+        Event:hasMilestone         Event:Start ;
+        Event:hasTimestamp         "2019-12-24T16:37:00"^^xsd:dateTime ;
+        Event:involvesBusinessTransaction
+                ex:businessTransaction-b7007c05-1572-4922-9d6b-5316f658fbf9 ;
+        Event:involvesDigitalTwin  ex:DigitalTwin-6d633204-bcbd-464c-8d4f-d897fdd50384 , ex:Equipment-b7007c05-1572-4922-9d6b-5316f658fbf9 ;
+        Event:involvesPhysicalInfrastructure
+                ex:physicalInfrastructure-BEANR-K1742 .
+
+ex:Event-083339ef-1def-4ea4-977c-726d1d499909
+        a                          Event:Event , owl:NamedIndividual ;
+        rdfs:label                 "Estimated barge arrival" , "Arrival" ;
+        Event:hasDateTimeType      Event:Estimated ;
+        Event:hasMilestone         Event:Start ;
+        Event:hasTimestamp         "2020-02-05T04:00:00"^^xsd:dateTime ;
+        Event:involvesBusinessTransaction
+                ex:businessTransaction-d7ec162c-22f3-4eee-a3cd-992849579763 ;
+        Event:involvesDigitalTwin  ex:Equipment-d7ec162c-22f3-4eee-a3cd-992849579763 , ex:DigitalTwin-083339ef-1def-4ea4-977c-726d1d499909 ;
+        Event:involvesPhysicalInfrastructure
+                ex:physicalInfrastructure-JPYOK-APMYOK .
+
+ex:DigitalTwin-a2a19d3a-48b2-4d77-b4b2-0da12ba9ef89
+        a           DigitalTwin:TransportMeans , owl:NamedIndividual , DigitalTwin:Barge ;
+        rdfs:label  "Barge" .
+
+ex:DigitalTwin-8ca0cd94-90d9-4011-a01c-af9b44e46426
+        a                   DigitalTwin:TransportMeans , owl:NamedIndividual , DigitalTwin:Vessel ;
+        rdfs:label          "Vessel" ;
+        DigitalTwin:hasTransportMeansID
+                "9162227" ;
+        DigitalTwin:hasVIN  "9162227" .
+
+ex:Event-424b5ad7-b8e8-4e5d-a108-efb181f576ff
+        a                          owl:NamedIndividual , Event:Event ;
+        rdfs:label                 "Departure" , "Actual rail departure" ;
+        Event:hasDateTimeType      Event:Actual ;
+        Event:hasMilestone         Event:End ;
+        Event:hasTimestamp         "2019-12-26T08:15:00"^^xsd:dateTime ;
+        Event:involvesBusinessTransaction
+                ex:businessTransaction-4f06ffe4-fc07-47e7-92ac-56b3e68c30f3 ;
+        Event:involvesDigitalTwin  ex:Equipment-4f06ffe4-fc07-47e7-92ac-56b3e68c30f3 , ex:DigitalTwin-424b5ad7-b8e8-4e5d-a108-efb181f576ff ;
+        Event:involvesPhysicalInfrastructure
+                ex:physicalInfrastructure-447850 .
+
+ex:DigitalTwin-75137094-ff3b-4f80-84c1-9baae960f226
+        a                   DigitalTwin:TransportMeans , owl:NamedIndividual , DigitalTwin:Vessel ;
+        rdfs:label          "Vessel" ;
+        DigitalTwin:hasTransportMeansID
+                "9786750" ;
+        DigitalTwin:hasVIN  "9786750" .
+
+ex:Event-a2a19d3a-48b2-4d77-b4b2-0da12ba9ef89
+        a                          Event:Event , owl:NamedIndividual ;
+        rdfs:label                 "Departure" , "Actual barge departure" ;
+        Event:hasDateTimeType      Event:Actual ;
+        Event:hasMilestone         Event:End ;
+        Event:hasTimestamp         "2019-12-03T17:30:00"^^xsd:dateTime ;
+        Event:involvesBusinessTransaction
+                ex:businessTransaction-39417e11-5322-47d2-9a2a-25906938a00f ;
+        Event:involvesDigitalTwin  ex:Equipment-39417e11-5322-47d2-9a2a-25906938a00f , ex:DigitalTwin-a2a19d3a-48b2-4d77-b4b2-0da12ba9ef89 ;
+        Event:involvesPhysicalInfrastructure
+                ex:physicalInfrastructure-BEGNKHG .
+
+ex:DigitalTwin-22792fcc-9145-40be-88eb-4d3c3029ae27
+        a                   DigitalTwin:TransportMeans , owl:NamedIndividual , DigitalTwin:Vessel ;
+        rdfs:label          "Vessel" ;
+        DigitalTwin:hasTransportMeansID
+                "9283239" ;
+        DigitalTwin:hasVIN  "9283239" .
+
+ex:physicalInfrastructure-JPYOK-APMYOK
+        a             pi:Terminal , pi:LogisticalFunction , owl:NamedIndividual ;
+        rdfs:label    "JPYOK-APMYOK" ;
+        pi:locatedAt  ex:Location-JPYOK .
+
+ex:Event-8ca0cd94-90d9-4011-a01c-af9b44e46426
+        a                          Event:Event , owl:NamedIndividual ;
+        rdfs:label                 "Planned vessel arrival" , "Arrival" ;
+        Event:hasDateTimeType      Event:Planned ;
+        Event:hasMilestone         Event:Start ;
+        Event:hasTimestamp         "2020-03-07T16:00:00"^^xsd:dateTime ;
+        Event:involvesBusinessTransaction
+                ex:businessTransaction-30a19eb5-cf2d-4675-931c-5020e6a77eb3 ;
+        Event:involvesDigitalTwin  ex:Equipment-30a19eb5-cf2d-4675-931c-5020e6a77eb3 , ex:DigitalTwin-8ca0cd94-90d9-4011-a01c-af9b44e46426 ;
+        Event:involvesPhysicalInfrastructure
+                ex:physicalInfrastructure-TRIST-MRP .
+
+ex:DigitalTwin-1dbbbc22-712e-46a6-98e4-cc4a0dc3ee57
+        a           DigitalTwin:TransportMeans , owl:NamedIndividual , DigitalTwin:Train ;
+        rdfs:label  "Train" .
+
+ex:physicalInfrastructure-BEGNKHG
+        a             pi:Terminal , pi:LogisticalFunction , owl:NamedIndividual ;
+        rdfs:label    "BEGNKHG" ;
+        pi:locatedAt  ex:Location-BEGNK .
+
+ex:Event-75137094-ff3b-4f80-84c1-9baae960f226
+        a                          Event:Event , owl:NamedIndividual ;
+        rdfs:label                 "Estimated vessel arrival" , "Arrival" ;
+        Event:hasDateTimeType      Event:Estimated ;
+        Event:hasMilestone         Event:Start ;
+        Event:hasTimestamp         "2019-12-08T22:00:00"^^xsd:dateTime ;
+        Event:involvesBusinessTransaction
+                ex:businessTransaction-295c7dd6-1d5b-4882-aa64-1c8f9f2424d2 ;
+        Event:involvesDigitalTwin  ex:DigitalTwin-75137094-ff3b-4f80-84c1-9baae960f226 , ex:Equipment-295c7dd6-1d5b-4882-aa64-1c8f9f2424d2 ;
+        Event:involvesPhysicalInfrastructure
+                ex:physicalInfrastructure-BEANR-BNFW .
+
+ex:physicalInfrastructure-USCHICXBP
+        a             pi:Terminal , pi:LogisticalFunction , owl:NamedIndividual ;
+        rdfs:label    "USCHICXBP" ;
+        pi:locatedAt  ex:Location-USCHI .
+
+ex:physicalInfrastructure-TRIST-MRP
+        a             pi:Terminal , pi:LogisticalFunction , owl:NamedIndividual ;
+        rdfs:label    "TRIST-MRP" ;
+        pi:locatedAt  ex:Location-TRAMR .
+
+ex:DigitalTwin-04ba0e30-dc38-46f5-827c-e51935b0b084
+        a                   DigitalTwin:TransportMeans , owl:NamedIndividual , DigitalTwin:Vessel ;
+        rdfs:label          "Vessel" ;
+        DigitalTwin:hasTransportMeansID
+                "9283186" ;
+        DigitalTwin:hasVIN  "9283186" .
+
+ex:Event-22792fcc-9145-40be-88eb-4d3c3029ae27
+        a                          Event:Event , owl:NamedIndividual ;
+        rdfs:label                 "Departure" , "Planned vessel departure" ;
+        Event:hasDateTimeType      Event:Planned ;
+        Event:hasMilestone         Event:End ;
+        Event:hasTimestamp         "2019-12-23T00:42:00"^^xsd:dateTime ;
+        Event:involvesBusinessTransaction
+                ex:businessTransaction-4ec58b3f-44df-4673-b45d-0d3722414b54 ;
+        Event:involvesDigitalTwin  ex:Equipment-4ec58b3f-44df-4673-b45d-0d3722414b54 , ex:DigitalTwin-22792fcc-9145-40be-88eb-4d3c3029ae27 ;
+        Event:involvesPhysicalInfrastructure
+                ex:physicalInfrastructure-PACTBPANA .
+
+ex:Event-1dbbbc22-712e-46a6-98e4-cc4a0dc3ee57
+        a                          owl:NamedIndividual , Event:Event ;
+        rdfs:label                 "Planned rail arrival" , "Arrival" ;
+        Event:hasDateTimeType      Event:Planned ;
+        Event:hasMilestone         Event:Start ;
+        Event:hasTimestamp         "2019-12-10T13:00:00"^^xsd:dateTime ;
+        Event:involvesBusinessTransaction
+                ex:businessTransaction-32fa6f14-5bea-4f4c-8d96-2f217ebc9b8a ;
+        Event:involvesDigitalTwin  ex:DigitalTwin-1dbbbc22-712e-46a6-98e4-cc4a0dc3ee57 , ex:Equipment-32fa6f14-5bea-4f4c-8d96-2f217ebc9b8a ;
+        Event:involvesPhysicalInfrastructure
+                ex:physicalInfrastructure-USCHICXBP .
+
+ex:DigitalTwin-28e724ff-c8c3-403a-8b41-e6aa56349f12
+        a           DigitalTwin:TransportMeans , owl:NamedIndividual , DigitalTwin:Barge ;
+        rdfs:label  "Barge" .
+
+ex:Event-04ba0e30-dc38-46f5-827c-e51935b0b084
+        a                          owl:NamedIndividual , Event:Event ;
+        rdfs:label                 "Departure" , "Estimated vessel departure" ;
+        Event:hasDateTimeType      Event:Estimated ;
+        Event:hasMilestone         Event:End ;
+        Event:hasTimestamp         "2019-11-21T06:00:00"^^xsd:dateTime ;
+        Event:involvesBusinessTransaction
+                ex:businessTransaction-3d43ac40-2e7d-4292-8d8b-223d764757b8 ;
+        Event:involvesDigitalTwin  ex:DigitalTwin-04ba0e30-dc38-46f5-827c-e51935b0b084 , ex:Equipment-3d43ac40-2e7d-4292-8d8b-223d764757b8 ;
+        Event:involvesPhysicalInfrastructure
+                ex:physicalInfrastructure-BEANR-K913 .
+
+ex:physicalInfrastructure-FRSXBSUDX
+        a             pi:Terminal , pi:LogisticalFunction , owl:NamedIndividual ;
+        rdfs:label    "FRSXBSUDX" ;
+        pi:locatedAt  ex:Location-FRSXB .
+
+ex:DigitalTwin-d971b558-69c1-4e7c-bfe6-f2c6a5aacec3
+        a           DigitalTwin:TransportMeans , owl:NamedIndividual , DigitalTwin:Barge ;
+        rdfs:label  "Barge" .
+
+ex:DigitalTwin-f1a4d86a-dfde-4273-a524-721776b03cc7
+        a                   DigitalTwin:TransportMeans , owl:NamedIndividual , DigitalTwin:Barge ;
+        rdfs:label          "Barge" ;
+        DigitalTwin:hasTransportMeansID
+                "8738134" ;
+        DigitalTwin:hasVIN  "8738134" .
+
+ex:physicalInfrastructure-BEANR-BNFW
+        a             pi:Terminal , pi:LogisticalFunction , owl:NamedIndividual ;
+        rdfs:label    "BEANR-BNFW" ;
+        pi:locatedAt  ex:Location-BEANR .
