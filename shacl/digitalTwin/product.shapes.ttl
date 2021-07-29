@@ -30,16 +30,13 @@
         sh:minCount 1 ;
         sh:maxCount 1 ;
         sh:name "has product ID" ;
-        sh:nodeKind sh:IRI
     ] ;
     sh:property [
         rdf:type sh:PropertyShape ;
         sh:path DT:productName ;
         sh:datatype xsd:string ;
-        sh:minCount 1 ;
         sh:maxCount 1 ;
         sh:name "has product name" ;
-        sh:nodeKind sh:IRI
     ] ;
     sh:targetClass DT:Product ;
 .

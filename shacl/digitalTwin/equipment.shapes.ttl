@@ -26,19 +26,15 @@
         rdf:type sh:PropertyShape ;
         sh:path DT:equipmentCategoryCode ;
         sh:datatype xsd:string ;
-        sh:minCount 1 ;
         sh:maxCount 1 ;
         sh:name "has equipment category code" ;
-        sh:nodeKind sh:IRI
     ] ;
     sh:property [
         rdf:type sh:PropertyShape ;
         sh:path DT:equipmentContainerITUCode ;
         sh:datatype xsd:string ;
-        sh:minCount 1 ;
         sh:maxCount 1 ;
         sh:name "has equipment container ITU code" ;
-        sh:nodeKind sh:IRI
     ] ;
     sh:property [
         rdf:type sh:PropertyShape ;
@@ -47,34 +43,27 @@
         sh:minCount 1 ;
         sh:maxCount 1 ;
         sh:name "has equipment ID" ;
-        sh:nodeKind sh:IRI ;
     ] ;
     sh:property [
         rdf:type sh:PropertyShape ;
         sh:path DT:equipmentSize ;
         sh:datatype xsd:decimal ;
-        sh:minCount 1;
         sh:maxCount 1;
         sh:name "has equipment size" ;
-        sh:nodeKind sh:IRI ;
     ];
     sh:property [
         rdf:type sh:PropertyShape ;
         sh:path DT:grossWeight ;
         sh:datatype xsd:decimal ;
-        sh:minCount 1 ;
         sh:maxCount 1 ;
         sh:name "has gross weight" ;
-        sh:nodeKind sh:IRI ;
     ] ;
     sh:property [
         rdf:type sh:PropertyShape ;
         sh:path DT:tareWeight ;
         sh:datatype xsd:decimal ;
-        sh:minCount 1 ;
         sh:maxCount 1 ;
         sh:name "has tare weight" ;
-        sh:nodeKind sh:IRI ;
     ] ;
     sh:targetClass DT:equipment ;
 .
@@ -87,37 +76,29 @@
         rdf:type sh:PropertyShape ;
         sh:path DT:wagonBrakeType ;
         sh:datatype xsd:string ;
-        sh:minCount 1 ;
         sh:maxCount 1 ;
         sh:name "has wagon brake type" ;
-        sh:nodeKind sh:IRI ;
     ] ;
         sh:property [
         rdf:type sh:PropertyShape ;
         sh:path DT:wagonBrakeWeight ;
         sh:datatype xsd:int ;
-        sh:minCount 1 ;
         sh:maxCount 1 ;
         sh:name "has wagon brake weight" ;
-        sh:nodeKind sh:IRI ;
     ] ;
         sh:property [
         rdf:type sh:PropertyShape ;
         sh:path DT:wagonMaximumSpeed ;
         sh:datatype xsd:int ;
-        sh:minCount 1 ;
         sh:maxCount 1 ;
         sh:name "has wagon maximum speed" ;
-        sh:nodeKind sh:IRI ;
     ] ;
         sh:property [
         rdf:type sh:PropertyShape ;
         sh:path DT:wagonNrAxel ;
         sh:datatype xsd:int ;
-        sh:minCount 1 ;
         sh:maxCount 1 ;
         sh:name "has number of axels" ;
-        sh:nodeKind sh:IRI ;
     ] ;
     sh:targetClass DT:RailwayWagon ;
 .
@@ -133,16 +114,13 @@
         sh:minCount 1 ;
         sh:maxCount 1 ;
         sh:name "has trailer ID" ;
-        sh:nodeKind sh:IRI ;
     ] ;
     sh:property [
         rdf:type sh:PropertyShape ;
         sh:path DT:trailerLicensePlate ;
         sh:datatype xsd:string ;
-        sh:minCount 1 ;
         sh:maxCount 1 ;
         sh:name "has trailer license plate" ;
-        sh:nodeKind sh:IRI ;
     ] ;
     sh:targetClass DT:Trailer;
 .

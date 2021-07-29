@@ -27,16 +27,13 @@
         rdf:type sh:PropertyShape ;
         sh:path DT:goodsDescription ;
         sh:datatype xsd:string ;
-        sh:minCount 1 ;
         sh:maxCount 1 ;
         sh:name "has goods description" ;
-        sh:nodeKind sh:IRI
     ] ;
     sh:property [
         rdf:type sh:PropertyShape ;
         sh:path DT:goodsTypeCode ;
         sh:class classifications:GoodsTypeCode ;
-        sh:minCount 1 ;
         sh:maxCount 1 ;
         sh:name "has goods type code" ;
         sh:nodeKind sh:IRI
@@ -45,19 +42,15 @@
         rdf:type sh:PropertyShape ;
         sh:path DT:goodsWeight ;
         sh:datatype xsd:int ;
-        sh:minCount 1 ;
         sh:maxCount 1 ;
         sh:name "has goods weight" ;
-        sh:nodeKind sh:IRI
     ] ;
     sh:property [
         rdf:type sh:PropertyShape ;
         sh:path DT:grossMass ;
         sh:datatype xsd:int ;
-        sh:minCount 1 ;
         sh:maxCount 1 ;
         sh:name "has gross mass" ;
-        sh:nodeKind sh:IRI
     ] ;
     sh:targetClass DT:Goods ;
 .

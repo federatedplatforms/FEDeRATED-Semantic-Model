@@ -27,7 +27,6 @@
         rdf:type sh:PropertyShape ;
         sh:path DT:packageTypeNumericCode ;
         sh:class classifications:PackageTypeNumericCode ;
-        sh:minCount 1 ;
         sh:maxCount 1 ;
         sh:name "has package type numeric code" ;
         sh:nodeKind sh:IRI
@@ -36,19 +35,15 @@
         rdf:type sh:PropertyShape ;
         sh:path DT:packageCode ;
         sh:datatype xsd:string ;
-        sh:minCount 1 ;
         sh:maxCount 1 ;
         sh:name "has package code" ;
-        sh:nodeKind sh:IRI
     ] ;
     sh:property [
         rdf:type sh:PropertyShape ;
         sh:path DT:packageTypeName ;
         sh:datatype xsd:string ;
-        sh:minCount 1 ;
         sh:maxCount 1 ;
         sh:name "has package type name" ;
-        sh:nodeKind sh:IRI
     ] ;
     sh:targetClass DT:Package ;
 .

@@ -30,16 +30,13 @@
         sh:minCount 1 ;
         sh:maxCount 1 ;
         sh:name "has transportmeans ID" ;
-        sh:nodeKind sh:IRI
     ] ;
     sh:property [
         rdf:type sh:PropertyShape ;
         sh:path DT:hasTransportMeansNationality ;
         sh:datatype xsd:string ;
-        sh:minCount 1 ;
         sh:maxCount 1 ;
-        sh:name "has transportmeans nationality" ;
-        sh:nodeKind sh:IRI
+        sh:name "has nationality" ;
     ] ;
     sh:targetClass DT:TransportMeans ;
 .
@@ -51,10 +48,8 @@
         rdf:type sh:PropertyShape ;
         sh:path DT:locomotiveBrakeType ;
         sh:datatype xsd:string ;
-        sh:minCount 1 ;
         sh:maxCount 1 ;
         sh:name "has locomotive brake type" ;
-        sh:nodeKind sh:IRI
     ] ;
     sh:property [
         rdf:type sh:PropertyShape ;
@@ -63,46 +58,40 @@
         sh:minCount 1 ;
         sh:maxCount 1 ;
         sh:name "has locomotive ID" ;
-        sh:nodeKind sh:IRI
     ] ;
     sh:targetClass DT:Locomotive ;
 .
 
-:Truck
+:TruckShape
     rdf:type sh:NodeShape ;
     sh:description "A truck has a truck license plate." ;
     sh:property [
         rdf:type sh:PropertyShape ;
         sh:path DT:truckLicensePlate ;
         sh:datatype xsd:string ;
-        sh:minCount 1 ;
         sh:maxCount 1 ;
         sh:name "has truck license plate" ;
-        sh:nodeKind sh:IRI
+        sh:pattern "[0-9]{2}-B[a-zA-Z]{2}-[0-9]" ;
     ] ;
     sh:targetClass DT:Truck ;
 .
 
-:Vessel
+:VesselShape
     rdf:type sh:NodeShape ;
     sh:description "A vessel has a vessel name and a vessel type." ;
     sh:property [
         rdf:type sh:PropertyShape ;
         sh:path DT:vesselName ;
         sh:datatype xsd:string ;
-        sh:minCount 1 ;
         sh:maxCount 1 ;
         sh:name "has vessel name" ;
-        sh:nodeKind sh:IRI
     ] ;
     sh:property [
         rdf:type sh:PropertyShape ;
         sh:path DT:vesselType ;
         sh:datatype xsd:string ;
-        sh:minCount 1 ;
         sh:maxCount 1 ;
         sh:name "has vessel type" ;
-        sh:nodeKind sh:IRI
     ] ;
     sh:targetClass DT:Vessel ;
 .
