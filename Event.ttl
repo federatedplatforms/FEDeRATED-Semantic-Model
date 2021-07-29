@@ -10,8 +10,6 @@
 @prefix DigitalTwin: <https://ontology.tno.nl/logistics/federated/DigitalTwin#> .
 @prefix Event: <https://ontology.tno.nl/logistics/federated/Event#> .
 @prefix businessService: <https://ontology.tno.nl/logistics/federated/BusinessService#> .
-@prefix dc: <http://purl.org/dc/elements/1.1/> .
-@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix pi: <https://ontology.tno.nl/logistics/federated/PhysicalInfrastructure#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -376,20 +374,20 @@ Event:involvesDigitalTwin
   rdfs:range DigitalTwin:physicalObject ;
   rdfs:subPropertyOf Event:involves ;
 .
+Event:involvesLocation
+  rdf:type owl:ObjectProperty ;
+  rdfs:comment "This relation establishes an association between an Event and a Location. The exact meaning depends on the type of Event, which is inferred from this property and the second association the event has." ;
+  rdfs:domain Event:Event ;
+  rdfs:label "Involves Location" ;
+  rdfs:range pi:Location ;
+  rdfs:subPropertyOf Event:involves ;
+.
 Event:involvesLogisticsActor
   rdf:type owl:ObjectProperty ;
   rdfs:comment "This relation establishes an association between an Event and a Logistics Actor. The exact meaning depends on the type of Event, which is inferred from this property and the second association the event has." ;
   rdfs:domain Event:Event ;
   rdfs:label "Involves Logistics Actor" ;
   rdfs:range businessService:logisticsActor ;
-  rdfs:subPropertyOf Event:involves ;
-.
-Event:involvesPhysicalInfrastructure
-  rdf:type owl:ObjectProperty ;
-  rdfs:comment "This relation establishes an association between an Event and a Location. The exact meaning depends on the type of Event, which is inferred from this property and the second association the event has." ;
-  rdfs:domain Event:Event ;
-  rdfs:label "Involves Location" ;
-  rdfs:range pi:Location ;
   rdfs:subPropertyOf Event:involves ;
 .
 Event:planned
