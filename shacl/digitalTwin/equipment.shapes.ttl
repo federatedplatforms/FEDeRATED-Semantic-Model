@@ -40,9 +40,15 @@
         rdf:type sh:PropertyShape ;
         sh:path DT:equipmentID ;
         sh:datatype xsd:string ;
-        sh:minCount 1 ;
         sh:maxCount 1 ;
-        sh:name "has equipment ID" ;
+        sh:name "Equipment must have no more than one equipment ID" ;
+    ] ;
+    sh:property [
+        rdf:type sh:PropertyShape ;
+        sh:path DT:equipmentID ;
+        sh:minCount 1 ;
+        sh:name "Equipment should have at least one equipment ID" ;
+        sh:severity sh:Warning ;
     ] ;
     sh:property [
         rdf:type sh:PropertyShape ;
@@ -111,9 +117,15 @@
         rdf:type sh:PropertyShape ;
         sh:path DT:trailerID ;
         sh:datatype xsd:string ;
-        sh:minCount 1 ;
         sh:maxCount 1 ;
-        sh:name "has trailer ID" ;
+        sh:name "A trailer must have no more than one trailer ID" ;
+    ] ;
+    sh:property [
+        rdf:type sh:PropertyShape ;
+        sh:path DT:trailerID ;
+        sh:minCount 1 ;
+        sh:name "A trailer should have at least one trailer ID" ;
+        sh:severity sh:Warning ;
     ] ;
     sh:property [
         rdf:type sh:PropertyShape ;

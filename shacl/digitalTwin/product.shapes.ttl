@@ -27,9 +27,15 @@
         rdf:type sh:PropertyShape ;
         sh:path DT:productID ;
         sh:datatype xsd:string ;
-        sh:minCount 1 ;
         sh:maxCount 1 ;
-        sh:name "has product ID" ;
+        sh:name "A product must have no more than one product ID." ;
+    ] ;
+    sh:property [
+        rdf:type sh:PropertyShape ;
+        sh:path DT:productID ;
+        sh:minCount 1 ;
+        sh:name "A product should have at least one product ID." ;
+        sh:severity sh:Warning ;
     ] ;
     sh:property [
         rdf:type sh:PropertyShape ;

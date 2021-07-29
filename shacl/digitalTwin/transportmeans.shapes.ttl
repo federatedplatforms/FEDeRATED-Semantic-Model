@@ -27,9 +27,15 @@
         rdf:type sh:PropertyShape ;
         sh:path DT:hasTransportMeansID ;
         sh:datatype xsd:string ;
-        sh:minCount 1 ;
         sh:maxCount 1 ;
-        sh:name "has transportmeans ID" ;
+        sh:name "A transportmeans must have no more than one ID." ;
+    ] ;
+    sh:property [
+        rdf:type sh:PropertyShape ;
+        sh:path DT:hasTransportMeansID ;
+        sh:minCount 1 ;
+        sh:name "A transportmeans should have at least one ID." ;
+        sh:severity sh:Warning ;
     ] ;
     sh:property [
         rdf:type sh:PropertyShape ;
@@ -55,9 +61,15 @@
         rdf:type sh:PropertyShape ;
         sh:path DT:locomotiveID ;
         sh:datatype xsd:string ;
-        sh:minCount 1 ;
         sh:maxCount 1 ;
-        sh:name "has locomotive ID" ;
+        sh:name "A locomotive must have no more than one ID." ;
+    ] ;
+    sh:property [
+        rdf:type sh:PropertyShape ;
+        sh:path DT:locomotiveID ;
+        sh:minCount 1 ;
+        sh:name "A locomotive should have at least one ID." ;
+        sh:severity sh:Warning ;
     ] ;
     sh:targetClass DT:Locomotive ;
 .

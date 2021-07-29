@@ -113,21 +113,21 @@ retrieve:CargoShape
           ] ;
         sh:property [
             sh:path classifications:HazmatCode ;
-            sh:class classifications:DangerouseGoods ;
+            sh:class classifications:DangerousGoods ;
             sh:minCount 1 ;
           ] ;
         sh:property [
             sh:path classifications:HazmatName ;
-            sh:class classifications:DangerouseGoodClassification ;
+            sh:class classifications:DangerousGoodClassification ;
             sh:minCount 1 ;
           ] ;
       ]
     ) ;
   sh:property [
       a sh:PropertyShape ;
-      sh:path classifications:dangerouseGoodsClassification ;
-      sh:class classifications:dangerouseGoodCode ;
-      sh:name "dangerouse goods classification" ;
+      sh:path classifications:dangerousGoodsClassification ;
+      sh:class classifications:dangerousGoodCode ;
+      sh:name "dangerous goods classification" ;
       sh:nodeKind sh:IRI ;
     ] ;
   sh:property [
@@ -156,7 +156,7 @@ retrieve:CargoShape
       sh:path DigitalTwin:natureOfCargo ;
       sh:class classifications:NatureOfCargo ;
       sh:minCount 1 ;
-      sh:name "dangerouse goods classification" ;
+      sh:name "dangerous goods classification" ;
       sh:nodeKind sh:IRI ;
     ] ;
   sh:property [
@@ -164,7 +164,7 @@ retrieve:CargoShape
       sh:path DigitalTwin:numberofPackages ;
       sh:datatype xsd:integer ;
       sh:maxCount 1 ;
-      sh:name "number of pakcage" ;
+      sh:name "number of package" ;
     ] ;
   sh:property [
       a sh:PropertyShape ;
@@ -238,7 +238,7 @@ retrieve:LocationShape
   sh:targetClass pi:Location ;
 .
 
-retrieve:TransportMeansRoutShape
+retrieve:TransportMeansRouteShape
   a sh:NodeShape ;
   rdfs:label "Rout Shape" ;
   sh:sparql [
