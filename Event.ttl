@@ -285,7 +285,7 @@ Event:UnpackEvent
 .
 Event:end
   rdf:type Event:MileStone ;
-   rdfs:label "End" ;
+  rdfs:label "End" ;
 .
 Event:expectedDropOffDate
   rdf:type owl:DatatypeProperty ;
@@ -339,6 +339,13 @@ Event:hasPickupTime
   rdf:type owl:DatatypeProperty ;
   rdfs:domain Event:Event ;
   rdfs:label "Has Pickup Time" ;
+  rdfs:range xsd:dateTime ;
+.
+Event:hasSubmissionTimestamp
+  rdf:type owl:DatatypeProperty ;
+  rdfs:comment "This property relates an Event to the timestamp indicatting when the event was submitted." ;
+  rdfs:domain Event:Event ;
+  rdfs:label "Has Timestamp" ;
   rdfs:range xsd:dateTime ;
 .
 Event:hasTimestamp
