@@ -7,6 +7,8 @@
 @prefix DigitalTwin: <https://ontology.tno.nl/logistics/federated/DigitalTwin#> .
 @prefix businessService: <https://ontology.tno.nl/logistics/federated/businessService#> .
 @prefix classifications: <https://ontology.tno.nl/logistics/federated/Classifications#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -16,14 +18,26 @@
 
 <https://ontology.tno.nl/logistics/federated/Classifications>
   rdf:type owl:Ontology ;
+  dc:creator "Dena Tahvildari, Maaike Burghoorn, Cornelis Bouter" ;
+  dcterms:created "2020-07-17" ;
+  dcterms:description "This ontology contains classes, attributes, relation about from established standards and vocabularies relevant in the Logistics domain. It is intended to be reused by the other ontologies in the namespace." ;
+  dcterms:isRequiredBy <https://ontology.tno.nl/logistics/federated/BusinessService> ;
+  dcterms:isRequiredBy <https://ontology.tno.nl/logistics/federated/DigitalTwin> ;
+  dcterms:isRequiredBy <https://ontology.tno.nl/logistics/federated/PhysicalInfrastructure> ;
+  dcterms:issued "2021-03-15" ;
+  dcterms:language "en" ;
   owl:imports <http://www.w3.org/2004/02/skos/core> ;
   owl:imports <https://ontology.tno.nl/logistics/federated/DigitalTwin> ;
+  owl:versionIRI <https://ontology.tno.nl/logistics/federated/Classificationsv-0.1> ;
 .
 classifications:Air
   rdf:type classifications:TransportModality ;
 .
 classifications:Atlantic_Corridor
   rdf:type classifications:CorridorName ;
+.
+classifications:BILL_OF_LADING
+  rdf:type classifications:DocumentType ;
 .
 classifications:Baltic-Adriatic_Corridor
   rdf:type classifications:CorridorName ;
@@ -54,7 +68,6 @@ classifications:ContainerType
 classifications:CorridorName
   rdf:type owl:Class ;
   rdfs:comment """Core network corridors were introduced to facilitate the coordinated implementation of the core network in Europe. 
-
 Nine core network corridors are identified in the annex to the CEF Regulation, which includes a list of projects pre-identified for possible EU funding during the period 2014-2020, based on their added value for TEN-T development and their maturity status.""" ;
   rdfs:label "Corridor Name" ;
   rdfs:subClassOf classifications:Classifications ;
@@ -72,9 +85,20 @@ classifications:DangerousGoods
   rdfs:label "Dangerous Goods" ;
   rdfs:subClassOf classifications:Classifications ;
 .
+classifications:DocumentType
+  rdf:type owl:Class ;
+  rdfs:label "Document" ;
+  rdfs:subClassOf classifications:Classifications ;
+.
 classifications:E
   rdf:type classifications:NatureOfCargo ;
   rdfs:label "Excise" ;
+.
+classifications:EquipmentTypeCode
+  rdf:type owl:Class ;
+  rdfs:comment "an enumeration of equipment type codes." ;
+  rdfs:label "Equipment Type Code" ;
+  rdfs:subClassOf classifications:Classifications ;
 .
 classifications:FCL-FCL
   rdf:type classifications:TransportMovementType ;
@@ -162,6 +186,9 @@ classifications:Rhine_Alpine_Corridor
 classifications:Road
   rdf:type classifications:TransportModality ;
 .
+classifications:SEA_WAYBILL
+  rdf:type classifications:DocumentType ;
+.
 classifications:Safety_and_hazard_data_sheet
   rdf:type classifications:LogisticsTransactionDocument ;
   rdfs:comment "A statement of an account containing the booked items as in the ledger of the account servicing financial institution." ;
@@ -198,12 +225,12 @@ classifications:UNDGCode
   rdfs:label "UNDG code" ;
   rdfs:range xsd:string ;
 .
+classifications:VERIFY_COPY
+  rdf:type classifications:DocumentType ;
+.
 classifications:W
   rdf:type classifications:NatureOfCargo ;
   rdfs:label "Waste" ;
-.
-classifications:appliesTo
-  rdf:type owl:ObjectProperty ;
 .
 classifications:bulk
   rdf:type classifications:CargoType ;

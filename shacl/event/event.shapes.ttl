@@ -1,0 +1,364 @@
+# baseURI: https://ontology.tno.nl/logistics/federated/shapes/event
+# imports: http://datashapes.org/dash
+
+@prefix : <https://ontology.tno.nl/logistics/federated/shapes/event#> .
+@prefix dash: <http://datashapes.org/dash#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix DT: <https://ontology.tno.nl/logistics/federated/DigitalTwin#> .
+@prefix event: <https://ontology.tno.nl/logistics/federated/Event#> .
+@prefix pi: <https://ontology.tno.nl/logistics/federated/PhysicalInfrastructure#> .
+
+<https://ontology.tno.nl/logistics/federated/shapes/event>
+  a owl:Ontology ;
+  owl:imports <http://datashapes.org/dash> ;
+  owl:versionInfo "Created with TopBraid Composer" ;
+.
+
+:EventTypeShape
+  rdf:type sh:NodeShape ;
+  sh:name "Event Shape" ;
+  sh:description "An Event contains a milestone, timestamp, datetime type and two associations.";
+  sh:property [
+      rdf:type sh:PropertyShape ;
+      sh:path event:hasDateTimeType ;
+      sh:class event:DateTimeType ;
+      sh:minCount 1 ;
+      sh:maxCount 1 ;
+      sh:name "has date" ;
+       sh:nodeKind sh:IRI
+    ] ;
+  sh:property [
+      rdf:type sh:PropertyShape ;
+      sh:path event:hasMilestone ;
+      sh:class event:Milestone ;
+      sh:minCount 1 ;
+      sh:maxCount 1;
+      sh:name "has milestone" ;
+       sh:nodeKind sh:IRI
+    ] ;
+  sh:property [
+      rdf:type sh:PropertyShape ;
+      sh:path event:hasTimestamp ;
+      sh:datatype xsd:dateTime ;
+      sh:minCount 1 ;
+      sh:maxCount 1 ;
+      sh:name "has event type" ;
+    ] ;
+    sh:property [
+      rdf:type sh:PropertyShape ;
+      sh:path event:involves ;
+      sh:nodeKind sh:IRI ;
+    ] ;
+    sh:targetClass event:Event ;
+.
+# to be moved to a separate shape  
+#  sh:property [
+#      rdf:type sh:PropertyShape ;
+#      sh:path event:involvesBusinessTransaction ;
+#      sh:class businessService:BusinessTransaction ;
+#      sh:minCount 1 ;
+#      sh:name "involves business transaction" ;
+#      sh:nodeKind sh:IRI
+#    ] ;
+#  sh:property [
+#      rdf:type sh:PropertyShape ;
+#      sh:path event:involvesDigitalTwin ;
+#      sh:class DT:DigitalTwin ;
+#      sh:minCount 1 ;
+#      sh:name "involves digital twin" ;
+#       sh:nodeKind sh:IRI
+#    ] ;
+#  sh:property [
+#      rdf:type sh:PropertyShape ;
+#      sh:path event:involvesLocation ;
+#      sh:class pi:Location ;
+#      sh:minCount 1 ;
+#      sh:name "invovles location" ;
+#       sh:nodeKind sh:IRI
+#    ] ;
+#  sh:property [
+#      rdf:type sh:PropertyShape ;
+#      sh:path event:involvesLogisticsActor ;
+#      sh:class businessService:logisticsActor ;
+#      sh:minCount 1 ;
+#      sh:name "involves logistics actor" ;
+#       sh:nodeKind sh:IRI
+#    ] ;
+
+:ArrivalEventShape 
+  rdf:type sh:NodeShape ;
+  sh:label "ArrivalEventShape" ;
+  sh:description "An Arrival event has Milestone start and an association with a DT and some PhysicalInfrastructure. When the milestone is changed to Start it is a departure event." ;
+  sh:property [
+    rdf:type sh:PropertyShape ;
+    sh:path event:involvesDigitalTwin ;
+    sh:class DT:TransportMeans ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:nodeKind sh:IRI ;
+    sh:name "Involves Transport Means"
+  ] ;
+  sh:property [
+    rdf:type sh:PropertyShape ;
+    sh:path event:involvesPhysicalInfrastructure ;
+    sh:class pi:Location ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:nodeKind sh:IRI ;
+    sh:name "Involves Physical Infrastructure"
+  ] ;
+    sh:property [
+      rdf:type sh:PropertyShape ;
+      sh:path event:hasMilestone ;
+      sh:hasValue event:Start ;
+      sh:name "has milestone start" ;
+       sh:nodeKind sh:IRI
+   ] ;
+   sh:targetClass event:ArrivalEvent ;
+ .
+ 
+ :DepartureEventShape 
+  rdf:type sh:NodeShape ;
+  sh:label "DepartureEventShape" ;
+  sh:description "A Departure Event has milestone End an association with a DT and some Physical Infrastructure.";
+  sh:property [
+    rdf:type sh:PropertyShape ;
+    sh:path event:involvesDigitalTwin ;
+    sh:class DT:TransportMeans ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:nodeKind sh:IRI ;
+    sh:name "Involves Transport Means"
+  ] ;
+  sh:property [
+    rdf:type sh:PropertyShape ;
+    sh:path event:involvesPhysicalInfrastructure ;
+    sh:class pi:Location ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:nodeKind sh:IRI ;
+    sh:name "Involves Physical Infrastructure"
+  ] ;
+    sh:property [
+      rdf:type sh:PropertyShape ;
+      sh:path event:hasMilestone ;
+      sh:hasValue event:End ;
+      sh:name "has milestone End" ;
+       sh:nodeKind sh:IRI
+   ] ;
+   sh:targetClass event:DepartureEvent
+ .
+  
+:ATAEventShape 
+  rdf:type sh:NodeShape ;
+  sh:label "ATAEventShape" ;
+  sh:description "An ATA Event has DateTime type Actual.";
+  sh:property [
+    rdf:type sh:PropertyShape ;
+    sh:path event:hasDateTimeType ;
+    sh:hasValue event:Actual ;
+  ] ;
+  sh:targetClass event:ATAEvent ;
+.
+ 
+:ETAEventShape 
+  rdf:type sh:NodeShape ;
+  sh:label "ETAEventShape" ;
+  sh:description "An ETA Event has DateTime type Expected.";
+  sh:property [
+    rdf:type sh:PropertyShape ;
+    sh:path event:hasDateTimeType ;
+    sh:hasValue event:Expected ;
+  ] ;
+  sh:targetClass event:ETAEvent ;
+.
+
+:GoodsStructuringEventShape
+  rdf:type sh:NodeShape ;
+  sh:label "Goods Structuring Event Shape" ;
+  sh:label "A goods structuring event (i.e., Merge, split, etc) contains two associations of (combinations of) Product, Package, or Goods.";
+  sh:property [
+    rdf:type sh:PropertyShape ;
+    sh:path event:involvesDigitalTwin ;
+    sh:or (
+      [ sh:class DT:Product ; ]
+      [ sh:class DT:Package ; ]
+      [ sh:class DT:Goods ; ]
+    ) ;
+    sh:minCount 1;
+    sh:maxCount 1;
+  ] ;
+  sh:targetClass event:GoodsStructuringEvent ;
+.
+
+:CargoEventShape 
+  rdf:type sh:NodeShape ;
+  sh:label "Cargo Structure Event" ;
+  sh:description "A Cargo event contains two DT associations";
+  sh:property [
+    rdf:type sh:PropertyShape ;
+    sh:path event:involvesDigitalTwin ;
+    sh:class DT:PhysicalObject ;
+    sh:minCount 2;
+    sh:maxCount 2;
+    sh:nodeKind sh:IRI ;
+  ] ;
+  sh:targetClass event:CargoEvent ;
+.
+
+:DischargeEventShape
+  rdf:type sh:NodeShape ;
+  sh:label "Discharge Event Shape";
+  sh:description "A Discharge Event contains an association with a Transport Means or Equipment and an Equipment, Goods, or Bulk Product with milestone End." ;
+  sh:property [
+    rdf:type sh:PropertyShape ;
+    sh:path event:involvesDigitalTwin ;
+    sh:or (
+      [ sh:class DT:TransportMeans ; ]
+      [ sh:class DT:Equipment ; ]
+    ) ;
+    sh:minCount 1;
+    sh:maxCount 1;
+  ] ;
+  sh:property [
+    rdf:type sh:PropertyShape ;
+    sh:path event:involvesDigitalTwin ;
+    sh:or (
+      [sh:class DT:Goods ; ]
+      [ sh:class DT:BulkProduct ; ]
+      [ sh:class DT:Equipment ;]
+    ) ;
+    sh:minCount 1;
+    sh:maxCount 1;
+  ] ;
+  sh:property [
+    rdf:type sh:PropertyShape ;
+    sh:path event:hasMilestone ;
+    sh:hasValue event:End ;
+    sh:minCount 1;
+    sh:maxCount 1;
+  ] ;
+  sh:targetClass event:DischargeEvent ;
+. 
+
+:BulkTransportEventShape 
+  rdf:type sh:NodeShape ;
+  sh:name "Bulk Transport Event Shape"; 
+  sh:description "This Event contains an association with Bulk Product and an association with a Transport Means.";
+  sh:property [
+    rdf:type sh:PropertyShape ;
+    sh:path event:involvesDigitalTwin ;
+    sh:class DT:BulkProduct ;
+    sh:minCount 1;
+    sh:maxCount 1;
+  ] ;
+  sh:targetClass event:BulkTransportMeansEvent ;
+.
+
+:EquipmentTransportEventShape
+  rdf:type sh:NodeShape ;
+  sh:name "Equipment Transport Event Shape";
+  sh:description "This Event involves usually the discharge or load of an Equipment on/off a Transport Means.";
+  sh:property [
+    rdf:type sh:PropertyShape ;
+    sh:path event:involvesDigitalTwin ;
+    sh:class DT:TransportMeans ;
+    sh:minCount 1;
+    sh:maxCount 1;
+  ] ;
+  sh:property [
+    rdf:type sh:PropertyShape ;
+    sh:path event:involvesDigitalTwin ;
+    sh:class DT:Equipment ;
+    sh:minCount 1;
+    sh:maxCount 1;
+  ] ;
+  sh:targetClass event:EquipmentTransportEvent ;
+.
+    
+:GoodsTransportEventShape
+  rdf:type sh:NodeShape ;
+  sh:name "Goods Transport Event Shape";
+  sh:description "This Event involves usually the discharge or load of some Goods or Products on/off a Transport Means. These Goods or (Bulk)Products are not carried within Equipment but directly with the Transport Means." ;
+  sh:property [
+    rdf:type sh:PropertyShape ;
+    sh:path event:involvesDigitalTwin ;
+    sh:or (
+      [sh:class DT:BulkProduct ;]
+      [sh:class DT:Goods ;]
+    ) ;
+    sh:minCount 1;
+    sh:maxCount 1;
+  ] ;
+  sh:property [
+    rdf:type sh:PropertyShape ;
+    sh:path event:involvesDigitalTwin ;
+    sh:class DT:TransportMeans ;
+    sh:minCount 1;
+    sh:maxCount 1;
+  ] ;
+  sh:targetClass event:GoodsTransportEvent ;
+.
+
+:GoodsEquipmentEventShape
+  rdf:type sh:NodeShape ;
+  sh:name "Goods Equipment Event Shape";
+  sh:description "This Event involves usually the stripping or stuffing of some Goods or Products in/off an Equipment." ;
+  sh:property [
+    rdf:type sh:PropertyShape ;
+    sh:path event:involvesDigitalTwin ;
+    sh:or (
+      [sh:class DT:Product ;]
+      [sh:class DT:Goods ;]
+    ) ;
+    sh:minCount 1;
+    sh:maxCount 1;
+  ] ;
+  sh:property [
+    rdf:type sh:PropertyShape ;
+    sh:path event:involvesDigitalTwin ;
+    sh:class DT:Equipment ;
+    sh:minCount 1;
+    sh:maxCount 1;
+  ] ;
+  sh:targetClass event:GoodsTransportEvent ;
+.
+
+:LoadEventShape
+  rdf:type sh:NodeShape ;
+  sh:name "Load Event Shape";
+  sh:description "A Load Event is an association between Transport Means or Equipment and Equipment/Goods/Products with milestone Start." ;
+  sh:property [
+    rdf:type sh:PropertyShape ;
+    sh:path event:involvesDigitalTwin ;
+    sh:or (
+      [ sh:class DT:TransportMeans ; ]
+      [ sh:class DT:Equipment ; ]
+    ) ;
+    sh:minCount 1;
+    sh:maxCount 1;
+  ] ;
+  sh:property [
+    rdf:type sh:PropertyShape ;
+    sh:path event:involvesDigitalTwin ;
+    sh:or (
+      [ sh:class DT:Goods ; ]
+      [ sh:class DT:Equipment ; ]
+      [ sh:class DT:Product ; ]
+    ) ;
+    sh:minCount 1;
+    sh:maxCount 1;
+  ] ;
+  sh:property [
+    rdf:type sh:PropertyShape ;
+    sh:path event:hasMilestone ;
+    sh:hasValue event:Start ;
+    sh:minCount 1;
+    sh:maxCount 1;
+  ] ;
+  sh:targetClass event:LoadEvent ;
+.

@@ -11,6 +11,8 @@
 @prefix BusinessService: <https://ontology.tno.nl/logistics/federated/BusinessService#> .
 @prefix LogisticsRoles: <https://ontology.tno.nl/logistics/federated/LogisticsRoles#> .
 @prefix ReusableTags: <https://ontology.tno.nl/logistics/federated/ReusableTags#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcterms: <http://purl.org/dc/terms> .
 @prefix ecallUsecase: <https://ontology.tno.nl/logistics/federated/ecallUsecase#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -22,22 +24,26 @@
 BusinessService:Enterprise_x
   rdf:type BusinessService:Enterprise ;
 .
-BusinessService:hasID
-  rdf:type owl:DatatypeProperty ;
-.
 BusinessService:hasLocation
   rdf:type owl:ObjectProperty ;
   rdfs:label "Has Location" ;
 .
 <https://ontology.tno.nl/logistics/federated/LogisticsRoles>
   rdf:type owl:Ontology ;
+  dc:creator "Dena Tahvildari, Maaike Burghoorn, Cornelis Bouter" ;
+  <http://purl.org/dc/termscreated> "2021-02-11" ;
+  <http://purl.org/dc/termsdescription> "This ontology contains classes, attributes, relation about Logistics Roles that can be used in the Logistics domain." ;
+  <http://purl.org/dc/termsisRequiredBy> <https://ontology.tno.nl/logistics/federated/BusinessService> ;
+  <http://purl.org/dc/termsisRequiredBy> <https://ontology.tno.nl/logistics/federated/PhysicalInfrastructure> ;
+  <http://purl.org/dc/termsissued> "2021-03-15" ;
+  <http://purl.org/dc/termslanguage> "en" ;
   owl:imports <https://ontology.tno.nl/logistics/federated/BusinessService> ;
   owl:imports <https://ontology.tno.nl/logistics/federated/Classifications> ;
   owl:imports <https://ontology.tno.nl/logistics/federated/DigitalTwin> ;
   owl:imports <https://ontology.tno.nl/logistics/federated/Event> ;
   owl:imports <https://ontology.tno.nl/logistics/federated/PhysicalInfrastructure> ;
   owl:imports <https://ontology.tno.nl/logistics/federated/ReusableTags> ;
-  owl:versionInfo "Created with TopBraid Composer" ;
+  owl:versionIRI <https://ontology.tno.nl/logistics/federated/LogisticRolesv-0.1> ;
 .
 LogisticsRoles:ActorRoles
   rdf:type owl:Class ;
@@ -48,7 +54,7 @@ LogisticsRoles:ActorRoles
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onClass BusinessService:LogisticsActor ;
+      owl:onClass BusinessService:LegalPerson ;
       owl:onProperty LogisticsRoles:isAbout ;
     ] ;
 .
@@ -179,14 +185,14 @@ LogisticsRoles:ContactPerson
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onClass BusinessService:Person ;
+      owl:onClass BusinessService:NaturalPerson ;
       owl:onProperty LogisticsRoles:involves ;
     ] ;
 .
 LogisticsRoles:Customer
   rdf:type owl:Class ;
   rdf:type sh:NodeShape ;
-  rdfs:comment "Any enterprise that requires a business service from any other enterprise that is able to provide can be identified as a customer.Â " ;
+  rdfs:comment "Any enterprise that requires a business service from any other enterprise that is able to provide can be identified as a customer.Ã‚Â " ;
   rdfs:label "Customer" ;
   rdfs:subClassOf LogisticsRoles:CommercialRoles ;
 .
@@ -304,7 +310,7 @@ LogisticsRoles:Issuer
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onClass BusinessService:Person ;
+      owl:onClass BusinessService:NaturalPerson ;
       owl:onProperty LogisticsRoles:isAbout ;
     ] ;
   rdfs:subClassOf [
@@ -493,6 +499,16 @@ LogisticsRoles:Retailer
   rdfs:label "Retailer" ;
   rdfs:subClassOf LogisticsRoles:SupplyChainRoles ;
 .
+LogisticsRoles:Sender
+  rdf:type owl:Class ;
+  rdf:type sh:NodeShape ;
+  rdfs:label "Sender" ;
+  rdfs:subClassOf LogisticsRoles:BusinessRoles ;
+.
+LogisticsRoles:Sender_1
+  rdf:type LogisticsRoles:Sender ;
+  rdfs:label "Sender" ;
+.
 LogisticsRoles:ServiceProvider
   rdf:type owl:Class ;
   rdf:type sh:NodeShape ;
@@ -530,9 +546,11 @@ LogisticsRoles:WarehouseOperator
 .
 LogisticsRoles:involves
   rdf:type owl:ObjectProperty ;
+  rdfs:domain LogisticsRoles:ActorRoles ;
   rdfs:label "Involves" ;
+  rdfs:range BusinessService:LegalPerson ;
 .
 LogisticsRoles:isAbout
   rdf:type owl:ObjectProperty ;
-  rdfs:label "Is About" ;
+  rdfs:label "is About" ;
 .

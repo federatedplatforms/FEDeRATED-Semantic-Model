@@ -20,12 +20,20 @@
 
 <https://ontology.tno.nl/logistics/federated/Event>
   rdf:type owl:Ontology ;
+  dc:creator "Dena Tahvildari, Maaike Burghoorn, Cornelis Bouter" ;
+  dcterms:created "2020-07-17" ;
+  dcterms:description "This ontology contains classes, attributes, relation about logistic Events." ;
+  dcterms:issued "2021-03-15" ;
+  dcterms:language "en" ;
+  dcterms:requires <https://ontology.tno.nl/logistics/federated/BusinessService> ;
+  dcterms:requires <https://ontology.tno.nl/logistics/federated/DigitalTwin> ;
+  dcterms:requires <https://ontology.tno.nl/logistics/federated/PhysicalInfrastructure> ;
   owl:imports <https://ontology.tno.nl/logistics/federated/BusinessService> ;
   owl:imports <https://ontology.tno.nl/logistics/federated/Classifications> ;
   owl:imports <https://ontology.tno.nl/logistics/federated/DigitalTwin> ;
   owl:imports <https://ontology.tno.nl/logistics/federated/PhysicalInfrastructure> ;
   owl:imports <https://ontology.tno.nl/logistics/federated/ReusableTags> ;
-  owl:versionInfo "Created with TopBraid Composer" ;
+  owl:versionIRI <https://ontology.tno.nl/logistics/federated/Eventv-0.1> ;
 .
 Event:ATAEvent
   rdf:type owl:Class ;
@@ -36,8 +44,12 @@ Event:ATAEvent
 Event:ATDEvent
   rdf:type owl:Class ;
   rdfs:comment "An ATD Event (Actual Time of Departure Event) is a departure event with the actual date-time." ;
-  rdfs:label "ActualTimeOfDepartureEvent" ;
+  rdfs:label "Actual Time Of Departure Event" ;
   rdfs:subClassOf Event:DepartureEvent ;
+.
+Event:Actual
+  rdf:type Event:DateTimeType ;
+  rdfs:label "Actual" ;
 .
 Event:ArrivalEvent
   rdf:type owl:Class ;
@@ -47,17 +59,19 @@ Event:ArrivalEvent
 .
 Event:BulkDischarge
   rdf:type owl:Class ;
-  rdfs:label "Has Manager" ;
+  rdfs:label "Bulk Discharge" ;
   rdfs:subClassOf Event:BulkTransportEvent ;
+  rdfs:subClassOf Event:DischargeEvent ;
 .
 Event:BulkLoadEvent
   rdf:type owl:Class ;
-  rdfs:label "Has Manager" ;
+  rdfs:label "Bulk Load Event" ;
   rdfs:subClassOf Event:BulkTransportEvent ;
+  rdfs:subClassOf Event:LoadEvent ;
 .
 Event:BulkTransportEvent
   rdf:type owl:Class ;
-  rdfs:label "Has Manager" ;
+  rdfs:label "Bulk Transport Event" ;
   rdfs:subClassOf Event:CargoEvent ;
 .
 Event:CargoEvent
@@ -70,19 +84,14 @@ Event:ContainerDischargeEvent
   rdf:type owl:Class ;
   rdfs:comment "In a Container Discharge Event an equipment of type Container is discharged from its transportation means." ;
   rdfs:label "Container Discharge Event" ;
-  rdfs:subClassOf Event:EquipmentEvent ;
+  rdfs:subClassOf Event:DischargeEvent ;
+  rdfs:subClassOf Event:EquipmentTransportEvent ;
 .
 Event:ContainerLoadEvent
   rdf:type owl:Class ;
   rdfs:comment "With a Container Load Event an association between an equipment of type Container and a transport means is established, because the container is loaded on some transport means." ;
   rdfs:label "Container Load Event" ;
   rdfs:subClassOf Event:EquipmentLoadEvent ;
-.
-Event:ConvergeEvent_1
-  rdf:type Event:MergeEvent ;
-  Event:involvesDigitalTwin DigitalTwin:Main_goods ;
-  Event:involvesDigitalTwin DigitalTwin:goods_1 ;
-  Event:involvesDigitalTwin DigitalTwin:goods_2 ;
 .
 Event:DateTimeType
   rdf:type owl:Class ;
@@ -96,6 +105,11 @@ Event:DepartureEvent
   rdfs:comment "A Departure Event is an association between a Digital Twin type TransportMeans and a Location. It should have milestone End." ;
   rdfs:label "Departure Event" ;
   rdfs:subClassOf Event:Event ;
+.
+Event:DischargeEvent
+  rdf:type owl:Class ;
+  rdfs:label "Discharge Event" ;
+  rdfs:subClassOf Event:CargoEvent ;
 .
 Event:DropOffEvent
   rdf:type owl:Class ;
@@ -123,20 +137,24 @@ Event:ETDEvent
 .
 Event:End
   rdf:type Event:Milestone ;
-  rdfs:comment "Events have a milestone which can be either Start or End. This individual represents the milestone End." ;
-  rdfs:label "start" ;
-.
-Event:EquipmentEvent
-  rdf:type owl:Class ;
-  rdfs:comment "In a Cargo Discharge Event the connection between equipment and transport means is released, since the equipment is discharged off the transport means." ;
-  rdfs:label "Cargo Discharge Event" ;
-  rdfs:subClassOf Event:CargoEvent ;
+  rdfs:label "End" ;
 .
 Event:EquipmentLoadEvent
   rdf:type owl:Class ;
   rdfs:comment "With a Cargo Load Event an association between equipment and transport means is established, because the equipment is loaded on the transport means." ;
-  rdfs:label "Cargo Load Event" ;
-  rdfs:subClassOf Event:EquipmentEvent ;
+  rdfs:label "Equipment Load Event" ;
+  rdfs:subClassOf Event:EquipmentTransportEvent ;
+  rdfs:subClassOf Event:LoadEvent ;
+.
+Event:EquipmentTransportEvent
+  rdf:type owl:Class ;
+  rdfs:comment "In a Cargo Discharge Event the connection between equipment and transport means is released, since the equipment is discharged off the transport means." ;
+  rdfs:label "Equipment Transport Event" ;
+  rdfs:subClassOf Event:CargoEvent ;
+.
+Event:Estimated
+  rdf:type Event:DateTimeType ;
+  rdfs:label "Estimated" ;
 .
 Event:Event
   rdf:type owl:Class ;
@@ -154,20 +172,15 @@ Event:Event
       owl:onProperty Event:DigitalTwin_detail ;
     ] ;
 .
-Event:Goods-Container_1
-  rdf:type Event:GoodsEquipmentEvent ;
-  Event:involvesDigitalTwin DigitalTwin:Container_1 ;
-  Event:involvesDigitalTwin DigitalTwin:goods_1 ;
-.
-Event:Goods-Container_2
-  rdf:type Event:GoodsEquipmentEvent ;
-  Event:involvesDigitalTwin DigitalTwin:Product_1 ;
-  Event:involvesDigitalTwin DigitalTwin:goods_1 ;
+Event:Expected
+  rdf:type Event:DateTimeType ;
+  rdfs:label "Expected" ;
 .
 Event:GoodsDischargeEvent
   rdf:type owl:Class ;
-  rdfs:label "Has Manager" ;
-  rdfs:subClassOf Event:GoodsEvent ;
+  rdfs:label "Goods Load Event" ;
+  rdfs:subClassOf Event:DischargeEvent ;
+  rdfs:subClassOf Event:GoodsTransportEvent ;
 .
 Event:GoodsEquipmentEvent
   rdf:type owl:Class ;
@@ -175,48 +188,60 @@ Event:GoodsEquipmentEvent
   rdfs:label "Goods Equipment Event" ;
   rdfs:subClassOf Event:CargoEvent ;
 .
-Event:GoodsEvent
-  rdf:type owl:Class ;
-  rdfs:label "Has Manager" ;
-  rdfs:subClassOf Event:CargoEvent ;
-.
 Event:GoodsLoadEvent
   rdf:type owl:Class ;
   rdfs:comment "Association Transport Means - Goods. Load goods without intermediate equipment." ;
-  rdfs:label "Has Manager" ;
-  rdfs:subClassOf Event:GoodsEvent ;
+  rdfs:label "Goods Load Event" ;
+  rdfs:subClassOf Event:GoodsTransportEvent ;
+  rdfs:subClassOf Event:LoadEvent ;
+.
+Event:GoodsStructuringEvent
+  rdf:type owl:Class ;
+  rdfs:comment "Events forming an association between two transportable objects (i.e., products or goods)." ;
+  rdfs:label "Goods Structuring Event" ;
+  rdfs:subClassOf Event:Event ;
+.
+Event:GoodsTransportEvent
+  rdf:type owl:Class ;
+  rdfs:label "Goods Transport Event" ;
+  rdfs:subClassOf Event:CargoEvent ;
+.
+Event:LoadEvent
+  rdf:type owl:Class ;
+  rdfs:subClassOf Event:CargoEvent ;
 .
 Event:MergeEvent
   rdf:type owl:Class ;
   rdfs:comment "Merge two sets of goods into a single combined set of goods. This Event contains an association meaning that the association with lesser volume is merged into the association with the higher volume. We expect the association with the higher volume to have several Merge Events associated with it, the sum of which is equal to the volume of that association." ;
   rdfs:label "Merge Event" ;
-  rdfs:subClassOf Event:TransportableObjectEvent ;
+  rdfs:subClassOf Event:GoodsStructuringEvent ;
 .
 Event:Milestone
   rdf:type owl:Class ;
   rdfs:comment "Each Event should have a Milestone associated with it. At the moment, only Start and End are allowed milestones. All allowed Milestone should be of this type." ;
+  rdfs:label "Milestone" ;
   rdfs:subClassOf owl:Thing ;
-.
-Event:PackEvent
-  rdf:type Event:PackagingEvent ;
-  rdfs:label "ATA" ;
 .
 Event:PackagingEvent
   rdf:type owl:Class ;
   rdfs:comment "An event assocation between transportable objects (Goods or Products) to show that one has been packaged into the other." ;
   rdfs:label "Packaging Event" ;
-  rdfs:subClassOf Event:TransportableObjectEvent ;
+  rdfs:subClassOf Event:GoodsStructuringEvent ;
 .
 Event:PickupEvent
   rdf:type owl:Class ;
-  rdfs:label "Pick Up Event" ;
+  rdfs:label "Pickup Event" ;
   rdfs:subClassOf Event:Event ;
 .
 Event:PickupTimeWindowEvent
   rdf:type owl:Class ;
   rdfs:comment "Event for the time window between which a piece of equipment may be picked up." ;
-  rdfs:label "Pick Up Time Window Event" ;
+  rdfs:label "Pickup Time Window Event" ;
   rdfs:subClassOf Event:Event ;
+.
+Event:Planned
+  rdf:type Event:DateTimeType ;
+  rdfs:label "Planned" ;
 .
 Event:PushBargeLoadEvent
   rdf:type owl:Class ;
@@ -234,23 +259,16 @@ Event:SplitEvent
   rdf:type owl:Class ;
   rdfs:comment "Split a set of transportable object into smaller sets of transportable object." ;
   rdfs:label "Split Event" ;
-  rdfs:subClassOf Event:TransportableObjectEvent ;
-.
-Event:SplittingEvent_1
-  rdf:type Event:SplitEvent ;
-  Event:involvesDigitalTwin DigitalTwin:Main_goods ;
-  Event:involvesDigitalTwin DigitalTwin:goods_1 ;
-  Event:involvesDigitalTwin DigitalTwin:goods_2 ;
+  rdfs:subClassOf Event:GoodsStructuringEvent ;
 .
 Event:Start
   rdf:type Event:Milestone ;
-  rdfs:comment "Events have a milestone which can be either Start or End. This individual represents the milestone Start." ;
-  rdfs:label "start" ;
+  rdfs:label "Start" ;
 .
 Event:StripEvent
   rdf:type owl:Class ;
   rdfs:comment "Association to unload a piece of equipment with goods." ;
-  rdfs:label "Strip" ;
+  rdfs:label "Strip Event" ;
   rdfs:subClassOf Event:GoodsEquipmentEvent ;
 .
 Event:StuffEvent
@@ -259,37 +277,15 @@ Event:StuffEvent
   rdfs:label "Stuff Event" ;
   rdfs:subClassOf Event:GoodsEquipmentEvent ;
 .
-Event:TransportableObjectEvent
-  rdf:type owl:Class ;
-  rdfs:comment "Events forming an association between two transportable objects (i.e., products or goods)." ;
-  rdfs:label "Transportable Object Event" ;
-  rdfs:subClassOf Event:Event ;
-.
 Event:UnpackEvent
   rdf:type owl:Class ;
   rdfs:comment "An unpack event means that goods/packaged products are unpacked into another packaging type of the goods/packaged products." ;
   rdfs:label "Unpack Event" ;
-  rdfs:subClassOf Event:TransportableObjectEvent ;
-.
-Event:actual
-  rdf:type Event:DateTimeType ;
-.
-Event:containerIsDischargedEvent
-  rdf:type Event:ContainerDischargeEvent ;
-  rdfs:label "ATA" ;
-.
-Event:containerIsLoadedEvent
-  rdf:type Event:ContainerLoadEvent ;
-  rdfs:label "ATA" ;
+  rdfs:subClassOf Event:GoodsStructuringEvent ;
 .
 Event:end
   rdf:type Event:MileStone ;
-.
-Event:estimated
-  rdf:type Event:DateTimeType ;
-.
-Event:expected
-  rdf:type Event:DateTimeType ;
+  rdfs:label "End" ;
 .
 Event:expectedDropOffDate
   rdf:type owl:DatatypeProperty ;
@@ -345,8 +341,15 @@ Event:hasPickupTime
   rdfs:label "Has Pickup Time" ;
   rdfs:range xsd:dateTime ;
 .
+Event:hasSubmissionTimestamp
+  rdf:type owl:DatatypeProperty ;
+  rdfs:comment "This property relates an Event to the timestamp indicatting when the event was submitted." ;
+  rdfs:domain Event:Event ;
+  rdfs:label "Has Timestamp" ;
+  rdfs:range xsd:dateTime ;
+.
 Event:hasTimestamp
-  rdf:type owl:ObjectProperty ;
+  rdf:type owl:DatatypeProperty ;
   rdfs:comment "This property relates an Event to the timestamp associated with it. A timestamp modifier can be entered via hasDateTimeType." ;
   rdfs:domain Event:Event ;
   rdfs:label "Has Timestamp" ;
@@ -373,7 +376,7 @@ Event:involvesDigitalTwin
   rdfs:comment "This relation establishes an association between an Event and a Digital Twin. The exact meaning depends on the type of Event, which is inferred from this property and the second association the event has." ;
   rdfs:domain Event:Event ;
   rdfs:label "Involves Digital Twin" ;
-  rdfs:range DigitalTwin:physicalObject ;
+  rdfs:range DigitalTwin:PhysicalObject ;
   rdfs:subPropertyOf Event:involves ;
 .
 Event:involvesLogisticsActor
@@ -381,14 +384,14 @@ Event:involvesLogisticsActor
   rdfs:comment "This relation establishes an association between an Event and a Logistics Actor. The exact meaning depends on the type of Event, which is inferred from this property and the second association the event has." ;
   rdfs:domain Event:Event ;
   rdfs:label "Involves Logistics Actor" ;
-  rdfs:range businessService:logisticsActor ;
+  rdfs:range businessService:LegalPerson ;
   rdfs:subPropertyOf Event:involves ;
 .
 Event:involvesPhysicalInfrastructure
   rdf:type owl:ObjectProperty ;
   rdfs:comment "This relation establishes an association between an Event and a Location. The exact meaning depends on the type of Event, which is inferred from this property and the second association the event has." ;
   rdfs:domain Event:Event ;
-  rdfs:label "Involves Location" ;
+  rdfs:label "Involves PhysicalInfrastructure" ;
   rdfs:range pi:Location ;
   rdfs:subPropertyOf Event:involves ;
 .

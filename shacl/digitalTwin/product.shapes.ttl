@@ -1,0 +1,48 @@
+# baseURI: https://ontology.tno.nl/logistics/federated/shapes/product
+# imports: http://datashapes.org/dash
+
+@prefix : <https://ontology.tno.nl/logistics/federated/shapes/product#> .
+@prefix dash: <http://datashapes.org/dash#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix DT: <https://ontology.tno.nl/logistics/federated/DigitalTwin#> .
+@prefix event: <https://ontology.tno.nl/logistics/federated/Event#> .
+@prefix pi: <https://ontology.tno.nl/logistics/federated/PhysicalInfrastructure#> .
+@prefix classifications: <https://ontology.tno.nl/logistics/federated/Classifications#> .
+
+<https://ontology.tno.nl/logistics/federated/shapes/product>
+    a owl:Ontology ;
+    owl:imports <http://datashapes.org/dash> ;
+    owl:versionInfo "Created with Topbraid Composer" ;
+.
+
+:ProductShape
+    rdf:type sh:NodeShape ;
+    sh:name "Product Shape" ;
+    sh:description "A Product has a product ID and a product name." ;
+    sh:property [
+        rdf:type sh:PropertyShape ;
+        sh:path DT:productID ;
+        sh:datatype xsd:string ;
+        sh:maxCount 1 ;
+        sh:name "A product must have no more than one product ID." ;
+    ] ;
+    sh:property [
+        rdf:type sh:PropertyShape ;
+        sh:path DT:productID ;
+        sh:minCount 1 ;
+        sh:name "A product should have at least one product ID." ;
+        sh:severity sh:Warning ;
+    ] ;
+    sh:property [
+        rdf:type sh:PropertyShape ;
+        sh:path DT:productName ;
+        sh:datatype xsd:string ;
+        sh:maxCount 1 ;
+        sh:name "has product name" ;
+    ] ;
+    sh:targetClass DT:Product ;
+.

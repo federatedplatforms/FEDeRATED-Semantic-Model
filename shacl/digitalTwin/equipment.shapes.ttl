@@ -1,0 +1,138 @@
+# baseURI: https://ontology.tno.nl/logistics/federated/shapes/equipment
+# imports: http://datashapes.org/dash
+
+@prefix : <https://ontology.tno.nl/logistics/federated/shapes/equipment#> .
+@prefix dash: <http://datashapes.org/dash#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix DT: <https://ontology.tno.nl/logistics/federated/DigitalTwin#> .
+@prefix event: <https://ontology.tno.nl/logistics/federated/Event#> .
+@prefix pi: <https://ontology.tno.nl/logistics/federated/PhysicalInfrastructure#> .
+
+<https://ontology.tno.nl/logistics/federated/shapes/event>
+    a owl:Ontology ;
+    owl:imports <http://datashapes.org/dash> ;
+    owl:versionInfo "Created with Topbraid Composer" ;
+.
+
+:EquipmentShape
+    rdf:type sh:NodeShape ;
+    rdf:name "Equipment Shape" ;
+    sh:description "A piece of Equipment has an equipment category, container ITU code, ID, size, gross weight and tare weight." ;
+    sh:property [
+        rdf:type sh:PropertyShape ;
+        sh:path DT:equipmentCategoryCode ;
+        sh:datatype xsd:string ;
+        sh:maxCount 1 ;
+        sh:name "has equipment category code" ;
+    ] ;
+    sh:property [
+        rdf:type sh:PropertyShape ;
+        sh:path DT:equipmentContainerITUCode ;
+        sh:datatype xsd:string ;
+        sh:maxCount 1 ;
+        sh:name "has equipment container ITU code" ;
+    ] ;
+    sh:property [
+        rdf:type sh:PropertyShape ;
+        sh:path DT:equipmentID ;
+        sh:datatype xsd:string ;
+        sh:maxCount 1 ;
+        sh:name "Equipment must have no more than one equipment ID" ;
+    ] ;
+    sh:property [
+        rdf:type sh:PropertyShape ;
+        sh:path DT:equipmentID ;
+        sh:minCount 1 ;
+        sh:name "Equipment should have at least one equipment ID" ;
+        sh:severity sh:Warning ;
+    ] ;
+    sh:property [
+        rdf:type sh:PropertyShape ;
+        sh:path DT:equipmentSize ;
+        sh:datatype xsd:decimal ;
+        sh:maxCount 1;
+        sh:name "has equipment size" ;
+    ];
+    sh:property [
+        rdf:type sh:PropertyShape ;
+        sh:path DT:grossWeight ;
+        sh:datatype xsd:decimal ;
+        sh:maxCount 1 ;
+        sh:name "has gross weight" ;
+    ] ;
+    sh:property [
+        rdf:type sh:PropertyShape ;
+        sh:path DT:tareWeight ;
+        sh:datatype xsd:decimal ;
+        sh:maxCount 1 ;
+        sh:name "has tare weight" ;
+    ] ;
+    sh:targetClass DT:equipment ;
+.
+
+:RailwayWagonShape
+    rdf:type sh:NodeShape ;
+    sh:name "Railway Wagon Shape" ;
+    sh:description "A railway wagon has a wagon brake type, a wagon brake weight, a wagon maximum speed and a wagon number of axels." ;
+    sh:property [
+        rdf:type sh:PropertyShape ;
+        sh:path DT:wagonBrakeType ;
+        sh:datatype xsd:string ;
+        sh:maxCount 1 ;
+        sh:name "has wagon brake type" ;
+    ] ;
+        sh:property [
+        rdf:type sh:PropertyShape ;
+        sh:path DT:wagonBrakeWeight ;
+        sh:datatype xsd:int ;
+        sh:maxCount 1 ;
+        sh:name "has wagon brake weight" ;
+    ] ;
+        sh:property [
+        rdf:type sh:PropertyShape ;
+        sh:path DT:wagonMaximumSpeed ;
+        sh:datatype xsd:int ;
+        sh:maxCount 1 ;
+        sh:name "has wagon maximum speed" ;
+    ] ;
+        sh:property [
+        rdf:type sh:PropertyShape ;
+        sh:path DT:wagonNrAxel ;
+        sh:datatype xsd:int ;
+        sh:maxCount 1 ;
+        sh:name "has number of axels" ;
+    ] ;
+    sh:targetClass DT:RailwayWagon ;
+.
+
+:TrailerShape
+    rdf:type sh:NodeShape ;
+    sh:name "Trailer Shape" ;
+    sh:description "A trailer has a trailer ID and a trailer license plate." ;
+    sh:property [
+        rdf:type sh:PropertyShape ;
+        sh:path DT:trailerID ;
+        sh:datatype xsd:string ;
+        sh:maxCount 1 ;
+        sh:name "A trailer must have no more than one trailer ID" ;
+    ] ;
+    sh:property [
+        rdf:type sh:PropertyShape ;
+        sh:path DT:trailerID ;
+        sh:minCount 1 ;
+        sh:name "A trailer should have at least one trailer ID" ;
+        sh:severity sh:Warning ;
+    ] ;
+    sh:property [
+        rdf:type sh:PropertyShape ;
+        sh:path DT:trailerLicensePlate ;
+        sh:datatype xsd:string ;
+        sh:maxCount 1 ;
+        sh:name "has trailer license plate" ;
+    ] ;
+    sh:targetClass DT:Trailer;
+.

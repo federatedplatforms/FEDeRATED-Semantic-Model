@@ -7,6 +7,8 @@
 
 @prefix : <https://ontology.tno.nl/logistics/federated/DerivedConcepts> .
 @prefix BusinessService: <https://ontology.tno.nl/logistics/federated/BusinessService#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix derivedConcept: <https://ontology.tno.nl/logistics/federated/DerivedConcepts#> .
 @prefix ecallUsecase: <https://ontology.tno.nl/logistics/federated/ecallUsecase#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
@@ -18,11 +20,27 @@
 
 <https://ontology.tno.nl/logistics/federated/DerivedConcepts>
   rdf:type owl:Ontology ;
+  dc:creator "Dena Tahvildari, Cornelis Bouter, Maaike Burghoorn" ;
+  dcterms:created "2021-02-11"^^xsd:DateTime ;
+  dcterms:description """This ontology contains classes, attributes, relation about 
+  						 from Derived Concepts relevant in the
+  						 FEDeRATED ontology domain. The concepts in this ontology
+  						 are intended to be inferred through reasoning rules or
+  						 queries instead of directly instantiated.""" ;
+  dcterms:isRequiredBy <https://ontology.tno.nl/logistics/federated/BusinessService> ;
+  dcterms:isRequiredBy <https://ontology.tno.nl/logistics/federated/DigitalTwin> ;
+  dcterms:isRequiredBy <https://ontology.tno.nl/logistics/federated/PhysicalInfrastructure> ;
+  dcterms:issued "2021-03-15"^^xsd:DateTime ;
+  dcterms:language "en" ;
+  dcterms:requires <https://ontology.tno.nl/logistics/federated/BusinessService> ;
+  dcterms:requires <https://ontology.tno.nl/logistics/federated/DigitalTwin> ;
+  dcterms:requires <https://ontology.tno.nl/logistics/federated/PhysicalInfrastructure> ;
   owl:imports <https://ontology.tno.nl/logistics/federated/BusinessService> ;
   owl:imports <https://ontology.tno.nl/logistics/federated/Classifications> ;
   owl:imports <https://ontology.tno.nl/logistics/federated/DigitalTwin> ;
   owl:imports <https://ontology.tno.nl/logistics/federated/Event> ;
   owl:imports <https://ontology.tno.nl/logistics/federated/PhysicalInfrastructure> ;
+  owl:versionIRI <https://ontology.tno.nl/logistics/federated/DerivedConceptsv-0.1> ;
   owl:versionInfo "Created with TopBraid Composer" ;
 .
 derivedConcept:CargoTrack
@@ -89,12 +107,11 @@ derivedConcept:Itinerary
   rdf:type sh:NodeShape ;
   rdfs:comment "a timed sequence of transshipment locations or hubs passed by a transport means to load and/or discharge cargo. An itinerary, or voyage of a vessel, is expressed in data properties and associations of the semantic model." ;
   rdfs:subClassOf owl:Thing ;
-  skos:altLabel "Voyage" ;
 .
 derivedConcept:LocatedAt
   rdf:type owl:ObjectProperty ;
 .
-derivedConcept:Rout
+derivedConcept:Route
   rdf:type owl:Class ;
   rdf:type sh:NodeShape ;
   rdfs:comment "the use of the infrastructure (sea, road, rail, etc.) taken by a transport means between any two locations of its itinerary. A route is also expressed as in data properties and associations of the semantic model. " ;
@@ -133,13 +150,13 @@ derivedConcept:TransportFlow
 derivedConcept:TransportLeg
   rdf:type owl:Class ;
   rdf:type sh:NodeShape ;
-  rdfs:comment "transport of particular cargo between two adjacent (in time) locations with only one transport means (e.g. POL-POD; this refers to roles of locations like POL – Port of Loading – and POD – Port of Discharge (see note on roles))." ;
+  rdfs:comment "transport of particular cargo between two adjacent (in time) locations with only one transport means (e.g. POL-POD; this refers to roles of locations like POL â€“ Port of Loading â€“ and POD â€“ Port of Discharge (see note on roles))." ;
   rdfs:subClassOf owl:Thing ;
 .
 derivedConcept:TruckItinerary
   rdf:type owl:Class ;
   rdf:type sh:NodeShape ;
-  rdfs:comment "truck itinerary has synonym ‘trip" ;
+  rdfs:comment "truck itinerary has synonym â€˜trip" ;
   rdfs:subClassOf derivedConcept:Itinerary ;
   skos:altLabel "trip" ;
 .
@@ -149,3 +166,6 @@ derivedConcept:contains
 derivedConcept:involves
   rdf:type owl:ObjectProperty ;
 .
+
+
+
