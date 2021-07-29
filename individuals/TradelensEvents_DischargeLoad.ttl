@@ -1,6 +1,6 @@
-# baseURI: https://ontology.tno.nl/logistics/federated/tradelens2#
+# baseURI: https://ontology.tno.nl/logistics/federated/tradelens1
 
-@base          <https://ontology.tno.nl/logistics/federated/tradelens2#> .
+@base          <https://ontology.tno.nl/logistics/federated/tradelens1> .
 @prefix skostemplate: <http://topbraid.org/spin/skostemplates#> .
 @prefix tagger: <http://evn.topbraidlive.org/tagger#> .
 @prefix xmls:  <http://www.w3.org/2001/XMLSchema#> .
@@ -97,16 +97,12 @@ ex:DigitalTwin-cc1d0de9-8b95-4bbb-b6d2-0122b24321df
         DigitalTwin:hasVIN  "2318927" .
 
 ex:Event-664706e2-86e4-4955-b0af-6d5f92aaed85
-        a                          Event:Event , owl:NamedIndividual ;
-        rdfs:label                 "Actual discharge from rail" , "DischargeFrom" ;
+        a                          owl:NamedIndividual , Event:Event ;
+        rdfs:label                 "DischargeFrom" , "Actual discharge from rail" ;
         Event:hasDateTimeType      Event:Actual ;
         Event:hasMilestone         Event:End ;
         Event:hasTimestamp         "2020-02-01T05:58:00"^^xsd:dateTime ;
-        Event:involvesBusinessTransaction
-                ex:businessTransaction-cf7005e8-baf5-4ea3-b11c-9efec4a2bac7 ;
-        Event:involvesDigitalTwin  ex:Equipment-cf7005e8-baf5-4ea3-b11c-9efec4a2bac7 , ex:DigitalTwin-664706e2-86e4-4955-b0af-6d5f92aaed85 ;
-        Event:involvesPhysicalInfrastructure
-                ex:physicalInfrastructure-USCHIGT .
+        Event:involvesDigitalTwin  ex:DigitalTwin-664706e2-86e4-4955-b0af-6d5f92aaed85 , ex:Equipment-cf7005e8-baf5-4ea3-b11c-9efec4a2bac7 .
 
 ex:DigitalTwin-754412c0-0a76-4e31-bad3-f992f98e729c
         a                   DigitalTwin:TransportMeans , owl:NamedIndividual , DigitalTwin:Barge ;
@@ -116,16 +112,12 @@ ex:DigitalTwin-754412c0-0a76-4e31-bad3-f992f98e729c
         DigitalTwin:hasVIN  "8738134" .
 
 ex:Event-57b1f4a4-d993-422a-8bbe-c84317ce6edf
-        a                          owl:NamedIndividual , Event:Event ;
-        rdfs:label                 "LoadedOn" , "Actual loaded on rail" ;
+        a                          Event:Event , owl:NamedIndividual ;
+        rdfs:label                 "Actual loaded on rail" , "LoadedOn" ;
         Event:hasDateTimeType      Event:Actual ;
         Event:hasMilestone         Event:Start ;
         Event:hasTimestamp         "2019-12-24T03:00:00"^^xsd:dateTime ;
-        Event:involvesBusinessTransaction
-                ex:businessTransaction-cc7c1d54-a337-4456-a885-39486a00d17e ;
-        Event:involvesDigitalTwin  ex:DigitalTwin-57b1f4a4-d993-422a-8bbe-c84317ce6edf , ex:Equipment-cc7c1d54-a337-4456-a885-39486a00d17e ;
-        Event:involvesPhysicalInfrastructure
-                ex:physicalInfrastructure-USMEMCS .
+        Event:involvesDigitalTwin  ex:Equipment-cc7c1d54-a337-4456-a885-39486a00d17e , ex:DigitalTwin-57b1f4a4-d993-422a-8bbe-c84317ce6edf .
 
 ex:Equipment-d7ec162c-22f3-4eee-a3cd-992849579763
         a           DigitalTwin:Equipment , owl:NamedIndividual ;
@@ -148,16 +140,12 @@ ex:Equipment-b7fb8b7e-5a08-477c-a125-2ace84b3ab09
         rdfs:label  "TLLU5361110, TGHU9689578, MRKU3745515, CXDU1155306, MRKU5178977, MSKU0344172, MRKU3688631, MSKU9068178, MSKU8982960, MRSU3122760, MRKU3427509, MRKU2949509, CLHU8549600, SUDU8822610, MRKU3510969, MSKU1211641, MRKU4948374, MSKU0417221, TGHU6034140, TCNU2530767, MRKU5898370, MSKU1573595, MSKU0309870, MRKU5428377, MSKU9139986, HASU4130760, CRSU9089504, MRKU5918008, SUDU5852190, PONU7787594, MIEU3022368, HASU4875584, MRKU5753891, HASU4978263, SUDU5808053, MSKU1255275, MRKU6264431, PONU7376741, MRKU8102511, TRLU7612788, HASU4972943, MRKU2646122, MSKU8061163, MRKU3897800, MRKU2508930" .
 
 ex:Event-754412c0-0a76-4e31-bad3-f992f98e729c
-        a                          owl:NamedIndividual , Event:Event ;
-        rdfs:label                 "Estimated discharge from barge" , "DischargeFrom" ;
+        a                          Event:Event , owl:NamedIndividual ;
+        rdfs:label                 "DischargeFrom" , "Estimated discharge from barge" ;
         Event:hasDateTimeType      Event:Estimated ;
         Event:hasMilestone         Event:End ;
         Event:hasTimestamp         "2020-02-04T18:00:00"^^xsd:dateTime ;
-        Event:involvesBusinessTransaction
-                ex:businessTransaction-e6b2b4be-3b7b-4024-8d12-551c21882100 ;
-        Event:involvesDigitalTwin  ex:Equipment-e6b2b4be-3b7b-4024-8d12-551c21882100 , ex:DigitalTwin-754412c0-0a76-4e31-bad3-f992f98e729c ;
-        Event:involvesPhysicalInfrastructure
-                ex:physicalInfrastructure-JPSMZ-SDE .
+        Event:involvesDigitalTwin  ex:DigitalTwin-754412c0-0a76-4e31-bad3-f992f98e729c , ex:Equipment-e6b2b4be-3b7b-4024-8d12-551c21882100 .
 
 ex:Equipment-44412d33-3ae5-4892-ab15-35c7ed5bde79
         a           DigitalTwin:Equipment , owl:NamedIndividual ;
@@ -168,16 +156,12 @@ ex:DigitalTwin-fbcf09f6-bc79-43d9-9ea6-32a3033c9261
         rdfs:label  "Truck" .
 
 ex:Event-b10afcd1-a391-4fae-9fae-42a42de70686
-        a                          Event:Event , owl:NamedIndividual ;
-        rdfs:label                 "LoadedOn" , "Estimated loaded on vessel" ;
+        a                          owl:NamedIndividual , Event:Event ;
+        rdfs:label                 "Estimated loaded on vessel" , "LoadedOn" ;
         Event:hasDateTimeType      Event:Estimated ;
         Event:hasMilestone         Event:Start ;
         Event:hasTimestamp         "2020-01-14T16:00:00"^^xsd:dateTime ;
-        Event:involvesBusinessTransaction
-                ex:businessTransaction-82a47c26-bfdd-4f38-8d6c-46d12341cdad ;
-        Event:involvesDigitalTwin  ex:DigitalTwin-b10afcd1-a391-4fae-9fae-42a42de70686 , ex:Equipment-82a47c26-bfdd-4f38-8d6c-46d12341cdad ;
-        Event:involvesPhysicalInfrastructure
-                ex:physicalInfrastructure-ARZAE-TZARA .
+        Event:involvesDigitalTwin  ex:Equipment-82a47c26-bfdd-4f38-8d6c-46d12341cdad , ex:DigitalTwin-b10afcd1-a391-4fae-9fae-42a42de70686 .
 
 ex:DigitalTwin-6164716a-3758-4f81-9bf6-882aba2b57f8
         a           DigitalTwin:TransportMeans , owl:NamedIndividual , DigitalTwin:Vessel ;
@@ -195,34 +179,28 @@ ex:DigitalTwin-7cdfc028-e4ec-4946-9843-a8724e5f039a
         DigitalTwin:hasVIN  "PAR2_" .
 
 ex:Event-fbcf09f6-bc79-43d9-9ea6-32a3033c9261
-        a                          Event:Event , owl:NamedIndividual ;
-        rdfs:label                 "DischargeFrom" , "Actual discharge from truck" ;
+        a                          owl:NamedIndividual , Event:Event ;
+        rdfs:label                 "Actual discharge from truck" , "DischargeFrom" ;
         Event:hasDateTimeType      Event:Actual ;
         Event:hasMilestone         Event:End ;
         Event:hasTimestamp         "2019-11-25T18:23:10"^^xsd:dateTime ;
-        Event:involvesBusinessTransaction
-                ex:businessTransaction-44412d33-3ae5-4892-ab15-35c7ed5bde79 ;
-        Event:involvesDigitalTwin  ex:Equipment-44412d33-3ae5-4892-ab15-35c7ed5bde79 , ex:DigitalTwin-fbcf09f6-bc79-43d9-9ea6-32a3033c9261 .
+        Event:involvesDigitalTwin  ex:DigitalTwin-fbcf09f6-bc79-43d9-9ea6-32a3033c9261 , ex:Equipment-44412d33-3ae5-4892-ab15-35c7ed5bde79 .
 
 ex:Event-6164716a-3758-4f81-9bf6-882aba2b57f8
-        a                          owl:NamedIndividual , Event:Event ;
-        rdfs:label                 "Actual discharge from vessel" , "DischargeFrom" ;
+        a                          Event:Event , owl:NamedIndividual ;
+        rdfs:label                 "DischargeFrom" , "Actual discharge from vessel" ;
         Event:hasDateTimeType      Event:Actual ;
         Event:hasMilestone         Event:End ;
         Event:hasTimestamp         "2020-01-07T03:01:00"^^xsd:dateTime ;
-        Event:involvesBusinessTransaction
-                ex:businessTransaction-b7fb8b7e-5a08-477c-a125-2ace84b3ab09 ;
-        Event:involvesDigitalTwin  ex:DigitalTwin-6164716a-3758-4f81-9bf6-882aba2b57f8 , ex:Equipment-b7fb8b7e-5a08-477c-a125-2ace84b3ab09 .
+        Event:involvesDigitalTwin  ex:Equipment-b7fb8b7e-5a08-477c-a125-2ace84b3ab09 , ex:DigitalTwin-6164716a-3758-4f81-9bf6-882aba2b57f8 .
 
 ex:Event-7cdfc028-e4ec-4946-9843-a8724e5f039a
-        a                          owl:NamedIndividual , Event:Event ;
-        rdfs:label                 "LoadedOn" , "Actual loaded on barge" ;
+        a                          Event:Event , owl:NamedIndividual ;
+        rdfs:label                 "Actual loaded on barge" , "LoadedOn" ;
         Event:hasDateTimeType      Event:Actual ;
         Event:hasMilestone         Event:Start ;
         Event:hasTimestamp         "2019-08-15T12:23:46"^^xsd:dateTime ;
-        Event:involvesBusinessTransaction
-                ex:businessTransaction-2888295d-941d-497d-b376-371dd4f307db ;
-        Event:involvesDigitalTwin  ex:Equipment-2888295d-941d-497d-b376-371dd4f307db , ex:DigitalTwin-7cdfc028-e4ec-4946-9843-a8724e5f039a .
+        Event:involvesDigitalTwin  ex:DigitalTwin-7cdfc028-e4ec-4946-9843-a8724e5f039a , ex:Equipment-2888295d-941d-497d-b376-371dd4f307db .
 
 ex:DigitalTwin-82a85a42-f88a-4297-8a46-0ff95eb64342
         a                   DigitalTwin:TransportMeans , owl:NamedIndividual , DigitalTwin:Vessel ;
@@ -236,14 +214,12 @@ ex:Equipment-214d1a38-fc93-4964-9577-ce3d928d4935
         rdfs:label  "SUDU6197112, MNBU3654225, MNBU0524212, MNBU4104780, MNBU4074392, SUDU8147764, MNBU4133704, SUDU8093288, MSWU0084604, MMAU1227544, MNBU3065652, MMAU1027926, MNBU3328635, MMAU1202274, MNBU3119717, MMAU1216302, MMAU1226070, MNBU3372710, SUDU8052381, MNBU3566000, SUDU6258814, MWCU6832641, SUDU8133164, MNBU3622228, MNBU3530841, SUDU9313788, MNBU3486374, MNBU3950356, MMAU1181443, MNBU9040986, MNBU3321862, MNBU0207440, MNBU3525064, MNBU0054063" .
 
 ex:Event-cc1d0de9-8b95-4bbb-b6d2-0122b24321df
-        a                          owl:NamedIndividual , Event:Event ;
-        rdfs:label                 "Actual discharge from barge" , "DischargeFrom" ;
+        a                          Event:Event , owl:NamedIndividual ;
+        rdfs:label                 "DischargeFrom" , "Actual discharge from barge" ;
         Event:hasDateTimeType      Event:Actual ;
         Event:hasMilestone         Event:End ;
         Event:hasTimestamp         "2020-02-04T22:06:50"^^xsd:dateTime ;
-        Event:involvesBusinessTransaction
-                ex:businessTransaction-8eb07532-a197-497b-8362-229b363c2869 ;
-        Event:involvesDigitalTwin  ex:Equipment-8eb07532-a197-497b-8362-229b363c2869 , ex:DigitalTwin-cc1d0de9-8b95-4bbb-b6d2-0122b24321df .
+        Event:involvesDigitalTwin  ex:DigitalTwin-cc1d0de9-8b95-4bbb-b6d2-0122b24321df , ex:Equipment-8eb07532-a197-497b-8362-229b363c2869 .
 
 ex:Equipment-e6b2b4be-3b7b-4024-8d12-551c21882100
         a           DigitalTwin:Equipment , owl:NamedIndividual ;
@@ -265,24 +241,20 @@ ex:DigitalTwin-afd4dbe1-143a-473d-abbc-4d0624e5d400
         DigitalTwin:hasVIN  "Guaran F 503" .
 
 ex:Event-82a85a42-f88a-4297-8a46-0ff95eb64342
-        a                          Event:Event , owl:NamedIndividual ;
-        rdfs:label                 "LoadedOn" , "Actual loaded on vessel" ;
+        a                          owl:NamedIndividual , Event:Event ;
+        rdfs:label                 "Actual loaded on vessel" , "LoadedOn" ;
         Event:hasDateTimeType      Event:Actual ;
         Event:hasMilestone         Event:Start ;
         Event:hasTimestamp         "2020-01-16T02:00:00"^^xsd:dateTime ;
-        Event:involvesBusinessTransaction
-                ex:businessTransaction-7e5e1ceb-2536-4267-b15b-06106de9a7cf ;
-        Event:involvesDigitalTwin  ex:DigitalTwin-82a85a42-f88a-4297-8a46-0ff95eb64342 , ex:Equipment-7e5e1ceb-2536-4267-b15b-06106de9a7cf .
+        Event:involvesDigitalTwin  ex:Equipment-7e5e1ceb-2536-4267-b15b-06106de9a7cf , ex:DigitalTwin-82a85a42-f88a-4297-8a46-0ff95eb64342 .
 
 ex:Event-f149c210-6ba3-477f-853b-cf8a8d0bf938
-        a                          owl:NamedIndividual , Event:Event ;
-        rdfs:label                 "Actual loaded on truck" , "LoadedOn" ;
+        a                          Event:Event , owl:NamedIndividual ;
+        rdfs:label                 "LoadedOn" , "Actual loaded on truck" ;
         Event:hasDateTimeType      Event:Actual ;
         Event:hasMilestone         Event:Start ;
         Event:hasTimestamp         "2019-12-07T07:38:38"^^xsd:dateTime ;
-        Event:involvesBusinessTransaction
-                ex:businessTransaction-214d1a38-fc93-4964-9577-ce3d928d4935 ;
-        Event:involvesDigitalTwin  ex:Equipment-214d1a38-fc93-4964-9577-ce3d928d4935 , ex:DigitalTwin-f149c210-6ba3-477f-853b-cf8a8d0bf938 .
+        Event:involvesDigitalTwin  ex:DigitalTwin-f149c210-6ba3-477f-853b-cf8a8d0bf938 , ex:Equipment-214d1a38-fc93-4964-9577-ce3d928d4935 .
 
 ex:DigitalTwin-6ef0dce9-81f2-4365-b829-457fbd82675e
         a                   DigitalTwin:TransportMeans , owl:NamedIndividual , DigitalTwin:Barge ;
@@ -292,28 +264,20 @@ ex:DigitalTwin-6ef0dce9-81f2-4365-b829-457fbd82675e
         DigitalTwin:hasVIN  "8738134" .
 
 ex:Event-afd4dbe1-143a-473d-abbc-4d0624e5d400
-        a                          owl:NamedIndividual , Event:Event ;
-        rdfs:label                 "Estimated discharge from vessel" , "DischargeFrom" ;
+        a                          Event:Event , owl:NamedIndividual ;
+        rdfs:label                 "DischargeFrom" , "Estimated discharge from vessel" ;
         Event:hasDateTimeType      Event:Estimated ;
         Event:hasMilestone         Event:End ;
         Event:hasTimestamp         "2020-01-24T13:00:00"^^xsd:dateTime ;
-        Event:involvesBusinessTransaction
-                ex:businessTransaction-ffbbab59-2402-4b26-a90c-429018eeb2b7 ;
-        Event:involvesDigitalTwin  ex:DigitalTwin-afd4dbe1-143a-473d-abbc-4d0624e5d400 , ex:Equipment-ffbbab59-2402-4b26-a90c-429018eeb2b7 ;
-        Event:involvesPhysicalInfrastructure
-                ex:physicalInfrastructure-UYMVD-TCDP .
+        Event:involvesDigitalTwin  ex:Equipment-ffbbab59-2402-4b26-a90c-429018eeb2b7 , ex:DigitalTwin-afd4dbe1-143a-473d-abbc-4d0624e5d400 .
 
 ex:Event-6ef0dce9-81f2-4365-b829-457fbd82675e
-        a                          owl:NamedIndividual , Event:Event ;
-        rdfs:label                 "LoadedOn" , "Estimated loaded on barge" ;
+        a                          Event:Event , owl:NamedIndividual ;
+        rdfs:label                 "Estimated loaded on barge" , "LoadedOn" ;
         Event:hasDateTimeType      Event:Estimated ;
         Event:hasMilestone         Event:Start ;
         Event:hasTimestamp         "2020-02-04T18:00:00"^^xsd:dateTime ;
-        Event:involvesBusinessTransaction
-                ex:businessTransaction-d7ec162c-22f3-4eee-a3cd-992849579763 ;
-        Event:involvesDigitalTwin  ex:Equipment-d7ec162c-22f3-4eee-a3cd-992849579763 , ex:DigitalTwin-6ef0dce9-81f2-4365-b829-457fbd82675e ;
-        Event:involvesPhysicalInfrastructure
-                ex:physicalInfrastructure-JPSMZ-SDE .
+        Event:involvesDigitalTwin  ex:DigitalTwin-6ef0dce9-81f2-4365-b829-457fbd82675e , ex:Equipment-d7ec162c-22f3-4eee-a3cd-992849579763 .
 
 ex:DigitalTwin-b10afcd1-a391-4fae-9fae-42a42de70686
         a                   DigitalTwin:TransportMeans , owl:NamedIndividual , DigitalTwin:Vessel ;
