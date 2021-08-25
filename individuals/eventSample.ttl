@@ -90,6 +90,6 @@
   rdfs:label "Truck 1" ;
   DigitalTwin:damageRemarks "scratch rear bumper" ;
   DigitalTwin:hasLicensePlateNumber "00-BBB-1" ;
-  DigitalTwin:hasTransportMeansID 189493081928 ;
+  DigitalTwin:hasTransportMeansID "189493081928" ;
   DigitalTwin:hasVIN 189493081928 ;
 .
