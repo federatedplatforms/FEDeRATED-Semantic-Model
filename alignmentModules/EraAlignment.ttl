@@ -51,7 +51,7 @@ era:VehicleKeeper
 .
 EraAlignment:VehicleKeeper_1
   rdf:type era:VehicleKeeper ;
-  rdfs:label "Located At" ;
+  rdfs:label "Vehicle Keeper" ;
 .
 PhysicalInfrastructure:LogisticalFunction
   rdfs:subClassOf era:MicroNode ;

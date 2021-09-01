@@ -330,7 +330,7 @@ businessService:bookingNumber
 .
 businessService:bookingStatus
   rdf:type owl:ObjectProperty ;
-  rdfs:comment "if the bookign is active, canceled, or combined" ;
+  rdfs:comment "if the booking is active, canceled, or combined" ;
   rdfs:domain businessService:Booking ;
   rdfs:label "consignment Creation Time" ;
   rdfs:range [
@@ -396,7 +396,7 @@ businessService:hasService
 .
 businessService:involvedActor
   rdf:type owl:ObjectProperty ;
-  rdfs:comment "Actor involved in bussiness transaction" ;
+  rdfs:comment "Actor involved in business transaction" ;
   rdfs:domain businessService:BusinessTransaction ;
   rdfs:label "Involved actor" ;
   rdfs:range businessService:LegalPerson ;

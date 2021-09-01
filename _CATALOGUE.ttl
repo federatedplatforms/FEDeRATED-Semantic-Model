@@ -24,20 +24,20 @@
 <http://tno.io/ontologies/Event>
   rdf:type owl:Ontology ;
   dc:source "Event.ttl" ;
-  terms:title "Logistic Business Service" ;
+  terms:title "Event" ;
   terms:namespace "Event";
 .
 
 <http://tno.io/ontologies/businessService>
   rdf:type owl:Ontology ;
-  dc:source "bsuinessService.ttl" ;
+  dc:source "businessService.ttl" ;
   terms:title "Business Service" ;
   terms:namespace "businessService";
 .
 <http://tno.io/ontologies/PhysicalInfrastructure>
   rdf:type owl:Ontology ;
   dc:source "PhysicalInfrastructure.ttl" ;
-  terms:title "Business Service" ;
+  terms:title "Physical Infrastructure" ;
   terms:namespace "pf";
 .
 <http://tno.io/ontologies/LogisticsRoles>
@@ -45,14 +45,14 @@
   dc:source "LogisticsRoles.ttl" ;
   terms:title "LogsiticsRoles" ;
   terms:namespace "LogisticsRoles";
-  term:subject "This file contains a model (taxonomy) and relationship for defining various types of roles in the logistics domain" ;
+  terms:subject "This file contains a model (taxonomy) and relationship for defining various types of roles in the logistics domain" ;
 .
-<http://tno.io/ontologies/DerviedConcepts>
+<http://tno.io/ontologies/DerivedConcepts>
   rdf:type owl:Ontology ;
-  dc:source "DerviedConcept.ttl" ;
-  terms:title "DerviedConcepts" ;
-  terms:namespace "DerviedConcept";
-  term:subject "This file contains a model (taxonomy) and for specifying the derived concepts -- concetps that are not asserted in the data by can be inffered by the means of reasoning and inference rules over the existing concepts in the varius modules." ;
+  dc:source "DerivedConcept.ttl" ;
+  terms:title "DerivedConcepts" ;
+  terms:namespace "DerivedConcept";
+  terms:subject "This file contains a model (taxonomy) and for specifying the derived concepts -- concepts that are not asserted in the data by can be inferred by the means of reasoning and inference rules over the existing concepts in the varius modules." ;
 .
 
 <http://tno.io/ontologies/ReusableTags>
@@ -60,5 +60,5 @@
   dc:source "ReusableTags.ttl" ;
   terms:title "Reusable Tags" ;
   terms:namespace "Reusable Tags";
-  term:subject "This file contains various types of tags (also for future). in the first version of the ontology we introduce is_derived Tag, a boellean type to express if a resource in the ontology is a derived concept. Derived concept is a concept that is not directly asserted in the data, but it can be inferred by using other resources in the ontology, for example place of Call is a dervied concept." ;
+  terms:subject "This file contains various types of tags (also for future). in the first version of the ontology we introduce is_derived Tag, a boolean type to express if a resource in the ontology is a derived concept. Derived concept is a concept that is not directly asserted in the data, but it can be inferred by using other resources in the ontology, for example place of Call is a derived concept." ;
 .

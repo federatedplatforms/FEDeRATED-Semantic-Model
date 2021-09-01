@@ -816,10 +816,6 @@ DigitalTwin:netMass
   rdfs:range xsd:integer ;
   rdfs:subPropertyOf DigitalTwin:PhysicalObjectProperties ;
 .
-DigitalTwin:newone
-  rdf:type dcterms:Agent ;
-  rdfs:label "Invovles In" ;
-.
 DigitalTwin:numberOfTEU
   rdf:type owl:DatatypeProperty ;
   rdfs:label "Number of TEU" ;
