@@ -1,9 +1,4 @@
 # baseURI: https://ontology.tno.nl/logistics/federated/Event
-# imports: https://ontology.tno.nl/logistics/federated/BusinessService
-# imports: https://ontology.tno.nl/logistics/federated/Classifications
-# imports: https://ontology.tno.nl/logistics/federated/DigitalTwin
-# imports: https://ontology.tno.nl/logistics/federated/PhysicalInfrastructure
-# imports: https://ontology.tno.nl/logistics/federated/ReusableTags
 # prefix: Event
 
 @prefix : <https://ontology.tno.nl/logistics/federated/Event#> .
@@ -28,11 +23,6 @@
   dcterms:requires <https://ontology.tno.nl/logistics/federated/BusinessService> ;
   dcterms:requires <https://ontology.tno.nl/logistics/federated/DigitalTwin> ;
   dcterms:requires <https://ontology.tno.nl/logistics/federated/PhysicalInfrastructure> ;
-  owl:imports <https://ontology.tno.nl/logistics/federated/BusinessService> ;
-  owl:imports <https://ontology.tno.nl/logistics/federated/Classifications> ;
-  owl:imports <https://ontology.tno.nl/logistics/federated/DigitalTwin> ;
-  owl:imports <https://ontology.tno.nl/logistics/federated/PhysicalInfrastructure> ;
-  owl:imports <https://ontology.tno.nl/logistics/federated/ReusableTags> ;
   owl:versionIRI <https://ontology.tno.nl/logistics/federated/Eventv-0.1> ;
 .
 Event:ATAEvent
