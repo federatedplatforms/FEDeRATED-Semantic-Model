@@ -7,6 +7,7 @@
 @prefix ReusableTags: <https://ontology.tno.nl/logistics/federated/ReusableTags#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dcterms: <http://purl.org/dc/terms> .
+@prefix ecallUsecase: <https://ontology.tno.nl/logistics/federated/ecallUsecase#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -24,12 +25,12 @@ BusinessService:hasLocation
 <https://ontology.tno.nl/logistics/federated/LogisticsRoles>
   a owl:Ontology ;
   dc:creator "Dena Tahvildari, Maaike Burghoorn, Cornelis Bouter" ;
-  dcterms:created "2021-02-11" ;
-  dc:terms:description "This ontology contains classes, attributes, relation about Logistics Roles that can be used in the Logistics domain." ;
-  dcterms:isRequiredBy <https://ontology.tno.nl/logistics/federated/BusinessService> ;
-  dcterms:isRequiredBy <https://ontology.tno.nl/logistics/federated/PhysicalInfrastructure> ;
-  dcterms:issued "2021-03-15" ;
-  dcterms:language "en" ;
+  <http://purl.org/dc/elements/1.1/terms:description> "This ontology contains classes, attributes, relation about Logistics Roles that can be used in the Logistics domain." ;
+  <http://purl.org/dc/termscreated> "2021-02-11" ;
+  <http://purl.org/dc/termsisRequiredBy> <https://ontology.tno.nl/logistics/federated/BusinessService> ;
+  <http://purl.org/dc/termsisRequiredBy> <https://ontology.tno.nl/logistics/federated/PhysicalInfrastructure> ;
+  <http://purl.org/dc/termsissued> "2021-03-15" ;
+  <http://purl.org/dc/termslanguage> "en" ;
   owl:versionIRI <https://ontology.tno.nl/logistics/federated/LogisticRolesv-0.1> ;
 .
 LogisticsRoles:ActorRoles
@@ -72,7 +73,7 @@ LogisticsRoles:BorderCrossingPlace
   rdfs:comment "A place where a new customs domain is entered by a transport means during its itinerary." ;
   rdfs:label "Border Crossing Place Role" ;
   rdfs:subClassOf LogisticsRoles:LocationRoles ;
-  ReusableTags:isDervied true ;
+  ReusableTags:isDerived true ;
 .
 LogisticsRoles:BusinessRoles
   a owl:Class ;
@@ -126,7 +127,7 @@ defintions 2: A consignee is the role of an enterprise where it is the operator 
       owl:onClass LogisticsRoles:PlaceOfDelivery ;
       owl:onProperty LogisticsRoles:isAbout ;
     ] ;
-  ReusableTags:isDervied true ;
+  ReusableTags:isDerived true ;
 .
 LogisticsRoles:Consignor
   a owl:Class ;
@@ -154,7 +155,7 @@ If Sender sends a widget to Receiver via a delivery service, Sender is the consi
       owl:onClass LogisticsRoles:PlaceOfAcceptance ;
       owl:onProperty LogisticsRoles:isAbout ;
     ] ;
-  ReusableTags:isDervied true ;
+  ReusableTags:isDerived true ;
 .
 LogisticsRoles:Consumer
   a owl:Class ;
@@ -330,7 +331,7 @@ LogisticsRoles:LocationRoles
       owl:onClass <https://ontology.tno.nl/logistics/federated/PhysicalInfrastructure#Location> ;
       owl:onProperty LogisticsRoles:involves ;
     ] ;
-  ReusableTags:isDervied true ;
+  ReusableTags:isDerived true ;
 .
 LogisticsRoles:LogisticServiceProvider
   a owl:Class ;
@@ -420,7 +421,7 @@ LogisticsRoles:PlaceOfLoading
   rdfs:comment "A place of loading is the place where the cargo is offered for transport by a business transaction to the service provider that is the carrier, where the transport means is considered to be the main modality. The cargo and the transport means have to be at that location." ;
   rdfs:label "Place of Loading Role" ;
   rdfs:subClassOf LogisticsRoles:LocationRoles ;
-  ReusableTags:isDervied true ;
+  ReusableTags:isDerived true ;
 .
 LogisticsRoles:PlaceOfStripping
   a owl:Class ;
