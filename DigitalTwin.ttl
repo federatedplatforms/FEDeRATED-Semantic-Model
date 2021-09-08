@@ -3,12 +3,9 @@
 
 @prefix : <https://ontology.tno.nl/logistics/federated/DigitalTwin#> .
 @prefix DigitalTwin: <https://ontology.tno.nl/logistics/federated/DigitalTwin#> .
-@prefix Event: <https://ontology.tno.nl/logistics/federated/Event#> .
-@prefix MathM: <http://www.w3.org/1998/Math/MathML> .
 @prefix classifications: <https://ontology.tno.nl/logistics/federated/Classifications#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix era: <http://era.europa.eu/ns#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -198,12 +195,7 @@ DigitalTwin:ID
   a owl:DatatypeProperty ;
   rdfs:subPropertyOf DigitalTwin:PhysicalObjectProperties ;
 .
-DigitalTwin:InternalNodeLink_1
-  a era:InternalNodeLink ;
-  era:bidirectional false ;
-  era:endPort DigitalTwin:NodePort_1 ;
-  era:startPort DigitalTwin:NodePort_2 ;
-.
+
 DigitalTwin:Locomotive
   a owl:Class ;
   rdfs:comment "Any traction for a train composed of one or more wagons." ;
@@ -222,19 +214,7 @@ DigitalTwin:Locomotive
       owl:onProperty DigitalTwin:locomotiveID ;
     ] ;
 .
-DigitalTwin:MicroLink_1
-  a era:MicroLink ;
-.
-DigitalTwin:MicroNode_1
-  a era:MicroNode ;
-.
-DigitalTwin:NodePort_1
-  a era:NodePort ;
-  era:belongsToNode DigitalTwin:MicroNode_1 ;
-.
-DigitalTwin:NodePort_2
-  a era:NodePort ;
-.
+
 DigitalTwin:Package
   a owl:Class ;
   rdfs:label "Package" ;
@@ -357,9 +337,7 @@ DigitalTwin:Swapbody
   rdfs:label "Swap Body" ;
   rdfs:subClassOf DigitalTwin:Equipment ;
 .
-DigitalTwin:Track_1
-  a era:Track ;
-.
+
 DigitalTwin:Trailer
   a owl:Class ;
   rdfs:comment "Unpowered road vehicles that are used for the transportation of cargo." ;
