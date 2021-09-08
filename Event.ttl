@@ -286,33 +286,6 @@ Event:end
   a Event:MileStone ;
   rdfs:label "End" ;
 .
-Event:expectedDropOffDate
-  a owl:DatatypeProperty ;
-  rdfs:range xsd:date ;
-.
-Event:expectedDropoffTime_Earliest
-  a owl:DatatypeProperty ;
-  rdfs:range xsd:dateTime ;
-.
-Event:expectedDropoffTime_Latest
-  a owl:DatatypeProperty ;
-  rdfs:range xsd:dateTime ;
-.
-Event:expectedPickupDate
-  a owl:DatatypeProperty ;
-  rdfs:domain Event:PickupEvent ;
-  rdfs:range xsd:date ;
-.
-Event:expectedPickupTime_Earliest
-  a owl:DatatypeProperty ;
-  rdfs:domain Event:PickupEvent ;
-  rdfs:range xsd:dateTime ;
-.
-Event:expectedPickupTime_Latest
-  a owl:DatatypeProperty ;
-  rdfs:domain Event:PickupEvent ;
-  rdfs:range xsd:dateTime ;
-.
 Event:hasDateTimeType
   a owl:ObjectProperty ;
   rdfs:comment "This property relates an Event with a datetime to the individual that represents whether the datetime is the actual, estimated, expected, planned, or requested datetime." ;
@@ -321,24 +294,12 @@ Event:hasDateTimeType
   rdfs:range Event:DateTimeType ;
   rdfs:seeAlso Event:hasTimestamp ;
 .
-Event:hasDropOffTime
-  a owl:DatatypeProperty ;
-  rdfs:domain Event:Event ;
-  rdfs:label "Has Pickup Time" ;
-  rdfs:range xsd:dateTime ;
-.
 Event:hasMilestone
   a owl:ObjectProperty ;
   rdfs:comment "This property relates an Event to its Milestone, which can be either Start or End." ;
   rdfs:domain Event:Event ;
   rdfs:label "has Milestone" ;
   rdfs:range Event:Milestone ;
-.
-Event:hasPickupTime
-  a owl:DatatypeProperty ;
-  rdfs:domain Event:Event ;
-  rdfs:label "Has Pickup Time" ;
-  rdfs:range xsd:dateTime ;
 .
 Event:hasSubmissionTimestamp
   a owl:DatatypeProperty ;
