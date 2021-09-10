@@ -49,7 +49,7 @@
 .
 <http://tno.io/ontologies/DerivedConcepts>
   rdf:type owl:Ontology ;
-  dc:source "DerivedConcept.ttl" ;
+  dc:source "DerivedConcepts.ttl" ;
   terms:title "DerivedConcepts" ;
   terms:namespace "DerivedConcept";
   terms:subject "This file contains a model (taxonomy) and for specifying the derived concepts -- concepts that are not asserted in the data by can be inferred by the means of reasoning and inference rules over the existing concepts in the varius modules." ;
