@@ -21,7 +21,7 @@
 :EventTypeShape
   rdf:type sh:NodeShape ;
   sh:name "Event Shape" ;
-  sh:description "An Event contains a milestone, timestamp, datetime type and two associations.";
+  sh:description "An Event contains a milestone, timestamp, submission timestamp, datetime type and two associations.";
   sh:property [
       rdf:type sh:PropertyShape ;
       sh:path event:hasDateTimeType ;
@@ -52,11 +52,16 @@
       rdf:type sh:PropertyShape ;
       sh:path event:involves ;
       sh:nodeKind sh:IRI ;
-      sh:minCount 2;
-      sh:maxCount 2;
-      sh:name "has two associations";
+      sh:minCount 2 ;
     ] ;
-    sh:targetClass event:AtomicEvent ;
+    sh:property [
+      rdf:type sh:PropertyShape ;
+      sh:path event:hasSubmissionTime ;
+      sh:nodeKind xsd:dateTime ;
+      sh:minCount 1;
+      sh:maxCount 1;
+    ] ;
+    sh:targetClass event:Event ;
 .
 # to be moved to a separate shape  
 #  sh:property [
@@ -192,6 +197,8 @@
       [ sh:class DT:Package ; ]
       [ sh:class DT:Goods ; ]
     ) ;
+    sh:minCount 1;
+    sh:maxCount 1;
   ] ;
   sh:targetClass event:GoodsStructuringEvent ;
 .
