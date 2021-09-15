@@ -1,0 +1,20 @@
+CONSTRUCT {
+   ?milk_run_uri rdf:type Event:MilkRun ;
+                        rdfs:label "Milk Run" ;
+                        Event:involvesEvent ?pocEvent .
+    
+    ?pocEvent ?pred ?subj .
+}
+WHERE {
+    # A milk run is currently defined as a sequence of places
+	# of call associated with the same transport means.
+	
+	?tpm rdf:type DigitalTwin:TransportMeans .
+	
+	?pocEvent rdf:type Event:CallEvent ;
+	          Event:involvesEvent ?_subEvent .
+    
+	?_subEvent Event:involvesDigitalTwin ?tpm . 
+	
+}
+
