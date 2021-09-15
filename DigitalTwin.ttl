@@ -195,7 +195,6 @@ DigitalTwin:ID
   a owl:DatatypeProperty ;
   rdfs:subPropertyOf DigitalTwin:PhysicalObjectProperties ;
 .
-
 DigitalTwin:Locomotive
   a owl:Class ;
   rdfs:comment "Any traction for a train composed of one or more wagons." ;
@@ -214,7 +213,6 @@ DigitalTwin:Locomotive
       owl:onProperty DigitalTwin:locomotiveID ;
     ] ;
 .
-
 DigitalTwin:Package
   a owl:Class ;
   rdfs:label "Package" ;
@@ -287,7 +285,7 @@ DigitalTwin:PushBarge
 .
 DigitalTwin:RTI
   a owl:Class ;
-  rdfs:label "Located At" ;
+  rdfs:label "RTI" ;
   rdfs:subClassOf DigitalTwin:Equipment ;
 .
 DigitalTwin:RailwayWagon
@@ -337,7 +335,6 @@ DigitalTwin:Swapbody
   rdfs:label "Swap Body" ;
   rdfs:subClassOf DigitalTwin:Equipment ;
 .
-
 DigitalTwin:Trailer
   a owl:Class ;
   rdfs:comment "Unpowered road vehicles that are used for the transportation of cargo." ;
