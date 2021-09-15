@@ -1,25 +1,31 @@
-SELECT ?containerID ?event ?location
-WHERE {
-	{
-    	?container DigitalTwin:containerID "2847584DGBDK" .
-		?container DigitalTwin:containerID ?containerID .
-		?event Event:involvesDigitalTwin ?container .
-		?event Event:hasTimestamp ?time .
-	}
-	UNION
-	{
-    	?container DigitalTwin:containerID "2847584DGBDK" .
-		?container DigitalTwin:containerID ?containerID .
-		?temp_event Event:involvesDigitalTwin ?container .
-		# Transport means
-		?tpm_class rdfs:subClassOf DigitalTwin:TransportMeans .
-		?tpm rdf:type ?tpm_class .
-		?temp_event Event:involvesDigitalTwin ?tpm .
-
-		?event Event:involvesDigitalTwin ?tpm .
-		FILTER(?event != ?temp_event) .
-	}
+CONSTRUCT {
+   ?container_track_uri rdf:type Event:ComplexEvent ;
+                        rdfs:label "Container Track" ;
+                        Event:involvesEvent ?containerEvent .
+    
+    ?containerEvent ?pred ?subj .
 }
-ORDER BY ?time
+WHERE {
+    # a container track is the sequence of loads and discharges 
+    # associated with a specific container
+    
+    # Query currently just selects all events associated with a 
+    # single container. 
+    # Do we need to split between separate container tracks of 
+    # a single container during its lifetime? Then, when
+    # does the containerID change?
+	?containerEvent rdf:type ?type .
+	FILTER(?type in (Event:LoadEvent, Event:DischargeEvent)) .
+	?containerEvent Event:involvesDigitalTwin ?container .
+	?container rdf:type DigitalTwin:Container ;
+	           DigitalTwin:containerID ?containerID .
+	
+	# select all existing 
+	?container_event ?pred ?subj. 
+	
+	# make unique URI for this container
+	BIND ( URI( CONCAT ("https://ontology.tno.nl/logistics/federated/data#ContainerTrack_", STR(?containerID) ) )  as ?container_track_uri ) .            
+	
+}
 
 # When does a container cease to exist? ( = when is the containerID changed?)
