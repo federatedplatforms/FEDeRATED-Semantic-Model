@@ -1,0 +1,40 @@
+SELECT ?containerID ?event ?location
+WHERE {
+    ?container DigitalTwin:containerID "2847584DGBDK" .
+	?container DigitalTwin:containerID ?containerID .
+	?event Event:involvesDigitalTwin ?container .
+	?event Event:hasTimestamp ?time .
+	?event Event:hasMilestone Event:Start .
+	?event Event:hasDateTimeType Event:Actual .
+	?event Event:involvesPhysicalInfrastructure ?location .
+	# ?event Event:involvesDigitalTwin ?dt .
+	# ?dt rdfs:subClassOf DigitalTwin:TransportMeans .
+}
+ORDER BY ?time
+
+
+
+#SELECT ?containerID ?event ?cityname ?portnumber
+#WHERE {
+#    ?container DigitalTwin:containerID "2847584DGBDK" .
+#	?container DigitalTwin:containerID ?containerID .
+#	?event Event:hasMilestone Event:Start .
+#	?event Event:hasDateTimeType Event:Actual .
+#	?event Event:hasTimestamp ?time .
+#	IF(?event rdfs:subClassOf Event:ArrivalEvent)
+#	BIND (
+#  		COALESCE(
+#			IF(?event rdfs:subClassOf Event:ATAEvent, ?event Event:involvesPhysicalInfrastructure ?location .  , 1/0),
+#			IF(?event rdfs:subClassOf Event:LoadEvent, ?event Event:involvesDigitalTwin ?location . ?location  rdfs:subClassOf DigitalTwin:TransportMeans . , 1/0),
+#			IF(?grade >= 70, "C", 1/0),
+#			IF(?grade >= 60, "D", 1/0),
+#			"F"
+# 		) AS ?result
+#	)
+#	
+#	
+	# get pi:locatedAt ?location
+	# ?location pi:cityName ?cityname
+	# 
+#}
+#ORDER BY ?time LIMIT 1

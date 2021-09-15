@@ -1,0 +1,25 @@
+SELECT ?containerID ?event ?location
+WHERE {
+	{
+    	?container DigitalTwin:containerID "2847584DGBDK" .
+		?container DigitalTwin:containerID ?containerID .
+		?event Event:involvesDigitalTwin ?container .
+		?event Event:hasTimestamp ?time .
+	}
+	UNION
+	{
+    	?container DigitalTwin:containerID "2847584DGBDK" .
+		?container DigitalTwin:containerID ?containerID .
+		?temp_event Event:involvesDigitalTwin ?container .
+		# Transport means
+		?tpm_class rdfs:subClassOf DigitalTwin:TransportMeans .
+		?tpm rdf:type ?tpm_class .
+		?temp_event Event:involvesDigitalTwin ?tpm .
+
+		?event Event:involvesDigitalTwin ?tpm .
+		FILTER(?event != ?temp_event) .
+	}
+}
+ORDER BY ?time
+
+# When does a container cease to exist? ( = when is the containerID changed?)

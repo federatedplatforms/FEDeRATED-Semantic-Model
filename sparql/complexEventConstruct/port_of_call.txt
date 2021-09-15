@@ -1,0 +1,39 @@
+# Port of call events
+CONSTRUCT {
+	<http://ontology.tno.nl/logistics/data/Event#NewComplexEvent> rdf:type Event:CallEvent;
+	Event:involvesEvent ?ar_event,?dep_event .
+}
+WHERE {
+	# Get the arrival and departure events
+    ?ar_event_class rdfs:subClassOf Event:ArrivalEvent .
+	?ar_event rdf:type ?ar_event_class .
+	?dep_event_class rdfs:subClassOf Event:DepartureEvent .
+	?dep_event rdf:type ?dep_event_class .
+
+	# Arrival and departure event must have same transport means
+	?ar_event Event:involvesDigitalTwin ?ar_tpm .
+	?dep_event Event:involvesDigitalTwin ?dep_tpm .
+	FILTER (?ar_tpm = ?dep_tpm)
+	
+	# Arrival and departure event must have same location
+	?ar_event Event:involvesPhysicalInfrastructure ?ar_loc .
+	?dep_event Event:involvesPhysicalInfrastructure ?dep_loc .
+	FILTER (?ar_loc = ?dep_loc)
+
+	# Arrival event must occur before departure event
+	?ar_event Event:hasTimestamp ?ar_time .
+	?dep_event Event:hasTimestamp ?dep_time .
+	FILTER (?ar_time < ?dep_time)
+	
+	# Get the events inbetween Arrival and Discharge
+	OPTIONAL {
+	?inbetween_event rdf:type ?type
+	FILTER(?type in (Event:LoadEvent, Event:DischargeEvent)) .
+	?inbetween_event Event:involvesDigitalTwin ?in_tpm .
+	?inbetween_event Event:hasTimestamp ?in_time .
+	FILTER(?in_tpm = ?ar_tpm) .
+	FILTER(?in_time > ?ar_time && ?in_time < ?dep_time) .
+	}
+
+	# Filter based on unique identifier for similar events (same location, same tpm)
+}
