@@ -1,0 +1,979 @@
+# This dataset contains all transport events for a single consignment with id 6c7edb9c-cfee-4b0c-998d-435cca8eeb39
+
+@prefix : <https://ontology.tno/nl/logistics/federated/data/TradelensEvents#> .
+@prefix pi: <https://ontology.tno.nl/logistics/federated/PhysicalInfrastructure#> .
+@prefix classifications: <https://ontology.tno.nl/logistics/federated/Classifications#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix LogisticsRoles: <https://ontology.tno.nl/logistics/federated/LogisticsRoles#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix Event: <https://ontology.tno.nl/logistics/federated/Event#> .
+@prefix ReusableTags: <https://ontology.tno.nl/logistics/federated/ReusableTags#> .
+@prefix businessService: <https://ontology.tno.nl/logistics/federated/BusinessService#> .
+@prefix DigitalTwin: <https://ontology.tno.nl/logistics/federated/DigitalTwin#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix era: <http://era.europa.eu/ns#> .
+
+
+<https://ontology.tno.nl/logistics/federated/data/TradelensEvents>
+  rdf:type owl:Ontology ;
+  dcterms:description "This ttl file contains sample event data." ;
+  owl:imports <http://purl.org/dc/elements/1.1/> ;
+  owl:imports dcterms: ;
+  owl:imports <https://ontology.tno.nl/logistics/federated/BusinessService> ;
+  owl:imports <https://ontology.tno.nl/logistics/federated/Classifications> ;
+  owl:imports <https://ontology.tno.nl/logistics/federated/DigitalTwin> ;
+  owl:imports <https://ontology.tno.nl/logistics/federated/Event> ;
+  owl:imports <https://ontology.tno.nl/logistics/federated/LogisticsRoles> ;
+  owl:imports <https://ontology.tno.nl/logistics/federated/PhysicalInfrastructure> ;
+  owl:versionInfo "Created with TopBraid Composer" ;
+.
+
+:Event-5edc2423-d258-4002-8d6c-9fb3b1f6ff9a a Event:Event, owl:NamedIndividual;
+  rdfs:label "GateOut", "Planned gate out";
+  Event:hasTimestamp "2020-01-25T18:00:00"^^xsd:dateTime;
+  Event:hasDateTimeType Event:Planned;
+  Event:involvesDigitalTwin :DigitalTwin-5edc2423-d258-4002-8d6c-9fb3b1f6ff9a, :Equipment-6c7edb9c-cfee-4b0c-998d-435cca8eeb39;
+  Event:involvesBusinessTransaction :businessTransaction-6c7edb9c-cfee-4b0c-998d-435cca8eeb39;
+  Event:involvesPhysicalInfrastructure :physicalInfrastructure-BEDEU01;
+  Event:hasMilestone Event:End;
+  Event:hasSubmissionTimestamp "2020-01-21T14:24:36"^^xsd:dateTime .
+
+:DigitalTwin-5edc2423-d258-4002-8d6c-9fb3b1f6ff9a a DigitalTwin:TransportMeans,
+    owl:NamedIndividual .
+
+:businessTransaction-6c7edb9c-cfee-4b0c-998d-435cca8eeb39 a businessService:Consignment,
+    owl:NamedIndividual;
+  businessService:consignmentCreationTime "2021-05-13T21:23:04"^^xsd:dateTime;
+  businessService:involvedActor :LegalPerson-Maersk .
+
+:LegalPerson-Maersk a businessService:LegalPerson, owl:NamedIndividual, businessService:PrivateEnterprise;
+  businessService:actorName "Maersk" .
+
+:physicalInfrastructure-BEDEU01 a pi:Terminal, pi:LogisticalFunction, owl:NamedIndividual;
+  rdfs:label "BEDEU01";
+  pi:locatedAt :Location-BEDEG .
+
+:Location-BEDEG a pi:Location, owl:NamedIndividual;
+  pi:cityName "Deurne, BE";
+  pi:cityLoCode "BEDEG" .
+
+:Equipment-6c7edb9c-cfee-4b0c-998d-435cca8eeb39 a DigitalTwin:Equipment, owl:NamedIndividual;
+  DigitalTwin:containerID "XINU4010266" .
+
+:Event-0c1e0ed5-636c-48b2-8f52-542e6f4d156a a Event:Event, owl:NamedIndividual;
+  rdfs:label "GateIn", "Planned gate in";
+  Event:hasTimestamp "2020-01-25T22:00:00"^^xsd:dateTime;
+  Event:hasDateTimeType Event:Planned;
+  Event:involvesDigitalTwin :DigitalTwin-0c1e0ed5-636c-48b2-8f52-542e6f4d156a, :Equipment-6c7edb9c-cfee-4b0c-998d-435cca8eeb39;
+  Event:involvesBusinessTransaction :businessTransaction-6c7edb9c-cfee-4b0c-998d-435cca8eeb39;
+  Event:involvesPhysicalInfrastructure :physicalInfrastructure-BEANTMP;
+  Event:hasMilestone Event:Start;
+  Event:hasSubmissionTimestamp "2020-01-21T14:24:39"^^xsd:dateTime .
+
+:DigitalTwin-0c1e0ed5-636c-48b2-8f52-542e6f4d156a a DigitalTwin:TransportMeans,
+    owl:NamedIndividual .
+
+:physicalInfrastructure-BEANTMP a pi:Terminal, pi:LogisticalFunction, owl:NamedIndividual;
+  rdfs:label "BEANTMP";
+  pi:locatedAt :Location-BEANR .
+
+:Location-BEANR a pi:Location, owl:NamedIndividual;
+  pi:cityName "Antwerpen, BE";
+  pi:cityLoCode "BEANR" .
+
+:Event-983523c1-f4e1-4961-ab78-c3d266bb127e a Event:Event, owl:NamedIndividual;
+  rdfs:label "Departure", "Planned vessel departure";
+  Event:hasTimestamp "2020-01-27T22:00:00"^^xsd:dateTime;
+  Event:hasDateTimeType Event:Planned;
+  Event:involvesDigitalTwin :DigitalTwin-983523c1-f4e1-4961-ab78-c3d266bb127e, :Equipment-6c7edb9c-cfee-4b0c-998d-435cca8eeb39;
+  Event:involvesBusinessTransaction :businessTransaction-6c7edb9c-cfee-4b0c-998d-435cca8eeb39;
+  Event:involvesPhysicalInfrastructure :physicalInfrastructure-BEANTMP;
+  Event:hasMilestone Event:End;
+  Event:hasSubmissionTimestamp "2020-01-21T14:24:42"^^xsd:dateTime .
+
+:DigitalTwin-983523c1-f4e1-4961-ab78-c3d266bb127e a DigitalTwin:TransportMeans,
+    owl:NamedIndividual, DigitalTwin:Vessel;
+  rdfs:label "Vessel";
+  DigitalTwin:hasVIN "9298698";
+  DigitalTwin:hasTransportMeansID "9298698" .
+
+:Event-e0bcdb02-b748-459b-9bdf-94fbd2005119 a Event:Event, owl:NamedIndividual;
+  rdfs:label "Arrival", "Planned vessel arrival";
+  Event:hasTimestamp "2020-02-08T14:00:00"^^xsd:dateTime;
+  Event:hasDateTimeType Event:Planned;
+  Event:involvesDigitalTwin :DigitalTwin-e0bcdb02-b748-459b-9bdf-94fbd2005119, :Equipment-6c7edb9c-cfee-4b0c-998d-435cca8eeb39;
+  Event:involvesBusinessTransaction :businessTransaction-6c7edb9c-cfee-4b0c-998d-435cca8eeb39;
+  Event:involvesPhysicalInfrastructure :physicalInfrastructure-USPTM-VIG;
+  Event:hasMilestone Event:Start;
+  Event:hasSubmissionTimestamp "2020-01-21T14:24:44"^^xsd:dateTime .
+
+:DigitalTwin-e0bcdb02-b748-459b-9bdf-94fbd2005119 a DigitalTwin:TransportMeans,
+    owl:NamedIndividual, DigitalTwin:Vessel;
+  rdfs:label "Vessel";
+  DigitalTwin:hasVIN "9298698";
+  DigitalTwin:hasTransportMeansID "9298698" .
+
+:physicalInfrastructure-USPTM-VIG a pi:Terminal, pi:LogisticalFunction, owl:NamedIndividual;
+  rdfs:label "USPTM-VIG";
+  pi:locatedAt :Location-USORF .
+
+:Location-USORF a pi:Location, owl:NamedIndividual;
+  pi:cityName "Norfolk, VA, US";
+  pi:cityLoCode "USORF" .
+
+:Event-2d8d49c2-9313-482d-8a65-60828bfcac00 a Event:Event, owl:NamedIndividual;
+  rdfs:label "Departure", "Planned rail departure";
+  Event:hasTimestamp "2020-02-12T22:30:00"^^xsd:dateTime;
+  Event:hasDateTimeType Event:Planned;
+  Event:involvesDigitalTwin :DigitalTwin-2d8d49c2-9313-482d-8a65-60828bfcac00, :Equipment-6c7edb9c-cfee-4b0c-998d-435cca8eeb39;
+  Event:involvesBusinessTransaction :businessTransaction-6c7edb9c-cfee-4b0c-998d-435cca8eeb39;
+  Event:involvesPhysicalInfrastructure :physicalInfrastructure-USPTM-VIG;
+  Event:hasMilestone Event:End;
+  Event:hasSubmissionTimestamp "2020-01-21T14:24:47"^^xsd:dateTime .
+
+:DigitalTwin-2d8d49c2-9313-482d-8a65-60828bfcac00 a DigitalTwin:TransportMeans,
+    owl:NamedIndividual, DigitalTwin:Train;
+  rdfs:label "Train" .
+
+:Event-7e558968-dd06-44e4-8812-18d18e48bf93 a Event:Event, owl:NamedIndividual;
+  rdfs:label "Arrival", "Planned rail arrival";
+  Event:hasTimestamp "2020-02-16T00:30:00"^^xsd:dateTime;
+  Event:hasDateTimeType Event:Planned;
+  Event:involvesDigitalTwin :DigitalTwin-7e558968-dd06-44e4-8812-18d18e48bf93, :Equipment-6c7edb9c-cfee-4b0c-998d-435cca8eeb39;
+  Event:involvesBusinessTransaction :businessTransaction-6c7edb9c-cfee-4b0c-998d-435cca8eeb39;
+  Event:involvesPhysicalInfrastructure :physicalInfrastructure-USCHI59;
+  Event:hasMilestone Event:Start;
+  Event:hasSubmissionTimestamp "2020-01-21T14:24:49"^^xsd:dateTime .
+
+:DigitalTwin-7e558968-dd06-44e4-8812-18d18e48bf93 a DigitalTwin:TransportMeans,
+    owl:NamedIndividual, DigitalTwin:Train;
+  rdfs:label "Train" .
+
+:physicalInfrastructure-USCHI59 a pi:Terminal, pi:LogisticalFunction, owl:NamedIndividual;
+  rdfs:label "USCHI59";
+  pi:locatedAt :Location-USCHI .
+
+:Location-USCHI a pi:Location, owl:NamedIndividual;
+  pi:cityName "Chicago, IL, US";
+  pi:cityLoCode "USCHI" .
+
+:Event-05196fa5-ec38-464a-a714-8441bf1d23d6 a Event:Event, owl:NamedIndividual;
+  rdfs:label "GateOut", "Planned gate out";
+  Event:hasTimestamp "2020-02-16T00:30:00"^^xsd:dateTime;
+  Event:hasDateTimeType Event:Planned;
+  Event:involvesDigitalTwin :DigitalTwin-05196fa5-ec38-464a-a714-8441bf1d23d6, :Equipment-6c7edb9c-cfee-4b0c-998d-435cca8eeb39;
+  Event:involvesBusinessTransaction :businessTransaction-6c7edb9c-cfee-4b0c-998d-435cca8eeb39;
+  Event:involvesPhysicalInfrastructure :physicalInfrastructure-USCHI59;
+  Event:hasMilestone Event:End;
+  Event:hasSubmissionTimestamp "2020-01-21T14:24:51"^^xsd:dateTime .
+
+:DigitalTwin-05196fa5-ec38-464a-a714-8441bf1d23d6 a DigitalTwin:TransportMeans,
+    owl:NamedIndividual .
+
+:Event-9f77baf7-7b6e-40dd-b055-222936c1c387 a Event:Event, owl:NamedIndividual;
+  rdfs:label "GateIn", "Planned gate in";
+  Event:hasTimestamp "2020-02-17T00:30:00"^^xsd:dateTime;
+  Event:hasDateTimeType Event:Planned;
+  Event:involvesDigitalTwin :DigitalTwin-9f77baf7-7b6e-40dd-b055-222936c1c387, :Equipment-6c7edb9c-cfee-4b0c-998d-435cca8eeb39;
+  Event:involvesBusinessTransaction :businessTransaction-6c7edb9c-cfee-4b0c-998d-435cca8eeb39;
+  Event:involvesPhysicalInfrastructure :physicalInfrastructure-USCHIP4;
+  Event:hasMilestone Event:Start;
+  Event:hasSubmissionTimestamp "2020-01-21T14:24:53"^^xsd:dateTime .
+
+:DigitalTwin-9f77baf7-7b6e-40dd-b055-222936c1c387 a DigitalTwin:TransportMeans,
+    owl:NamedIndividual .
+
+:physicalInfrastructure-USCHIP4 a pi:Terminal, pi:LogisticalFunction, owl:NamedIndividual;
+  rdfs:label "USCHIP4";
+  pi:locatedAt :Location-USCHI .
+
+:Event-e6928d23-f1a0-4acb-8d0f-a9e9a5e5162f a Event:Event, owl:NamedIndividual;
+  rdfs:label "Departure", "Planned rail departure";
+  Event:hasTimestamp "2020-02-17T00:30:00"^^xsd:dateTime;
+  Event:hasDateTimeType Event:Planned;
+  Event:involvesDigitalTwin :DigitalTwin-e6928d23-f1a0-4acb-8d0f-a9e9a5e5162f, :Equipment-6c7edb9c-cfee-4b0c-998d-435cca8eeb39;
+  Event:involvesBusinessTransaction :businessTransaction-6c7edb9c-cfee-4b0c-998d-435cca8eeb39;
+  Event:involvesPhysicalInfrastructure :physicalInfrastructure-USCHIP4;
+  Event:hasMilestone Event:End;
+  Event:hasSubmissionTimestamp "2020-01-21T14:24:54"^^xsd:dateTime .
+
+:DigitalTwin-e6928d23-f1a0-4acb-8d0f-a9e9a5e5162f a DigitalTwin:TransportMeans,
+    owl:NamedIndividual, DigitalTwin:Train;
+  rdfs:label "Train" .
+
+:Event-00550caa-67a5-4623-9964-e4624ca9f76a a Event:Event, owl:NamedIndividual;
+  rdfs:label "Arrival", "Planned rail arrival";
+  Event:hasTimestamp "2020-02-22T00:30:00"^^xsd:dateTime;
+  Event:hasDateTimeType Event:Planned;
+  Event:involvesDigitalTwin :DigitalTwin-00550caa-67a5-4623-9964-e4624ca9f76a, :Equipment-6c7edb9c-cfee-4b0c-998d-435cca8eeb39;
+  Event:involvesBusinessTransaction :businessTransaction-6c7edb9c-cfee-4b0c-998d-435cca8eeb39;
+  Event:involvesPhysicalInfrastructure :physicalInfrastructure-USSEAUP;
+  Event:hasMilestone Event:Start;
+  Event:hasSubmissionTimestamp "2020-01-21T14:24:56"^^xsd:dateTime .
+
+:DigitalTwin-00550caa-67a5-4623-9964-e4624ca9f76a a DigitalTwin:TransportMeans,
+    owl:NamedIndividual, DigitalTwin:Train;
+  rdfs:label "Train" .
+
+:physicalInfrastructure-USSEAUP a pi:Terminal, pi:LogisticalFunction, owl:NamedIndividual;
+  rdfs:label "USSEAUP";
+  pi:locatedAt :Location-USSEA .
+
+:Location-USSEA a pi:Location, owl:NamedIndividual;
+  pi:cityName "Seattle, WA, US";
+  pi:cityLoCode "USSEA" .
+
+:Event-949d474e-fd08-4396-8a00-70e9decc3a21 a Event:Event, owl:NamedIndividual;
+  rdfs:label "GateOut", "Planned gate out";
+  Event:hasTimestamp "2020-02-22T00:30:00"^^xsd:dateTime;
+  Event:hasDateTimeType Event:Planned;
+  Event:involvesDigitalTwin :DigitalTwin-949d474e-fd08-4396-8a00-70e9decc3a21, :Equipment-6c7edb9c-cfee-4b0c-998d-435cca8eeb39;
+  Event:involvesBusinessTransaction :businessTransaction-6c7edb9c-cfee-4b0c-998d-435cca8eeb39;
+  Event:involvesPhysicalInfrastructure :physicalInfrastructure-USSEAUP;
+  Event:hasMilestone Event:End;
+  Event:hasSubmissionTimestamp "2020-01-21T14:24:58"^^xsd:dateTime .
+
+:DigitalTwin-949d474e-fd08-4396-8a00-70e9decc3a21 a DigitalTwin:TransportMeans,
+    owl:NamedIndividual .
+
+:Event-371ad339-9389-41fd-9e4f-d73f21918214 a Event:Event, owl:NamedIndividual;
+  rdfs:label "GateIn", "Planned gate in";
+  Event:hasTimestamp "2020-02-23T00:30:00"^^xsd:dateTime;
+  Event:hasDateTimeType Event:Planned;
+  Event:involvesDigitalTwin :DigitalTwin-371ad339-9389-41fd-9e4f-d73f21918214, :Equipment-6c7edb9c-cfee-4b0c-998d-435cca8eeb39;
+  Event:involvesBusinessTransaction :businessTransaction-6c7edb9c-cfee-4b0c-998d-435cca8eeb39;
+  Event:involvesPhysicalInfrastructure :physicalInfrastructure-USTACNW;
+  Event:hasMilestone Event:Start;
+  Event:hasSubmissionTimestamp "2020-01-21T14:24:59"^^xsd:dateTime .
+
+:DigitalTwin-371ad339-9389-41fd-9e4f-d73f21918214 a DigitalTwin:TransportMeans,
+    owl:NamedIndividual .
+
+:physicalInfrastructure-USTACNW a pi:Terminal, pi:LogisticalFunction, owl:NamedIndividual;
+  rdfs:label "USTACNW";
+  pi:locatedAt :Location-USTIW .
+
+:Location-USTIW a pi:Location, owl:NamedIndividual;
+  pi:cityName "Tacoma, WA, US";
+  pi:cityLoCode "USTIW" .
+
+:Event-f12b2796-b036-4e00-a8aa-e47b9555ae16 a Event:Event, owl:NamedIndividual;
+  rdfs:label "GateOut", "Planned gate out";
+  Event:hasTimestamp "2020-01-25T18:00:00"^^xsd:dateTime;
+  Event:hasDateTimeType Event:Planned;
+  Event:involvesDigitalTwin :DigitalTwin-f12b2796-b036-4e00-a8aa-e47b9555ae16, :Equipment-6c7edb9c-cfee-4b0c-998d-435cca8eeb39;
+  Event:involvesBusinessTransaction :businessTransaction-6c7edb9c-cfee-4b0c-998d-435cca8eeb39;
+  Event:involvesPhysicalInfrastructure :physicalInfrastructure-BEDEU01;
+  Event:hasMilestone Event:End;
+  Event:hasSubmissionTimestamp "2020-02-07T11:18:22"^^xsd:dateTime .
+
+:DigitalTwin-f12b2796-b036-4e00-a8aa-e47b9555ae16 a DigitalTwin:TransportMeans,
+    owl:NamedIndividual .
+
+:Event-c78a950c-6658-47b2-a0fe-130aed779700 a Event:Event, owl:NamedIndividual;
+  rdfs:label "GateIn", "Planned gate in";
+  Event:hasTimestamp "2020-01-25T22:00:00"^^xsd:dateTime;
+  Event:hasDateTimeType Event:Planned;
+  Event:involvesDigitalTwin :DigitalTwin-c78a950c-6658-47b2-a0fe-130aed779700, :Equipment-6c7edb9c-cfee-4b0c-998d-435cca8eeb39;
+  Event:involvesBusinessTransaction :businessTransaction-6c7edb9c-cfee-4b0c-998d-435cca8eeb39;
+  Event:involvesPhysicalInfrastructure :physicalInfrastructure-BEANTMP;
+  Event:hasMilestone Event:Start;
+  Event:hasSubmissionTimestamp "2020-02-07T11:21:18"^^xsd:dateTime .
+
+:DigitalTwin-c78a950c-6658-47b2-a0fe-130aed779700 a DigitalTwin:TransportMeans,
+    owl:NamedIndividual .
+
+:Event-ab3a809e-e060-45e0-a2d0-283747899bd7 a Event:Event, owl:NamedIndividual;
+  rdfs:label "Departure", "Planned vessel departure";
+  Event:hasTimestamp "2020-01-27T21:30:00"^^xsd:dateTime;
+  Event:hasDateTimeType Event:Planned;
+  Event:involvesDigitalTwin :DigitalTwin-ab3a809e-e060-45e0-a2d0-283747899bd7, :Equipment-6c7edb9c-cfee-4b0c-998d-435cca8eeb39;
+  Event:involvesBusinessTransaction :businessTransaction-6c7edb9c-cfee-4b0c-998d-435cca8eeb39;
+  Event:involvesPhysicalInfrastructure :physicalInfrastructure-BEANTMP;
+  Event:hasMilestone Event:End;
+  Event:hasSubmissionTimestamp "2020-02-07T11:21:21"^^xsd:dateTime .
+
+:DigitalTwin-ab3a809e-e060-45e0-a2d0-283747899bd7 a DigitalTwin:TransportMeans,
+    owl:NamedIndividual, DigitalTwin:Vessel;
+  rdfs:label "Vessel";
+  DigitalTwin:hasVIN "9298698";
+  DigitalTwin:hasTransportMeansID "9298698" .
+
+:Event-c48270b3-136d-45ef-b96a-3e6ed79de3e5 a Event:Event, owl:NamedIndividual;
+  rdfs:label "Arrival", "Planned vessel arrival";
+  Event:hasTimestamp "2020-02-09T01:00:00"^^xsd:dateTime;
+  Event:hasDateTimeType Event:Planned;
+  Event:involvesDigitalTwin :DigitalTwin-c48270b3-136d-45ef-b96a-3e6ed79de3e5, :Equipment-6c7edb9c-cfee-4b0c-998d-435cca8eeb39;
+  Event:involvesBusinessTransaction :businessTransaction-6c7edb9c-cfee-4b0c-998d-435cca8eeb39;
+  Event:involvesPhysicalInfrastructure :physicalInfrastructure-USPTM-VIG;
+  Event:hasMilestone Event:Start;
+  Event:hasSubmissionTimestamp "2020-02-07T11:21:23"^^xsd:dateTime .
+
+:DigitalTwin-c48270b3-136d-45ef-b96a-3e6ed79de3e5 a DigitalTwin:TransportMeans,
+    owl:NamedIndividual, DigitalTwin:Vessel;
+  rdfs:label "Vessel";
+  DigitalTwin:hasVIN "9298698";
+  DigitalTwin:hasTransportMeansID "9298698" .
+
+:Event-2507101d-59a8-44f5-8057-e3f6e9c86444 a Event:Event, owl:NamedIndividual;
+  rdfs:label "Departure", "Planned rail departure";
+  Event:hasTimestamp "2020-02-12T22:30:00"^^xsd:dateTime;
+  Event:hasDateTimeType Event:Planned;
+  Event:involvesDigitalTwin :DigitalTwin-2507101d-59a8-44f5-8057-e3f6e9c86444, :Equipment-6c7edb9c-cfee-4b0c-998d-435cca8eeb39;
+  Event:involvesBusinessTransaction :businessTransaction-6c7edb9c-cfee-4b0c-998d-435cca8eeb39;
+  Event:involvesPhysicalInfrastructure :physicalInfrastructure-USPTM-VIG;
+  Event:hasMilestone Event:End;
+  Event:hasSubmissionTimestamp "2020-02-07T11:21:26"^^xsd:dateTime .
+
+:DigitalTwin-2507101d-59a8-44f5-8057-e3f6e9c86444 a DigitalTwin:TransportMeans,
+    owl:NamedIndividual, DigitalTwin:Train;
+  rdfs:label "Train" .
+
+:Event-acff4276-3f7d-4076-a48f-e54458c1bb1c a Event:Event, owl:NamedIndividual;
+  rdfs:label "Arrival", "Planned rail arrival";
+  Event:hasTimestamp "2020-02-16T00:30:00"^^xsd:dateTime;
+  Event:hasDateTimeType Event:Planned;
+  Event:involvesDigitalTwin :DigitalTwin-acff4276-3f7d-4076-a48f-e54458c1bb1c, :Equipment-6c7edb9c-cfee-4b0c-998d-435cca8eeb39;
+  Event:involvesBusinessTransaction :businessTransaction-6c7edb9c-cfee-4b0c-998d-435cca8eeb39;
+  Event:involvesPhysicalInfrastructure :physicalInfrastructure-USCHI59;
+  Event:hasMilestone Event:Start;
+  Event:hasSubmissionTimestamp "2020-02-07T11:22:21"^^xsd:dateTime .
+
+:DigitalTwin-acff4276-3f7d-4076-a48f-e54458c1bb1c a DigitalTwin:TransportMeans,
+    owl:NamedIndividual, DigitalTwin:Train;
+  rdfs:label "Train" .
+
+:Event-3ecfe84a-0908-4903-9088-4c35667c1c6b a Event:Event, owl:NamedIndividual;
+  rdfs:label "GateOut", "Planned gate out";
+  Event:hasTimestamp "2020-02-16T00:30:00"^^xsd:dateTime;
+  Event:hasDateTimeType Event:Planned;
+  Event:involvesDigitalTwin :DigitalTwin-3ecfe84a-0908-4903-9088-4c35667c1c6b, :Equipment-6c7edb9c-cfee-4b0c-998d-435cca8eeb39;
+  Event:involvesBusinessTransaction :businessTransaction-6c7edb9c-cfee-4b0c-998d-435cca8eeb39;
+  Event:involvesPhysicalInfrastructure :physicalInfrastructure-USCHI59;
+  Event:hasMilestone Event:End;
+  Event:hasSubmissionTimestamp "2020-02-07T11:22:24"^^xsd:dateTime .
+
+:DigitalTwin-3ecfe84a-0908-4903-9088-4c35667c1c6b a DigitalTwin:TransportMeans,
+    owl:NamedIndividual .
+
+:Event-b56b0e65-7456-416d-829d-253e298b8f68 a Event:Event, owl:NamedIndividual;
+  rdfs:label "GateIn", "Planned gate in";
+  Event:hasTimestamp "2020-02-17T00:30:00"^^xsd:dateTime;
+  Event:hasDateTimeType Event:Planned;
+  Event:involvesDigitalTwin :DigitalTwin-b56b0e65-7456-416d-829d-253e298b8f68, :Equipment-6c7edb9c-cfee-4b0c-998d-435cca8eeb39;
+  Event:involvesBusinessTransaction :businessTransaction-6c7edb9c-cfee-4b0c-998d-435cca8eeb39;
+  Event:involvesPhysicalInfrastructure :physicalInfrastructure-USCHIP4;
+  Event:hasMilestone Event:Start;
+  Event:hasSubmissionTimestamp "2020-02-07T11:22:27"^^xsd:dateTime .
+
+:DigitalTwin-b56b0e65-7456-416d-829d-253e298b8f68 a DigitalTwin:TransportMeans,
+    owl:NamedIndividual .
+
+:Event-860d99b4-037a-4ce7-8e46-2d40aa05117d a Event:Event, owl:NamedIndividual;
+  rdfs:label "Departure", "Planned rail departure";
+  Event:hasTimestamp "2020-02-17T00:30:00"^^xsd:dateTime;
+  Event:hasDateTimeType Event:Planned;
+  Event:involvesDigitalTwin :DigitalTwin-860d99b4-037a-4ce7-8e46-2d40aa05117d, :Equipment-6c7edb9c-cfee-4b0c-998d-435cca8eeb39;
+  Event:involvesBusinessTransaction :businessTransaction-6c7edb9c-cfee-4b0c-998d-435cca8eeb39;
+  Event:involvesPhysicalInfrastructure :physicalInfrastructure-USCHIP4;
+  Event:hasMilestone Event:End;
+  Event:hasSubmissionTimestamp "2020-02-07T11:24:01"^^xsd:dateTime .
+
+:DigitalTwin-860d99b4-037a-4ce7-8e46-2d40aa05117d a DigitalTwin:TransportMeans,
+    owl:NamedIndividual, DigitalTwin:Train;
+  rdfs:label "Train" .
+
+:Event-6d27f192-44fd-49db-a2b6-c3f71cdf75a4 a Event:Event, owl:NamedIndividual;
+  rdfs:label "Arrival", "Planned rail arrival";
+  Event:hasTimestamp "2020-02-22T00:30:00"^^xsd:dateTime;
+  Event:hasDateTimeType Event:Planned;
+  Event:involvesDigitalTwin :DigitalTwin-6d27f192-44fd-49db-a2b6-c3f71cdf75a4, :Equipment-6c7edb9c-cfee-4b0c-998d-435cca8eeb39;
+  Event:involvesBusinessTransaction :businessTransaction-6c7edb9c-cfee-4b0c-998d-435cca8eeb39;
+  Event:involvesPhysicalInfrastructure :physicalInfrastructure-USSEAUP;
+  Event:hasMilestone Event:Start;
+  Event:hasSubmissionTimestamp "2020-02-07T11:24:03"^^xsd:dateTime .
+
+:DigitalTwin-6d27f192-44fd-49db-a2b6-c3f71cdf75a4 a DigitalTwin:TransportMeans,
+    owl:NamedIndividual, DigitalTwin:Train;
+  rdfs:label "Train" .
+
+:Event-f3a71189-37f0-4f51-a7df-023f4ea92c3d a Event:Event, owl:NamedIndividual;
+  rdfs:label "GateOut", "Planned gate out";
+  Event:hasTimestamp "2020-02-22T00:30:00"^^xsd:dateTime;
+  Event:hasDateTimeType Event:Planned;
+  Event:involvesDigitalTwin :DigitalTwin-f3a71189-37f0-4f51-a7df-023f4ea92c3d, :Equipment-6c7edb9c-cfee-4b0c-998d-435cca8eeb39;
+  Event:involvesBusinessTransaction :businessTransaction-6c7edb9c-cfee-4b0c-998d-435cca8eeb39;
+  Event:involvesPhysicalInfrastructure :physicalInfrastructure-USSEAUP;
+  Event:hasMilestone Event:End;
+  Event:hasSubmissionTimestamp "2020-02-07T11:24:05"^^xsd:dateTime .
+
+:DigitalTwin-f3a71189-37f0-4f51-a7df-023f4ea92c3d a DigitalTwin:TransportMeans,
+    owl:NamedIndividual .
+
+:Event-4d4c3ffa-a482-41d2-a57c-393bd3878d8d a Event:Event, owl:NamedIndividual;
+  rdfs:label "GateIn", "Planned gate in";
+  Event:hasTimestamp "2020-02-23T00:30:00"^^xsd:dateTime;
+  Event:hasDateTimeType Event:Planned;
+  Event:involvesDigitalTwin :DigitalTwin-4d4c3ffa-a482-41d2-a57c-393bd3878d8d, :Equipment-6c7edb9c-cfee-4b0c-998d-435cca8eeb39;
+  Event:involvesBusinessTransaction :businessTransaction-6c7edb9c-cfee-4b0c-998d-435cca8eeb39;
+  Event:involvesPhysicalInfrastructure :physicalInfrastructure-USTACNW;
+  Event:hasMilestone Event:Start;
+  Event:hasSubmissionTimestamp "2020-02-07T11:24:07"^^xsd:dateTime .
+
+:DigitalTwin-4d4c3ffa-a482-41d2-a57c-393bd3878d8d a DigitalTwin:TransportMeans,
+    owl:NamedIndividual .
+
+:Event-38be9b67-aa63-4dd6-b690-18811cad3020 a Event:Event, owl:NamedIndividual;
+  rdfs:label "GateIn", "Actual gate in";
+  Event:hasTimestamp "2020-01-22T10:34:00"^^xsd:dateTime;
+  Event:hasDateTimeType Event:Actual;
+  Event:involvesDigitalTwin :DigitalTwin-38be9b67-aa63-4dd6-b690-18811cad3020, :Equipment-6c7edb9c-cfee-4b0c-998d-435cca8eeb39;
+  Event:involvesBusinessTransaction :businessTransaction-6c7edb9c-cfee-4b0c-998d-435cca8eeb39;
+  Event:involvesPhysicalInfrastructure :physicalInfrastructure-BEDEU01;
+  Event:hasMilestone Event:Start;
+  Event:hasSubmissionTimestamp "2020-01-22T11:22:56"^^xsd:dateTime .
+
+:DigitalTwin-38be9b67-aa63-4dd6-b690-18811cad3020 a DigitalTwin:TransportMeans,
+    owl:NamedIndividual;
+  DigitalTwin:hasVIN "MEITRK";
+  DigitalTwin:hasTransportMeansID "MEITRK" .
+
+:Event-ffa490b4-a34f-47c9-ace7-fd66802c7625 a Event:ATDEvent, owl:NamedIndividual;
+  rdfs:label "Departure", "Actual barge departure";
+  Event:hasTimestamp "2020-01-22T10:35:00"^^xsd:dateTime;
+  Event:hasDateTimeType Event:Actual;
+  Event:involvesDigitalTwin :DigitalTwin-ffa490b4-a34f-47c9-ace7-fd66802c7625, :Equipment-6c7edb9c-cfee-4b0c-998d-435cca8eeb39;
+  Event:involvesBusinessTransaction :businessTransaction-6c7edb9c-cfee-4b0c-998d-435cca8eeb39;
+  Event:involvesPhysicalInfrastructure :physicalInfrastructure-BEDEU01;
+  Event:hasMilestone Event:End;
+  Event:hasSubmissionTimestamp "2020-01-22T11:48:03"^^xsd:dateTime .
+
+:DigitalTwin-ffa490b4-a34f-47c9-ace7-fd66802c7625 a DigitalTwin:TransportMeans,
+    owl:NamedIndividual, DigitalTwin:Barge;
+  rdfs:label "Barge" .
+
+:Event-76885ffb-b791-4d0c-98da-565f65f9f016 a Event:ETDEvent, owl:NamedIndividual;
+  rdfs:label "Departure", "Estimated vessel departure";
+  Event:hasTimestamp "2020-01-27T18:00:00"^^xsd:dateTime;
+  Event:hasDateTimeType Event:Estimated;
+  Event:involvesDigitalTwin :DigitalTwin-76885ffb-b791-4d0c-98da-565f65f9f016, :Equipment-6c7edb9c-cfee-4b0c-998d-435cca8eeb39;
+  Event:involvesBusinessTransaction :businessTransaction-6c7edb9c-cfee-4b0c-998d-435cca8eeb39;
+  Event:involvesPhysicalInfrastructure :physicalInfrastructure-BEANTMP;
+  Event:hasMilestone Event:End;
+  Event:hasSubmissionTimestamp "2020-01-23T12:02:48"^^xsd:dateTime .
+
+:DigitalTwin-76885ffb-b791-4d0c-98da-565f65f9f016 a DigitalTwin:TransportMeans,
+    owl:NamedIndividual, DigitalTwin:Vessel;
+  rdfs:label "Vessel";
+  DigitalTwin:hasVIN "9298698";
+  DigitalTwin:hasTransportMeansID "9298698" .
+
+:Event-f739f006-3c68-41c1-87e3-30e07f91cfe9 a Event:ETAEvent, owl:NamedIndividual;
+  rdfs:label "Arrival", "Estimated vessel arrival";
+  Event:hasTimestamp "2020-02-08T14:00:00"^^xsd:dateTime;
+  Event:hasDateTimeType Event:Estimated;
+  Event:involvesDigitalTwin :DigitalTwin-f739f006-3c68-41c1-87e3-30e07f91cfe9, :Equipment-6c7edb9c-cfee-4b0c-998d-435cca8eeb39;
+  Event:involvesBusinessTransaction :businessTransaction-6c7edb9c-cfee-4b0c-998d-435cca8eeb39;
+  Event:involvesPhysicalInfrastructure :physicalInfrastructure-USPTM-VIG;
+  Event:hasMilestone Event:Start;
+  Event:hasSubmissionTimestamp "2020-01-23T12:02:51"^^xsd:dateTime .
+
+:DigitalTwin-f739f006-3c68-41c1-87e3-30e07f91cfe9 a DigitalTwin:TransportMeans,
+    owl:NamedIndividual, DigitalTwin:Vessel;
+  rdfs:label "Vessel";
+  DigitalTwin:hasVIN "9298698";
+  DigitalTwin:hasTransportMeansID "9298698" .
+
+:Event-b70d169c-57b8-43e9-9353-1f98a6d94860 a Event:ATAEvent, owl:NamedIndividual;
+  rdfs:label "Arrival", "Actual barge arrival";
+  Event:hasTimestamp "2020-01-24T00:12:00"^^xsd:dateTime;
+  Event:hasDateTimeType Event:Actual;
+  Event:involvesDigitalTwin :DigitalTwin-b70d169c-57b8-43e9-9353-1f98a6d94860, :Equipment-6c7edb9c-cfee-4b0c-998d-435cca8eeb39;
+  Event:involvesBusinessTransaction :businessTransaction-6c7edb9c-cfee-4b0c-998d-435cca8eeb39;
+  Event:involvesPhysicalInfrastructure :physicalInfrastructure-BEANTMP;
+  Event:hasMilestone Event:Start;
+  Event:hasSubmissionTimestamp "2020-01-24T05:11:42"^^xsd:dateTime .
+
+:DigitalTwin-b70d169c-57b8-43e9-9353-1f98a6d94860 a DigitalTwin:TransportMeans,
+    owl:NamedIndividual, DigitalTwin:Barge;
+  rdfs:label "Barge" .
+
+:Event-5f408ed3-d45b-4ab5-8792-c3e699f7b8e4 a Event:ETDEvent, owl:NamedIndividual;
+  rdfs:label "Departure", "Estimated vessel departure";
+  Event:hasTimestamp "2020-01-27T13:30:00"^^xsd:dateTime;
+  Event:hasDateTimeType Event:Estimated;
+  Event:involvesDigitalTwin :DigitalTwin-5f408ed3-d45b-4ab5-8792-c3e699f7b8e4, :Equipment-6c7edb9c-cfee-4b0c-998d-435cca8eeb39;
+  Event:involvesBusinessTransaction :businessTransaction-6c7edb9c-cfee-4b0c-998d-435cca8eeb39;
+  Event:involvesPhysicalInfrastructure :physicalInfrastructure-BEANTMP;
+  Event:hasMilestone Event:End;
+  Event:hasSubmissionTimestamp "2020-01-24T12:13:12"^^xsd:dateTime .
+
+:DigitalTwin-5f408ed3-d45b-4ab5-8792-c3e699f7b8e4 a DigitalTwin:TransportMeans,
+    owl:NamedIndividual, DigitalTwin:Vessel;
+  rdfs:label "Vessel";
+  DigitalTwin:hasVIN "9298698";
+  DigitalTwin:hasTransportMeansID "9298698" .
+
+:Event-37290e54-60c4-447c-9bc4-07bdb9017aeb a Event:ETDEvent, owl:NamedIndividual;
+  rdfs:label "Departure", "Estimated vessel departure";
+  Event:hasTimestamp "2020-01-27T21:30:00"^^xsd:dateTime;
+  Event:hasDateTimeType Event:Estimated;
+  Event:involvesDigitalTwin :DigitalTwin-37290e54-60c4-447c-9bc4-07bdb9017aeb, :Equipment-6c7edb9c-cfee-4b0c-998d-435cca8eeb39;
+  Event:involvesBusinessTransaction :businessTransaction-6c7edb9c-cfee-4b0c-998d-435cca8eeb39;
+  Event:involvesPhysicalInfrastructure :physicalInfrastructure-BEANTMP;
+  Event:hasMilestone Event:End;
+  Event:hasSubmissionTimestamp "2020-01-26T22:56:51"^^xsd:dateTime .
+
+:DigitalTwin-37290e54-60c4-447c-9bc4-07bdb9017aeb a DigitalTwin:TransportMeans,
+    owl:NamedIndividual, DigitalTwin:Vessel;
+  rdfs:label "Vessel";
+  DigitalTwin:hasVIN "9298698";
+  DigitalTwin:hasTransportMeansID "9298698" .
+
+:Event-8551af99-7b4d-44d7-bb53-97b5c1508775 a Event:LoadEvent, owl:NamedIndividual;
+  rdfs:label "LoadedOn", "Actual loaded on vessel";
+  Event:hasTimestamp "2020-01-27T08:01:00"^^xsd:dateTime;
+  Event:hasDateTimeType Event:Actual;
+  Event:involvesDigitalTwin :DigitalTwin-8551af99-7b4d-44d7-bb53-97b5c1508775, :Equipment-6c7edb9c-cfee-4b0c-998d-435cca8eeb39;
+  Event:involvesBusinessTransaction :businessTransaction-6c7edb9c-cfee-4b0c-998d-435cca8eeb39;
+  Event:involvesPhysicalInfrastructure :physicalInfrastructure-BEANTMP;
+  Event:hasMilestone Event:Start;
+  Event:hasSubmissionTimestamp "2020-01-27T08:28:50"^^xsd:dateTime .
+
+:DigitalTwin-8551af99-7b4d-44d7-bb53-97b5c1508775 a DigitalTwin:TransportMeans,
+    owl:NamedIndividual, DigitalTwin:Vessel;
+  rdfs:label "Vessel";
+  DigitalTwin:hasVIN "9298698";
+  DigitalTwin:hasTransportMeansID "9298698" .
+
+:Event-fdaacc48-3f1a-40b9-b812-995ea23d7fb3 a Event:ATDEvent, owl:NamedIndividual;
+  rdfs:label "Departure", "Actual vessel departure";
+  Event:hasTimestamp "2020-01-27T21:54:00"^^xsd:dateTime;
+  Event:hasDateTimeType Event:Actual;
+  Event:involvesDigitalTwin :DigitalTwin-fdaacc48-3f1a-40b9-b812-995ea23d7fb3, :Equipment-6c7edb9c-cfee-4b0c-998d-435cca8eeb39;
+  Event:involvesBusinessTransaction :businessTransaction-6c7edb9c-cfee-4b0c-998d-435cca8eeb39;
+  Event:involvesPhysicalInfrastructure :physicalInfrastructure-BEANTMP;
+  Event:hasMilestone Event:End;
+  Event:hasSubmissionTimestamp "2020-01-28T03:24:30"^^xsd:dateTime .
+
+:DigitalTwin-fdaacc48-3f1a-40b9-b812-995ea23d7fb3 a DigitalTwin:TransportMeans,
+    owl:NamedIndividual, DigitalTwin:Vessel;
+  rdfs:label "Vessel";
+  DigitalTwin:hasVIN "9298698";
+  DigitalTwin:hasTransportMeansID "9298698" .
+
+:Event-fa487418-32fe-400c-a06e-a2439d8f0ceb a Event:ETDEvent, owl:NamedIndividual;
+  rdfs:label "Departure", "Estimated vessel departure";
+  Event:hasTimestamp "2020-02-08T19:00:00"^^xsd:dateTime;
+  Event:hasDateTimeType Event:Estimated;
+  Event:involvesDigitalTwin :DigitalTwin-fa487418-32fe-400c-a06e-a2439d8f0ceb, :Equipment-6c7edb9c-cfee-4b0c-998d-435cca8eeb39;
+  Event:involvesBusinessTransaction :businessTransaction-6c7edb9c-cfee-4b0c-998d-435cca8eeb39;
+  Event:involvesPhysicalInfrastructure :physicalInfrastructure-USORF-VIG;
+  Event:hasMilestone Event:End;
+  Event:hasSubmissionTimestamp "2020-02-02T07:35:34"^^xsd:dateTime .
+
+:DigitalTwin-fa487418-32fe-400c-a06e-a2439d8f0ceb a DigitalTwin:TransportMeans,
+    owl:NamedIndividual, DigitalTwin:Vessel;
+  rdfs:label "Vessel";
+  DigitalTwin:hasVIN "9298698";
+  DigitalTwin:hasTransportMeansID "9298698" .
+
+:physicalInfrastructure-USORF-VIG a pi:Terminal, pi:LogisticalFunction, owl:NamedIndividual;
+  rdfs:label "USORF-VIG";
+  pi:locatedAt :Location-USORF .
+
+:Event-2f5940cd-a2f2-4796-92b3-f82b351d298c a Event:ETAEvent, owl:NamedIndividual;
+  rdfs:label "Arrival", "Estimated vessel arrival";
+  Event:hasTimestamp "2020-02-08T09:00:00"^^xsd:dateTime;
+  Event:hasDateTimeType Event:Estimated;
+  Event:involvesDigitalTwin :DigitalTwin-2f5940cd-a2f2-4796-92b3-f82b351d298c, :Equipment-6c7edb9c-cfee-4b0c-998d-435cca8eeb39;
+  Event:involvesBusinessTransaction :businessTransaction-6c7edb9c-cfee-4b0c-998d-435cca8eeb39;
+  Event:involvesPhysicalInfrastructure :physicalInfrastructure-USORF-VIG;
+  Event:hasMilestone Event:Start;
+  Event:hasSubmissionTimestamp "2020-02-02T07:35:34"^^xsd:dateTime .
+
+:DigitalTwin-2f5940cd-a2f2-4796-92b3-f82b351d298c a DigitalTwin:TransportMeans,
+    owl:NamedIndividual, DigitalTwin:Vessel;
+  rdfs:label "Vessel";
+  DigitalTwin:hasVIN "9298698";
+  DigitalTwin:hasTransportMeansID "9298698" .
+
+:Event-89cf059c-fd3f-4b77-8aed-32f31eac91b9 a Event:ETAEvent, owl:NamedIndividual;
+  rdfs:label "Arrival", "Estimated vessel arrival";
+  Event:hasTimestamp "2020-02-09T01:00:00"^^xsd:dateTime;
+  Event:hasDateTimeType Event:Estimated;
+  Event:involvesDigitalTwin :DigitalTwin-89cf059c-fd3f-4b77-8aed-32f31eac91b9, :Equipment-6c7edb9c-cfee-4b0c-998d-435cca8eeb39;
+  Event:involvesBusinessTransaction :businessTransaction-6c7edb9c-cfee-4b0c-998d-435cca8eeb39;
+  Event:involvesPhysicalInfrastructure :physicalInfrastructure-USPTM-VIG;
+  Event:hasMilestone Event:Start;
+  Event:hasSubmissionTimestamp "2020-02-06T15:59:17"^^xsd:dateTime .
+
+:DigitalTwin-89cf059c-fd3f-4b77-8aed-32f31eac91b9 a DigitalTwin:TransportMeans,
+    owl:NamedIndividual, DigitalTwin:Vessel;
+  rdfs:label "Vessel";
+  DigitalTwin:hasVIN "9298698";
+  DigitalTwin:hasTransportMeansID "9298698" .
+
+:Event-c72fd385-eae4-465a-9a31-2ac51e7cc66a a Event:ETDEvent, owl:NamedIndividual;
+  rdfs:label "Departure", "Estimated vessel departure";
+  Event:hasTimestamp "2020-02-09T07:00:00"^^xsd:dateTime;
+  Event:hasDateTimeType Event:Estimated;
+  Event:involvesDigitalTwin :DigitalTwin-c72fd385-eae4-465a-9a31-2ac51e7cc66a, :Equipment-6c7edb9c-cfee-4b0c-998d-435cca8eeb39;
+  Event:involvesBusinessTransaction :businessTransaction-6c7edb9c-cfee-4b0c-998d-435cca8eeb39;
+  Event:involvesPhysicalInfrastructure :physicalInfrastructure-USORF-VIG;
+  Event:hasMilestone Event:End;
+  Event:hasSubmissionTimestamp "2020-02-07T06:46:59"^^xsd:dateTime .
+
+:DigitalTwin-c72fd385-eae4-465a-9a31-2ac51e7cc66a a DigitalTwin:TransportMeans,
+    owl:NamedIndividual, DigitalTwin:Vessel;
+  rdfs:label "Vessel";
+  DigitalTwin:hasVIN "9298698";
+  DigitalTwin:hasTransportMeansID "9298698" .
+
+:Event-274f4375-7d68-40d9-963a-a917c2a9a7df a Event:ETAEvent, owl:NamedIndividual;
+  rdfs:label "Arrival", "Estimated vessel arrival";
+  Event:hasTimestamp "2020-02-08T20:00:00"^^xsd:dateTime;
+  Event:hasDateTimeType Event:Estimated;
+  Event:involvesDigitalTwin :DigitalTwin-274f4375-7d68-40d9-963a-a917c2a9a7df, :Equipment-6c7edb9c-cfee-4b0c-998d-435cca8eeb39;
+  Event:involvesBusinessTransaction :businessTransaction-6c7edb9c-cfee-4b0c-998d-435cca8eeb39;
+  Event:involvesPhysicalInfrastructure :physicalInfrastructure-USORF-VIG;
+  Event:hasMilestone Event:Start;
+  Event:hasSubmissionTimestamp "2020-02-07T06:46:59"^^xsd:dateTime .
+
+:DigitalTwin-274f4375-7d68-40d9-963a-a917c2a9a7df a DigitalTwin:TransportMeans,
+    owl:NamedIndividual, DigitalTwin:Vessel;
+  rdfs:label "Vessel";
+  DigitalTwin:hasVIN "9298698";
+  DigitalTwin:hasTransportMeansID "9298698" .
+
+:Event-41262768-199d-4de9-9792-b33e0081746d a Event:ATAEvent, owl:NamedIndividual;
+  rdfs:label "Arrival", "Actual vessel arrival";
+  Event:hasTimestamp "2020-02-08T23:56:00"^^xsd:dateTime;
+  Event:hasDateTimeType Event:Actual;
+  Event:involvesDigitalTwin :DigitalTwin-41262768-199d-4de9-9792-b33e0081746d, :Equipment-6c7edb9c-cfee-4b0c-998d-435cca8eeb39;
+  Event:involvesBusinessTransaction :businessTransaction-6c7edb9c-cfee-4b0c-998d-435cca8eeb39;
+  Event:involvesPhysicalInfrastructure :physicalInfrastructure-USPTM-VIG;
+  Event:hasMilestone Event:Start;
+  Event:hasSubmissionTimestamp "2020-02-09T00:33:08"^^xsd:dateTime .
+
+:DigitalTwin-41262768-199d-4de9-9792-b33e0081746d a DigitalTwin:TransportMeans,
+    owl:NamedIndividual, DigitalTwin:Vessel;
+  rdfs:label "Vessel";
+  DigitalTwin:hasVIN "9298698";
+  DigitalTwin:hasTransportMeansID "9298698" .
+
+:Event-0e7c11e8-38aa-4808-9dc5-ad111db942f6 a Event:DischargeEvent, owl:NamedIndividual;
+  rdfs:label "DischargeFrom", "Actual discharge from vessel";
+  Event:hasTimestamp "2020-02-09T00:32:45"^^xsd:dateTime;
+  Event:hasDateTimeType Event:Actual;
+  Event:involvesDigitalTwin :DigitalTwin-0e7c11e8-38aa-4808-9dc5-ad111db942f6, :Equipment-6c7edb9c-cfee-4b0c-998d-435cca8eeb39;
+  Event:involvesBusinessTransaction :businessTransaction-6c7edb9c-cfee-4b0c-998d-435cca8eeb39;
+  Event:involvesPhysicalInfrastructure :physicalInfrastructure-USORF-VIG;
+  Event:hasMilestone Event:End;
+  Event:hasSubmissionTimestamp "2020-02-09T05:45:01"^^xsd:dateTime .
+
+:DigitalTwin-0e7c11e8-38aa-4808-9dc5-ad111db942f6 a DigitalTwin:TransportMeans,
+    owl:NamedIndividual, DigitalTwin:Vessel;
+  rdfs:label "Vessel";
+  DigitalTwin:hasVIN "9298698";
+  DigitalTwin:hasTransportMeansID "9298698" .
+
+:Event-5809a113-6515-4015-895f-7239ed8705bb a Event:DischargeEvent, owl:NamedIndividual;
+  rdfs:label "DischargeFrom", "Actual discharge from vessel";
+  Event:hasTimestamp "2020-02-09T05:32:00"^^xsd:dateTime;
+  Event:hasDateTimeType Event:Actual;
+  Event:involvesDigitalTwin :DigitalTwin-5809a113-6515-4015-895f-7239ed8705bb, :Equipment-6c7edb9c-cfee-4b0c-998d-435cca8eeb39;
+  Event:involvesBusinessTransaction :businessTransaction-6c7edb9c-cfee-4b0c-998d-435cca8eeb39;
+  Event:involvesPhysicalInfrastructure :physicalInfrastructure-USPTM-VIG;
+  Event:hasMilestone Event:End;
+  Event:hasSubmissionTimestamp "2020-02-09T06:27:50"^^xsd:dateTime .
+
+:DigitalTwin-5809a113-6515-4015-895f-7239ed8705bb a DigitalTwin:TransportMeans,
+    owl:NamedIndividual, DigitalTwin:Vessel;
+  rdfs:label "Vessel";
+  DigitalTwin:hasVIN "9298698";
+  DigitalTwin:hasTransportMeansID "9298698" .
+
+:Event-c9dd238d-805e-4238-8913-502c3a883adc a Event:ATAEvent, owl:NamedIndividual;
+  rdfs:label "Arrival", "Actual vessel arrival";
+  Event:hasTimestamp "2020-02-09T01:05:00"^^xsd:dateTime;
+  Event:hasDateTimeType Event:Actual;
+  Event:involvesDigitalTwin :DigitalTwin-c9dd238d-805e-4238-8913-502c3a883adc, :Equipment-6c7edb9c-cfee-4b0c-998d-435cca8eeb39;
+  Event:involvesBusinessTransaction :businessTransaction-6c7edb9c-cfee-4b0c-998d-435cca8eeb39;
+  Event:involvesPhysicalInfrastructure :physicalInfrastructure-USORF-VIG;
+  Event:hasMilestone Event:Start;
+  Event:hasSubmissionTimestamp "2020-02-09T07:46:31"^^xsd:dateTime .
+
+:DigitalTwin-c9dd238d-805e-4238-8913-502c3a883adc a DigitalTwin:TransportMeans,
+    owl:NamedIndividual, DigitalTwin:Vessel;
+  rdfs:label "Vessel";
+  DigitalTwin:hasVIN "9298698";
+  DigitalTwin:hasTransportMeansID "9298698" .
+
+:Event-7e56e626-3601-4f44-ae90-5c4d3e4d07e4 a Event:ATDEvent, owl:NamedIndividual;
+  rdfs:label "Departure", "Actual vessel departure";
+  Event:hasTimestamp "2020-02-10T01:05:00"^^xsd:dateTime;
+  Event:hasDateTimeType Event:Actual;
+  Event:involvesDigitalTwin :DigitalTwin-7e56e626-3601-4f44-ae90-5c4d3e4d07e4, :Equipment-6c7edb9c-cfee-4b0c-998d-435cca8eeb39;
+  Event:involvesBusinessTransaction :businessTransaction-6c7edb9c-cfee-4b0c-998d-435cca8eeb39;
+  Event:involvesPhysicalInfrastructure :physicalInfrastructure-USORF-VIG;
+  Event:hasMilestone Event:End;
+  Event:hasSubmissionTimestamp "2020-02-10T07:46:05"^^xsd:dateTime .
+
+:DigitalTwin-7e56e626-3601-4f44-ae90-5c4d3e4d07e4 a DigitalTwin:TransportMeans,
+    owl:NamedIndividual, DigitalTwin:Vessel;
+  rdfs:label "Vessel";
+  DigitalTwin:hasVIN "9298698";
+  DigitalTwin:hasTransportMeansID "9298698" .
+
+:Event-705aba87-5b73-45cf-b7ae-088da978644a a Event:LoadEvent, owl:NamedIndividual;
+  rdfs:label "LoadedOn", "Actual loaded on rail";
+  Event:hasTimestamp "2020-02-13T06:04:00"^^xsd:dateTime;
+  Event:hasDateTimeType Event:Actual;
+  Event:involvesDigitalTwin :DigitalTwin-705aba87-5b73-45cf-b7ae-088da978644a, :Equipment-6c7edb9c-cfee-4b0c-998d-435cca8eeb39;
+  Event:involvesBusinessTransaction :businessTransaction-6c7edb9c-cfee-4b0c-998d-435cca8eeb39;
+  Event:involvesPhysicalInfrastructure :physicalInfrastructure-USPTM-VIG;
+  Event:hasMilestone Event:Start;
+  Event:hasSubmissionTimestamp "2020-02-13T07:57:53"^^xsd:dateTime .
+
+:DigitalTwin-705aba87-5b73-45cf-b7ae-088da978644a a DigitalTwin:TransportMeans,
+    owl:NamedIndividual, DigitalTwin:Train;
+  rdfs:label "Train" .
+
+:Event-0405b216-c6cc-407b-9f85-d09a46c8635d a Event:ATDEvent, owl:NamedIndividual;
+  rdfs:label "Departure", "Actual rail departure";
+  Event:hasTimestamp "2020-02-13T03:20:09"^^xsd:dateTime;
+  Event:hasDateTimeType Event:Actual;
+  Event:involvesDigitalTwin :DigitalTwin-0405b216-c6cc-407b-9f85-d09a46c8635d, :Equipment-6c7edb9c-cfee-4b0c-998d-435cca8eeb39;
+  Event:involvesBusinessTransaction :businessTransaction-6c7edb9c-cfee-4b0c-998d-435cca8eeb39;
+  Event:involvesPhysicalInfrastructure :physicalInfrastructure-USORF-VIG;
+  Event:hasMilestone Event:End;
+  Event:hasSubmissionTimestamp "2020-02-13T08:35:08"^^xsd:dateTime .
+
+:DigitalTwin-0405b216-c6cc-407b-9f85-d09a46c8635d a DigitalTwin:TransportMeans,
+    owl:NamedIndividual, DigitalTwin:Train;
+  rdfs:label "Train";
+  DigitalTwin:hasVIN "APCX002940";
+  DigitalTwin:hasTransportMeansID "APCX002940" .
+
+:Event-6b3eb460-3efe-4650-9b31-e0da38b1b67d a Event:ATDEvent, owl:NamedIndividual;
+  rdfs:label "Departure", "Actual rail departure";
+  Event:hasTimestamp "2020-02-14T02:13:00"^^xsd:dateTime;
+  Event:hasDateTimeType Event:Actual;
+  Event:involvesDigitalTwin :DigitalTwin-6b3eb460-3efe-4650-9b31-e0da38b1b67d, :Equipment-6c7edb9c-cfee-4b0c-998d-435cca8eeb39;
+  Event:involvesBusinessTransaction :businessTransaction-6c7edb9c-cfee-4b0c-998d-435cca8eeb39;
+  Event:involvesPhysicalInfrastructure :physicalInfrastructure-261512;
+  Event:hasMilestone Event:End;
+  Event:hasSubmissionTimestamp "2020-02-14T02:37:13"^^xsd:dateTime .
+
+:DigitalTwin-6b3eb460-3efe-4650-9b31-e0da38b1b67d a DigitalTwin:TransportMeans,
+    owl:NamedIndividual, DigitalTwin:Train;
+  rdfs:label "Train" .
+
+:physicalInfrastructure-261512 a pi:Terminal, pi:LogisticalFunction, owl:NamedIndividual;
+  rdfs:label "261512";
+  pi:locatedAt :Location-USZZZ .
+
+:Location-USZZZ a pi:Location, owl:NamedIndividual;
+  pi:cityName "Sunrise Beach, MO, US";
+  pi:cityLoCode "USZZZ" .
+
+:Event-639c6820-d3ba-4195-a0d2-4bd2aa5bcd77 a Event:ATAEvent, owl:NamedIndividual;
+  rdfs:label "Arrival", "Actual rail arrival";
+  Event:hasTimestamp "2020-02-16T09:51:00"^^xsd:dateTime;
+  Event:hasDateTimeType Event:Actual;
+  Event:involvesDigitalTwin :DigitalTwin-639c6820-d3ba-4195-a0d2-4bd2aa5bcd77, :Equipment-6c7edb9c-cfee-4b0c-998d-435cca8eeb39;
+  Event:involvesBusinessTransaction :businessTransaction-6c7edb9c-cfee-4b0c-998d-435cca8eeb39;
+  Event:involvesPhysicalInfrastructure :physicalInfrastructure-380639;
+  Event:hasMilestone Event:Start;
+  Event:hasSubmissionTimestamp "2020-02-16T11:19:08"^^xsd:dateTime .
+
+:DigitalTwin-639c6820-d3ba-4195-a0d2-4bd2aa5bcd77 a DigitalTwin:TransportMeans,
+    owl:NamedIndividual, DigitalTwin:Train;
+  rdfs:label "Train" .
+
+:physicalInfrastructure-380639 a pi:Terminal, pi:LogisticalFunction, owl:NamedIndividual;
+  rdfs:label "380639";
+  pi:locatedAt :Location-USCHI .
+
+:Event-6056e1c1-a444-4857-973d-0c6e939142a3 a Event:DischargeEvent, owl:NamedIndividual;
+  rdfs:label "DischargeFrom", "Actual discharge from rail";
+  Event:hasTimestamp "2020-02-16T13:37:00"^^xsd:dateTime;
+  Event:hasDateTimeType Event:Actual;
+  Event:involvesDigitalTwin :DigitalTwin-6056e1c1-a444-4857-973d-0c6e939142a3, :Equipment-6c7edb9c-cfee-4b0c-998d-435cca8eeb39;
+  Event:involvesBusinessTransaction :businessTransaction-6c7edb9c-cfee-4b0c-998d-435cca8eeb39;
+  Event:involvesPhysicalInfrastructure :physicalInfrastructure-380639;
+  Event:hasMilestone Event:End;
+  Event:hasSubmissionTimestamp "2020-02-16T14:58:18"^^xsd:dateTime .
+
+:DigitalTwin-6056e1c1-a444-4857-973d-0c6e939142a3 a DigitalTwin:TransportMeans,
+    owl:NamedIndividual, DigitalTwin:Train;
+  rdfs:label "Train" .
+
+:Event-b8ffcea0-3f34-4edf-8fb6-9a5965c5a89a a Event:DischargeEvent, owl:NamedIndividual;
+  rdfs:label "DischargeFrom", "Actual discharge from rail";
+  Event:hasTimestamp "2020-02-16T14:37:00"^^xsd:dateTime;
+  Event:hasDateTimeType Event:Actual;
+  Event:involvesDigitalTwin :DigitalTwin-b8ffcea0-3f34-4edf-8fb6-9a5965c5a89a, :Equipment-6c7edb9c-cfee-4b0c-998d-435cca8eeb39;
+  Event:involvesBusinessTransaction :businessTransaction-6c7edb9c-cfee-4b0c-998d-435cca8eeb39;
+  Event:involvesPhysicalInfrastructure :physicalInfrastructure-USCHI59;
+  Event:hasMilestone Event:End;
+  Event:hasSubmissionTimestamp "2020-02-16T15:08:41"^^xsd:dateTime .
+
+:DigitalTwin-b8ffcea0-3f34-4edf-8fb6-9a5965c5a89a a DigitalTwin:TransportMeans,
+    owl:NamedIndividual, DigitalTwin:Train;
+  rdfs:label "Train" .
+
+:Event-8e1abcc1-721d-44ca-80a9-33e64db4b339 a Event:Event, owl:NamedIndividual;
+  rdfs:label "GateOut", "Actual gate out";
+  Event:hasTimestamp "2020-02-16T21:32:00"^^xsd:dateTime;
+  Event:hasDateTimeType Event:Actual;
+  Event:involvesDigitalTwin :DigitalTwin-8e1abcc1-721d-44ca-80a9-33e64db4b339, :Equipment-6c7edb9c-cfee-4b0c-998d-435cca8eeb39;
+  Event:involvesBusinessTransaction :businessTransaction-6c7edb9c-cfee-4b0c-998d-435cca8eeb39;
+  Event:involvesPhysicalInfrastructure :physicalInfrastructure-380639;
+  Event:hasMilestone Event:End;
+  Event:hasSubmissionTimestamp "2020-02-16T22:52:23"^^xsd:dateTime .
+
+:DigitalTwin-8e1abcc1-721d-44ca-80a9-33e64db4b339 a DigitalTwin:TransportMeans,
+    owl:NamedIndividual .
+
+:Event-c9fc5337-7efb-4a2e-8b0d-65ba610f7174 a Event:Event, owl:NamedIndividual;
+  rdfs:label "GateOut", "Actual gate out";
+  Event:hasTimestamp "2020-02-16T22:32:00"^^xsd:dateTime;
+  Event:hasDateTimeType Event:Actual;
+  Event:involvesDigitalTwin :DigitalTwin-c9fc5337-7efb-4a2e-8b0d-65ba610f7174, :Equipment-6c7edb9c-cfee-4b0c-998d-435cca8eeb39;
+  Event:involvesBusinessTransaction :businessTransaction-6c7edb9c-cfee-4b0c-998d-435cca8eeb39;
+  Event:involvesPhysicalInfrastructure :physicalInfrastructure-USCHI59;
+  Event:hasMilestone Event:End;
+  Event:hasSubmissionTimestamp "2020-02-16T23:01:18"^^xsd:dateTime .
+
+:DigitalTwin-c9fc5337-7efb-4a2e-8b0d-65ba610f7174 a DigitalTwin:TransportMeans,
+    owl:NamedIndividual;
+  DigitalTwin:hasVIN "051550";
+  DigitalTwin:hasTransportMeansID "051550" .
+
+:Event-21e19c7f-1450-4d10-b7ed-e44b0fa2b5a2 a Event:Event, owl:NamedIndividual;
+  rdfs:label "GateIn", "Actual gate in";
+  Event:hasTimestamp "2020-02-16T23:40:00"^^xsd:dateTime;
+  Event:hasDateTimeType Event:Actual;
+  Event:involvesDigitalTwin :DigitalTwin-21e19c7f-1450-4d10-b7ed-e44b0fa2b5a2, :Equipment-6c7edb9c-cfee-4b0c-998d-435cca8eeb39;
+  Event:involvesBusinessTransaction :businessTransaction-6c7edb9c-cfee-4b0c-998d-435cca8eeb39;
+  Event:involvesPhysicalInfrastructure :physicalInfrastructure-USCHIP4;
+  Event:hasMilestone Event:Start;
+  Event:hasSubmissionTimestamp "2020-02-17T00:06:48"^^xsd:dateTime .
+
+:DigitalTwin-21e19c7f-1450-4d10-b7ed-e44b0fa2b5a2 a DigitalTwin:TransportMeans,
+    owl:NamedIndividual;
+  DigitalTwin:hasVIN "051550";
+  DigitalTwin:hasTransportMeansID "051550" .
+
+:Event-e0ef602e-61ba-4c16-a406-4a78f23202d8 a Event:LoadEvent, owl:NamedIndividual;
+  rdfs:label "LoadedOn", "Actual loaded on rail";
+  Event:hasTimestamp "2020-02-17T22:47:00"^^xsd:dateTime;
+  Event:hasDateTimeType Event:Actual;
+  Event:involvesDigitalTwin :DigitalTwin-e0ef602e-61ba-4c16-a406-4a78f23202d8, :Equipment-6c7edb9c-cfee-4b0c-998d-435cca8eeb39;
+  Event:involvesBusinessTransaction :businessTransaction-6c7edb9c-cfee-4b0c-998d-435cca8eeb39;
+  Event:involvesPhysicalInfrastructure :physicalInfrastructure-USCHIP4;
+  Event:hasMilestone Event:Start;
+  Event:hasSubmissionTimestamp "2020-02-17T23:21:05"^^xsd:dateTime .
+
+:DigitalTwin-e0ef602e-61ba-4c16-a406-4a78f23202d8 a DigitalTwin:TransportMeans,
+    owl:NamedIndividual, DigitalTwin:Train;
+  rdfs:label "Train" .
+
+:Event-15489592-ca9b-4507-ba1e-80a88533bad5 a Event:DischargeEvent, owl:NamedIndividual;
+  rdfs:label "DischargeFrom", "Actual discharge from rail";
+  Event:hasTimestamp "2020-02-23T08:57:00"^^xsd:dateTime;
+  Event:hasDateTimeType Event:Actual;
+  Event:involvesDigitalTwin :DigitalTwin-15489592-ca9b-4507-ba1e-80a88533bad5, :Equipment-6c7edb9c-cfee-4b0c-998d-435cca8eeb39;
+  Event:involvesBusinessTransaction :businessTransaction-6c7edb9c-cfee-4b0c-998d-435cca8eeb39;
+  Event:involvesPhysicalInfrastructure :physicalInfrastructure-USSEAUP;
+  Event:hasMilestone Event:End;
+  Event:hasSubmissionTimestamp "2020-02-23T09:23:43"^^xsd:dateTime .
+
+:DigitalTwin-15489592-ca9b-4507-ba1e-80a88533bad5 a DigitalTwin:TransportMeans,
+    owl:NamedIndividual, DigitalTwin:Train;
+  rdfs:label "Train" .
+
+:Event-c2dc897a-4ea8-4a5e-a419-460f2d4c50b4 a Event:Event, owl:NamedIndividual;
+  rdfs:label "GateOut", "Actual gate out";
+  Event:hasTimestamp "2020-02-24T18:33:00"^^xsd:dateTime;
+  Event:hasDateTimeType Event:Actual;
+  Event:involvesDigitalTwin :DigitalTwin-c2dc897a-4ea8-4a5e-a419-460f2d4c50b4, :Equipment-6c7edb9c-cfee-4b0c-998d-435cca8eeb39;
+  Event:involvesBusinessTransaction :businessTransaction-6c7edb9c-cfee-4b0c-998d-435cca8eeb39;
+  Event:involvesPhysicalInfrastructure :physicalInfrastructure-USSEAUP;
+  Event:hasMilestone Event:End;
+  Event:hasSubmissionTimestamp "2020-02-24T18:53:57"^^xsd:dateTime .
+
+:DigitalTwin-c2dc897a-4ea8-4a5e-a419-460f2d4c50b4 a DigitalTwin:TransportMeans,
+    owl:NamedIndividual;
+  DigitalTwin:hasVIN "015135";
+  DigitalTwin:hasTransportMeansID "015135" .
+
+:Event-e421e7b6-290c-4914-9be0-aa3a78ca7bcd a Event:Event, owl:NamedIndividual;
+  rdfs:label "GateIn", "Actual gate in";
+  Event:hasTimestamp "2020-02-24T19:36:00"^^xsd:dateTime;
+  Event:hasDateTimeType Event:Actual;
+  Event:involvesDigitalTwin :DigitalTwin-e421e7b6-290c-4914-9be0-aa3a78ca7bcd, :Equipment-6c7edb9c-cfee-4b0c-998d-435cca8eeb39;
+  Event:involvesBusinessTransaction :businessTransaction-6c7edb9c-cfee-4b0c-998d-435cca8eeb39;
+  Event:involvesPhysicalInfrastructure :physicalInfrastructure-USTACNW;
+  Event:hasMilestone Event:Start .
+
+:DigitalTwin-e421e7b6-290c-4914-9be0-aa3a78ca7bcd a DigitalTwin:TransportMeans,
+    owl:NamedIndividual;
+  DigitalTwin:hasVIN "015135";
+  DigitalTwin:hasTransportMeansID "015135" .
+
+:Equipment-6c7edb9c-cfee-4b0c-998d-435cca8eeb39 a DigitalTwin:Equipment, owl:NamedIndividual;
+  DigitalTwin:containerID "XINU4010266" .
+
+:Event-e421e7b6-290c-4914-9be0-aa3a78ca7bcd Event:hasSubmissionTimestamp "2020-02-24T20:28:41"^^xsd:dateTime .
+
+:Event-f7f95d14-64eb-45a3-9c14-6307cbc71803 a Event:Event, owl:NamedIndividual;
+  rdfs:label "GateOut", "Actual gate out";
+  Event:hasTimestamp "2020-02-28T19:21:00"^^xsd:dateTime;
+  Event:hasDateTimeType Event:Actual;
+  Event:involvesDigitalTwin :DigitalTwin-f7f95d14-64eb-45a3-9c14-6307cbc71803, :Equipment-6c7edb9c-cfee-4b0c-998d-435cca8eeb39;
+  Event:involvesBusinessTransaction :businessTransaction-6c7edb9c-cfee-4b0c-998d-435cca8eeb39;
+  Event:involvesPhysicalInfrastructure :physicalInfrastructure-USTACNW;
+  Event:hasMilestone Event:End;
+  Event:hasSubmissionTimestamp "2020-02-28T19:33:22"^^xsd:dateTime .
+
+:DigitalTwin-f7f95d14-64eb-45a3-9c14-6307cbc71803 a DigitalTwin:TransportMeans,
+    owl:NamedIndividual;
+  DigitalTwin:hasVIN "140339";
+  DigitalTwin:hasTransportMeansID "140339" .
+
+:businessTransaction-6c7edb9c-cfee-4b0c-998d-435cca8eeb39 a businessService:Consignment,
+    owl:NamedIndividual;
+  businessService:consignmentCreationTime "2021-05-13T21:23:04"^^xsd:dateTime;
+  businessService:involvedActor :LegalPerson-Maersk .
+
+:LegalPerson-Maersk a businessService:LegalPerson, owl:NamedIndividual, businessService:PrivateEnterprise;
+  businessService:actorName "Maersk" .
+
+:physicalInfrastructure-USTACNW a pi:Terminal, pi:LogisticalFunction, owl:NamedIndividual;
+  rdfs:label "USTACNW";
+  pi:locatedAt :Location-USTIW .
+
+:Location-USTIW a pi:Location, owl:NamedIndividual;
+  pi:cityName "Tacoma, WA, US";
+  pi:cityLoCode "USTIW" .
+
+:Event-9208aef9-6ca7-4735-b34c-f15afd7dc853 a Event:Event, owl:NamedIndividual;
+  rdfs:label "GateIn", "Actual gate in";
+  Event:hasTimestamp "2020-02-29T00:40:00"^^xsd:dateTime;
+  Event:hasDateTimeType Event:Actual;
+  Event:involvesDigitalTwin :DigitalTwin-9208aef9-6ca7-4735-b34c-f15afd7dc853, :Equipment-6c7edb9c-cfee-4b0c-998d-435cca8eeb39;
+  Event:involvesBusinessTransaction :businessTransaction-6c7edb9c-cfee-4b0c-998d-435cca8eeb39;
+  Event:involvesPhysicalInfrastructure :physicalInfrastructure-USTACNW;
+  Event:hasMilestone Event:Start;
+  Event:hasSubmissionTimestamp "2020-02-29T01:01:27"^^xsd:dateTime .
+
+:DigitalTwin-9208aef9-6ca7-4735-b34c-f15afd7dc853 a DigitalTwin:TransportMeans,
+    owl:NamedIndividual .
