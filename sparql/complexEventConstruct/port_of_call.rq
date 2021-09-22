@@ -1,7 +1,9 @@
 # Port of call events
 CONSTRUCT {
 	?ar_event_uri rdf:type Event:CallEvent;
-	Event:involvesEvent ?ar_event,?dep_event, ?inbetween_event .
+	                       Event:involvesEvent ?ar_event,
+                                               ?dep_event,
+                                               ?inbetween_event .
 
     # include all existing attributes of the selected Events
     ?ar_event ?pred ?subj .
