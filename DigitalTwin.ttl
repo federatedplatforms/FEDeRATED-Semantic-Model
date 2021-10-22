@@ -195,12 +195,11 @@ DigitalTwin:ID
   a owl:DatatypeProperty ;
   rdfs:subPropertyOf DigitalTwin:PhysicalObjectProperties ;
 .
-
 DigitalTwin:Locomotive
   a owl:Class ;
   rdfs:comment "Any traction for a train composed of one or more wagons." ;
   rdfs:label "Locomotive" ;
-  rdfs:subClassOf DigitalTwin:TransportMeans ;
+  rdfs:subClassOf DigitalTwin:Train ;
   rdfs:subClassOf [
       a owl:Restriction ;
       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
@@ -214,7 +213,6 @@ DigitalTwin:Locomotive
       owl:onProperty DigitalTwin:locomotiveID ;
     ] ;
 .
-
 DigitalTwin:Package
   a owl:Class ;
   rdfs:label "Package" ;
@@ -337,7 +335,6 @@ DigitalTwin:Swapbody
   rdfs:label "Swap Body" ;
   rdfs:subClassOf DigitalTwin:Equipment ;
 .
-
 DigitalTwin:Trailer
   a owl:Class ;
   rdfs:comment "Unpowered road vehicles that are used for the transportation of cargo." ;
@@ -355,6 +352,11 @@ DigitalTwin:Trailer
       owl:onDataRange xsd:string ;
       owl:onProperty DigitalTwin:trailerLicensePlate ;
     ] ;
+.
+DigitalTwin:Train
+  a owl:Class ;
+  rdfs:label "Train" ;
+  rdfs:subClassOf DigitalTwin:TransportMeans ;
 .
 DigitalTwin:TransportMeans
   a owl:Class ;
