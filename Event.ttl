@@ -1,4 +1,5 @@
 # baseURI: https://ontology.tno.nl/logistics/federated/Event
+# imports: https://ontology.tno.nl/logistics/federated/PhysicalInfrastructure
 # prefix: Event
 
 @prefix : <https://ontology.tno.nl/logistics/federated/Event#> .
@@ -23,6 +24,7 @@
   dcterms:requires <https://ontology.tno.nl/logistics/federated/BusinessService> ;
   dcterms:requires <https://ontology.tno.nl/logistics/federated/DigitalTwin> ;
   dcterms:requires <https://ontology.tno.nl/logistics/federated/PhysicalInfrastructure> ;
+  owl:imports <https://ontology.tno.nl/logistics/federated/PhysicalInfrastructure> ;
   owl:versionIRI <https://ontology.tno.nl/logistics/federated/Eventv-0.1> ;
 .
 Event:ATAEvent
@@ -342,7 +344,7 @@ Event:involvesPhysicalInfrastructure
   rdfs:comment "This relation establishes an association between an Event and a Location. The exact meaning depends on the type of Event, which is inferred from this property and the second association the event has." ;
   rdfs:domain Event:Event ;
   rdfs:label "involves Physical Infrastructure" ;
-  rdfs:range pi:Location ;
+  rdfs:range <http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing> ;
   rdfs:subPropertyOf Event:involves ;
 .
 Event:start
