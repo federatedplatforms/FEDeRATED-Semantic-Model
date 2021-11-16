@@ -1,0 +1,325 @@
+@base <http://example.com/base/> .
+@prefix pi: <https://ontology.tno.nl/logistics/federated/PhysicalInfrastructure#> .
+@prefix classifications: <https://ontology.tno.nl/logistics/federated/Classifications#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix LogisticsRoles: <https://ontology.tno.nl/logistics/federated/LogisticsRoles#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix Event: <https://ontology.tno.nl/logistics/federated/Event#> .
+@prefix ReusableTags: <https://ontology.tno.nl/logistics/federated/ReusableTags#> .
+@prefix businessService: <https://ontology.tno.nl/logistics/federated/BusinessService#> .
+@prefix DigitalTwin: <https://ontology.tno.nl/logistics/federated/DigitalTwin#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix ex: <http://example.com/base#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix era: <http://era.europa.eu/ns#> .
+
+ex:Event-f7ed44a4-0ac1-42fc-820b-765bb2a70def a Event:Event, owl:NamedIndividual;
+  rdfs:label "GateOut", "Planned gate out";
+  Event:hasTimestamp "2019-09-22T06:00:00"^^xsd:dateTime;
+  Event:hasDateTimeType Event:Planned;
+  Event:involvesDigitalTwin ex:DigitalTwin-f7ed44a4-0ac1-42fc-820b-765bb2a70def, ex:Equipment-a891b64d-d29f-4ef2-88ad-9ec4c88e0833;
+  Event:involvesBusinessTransaction ex:businessTransaction-a891b64d-d29f-4ef2-88ad-9ec4c88e0833;
+  Event:hasMilestone Event:End;
+  Event:hasSubmissionTimestamp "2019-09-17T23:32:07"^^xsd:dateTime .
+
+ex:DigitalTwin-f7ed44a4-0ac1-42fc-820b-765bb2a70def a DigitalTwin:TransportMeans,
+    owl:NamedIndividual .
+
+ex:businessTransaction-a891b64d-d29f-4ef2-88ad-9ec4c88e0833 a businessService:Consignment,
+    owl:NamedIndividual;
+  businessService:consignmentCreationTime "2021-05-13T21:23:04"^^xsd:dateTime;
+  businessService:involvedActor ex:LegalPerson-Maersk .
+
+ex:LegalPerson-Maersk a businessService:LegalPerson, owl:NamedIndividual, businessService:PrivateEnterprise;
+  businessService:actorName "Maersk" .
+
+ex:Equipment-a891b64d-d29f-4ef2-88ad-9ec4c88e0833 a DigitalTwin:Equipment, owl:NamedIndividual;
+  rdfs:label "MNBU0494490" .
+
+ex:Event-6bbb1c8b-26c4-47eb-99d6-8c5abb10ce72 a Event:Event, owl:NamedIndividual;
+  rdfs:label "GateIn", "Planned gate in";
+  Event:hasTimestamp "2019-09-23T06:00:00"^^xsd:dateTime;
+  Event:hasDateTimeType Event:Planned;
+  Event:involvesDigitalTwin ex:DigitalTwin-6bbb1c8b-26c4-47eb-99d6-8c5abb10ce72, ex:Equipment-a891b64d-d29f-4ef2-88ad-9ec4c88e0833;
+  Event:involvesBusinessTransaction ex:businessTransaction-a891b64d-d29f-4ef2-88ad-9ec4c88e0833;
+  Event:hasMilestone Event:Start;
+  Event:hasSubmissionTimestamp "2019-09-17T23:32:09"^^xsd:dateTime .
+
+ex:DigitalTwin-6bbb1c8b-26c4-47eb-99d6-8c5abb10ce72 a DigitalTwin:TransportMeans,
+    owl:NamedIndividual .
+
+ex:Event-7a9087e9-b904-49c7-94b6-d2ac1727ddde a Event:Event, owl:NamedIndividual;
+  rdfs:label "Departure", "Planned vessel departure";
+  Event:hasTimestamp "2019-09-24T00:00:00"^^xsd:dateTime;
+  Event:hasDateTimeType Event:Planned;
+  Event:involvesDigitalTwin ex:DigitalTwin-7a9087e9-b904-49c7-94b6-d2ac1727ddde, ex:Equipment-a891b64d-d29f-4ef2-88ad-9ec4c88e0833;
+  Event:involvesBusinessTransaction ex:businessTransaction-a891b64d-d29f-4ef2-88ad-9ec4c88e0833;
+  Event:hasMilestone Event:End;
+  Event:hasSubmissionTimestamp "2019-09-17T23:32:19"^^xsd:dateTime .
+
+ex:DigitalTwin-7a9087e9-b904-49c7-94b6-d2ac1727ddde a DigitalTwin:TransportMeans,
+    owl:NamedIndividual, DigitalTwin:Vessel;
+  rdfs:label "Vessel";
+  DigitalTwin:hasVIN "9225653";
+  DigitalTwin:hasTransportMeansID "9225653" .
+
+ex:Event-8f9508dc-0a4f-430f-90c4-3e18409c81b8 a Event:Event, owl:NamedIndividual;
+  rdfs:label "Arrival", "Planned vessel arrival";
+  Event:hasTimestamp "2019-10-14T22:00:00"^^xsd:dateTime;
+  Event:hasDateTimeType Event:Planned;
+  Event:involvesDigitalTwin ex:DigitalTwin-8f9508dc-0a4f-430f-90c4-3e18409c81b8, ex:Equipment-a891b64d-d29f-4ef2-88ad-9ec4c88e0833;
+  Event:involvesBusinessTransaction ex:businessTransaction-a891b64d-d29f-4ef2-88ad-9ec4c88e0833;
+  Event:hasMilestone Event:Start;
+  Event:hasSubmissionTimestamp "2019-09-17T23:32:21"^^xsd:dateTime .
+
+ex:DigitalTwin-8f9508dc-0a4f-430f-90c4-3e18409c81b8 a DigitalTwin:TransportMeans,
+    owl:NamedIndividual, DigitalTwin:Vessel;
+  rdfs:label "Vessel";
+  DigitalTwin:hasVIN "9225653";
+  DigitalTwin:hasTransportMeansID "9225653" .
+
+ex:Event-3bc54ecf-c111-43b0-9437-09d6df211e37 a Event:Event, owl:NamedIndividual;
+  rdfs:label "GateOut", "Actual gate out";
+  Event:hasTimestamp "2019-09-19T20:12:00"^^xsd:dateTime;
+  Event:hasDateTimeType Event:Actual;
+  Event:involvesDigitalTwin ex:DigitalTwin-3bc54ecf-c111-43b0-9437-09d6df211e37, ex:Equipment-a891b64d-d29f-4ef2-88ad-9ec4c88e0833;
+  Event:involvesBusinessTransaction ex:businessTransaction-a891b64d-d29f-4ef2-88ad-9ec4c88e0833;
+  Event:hasMilestone Event:End;
+  Event:hasSubmissionTimestamp "2019-09-20T01:46:29"^^xsd:dateTime .
+
+ex:DigitalTwin-3bc54ecf-c111-43b0-9437-09d6df211e37 a DigitalTwin:TransportMeans,
+    owl:NamedIndividual;
+  DigitalTwin:hasVIN "341524";
+  DigitalTwin:hasTransportMeansID "341524" .
+
+ex:Event-dfb5ddfa-2547-4caf-a81d-b1a5f2e3e674 a Event:Event, owl:NamedIndividual;
+  rdfs:label "GateIn", "Actual gate in";
+  Event:hasTimestamp "2019-09-21T12:40:00"^^xsd:dateTime;
+  Event:hasDateTimeType Event:Actual;
+  Event:involvesDigitalTwin ex:DigitalTwin-dfb5ddfa-2547-4caf-a81d-b1a5f2e3e674, ex:Equipment-a891b64d-d29f-4ef2-88ad-9ec4c88e0833;
+  Event:involvesBusinessTransaction ex:businessTransaction-a891b64d-d29f-4ef2-88ad-9ec4c88e0833;
+  Event:hasMilestone Event:Start;
+  Event:hasSubmissionTimestamp "2019-09-21T13:16:45"^^xsd:dateTime .
+
+ex:DigitalTwin-dfb5ddfa-2547-4caf-a81d-b1a5f2e3e674 a DigitalTwin:TransportMeans,
+    owl:NamedIndividual;
+  DigitalTwin:hasVIN "341524";
+  DigitalTwin:hasTransportMeansID "341524" .
+
+ex:Event-bf0041d6-d65e-42d7-b7f0-ea90d0a7253d a Event:Event, owl:NamedIndividual;
+  rdfs:label "LoadedOn", "Actual loaded on vessel";
+  Event:hasTimestamp "2019-09-23T20:22:00"^^xsd:dateTime;
+  Event:hasDateTimeType Event:Actual;
+  Event:involvesDigitalTwin ex:DigitalTwin-bf0041d6-d65e-42d7-b7f0-ea90d0a7253d, ex:Equipment-a891b64d-d29f-4ef2-88ad-9ec4c88e0833;
+  Event:involvesBusinessTransaction ex:businessTransaction-a891b64d-d29f-4ef2-88ad-9ec4c88e0833;
+  Event:hasMilestone Event:Start;
+  Event:hasSubmissionTimestamp "2019-09-23T21:33:28"^^xsd:dateTime .
+
+ex:DigitalTwin-bf0041d6-d65e-42d7-b7f0-ea90d0a7253d a DigitalTwin:TransportMeans,
+    owl:NamedIndividual, DigitalTwin:Vessel;
+  rdfs:label "Vessel";
+  DigitalTwin:hasVIN "9225653";
+  DigitalTwin:hasTransportMeansID "9225653" .
+
+ex:Event-e1a93108-8ec8-4719-9638-2afb046f80f5 a Event:Event, owl:NamedIndividual;
+  rdfs:label "Departure", "Actual vessel departure";
+  Event:hasTimestamp "2019-09-23T15:31:00"^^xsd:dateTime;
+  Event:hasDateTimeType Event:Actual;
+  Event:involvesDigitalTwin ex:DigitalTwin-e1a93108-8ec8-4719-9638-2afb046f80f5, ex:Equipment-a891b64d-d29f-4ef2-88ad-9ec4c88e0833;
+  Event:involvesBusinessTransaction ex:businessTransaction-a891b64d-d29f-4ef2-88ad-9ec4c88e0833;
+  Event:hasMilestone Event:End;
+  Event:hasSubmissionTimestamp "2019-09-23T22:22:48"^^xsd:dateTime .
+
+ex:DigitalTwin-e1a93108-8ec8-4719-9638-2afb046f80f5 a DigitalTwin:TransportMeans,
+    owl:NamedIndividual, DigitalTwin:Vessel;
+  rdfs:label "Vessel";
+  DigitalTwin:hasVIN "9225653";
+  DigitalTwin:hasTransportMeansID "9225653" .
+
+ex:Event-2f1dc6f2-f2bf-4171-b8d9-ce006d94f00f a Event:Event, owl:NamedIndividual;
+  rdfs:label "Departure", "Actual vessel departure";
+  Event:hasTimestamp "2019-09-23T23:30:00"^^xsd:dateTime;
+  Event:hasDateTimeType Event:Actual;
+  Event:involvesDigitalTwin ex:DigitalTwin-2f1dc6f2-f2bf-4171-b8d9-ce006d94f00f, ex:Equipment-a891b64d-d29f-4ef2-88ad-9ec4c88e0833;
+  Event:involvesBusinessTransaction ex:businessTransaction-a891b64d-d29f-4ef2-88ad-9ec4c88e0833;
+  Event:hasMilestone Event:End;
+  Event:hasSubmissionTimestamp "2019-09-24T04:48:39"^^xsd:dateTime .
+
+ex:DigitalTwin-2f1dc6f2-f2bf-4171-b8d9-ce006d94f00f a DigitalTwin:TransportMeans,
+    owl:NamedIndividual, DigitalTwin:Vessel;
+  rdfs:label "Vessel";
+  DigitalTwin:hasVIN "9225653";
+  DigitalTwin:hasTransportMeansID "9225653" .
+
+ex:Event-dd754398-9cfb-4a55-bd12-af2ad792abce a Event:Event, owl:NamedIndividual;
+  rdfs:label "Departure", "Actual vessel departure";
+  Event:hasTimestamp "2019-09-23T23:32:00"^^xsd:dateTime;
+  Event:hasDateTimeType Event:Actual;
+  Event:involvesDigitalTwin ex:DigitalTwin-dd754398-9cfb-4a55-bd12-af2ad792abce, ex:Equipment-a891b64d-d29f-4ef2-88ad-9ec4c88e0833;
+  Event:involvesBusinessTransaction ex:businessTransaction-a891b64d-d29f-4ef2-88ad-9ec4c88e0833;
+  Event:hasMilestone Event:End;
+  Event:hasSubmissionTimestamp "2019-09-24T09:57:20"^^xsd:dateTime .
+
+ex:DigitalTwin-dd754398-9cfb-4a55-bd12-af2ad792abce a DigitalTwin:TransportMeans,
+    owl:NamedIndividual, DigitalTwin:Vessel;
+  rdfs:label "Vessel";
+  DigitalTwin:hasVIN "9225653";
+  DigitalTwin:hasTransportMeansID "9225653" .
+
+ex:Event-67e92cf5-04c2-421c-99bd-30540b9ecee5 a Event:Event, owl:NamedIndividual;
+  rdfs:label "Departure", "Estimated vessel departure";
+  Event:hasTimestamp "2019-09-24T00:00:00"^^xsd:dateTime;
+  Event:hasDateTimeType Event:Estimated;
+  Event:involvesDigitalTwin ex:DigitalTwin-67e92cf5-04c2-421c-99bd-30540b9ecee5, ex:Equipment-a891b64d-d29f-4ef2-88ad-9ec4c88e0833;
+  Event:involvesBusinessTransaction ex:businessTransaction-a891b64d-d29f-4ef2-88ad-9ec4c88e0833;
+  Event:hasMilestone Event:End;
+  Event:hasSubmissionTimestamp "2019-10-09T12:25:47"^^xsd:dateTime .
+
+ex:DigitalTwin-67e92cf5-04c2-421c-99bd-30540b9ecee5 a DigitalTwin:TransportMeans,
+    owl:NamedIndividual, DigitalTwin:Vessel;
+  rdfs:label "Vessel";
+  DigitalTwin:hasVIN "9225653";
+  DigitalTwin:hasTransportMeansID "9225653" .
+
+ex:Event-b5c051f5-2cdc-4795-b480-67c580ee50c2 a Event:Event, owl:NamedIndividual;
+  rdfs:label "Arrival", "Estimated vessel arrival";
+  Event:hasTimestamp "2019-10-14T16:00:00"^^xsd:dateTime;
+  Event:hasDateTimeType Event:Estimated;
+  Event:involvesDigitalTwin ex:DigitalTwin-b5c051f5-2cdc-4795-b480-67c580ee50c2, ex:Equipment-a891b64d-d29f-4ef2-88ad-9ec4c88e0833;
+  Event:involvesBusinessTransaction ex:businessTransaction-a891b64d-d29f-4ef2-88ad-9ec4c88e0833;
+  Event:hasMilestone Event:Start;
+  Event:hasSubmissionTimestamp "2019-10-09T12:25:50"^^xsd:dateTime .
+
+ex:DigitalTwin-b5c051f5-2cdc-4795-b480-67c580ee50c2 a DigitalTwin:TransportMeans,
+    owl:NamedIndividual, DigitalTwin:Vessel;
+  rdfs:label "Vessel";
+  DigitalTwin:hasVIN "9225653";
+  DigitalTwin:hasTransportMeansID "9225653" .
+
+ex:Event-94388f60-190a-4f20-8b77-60d41d5c5cb3 a Event:Event, owl:NamedIndividual;
+  rdfs:label "Arrival", "Estimated vessel arrival";
+  Event:hasTimestamp "2019-10-14T22:00:00"^^xsd:dateTime;
+  Event:hasDateTimeType Event:Estimated;
+  Event:involvesDigitalTwin ex:DigitalTwin-94388f60-190a-4f20-8b77-60d41d5c5cb3, ex:Equipment-a891b64d-d29f-4ef2-88ad-9ec4c88e0833;
+  Event:involvesBusinessTransaction ex:businessTransaction-a891b64d-d29f-4ef2-88ad-9ec4c88e0833;
+  Event:hasMilestone Event:Start;
+  Event:hasSubmissionTimestamp "2019-10-09T17:37:29"^^xsd:dateTime .
+
+ex:DigitalTwin-94388f60-190a-4f20-8b77-60d41d5c5cb3 a DigitalTwin:TransportMeans,
+    owl:NamedIndividual, DigitalTwin:Vessel;
+  rdfs:label "Vessel";
+  DigitalTwin:hasVIN "9225653";
+  DigitalTwin:hasTransportMeansID "9225653" .
+
+ex:Event-47c5c8b9-106b-4994-90f3-542a74bc6880 a Event:Event, owl:NamedIndividual;
+  rdfs:label "Arrival", "Estimated vessel arrival";
+  Event:hasTimestamp "2019-10-15T02:00:00"^^xsd:dateTime;
+  Event:hasDateTimeType Event:Estimated;
+  Event:involvesDigitalTwin ex:DigitalTwin-47c5c8b9-106b-4994-90f3-542a74bc6880, ex:Equipment-a891b64d-d29f-4ef2-88ad-9ec4c88e0833;
+  Event:involvesBusinessTransaction ex:businessTransaction-a891b64d-d29f-4ef2-88ad-9ec4c88e0833;
+  Event:hasMilestone Event:Start;
+  Event:hasSubmissionTimestamp "2019-10-14T11:28:37"^^xsd:dateTime .
+
+ex:DigitalTwin-47c5c8b9-106b-4994-90f3-542a74bc6880 a DigitalTwin:TransportMeans,
+    owl:NamedIndividual, DigitalTwin:Vessel;
+  rdfs:label "Vessel";
+  DigitalTwin:hasVIN "9225653";
+  DigitalTwin:hasTransportMeansID "9225653" .
+
+ex:Event-009700af-3343-421d-b7c4-5a175b4f9ec2 a Event:Event, owl:NamedIndividual;
+  rdfs:label "DischargeFrom", "Actual discharge from vessel";
+  Event:hasTimestamp "2019-10-15T09:34:00"^^xsd:dateTime;
+  Event:hasDateTimeType Event:Actual;
+  Event:involvesDigitalTwin ex:DigitalTwin-009700af-3343-421d-b7c4-5a175b4f9ec2, ex:Equipment-a891b64d-d29f-4ef2-88ad-9ec4c88e0833;
+  Event:involvesBusinessTransaction ex:businessTransaction-a891b64d-d29f-4ef2-88ad-9ec4c88e0833;
+  Event:involvesPhysicalInfrastructure ex:physicalInfrastructure-BEANR-K1742;
+  Event:hasMilestone Event:End;
+  Event:hasSubmissionTimestamp "2019-10-15T09:56:35"^^xsd:dateTime .
+
+ex:DigitalTwin-009700af-3343-421d-b7c4-5a175b4f9ec2 a DigitalTwin:TransportMeans,
+    owl:NamedIndividual, DigitalTwin:Vessel;
+  rdfs:label "Vessel";
+  DigitalTwin:hasVIN "9225653";
+  DigitalTwin:hasTransportMeansID "9225653" .
+
+ex:physicalInfrastructure-BEANR-K1742 a pi:Terminal, pi:LogisticalFunction, owl:NamedIndividual;
+  rdfs:label "BEANR-K1742";
+  pi:locatedAt ex:Location-BEANR .
+
+ex:Location-BEANR a pi:Location, owl:NamedIndividual;
+  pi:cityName "Antwerpen, BE";
+  pi:cityLoCode "BEANR" .
+
+ex:Event-bd81e043-74cb-4a46-b1aa-e7232eeddda8 a Event:Event, owl:NamedIndividual;
+  rdfs:label "Arrival", "Actual vessel arrival";
+  Event:hasTimestamp "2019-10-15T02:31:00"^^xsd:dateTime;
+  Event:hasDateTimeType Event:Actual;
+  Event:involvesDigitalTwin ex:DigitalTwin-bd81e043-74cb-4a46-b1aa-e7232eeddda8, ex:Equipment-a891b64d-d29f-4ef2-88ad-9ec4c88e0833;
+  Event:involvesBusinessTransaction ex:businessTransaction-a891b64d-d29f-4ef2-88ad-9ec4c88e0833;
+  Event:hasMilestone Event:Start;
+  Event:hasSubmissionTimestamp "2019-10-15T19:28:31"^^xsd:dateTime .
+
+ex:DigitalTwin-bd81e043-74cb-4a46-b1aa-e7232eeddda8 a DigitalTwin:TransportMeans,
+    owl:NamedIndividual, DigitalTwin:Vessel;
+  rdfs:label "Vessel";
+  DigitalTwin:hasVIN "9225653";
+  DigitalTwin:hasTransportMeansID "9225653" .
+
+ex:Event-39d32627-449a-440b-8f0e-d7f5416702aa a Event:Event, owl:NamedIndividual;
+  rdfs:label "GateOut", "Actual gate out";
+  Event:hasTimestamp "2019-10-16T06:44:00"^^xsd:dateTime;
+  Event:hasDateTimeType Event:Actual;
+  Event:involvesDigitalTwin ex:DigitalTwin-39d32627-449a-440b-8f0e-d7f5416702aa, ex:Equipment-a891b64d-d29f-4ef2-88ad-9ec4c88e0833;
+  Event:involvesBusinessTransaction ex:businessTransaction-a891b64d-d29f-4ef2-88ad-9ec4c88e0833;
+  Event:involvesPhysicalInfrastructure ex:physicalInfrastructure-BEANR-K1742;
+  Event:hasMilestone Event:End;
+  Event:hasSubmissionTimestamp "2019-10-16T06:57:57"^^xsd:dateTime .
+
+ex:DigitalTwin-39d32627-449a-440b-8f0e-d7f5416702aa a DigitalTwin:TransportMeans,
+    owl:NamedIndividual;
+  DigitalTwin:hasVIN "MEITRK";
+  DigitalTwin:hasTransportMeansID "MEITRK" .
+
+ex:Event-baaf4833-8a1a-4275-8395-d3d669d49a04 a Event:Event, owl:NamedIndividual;
+  rdfs:label "DischargeFrom", "Actual discharge from vessel";
+  Event:hasTimestamp "2019-10-15T09:34:00"^^xsd:dateTime;
+  Event:hasDateTimeType Event:Actual;
+  Event:involvesDigitalTwin ex:DigitalTwin-baaf4833-8a1a-4275-8395-d3d669d49a04, ex:Equipment-a891b64d-d29f-4ef2-88ad-9ec4c88e0833;
+  Event:involvesBusinessTransaction ex:businessTransaction-a891b64d-d29f-4ef2-88ad-9ec4c88e0833;
+  Event:hasMilestone Event:End;
+  Event:hasSubmissionTimestamp "2019-10-16T11:24:05"^^xsd:dateTime .
+
+ex:DigitalTwin-baaf4833-8a1a-4275-8395-d3d669d49a04 a DigitalTwin:TransportMeans,
+    owl:NamedIndividual, DigitalTwin:Vessel;
+  rdfs:label "Vessel";
+  DigitalTwin:hasVIN "9225653";
+  DigitalTwin:hasTransportMeansID "9225653" .
+
+ex:Event-f99a5b51-039e-4f69-8238-2e11764f4835 a Event:Event, owl:NamedIndividual;
+  rdfs:label "GateIn", "Actual gate in";
+  Event:hasTimestamp "2019-10-18T10:22:00"^^xsd:dateTime;
+  Event:hasDateTimeType Event:Actual;
+  Event:involvesDigitalTwin ex:DigitalTwin-f99a5b51-039e-4f69-8238-2e11764f4835, ex:Equipment-a891b64d-d29f-4ef2-88ad-9ec4c88e0833;
+  Event:involvesBusinessTransaction ex:businessTransaction-a891b64d-d29f-4ef2-88ad-9ec4c88e0833;
+  Event:hasMilestone Event:Start;
+  Event:hasSubmissionTimestamp "2019-10-18T11:18:25"^^xsd:dateTime .
+
+ex:DigitalTwin-f99a5b51-039e-4f69-8238-2e11764f4835 a DigitalTwin:TransportMeans,
+    owl:NamedIndividual .
+
+ex:Event-f1ea0631-284d-4241-8b31-943b4787d589 a Event:Event, owl:NamedIndividual;
+  rdfs:label "GateOut", "Actual gate out";
+  Event:hasTimestamp "2019-10-17T14:41:00"^^xsd:dateTime;
+  Event:hasDateTimeType Event:Actual;
+  Event:involvesDigitalTwin ex:DigitalTwin-f1ea0631-284d-4241-8b31-943b4787d589, ex:Equipment-a891b64d-d29f-4ef2-88ad-9ec4c88e0833;
+  Event:involvesBusinessTransaction ex:businessTransaction-a891b64d-d29f-4ef2-88ad-9ec4c88e0833;
+  Event:hasMilestone Event:End;
+  Event:hasSubmissionTimestamp "2019-10-18T11:19:19"^^xsd:dateTime .
+
+ex:DigitalTwin-f1ea0631-284d-4241-8b31-943b4787d589 a DigitalTwin:TransportMeans,
+    owl:NamedIndividual;
+  DigitalTwin:hasVIN "MHATRK";
+  DigitalTwin:hasTransportMeansID "MHATRK" .
