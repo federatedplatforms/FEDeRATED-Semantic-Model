@@ -602,6 +602,14 @@ DigitalTwin:goodsDescription
   rdfs:range xsd:string ;
   rdfs:subPropertyOf DigitalTwin:PhysicalObjectProperties ;
 .
+DigitalTwin:goodsSize
+  a owl:DatatypeProperty ;
+  rdfs:domain DigitalTwin:PhysicalObject ;
+  rdfs:label "Goods size" ;
+  rdfs:range xsd:integer ;
+  rdfs:subPropertyOf DigitalTwin:PhysicalObjectProperties ;
+  skos:altLabel "Verified Gross Mass" ;
+.
 DigitalTwin:goodsTypeCode
   a owl:ObjectProperty ;
   rdfs:domain DigitalTwin:Goods ;
