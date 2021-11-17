@@ -1,0 +1,84 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix sd: <http://www.w3.org/ns/sparql-service-description#>.
+@prefix data: <https://ontology.tno.nl/logistics/federated/hessing#>.
+@prefix event: <https://ontology.tno.nl/logistics/federated/event#>.
+@prefix dt: <https://ontology.tno.nl/logistics/federated/digitalTwin#>.
+@prefix bs: <https://ontology.tno.nl/logistics/federated/businessService#>.
+@prefix pi: <https://ontology.tno.nl/logistics/federated/physicalInfrastructure#>.
+@prefix cl: <https://ontology.tno.nl/logistics/federated/Classifications#>.
+
+<https://ontology.tno.nl/logistics/federated/hessing#DigitalTwin-53644%2F5> a event:Goods;
+    dt:goodsDescription "Blok 100/120 m. koelvers product"^^xsd:string;
+    dt:goodsSize "6.50LDM".
+<https://ontology.tno.nl/logistics/federated/hessing#DigitalTwin-53644%2F6> a event:Goods;
+    dt:goodsDescription "Blok 100/120 m. koelvers product"^^xsd:string;
+    dt:goodsSize "5.00LDM";
+    a event:Goods;
+    dt:goodsDescription "Blok 100/120 m. koelvers product"^^xsd:string;
+    dt:goodsSize "5.00LDM".
+<https://ontology.tno.nl/logistics/federated/hessing#DigitalTwin-53644%2F5> a event:Goods;
+    dt:goodsDescription "Blok 100/120 m. koelvers product"^^xsd:string;
+    dt:goodsSize "6.50LDM".
+<https://ontology.tno.nl/logistics/federated/hessing#DigitalTwin-53753%2F33> a event:Goods;
+    dt:goodsDescription "Blok 100/120 m. koelvers product"^^xsd:string;
+    dt:goodsSize "5.00LDM".
+<https://ontology.tno.nl/logistics/federated/hessing#DigitalTwin-53753%2F34> a event:Goods;
+    dt:goodsDescription "Blok 100/120 m. koelvers product"^^xsd:string;
+    dt:goodsSize "5.50LDM";
+    a event:Goods;
+    dt:goodsDescription "Blok 100/120 m. koelvers product"^^xsd:string;
+    dt:goodsSize "5.50LDM".
+<https://ontology.tno.nl/logistics/federated/hessing#DigitalTwin-53753%2F33> a event:Goods;
+    dt:goodsDescription "Blok 100/120 m. koelvers product"^^xsd:string;
+    dt:goodsSize "5.00LDM".
+<https://ontology.tno.nl/logistics/federated/hessing#DigitalTwin-53753%2F8> a event:Goods;
+    dt:goodsDescription "Blok100/120 m. emballage"^^xsd:string;
+    dt:goodsSize "13.00LDM";
+    a event:Goods;
+    dt:goodsDescription "Blok100/120 m. emballage"^^xsd:string;
+    dt:goodsSize "13.00LDM".
+data:DigitalTwin-207 a "https://ontology.tno.nl/logistics/federated/digitalTwin#TransportMeans", "https://ontology.tno.nl/logistics/federated/digitalTwin#Truck";
+    dt:truckLicensePlate "52-BNZ-1"^^xsd:string;
+    rdfs:comment "Vehicle type: Truck".
+<https://ontology.tno.nl/logistics/federated/hessing#Infrastructure-Korendijk%209> a "https://ontology.tno.nl/logistics/federated/physicalInfrastructure#Location";
+    pi:cityName "Helmond"^^xsd:string;
+    pi:postalCode "5704 RD"^^xsd:string;
+    pi:countryISOCode "NL"^^xsd:string;
+    a "https://ontology.tno.nl/logistics/federated/physicalInfrastructure#Location";
+    pi:cityName "Helmond"^^xsd:string;
+    pi:postalCode "5704 RD"^^xsd:string;
+    pi:countryISOCode "NL"^^xsd:string.
+<https://ontology.tno.nl/logistics/federated/hessing#Infrastructure-IABC%205104> a "https://ontology.tno.nl/logistics/federated/physicalInfrastructure#Location";
+    pi:cityName "Breda"^^xsd:string;
+    pi:postalCode "4814 RN"^^xsd:string;
+    pi:countryISOCode "NL"^^xsd:string;
+    a "https://ontology.tno.nl/logistics/federated/physicalInfrastructure#Location";
+    pi:cityName "Breda"^^xsd:string;
+    pi:postalCode "4814 RN"^^xsd:string;
+    pi:countryISOCode "NL"^^xsd:string.
+<https://ontology.tno.nl/logistics/federated/hessing#Infrastructure-Vervul%2014a> a "https://ontology.tno.nl/logistics/federated/physicalInfrastructure#Location";
+    pi:cityName "Rijsbergen"^^xsd:string;
+    pi:postalCode "4891 SW"^^xsd:string;
+    pi:countryISOCode "NL"^^xsd:string.
+<https://ontology.tno.nl/logistics/federated/hessing#Infrastructure-Overasebaan%2019> a "https://ontology.tno.nl/logistics/federated/physicalInfrastructure#Location";
+    pi:cityName "Rijsbergen"^^xsd:string;
+    pi:postalCode "4891 RG"^^xsd:string;
+    pi:countryISOCode "NL"^^xsd:string.
+<https://ontology.tno.nl/logistics/federated/hessing#Infrastructure-Korendijk%209> a "https://ontology.tno.nl/logistics/federated/physicalInfrastructure#Location";
+    pi:cityName "Helmond"^^xsd:string;
+    pi:postalCode "5704 RD"^^xsd:string;
+    pi:countryISOCode "NL"^^xsd:string;
+    a "https://ontology.tno.nl/logistics/federated/physicalInfrastructure#Location";
+    pi:cityName "Helmond"^^xsd:string;
+    pi:postalCode "5704 RD"^^xsd:string;
+    pi:countryISOCode "NL"^^xsd:string;
+    a "https://ontology.tno.nl/logistics/federated/physicalInfrastructure#Location";
+    pi:cityName "Helmond"^^xsd:string;
+    pi:postalCode "5704 RD"^^xsd:string;
+    pi:countryISOCode "NL"^^xsd:string;
+    a "https://ontology.tno.nl/logistics/federated/physicalInfrastructure#Location";
+    pi:cityName "Helmond"^^xsd:string;
+    pi:postalCode "5704 RD"^^xsd:string;
+    pi:countryISOCode "NL"^^xsd:string.
