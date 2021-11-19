@@ -11,1044 +11,1044 @@
 data:event-5b856159-4788-11ec-a78e-5c879c8043a4 a event:Event, event:ArrivalEvent;
     event:hasMilestone event:Start;
     event:hasDateTimeType event:Actual;
-    event:hasTimestamp "2021-11-10T08:44:07"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T08:44:07Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a;
     event:involvesPhysicalInfrastructure data:PhysicalInfrastructure-b4d51938-5ae5-330d-af2e-a198dd2c16ab.
 data:event-5b85615a-4788-11ec-ac65-5c879c8043a4 a event:Event, event:ArrivalEvent;
     event:hasMilestone event:Start;
     event:hasDateTimeType event:Expected;
-    event:hasTimestamp "2021-11-10T08:44:07"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T08:44:07Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a;
     event:involvesPhysicalInfrastructure data:PhysicalInfrastructure-b4d51938-5ae5-330d-af2e-a198dd2c16ab.
 data:event-5b85615b-4788-11ec-b25b-5c879c8043a4 a event:Event, event:ArrivalEvent;
     event:hasMilestone event:Start;
     event:hasDateTimeType event:Planned;
-    event:hasTimestamp "2021-11-10T08:44:07"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T08:44:07Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a;
     event:involvesPhysicalInfrastructure data:PhysicalInfrastructure-b4d51938-5ae5-330d-af2e-a198dd2c16ab.
 data:event-5b85615c-4788-11ec-b0fc-5c879c8043a4 a event:Event, event:DepartureEvent;
     event:hasMilestone event:End;
     event:hasDateTimeType event:Actual;
-    event:hasTimestamp "2021-11-10T10:04:48"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T10:04:48Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a;
     event:involvesPhysicalInfrastructure data:PhysicalInfrastructure-b4d51938-5ae5-330d-af2e-a198dd2c16ab.
 data:event-5b85615d-4788-11ec-9d44-5c879c8043a4 a event:Event, event:DepartureEvent;
     event:hasMilestone event:End;
     event:hasDateTimeType event:Expected;
-    event:hasTimestamp "2021-11-10T10:04:48"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T10:04:48Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a;
     event:involvesPhysicalInfrastructure data:PhysicalInfrastructure-b4d51938-5ae5-330d-af2e-a198dd2c16ab.
 data:event-5b85615e-4788-11ec-90d3-5c879c8043a4 a event:Event, event:DepartureEvent;
     event:hasMilestone event:End;
     event:hasDateTimeType event:Planned;
-    event:hasTimestamp "2021-11-10T10:04:48"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T10:04:48Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a;
     event:involvesPhysicalInfrastructure data:PhysicalInfrastructure-b4d51938-5ae5-330d-af2e-a198dd2c16ab.
 data:event-553bea8e-751c-490e-9008-1a2cb8e54856 a event:Event, event:LoadEvent;
     event:hasMilestone event:Start;
     event:hasDateTimeType event:Actual;
-    event:hasTimestamp "2021-11-10T08:44:07"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T08:44:07Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a, data:DigitalTwin-ce1c5fa7-707d-385b-bdcd-d1d4025eb3d1.
 data:event-5b85615f-4788-11ec-ae95-5c879c8043a4 a event:Event, event:LoadEvent;
     event:hasMilestone event:Start;
     event:hasDateTimeType event:Expected;
-    event:hasTimestamp "2021-11-10T08:44:07"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T08:44:07Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a, data:DigitalTwin-ce1c5fa7-707d-385b-bdcd-d1d4025eb3d1.
 data:event-5b856160-4788-11ec-a8ec-5c879c8043a4 a event:Event, event:LoadEvent;
     event:hasMilestone event:Start;
     event:hasDateTimeType event:Planned;
-    event:hasTimestamp "2021-11-10T08:44:07"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T08:44:07Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a, data:DigitalTwin-ce1c5fa7-707d-385b-bdcd-d1d4025eb3d1.
 data:event-5b856161-4788-11ec-8f8b-5c879c8043a4 a event:Event, event:ArrivalEvent;
     event:hasMilestone event:Start;
     event:hasDateTimeType event:Actual;
-    event:hasTimestamp "2021-11-10T08:44:07"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T08:44:07Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a;
     event:involvesPhysicalInfrastructure data:PhysicalInfrastructure-b4d51938-5ae5-330d-af2e-a198dd2c16ab.
 data:event-5b856162-4788-11ec-afcf-5c879c8043a4 a event:Event, event:ArrivalEvent;
     event:hasMilestone event:Start;
     event:hasDateTimeType event:Expected;
-    event:hasTimestamp "2021-11-10T08:44:07"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T08:44:07Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a;
     event:involvesPhysicalInfrastructure data:PhysicalInfrastructure-b4d51938-5ae5-330d-af2e-a198dd2c16ab.
 data:event-5b856163-4788-11ec-9dbb-5c879c8043a4 a event:Event, event:ArrivalEvent;
     event:hasMilestone event:Start;
     event:hasDateTimeType event:Planned;
-    event:hasTimestamp "2021-11-10T08:44:07"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T08:44:07Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a;
     event:involvesPhysicalInfrastructure data:PhysicalInfrastructure-b4d51938-5ae5-330d-af2e-a198dd2c16ab.
 data:event-5b856164-4788-11ec-9b54-5c879c8043a4 a event:Event, event:DepartureEvent;
     event:hasMilestone event:End;
     event:hasDateTimeType event:Actual;
-    event:hasTimestamp "2021-11-10T10:04:48"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T10:04:48Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a;
     event:involvesPhysicalInfrastructure data:PhysicalInfrastructure-b4d51938-5ae5-330d-af2e-a198dd2c16ab.
 data:event-5b856165-4788-11ec-b69d-5c879c8043a4 a event:Event, event:DepartureEvent;
     event:hasMilestone event:End;
     event:hasDateTimeType event:Expected;
-    event:hasTimestamp "2021-11-10T10:04:48"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T10:04:48Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a;
     event:involvesPhysicalInfrastructure data:PhysicalInfrastructure-b4d51938-5ae5-330d-af2e-a198dd2c16ab.
 data:event-5b856166-4788-11ec-8dd4-5c879c8043a4 a event:Event, event:DepartureEvent;
     event:hasMilestone event:End;
     event:hasDateTimeType event:Planned;
-    event:hasTimestamp "2021-11-10T10:04:48"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T10:04:48Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a;
     event:involvesPhysicalInfrastructure data:PhysicalInfrastructure-b4d51938-5ae5-330d-af2e-a198dd2c16ab.
 data:event-4c36f49c-e3d2-4323-81dd-96182cef1b48 a event:Event, event:LoadEvent;
     event:hasMilestone event:Start;
     event:hasDateTimeType event:Actual;
-    event:hasTimestamp "2021-11-10T08:44:07"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T08:44:07Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a, data:DigitalTwin-3d2da28b-3cc9-3845-b641-6ed4cd26c4b7.
 data:event-5b856167-4788-11ec-aa9f-5c879c8043a4 a event:Event, event:LoadEvent;
     event:hasMilestone event:Start;
     event:hasDateTimeType event:Expected;
-    event:hasTimestamp "2021-11-10T08:44:07"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T08:44:07Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a, data:DigitalTwin-3d2da28b-3cc9-3845-b641-6ed4cd26c4b7.
 data:event-5b85885f-4788-11ec-942f-5c879c8043a4 a event:Event, event:LoadEvent;
     event:hasMilestone event:Start;
     event:hasDateTimeType event:Planned;
-    event:hasTimestamp "2021-11-10T08:44:07"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T08:44:07Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a, data:DigitalTwin-3d2da28b-3cc9-3845-b641-6ed4cd26c4b7.
 data:event-5b858860-4788-11ec-af18-5c879c8043a4 a event:Event, event:ArrivalEvent;
     event:hasMilestone event:Start;
     event:hasDateTimeType event:Actual;
-    event:hasTimestamp "2021-11-10T08:44:07"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T08:44:07Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a;
     event:involvesPhysicalInfrastructure data:PhysicalInfrastructure-b4d51938-5ae5-330d-af2e-a198dd2c16ab.
 data:event-5b858861-4788-11ec-9703-5c879c8043a4 a event:Event, event:ArrivalEvent;
     event:hasMilestone event:Start;
     event:hasDateTimeType event:Expected;
-    event:hasTimestamp "2021-11-10T08:44:07"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T08:44:07Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a;
     event:involvesPhysicalInfrastructure data:PhysicalInfrastructure-b4d51938-5ae5-330d-af2e-a198dd2c16ab.
 data:event-5b858862-4788-11ec-8050-5c879c8043a4 a event:Event, event:ArrivalEvent;
     event:hasMilestone event:Start;
     event:hasDateTimeType event:Planned;
-    event:hasTimestamp "2021-11-10T08:44:07"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T08:44:07Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a;
     event:involvesPhysicalInfrastructure data:PhysicalInfrastructure-b4d51938-5ae5-330d-af2e-a198dd2c16ab.
 data:event-5b858863-4788-11ec-9df4-5c879c8043a4 a event:Event, event:DepartureEvent;
     event:hasMilestone event:End;
     event:hasDateTimeType event:Actual;
-    event:hasTimestamp "2021-11-10T10:04:48"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T10:04:48Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a;
     event:involvesPhysicalInfrastructure data:PhysicalInfrastructure-b4d51938-5ae5-330d-af2e-a198dd2c16ab.
 data:event-5b858864-4788-11ec-aead-5c879c8043a4 a event:Event, event:DepartureEvent;
     event:hasMilestone event:End;
     event:hasDateTimeType event:Expected;
-    event:hasTimestamp "2021-11-10T10:04:48"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T10:04:48Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a;
     event:involvesPhysicalInfrastructure data:PhysicalInfrastructure-b4d51938-5ae5-330d-af2e-a198dd2c16ab.
 data:event-5b858865-4788-11ec-8b9b-5c879c8043a4 a event:Event, event:DepartureEvent;
     event:hasMilestone event:End;
     event:hasDateTimeType event:Planned;
-    event:hasTimestamp "2021-11-10T10:04:48"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T10:04:48Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a;
     event:involvesPhysicalInfrastructure data:PhysicalInfrastructure-b4d51938-5ae5-330d-af2e-a198dd2c16ab.
 data:event-48ea68ae-d442-4f46-a48d-5944dd68c09e a event:Event, event:LoadEvent;
     event:hasMilestone event:Start;
     event:hasDateTimeType event:Actual;
-    event:hasTimestamp "2021-11-10T08:44:07"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T08:44:07Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a, data:DigitalTwin-79512eb1-edbd-3aca-bcc9-9ea299a3cd1e.
 data:event-5b858866-4788-11ec-b6ed-5c879c8043a4 a event:Event, event:LoadEvent;
     event:hasMilestone event:Start;
     event:hasDateTimeType event:Expected;
-    event:hasTimestamp "2021-11-10T08:44:07"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T08:44:07Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a, data:DigitalTwin-79512eb1-edbd-3aca-bcc9-9ea299a3cd1e.
 data:event-5b858867-4788-11ec-bd8c-5c879c8043a4 a event:Event, event:LoadEvent;
     event:hasMilestone event:Start;
     event:hasDateTimeType event:Planned;
-    event:hasTimestamp "2021-11-10T08:44:07"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T08:44:07Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a, data:DigitalTwin-79512eb1-edbd-3aca-bcc9-9ea299a3cd1e.
 data:event-5b858868-4788-11ec-a14f-5c879c8043a4 a event:Event, event:ArrivalEvent;
     event:hasMilestone event:Start;
     event:hasDateTimeType event:Actual;
-    event:hasTimestamp "2021-11-10T08:44:07"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T08:44:07Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a;
     event:involvesPhysicalInfrastructure data:PhysicalInfrastructure-b4d51938-5ae5-330d-af2e-a198dd2c16ab.
 data:event-5b858869-4788-11ec-8852-5c879c8043a4 a event:Event, event:ArrivalEvent;
     event:hasMilestone event:Start;
     event:hasDateTimeType event:Expected;
-    event:hasTimestamp "2021-11-10T08:44:07"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T08:44:07Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a;
     event:involvesPhysicalInfrastructure data:PhysicalInfrastructure-b4d51938-5ae5-330d-af2e-a198dd2c16ab.
 data:event-5b85886a-4788-11ec-97a0-5c879c8043a4 a event:Event, event:ArrivalEvent;
     event:hasMilestone event:Start;
     event:hasDateTimeType event:Planned;
-    event:hasTimestamp "2021-11-10T08:44:07"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T08:44:07Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a;
     event:involvesPhysicalInfrastructure data:PhysicalInfrastructure-b4d51938-5ae5-330d-af2e-a198dd2c16ab.
 data:event-5b85886b-4788-11ec-9c07-5c879c8043a4 a event:Event, event:DepartureEvent;
     event:hasMilestone event:End;
     event:hasDateTimeType event:Actual;
-    event:hasTimestamp "2021-11-10T10:04:48"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T10:04:48Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a;
     event:involvesPhysicalInfrastructure data:PhysicalInfrastructure-b4d51938-5ae5-330d-af2e-a198dd2c16ab.
 data:event-5b85886c-4788-11ec-a82b-5c879c8043a4 a event:Event, event:DepartureEvent;
     event:hasMilestone event:End;
     event:hasDateTimeType event:Expected;
-    event:hasTimestamp "2021-11-10T10:04:48"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T10:04:48Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a;
     event:involvesPhysicalInfrastructure data:PhysicalInfrastructure-b4d51938-5ae5-330d-af2e-a198dd2c16ab.
 data:event-5b85886d-4788-11ec-a3a9-5c879c8043a4 a event:Event, event:DepartureEvent;
     event:hasMilestone event:End;
     event:hasDateTimeType event:Planned;
-    event:hasTimestamp "2021-11-10T10:04:48"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T10:04:48Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a;
     event:involvesPhysicalInfrastructure data:PhysicalInfrastructure-b4d51938-5ae5-330d-af2e-a198dd2c16ab.
 data:event-66b47c50-9576-46cb-80aa-5c59a0f6fb48 a event:Event, event:LoadEvent;
     event:hasMilestone event:Start;
     event:hasDateTimeType event:Actual;
-    event:hasTimestamp "2021-11-10T08:44:07"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T08:44:07Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a, data:DigitalTwin-89acab06-3659-3c26-bc58-4c2eb8ac0154.
 data:event-5b85886e-4788-11ec-a458-5c879c8043a4 a event:Event, event:LoadEvent;
     event:hasMilestone event:Start;
     event:hasDateTimeType event:Expected;
-    event:hasTimestamp "2021-11-10T08:44:07"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T08:44:07Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a, data:DigitalTwin-89acab06-3659-3c26-bc58-4c2eb8ac0154.
 data:event-5b85886f-4788-11ec-ae34-5c879c8043a4 a event:Event, event:LoadEvent;
     event:hasMilestone event:Start;
     event:hasDateTimeType event:Planned;
-    event:hasTimestamp "2021-11-10T08:44:07"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T08:44:07Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a, data:DigitalTwin-89acab06-3659-3c26-bc58-4c2eb8ac0154.
 data:event-5b858870-4788-11ec-a8b3-5c879c8043a4 a event:Event, event:ArrivalEvent;
     event:hasMilestone event:Start;
     event:hasDateTimeType event:Actual;
-    event:hasTimestamp "2021-11-10T08:44:07"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T08:44:07Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a;
     event:involvesPhysicalInfrastructure data:PhysicalInfrastructure-b4d51938-5ae5-330d-af2e-a198dd2c16ab.
 data:event-5b858871-4788-11ec-9446-5c879c8043a4 a event:Event, event:ArrivalEvent;
     event:hasMilestone event:Start;
     event:hasDateTimeType event:Expected;
-    event:hasTimestamp "2021-11-10T08:44:07"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T08:44:07Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a;
     event:involvesPhysicalInfrastructure data:PhysicalInfrastructure-b4d51938-5ae5-330d-af2e-a198dd2c16ab.
 data:event-5b858872-4788-11ec-bcb4-5c879c8043a4 a event:Event, event:ArrivalEvent;
     event:hasMilestone event:Start;
     event:hasDateTimeType event:Planned;
-    event:hasTimestamp "2021-11-10T08:44:07"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T08:44:07Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a;
     event:involvesPhysicalInfrastructure data:PhysicalInfrastructure-b4d51938-5ae5-330d-af2e-a198dd2c16ab.
 data:event-5b85af73-4788-11ec-bc40-5c879c8043a4 a event:Event, event:DepartureEvent;
     event:hasMilestone event:End;
     event:hasDateTimeType event:Actual;
-    event:hasTimestamp "2021-11-10T10:04:48"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T10:04:48Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a;
     event:involvesPhysicalInfrastructure data:PhysicalInfrastructure-b4d51938-5ae5-330d-af2e-a198dd2c16ab.
 data:event-5b85af74-4788-11ec-91b6-5c879c8043a4 a event:Event, event:DepartureEvent;
     event:hasMilestone event:End;
     event:hasDateTimeType event:Expected;
-    event:hasTimestamp "2021-11-10T10:04:48"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T10:04:48Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a;
     event:involvesPhysicalInfrastructure data:PhysicalInfrastructure-b4d51938-5ae5-330d-af2e-a198dd2c16ab.
 data:event-5b85af75-4788-11ec-b27f-5c879c8043a4 a event:Event, event:DepartureEvent;
     event:hasMilestone event:End;
     event:hasDateTimeType event:Planned;
-    event:hasTimestamp "2021-11-10T10:04:48"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T10:04:48Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a;
     event:involvesPhysicalInfrastructure data:PhysicalInfrastructure-b4d51938-5ae5-330d-af2e-a198dd2c16ab.
 data:event-75c50d79-0e60-46ad-81a5-0ac111747287 a event:Event, event:LoadEvent;
     event:hasMilestone event:Start;
     event:hasDateTimeType event:Actual;
-    event:hasTimestamp "2021-11-10T08:44:07"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T08:44:07Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a, data:DigitalTwin-cd0c7a04-bae7-3638-80cb-296459ecc7fd.
 data:event-5b85af76-4788-11ec-8df2-5c879c8043a4 a event:Event, event:LoadEvent;
     event:hasMilestone event:Start;
     event:hasDateTimeType event:Expected;
-    event:hasTimestamp "2021-11-10T08:44:07"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T08:44:07Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a, data:DigitalTwin-cd0c7a04-bae7-3638-80cb-296459ecc7fd.
 data:event-5b85af77-4788-11ec-a536-5c879c8043a4 a event:Event, event:LoadEvent;
     event:hasMilestone event:Start;
     event:hasDateTimeType event:Planned;
-    event:hasTimestamp "2021-11-10T08:44:07"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T08:44:07Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a, data:DigitalTwin-cd0c7a04-bae7-3638-80cb-296459ecc7fd.
 data:event-5b85af78-4788-11ec-8348-5c879c8043a4 a event:Event, event:ArrivalEvent;
     event:hasMilestone event:Start;
     event:hasDateTimeType event:Actual;
-    event:hasTimestamp "2021-11-10T08:44:07"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T08:44:07Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a;
     event:involvesPhysicalInfrastructure data:PhysicalInfrastructure-b4d51938-5ae5-330d-af2e-a198dd2c16ab.
 data:event-5b85af79-4788-11ec-a5f8-5c879c8043a4 a event:Event, event:ArrivalEvent;
     event:hasMilestone event:Start;
     event:hasDateTimeType event:Expected;
-    event:hasTimestamp "2021-11-10T08:44:07"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T08:44:07Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a;
     event:involvesPhysicalInfrastructure data:PhysicalInfrastructure-b4d51938-5ae5-330d-af2e-a198dd2c16ab.
 data:event-5b85af7a-4788-11ec-a269-5c879c8043a4 a event:Event, event:ArrivalEvent;
     event:hasMilestone event:Start;
     event:hasDateTimeType event:Planned;
-    event:hasTimestamp "2021-11-10T08:44:07"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T08:44:07Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a;
     event:involvesPhysicalInfrastructure data:PhysicalInfrastructure-b4d51938-5ae5-330d-af2e-a198dd2c16ab.
 data:event-5b85af7b-4788-11ec-b04c-5c879c8043a4 a event:Event, event:DepartureEvent;
     event:hasMilestone event:End;
     event:hasDateTimeType event:Actual;
-    event:hasTimestamp "2021-11-10T10:04:48"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T10:04:48Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a;
     event:involvesPhysicalInfrastructure data:PhysicalInfrastructure-b4d51938-5ae5-330d-af2e-a198dd2c16ab.
 data:event-5b85af7c-4788-11ec-b13f-5c879c8043a4 a event:Event, event:DepartureEvent;
     event:hasMilestone event:End;
     event:hasDateTimeType event:Expected;
-    event:hasTimestamp "2021-11-10T10:04:48"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T10:04:48Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a;
     event:involvesPhysicalInfrastructure data:PhysicalInfrastructure-b4d51938-5ae5-330d-af2e-a198dd2c16ab.
 data:event-5b85af7d-4788-11ec-89ba-5c879c8043a4 a event:Event, event:DepartureEvent;
     event:hasMilestone event:End;
     event:hasDateTimeType event:Planned;
-    event:hasTimestamp "2021-11-10T10:04:48"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T10:04:48Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a;
     event:involvesPhysicalInfrastructure data:PhysicalInfrastructure-b4d51938-5ae5-330d-af2e-a198dd2c16ab.
 data:event-821d6789-b4f7-42d9-9437-c888238a07ef a event:Event, event:LoadEvent;
     event:hasMilestone event:Start;
     event:hasDateTimeType event:Actual;
-    event:hasTimestamp "2021-11-10T08:44:07"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T08:44:07Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a, data:DigitalTwin-e660ee55-e5d6-3810-9538-574df64a5004.
 data:event-5b85af7e-4788-11ec-a340-5c879c8043a4 a event:Event, event:LoadEvent;
     event:hasMilestone event:Start;
     event:hasDateTimeType event:Expected;
-    event:hasTimestamp "2021-11-10T08:44:07"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T08:44:07Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a, data:DigitalTwin-e660ee55-e5d6-3810-9538-574df64a5004.
 data:event-5b85af7f-4788-11ec-8682-5c879c8043a4 a event:Event, event:LoadEvent;
     event:hasMilestone event:Start;
     event:hasDateTimeType event:Planned;
-    event:hasTimestamp "2021-11-10T08:44:07"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T08:44:07Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a, data:DigitalTwin-e660ee55-e5d6-3810-9538-574df64a5004.
 data:event-5b85af80-4788-11ec-ad6c-5c879c8043a4 a event:Event, event:ArrivalEvent;
     event:hasMilestone event:Start;
     event:hasDateTimeType event:Actual;
-    event:hasTimestamp "2021-11-10T08:44:07"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T08:44:07Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a;
     event:involvesPhysicalInfrastructure data:PhysicalInfrastructure-b4d51938-5ae5-330d-af2e-a198dd2c16ab.
 data:event-5b85af81-4788-11ec-9a71-5c879c8043a4 a event:Event, event:ArrivalEvent;
     event:hasMilestone event:Start;
     event:hasDateTimeType event:Expected;
-    event:hasTimestamp "2021-11-10T08:44:07"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T08:44:07Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a;
     event:involvesPhysicalInfrastructure data:PhysicalInfrastructure-b4d51938-5ae5-330d-af2e-a198dd2c16ab.
 data:event-5b85af82-4788-11ec-9568-5c879c8043a4 a event:Event, event:ArrivalEvent;
     event:hasMilestone event:Start;
     event:hasDateTimeType event:Planned;
-    event:hasTimestamp "2021-11-10T08:44:07"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T08:44:07Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a;
     event:involvesPhysicalInfrastructure data:PhysicalInfrastructure-b4d51938-5ae5-330d-af2e-a198dd2c16ab.
 data:event-5b85af83-4788-11ec-9f99-5c879c8043a4 a event:Event, event:DepartureEvent;
     event:hasMilestone event:End;
     event:hasDateTimeType event:Actual;
-    event:hasTimestamp "2021-11-10T10:04:48"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T10:04:48Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a;
     event:involvesPhysicalInfrastructure data:PhysicalInfrastructure-b4d51938-5ae5-330d-af2e-a198dd2c16ab.
 data:event-5b85af84-4788-11ec-9dec-5c879c8043a4 a event:Event, event:DepartureEvent;
     event:hasMilestone event:End;
     event:hasDateTimeType event:Expected;
-    event:hasTimestamp "2021-11-10T10:04:48"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T10:04:48Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a;
     event:involvesPhysicalInfrastructure data:PhysicalInfrastructure-b4d51938-5ae5-330d-af2e-a198dd2c16ab.
 data:event-5b85af85-4788-11ec-9655-5c879c8043a4 a event:Event, event:DepartureEvent;
     event:hasMilestone event:End;
     event:hasDateTimeType event:Planned;
-    event:hasTimestamp "2021-11-10T10:04:48"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T10:04:48Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a;
     event:involvesPhysicalInfrastructure data:PhysicalInfrastructure-b4d51938-5ae5-330d-af2e-a198dd2c16ab.
 data:event-0553ce40-11d1-497d-8713-ac1130562c59 a event:Event, event:LoadEvent;
     event:hasMilestone event:Start;
     event:hasDateTimeType event:Actual;
-    event:hasTimestamp "2021-11-10T08:44:07"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T08:44:07Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a, data:DigitalTwin-8dc39014-fb9c-3464-b950-620139f257c4.
 data:event-5b85d67c-4788-11ec-a52f-5c879c8043a4 a event:Event, event:LoadEvent;
     event:hasMilestone event:Start;
     event:hasDateTimeType event:Expected;
-    event:hasTimestamp "2021-11-10T08:44:07"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T08:44:07Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a, data:DigitalTwin-8dc39014-fb9c-3464-b950-620139f257c4.
 data:event-5b85d67d-4788-11ec-8721-5c879c8043a4 a event:Event, event:LoadEvent;
     event:hasMilestone event:Start;
     event:hasDateTimeType event:Planned;
-    event:hasTimestamp "2021-11-10T08:44:07"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T08:44:07Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a, data:DigitalTwin-8dc39014-fb9c-3464-b950-620139f257c4.
 data:event-5b85d67e-4788-11ec-90c4-5c879c8043a4 a event:Event, event:ArrivalEvent;
     event:hasMilestone event:Start;
     event:hasDateTimeType event:Actual;
-    event:hasTimestamp "2021-11-10T08:44:07"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T08:44:07Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a;
     event:involvesPhysicalInfrastructure data:PhysicalInfrastructure-b4d51938-5ae5-330d-af2e-a198dd2c16ab.
 data:event-5b85d67f-4788-11ec-b56b-5c879c8043a4 a event:Event, event:ArrivalEvent;
     event:hasMilestone event:Start;
     event:hasDateTimeType event:Expected;
-    event:hasTimestamp "2021-11-10T08:44:07"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T08:44:07Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a;
     event:involvesPhysicalInfrastructure data:PhysicalInfrastructure-b4d51938-5ae5-330d-af2e-a198dd2c16ab.
 data:event-5b85d680-4788-11ec-9ed7-5c879c8043a4 a event:Event, event:ArrivalEvent;
     event:hasMilestone event:Start;
     event:hasDateTimeType event:Planned;
-    event:hasTimestamp "2021-11-10T08:44:07"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T08:44:07Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a;
     event:involvesPhysicalInfrastructure data:PhysicalInfrastructure-b4d51938-5ae5-330d-af2e-a198dd2c16ab.
 data:event-5b85d681-4788-11ec-9f51-5c879c8043a4 a event:Event, event:DepartureEvent;
     event:hasMilestone event:End;
     event:hasDateTimeType event:Actual;
-    event:hasTimestamp "2021-11-10T10:04:48"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T10:04:48Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a;
     event:involvesPhysicalInfrastructure data:PhysicalInfrastructure-b4d51938-5ae5-330d-af2e-a198dd2c16ab.
 data:event-5b85d682-4788-11ec-b959-5c879c8043a4 a event:Event, event:DepartureEvent;
     event:hasMilestone event:End;
     event:hasDateTimeType event:Expected;
-    event:hasTimestamp "2021-11-10T10:04:48"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T10:04:48Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a;
     event:involvesPhysicalInfrastructure data:PhysicalInfrastructure-b4d51938-5ae5-330d-af2e-a198dd2c16ab.
 data:event-5b85d683-4788-11ec-89c2-5c879c8043a4 a event:Event, event:DepartureEvent;
     event:hasMilestone event:End;
     event:hasDateTimeType event:Planned;
-    event:hasTimestamp "2021-11-10T10:04:48"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T10:04:48Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a;
     event:involvesPhysicalInfrastructure data:PhysicalInfrastructure-b4d51938-5ae5-330d-af2e-a198dd2c16ab.
 data:event-e3e7b653-5b80-4730-b648-f4ef1a210e38 a event:Event, event:LoadEvent;
     event:hasMilestone event:Start;
     event:hasDateTimeType event:Actual;
-    event:hasTimestamp "2021-11-10T08:44:07"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T08:44:07Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a, data:DigitalTwin-4f823e66-a3c5-324b-9909-be51ed8e8a41.
 data:event-5b85d684-4788-11ec-b540-5c879c8043a4 a event:Event, event:LoadEvent;
     event:hasMilestone event:Start;
     event:hasDateTimeType event:Expected;
-    event:hasTimestamp "2021-11-10T08:44:07"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T08:44:07Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a, data:DigitalTwin-4f823e66-a3c5-324b-9909-be51ed8e8a41.
 data:event-5b85d685-4788-11ec-841b-5c879c8043a4 a event:Event, event:LoadEvent;
     event:hasMilestone event:Start;
     event:hasDateTimeType event:Planned;
-    event:hasTimestamp "2021-11-10T08:44:07"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T08:44:07Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a, data:DigitalTwin-4f823e66-a3c5-324b-9909-be51ed8e8a41.
 data:event-5b85d686-4788-11ec-893c-5c879c8043a4 a event:Event, event:ArrivalEvent;
     event:hasMilestone event:Start;
     event:hasDateTimeType event:Actual;
-    event:hasTimestamp "2021-11-10T10:34:07"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T10:34:07Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a;
     event:involvesPhysicalInfrastructure data:PhysicalInfrastructure-6a0cb9de-4760-3e32-a0cd-27d64c8b707d.
 data:event-5b85d687-4788-11ec-96fc-5c879c8043a4 a event:Event, event:ArrivalEvent;
     event:hasMilestone event:Start;
     event:hasDateTimeType event:Expected;
-    event:hasTimestamp "2021-11-10T10:34:07"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T10:34:07Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a;
     event:involvesPhysicalInfrastructure data:PhysicalInfrastructure-6a0cb9de-4760-3e32-a0cd-27d64c8b707d.
 data:event-5b85d688-4788-11ec-9371-5c879c8043a4 a event:Event, event:ArrivalEvent;
     event:hasMilestone event:Start;
     event:hasDateTimeType event:Planned;
-    event:hasTimestamp "2021-11-10T10:34:07"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T10:34:07Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a;
     event:involvesPhysicalInfrastructure data:PhysicalInfrastructure-6a0cb9de-4760-3e32-a0cd-27d64c8b707d.
 data:event-5b85d689-4788-11ec-9243-5c879c8043a4 a event:Event, event:DepartureEvent;
     event:hasMilestone event:End;
     event:hasDateTimeType event:Actual;
-    event:hasTimestamp "2021-11-10T10:42:07"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T10:42:07Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a;
     event:involvesPhysicalInfrastructure data:PhysicalInfrastructure-6a0cb9de-4760-3e32-a0cd-27d64c8b707d.
 data:event-5b85d68a-4788-11ec-a0d2-5c879c8043a4 a event:Event, event:DepartureEvent;
     event:hasMilestone event:End;
     event:hasDateTimeType event:Expected;
-    event:hasTimestamp "2021-11-10T10:42:07"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T10:42:07Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a;
     event:involvesPhysicalInfrastructure data:PhysicalInfrastructure-6a0cb9de-4760-3e32-a0cd-27d64c8b707d.
 data:event-5b85d68b-4788-11ec-a4a6-5c879c8043a4 a event:Event, event:DepartureEvent;
     event:hasMilestone event:End;
     event:hasDateTimeType event:Planned;
-    event:hasTimestamp "2021-11-10T10:42:07"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T10:42:07Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a;
     event:involvesPhysicalInfrastructure data:PhysicalInfrastructure-6a0cb9de-4760-3e32-a0cd-27d64c8b707d.
 data:event-d20c3e86-7705-4f25-a36a-0a8b953d2071 a event:Event, event:LoadEvent;
     event:hasMilestone event:Start;
     event:hasDateTimeType event:Actual;
-    event:hasTimestamp "2021-11-10T10:34:07"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T10:34:07Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a, data:DigitalTwin-91a09245-2791-36e9-8a53-b990068c49c1.
 data:event-5b85d68c-4788-11ec-bb07-5c879c8043a4 a event:Event, event:LoadEvent;
     event:hasMilestone event:Start;
     event:hasDateTimeType event:Expected;
-    event:hasTimestamp "2021-11-10T10:34:07"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T10:34:07Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a, data:DigitalTwin-91a09245-2791-36e9-8a53-b990068c49c1.
 data:event-5b85d68d-4788-11ec-a69d-5c879c8043a4 a event:Event, event:LoadEvent;
     event:hasMilestone event:Start;
     event:hasDateTimeType event:Planned;
-    event:hasTimestamp "2021-11-10T10:34:07"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T10:34:07Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a, data:DigitalTwin-91a09245-2791-36e9-8a53-b990068c49c1.
 data:event-5b85d68e-4788-11ec-bb5c-5c879c8043a4 a event:Event, event:ArrivalEvent;
     event:hasMilestone event:Start;
     event:hasDateTimeType event:Actual;
-    event:hasTimestamp "2021-11-10T13:11:39"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T13:11:39Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a;
     event:involvesPhysicalInfrastructure data:PhysicalInfrastructure-a2557f8c-7a36-329a-8507-42b903587ec4.
 data:event-5b85d68f-4788-11ec-af99-5c879c8043a4 a event:Event, event:ArrivalEvent;
     event:hasMilestone event:Start;
     event:hasDateTimeType event:Expected;
-    event:hasTimestamp "2021-11-10T13:11:39"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T13:11:39Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a;
     event:involvesPhysicalInfrastructure data:PhysicalInfrastructure-a2557f8c-7a36-329a-8507-42b903587ec4.
 data:event-5b85fd8c-4788-11ec-aa86-5c879c8043a4 a event:Event, event:ArrivalEvent;
     event:hasMilestone event:Start;
     event:hasDateTimeType event:Planned;
-    event:hasTimestamp "2021-11-10T13:11:39"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T13:11:39Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a;
     event:involvesPhysicalInfrastructure data:PhysicalInfrastructure-a2557f8c-7a36-329a-8507-42b903587ec4.
 data:event-5b85fd8d-4788-11ec-9c4b-5c879c8043a4 a event:Event, event:DepartureEvent;
     event:hasMilestone event:End;
     event:hasDateTimeType event:Actual;
-    event:hasTimestamp "2021-11-10T13:19:57"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T13:19:57Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a;
     event:involvesPhysicalInfrastructure data:PhysicalInfrastructure-a2557f8c-7a36-329a-8507-42b903587ec4.
 data:event-5b85fd8e-4788-11ec-b72a-5c879c8043a4 a event:Event, event:DepartureEvent;
     event:hasMilestone event:End;
     event:hasDateTimeType event:Expected;
-    event:hasTimestamp "2021-11-10T13:19:57"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T13:19:57Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a;
     event:involvesPhysicalInfrastructure data:PhysicalInfrastructure-a2557f8c-7a36-329a-8507-42b903587ec4.
 data:event-5b85fd8f-4788-11ec-b827-5c879c8043a4 a event:Event, event:DepartureEvent;
     event:hasMilestone event:End;
     event:hasDateTimeType event:Planned;
-    event:hasTimestamp "2021-11-10T13:19:57"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T13:19:57Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a;
     event:involvesPhysicalInfrastructure data:PhysicalInfrastructure-a2557f8c-7a36-329a-8507-42b903587ec4.
 data:event-716e9f0d-f3bb-4dad-ab83-067445dd9cb5 a event:Event, event:LoadEvent;
     event:hasMilestone event:Start;
     event:hasDateTimeType event:Actual;
-    event:hasTimestamp "2021-11-10T13:11:39"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T13:11:39Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a, data:DigitalTwin-ade28e3b-66fd-3026-a603-1fdc6cc77b95.
 data:event-5b85fd90-4788-11ec-a82d-5c879c8043a4 a event:Event, event:LoadEvent;
     event:hasMilestone event:Start;
     event:hasDateTimeType event:Expected;
-    event:hasTimestamp "2021-11-10T13:11:39"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T13:11:39Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a, data:DigitalTwin-ade28e3b-66fd-3026-a603-1fdc6cc77b95.
 data:event-5b85fd91-4788-11ec-be87-5c879c8043a4 a event:Event, event:LoadEvent;
     event:hasMilestone event:Start;
     event:hasDateTimeType event:Planned;
-    event:hasTimestamp "2021-11-10T13:11:39"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T13:11:39Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a, data:DigitalTwin-ade28e3b-66fd-3026-a603-1fdc6cc77b95.
 data:event-5b85fd92-4788-11ec-9100-5c879c8043a4 a event:Event, event:ArrivalEvent;
     event:hasMilestone event:Start;
     event:hasDateTimeType event:Actual;
-    event:hasTimestamp "2021-11-10T18:51:20"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T18:51:20Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a;
     event:involvesPhysicalInfrastructure data:PhysicalInfrastructure-cf63d22f-e2b1-3b63-bffd-c01535fc234a.
 data:event-5b85fd93-4788-11ec-b507-5c879c8043a4 a event:Event, event:ArrivalEvent;
     event:hasMilestone event:Start;
     event:hasDateTimeType event:Expected;
-    event:hasTimestamp "2021-11-10T18:51:20"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T18:51:20Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a;
     event:involvesPhysicalInfrastructure data:PhysicalInfrastructure-cf63d22f-e2b1-3b63-bffd-c01535fc234a.
 data:event-5b85fd94-4788-11ec-9c65-5c879c8043a4 a event:Event, event:ArrivalEvent;
     event:hasMilestone event:Start;
     event:hasDateTimeType event:Planned;
-    event:hasTimestamp "2021-11-10T18:51:20"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T18:51:20Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a;
     event:involvesPhysicalInfrastructure data:PhysicalInfrastructure-cf63d22f-e2b1-3b63-bffd-c01535fc234a.
 data:event-5b85fd95-4788-11ec-873e-5c879c8043a4 a event:Event, event:DepartureEvent;
     event:hasMilestone event:End;
     event:hasDateTimeType event:Actual;
-    event:hasTimestamp "2021-11-10T18:51:53"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T18:51:53Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a;
     event:involvesPhysicalInfrastructure data:PhysicalInfrastructure-cf63d22f-e2b1-3b63-bffd-c01535fc234a.
 data:event-5b8624a3-4788-11ec-a82a-5c879c8043a4 a event:Event, event:DepartureEvent;
     event:hasMilestone event:End;
     event:hasDateTimeType event:Expected;
-    event:hasTimestamp "2021-11-10T18:51:53"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T18:51:53Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a;
     event:involvesPhysicalInfrastructure data:PhysicalInfrastructure-cf63d22f-e2b1-3b63-bffd-c01535fc234a.
 data:event-5b8624a4-4788-11ec-9cee-5c879c8043a4 a event:Event, event:DepartureEvent;
     event:hasMilestone event:End;
     event:hasDateTimeType event:Planned;
-    event:hasTimestamp "2021-11-10T18:51:53"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T18:51:53Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a;
     event:involvesPhysicalInfrastructure data:PhysicalInfrastructure-cf63d22f-e2b1-3b63-bffd-c01535fc234a.
 data:event-1b5a6f56-4a3e-4916-9302-fb4d489318f4 a event:Event, event:DischargeEvent;
     event:hasMilestone event:End;
     event:hasDateTimeType event:Actual;
-    event:hasTimestamp "2021-11-10T18:51:20"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T18:51:20Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a, data:DigitalTwin-91a09245-2791-36e9-8a53-b990068c49c1.
 data:event-5b8624a5-4788-11ec-b5ae-5c879c8043a4 a event:Event, event:DischargeEvent;
     event:hasMilestone event:End;
     event:hasDateTimeType event:Expected;
-    event:hasTimestamp "2021-11-10T18:51:20"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T18:51:20Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a, data:DigitalTwin-91a09245-2791-36e9-8a53-b990068c49c1.
 data:event-5b8624a6-4788-11ec-9ce3-5c879c8043a4 a event:Event, event:DischargeEvent;
     event:hasMilestone event:End;
     event:hasDateTimeType event:Planned;
-    event:hasTimestamp "2021-11-10T18:51:20"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T18:51:20Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a, data:DigitalTwin-91a09245-2791-36e9-8a53-b990068c49c1.
 data:event-5b8624a7-4788-11ec-8a1f-5c879c8043a4 a event:Event, event:ArrivalEvent;
     event:hasMilestone event:Start;
     event:hasDateTimeType event:Actual;
-    event:hasTimestamp "2021-11-10T18:51:20"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T18:51:20Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a;
     event:involvesPhysicalInfrastructure data:PhysicalInfrastructure-cf63d22f-e2b1-3b63-bffd-c01535fc234a.
 data:event-5b8624a8-4788-11ec-8bbc-5c879c8043a4 a event:Event, event:ArrivalEvent;
     event:hasMilestone event:Start;
     event:hasDateTimeType event:Expected;
-    event:hasTimestamp "2021-11-10T18:51:20"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T18:51:20Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a;
     event:involvesPhysicalInfrastructure data:PhysicalInfrastructure-cf63d22f-e2b1-3b63-bffd-c01535fc234a.
 data:event-5b8624a9-4788-11ec-b0f3-5c879c8043a4 a event:Event, event:ArrivalEvent;
     event:hasMilestone event:Start;
     event:hasDateTimeType event:Planned;
-    event:hasTimestamp "2021-11-10T18:51:20"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T18:51:20Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a;
     event:involvesPhysicalInfrastructure data:PhysicalInfrastructure-cf63d22f-e2b1-3b63-bffd-c01535fc234a.
 data:event-5b8624aa-4788-11ec-91c3-5c879c8043a4 a event:Event, event:DepartureEvent;
     event:hasMilestone event:End;
     event:hasDateTimeType event:Actual;
-    event:hasTimestamp "2021-11-10T18:51:53"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T18:51:53Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a;
     event:involvesPhysicalInfrastructure data:PhysicalInfrastructure-cf63d22f-e2b1-3b63-bffd-c01535fc234a.
 data:event-5b8624ab-4788-11ec-9205-5c879c8043a4 a event:Event, event:DepartureEvent;
     event:hasMilestone event:End;
     event:hasDateTimeType event:Expected;
-    event:hasTimestamp "2021-11-10T18:51:53"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T18:51:53Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a;
     event:involvesPhysicalInfrastructure data:PhysicalInfrastructure-cf63d22f-e2b1-3b63-bffd-c01535fc234a.
 data:event-5b8624ac-4788-11ec-9a2a-5c879c8043a4 a event:Event, event:DepartureEvent;
     event:hasMilestone event:End;
     event:hasDateTimeType event:Planned;
-    event:hasTimestamp "2021-11-10T18:51:53"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T18:51:53Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a;
     event:involvesPhysicalInfrastructure data:PhysicalInfrastructure-cf63d22f-e2b1-3b63-bffd-c01535fc234a.
 data:event-eb757db5-f1f7-4c0d-94df-009950d779b2 a event:Event, event:DischargeEvent;
     event:hasMilestone event:End;
     event:hasDateTimeType event:Actual;
-    event:hasTimestamp "2021-11-10T18:51:20"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T18:51:20Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a, data:DigitalTwin-ade28e3b-66fd-3026-a603-1fdc6cc77b95.
 data:event-5b8624ad-4788-11ec-a291-5c879c8043a4 a event:Event, event:DischargeEvent;
     event:hasMilestone event:End;
     event:hasDateTimeType event:Expected;
-    event:hasTimestamp "2021-11-10T18:51:20"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T18:51:20Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a, data:DigitalTwin-ade28e3b-66fd-3026-a603-1fdc6cc77b95.
 data:event-5b8624ae-4788-11ec-80f9-5c879c8043a4 a event:Event, event:DischargeEvent;
     event:hasMilestone event:End;
     event:hasDateTimeType event:Planned;
-    event:hasTimestamp "2021-11-10T18:51:20"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T18:51:20Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a, data:DigitalTwin-ade28e3b-66fd-3026-a603-1fdc6cc77b95.
 data:event-5b8624af-4788-11ec-8729-5c879c8043a4 a event:Event, event:ArrivalEvent;
     event:hasMilestone event:Start;
     event:hasDateTimeType event:Actual;
-    event:hasTimestamp "2021-11-10T18:51:20"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T18:51:20Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a;
     event:involvesPhysicalInfrastructure data:PhysicalInfrastructure-cf63d22f-e2b1-3b63-bffd-c01535fc234a.
 data:event-5b8624b0-4788-11ec-9982-5c879c8043a4 a event:Event, event:ArrivalEvent;
     event:hasMilestone event:Start;
     event:hasDateTimeType event:Expected;
-    event:hasTimestamp "2021-11-10T18:51:20"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T18:51:20Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a;
     event:involvesPhysicalInfrastructure data:PhysicalInfrastructure-cf63d22f-e2b1-3b63-bffd-c01535fc234a.
 data:event-5b8624b1-4788-11ec-876e-5c879c8043a4 a event:Event, event:ArrivalEvent;
     event:hasMilestone event:Start;
     event:hasDateTimeType event:Planned;
-    event:hasTimestamp "2021-11-10T18:51:20"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T18:51:20Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a;
     event:involvesPhysicalInfrastructure data:PhysicalInfrastructure-cf63d22f-e2b1-3b63-bffd-c01535fc234a.
 data:event-5b8624b2-4788-11ec-b3f2-5c879c8043a4 a event:Event, event:DepartureEvent;
     event:hasMilestone event:End;
     event:hasDateTimeType event:Actual;
-    event:hasTimestamp "2021-11-10T18:51:53"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T18:51:53Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a;
     event:involvesPhysicalInfrastructure data:PhysicalInfrastructure-cf63d22f-e2b1-3b63-bffd-c01535fc234a.
 data:event-5b8624b3-4788-11ec-8721-5c879c8043a4 a event:Event, event:DepartureEvent;
     event:hasMilestone event:End;
     event:hasDateTimeType event:Expected;
-    event:hasTimestamp "2021-11-10T18:51:53"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T18:51:53Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a;
     event:involvesPhysicalInfrastructure data:PhysicalInfrastructure-cf63d22f-e2b1-3b63-bffd-c01535fc234a.
 data:event-5b8624b4-4788-11ec-981e-5c879c8043a4 a event:Event, event:DepartureEvent;
     event:hasMilestone event:End;
     event:hasDateTimeType event:Planned;
-    event:hasTimestamp "2021-11-10T18:51:53"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T18:51:53Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a;
     event:involvesPhysicalInfrastructure data:PhysicalInfrastructure-cf63d22f-e2b1-3b63-bffd-c01535fc234a.
 data:event-cb48b184-04e6-448b-8893-c35550bcde9c a event:Event, event:DischargeEvent;
     event:hasMilestone event:End;
     event:hasDateTimeType event:Actual;
-    event:hasTimestamp "2021-11-10T18:51:20"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T18:51:20Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a, data:DigitalTwin-4f823e66-a3c5-324b-9909-be51ed8e8a41.
 data:event-5b8624b5-4788-11ec-abf1-5c879c8043a4 a event:Event, event:DischargeEvent;
     event:hasMilestone event:End;
     event:hasDateTimeType event:Expected;
-    event:hasTimestamp "2021-11-10T18:51:20"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T18:51:20Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a, data:DigitalTwin-4f823e66-a3c5-324b-9909-be51ed8e8a41.
 data:event-5b864bb1-4788-11ec-bcba-5c879c8043a4 a event:Event, event:DischargeEvent;
     event:hasMilestone event:End;
     event:hasDateTimeType event:Planned;
-    event:hasTimestamp "2021-11-10T18:51:20"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T18:51:20Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a, data:DigitalTwin-4f823e66-a3c5-324b-9909-be51ed8e8a41.
 data:event-5b864bb2-4788-11ec-8eca-5c879c8043a4 a event:Event, event:ArrivalEvent;
     event:hasMilestone event:Start;
     event:hasDateTimeType event:Actual;
-    event:hasTimestamp "2021-11-10T18:51:20"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T18:51:20Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a;
     event:involvesPhysicalInfrastructure data:PhysicalInfrastructure-cf63d22f-e2b1-3b63-bffd-c01535fc234a.
 data:event-5b864bb3-4788-11ec-880e-5c879c8043a4 a event:Event, event:ArrivalEvent;
     event:hasMilestone event:Start;
     event:hasDateTimeType event:Expected;
-    event:hasTimestamp "2021-11-10T18:51:20"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T18:51:20Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a;
     event:involvesPhysicalInfrastructure data:PhysicalInfrastructure-cf63d22f-e2b1-3b63-bffd-c01535fc234a.
 data:event-5b864bb4-4788-11ec-aa5e-5c879c8043a4 a event:Event, event:ArrivalEvent;
     event:hasMilestone event:Start;
     event:hasDateTimeType event:Planned;
-    event:hasTimestamp "2021-11-10T18:51:20"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T18:51:20Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a;
     event:involvesPhysicalInfrastructure data:PhysicalInfrastructure-cf63d22f-e2b1-3b63-bffd-c01535fc234a.
 data:event-5b864bb5-4788-11ec-8124-5c879c8043a4 a event:Event, event:DepartureEvent;
     event:hasMilestone event:End;
     event:hasDateTimeType event:Actual;
-    event:hasTimestamp "2021-11-10T18:51:53"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T18:51:53Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a;
     event:involvesPhysicalInfrastructure data:PhysicalInfrastructure-cf63d22f-e2b1-3b63-bffd-c01535fc234a.
 data:event-5b864bb6-4788-11ec-8892-5c879c8043a4 a event:Event, event:DepartureEvent;
     event:hasMilestone event:End;
     event:hasDateTimeType event:Expected;
-    event:hasTimestamp "2021-11-10T18:51:53"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T18:51:53Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a;
     event:involvesPhysicalInfrastructure data:PhysicalInfrastructure-cf63d22f-e2b1-3b63-bffd-c01535fc234a.
 data:event-5b864bb7-4788-11ec-ac18-5c879c8043a4 a event:Event, event:DepartureEvent;
     event:hasMilestone event:End;
     event:hasDateTimeType event:Planned;
-    event:hasTimestamp "2021-11-10T18:51:53"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T18:51:53Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a;
     event:involvesPhysicalInfrastructure data:PhysicalInfrastructure-cf63d22f-e2b1-3b63-bffd-c01535fc234a.
 data:event-dc26de0c-b4f2-46f4-baeb-29d1010de2d3 a event:Event, event:DischargeEvent;
     event:hasMilestone event:End;
     event:hasDateTimeType event:Actual;
-    event:hasTimestamp "2021-11-10T18:51:20"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T18:51:20Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a, data:DigitalTwin-8dc39014-fb9c-3464-b950-620139f257c4.
 data:event-5b864bb8-4788-11ec-9a8e-5c879c8043a4 a event:Event, event:DischargeEvent;
     event:hasMilestone event:End;
     event:hasDateTimeType event:Expected;
-    event:hasTimestamp "2021-11-10T18:51:20"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T18:51:20Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a, data:DigitalTwin-8dc39014-fb9c-3464-b950-620139f257c4.
 data:event-5b864bb9-4788-11ec-a844-5c879c8043a4 a event:Event, event:DischargeEvent;
     event:hasMilestone event:End;
     event:hasDateTimeType event:Planned;
-    event:hasTimestamp "2021-11-10T18:51:20"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T18:51:20Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a, data:DigitalTwin-8dc39014-fb9c-3464-b950-620139f257c4.
 data:event-5b864bba-4788-11ec-98f5-5c879c8043a4 a event:Event, event:ArrivalEvent;
     event:hasMilestone event:Start;
     event:hasDateTimeType event:Actual;
-    event:hasTimestamp "2021-11-10T18:51:20"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T18:51:20Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a;
     event:involvesPhysicalInfrastructure data:PhysicalInfrastructure-cf63d22f-e2b1-3b63-bffd-c01535fc234a.
 data:event-5b864bbb-4788-11ec-b573-5c879c8043a4 a event:Event, event:ArrivalEvent;
     event:hasMilestone event:Start;
     event:hasDateTimeType event:Expected;
-    event:hasTimestamp "2021-11-10T18:51:20"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T18:51:20Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a;
     event:involvesPhysicalInfrastructure data:PhysicalInfrastructure-cf63d22f-e2b1-3b63-bffd-c01535fc234a.
 data:event-5b864bbc-4788-11ec-b5d2-5c879c8043a4 a event:Event, event:ArrivalEvent;
     event:hasMilestone event:Start;
     event:hasDateTimeType event:Planned;
-    event:hasTimestamp "2021-11-10T18:51:20"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T18:51:20Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a;
     event:involvesPhysicalInfrastructure data:PhysicalInfrastructure-cf63d22f-e2b1-3b63-bffd-c01535fc234a.
 data:event-5b864bbd-4788-11ec-a56e-5c879c8043a4 a event:Event, event:DepartureEvent;
     event:hasMilestone event:End;
     event:hasDateTimeType event:Actual;
-    event:hasTimestamp "2021-11-10T18:51:53"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T18:51:53Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a;
     event:involvesPhysicalInfrastructure data:PhysicalInfrastructure-cf63d22f-e2b1-3b63-bffd-c01535fc234a.
 data:event-5b864bbe-4788-11ec-8b32-5c879c8043a4 a event:Event, event:DepartureEvent;
     event:hasMilestone event:End;
     event:hasDateTimeType event:Expected;
-    event:hasTimestamp "2021-11-10T18:51:53"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T18:51:53Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a;
     event:involvesPhysicalInfrastructure data:PhysicalInfrastructure-cf63d22f-e2b1-3b63-bffd-c01535fc234a.
 data:event-5b864bbf-4788-11ec-8d30-5c879c8043a4 a event:Event, event:DepartureEvent;
     event:hasMilestone event:End;
     event:hasDateTimeType event:Planned;
-    event:hasTimestamp "2021-11-10T18:51:53"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T18:51:53Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a;
     event:involvesPhysicalInfrastructure data:PhysicalInfrastructure-cf63d22f-e2b1-3b63-bffd-c01535fc234a.
 data:event-98ac24d4-f424-44e9-93e2-828033ae0108 a event:Event, event:DischargeEvent;
     event:hasMilestone event:End;
     event:hasDateTimeType event:Actual;
-    event:hasTimestamp "2021-11-10T18:51:20"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T18:51:20Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a, data:DigitalTwin-e660ee55-e5d6-3810-9538-574df64a5004.
 data:event-5b864bc0-4788-11ec-869c-5c879c8043a4 a event:Event, event:DischargeEvent;
     event:hasMilestone event:End;
     event:hasDateTimeType event:Expected;
-    event:hasTimestamp "2021-11-10T18:51:20"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T18:51:20Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a, data:DigitalTwin-e660ee55-e5d6-3810-9538-574df64a5004.
 data:event-5b864bc1-4788-11ec-86d9-5c879c8043a4 a event:Event, event:DischargeEvent;
     event:hasMilestone event:End;
     event:hasDateTimeType event:Planned;
-    event:hasTimestamp "2021-11-10T18:51:20"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T18:51:20Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a, data:DigitalTwin-e660ee55-e5d6-3810-9538-574df64a5004.
 data:event-5b864bc2-4788-11ec-a1d1-5c879c8043a4 a event:Event, event:ArrivalEvent;
     event:hasMilestone event:Start;
     event:hasDateTimeType event:Actual;
-    event:hasTimestamp "2021-11-10T18:51:20"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T18:51:20Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a;
     event:involvesPhysicalInfrastructure data:PhysicalInfrastructure-cf63d22f-e2b1-3b63-bffd-c01535fc234a.
 data:event-5b864bc3-4788-11ec-878c-5c879c8043a4 a event:Event, event:ArrivalEvent;
     event:hasMilestone event:Start;
     event:hasDateTimeType event:Expected;
-    event:hasTimestamp "2021-11-10T18:51:20"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T18:51:20Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a;
     event:involvesPhysicalInfrastructure data:PhysicalInfrastructure-cf63d22f-e2b1-3b63-bffd-c01535fc234a.
 data:event-5b864bc4-4788-11ec-aec3-5c879c8043a4 a event:Event, event:ArrivalEvent;
     event:hasMilestone event:Start;
     event:hasDateTimeType event:Planned;
-    event:hasTimestamp "2021-11-10T18:51:20"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T18:51:20Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a;
     event:involvesPhysicalInfrastructure data:PhysicalInfrastructure-cf63d22f-e2b1-3b63-bffd-c01535fc234a.
 data:event-5b8672c4-4788-11ec-ab6a-5c879c8043a4 a event:Event, event:DepartureEvent;
     event:hasMilestone event:End;
     event:hasDateTimeType event:Actual;
-    event:hasTimestamp "2021-11-10T18:51:53"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T18:51:53Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a;
     event:involvesPhysicalInfrastructure data:PhysicalInfrastructure-cf63d22f-e2b1-3b63-bffd-c01535fc234a.
 data:event-5b8672c5-4788-11ec-bbe6-5c879c8043a4 a event:Event, event:DepartureEvent;
     event:hasMilestone event:End;
     event:hasDateTimeType event:Expected;
-    event:hasTimestamp "2021-11-10T18:51:53"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T18:51:53Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a;
     event:involvesPhysicalInfrastructure data:PhysicalInfrastructure-cf63d22f-e2b1-3b63-bffd-c01535fc234a.
 data:event-5b8672c6-4788-11ec-9052-5c879c8043a4 a event:Event, event:DepartureEvent;
     event:hasMilestone event:End;
     event:hasDateTimeType event:Planned;
-    event:hasTimestamp "2021-11-10T18:51:53"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T18:51:53Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a;
     event:involvesPhysicalInfrastructure data:PhysicalInfrastructure-cf63d22f-e2b1-3b63-bffd-c01535fc234a.
 data:event-7ab623ec-25a5-41c1-98c5-3194c68e3b4c a event:Event, event:DischargeEvent;
     event:hasMilestone event:End;
     event:hasDateTimeType event:Actual;
-    event:hasTimestamp "2021-11-10T18:51:20"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T18:51:20Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a, data:DigitalTwin-cd0c7a04-bae7-3638-80cb-296459ecc7fd.
 data:event-5b8672c7-4788-11ec-9c03-5c879c8043a4 a event:Event, event:DischargeEvent;
     event:hasMilestone event:End;
     event:hasDateTimeType event:Expected;
-    event:hasTimestamp "2021-11-10T18:51:20"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T18:51:20Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a, data:DigitalTwin-cd0c7a04-bae7-3638-80cb-296459ecc7fd.
 data:event-5b8672c8-4788-11ec-8900-5c879c8043a4 a event:Event, event:DischargeEvent;
     event:hasMilestone event:End;
     event:hasDateTimeType event:Planned;
-    event:hasTimestamp "2021-11-10T18:51:20"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T18:51:20Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a, data:DigitalTwin-cd0c7a04-bae7-3638-80cb-296459ecc7fd.
 data:event-5b8672c9-4788-11ec-98a6-5c879c8043a4 a event:Event, event:ArrivalEvent;
     event:hasMilestone event:Start;
     event:hasDateTimeType event:Actual;
-    event:hasTimestamp "2021-11-10T18:51:20"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T18:51:20Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a;
     event:involvesPhysicalInfrastructure data:PhysicalInfrastructure-cf63d22f-e2b1-3b63-bffd-c01535fc234a.
 data:event-5b8672ca-4788-11ec-9530-5c879c8043a4 a event:Event, event:ArrivalEvent;
     event:hasMilestone event:Start;
     event:hasDateTimeType event:Expected;
-    event:hasTimestamp "2021-11-10T18:51:20"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T18:51:20Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a;
     event:involvesPhysicalInfrastructure data:PhysicalInfrastructure-cf63d22f-e2b1-3b63-bffd-c01535fc234a.
 data:event-5b8672cb-4788-11ec-bf70-5c879c8043a4 a event:Event, event:ArrivalEvent;
     event:hasMilestone event:Start;
     event:hasDateTimeType event:Planned;
-    event:hasTimestamp "2021-11-10T18:51:20"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T18:51:20Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a;
     event:involvesPhysicalInfrastructure data:PhysicalInfrastructure-cf63d22f-e2b1-3b63-bffd-c01535fc234a.
 data:event-5b8672cc-4788-11ec-a608-5c879c8043a4 a event:Event, event:DepartureEvent;
     event:hasMilestone event:End;
     event:hasDateTimeType event:Actual;
-    event:hasTimestamp "2021-11-10T18:51:53"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T18:51:53Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a;
     event:involvesPhysicalInfrastructure data:PhysicalInfrastructure-cf63d22f-e2b1-3b63-bffd-c01535fc234a.
 data:event-5b8672cd-4788-11ec-b8d6-5c879c8043a4 a event:Event, event:DepartureEvent;
     event:hasMilestone event:End;
     event:hasDateTimeType event:Expected;
-    event:hasTimestamp "2021-11-10T18:51:53"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T18:51:53Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a;
     event:involvesPhysicalInfrastructure data:PhysicalInfrastructure-cf63d22f-e2b1-3b63-bffd-c01535fc234a.
 data:event-5b8672ce-4788-11ec-b458-5c879c8043a4 a event:Event, event:DepartureEvent;
     event:hasMilestone event:End;
     event:hasDateTimeType event:Planned;
-    event:hasTimestamp "2021-11-10T18:51:53"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T18:51:53Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a;
     event:involvesPhysicalInfrastructure data:PhysicalInfrastructure-cf63d22f-e2b1-3b63-bffd-c01535fc234a.
 data:event-102b16d1-095a-4210-b0e6-174a92b5a0db a event:Event, event:DischargeEvent;
     event:hasMilestone event:End;
     event:hasDateTimeType event:Actual;
-    event:hasTimestamp "2021-11-10T18:51:20"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T18:51:20Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a, data:DigitalTwin-89acab06-3659-3c26-bc58-4c2eb8ac0154.
 data:event-5b8672cf-4788-11ec-b9eb-5c879c8043a4 a event:Event, event:DischargeEvent;
     event:hasMilestone event:End;
     event:hasDateTimeType event:Expected;
-    event:hasTimestamp "2021-11-10T18:51:20"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T18:51:20Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a, data:DigitalTwin-89acab06-3659-3c26-bc58-4c2eb8ac0154.
 data:event-5b8672d0-4788-11ec-8bf5-5c879c8043a4 a event:Event, event:DischargeEvent;
     event:hasMilestone event:End;
     event:hasDateTimeType event:Planned;
-    event:hasTimestamp "2021-11-10T18:51:20"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T18:51:20Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a, data:DigitalTwin-89acab06-3659-3c26-bc58-4c2eb8ac0154.
 data:event-5b8672d1-4788-11ec-a0d2-5c879c8043a4 a event:Event, event:ArrivalEvent;
     event:hasMilestone event:Start;
     event:hasDateTimeType event:Actual;
-    event:hasTimestamp "2021-11-10T18:51:20"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T18:51:20Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a;
     event:involvesPhysicalInfrastructure data:PhysicalInfrastructure-cf63d22f-e2b1-3b63-bffd-c01535fc234a.
 data:event-5b8672d2-4788-11ec-83bd-5c879c8043a4 a event:Event, event:ArrivalEvent;
     event:hasMilestone event:Start;
     event:hasDateTimeType event:Expected;
-    event:hasTimestamp "2021-11-10T18:51:20"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T18:51:20Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a;
     event:involvesPhysicalInfrastructure data:PhysicalInfrastructure-cf63d22f-e2b1-3b63-bffd-c01535fc234a.
 data:event-5b8672d3-4788-11ec-a1f3-5c879c8043a4 a event:Event, event:ArrivalEvent;
     event:hasMilestone event:Start;
     event:hasDateTimeType event:Planned;
-    event:hasTimestamp "2021-11-10T18:51:20"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T18:51:20Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a;
     event:involvesPhysicalInfrastructure data:PhysicalInfrastructure-cf63d22f-e2b1-3b63-bffd-c01535fc234a.
 data:event-5b8672d4-4788-11ec-b70c-5c879c8043a4 a event:Event, event:DepartureEvent;
     event:hasMilestone event:End;
     event:hasDateTimeType event:Actual;
-    event:hasTimestamp "2021-11-10T18:51:53"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T18:51:53Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a;
     event:involvesPhysicalInfrastructure data:PhysicalInfrastructure-cf63d22f-e2b1-3b63-bffd-c01535fc234a.
 data:event-5b8672d5-4788-11ec-95a3-5c879c8043a4 a event:Event, event:DepartureEvent;
     event:hasMilestone event:End;
     event:hasDateTimeType event:Expected;
-    event:hasTimestamp "2021-11-10T18:51:53"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T18:51:53Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a;
     event:involvesPhysicalInfrastructure data:PhysicalInfrastructure-cf63d22f-e2b1-3b63-bffd-c01535fc234a.
 data:event-5b8672d6-4788-11ec-bdbd-5c879c8043a4 a event:Event, event:DepartureEvent;
     event:hasMilestone event:End;
     event:hasDateTimeType event:Planned;
-    event:hasTimestamp "2021-11-10T18:51:53"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T18:51:53Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a;
     event:involvesPhysicalInfrastructure data:PhysicalInfrastructure-cf63d22f-e2b1-3b63-bffd-c01535fc234a.
 data:event-9343b14e-6f47-4299-8310-380e73596d64 a event:Event, event:DischargeEvent;
     event:hasMilestone event:End;
     event:hasDateTimeType event:Actual;
-    event:hasTimestamp "2021-11-10T18:51:20"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T18:51:20Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a, data:DigitalTwin-79512eb1-edbd-3aca-bcc9-9ea299a3cd1e.
 data:event-5b8699e1-4788-11ec-9c68-5c879c8043a4 a event:Event, event:DischargeEvent;
     event:hasMilestone event:End;
     event:hasDateTimeType event:Expected;
-    event:hasTimestamp "2021-11-10T18:51:20"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T18:51:20Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a, data:DigitalTwin-79512eb1-edbd-3aca-bcc9-9ea299a3cd1e.
 data:event-5b8699e2-4788-11ec-90a7-5c879c8043a4 a event:Event, event:DischargeEvent;
     event:hasMilestone event:End;
     event:hasDateTimeType event:Planned;
-    event:hasTimestamp "2021-11-10T18:51:20"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T18:51:20Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a, data:DigitalTwin-79512eb1-edbd-3aca-bcc9-9ea299a3cd1e.
 data:event-5b8699e3-4788-11ec-9b08-5c879c8043a4 a event:Event, event:ArrivalEvent;
     event:hasMilestone event:Start;
     event:hasDateTimeType event:Actual;
-    event:hasTimestamp "2021-11-10T18:51:20"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T18:51:20Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a;
     event:involvesPhysicalInfrastructure data:PhysicalInfrastructure-cf63d22f-e2b1-3b63-bffd-c01535fc234a.
 data:event-5b8699e4-4788-11ec-a5a2-5c879c8043a4 a event:Event, event:ArrivalEvent;
     event:hasMilestone event:Start;
     event:hasDateTimeType event:Expected;
-    event:hasTimestamp "2021-11-10T18:51:20"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T18:51:20Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a;
     event:involvesPhysicalInfrastructure data:PhysicalInfrastructure-cf63d22f-e2b1-3b63-bffd-c01535fc234a.
 data:event-5b8699e5-4788-11ec-94fa-5c879c8043a4 a event:Event, event:ArrivalEvent;
     event:hasMilestone event:Start;
     event:hasDateTimeType event:Planned;
-    event:hasTimestamp "2021-11-10T18:51:20"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T18:51:20Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a;
     event:involvesPhysicalInfrastructure data:PhysicalInfrastructure-cf63d22f-e2b1-3b63-bffd-c01535fc234a.
 data:event-5b8699e6-4788-11ec-805e-5c879c8043a4 a event:Event, event:DepartureEvent;
     event:hasMilestone event:End;
     event:hasDateTimeType event:Actual;
-    event:hasTimestamp "2021-11-10T18:51:53"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T18:51:53Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a;
     event:involvesPhysicalInfrastructure data:PhysicalInfrastructure-cf63d22f-e2b1-3b63-bffd-c01535fc234a.
 data:event-5b8699e7-4788-11ec-8e1f-5c879c8043a4 a event:Event, event:DepartureEvent;
     event:hasMilestone event:End;
     event:hasDateTimeType event:Expected;
-    event:hasTimestamp "2021-11-10T18:51:53"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T18:51:53Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a;
     event:involvesPhysicalInfrastructure data:PhysicalInfrastructure-cf63d22f-e2b1-3b63-bffd-c01535fc234a.
 data:event-5b8699e8-4788-11ec-9fb4-5c879c8043a4 a event:Event, event:DepartureEvent;
     event:hasMilestone event:End;
     event:hasDateTimeType event:Planned;
-    event:hasTimestamp "2021-11-10T18:51:53"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T18:51:53Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a;
     event:involvesPhysicalInfrastructure data:PhysicalInfrastructure-cf63d22f-e2b1-3b63-bffd-c01535fc234a.
 data:event-693274b4-5384-4060-9522-ab0459959d10 a event:Event, event:DischargeEvent;
     event:hasMilestone event:End;
     event:hasDateTimeType event:Actual;
-    event:hasTimestamp "2021-11-10T18:51:20"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T18:51:20Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a, data:DigitalTwin-3d2da28b-3cc9-3845-b641-6ed4cd26c4b7.
 data:event-5b8699e9-4788-11ec-a2bc-5c879c8043a4 a event:Event, event:DischargeEvent;
     event:hasMilestone event:End;
     event:hasDateTimeType event:Expected;
-    event:hasTimestamp "2021-11-10T18:51:20"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T18:51:20Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a, data:DigitalTwin-3d2da28b-3cc9-3845-b641-6ed4cd26c4b7.
 data:event-5b8699ea-4788-11ec-8049-5c879c8043a4 a event:Event, event:DischargeEvent;
     event:hasMilestone event:End;
     event:hasDateTimeType event:Planned;
-    event:hasTimestamp "2021-11-10T18:51:20"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T18:51:20Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a, data:DigitalTwin-3d2da28b-3cc9-3845-b641-6ed4cd26c4b7.
 data:event-5b8699eb-4788-11ec-bd4c-5c879c8043a4 a event:Event, event:ArrivalEvent;
     event:hasMilestone event:Start;
     event:hasDateTimeType event:Actual;
-    event:hasTimestamp "2021-11-10T18:51:20"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T18:51:20Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a;
     event:involvesPhysicalInfrastructure data:PhysicalInfrastructure-cf63d22f-e2b1-3b63-bffd-c01535fc234a.
 data:event-5b8699ec-4788-11ec-9875-5c879c8043a4 a event:Event, event:ArrivalEvent;
     event:hasMilestone event:Start;
     event:hasDateTimeType event:Expected;
-    event:hasTimestamp "2021-11-10T18:51:20"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T18:51:20Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a;
     event:involvesPhysicalInfrastructure data:PhysicalInfrastructure-cf63d22f-e2b1-3b63-bffd-c01535fc234a.
 data:event-5b8699ed-4788-11ec-934c-5c879c8043a4 a event:Event, event:ArrivalEvent;
     event:hasMilestone event:Start;
     event:hasDateTimeType event:Planned;
-    event:hasTimestamp "2021-11-10T18:51:20"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T18:51:20Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a;
     event:involvesPhysicalInfrastructure data:PhysicalInfrastructure-cf63d22f-e2b1-3b63-bffd-c01535fc234a.
 data:event-5b8699ee-4788-11ec-823b-5c879c8043a4 a event:Event, event:DepartureEvent;
     event:hasMilestone event:End;
     event:hasDateTimeType event:Actual;
-    event:hasTimestamp "2021-11-10T18:51:53"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T18:51:53Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a;
     event:involvesPhysicalInfrastructure data:PhysicalInfrastructure-cf63d22f-e2b1-3b63-bffd-c01535fc234a.
 data:event-5b8699ef-4788-11ec-a4c9-5c879c8043a4 a event:Event, event:DepartureEvent;
     event:hasMilestone event:End;
     event:hasDateTimeType event:Expected;
-    event:hasTimestamp "2021-11-10T18:51:53"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T18:51:53Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a;
     event:involvesPhysicalInfrastructure data:PhysicalInfrastructure-cf63d22f-e2b1-3b63-bffd-c01535fc234a.
 data:event-5b8699f0-4788-11ec-9f01-5c879c8043a4 a event:Event, event:DepartureEvent;
     event:hasMilestone event:End;
     event:hasDateTimeType event:Planned;
-    event:hasTimestamp "2021-11-10T18:51:53"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T18:51:53Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a;
     event:involvesPhysicalInfrastructure data:PhysicalInfrastructure-cf63d22f-e2b1-3b63-bffd-c01535fc234a.
 data:event-ded0c1ac-b81d-4fac-a418-f4fa4e809f25 a event:Event, event:DischargeEvent;
     event:hasMilestone event:End;
     event:hasDateTimeType event:Actual;
-    event:hasTimestamp "2021-11-10T18:51:20"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T18:51:20Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a, data:DigitalTwin-ce1c5fa7-707d-385b-bdcd-d1d4025eb3d1.
 data:event-5b8699f1-4788-11ec-b5e4-5c879c8043a4 a event:Event, event:DischargeEvent;
     event:hasMilestone event:End;
     event:hasDateTimeType event:Expected;
-    event:hasTimestamp "2021-11-10T18:51:20"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T18:51:20Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a, data:DigitalTwin-ce1c5fa7-707d-385b-bdcd-d1d4025eb3d1.
 data:event-5b8699f2-4788-11ec-995d-5c879c8043a4 a event:Event, event:DischargeEvent;
     event:hasMilestone event:End;
     event:hasDateTimeType event:Planned;
-    event:hasTimestamp "2021-11-10T18:51:20"^^xsd:dateTime;
+    event:hasTimestamp "2021-11-10T18:51:20Z"^^xsd:dateTime;
     event:involvesDigitalTwin data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a, data:DigitalTwin-ce1c5fa7-707d-385b-bdcd-d1d4025eb3d1.
-data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a a dt:TransportMeans.
-data:DigitalTwin-ce1c5fa7-707d-385b-bdcd-d1d4025eb3d1 a dt:Goods.
-data:DigitalTwin-3d2da28b-3cc9-3845-b641-6ed4cd26c4b7 a dt:Goods.
-data:DigitalTwin-79512eb1-edbd-3aca-bcc9-9ea299a3cd1e a dt:Goods.
-data:DigitalTwin-89acab06-3659-3c26-bc58-4c2eb8ac0154 a dt:Goods.
-data:DigitalTwin-cd0c7a04-bae7-3638-80cb-296459ecc7fd a dt:Goods.
-data:DigitalTwin-e660ee55-e5d6-3810-9538-574df64a5004 a dt:Goods.
-data:DigitalTwin-8dc39014-fb9c-3464-b950-620139f257c4 a dt:Goods.
-data:DigitalTwin-4f823e66-a3c5-324b-9909-be51ed8e8a41 a dt:Goods.
-data:DigitalTwin-91a09245-2791-36e9-8a53-b990068c49c1 a dt:Goods.
-data:DigitalTwin-ade28e3b-66fd-3026-a603-1fdc6cc77b95 a dt:Goods.
-data:DigitalTwin-91a09245-2791-36e9-8a53-b990068c49c1 a dt:Goods.
-data:DigitalTwin-ade28e3b-66fd-3026-a603-1fdc6cc77b95 a dt:Goods.
-data:DigitalTwin-4f823e66-a3c5-324b-9909-be51ed8e8a41 a dt:Goods.
-data:DigitalTwin-8dc39014-fb9c-3464-b950-620139f257c4 a dt:Goods.
-data:DigitalTwin-e660ee55-e5d6-3810-9538-574df64a5004 a dt:Goods.
-data:DigitalTwin-cd0c7a04-bae7-3638-80cb-296459ecc7fd a dt:Goods.
-data:DigitalTwin-89acab06-3659-3c26-bc58-4c2eb8ac0154 a dt:Goods.
-data:DigitalTwin-79512eb1-edbd-3aca-bcc9-9ea299a3cd1e a dt:Goods.
-data:DigitalTwin-3d2da28b-3cc9-3845-b641-6ed4cd26c4b7 a dt:Goods.
-data:DigitalTwin-ce1c5fa7-707d-385b-bdcd-d1d4025eb3d1 a dt:Goods.
+data:DigitalTwin-c5836199-8809-3930-9cf8-1d14a54d242a a DigitalTwin:TransportMeans.
+data:DigitalTwin-ce1c5fa7-707d-385b-bdcd-d1d4025eb3d1 a DigitalTwin:Goods.
+data:DigitalTwin-3d2da28b-3cc9-3845-b641-6ed4cd26c4b7 a DigitalTwin:Goods.
+data:DigitalTwin-79512eb1-edbd-3aca-bcc9-9ea299a3cd1e a DigitalTwin:Goods.
+data:DigitalTwin-89acab06-3659-3c26-bc58-4c2eb8ac0154 a DigitalTwin:Goods.
+data:DigitalTwin-cd0c7a04-bae7-3638-80cb-296459ecc7fd a DigitalTwin:Goods.
+data:DigitalTwin-e660ee55-e5d6-3810-9538-574df64a5004 a DigitalTwin:Goods.
+data:DigitalTwin-8dc39014-fb9c-3464-b950-620139f257c4 a DigitalTwin:Goods.
+data:DigitalTwin-4f823e66-a3c5-324b-9909-be51ed8e8a41 a DigitalTwin:Goods.
+data:DigitalTwin-91a09245-2791-36e9-8a53-b990068c49c1 a DigitalTwin:Goods.
+data:DigitalTwin-ade28e3b-66fd-3026-a603-1fdc6cc77b95 a DigitalTwin:Goods.
+data:DigitalTwin-91a09245-2791-36e9-8a53-b990068c49c1 a DigitalTwin:Goods.
+data:DigitalTwin-ade28e3b-66fd-3026-a603-1fdc6cc77b95 a DigitalTwin:Goods.
+data:DigitalTwin-4f823e66-a3c5-324b-9909-be51ed8e8a41 a DigitalTwin:Goods.
+data:DigitalTwin-8dc39014-fb9c-3464-b950-620139f257c4 a DigitalTwin:Goods.
+data:DigitalTwin-e660ee55-e5d6-3810-9538-574df64a5004 a DigitalTwin:Goods.
+data:DigitalTwin-cd0c7a04-bae7-3638-80cb-296459ecc7fd a DigitalTwin:Goods.
+data:DigitalTwin-89acab06-3659-3c26-bc58-4c2eb8ac0154 a DigitalTwin:Goods.
+data:DigitalTwin-79512eb1-edbd-3aca-bcc9-9ea299a3cd1e a DigitalTwin:Goods.
+data:DigitalTwin-3d2da28b-3cc9-3845-b641-6ed4cd26c4b7 a DigitalTwin:Goods.
+data:DigitalTwin-ce1c5fa7-707d-385b-bdcd-d1d4025eb3d1 a DigitalTwin:Goods.
 data:b4d51938-5ae5-330d-af2e-a198dd2c16ab a pi:Location.
 <https://ontology.tno.nl/logistics/federated/hessing#6a0cb9de-4760-3e32-a0cd-27d64c8b707d> a pi:Location.
 data:a2557f8c-7a36-329a-8507-42b903587ec4 a pi:Location.
