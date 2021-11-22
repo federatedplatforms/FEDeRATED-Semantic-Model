@@ -1,152 +1,83 @@
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
-@prefix sd: <http://www.w3.org/ns/sparql-service-description#>.
-@prefix data: <https://ontology.tno.nl/logistics/federated/hessing#>.
-@prefix event: <https://ontology.tno.nl/logistics/federated/event#>.
-@prefix dt: <https://ontology.tno.nl/logistics/federated/digitalTwin#>.
-@prefix bs: <https://ontology.tno.nl/logistics/federated/businessService#>.
-@prefix pi: <https://ontology.tno.nl/logistics/federated/physicalInfrastructure#>.
-@prefix cl: <https://ontology.tno.nl/logistics/federated/Classifications#>.
+@prefix dt: <https://ontology.tno.nl/logistics/federated/digitalTwin#> .
+@prefix event: <https://ontology.tno.nl/logistics/federated/event#> .
+@prefix pi: <https://ontology.tno.nl/logistics/federated/physicalInfrastructure#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
-<https://ontology.tno.nl/logistics/federated/hessing#DigitalTwin-21078439%2F1> a event:Goods;
-    dt:goodsDescription "Kavels"^^xsd:string;
-    dt:goodsSize "0.30LDM".
-<https://ontology.tno.nl/logistics/federated/hessing#DigitalTwin-21078060%2F1> a event:Goods;
-    dt:goodsDescription "Kavels"^^xsd:string;
-    dt:goodsSize "0.20LDM".
-<https://ontology.tno.nl/logistics/federated/hessing#DigitalTwin-21078106%2F1> a event:Goods;
-    dt:goodsDescription "Kavels"^^xsd:string;
-    dt:goodsSize "0.20LDM".
-<https://ontology.tno.nl/logistics/federated/hessing#DigitalTwin-21078219%2F1> a event:Goods;
-    dt:goodsDescription "Kavels"^^xsd:string;
-    dt:goodsSize "1.00LDM".
-<https://ontology.tno.nl/logistics/federated/hessing#DigitalTwin-21078159%2F1> a event:Goods;
-    dt:goodsDescription "Kavels"^^xsd:string;
-    dt:goodsSize "0.40LDM".
-<https://ontology.tno.nl/logistics/federated/hessing#DigitalTwin-21078116%2F1> a event:Goods;
-    dt:goodsDescription "Kavels"^^xsd:string.
-<https://ontology.tno.nl/logistics/federated/hessing#DigitalTwin-21077477%2F1> a event:Goods;
-    dt:goodsDescription "Kavels"^^xsd:string;
-    dt:goodsSize "0.20LDM".
-<https://ontology.tno.nl/logistics/federated/hessing#DigitalTwin-21077421%2F1> a event:Goods;
-    dt:goodsDescription "Kavels"^^xsd:string;
-    dt:goodsSize "0.20LDM".
-<https://ontology.tno.nl/logistics/federated/hessing#DigitalTwin-21078438%2F1> a event:Goods;
-    dt:goodsDescription "Kavels"^^xsd:string;
-    dt:goodsSize "0.10LDM".
-<https://ontology.tno.nl/logistics/federated/hessing#DigitalTwin-21076018%2F1> a event:Goods;
-    dt:goodsDescription "Kavels"^^xsd:string;
-    dt:goodsSize "4.00LDM".
-<https://ontology.tno.nl/logistics/federated/hessing#DigitalTwin-21078438%2F1> a event:Goods;
-    dt:goodsDescription "Kavels"^^xsd:string;
-    dt:goodsSize "0.10LDM".
-<https://ontology.tno.nl/logistics/federated/hessing#DigitalTwin-21076018%2F1> a event:Goods;
-    dt:goodsDescription "Kavels"^^xsd:string;
-    dt:goodsSize "4.00LDM".
-<https://ontology.tno.nl/logistics/federated/hessing#DigitalTwin-21077421%2F1> a event:Goods;
-    dt:goodsDescription "Kavels"^^xsd:string;
-    dt:goodsSize "0.20LDM".
-<https://ontology.tno.nl/logistics/federated/hessing#DigitalTwin-21077477%2F1> a event:Goods;
-    dt:goodsDescription "Kavels"^^xsd:string;
-    dt:goodsSize "0.20LDM".
-<https://ontology.tno.nl/logistics/federated/hessing#DigitalTwin-21078116%2F1> a event:Goods;
-    dt:goodsDescription "Kavels"^^xsd:string.
-<https://ontology.tno.nl/logistics/federated/hessing#DigitalTwin-21078159%2F1> a event:Goods;
-    dt:goodsDescription "Kavels"^^xsd:string;
-    dt:goodsSize "0.40LDM".
-<https://ontology.tno.nl/logistics/federated/hessing#DigitalTwin-21078219%2F1> a event:Goods;
-    dt:goodsDescription "Kavels"^^xsd:string;
-    dt:goodsSize "1.00LDM".
-<https://ontology.tno.nl/logistics/federated/hessing#DigitalTwin-21078106%2F1> a event:Goods;
-    dt:goodsDescription "Kavels"^^xsd:string;
-    dt:goodsSize "0.20LDM".
-<https://ontology.tno.nl/logistics/federated/hessing#DigitalTwin-21078060%2F1> a event:Goods;
-    dt:goodsDescription "Kavels"^^xsd:string;
-    dt:goodsSize "0.20LDM".
-<https://ontology.tno.nl/logistics/federated/hessing#DigitalTwin-21078439%2F1> a event:Goods;
-    dt:goodsDescription "Kavels"^^xsd:string;
-    dt:goodsSize "0.30LDM".
-data:DigitalTwin-1254 a "https://ontology.tno.nl/logistics/federated/digitalTwin#TransportMeans", "https://ontology.tno.nl/logistics/federated/digitalTwin#Truck";
-    dt:truckLicensePlate "97-BGG-9"^^xsd:string;
-    rdfs:comment "Vehicle type: 65CF".
-<https://ontology.tno.nl/logistics/federated/hessing#Infrastructure-Vaartlaan%201> a "https://ontology.tno.nl/logistics/federated/physicalInfrastructure#Location";
-    pi:cityName "Deinze"^^xsd:string;
-    pi:postalCode "9800"^^xsd:string;
-    pi:countryISOCode "BE"^^xsd:string;
-    a "https://ontology.tno.nl/logistics/federated/physicalInfrastructure#Location";
-    pi:cityName "Deinze"^^xsd:string;
-    pi:postalCode "9800"^^xsd:string;
-    pi:countryISOCode "BE"^^xsd:string;
-    a "https://ontology.tno.nl/logistics/federated/physicalInfrastructure#Location";
-    pi:cityName "Deinze"^^xsd:string;
-    pi:postalCode "9800"^^xsd:string;
-    pi:countryISOCode "BE"^^xsd:string;
-    a "https://ontology.tno.nl/logistics/federated/physicalInfrastructure#Location";
-    pi:cityName "Deinze"^^xsd:string;
-    pi:postalCode "9800"^^xsd:string;
-    pi:countryISOCode "BE"^^xsd:string;
-    a "https://ontology.tno.nl/logistics/federated/physicalInfrastructure#Location";
-    pi:cityName "Deinze"^^xsd:string;
-    pi:postalCode "9800"^^xsd:string;
-    pi:countryISOCode "BE"^^xsd:string;
-    a "https://ontology.tno.nl/logistics/federated/physicalInfrastructure#Location";
-    pi:cityName "Deinze"^^xsd:string;
-    pi:postalCode "9800"^^xsd:string;
-    pi:countryISOCode "BE"^^xsd:string;
-    a "https://ontology.tno.nl/logistics/federated/physicalInfrastructure#Location";
-    pi:cityName "Deinze"^^xsd:string;
-    pi:postalCode "9800"^^xsd:string;
-    pi:countryISOCode "BE"^^xsd:string;
-    a "https://ontology.tno.nl/logistics/federated/physicalInfrastructure#Location";
-    pi:cityName "Deinze"^^xsd:string;
-    pi:postalCode "9800"^^xsd:string;
-    pi:countryISOCode "BE"^^xsd:string.
-<https://ontology.tno.nl/logistics/federated/hessing#Infrastructure-Esserstraat%208> a "https://ontology.tno.nl/logistics/federated/physicalInfrastructure#Location";
-    pi:cityName "Zwevegem"^^xsd:string;
-    pi:postalCode "8550"^^xsd:string;
-    pi:countryISOCode "BE"^^xsd:string.
-<https://ontology.tno.nl/logistics/federated/hessing#Infrastructure-Spanjestraat%2055> a "https://ontology.tno.nl/logistics/federated/physicalInfrastructure#Location";
-    pi:cityName "Roeselare"^^xsd:string;
-    pi:postalCode "8800"^^xsd:string;
-    pi:countryISOCode "BE"^^xsd:string.
-<https://ontology.tno.nl/logistics/federated/hessing#Infrastructure-De%20Zool%2015> a "https://ontology.tno.nl/logistics/federated/physicalInfrastructure#Location";
-    pi:cityName "Dongen"^^xsd:string;
-    pi:postalCode "5107 RB"^^xsd:string;
-    pi:countryISOCode "NL"^^xsd:string;
-    a "https://ontology.tno.nl/logistics/federated/physicalInfrastructure#Location";
-    pi:cityName "Dongen"^^xsd:string;
-    pi:postalCode "5107 RB"^^xsd:string;
-    pi:countryISOCode "NL"^^xsd:string;
-    a "https://ontology.tno.nl/logistics/federated/physicalInfrastructure#Location";
-    pi:cityName "Dongen"^^xsd:string;
-    pi:postalCode "5107 RB"^^xsd:string;
-    pi:countryISOCode "NL"^^xsd:string;
-    a "https://ontology.tno.nl/logistics/federated/physicalInfrastructure#Location";
-    pi:cityName "Dongen"^^xsd:string;
-    pi:postalCode "5107 RB"^^xsd:string;
-    pi:countryISOCode "NL"^^xsd:string;
-    a "https://ontology.tno.nl/logistics/federated/physicalInfrastructure#Location";
-    pi:cityName "Dongen"^^xsd:string;
-    pi:postalCode "5107 RB"^^xsd:string;
-    pi:countryISOCode "NL"^^xsd:string;
-    a "https://ontology.tno.nl/logistics/federated/physicalInfrastructure#Location";
-    pi:cityName "Dongen"^^xsd:string;
-    pi:postalCode "5107 RB"^^xsd:string;
-    pi:countryISOCode "NL"^^xsd:string;
-    a "https://ontology.tno.nl/logistics/federated/physicalInfrastructure#Location";
-    pi:cityName "Dongen"^^xsd:string;
-    pi:postalCode "5107 RB"^^xsd:string;
-    pi:countryISOCode "NL"^^xsd:string;
-    a "https://ontology.tno.nl/logistics/federated/physicalInfrastructure#Location";
-    pi:cityName "Dongen"^^xsd:string;
-    pi:postalCode "5107 RB"^^xsd:string;
-    pi:countryISOCode "NL"^^xsd:string;
-    a "https://ontology.tno.nl/logistics/federated/physicalInfrastructure#Location";
-    pi:cityName "Dongen"^^xsd:string;
-    pi:postalCode "5107 RB"^^xsd:string;
-    pi:countryISOCode "NL"^^xsd:string;
-    a "https://ontology.tno.nl/logistics/federated/physicalInfrastructure#Location";
-    pi:cityName "Dongen"^^xsd:string;
-    pi:postalCode "5107 RB"^^xsd:string;
-    pi:countryISOCode "NL"^^xsd:string.
+<https://ontology.tno.nl/logistics/federated#DigitalTwin-130a878b-4e42-352e-b394-a77f10af979e>
+  a <http://www.w3.org/2002/07/owl#NamedIndividual>, event:Goods;
+  dt:goodsDescription "Kavels";
+  dt:goodsSize "0.40LDM" .
+
+<https://ontology.tno.nl/logistics/federated#DigitalTwin-268b07fc-fae6-3951-b462-dc5de9d2abd1>
+  a <http://www.w3.org/2002/07/owl#NamedIndividual>, event:Goods;
+  dt:goodsDescription "Kavels";
+  dt:goodsSize "0.10LDM" .
+
+<https://ontology.tno.nl/logistics/federated#DigitalTwin-31657802-f1c3-34d0-ac7a-8c5c25128056>
+  a <http://www.w3.org/2002/07/owl#NamedIndividual>, event:Goods;
+  dt:goodsDescription "Kavels";
+  dt:goodsSize "0.30LDM" .
+
+<https://ontology.tno.nl/logistics/federated#DigitalTwin-53e4cf43-896a-31b4-8a07-452c3f580c78>
+  a <http://www.w3.org/2002/07/owl#NamedIndividual>, event:Goods;
+  dt:goodsDescription "Kavels";
+  dt:goodsSize "0.20LDM" .
+
+<https://ontology.tno.nl/logistics/federated#DigitalTwin-58a893d2-ee6f-3c76-92c1-0a7f54243c78>
+  a <http://www.w3.org/2002/07/owl#NamedIndividual>, event:Goods;
+  dt:goodsDescription "Kavels";
+  dt:goodsSize "0.20LDM" .
+
+<https://ontology.tno.nl/logistics/federated#DigitalTwin-66885dd6-5441-38e3-af5b-9197d964a23e>
+  a <http://www.w3.org/2002/07/owl#NamedIndividual>, event:Goods;
+  dt:goodsDescription "Kavels";
+  dt:goodsSize "4.00LDM" .
+
+<https://ontology.tno.nl/logistics/federated#DigitalTwin-6f7dfd05-d6ae-32ca-8702-0f4ab1684601>
+  a <http://www.w3.org/2002/07/owl#NamedIndividual>, event:Goods;
+  dt:goodsDescription "Kavels";
+  dt:goodsSize "0.20LDM" .
+
+<https://ontology.tno.nl/logistics/federated#DigitalTwin-c1eb1614-0d7e-3025-913c-c3c25088ec1c>
+  a <http://www.w3.org/2002/07/owl#NamedIndividual>, event:Goods;
+  dt:goodsDescription "Kavels";
+  dt:goodsSize "1.00LDM" .
+
+<https://ontology.tno.nl/logistics/federated#DigitalTwin-d313ba80-de44-3b89-991c-08d19250520a>
+  a <http://www.w3.org/2002/07/owl#NamedIndividual>, event:Goods;
+  dt:goodsDescription "Kavels";
+  dt:goodsSize "0.20LDM" .
+
+<https://ontology.tno.nl/logistics/federated#DigitalTwin-dce1774a-b2a1-338e-bd56-1902c57f835f>
+  a <http://www.w3.org/2002/07/owl#NamedIndividual>, dt:TransportMeans, dt:Truck;
+  rdfs:comment "Vehicle type: 65CF";
+  dt:truckLicensePlate "97-BGG-9" .
+
+<https://ontology.tno.nl/logistics/federated#DigitalTwin-ef8b94f6-a118-31fb-a669-c755fba2563e>
+  a <http://www.w3.org/2002/07/owl#NamedIndividual>, event:Goods;
+  dt:goodsDescription "Kavels" .
+
+<https://ontology.tno.nl/logistics/federated#PhysicalInfrastructure-95ec8ea8-a1bc-3b39-a0c6-9ddcd7383bb1>
+  a <http://www.w3.org/2002/07/owl#NamedIndividual>, pi:Location;
+  pi:cityName "Roeselare";
+  pi:countryISOCode "BE";
+  pi:postalCode "8800" .
+
+<https://ontology.tno.nl/logistics/federated#PhysicalInfrastructure-9c241fb0-173a-3b1c-a125-e35f8fe0274c>
+  a <http://www.w3.org/2002/07/owl#NamedIndividual>, pi:Location;
+  pi:cityName "Dongen";
+  pi:countryISOCode "NL";
+  pi:postalCode "5107 RB" .
+
+<https://ontology.tno.nl/logistics/federated#PhysicalInfrastructure-be989099-2e25-3259-975b-9f17c63b0281>
+  a <http://www.w3.org/2002/07/owl#NamedIndividual>, pi:Location;
+  pi:cityName "Deinze";
+  pi:countryISOCode "BE";
+  pi:postalCode "9800" .
+
+<https://ontology.tno.nl/logistics/federated#PhysicalInfrastructure-ef11937e-3e16-31dd-9d57-d602f6a76d44>
+  a <http://www.w3.org/2002/07/owl#NamedIndividual>, pi:Location;
+  pi:cityName "Zwevegem";
+  pi:countryISOCode "BE";
+  pi:postalCode "8550" .
