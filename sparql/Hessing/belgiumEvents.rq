@@ -8,12 +8,12 @@ prefix bs: <https://ontology.tno.nl/logistics/federated/businessService#>
 prefix pi: <https://ontology.tno.nl/logistics/federated/physicalInfrastructure#>
 prefix cl: <https://ontology.tno.nl/logistics/federated/Classifications#>
 
-SELECT ?event ?infra ?locode
+SELECT ?event ?infra 
 WHERE {
   ?event rdf:type event:Event ;
              event:involvesPhysicalInfrastructure ?infra .
 
-  ?infra pi:countryISOLocode "BE" .
+  ?infra pi:countryISOCode "BE".
 
 }
 LIMIT 25
