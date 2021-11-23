@@ -88,21 +88,21 @@
         sh:property [
         rdf:type sh:PropertyShape ;
         sh:path DT:wagonBrakeWeight ;
-        sh:datatype xsd:int ;
+        sh:datatype xsd:integer ;
         sh:maxCount 1 ;
         sh:name "has wagon brake weight" ;
     ] ;
         sh:property [
         rdf:type sh:PropertyShape ;
         sh:path DT:wagonMaximumSpeed ;
-        sh:datatype xsd:int ;
+        sh:datatype xsd:integer ;
         sh:maxCount 1 ;
         sh:name "has wagon maximum speed" ;
     ] ;
         sh:property [
         rdf:type sh:PropertyShape ;
         sh:path DT:wagonNrAxel ;
-        sh:datatype xsd:int ;
+        sh:datatype xsd:integer ;
         sh:maxCount 1 ;
         sh:name "has number of axels" ;
     ] ;

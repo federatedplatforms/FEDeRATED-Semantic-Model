@@ -197,8 +197,8 @@
       [ sh:class DT:Package ; ]
       [ sh:class DT:Goods ; ]
     ) ;
-    sh:minCount 1;
-    sh:maxCount 1;
+    sh:minCount 2;
+    sh:maxCount 2;
   ] ;
   sh:targetClass event:GoodsStructuringEvent ;
 .
