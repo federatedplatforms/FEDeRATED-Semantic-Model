@@ -13,7 +13,7 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://ontology.tno.nl/logistics/federated/DigitalTwin>
-  a owl:Ontology ;
+  rdf:type owl:Ontology ;
   dc:creator "Dena Tahvildari, Cornelis Bouter, Maaike Burghoorn" ;
   dcterms:created "2020-07-17" ;
   dcterms:description "This is DigitalTwin ontology. It contains classes, attributes and relationships about logistics physical real world object. The usecase is two: 1. it is part of federated logistics ontology architecture that is referenced and used by Event module. 2. It will be evolved (extended) to cover digital Twin technologies requirements. " ;
@@ -25,117 +25,117 @@
   owl:versionIRI <https://ontology.tno.nl/logistics/federated/DigitalTwinv-0.1> ;
 .
 DigitalTwin:Airplane
-  a owl:Class ;
+  rdf:type owl:Class ;
   rdfs:comment "Transport means by air." ;
   rdfs:label "Airplane" ;
   rdfs:subClassOf DigitalTwin:TransportMeans ;
 .
 DigitalTwin:Barge
-  a owl:Class ;
+  rdf:type owl:Class ;
   rdfs:comment "Vessel used for transporting cargo on inland waterways." ;
   rdfs:label "Barge" ;
   rdfs:subClassOf DigitalTwin:Vessel ;
 .
 DigitalTwin:BulkFeeder
-  a owl:Class ;
+  rdf:type owl:Class ;
   rdfs:comment "are common devices used to feed individual component parts for assembly on industrial production lines." ;
   rdfs:label "Bulk Feeder" ;
   rdfs:subClassOf DigitalTwin:Feeder ;
 .
 DigitalTwin:BulkProduct
-  a owl:Class ;
+  rdf:type owl:Class ;
   rdfs:comment "Any unpackaged raw material" ;
   rdfs:label "Bulk Product" ;
   rdfs:subClassOf DigitalTwin:Product ;
 .
 DigitalTwin:CommercialProduct
-  a owl:Class ;
+  rdf:type owl:Class ;
   rdfs:comment "Any product destined for use by enterprise. Consumer products may be packaged in quantities." ;
   rdfs:label "Commercial Product" ;
   rdfs:subClassOf DigitalTwin:Product ;
 .
 DigitalTwin:ConsumerProduct
-  a owl:Class ;
+  rdf:type owl:Class ;
   rdfs:comment "Any product destined for consumption or use by consumers. Consumer products might be packaged in quantities." ;
   rdfs:label "Consumer Product" ;
   rdfs:subClassOf DigitalTwin:Product ;
 .
 DigitalTwin:Container
-  a owl:Class ;
+  rdf:type owl:Class ;
   rdfs:comment "Transport containers serve to containerize products." ;
   rdfs:label "Container" ;
   rdfs:subClassOf DigitalTwin:Equipment ;
 .
 DigitalTwin:ContainerFeeder
-  a owl:Class ;
+  rdf:type owl:Class ;
   rdfs:label "Container Feeder" ;
   rdfs:subClassOf DigitalTwin:Feeder ;
 .
 DigitalTwin:DanishContainer
-  a owl:Class ;
+  rdf:type owl:Class ;
   rdfs:comment "A Danish container for the transportation of e.g. flowers." ;
   rdfs:label "Danish Container" ;
   rdfs:subClassOf DigitalTwin:Container ;
 .
 DigitalTwin:DeepSeaBulkVessel
-  a owl:Class ;
+  rdf:type owl:Class ;
   rdfs:label "Deep Sea Bulk Vessel" ;
   rdfs:subClassOf DigitalTwin:Vessel ;
 .
 DigitalTwin:DeepSeaContainerVessel
-  a owl:Class ;
+  rdf:type owl:Class ;
   rdfs:label "Deep Sea Container Vessel" ;
   rdfs:subClassOf DigitalTwin:Vessel ;
 .
 DigitalTwin:DeepSeaVessel
-  a owl:Class ;
+  rdf:type owl:Class ;
   rdfs:comment "Used for ocean transport." ;
   rdfs:label "Deep Sea Vessel" ;
   rdfs:subClassOf DigitalTwin:Vessel ;
 .
 DigitalTwin:Document
-  a owl:Class ;
+  rdf:type owl:Class ;
   rdfs:comment "A legal document in event and business transactions." ;
   rdfs:label "Document" ;
   rdfs:subClassOf DigitalTwin:PhysicalObject ;
 .
 DigitalTwin:Equipment
-  a owl:Class ;
+  rdf:type owl:Class ;
   rdfs:comment "Any asset used to facilitate transport and handling of cargo." ;
   rdfs:label "Equipment" ;
   rdfs:subClassOf DigitalTwin:PhysicalObject ;
   rdfs:subClassOf [
-      a owl:Restriction ;
+      rdf:type owl:Restriction ;
       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
       owl:onDataRange xsd:decimal ;
       owl:onProperty DigitalTwin:equipmentSize ;
     ] ;
   rdfs:subClassOf [
-      a owl:Restriction ;
+      rdf:type owl:Restriction ;
       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
       owl:onDataRange xsd:decimal ;
       owl:onProperty DigitalTwin:grossWeight ;
     ] ;
   rdfs:subClassOf [
-      a owl:Restriction ;
+      rdf:type owl:Restriction ;
       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
       owl:onDataRange xsd:decimal ;
       owl:onProperty DigitalTwin:tareWeight ;
     ] ;
   rdfs:subClassOf [
-      a owl:Restriction ;
+      rdf:type owl:Restriction ;
       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
       owl:onDataRange xsd:string ;
       owl:onProperty DigitalTwin:equipmentCategoryCode ;
     ] ;
   rdfs:subClassOf [
-      a owl:Restriction ;
+      rdf:type owl:Restriction ;
       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
       owl:onDataRange xsd:string ;
       owl:onProperty DigitalTwin:equipmentContainerITUCode ;
     ] ;
   rdfs:subClassOf [
-      a owl:Restriction ;
+      rdf:type owl:Restriction ;
       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
       owl:onDataRange xsd:string ;
       owl:onProperty DigitalTwin:equipmentID ;
@@ -145,131 +145,131 @@ DigitalTwin:Equipment
   skos:prefLabel "TransportEquipment" ;
 .
 DigitalTwin:Feeder
-  a owl:Class ;
+  rdf:type owl:Class ;
   rdfs:comment "Used for short range transport  via sea." ;
   rdfs:label "Feeder" ;
   rdfs:subClassOf DigitalTwin:Vessel ;
 .
 DigitalTwin:Ferry
-  a owl:Class ;
+  rdf:type owl:Class ;
   rdfs:comment "Used for transport of other transport means like trucks and/or trailers." ;
   rdfs:label "Ferry" ;
   rdfs:subClassOf DigitalTwin:Vessel ;
 .
 DigitalTwin:Goods
-  a owl:Class ;
+  rdf:type owl:Class ;
   rdfs:comment "Defintions is needed" ;
   rdfs:subClassOf DigitalTwin:PhysicalObject ;
   rdfs:subClassOf [
-      a owl:Restriction ;
+      rdf:type owl:Restriction ;
       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
       owl:onClass classifications:GoodsTypeCode ;
       owl:onProperty DigitalTwin:goodsTypeCode ;
     ] ;
   rdfs:subClassOf [
-      a owl:Restriction ;
+      rdf:type owl:Restriction ;
       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
       owl:onDataRange xsd:int ;
       owl:onProperty DigitalTwin:goodsWeight ;
     ] ;
   rdfs:subClassOf [
-      a owl:Restriction ;
+      rdf:type owl:Restriction ;
       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
       owl:onDataRange xsd:int ;
       owl:onProperty DigitalTwin:grossMass ;
     ] ;
   rdfs:subClassOf [
-      a owl:Restriction ;
+      rdf:type owl:Restriction ;
       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
       owl:onDataRange xsd:string ;
       owl:onProperty DigitalTwin:goodsDescription ;
     ] ;
 .
 DigitalTwin:Hold
-  a owl:Class ;
+  rdf:type owl:Class ;
   rdfs:comment "A hold containing goods that is pushed forward by a ship to form a push barge." ;
   rdfs:label "Hold" ;
   rdfs:subClassOf DigitalTwin:Equipment ;
 .
 DigitalTwin:ID
-  a owl:DatatypeProperty ;
+  rdf:type owl:DatatypeProperty ;
   rdfs:subPropertyOf DigitalTwin:PhysicalObjectProperties ;
 .
 DigitalTwin:Locomotive
-  a owl:Class ;
+  rdf:type owl:Class ;
   rdfs:comment "Any traction for a train composed of one or more wagons." ;
   rdfs:label "Locomotive" ;
   rdfs:subClassOf DigitalTwin:Train ;
   rdfs:subClassOf [
-      a owl:Restriction ;
+      rdf:type owl:Restriction ;
       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
       owl:onDataRange xsd:string ;
       owl:onProperty DigitalTwin:locomotiveBrakeType ;
     ] ;
   rdfs:subClassOf [
-      a owl:Restriction ;
+      rdf:type owl:Restriction ;
       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
       owl:onDataRange xsd:string ;
       owl:onProperty DigitalTwin:locomotiveID ;
     ] ;
 .
 DigitalTwin:Package
-  a owl:Class ;
+  rdf:type owl:Class ;
   rdfs:label "Package" ;
   rdfs:subClassOf DigitalTwin:PhysicalObject ;
   rdfs:subClassOf [
-      a owl:Restriction ;
+      rdf:type owl:Restriction ;
       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
       owl:onDataRange xsd:string ;
       owl:onProperty classifications:PackageTypeNumericCode ;
     ] ;
   rdfs:subClassOf [
-      a owl:Restriction ;
+      rdf:type owl:Restriction ;
       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
       owl:onDataRange xsd:string ;
       owl:onProperty classifications:packageCode ;
     ] ;
   rdfs:subClassOf [
-      a owl:Restriction ;
+      rdf:type owl:Restriction ;
       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
       owl:onDataRange xsd:string ;
       owl:onProperty classifications:packageTypeName ;
     ] ;
 .
 DigitalTwin:Pallets
-  a owl:Class ;
+  rdf:type owl:Class ;
   rdfs:comment "A pallet is a flat transport structure, which supports goods in a stable fashion while being lifted by a forklift, a pallet jack, a front loader, a jacking device, or an erect crane. A pallet is the structural foundation of a unit load which allows handling and storage efficiencies." ;
   rdfs:label "Pallets" ;
   rdfs:subClassOf DigitalTwin:RTI ;
 .
 DigitalTwin:PartProduct
-  a owl:Class ;
+  rdf:type owl:Class ;
   rdfs:comment "Products destined for use in machines owned by consumers or enterprises" ;
   rdfs:label "Part Product" ;
   rdfs:subClassOf DigitalTwin:Product ;
 .
 DigitalTwin:PhysicalObject
-  a owl:Class ;
+  rdf:type owl:Class ;
   rdfs:subClassOf owl:Thing ;
 .
 DigitalTwin:PhysicalObjectProperties
-  a owl:DatatypeProperty ;
+  rdf:type owl:DatatypeProperty ;
   rdfs:comment "Do not Instantiate -- this is only for grouping." ;
   rdfs:label "Physical Object Properties" ;
 .
 DigitalTwin:Product
-  a owl:Class ;
+  rdf:type owl:Class ;
   rdfs:comment "The actual objects that change ownership between a seller to a buyer. Any commercial goods that is bought and sold." ;
   rdfs:label "Product" ;
   rdfs:subClassOf DigitalTwin:PhysicalObject ;
   rdfs:subClassOf [
-      a owl:Restriction ;
+      rdf:type owl:Restriction ;
       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
       owl:onDataRange xsd:string ;
       owl:onProperty DigitalTwin:productID ;
     ] ;
   rdfs:subClassOf [
-      a owl:Restriction ;
+      rdf:type owl:Restriction ;
       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
       owl:onDataRange xsd:string ;
       owl:onProperty DigitalTwin:productName ;
@@ -278,100 +278,100 @@ DigitalTwin:Product
   owl:disjointWith DigitalTwin:TransportMeans ;
 .
 DigitalTwin:PushBarge
-  a owl:Class ;
+  rdf:type owl:Class ;
   rdfs:comment "A vessel without its own drive, used for the transport of a solid, bulk or liquid (tank barge) cargo. The boat is pushed on the back. The barges are used for the transport of bulk cargo of cereals, sand, gravel, coal, ore, etc." ;
   rdfs:label "Push Barge" ;
   rdfs:subClassOf DigitalTwin:Equipment ;
 .
 DigitalTwin:RTI
-  a owl:Class ;
+  rdf:type owl:Class ;
   rdfs:label "Located At" ;
   rdfs:subClassOf DigitalTwin:Equipment ;
 .
 DigitalTwin:RailwayWagon
-  a owl:Class ;
+  rdf:type owl:Class ;
   rdfs:comment "Unpowered railway vehicles that are used for the transportation of cargo." ;
   rdfs:label "Railway Wagon" ;
   rdfs:subClassOf DigitalTwin:Equipment ;
   rdfs:subClassOf [
-      a owl:Restriction ;
+      rdf:type owl:Restriction ;
       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
       owl:onDataRange xsd:int ;
       owl:onProperty DigitalTwin:wagonBrakeWeight ;
     ] ;
   rdfs:subClassOf [
-      a owl:Restriction ;
+      rdf:type owl:Restriction ;
       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
       owl:onDataRange xsd:int ;
       owl:onProperty DigitalTwin:wagonMaximumSpeed ;
     ] ;
   rdfs:subClassOf [
-      a owl:Restriction ;
+      rdf:type owl:Restriction ;
       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
       owl:onDataRange xsd:int ;
       owl:onProperty DigitalTwin:wagonNrAxel ;
     ] ;
   rdfs:subClassOf [
-      a owl:Restriction ;
+      rdf:type owl:Restriction ;
       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
       owl:onDataRange xsd:string ;
       owl:onProperty DigitalTwin:wagonBrakeType ;
     ] ;
 .
 DigitalTwin:SeaContainer
-  a owl:Class ;
+  rdf:type owl:Class ;
   rdfs:comment "A regular sea container." ;
   rdfs:label "Sea-Container" ;
   rdfs:subClassOf DigitalTwin:Container ;
 .
 DigitalTwin:Seal
-  a owl:Class ;
+  rdf:type owl:Class ;
   rdfs:comment "Type of Transport Equipment" ;
   rdfs:label "Seal" ;
   rdfs:subClassOf DigitalTwin:Equipment ;
 .
 DigitalTwin:Swapbody
-  a owl:Class ;
+  rdf:type owl:Class ;
   rdfs:label "Swap Body" ;
   rdfs:subClassOf DigitalTwin:Equipment ;
 .
 DigitalTwin:Trailer
-  a owl:Class ;
+  rdf:type owl:Class ;
   rdfs:comment "Unpowered road vehicles that are used for the transportation of cargo." ;
   rdfs:label "Trailer" ;
   rdfs:subClassOf DigitalTwin:Equipment ;
   rdfs:subClassOf [
-      a owl:Restriction ;
+      rdf:type owl:Restriction ;
       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
       owl:onDataRange xsd:string ;
       owl:onProperty DigitalTwin:trailerID ;
     ] ;
   rdfs:subClassOf [
-      a owl:Restriction ;
+      rdf:type owl:Restriction ;
       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
       owl:onDataRange xsd:string ;
       owl:onProperty DigitalTwin:trailerLicensePlate ;
     ] ;
 .
 DigitalTwin:Train
-  a owl:Class ;
+  rdf:type owl:Class ;
   rdfs:label "Train" ;
   rdfs:subClassOf DigitalTwin:TransportMeans ;
 .
 DigitalTwin:TransportMeans
-  a owl:Class ;
+  rdf:type owl:Class ;
   rdfs:comment """These are the vehicles that transport the cargo, such as tricks, vessels,
 trains, airplanes, barges etc.""" ;
   rdfs:label "Transport Means" ;
   rdfs:subClassOf DigitalTwin:PhysicalObject ;
   rdfs:subClassOf [
-      a owl:Restriction ;
+      rdf:type owl:Restriction ;
       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
       owl:onDataRange xsd:string ;
       owl:onProperty DigitalTwin:hasTransportmeansID ;
     ] ;
   rdfs:subClassOf [
-      a owl:Restriction ;
+      rdf:type owl:Restriction ;
       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
       owl:onDataRange xsd:string ;
       owl:onProperty DigitalTwin:hasTransportmeansNationality ;
@@ -380,52 +380,52 @@ trains, airplanes, barges etc.""" ;
   owl:disjointWith DigitalTwin:Product ;
 .
 DigitalTwin:Truck
-  a owl:Class ;
+  rdf:type owl:Class ;
   rdfs:comment "A truck or lorry is a motor vehicle designed to transport cargo. Trucks vary greatly in size, power, and configuration." ;
   rdfs:label "Truck" ;
   rdfs:subClassOf DigitalTwin:TransportMeans ;
   rdfs:subClassOf [
-      a owl:Restriction ;
+      rdf:type owl:Restriction ;
       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
       owl:onDataRange xsd:string ;
       owl:onProperty DigitalTwin:truckLicensePlate ;
     ] ;
 .
 DigitalTwin:ULD
-  a owl:Class ;
+  rdf:type owl:Class ;
   rdfs:comment "Unit Load Devices are light weight containers for air transport and facilitate loading cargo into aircraft." ;
   rdfs:label "Unit Load Devices" ;
   rdfs:subClassOf DigitalTwin:Container ;
 .
 DigitalTwin:Vessel
-  a owl:Class ;
+  rdf:type owl:Class ;
   rdfs:comment "Any transport means used for transporting cargo by sea/ocean. Watercraft, also known as water vessels or waterborne vessels, are vehicles used in water, including boats, ships, hovercraft and submarines. Watercraft usually have a propulsive capability (whether by sail, oar, paddle or engine) and hence are distinct from a simple device that merely floats, such as a log raft." ;
   rdfs:label "Vessel" ;
   rdfs:subClassOf DigitalTwin:TransportMeans ;
   rdfs:subClassOf [
-      a owl:Restriction ;
+      rdf:type owl:Restriction ;
       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
       owl:onDataRange xsd:string ;
       owl:onProperty DigitalTwin:vesselName ;
     ] ;
   rdfs:subClassOf [
-      a owl:Restriction ;
+      rdf:type owl:Restriction ;
       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
       owl:onDataRange xsd:string ;
       owl:onProperty DigitalTwin:vesselType ;
     ] ;
 .
 DigitalTwin:bulkVolume
-  a owl:DatatypeProperty ;
+  rdf:type owl:DatatypeProperty ;
   rdfs:comment "the measure of volume expressed in m3" ;
   rdfs:label "Bulk Volume" ;
   rdfs:range xsd:integer ;
   rdfs:subPropertyOf DigitalTwin:PhysicalObjectProperties ;
 .
 DigitalTwin:cargoMaxSize
-  a owl:DatatypeProperty ;
+  rdf:type owl:DatatypeProperty ;
   rdfs:domain [
-      a owl:Class ;
+      rdf:type owl:Class ;
       owl:unionOf (
           DigitalTwin:Equipment
           DigitalTwin:Goods
@@ -437,70 +437,70 @@ DigitalTwin:cargoMaxSize
   rdfs:subPropertyOf DigitalTwin:PhysicalObjectProperties ;
 .
 DigitalTwin:cargoMaximumTemperature
-  a owl:DatatypeProperty ;
+  rdf:type owl:DatatypeProperty ;
   rdfs:label "Cargo Maximum Temperature" ;
   rdfs:range xsd:string ;
   rdfs:subPropertyOf DigitalTwin:PhysicalObjectProperties ;
   owl:someValuesFrom DigitalTwin:Equipment ;
 .
 DigitalTwin:cargoMaximumVolume
-  a owl:DatatypeProperty ;
+  rdf:type owl:DatatypeProperty ;
   rdfs:label "Cargo Maximum Volume" ;
   rdfs:range xsd:integer ;
   rdfs:subPropertyOf DigitalTwin:PhysicalObjectProperties ;
   owl:someValuesFrom DigitalTwin:Equipment ;
 .
 DigitalTwin:cargoMinimumSize
-  a owl:DatatypeProperty ;
+  rdf:type owl:DatatypeProperty ;
   rdfs:label "Cargo Minimum Size" ;
   rdfs:range xsd:integer ;
   rdfs:subPropertyOf DigitalTwin:PhysicalObjectProperties ;
 .
 DigitalTwin:cargoMinimumTemperature
-  a owl:DatatypeProperty ;
+  rdf:type owl:DatatypeProperty ;
   rdfs:label "Cargo Minimum Temperature" ;
   rdfs:range xsd:string ;
   rdfs:subPropertyOf DigitalTwin:PhysicalObjectProperties ;
   owl:someValuesFrom DigitalTwin:Equipment ;
 .
 DigitalTwin:cargoMinimumVolume
-  a owl:DatatypeProperty ;
+  rdf:type owl:DatatypeProperty ;
   rdfs:label "Cargo Minimum Volume" ;
   rdfs:range xsd:integer ;
   rdfs:subPropertyOf DigitalTwin:PhysicalObjectProperties ;
   owl:someValuesFrom DigitalTwin:Equipment ;
 .
 DigitalTwin:cargoTareWeight
-  a owl:DatatypeProperty ;
+  rdf:type owl:DatatypeProperty ;
   rdfs:label "Cargo Tar Weight" ;
   rdfs:range xsd:integer ;
   rdfs:subPropertyOf DigitalTwin:PhysicalObjectProperties ;
 .
 DigitalTwin:cargoTemperature
-  a owl:DatatypeProperty ;
+  rdf:type owl:DatatypeProperty ;
   rdfs:label "Cargo Temperature" ;
   rdfs:range xsd:string ;
   rdfs:subPropertyOf DigitalTwin:PhysicalObjectProperties ;
 .
 DigitalTwin:cargoWeight
-  a owl:DatatypeProperty ;
+  rdf:type owl:DatatypeProperty ;
   rdfs:range xsd:decimal ;
   rdfs:subPropertyOf DigitalTwin:PhysicalObjectProperties ;
 .
 DigitalTwin:classifications_detail
-  a owl:ObjectProperty ;
+  rdf:type owl:ObjectProperty ;
   rdfs:comment "this object property links the any type of digital twin to the needed classification type and its controlled vocabularies" ;
   rdfs:range classifications:classifications ;
 .
 DigitalTwin:containerID
-  a owl:DatatypeProperty ;
+  rdf:type owl:DatatypeProperty ;
   rdfs:domain DigitalTwin:Container ;
   rdfs:label "Container ID" ;
   rdfs:range xsd:string ;
   rdfs:subPropertyOf DigitalTwin:ID ;
 .
 DigitalTwin:containerNumber
-  a owl:DatatypeProperty ;
+  rdf:type owl:DatatypeProperty ;
   rdfs:comment "Container number" ;
   rdfs:domain DigitalTwin:Container ;
   rdfs:label "Container Number" ;
@@ -509,101 +509,101 @@ DigitalTwin:containerNumber
   owl:someValuesFrom DigitalTwin:Equipment ;
 .
 DigitalTwin:containerSize
-  a owl:DatatypeProperty ;
+  rdf:type owl:DatatypeProperty ;
   rdfs:label "Cargo Container Size" ;
   rdfs:range xsd:integer ;
   rdfs:subPropertyOf DigitalTwin:PhysicalObjectProperties ;
 .
 DigitalTwin:containerType
-  a owl:DatatypeProperty ;
+  rdf:type owl:DatatypeProperty ;
   rdfs:domain DigitalTwin:Container ;
   rdfs:label "Container Type" ;
   rdfs:range classifications:ContainerType ;
   rdfs:subPropertyOf DigitalTwin:PhysicalObjectProperties ;
 .
 DigitalTwin:containerTypeDetail
-  a owl:ObjectProperty ;
+  rdf:type owl:ObjectProperty ;
   rdfs:domain DigitalTwin:Container ;
   rdfs:range classifications:ContainerType ;
   rdfs:subPropertyOf DigitalTwin:classifications_detail ;
 .
 DigitalTwin:damageRemarks
-  a owl:DatatypeProperty ;
+  rdf:type owl:DatatypeProperty ;
   rdfs:domain DigitalTwin:PhysicalObject ;
   rdfs:label "Damage Remarks" ;
   rdfs:range xsd:string ;
   rdfs:subPropertyOf DigitalTwin:PhysicalObjectProperties ;
 .
 DigitalTwin:documentID
-  a owl:DatatypeProperty ;
+  rdf:type owl:DatatypeProperty ;
   rdfs:domain DigitalTwin:Document ;
   rdfs:range xsd:string ;
   rdfs:subPropertyOf DigitalTwin:PhysicalObjectProperties ;
 .
 DigitalTwin:documentVersion
-  a owl:DatatypeProperty ;
+  rdf:type owl:DatatypeProperty ;
   rdfs:domain DigitalTwin:Document ;
   rdfs:range xsd:string ;
   rdfs:subPropertyOf DigitalTwin:PhysicalObjectProperties ;
 .
 DigitalTwin:documentbillOfLadingNumber
-  a owl:DatatypeProperty ;
+  rdf:type owl:DatatypeProperty ;
   rdfs:domain DigitalTwin:Document ;
   rdfs:range xsd:string ;
   rdfs:subPropertyOf DigitalTwin:PhysicalObjectProperties ;
 .
 DigitalTwin:dryBulk
-  a owl:DatatypeProperty ;
+  rdf:type owl:DatatypeProperty ;
   rdfs:label "Dry Bulk" ;
   rdfs:range xsd:boolean ;
   rdfs:subPropertyOf DigitalTwin:PhysicalObjectProperties ;
-  owl:deprecated true ;
+  owl:deprecated "true"^^xsd:boolean ;
 .
 DigitalTwin:equipmentCategoryCode
-  a owl:DatatypeProperty ;
+  rdf:type owl:DatatypeProperty ;
   rdfs:domain DigitalTwin:Equipment ;
   rdfs:label "Equipment Container Type" ;
   rdfs:subPropertyOf DigitalTwin:equipmentProperties ;
 .
 DigitalTwin:equipmentContainerITUCode
-  a owl:DatatypeProperty ;
+  rdf:type owl:DatatypeProperty ;
   rdfs:domain DigitalTwin:Equipment ;
   rdfs:label "Equipment Container ITU Code" ;
   rdfs:subPropertyOf DigitalTwin:equipmentProperties ;
 .
 DigitalTwin:equipmentID
-  a owl:DatatypeProperty ;
+  rdf:type owl:DatatypeProperty ;
   rdfs:domain DigitalTwin:Equipment ;
   rdfs:label "Equipment ID" ;
   rdfs:range xsd:string ;
   rdfs:subPropertyOf DigitalTwin:ID ;
 .
 DigitalTwin:equipmentProperties
-  a owl:DatatypeProperty ;
+  rdf:type owl:DatatypeProperty ;
   rdfs:domain DigitalTwin:Equipment ;
   rdfs:subPropertyOf DigitalTwin:PhysicalObjectProperties ;
 .
 DigitalTwin:equipmentSize
-  a owl:DatatypeProperty ;
+  rdf:type owl:DatatypeProperty ;
   rdfs:label "Equipment Container Size" ;
   rdfs:subPropertyOf DigitalTwin:equipmentProperties ;
 .
 DigitalTwin:equipmentTypeCode
-  a owl:DatatypeProperty ;
+  rdf:type owl:DatatypeProperty ;
   rdfs:domain DigitalTwin:Equipment ;
   rdfs:label "Equipment ID" ;
   rdfs:range classifications:EquipmentTypeCode ;
   rdfs:subPropertyOf DigitalTwin:equipmentProperties ;
 .
 DigitalTwin:goodsDescription
-  a owl:DatatypeProperty ;
+  rdf:type owl:DatatypeProperty ;
   rdfs:domain DigitalTwin:Goods ;
   rdfs:label "Goods Description" ;
   rdfs:range xsd:string ;
   rdfs:subPropertyOf DigitalTwin:PhysicalObjectProperties ;
 .
 DigitalTwin:goodsSize
-  a owl:DatatypeProperty ;
+  rdf:type owl:DatatypeProperty ;
   rdfs:domain DigitalTwin:PhysicalObject ;
   rdfs:label "Goods size" ;
   rdfs:range xsd:integer ;
@@ -611,20 +611,20 @@ DigitalTwin:goodsSize
   skos:altLabel "Verified Gross Mass" ;
 .
 DigitalTwin:goodsTypeCode
-  a owl:ObjectProperty ;
+  rdf:type owl:ObjectProperty ;
   rdfs:domain DigitalTwin:Goods ;
   rdfs:label "Goods Type Code" ;
   rdfs:range classifications:GoodsTypeCode ;
   rdfs:subPropertyOf DigitalTwin:classifications_detail ;
 .
 DigitalTwin:goodsWeight
-  a owl:DatatypeProperty ;
+  rdf:type owl:DatatypeProperty ;
   rdfs:domain DigitalTwin:Goods ;
   rdfs:range xsd:integer ;
   rdfs:subPropertyOf DigitalTwin:PhysicalObjectProperties ;
 .
 DigitalTwin:grossMass
-  a owl:DatatypeProperty ;
+  rdf:type owl:DatatypeProperty ;
   rdfs:domain DigitalTwin:PhysicalObject ;
   rdfs:label "Gross Mass" ;
   rdfs:range xsd:integer ;
@@ -632,41 +632,41 @@ DigitalTwin:grossMass
   skos:altLabel "Verified Gross Mass" ;
 .
 DigitalTwin:grossWeight
-  a owl:DatatypeProperty ;
+  rdf:type owl:DatatypeProperty ;
   rdfs:domain DigitalTwin:PhysicalObject ;
   rdfs:label "Gross Weight" ;
   rdfs:range xsd:integer ;
   rdfs:subPropertyOf DigitalTwin:equipmentProperties ;
 .
 DigitalTwin:hasDocumentType
-  a owl:ObjectProperty ;
+  rdf:type owl:ObjectProperty ;
   rdfs:domain DigitalTwin:Document ;
   rdfs:label "has Documnet Type" ;
   rdfs:range classifications:DocumentType ;
 .
 DigitalTwin:hasLicensePlateNumber
-  a owl:DatatypeProperty ;
+  rdf:type owl:DatatypeProperty ;
   rdfs:domain DigitalTwin:TransportMeans ;
   rdfs:label "License Plate Number" ;
   rdfs:range xsd:string ;
   rdfs:subPropertyOf DigitalTwin:transportMeansProperties ;
 .
 DigitalTwin:hasTransportmeansID
-  a owl:DatatypeProperty ;
+  rdf:type owl:DatatypeProperty ;
   rdfs:domain DigitalTwin:TransportMeans ;
   rdfs:label "Transport Means ID" ;
   rdfs:range xsd:string ;
   rdfs:subPropertyOf DigitalTwin:transportMeansProperties ;
 .
 DigitalTwin:hasTransportmeansNationality
-  a owl:DatatypeProperty ;
+  rdf:type owl:DatatypeProperty ;
   rdfs:domain DigitalTwin:TransportMeans ;
   rdfs:label "Transport Means Nationality" ;
   rdfs:range xsd:string ;
   rdfs:subPropertyOf DigitalTwin:transportMeansProperties ;
 .
 DigitalTwin:hasUNNumber
-  a owl:DatatypeProperty ;
+  rdf:type owl:ObjectProperty ;
   rdfs:domain DigitalTwin:Equipment ;
   rdfs:domain DigitalTwin:Package ;
   rdfs:label "Has UN Number" ;
@@ -674,13 +674,13 @@ DigitalTwin:hasUNNumber
   rdfs:subPropertyOf DigitalTwin:PhysicalObjectProperties ;
 .
 DigitalTwin:hasUnitsOfMeasure
-  a owl:ObjectProperty ;
+  rdf:type owl:ObjectProperty ;
   rdfs:comment "To link any quantity qualifiers to its unis of measure." ;
   rdfs:label "has Units of Measure" ;
   rdfs:range <http://www.ontology-of-units-of-measure.org/resource/om-2/Unit> ;
 .
 DigitalTwin:hasVIN
-  a owl:DatatypeProperty ;
+  rdf:type owl:DatatypeProperty ;
   rdfs:domain DigitalTwin:TransportMeans ;
   rdfs:label "has VIN" ;
   rdfs:range xsd:integer ;
@@ -688,68 +688,68 @@ DigitalTwin:hasVIN
   skos:prefLabel "has VIN" ;
 .
 DigitalTwin:hazardouseMaterialDetail
-  a owl:ObjectProperty ;
+  rdf:type owl:ObjectProperty ;
   rdfs:range classifications:DangerousGoods ;
   rdfs:subPropertyOf DigitalTwin:classifications_detail ;
 .
 DigitalTwin:isEmpty
-  a owl:DatatypeProperty ;
+  rdf:type owl:DatatypeProperty ;
   rdfs:domain DigitalTwin:Equipment ;
   rdfs:label "Is Empty" ;
   rdfs:range xsd:boolean ;
   rdfs:subPropertyOf DigitalTwin:PhysicalObjectProperties ;
 .
 DigitalTwin:isFull
-  a owl:DatatypeProperty ;
+  rdf:type owl:DatatypeProperty ;
   rdfs:domain DigitalTwin:Equipment ;
   rdfs:label "Is Full" ;
   rdfs:range xsd:boolean ;
   rdfs:subPropertyOf DigitalTwin:PhysicalObjectProperties ;
 .
 DigitalTwin:liquidBulk
-  a owl:DatatypeProperty ;
+  rdf:type owl:DatatypeProperty ;
   rdfs:label "Liquid Bulk" ;
   rdfs:range xsd:boolean ;
   rdfs:subPropertyOf DigitalTwin:PhysicalObjectProperties ;
-  owl:deprecated true ;
+  owl:deprecated "true"^^xsd:boolean ;
 .
 DigitalTwin:loadCapacity
-  a owl:DatatypeProperty ;
+  rdf:type owl:DatatypeProperty ;
   rdfs:domain DigitalTwin:Hold ;
   rdfs:label "Load Capacity" ;
   rdfs:range xsd:integer ;
   rdfs:subPropertyOf DigitalTwin:PhysicalObjectProperties ;
 .
 DigitalTwin:locatedAt
-  a owl:ObjectProperty ;
+  rdf:type owl:ObjectProperty ;
   rdfs:comment "An optional stationary location for a physical object." ;
   rdfs:domain DigitalTwin:PhysicalObject ;
   rdfs:label "Located At" ;
   rdfs:range <https://ontology.tno.nl/logistics/federated/PhysicalInfrastructure#Location> ;
 .
 DigitalTwin:locomotiveBrakeType
-  a owl:DatatypeProperty ;
+  rdf:type owl:DatatypeProperty ;
   rdfs:domain DigitalTwin:Locomotive ;
   rdfs:label "Locomotive Brake Type" ;
   rdfs:range xsd:string ;
   rdfs:subPropertyOf DigitalTwin:transportMeansProperties ;
 .
 DigitalTwin:locomotiveBrakeWeight
-  a owl:DatatypeProperty ;
+  rdf:type owl:DatatypeProperty ;
   rdfs:domain DigitalTwin:Locomotive ;
   rdfs:label "Locomotive Brake Weight" ;
   rdfs:range xsd:string ;
   rdfs:subPropertyOf DigitalTwin:transportMeansProperties ;
 .
 DigitalTwin:locomotiveDriverIndication
-  a owl:DatatypeProperty ;
+  rdf:type owl:DatatypeProperty ;
   rdfs:domain DigitalTwin:Locomotive ;
   rdfs:label "Locomotive Driver Indication" ;
   rdfs:range xsd:string ;
   rdfs:subPropertyOf DigitalTwin:transportMeansProperties ;
 .
 DigitalTwin:locomotiveID
-  a owl:DatatypeProperty ;
+  rdf:type owl:DatatypeProperty ;
   rdfs:domain DigitalTwin:Locomotive ;
   rdfs:label "Locomotive Identifier" ;
   rdfs:range xsd:string ;
@@ -757,64 +757,64 @@ DigitalTwin:locomotiveID
   rdfs:subPropertyOf DigitalTwin:transportMeansProperties ;
 .
 DigitalTwin:locomotiveTractionType
-  a owl:DatatypeProperty ;
+  rdf:type owl:DatatypeProperty ;
   rdfs:domain DigitalTwin:Locomotive ;
   rdfs:label "Locomotive Traction Type" ;
   rdfs:range xsd:string ;
   rdfs:subPropertyOf DigitalTwin:transportMeansProperties ;
 .
 DigitalTwin:locomotiveTypeNumber
-  a owl:DatatypeProperty ;
+  rdf:type owl:DatatypeProperty ;
   rdfs:domain DigitalTwin:Locomotive ;
   rdfs:label "Locomotive Type Number" ;
   rdfs:range xsd:string ;
   rdfs:subPropertyOf DigitalTwin:transportMeansProperties ;
 .
 DigitalTwin:natureOfCargo
-  a owl:ObjectProperty ;
+  rdf:type owl:ObjectProperty ;
   rdfs:label "Nature of Cargo" ;
   rdfs:range classifications:NatureOfCargo ;
   rdfs:subPropertyOf DigitalTwin:classifications_detail ;
 .
 DigitalTwin:netLoad
-  a owl:DatatypeProperty ;
+  rdf:type owl:DatatypeProperty ;
   rdfs:label "Net Load" ;
   rdfs:range xsd:integer ;
   rdfs:subPropertyOf DigitalTwin:PhysicalObjectProperties ;
 .
 DigitalTwin:netMass
-  a owl:DatatypeProperty ;
+  rdf:type owl:DatatypeProperty ;
   rdfs:label "Net Mass" ;
   rdfs:range xsd:integer ;
   rdfs:subPropertyOf DigitalTwin:PhysicalObjectProperties ;
 .
 DigitalTwin:numberOfTEU
-  a owl:DatatypeProperty ;
+  rdf:type owl:DatatypeProperty ;
   rdfs:label "Number of TEU" ;
   rdfs:range xsd:integer ;
   rdfs:subPropertyOf DigitalTwin:PhysicalObjectProperties ;
 .
 DigitalTwin:numberofPackages
-  a owl:DatatypeProperty ;
+  rdf:type owl:DatatypeProperty ;
   rdfs:domain DigitalTwin:Package ;
   rdfs:label "Number of Packages" ;
   rdfs:range xsd:integer ;
   rdfs:subPropertyOf DigitalTwin:packageProperties ;
 .
 DigitalTwin:packageLevelType
-  a owl:DatatypeProperty ;
+  rdf:type owl:DatatypeProperty ;
   rdfs:domain DigitalTwin:Package ;
   rdfs:label "Package Level Type" ;
   rdfs:range xsd:string ;
   rdfs:subPropertyOf DigitalTwin:packageProperties ;
 .
 DigitalTwin:packageProperties
-  a owl:DatatypeProperty ;
+  rdf:type owl:DatatypeProperty ;
   rdfs:comment "Do not Instantiate -- Made only for grouping" ;
   rdfs:subPropertyOf DigitalTwin:PhysicalObjectProperties ;
 .
 DigitalTwin:packagingType
-  a owl:ObjectProperty ;
+  rdf:type owl:ObjectProperty ;
   rdfs:domain DigitalTwin:Goods ;
   rdfs:domain DigitalTwin:Package ;
   rdfs:label "Packaging Type" ;
@@ -822,14 +822,14 @@ DigitalTwin:packagingType
   rdfs:subPropertyOf DigitalTwin:classifications_detail ;
 .
 DigitalTwin:productID
-  a owl:DatatypeProperty ;
+  rdf:type owl:DatatypeProperty ;
   rdfs:comment "Code uniquely identifying a product from either customer or service provider (supplier) perspective." ;
   rdfs:label "Product ID" ;
   rdfs:range xsd:string ;
   rdfs:subPropertyOf DigitalTwin:productProperties ;
 .
 DigitalTwin:productName
-  a owl:DatatypeProperty ;
+  rdf:type owl:DatatypeProperty ;
   rdfs:comment "Name of the product related to the code" ;
   rdfs:domain DigitalTwin:Product ;
   rdfs:label "Product Name" ;
@@ -837,20 +837,20 @@ DigitalTwin:productName
   rdfs:subPropertyOf DigitalTwin:productProperties ;
 .
 DigitalTwin:productProperties
-  a owl:DatatypeProperty ;
+  rdf:type owl:DatatypeProperty ;
   rdfs:comment "Do not Instantiate -- for grouping Only" ;
   rdfs:domain DigitalTwin:Product ;
   rdfs:subPropertyOf DigitalTwin:PhysicalObjectProperties ;
 .
 DigitalTwin:sealConditionCode
-  a owl:ObjectProperty ;
+  rdf:type owl:ObjectProperty ;
   rdfs:comment "A code specifying a condition of this logistics seal." ;
   rdfs:domain DigitalTwin:Seal ;
   rdfs:label "Seal Condition Code" ;
   rdfs:subPropertyOf DigitalTwin:classifications_detail ;
 .
 DigitalTwin:sealID
-  a owl:DatatypeProperty ;
+  rdf:type owl:DatatypeProperty ;
   rdfs:domain DigitalTwin:Seal ;
   rdfs:label "Seal ID" ;
   rdfs:range xsd:integer ;
@@ -858,7 +858,7 @@ DigitalTwin:sealID
   rdfs:subPropertyOf DigitalTwin:sealProperties ;
 .
 DigitalTwin:sealIndicator
-  a owl:DatatypeProperty ;
+  rdf:type owl:DatatypeProperty ;
   rdfs:comment "The indication of whether or not this piece of logistics transport equipment is sealed." ;
   rdfs:domain DigitalTwin:Seal ;
   rdfs:label "Seal Indicator" ;
@@ -866,35 +866,35 @@ DigitalTwin:sealIndicator
   rdfs:subPropertyOf DigitalTwin:sealProperties ;
 .
 DigitalTwin:sealProperties
-  a owl:DatatypeProperty ;
+  rdf:type owl:DatatypeProperty ;
   rdfs:comment "Super Property to group properties of Seal. DO NO INSTANTIATE." ;
   rdfs:domain DigitalTwin:Seal ;
   rdfs:label "Seal Properties" ;
   rdfs:subPropertyOf DigitalTwin:PhysicalObjectProperties ;
 .
 DigitalTwin:sealQuantity
-  a owl:DatatypeProperty ;
+  rdf:type owl:DatatypeProperty ;
   rdfs:domain DigitalTwin:Seal ;
   rdfs:label "Seal Quantity" ;
   rdfs:range xsd:integer ;
   rdfs:subPropertyOf DigitalTwin:sealProperties ;
 .
 DigitalTwin:shippingMarks
-  a owl:DatatypeProperty ;
+  rdf:type owl:DatatypeProperty ;
   rdfs:label "Shipping Marks" ;
   rdfs:range xsd:string ;
   rdfs:subPropertyOf DigitalTwin:PhysicalObjectProperties ;
 .
 DigitalTwin:tareWeight
-  a owl:DatatypeProperty ;
+  rdf:type owl:DatatypeProperty ;
   rdfs:domain DigitalTwin:Equipment ;
   rdfs:range xsd:integer ;
   rdfs:subPropertyOf DigitalTwin:equipmentProperties ;
 .
 DigitalTwin:totalLoadCapacity
-  a owl:DatatypeProperty ;
+  rdf:type owl:DatatypeProperty ;
   rdfs:domain [
-      a owl:Class ;
+      rdf:type owl:Class ;
       owl:unionOf (
           DigitalTwin:Barge
           DigitalTwin:PushBarge
@@ -905,80 +905,80 @@ DigitalTwin:totalLoadCapacity
   rdfs:subPropertyOf DigitalTwin:PhysicalObjectProperties ;
 .
 DigitalTwin:trailerID
-  a owl:DatatypeProperty ;
+  rdf:type owl:DatatypeProperty ;
   rdfs:domain DigitalTwin:Trailer ;
   rdfs:label "Trailer ID" ;
   rdfs:range xsd:string ;
   rdfs:subPropertyOf DigitalTwin:transportMeansProperties ;
 .
 DigitalTwin:trailerLicensePlate
-  a owl:DatatypeProperty ;
+  rdf:type owl:DatatypeProperty ;
   rdfs:domain DigitalTwin:Trailer ;
   rdfs:label "Equipment Trailer License Plate" ;
   rdfs:range xsd:string ;
   rdfs:subPropertyOf DigitalTwin:hasLicensePlateNumber ;
 .
 DigitalTwin:transportMeansProperties
-  a owl:DatatypeProperty ;
+  rdf:type owl:DatatypeProperty ;
   rdfs:domain DigitalTwin:TransportMeans ;
   rdfs:subPropertyOf DigitalTwin:PhysicalObjectProperties ;
 .
 DigitalTwin:transportmeansName
-  a owl:DatatypeProperty ;
+  rdf:type owl:DatatypeProperty ;
   rdfs:domain DigitalTwin:TransportMeans ;
   rdfs:range xsd:string ;
   rdfs:subPropertyOf DigitalTwin:transportMeansProperties ;
 .
 DigitalTwin:truckLicensePlate
-  a owl:DatatypeProperty ;
+  rdf:type owl:DatatypeProperty ;
   rdfs:domain DigitalTwin:Truck ;
   rdfs:label "Truck License Plate" ;
   rdfs:range xsd:string ;
   rdfs:subPropertyOf DigitalTwin:hasLicensePlateNumber ;
 .
 DigitalTwin:typeOfCargo
-  a owl:ObjectProperty ;
+  rdf:type owl:ObjectProperty ;
   rdfs:label "Type of Cargo" ;
   rdfs:range classifications:CargoType ;
   rdfs:subPropertyOf DigitalTwin:classifications_detail ;
 .
 DigitalTwin:vesselName
-  a owl:DatatypeProperty ;
+  rdf:type owl:DatatypeProperty ;
   rdfs:domain DigitalTwin:Vessel ;
   rdfs:label "Vessel Name" ;
   rdfs:range xsd:string ;
   rdfs:subPropertyOf DigitalTwin:transportMeansProperties ;
 .
 DigitalTwin:vesselType
-  a owl:DatatypeProperty ;
+  rdf:type owl:DatatypeProperty ;
   rdfs:domain DigitalTwin:Vessel ;
   rdfs:label "Vessel Type" ;
   rdfs:range xsd:string ;
   rdfs:subPropertyOf DigitalTwin:transportMeansProperties ;
 .
 DigitalTwin:wagonBrakeType
-  a owl:DatatypeProperty ;
+  rdf:type owl:DatatypeProperty ;
   rdfs:domain DigitalTwin:RailwayWagon ;
   rdfs:label "Wagon Brake Type" ;
   rdfs:range xsd:string ;
   rdfs:subPropertyOf DigitalTwin:transportMeansProperties ;
 .
 DigitalTwin:wagonBrakeWeight
-  a owl:DatatypeProperty ;
+  rdf:type owl:DatatypeProperty ;
   rdfs:domain DigitalTwin:RailwayWagon ;
   rdfs:label "Wagon Brake Weight" ;
   rdfs:range xsd:integer ;
   rdfs:subPropertyOf DigitalTwin:transportMeansProperties ;
 .
 DigitalTwin:wagonMaximumSpeed
-  a owl:DatatypeProperty ;
+  rdf:type owl:DatatypeProperty ;
   rdfs:domain DigitalTwin:RailwayWagon ;
   rdfs:label "Wagon Maximum Speed" ;
   rdfs:range xsd:integer ;
   rdfs:subPropertyOf DigitalTwin:transportMeansProperties ;
 .
 DigitalTwin:wagonNrAxel
-  a owl:DatatypeProperty ;
+  rdf:type owl:DatatypeProperty ;
   rdfs:domain DigitalTwin:RailwayWagon ;
   rdfs:label "Wagon Nr Axel" ;
   rdfs:range xsd:string ;
