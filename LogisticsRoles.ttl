@@ -194,7 +194,7 @@ LogisticsRoles:CustomsAuthority
   rdfs:label "Customs Authority" ;
   rdfs:subClassOf LogisticsRoles:Authority ;
 .
-LogisticsRoles:Declerant
+LogisticsRoles:Declarant
   a owl:Class ;
   a sh:NodeShape ;
   rdfs:comment "The enterprise lodging a declaration (on behalf of his customer, it is called a customs agent) based on declaration services it provides. This can be a forwarder (import, export, transit) or a shipping -/airline (ENS, incoming goods). A shipper or consignee can also act as declarant." ;
