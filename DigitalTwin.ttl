@@ -984,3 +984,14 @@ DigitalTwin:wagonNrAxel
   rdfs:range xsd:string ;
   rdfs:subPropertyOf DigitalTwin:transportMeansProperties ;
 .
+DigitalTwin:hasMRN_Number
+  a owl:DatatypeProperty ;
+  rdfs:label "has MRN Number" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "has MRN Number" ;
+.
+DigitalTwin:hasNumberOfCollies
+  a owl:DatatypeProperty ;
+  rdfs:label "has Number of Collies" ;
+  rdfs:range xsd:integer ;
+.
