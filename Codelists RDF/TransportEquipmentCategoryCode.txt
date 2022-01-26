@@ -1,0 +1,577 @@
+[{
+"categoryCode":"AA",
+  
+"label":"Ground equipment",
+"description":"Ground equipment being fuelled or serviced."
+},
+{  
+"categoryCode":"AB",
+  
+"label":"Chain",
+"description":"Chain used in the securing of cargo."
+},
+{  
+"categoryCode":"AD",
+  
+"label":"Temperature recorder",
+"description":"Temperature recorder to provide a record of the actual temperature."
+},
+{  
+"categoryCode":"AE",
+  
+"label":"Body trailer",
+"description":"The part of the vehicle where the cargo is loaded."
+},
+{  
+"categoryCode":"AG",
+  
+"label":"Slipsheet",
+"description":"A cardboard platform used for holding product for storage or transportation."
+},
+{  
+"categoryCode":"AH",
+  
+"label":"No special equipment needed",
+"description":"A code to indicate that there is no special equipment needed."
+},
+{  
+"categoryCode":"AI",
+  
+"label":"Vessel hold",
+"description":"A compartment forming part of a transport vessel."
+},
+{  
+"categoryCode":"AJ",
+  
+"label":"Flat rack",
+"description":"Type of open container used for carrying objects."
+},
+{  
+"categoryCode":"AK",
+  
+"label":"Aircraft",
+"description":"To indicate that the equipment is an aircraft."
+},
+{  
+"categoryCode":"AL",
+  
+"label":"Medical device",
+"description":"A device used for medical purposes."
+},
+{  
+"categoryCode":"AM",
+  
+"label":"Refrigerated container",
+"description":"A refrigerated (reefer) container that is actively cooling the product."
+},
+{  
+"categoryCode":"AN",
+  
+"label":"Synthetic pallet 80*120cm",
+"description":"A pallet with standard dimensions 80*120 centimetres made of synthetic material."
+},
+{  
+"categoryCode":"AO",
+  
+"label":"Synthetic pallet 100*120cm",
+"description":"A standard pallet with standard dimensions 100*120 centimetres made of synthetic material."
+},
+{  
+"categoryCode":"AP",
+  
+"label":"Clothing hanger rack",
+"description":"Equipment used to store and transport clothing in a hanging position."
+},
+{  
+"categoryCode":"AQ",
+  
+"label":"Road/rail trailer",
+"description":"Trailer designated for combined road/rail use."
+},
+{  
+"categoryCode":"AT",
+  
+"label":"Overhang wagon",
+"description":"Empty rail wagon added to the loaded wagons, when goods are longer than the loaded wagon."
+},
+{  
+"categoryCode":"BB",
+  
+"label":"Un-containerized cargo (breakbulk)",
+"description":"Cargoes in bulk not stuffed in equipment."
+},
+{  
+"categoryCode":"BL",
+  
+"label":"Blocks",
+"description":"A piece of equipment that is normally a piece of wood to fix cargo (e.g. coils) during transport."
+},
+{  
+"categoryCode":"BPN",
+  
+"label":"Box pallet non-exchangeable",
+"description":"A box pallet which cannot be exchanged."
+},
+{  
+"categoryCode":"BPO",
+  
+"label":"Truck being transported",
+"description":"A road vehicle capable of carrying goods which is being carried on another means of transport."
+},
+{  
+"categoryCode":"BPP",
+  
+"label":"Truck and trailer combination being transported",
+"description":"A road vehicle capable of carrying goods with an attached trailer which is being carried on another means of transport."
+},
+{  
+"categoryCode":"BPQ",
+  
+"label":"Tractor and trailer being transported",
+"description":"A trailer accompanied by a self-propelling tractor unit which is being carried on another means of transport."
+},
+{  
+"categoryCode":"BPR",
+  
+"label":"Postal bag",
+"description":"Bag intended primarily for the conveyance of postal items."
+},
+{  
+"categoryCode":"BPS",
+  
+"label":"Letter Tray",
+"description":"Tray intended primarily for the conveyance of letter mail items of size slightly exceeding C5, in which the items are stood on their long edge."
+},
+{  
+"categoryCode":"BPT",
+  
+"label":"Roller Cage",
+"description":"Wheeled wire cage."
+},
+{ 
+"categoryCode":"BPU",
+  
+"label":"Flats Tray",
+"description":"Tray intended primarily for the conveyance of letter mail items of from C5 up to in excess of C4, in which the items are stacked one on top of another. May also be used for letter mail smaller items stood on their long edge."
+},
+{  
+"categoryCode":"BPV",
+  
+"label":"Out of bag parcel",
+"description":"Postal item which is conveyed individually, with only the wrapping provided by the mailer for protection."
+},
+{  
+"categoryCode":"BPW",
+  
+"label":"Wheeled Platform",
+"description":"Device, consisting of a flat surface mounted on a wheels, which is designed for the conveyance of items which may safely be stacked. Normally also equipped with a handle to allow the device to be easily manoeuvred."
+},
+{  
+"categoryCode":"BPX",
+  
+"label":"Container non-compliant with the Customs Convention on Containers",
+"description":"The container is not compliant with the Customs Convention on Containers."
+},
+{  
+"categoryCode":"BPY",
+  
+"label":"Box pallet EUR Y non exchangeable",
+"description":"A euro-pallet of type Y that may not be exchanged."
+},
+{  
+"categoryCode":"BPZ",
+  
+"label":"Roll Pallet 1",
+"description":"80 X 60 cm pallet on casters."
+},
+{  
+"categoryCode":"BR",
+  
+"label":"Barge",
+"description":"Flat bottomed inland cargo vessel for canals and rivers with or without own propulsion for the purpose of transported goods. (Synonym: Lighter)."
+},
+{  
+"categoryCode":"BX",
+  
+"label":"Boxcar",
+"description":"An enclosed railway goods wagon."
+},
+{  
+"categoryCode":"CH",
+  
+"label":"Chassis",
+"description":"A wheeled carriage onto which an ocean container is mounted for inland conveyance."
+},
+{  
+"categoryCode":"CN",
+  
+"label":"Container",
+"description":"Equipment item as defined by ISO for transport. It must be of: A) permanent character, strong enough for repeated use; B) designed to facilitate the carriage of goods, by one or more modes of transport, without intermediate reloading; C) fitted with devices for its ready handling, particularly."
+},
+{  
+"categoryCode":"DPA",
+  
+"label":"Deadlight (panel)",
+"description":"A set of panels fixed inside a porthole."
+},
+{  
+"categoryCode":"DPB",
+  
+"label":"Roll Pallet 2",
+"description":"120 X 60 cm pallet on casters."
+},
+{  
+"categoryCode":"DPC",
+  
+"label":"Container gantry crane",
+"description":"A fixed gantry crane ashore for container handling operations."
+},
+{  
+"categoryCode":"DPD",
+  
+"label":"Mobile crane",
+"description":"A mobile crane for handling operations."
+},
+{  
+"categoryCode":"DPE",
+  
+"label":"Floating crane",
+"description":"A crane mounted on a dedicated vessel."
+},
+{  
+"categoryCode":"DPF",
+  
+"label":"Ship's equipment crane",
+"description":"A crane mounted on a ship for handling operations."
+},
+{  
+"categoryCode":"DPG",
+  
+"label":"Conveyor belt",
+"description":"Rolling carpet belt."
+},
+{  
+"categoryCode":"DPH",
+  
+"label":"Forklift",
+"description":"Equipment device for handling and moving goods."
+},
+{  
+"categoryCode":"DPI",
+  
+"label":"Stacking equipment",
+"description":"Equipment device for stacking goods."
+},
+{  
+"categoryCode":"DPJ",
+  
+"label":"Taillift",
+"description":"Equipment device at the rear of a truck for loading and unloading cargo."
+},
+{  
+"categoryCode":"DPK",
+  
+"label":"Pallet ISO 0 - 1/2 EURO Pallet",
+"description":"Standard pallet with dimensions 80 X 60 cm."
+},
+{  
+"categoryCode":"DPL",
+  
+"label":"On-board equipment",
+"description":"Equipment permanently on board a means of transport."
+},
+{  
+"categoryCode":"DPM",
+  
+"label":"Pallet ISO 1 - 1/1 EURO Pallet (GS1 Temporary Code)",
+"description":"Standard pallet with dimensions 80 X 120 cm."
+},
+{  
+"categoryCode":"DPN",
+  
+"label":"Pallet ISO 2",
+"description":"Standard pallet with dimensions 100 X 120 cm."
+},
+{  
+"categoryCode":"DPO",
+  
+"label":"1/4 EURO Pallet",
+"description":"Standard pallet with dimensions 60 X 40 cm."
+},
+{  
+"categoryCode":"EFP",
+  
+"label":"Exchangeable EUR flat pallet",
+"description":"A flat euro-pallet that may be exchanged."
+},
+{  
+"categoryCode":"EFQ",
+  
+"label":"1/8 EURO Pallet",
+"description":"Standard pallet with dimensions 40 X 30 cm."
+},
+{  
+"categoryCode":"EFR",
+  
+"label":"Wholesaler pallet",
+"description":"Pallet provided by the wholesaler."
+},
+{  
+"categoryCode":"EFS",
+  
+"label":"Pallet 80 X 100 cm",
+"description":"Pallet with dimensions 80 X 100 cm."
+},
+{  
+"categoryCode":"EFT",
+  
+"label":"Pallet 60 X 100 cm",
+"description":"Pallet with dimensions 60 X 100 cm."
+},
+{  
+"categoryCode":"EFU",
+  
+"label":"Oneway pallet",
+"description":"Pallet need not be returned to the point of expedition."
+},
+{  
+"categoryCode":"EFV",
+  
+"label":"Returnable pallet",
+"description":"Pallet must be returned to the point of expedition."
+},
+{  
+"categoryCode":"EFW",
+  
+"label":"Bottlecrate",
+"description":"A container for the storage or movement of bottles, a.k.a. bottlerack."
+},
+{  
+"categoryCode":"EFX",
+  
+"label":"Bottle, non-protected, cylindrical",
+"description":"A non-protected cylindrical container with a narrow neck made usually of glass or plastic which is especially used for liquids."
+},
+{  
+"categoryCode":"EFY",
+  
+"label":"Box",
+"description":"A lidded package which can be made of cardboard, wood, plastic,tin,etc."
+},
+{  
+"categoryCode":"EFZ",
+  
+"label":"CHEP Eurobox",
+"description":"A box mounted on a pallet base under the control of CHEP."
+},
+{  
+"categoryCode":"EGA",
+  
+"label":"Case",
+"description":"A package such as a box."
+},
+{  
+"categoryCode":"EGB",
+  
+"label":"Display package",
+"description":"A package used for the dispaly of goods, usually during a promotion."
+},
+{  
+"categoryCode":"EGC",
+  
+"label":"Isothermic case",
+"description":"A case used for products which require constant temperature control."
+},
+{  
+"categoryCode":"EGD",
+  
+"label":"Pallet modular collars 80*100",
+"description":"Collars, with the dimensions 80cms * 100cms, which when fitted onto a pallet enable the pallet to be transformed into a box pallet with, if necessary, a lid."
+},
+{  
+"categoryCode":"EGE",
+  
+"label":"Pallet modular collars 80*120",
+"description":"Collars, with the dimensions 80cms * 120cms, which when fitted onto a pallet enable the pallet to be transformed into a box pallet with, if necessary, a lid."
+},
+{  
+"categoryCode":"EGF",
+  
+"label":"Tray",
+"description":"A flat receptacle with low sides for carrying or holding articles."
+},
+{  
+"categoryCode":"EGG",
+  
+"label":"Roll cage",
+"description":"A three sided cage mounted on wheels."
+},
+{  
+"categoryCode":"EGH",
+  
+"label":"Trolley",
+"description":"A low cart for the transportation and storage of groceries, milk, etc."
+},
+{  
+"categoryCode":"EGI",
+  
+"label":"Landside power generator",
+"description":"A generator located landside at a terminal, used to provide electric power to a vessel or other means of transport."
+},
+{  
+"categoryCode":"EYP",
+  
+"label":"Exchangeable EUR Y box pallet",
+"description":"A euro-pallet of type Y that may be exchanged."
+},
+{  
+"categoryCode":"FPN",
+  
+"label":"Flat pallet EUR non exchangeable",
+"description":"A flat euro-pallet that may not be exchanged."
+},
+{  
+"categoryCode":"FPR",
+  
+"label":"Flat pallet (railway property) non-exchangeable",
+"description":"A non-exchangeable flat pallet owned by a railroad."
+},
+{  
+"categoryCode":"IL",
+  
+"label":"Lidded stackable rigid tray (CEN TS 14482:2002)",
+"description":"Lidded stackable rigid tray compliant with CEN TS 14482:2002."
+},
+{  
+"categoryCode":"LAR",
+  
+"label":"Lashing rope",
+"description":"A rope for lashing cargo."
+},
+{  
+"categoryCode":"LU",
+  
+"label":"Load/unload device on equipment",
+"description":"A mechanical device used in the loading and/or unloading of cargo into and from transport equipment."
+},
+{  
+"categoryCode":"MPA",
+  
+"label":"Movable panel",
+"description":"A panel which can be moved."
+},
+{  
+"categoryCode":"PA",
+  
+"label":"Pallet",
+"description":"A platform on which goods can be stacked in order to facilitate the movement by a forklift or sling."
+},
+{  
+"categoryCode":"PBP",
+  
+"label":"Identified private box pallet",
+"description":"A box pallet identified as being privately owned."
+},
+{  
+"categoryCode":"PFP",
+  
+"label":"Identified private flat pallet",
+"description":"A flat pallet identified as being privately owned."
+},
+{  
+"categoryCode":"PL",
+  
+"label":"Platform",
+"description":"A piece of equipment normally having a flat surface, or prepared for carrying cargo with a specific shape."
+},
+{  
+"categoryCode":"PPA",
+  
+"label":"Protecting panel",
+"description":"A panel used for protection."
+},
+{  
+"categoryCode":"PST",
+  
+"label":"Portable stove",
+"description":"A portable heating unit."
+},
+{  
+"categoryCode":"RF",
+  
+"label":"Flat car",
+"description":"A railway wagon without raised sides or ends."
+},
+{  
+"categoryCode":"RG",
+  
+"label":"Reefer generator",
+"description":"A generator used to control the temperature in temperature-controlled transport equipment."
+},
+{  
+"categoryCode":"RGF",
+  
+"label":"Ground facility",
+"description":"Storage tank or facility capable of receiving shipment of goods or commodity."
+},
+{  
+"categoryCode":"RO",
+  
+"label":"Rope",
+"description":"Rope used in the securing of cargo."
+},
+{  
+"categoryCode":"RR",
+  
+"label":"Rail car",
+"description":"To identify that the equipment is a rail car."
+},
+{  
+"categoryCode":"SPP",
+  
+"label":"Identified special pallet",
+"description":"A pallet identified as special."
+},
+{  
+"categoryCode":"STR",
+  
+"label":"Strap",
+"description":"A narrow strip of flexible material."
+},
+{  
+"categoryCode":"SW",
+  
+"label":"Swap body",
+"description":"Rectangular equipment unit without wheels, which can be mounted on a chassis or positioned on legs."
+},
+{  
+"categoryCode":"TE",
+  
+"label":"Trailer",
+"description":"A vehicle without motive power, designed for the carriage of cargo and to be towed by a motor vehicle."
+},
+{  
+"categoryCode":"TP",
+  
+"label":"Tarpaulin",
+"description":"Waterproof material, e.g. canvas, to spread over cargo to protect it from getting wet."
+},
+{  
+"categoryCode":"TS",
+  
+"label":"Tackles",
+"description":"Identification of loading tackle used (sheets, ropes, chains, etc.), as specified in DCU 9 to CIM Article 13; and of containers, as specified in Articles 5 and 10 of Annex III to CIM (CIM 17)." },
+
+{  
+"categoryCode":"TSU",
+  
+"label":"Tarpaulin support",
+"description":"A device to support a tarpaulin."
+},
+{  
+"categoryCode":"UL",
+  
+"label":"ULD (Unit load device)",
+
+"description":"An aircraft container or pallet."
+}]

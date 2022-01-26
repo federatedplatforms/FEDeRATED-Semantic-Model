@@ -89,6 +89,7 @@ pi:InfrastructuralFunction
   a owl:Class ;
   rdfs:comment "Any part of an infrastructure used for performing logistical activities." ;
   rdfs:label "Infrastructural Function" ;
+  rdfs:subClassOf <http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing> ;
   owl:disjointWith pi:LogisticalFunction ;
 .
 pi:InfrastructuralObject
@@ -126,6 +127,7 @@ pi:Location
   a owl:Class ;
   rdfs:comment "A geographical location where several objects with various logistical functions may be." ;
   rdfs:label "Location" ;
+  rdfs:subClassOf <http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing> , <https://schema.org/Place> ;
   rdfs:subClassOf [
       a owl:Restriction ;
       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
@@ -174,11 +176,13 @@ pi:LogisticalFunction
   a owl:Class ;
   rdfs:comment "Any location where a logistical activity is performed. A single location may have several logistical functions." ;
   rdfs:label "Logistical Function" ;
+  rdfs:subClassOf <http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing> ;
 .
 pi:LogisticalInterface
   a owl:Class ;
   rdfs:comment "An interface where the modality of a transport may change." ;
   rdfs:label "Logistical Interface" ;
+  rdfs:subClassOf <http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing> ;
 .
 pi:LogisticalInterfaceProperty
   a owl:DatatypeProperty ;
@@ -255,6 +259,7 @@ pi:Trajectory
   a owl:Class ;
   rdfs:comment "Any part of an infrastructure identified by its infrastructure manager." ;
   rdfs:label "Trajectory" ;
+  rdfs:subClassOf <http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing> ;
 .
 pi:TrajectoryProperty
   a owl:DatatypeProperty ;

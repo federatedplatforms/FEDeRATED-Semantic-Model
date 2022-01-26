@@ -41,14 +41,14 @@
     sh:property [
         rdf:type sh:PropertyShape ;
         sh:path DT:goodsWeight ;
-        sh:datatype xsd:int ;
+        sh:datatype xsd:integer ;
         sh:maxCount 1 ;
         sh:name "has goods weight" ;
     ] ;
     sh:property [
         rdf:type sh:PropertyShape ;
         sh:path DT:grossMass ;
-        sh:datatype xsd:int ;
+        sh:datatype xsd:integer ;
         sh:maxCount 1 ;
         sh:name "has gross mass" ;
     ] ;

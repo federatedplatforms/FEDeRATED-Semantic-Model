@@ -1,0 +1,21 @@
+prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+prefix xsd: <http://www.w3.org/2001/XMLSchema#>
+prefix sd: <http://www.w3.org/ns/sparql-service-description#>
+prefix data: <https://ontology.tno.nl/logistics/federated/hessing#>
+prefix event: <https://ontology.tno.nl/logistics/federated/event#>
+prefix dt: <https://ontology.tno.nl/logistics/federated/digitalTwin#>
+prefix bs: <https://ontology.tno.nl/logistics/federated/businessService#>
+prefix pi: <https://ontology.tno.nl/logistics/federated/physicalInfrastructure#>
+prefix cl: <https://ontology.tno.nl/logistics/federated/Classifications#>
+
+SELECT ?event ?infra 
+WHERE {
+  ?event rdf:type event:Event ;
+             event:involvesPhysicalInfrastructure ?infra .
+
+  ?infra pi:countryISOCode "BE".
+
+}
+LIMIT 25
+             
+             
