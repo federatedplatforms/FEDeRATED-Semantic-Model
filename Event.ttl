@@ -1,5 +1,5 @@
 # baseURI: https://ontology.tno.nl/logistics/federated/Event
-# imports: https://ontology.tno.nl/logistics/federated/PhysicalInfrastructure
+# imports: https://ontology.tno.nl/logistics/federated/BusinessService
 # prefix: Event
 
 @prefix : <https://ontology.tno.nl/logistics/federated/Event#> .
@@ -12,6 +12,7 @@
 @prefix pi: <https://ontology.tno.nl/logistics/federated/PhysicalInfrastructure#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://ontology.tno.nl/logistics/federated/Event>
@@ -24,7 +25,7 @@
   dcterms:requires <https://ontology.tno.nl/logistics/federated/BusinessService> ;
   dcterms:requires <https://ontology.tno.nl/logistics/federated/DigitalTwin> ;
   dcterms:requires <https://ontology.tno.nl/logistics/federated/PhysicalInfrastructure> ;
-  owl:imports <https://ontology.tno.nl/logistics/federated/PhysicalInfrastructure> ;
+  owl:imports <https://ontology.tno.nl/logistics/federated/BusinessService> ;
   owl:versionIRI <https://ontology.tno.nl/logistics/federated/Eventv-0.1> ;
 .
 Event:ATAEvent
@@ -359,6 +360,21 @@ Event:involvesPhysicalInfrastructure
   rdfs:label "involves Physical Infrastructure" ;
   rdfs:range <http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing> ;
   rdfs:subPropertyOf Event:involves ;
+.
+Event:isInvolvedIn
+  a rdf:Property ;
+  rdfs:domain [
+      a owl:Class ;
+      owl:unionOf (
+          <http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing>
+          businessService:BusinessTransaction
+          DigitalTwin:PhysicalObject
+        ) ;
+    ] ;
+  rdfs:label "is involved in" ;
+  rdfs:range Event:Event ;
+  owl:inverseOf Event:isInvolvedIn ;
+  skos:prefLabel "is involved in" ;
 .
 Event:planned
   a Event:DateTimeType ;
