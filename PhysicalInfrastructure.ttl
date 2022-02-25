@@ -24,7 +24,7 @@
   dcterms:issued "2021-03-15" ;
   dcterms:language "en" ;
   dcterms:requires <https://ontology.tno.nl/logistics/federated/Classifications> ;
-  owl:imports <http://www.geonames.org/ontology> ;
+  #owl:imports <http://www.geonames.org/ontology> ;
   owl:versionIRI <https://ontology.tno.nl/logistics/federated/PhysicalInfrastructurev-0.1> ;
 .
 pi:Airport
@@ -71,6 +71,7 @@ pi:Country
   rdfs:subClassOf pi:Location ;
 .
 pi:DropOffLocation
+  a owl:Class ; 
   rdfs:label "Drop Off Location" ;
 .
 pi:Gate
@@ -131,13 +132,13 @@ pi:Location
   rdfs:subClassOf [
       a owl:Restriction ;
       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onDataRange xsd:string ;
+      owl:onDataRange xsd:decimal ;
       owl:onProperty pi:Lat ;
     ] ;
   rdfs:subClassOf [
       a owl:Restriction ;
       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onDataRange xsd:string ;
+      owl:onDataRange xsd:decimal ;
       owl:onProperty pi:Long ;
     ] ;
   rdfs:subClassOf [
@@ -198,13 +199,16 @@ pi:Long
   rdfs:subPropertyOf pi:LocationCoordinate ;
 .
 pi:PickUpLocation
+  a owl:Class ;
   rdfs:label "Pickup Location" ;
 .
 pi:PlaceOfArrival
+  a owl:Class ;
   rdfs:comment "A place of a call of a transport means following (in time) the last place of departure (milestone value is departure)" ;
-  rdfs:label "Place of Departure" ;
+  rdfs:label "Place of Arrival" ;
 .
 pi:PlaceOfCall
+  a owl:Class ;
   rdfs:label "Place of Call" ;
 .
 pi:Platform
@@ -298,7 +302,7 @@ pi:countryISOCode
   a owl:DatatypeProperty ;
   rdfs:comment "This property identifies a country following the ISO2 codelist standard." ;
   rdfs:domain pi:Location ;
-  rdfs:label "Country Code iso2" ;
+  rdfs:label "Country Code ISO2" ;
   rdfs:range xsd:string ;
   rdfs:subPropertyOf pi:locationProperties ;
 .
@@ -392,7 +396,6 @@ pi:locationProperties
   rdfs:comment "Do not Instantiate. Only for the purpose of grouping. Each subproperty specifies a property of a location." ;
   rdfs:domain pi:Location ;
   rdfs:label "Location Properties" ;
-  rdfs:range xsd:anySimpleType ;
 .
 pi:logisticalFunctionProperties
   a owl:DatatypeProperty ;
@@ -402,32 +405,39 @@ pi:logisticalFunctionProperties
   rdfs:range xsd:anySimpleType ;
 .
 pi:placeOfAcceptance
+  a owl:Class ;
   rdfs:comment "Place at which the goods are taken over by the carrier." ;
   rdfs:label "Place of Acceptance" ;
 .
 pi:placeOfBorderCrossing
+  a owl:Class ;
   rdfs:comment "A place where a new customs domain is entered by a transport means during its itinerary " ;
-  rdfs:label "Place of Departure" ;
+  rdfs:label "Place of Border Crossing" ;
 .
 pi:placeOfDelivery
+  a owl:Class ;
   rdfs:comment "Place to which the goods are to be finally delivered under transport contract terms (operational term)." ;
-  rdfs:label "City" ;
+  rdfs:label "Place of Delivery" ;
 .
 pi:placeOfDeparture
+  a owl:Class ;
   rdfs:comment "A place where a transport means arrived (milestone value: arrival) and is able to depart." ;
   rdfs:label "Place of Departure" ;
 .
 pi:placeOfLoading
+  a owl:Class ;
   rdfs:comment "Seaport, airport, freight terminal, rail station or other place at which the goods (cargo) are loaded on to the means of transport being used for their carriage." ;
-  rdfs:label "Place of Departure" ;
+  rdfs:label "Place of Loading" ;
 .
 pi:placeOfReceipt
+  a owl:Class ;
   rdfs:comment "A place of receipt is the place where the cargo is offered for transport by a business transaction to the service provider that is the carrier and has to be transported by that carrier to the place of loading of the main transport. The cargo has to be at that location." ;
   rdfs:label "Place of Receipt" ;
 .
 pi:placeOfUnloading
+  a owl:Class ;
   rdfs:comment "A place of unloading is the place to where the cargo has to be transported by a business transaction to the service provider that is the carrier and will be discharged/unloaded from that transport means. The cargo and the transport means have to be at that location." ;
-  rdfs:label "Place of Departure" ;
+  rdfs:label "Place of Unloading" ;
 .
 pi:portNumber
   a owl:DatatypeProperty ;
@@ -442,7 +452,6 @@ pi:portSecurityLevel
   rdfs:comment "This property specifies the port security level of this specific port." ;
   rdfs:domain pi:Port ;
   rdfs:label "Port Security Level" ;
-  rdfs:lable "Port Security Level" ;
   rdfs:range xsd:string ;
   rdfs:subPropertyOf pi:logisticalFunctionProperties ;
 .
