@@ -29,8 +29,8 @@
   dcterms:language "en" ;
   dcterms:requires <https://ontology.tno.nl/logistics/federated/Classifications> ;
   dcterms:requires <https://ontology.tno.nl/logistics/federated/LogisticsRoles> ;
-  owl:imports <https://ontology.tno.nl/logistics/federated/LogisticsRoles> ;
-  owl:versionIRI <https://ontology.tno.nl/logistics/federated/BusinessServicev-0.1> ;
+  #owl:imports <https://ontology.tno.nl/logistics/federated/LogisticsRoles> ;
+  #owl:versionIRI <https://ontology.tno.nl/logistics/federated/BusinessServicev-0.1> ;
   owl:versionInfo "Created with TopBraid Composer" ;
 .
 businessService:Booking
@@ -72,7 +72,7 @@ businessService:Consignment
   rdfs:subClassOf [
       a owl:Restriction ;
       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onClass DigitalTwin:Cargo ;
+      owl:onClass DigitalTwin:Goods ;
       owl:onProperty businessService:usedGoods ;
     ] ;
   rdfs:subClassOf [
@@ -84,7 +84,7 @@ businessService:Consignment
   rdfs:subClassOf [
       a owl:Restriction ;
       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onClass DigitalTwin:TransportMeans ;
+      owl:onClass DigitalTwin:Equipment ;
       owl:onProperty businessService:usedTransportEquipment ;
     ] ;
   rdfs:subClassOf [
@@ -100,11 +100,6 @@ businessService:Consignment
       owl:onProperty businessService:hasSequenceNumber ;
     ] ;
   ReusableTags:isDerived true ;
-.
-businessService:Consignor
-  a LogisticsRoles:Consignor ;
-  businessService:logisticsRoleID "gfd" ;
-  businessService:logisticsRoleName "dfgdf" ;
 .
 businessService:Enterprise
   a owl:Class ;
@@ -175,7 +170,7 @@ businessService:LegalPerson
   rdfs:subClassOf [
       a owl:Restriction ;
       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onDataRange pi:Location ;
+      owl:onClass pi:Location ;
       owl:onProperty businessService:actorAddress ;
     ] ;
 .
@@ -281,11 +276,11 @@ businessService:TransshipmentService
   rdfs:subClassOf businessService:LogisticsService ;
 .
 businessService:actorAddress
-  a owl:DatatypeProperty ;
+  a owl:Objectproperty ;
   rdfs:comment "Address of the logistics actor" ;
   rdfs:domain businessService:LegalPerson ;
   rdfs:label "Actor address" ;
-  rdfs:range xsd:string ;
+  rdfs:range pi:Location ;
 .
 businessService:actorID
   a owl:DatatypeProperty ;
@@ -319,7 +314,7 @@ businessService:bookingStatus
   a owl:ObjectProperty ;
   rdfs:comment "if the booking is active, canceled, or combined" ;
   rdfs:domain businessService:Booking ;
-  rdfs:label "consignment Creation Time" ;
+  rdfs:label "Booking Status" ;
   rdfs:range [
       a rdfs:Datatype ;
       owl:oneOf (
@@ -340,13 +335,12 @@ businessService:consignmentUpdateTime
   a owl:DatatypeProperty ;
   rdfs:comment "Time that Consigment is Updated" ;
   rdfs:domain businessService:Consignment ;
-  rdfs:label "consignment Creation Time" ;
+  rdfs:label "consignment Update Time" ;
   rdfs:range xsd:dateTime ;
 .
 businessService:contractCarriageCondition
   a owl:DatatypeProperty ;
   rdfs:domain businessService:BusinessTransaction ;
-  rdfs:domain businessService:FrameworkContract ;
   rdfs:label "Contract Carriage Condition" ;
 .
 businessService:createdBy
@@ -659,7 +653,7 @@ businessService:usedGoods
 businessService:usedPackage
   a owl:ObjectProperty ;
   rdfs:comment "Package that is part of the logistics service" ;
-  rdfs:domain businessService:LogisticsService ;
+  rdfs:domain businessService:Consigment ;
   rdfs:label "Used package" ;
   rdfs:range DigitalTwin:Package ;
 .
@@ -703,4 +697,9 @@ LogisticsRoles:LogisticsRoles
       owl:onDataRange xsd:string ;
       owl:onProperty businessService:logisticsRoleName ;
     ] ;
+.
+DigitalTwin:goodsTypeCode a owl:ObjectProperty;
+.
+
+DigitalTwin:numberofPackages a owl:DatatypeProperty;
 .
