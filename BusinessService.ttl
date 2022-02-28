@@ -589,7 +589,6 @@ businessService:itineraryID
 businessService:logisticsRoleID
   a owl:DatatypeProperty ;
   rdfs:comment "Each logistics role is assigned an unique ID" ;
-  rdfs:domain LogisticsRoles:ActorRoles ;
   rdfs:label "Logistics Role ID" ;
   rdfs:range xsd:string ;
 .
