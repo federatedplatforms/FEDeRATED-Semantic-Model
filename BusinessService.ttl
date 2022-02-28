@@ -662,7 +662,6 @@ businessService:usedPackagedProducts
 businessService:usedTransportEquipment
   a owl:ObjectProperty ;
   rdfs:comment "Transport equipment involved with the logistics service" ;
-  rdfs:domain businessService:LogisticsService ;
   rdfs:label "Used transport equipment" ;
   rdfs:range DigitalTwin:Equipment ;
 .
