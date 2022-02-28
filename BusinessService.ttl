@@ -649,7 +649,6 @@ businessService:usedGoods
 businessService:usedPackage
   a owl:ObjectProperty ;
   rdfs:comment "Package that is part of the logistics service" ;
-  rdfs:domain businessService:Consigment ;
   rdfs:label "Used package" ;
   rdfs:range DigitalTwin:Package ;
 .
