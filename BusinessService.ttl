@@ -646,7 +646,6 @@ businessService:transportServiceDurationAverage
 businessService:usedGoods
   a owl:ObjectProperty ;
   rdfs:comment "Goods that are part of the logistics service" ;
-  rdfs:domain businessService:LogisticsService ;
   rdfs:label "Used goods" ;
   rdfs:range DigitalTwin:Goods ;
 .
