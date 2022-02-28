@@ -595,10 +595,8 @@ businessService:logisticsRoleID
 businessService:logisticsRoleName
   a owl:DatatypeProperty ;
   rdfs:comment "Each logistics role has a unique name" ;
-  rdfs:domain LogisticsRoles:ActorRoles ;
   rdfs:label "Logistics Role Name" ;
   rdfs:range xsd:string ;
-  owl:equivalentProperty businessService:actorName ;
 .
 businessService:partOfTransportMovementType
   a owl:ObjectProperty ;
