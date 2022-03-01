@@ -311,7 +311,7 @@ LogisticsRoles:Issuer
 LogisticsRoles:LocationRoles
   a owl:Class ;
   a sh:NodeShape ;
-  rdfs:comment "An location such as hub or port can have different roles depending on the context. This class defines these different roles." ;
+  rdfs:comment "A location such as hub or port can have different roles depending on the context. This class defines these different roles." ;
   rdfs:label "Location Roles" ;
   rdfs:subClassOf [
       a owl:Restriction ;
