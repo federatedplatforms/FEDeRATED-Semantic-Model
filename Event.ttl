@@ -25,7 +25,7 @@
   dcterms:requires <https://ontology.tno.nl/logistics/federated/BusinessService> ;
   dcterms:requires <https://ontology.tno.nl/logistics/federated/DigitalTwin> ;
   dcterms:requires <https://ontology.tno.nl/logistics/federated/PhysicalInfrastructure> ;
-  owl:imports <https://ontology.tno.nl/logistics/federated/BusinessService> ;
+  #owl:imports <https://ontology.tno.nl/logistics/federated/BusinessService> ;
   owl:versionIRI <https://ontology.tno.nl/logistics/federated/Eventv-0.1> ;
 .
 Event:ATAEvent
@@ -177,7 +177,7 @@ Event:Expected
 .
 Event:GoodsDischargeEvent
   a owl:Class ;
-  rdfs:label "Goods Load Event" ;
+  rdfs:label "Goods Discharge Event" ;
   rdfs:subClassOf Event:DischargeEvent ;
   rdfs:subClassOf Event:GoodsTransportEvent ;
 .
