@@ -588,12 +588,14 @@ businessService:itineraryID
 .
 businessService:logisticsRoleID
   a owl:DatatypeProperty ;
+  rdfs:domain LogisticsRoles:LogisticsRoles ;
   rdfs:comment "Each logistics role is assigned an unique ID" ;
   rdfs:label "Logistics Role ID" ;
   rdfs:range xsd:string ;
 .
 businessService:logisticsRoleName
   a owl:DatatypeProperty ;
+  rdfs:domain LogisticsRoles:LogisticsRoles ;
   rdfs:comment "Each logistics role has a unique name" ;
   rdfs:label "Logistics Role Name" ;
   rdfs:range xsd:string ;
