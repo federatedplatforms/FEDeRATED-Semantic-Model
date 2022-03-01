@@ -534,9 +534,7 @@ LogisticsRoles:WarehouseOperator
 .
 LogisticsRoles:involves
   a owl:ObjectProperty ;
-  rdfs:domain LogisticsRoles:ActorRoles ;
   rdfs:label "Involves" ;
-  rdfs:range BusinessService:LegalPerson ;
 .
 LogisticsRoles:isAbout
   a owl:ObjectProperty ;
