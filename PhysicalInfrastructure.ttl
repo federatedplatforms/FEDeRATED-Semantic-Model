@@ -56,6 +56,18 @@ pi:City
   rdfs:comment "A city is one of the various subtypes of Location." ;
   rdfs:label "City" ;
   rdfs:subClassOf pi:Location ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onDataRange xsd:string ;
+      owl:onProperty pi:cityLoCode ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onDataRange xsd:string ;
+      owl:onProperty pi:postalCode ;
+    ] ;
 .
 pi:Corridor
   a owl:Class ;
@@ -69,6 +81,18 @@ pi:Country
   rdfs:comment "A Country is a geographic division with national borders." ;
   rdfs:label "Country" ;
   rdfs:subClassOf pi:Location ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onDataRange xsd:string ;
+      owl:onProperty pi:countryName ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onDataRange xsd:string ;
+      owl:onProperty pi:countryISOCode ;
+    ] ;
 .
 pi:DropOffLocation
   a owl:Class ; 
@@ -140,30 +164,6 @@ pi:Location
       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
       owl:onDataRange xsd:decimal ;
       owl:onProperty pi:Long ;
-    ] ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onDataRange xsd:string ;
-      owl:onProperty pi:cityLoCode ;
-    ] ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onDataRange xsd:string ;
-      owl:onProperty pi:countryISOCode ;
-    ] ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onDataRange xsd:string ;
-      owl:onProperty pi:countryName ;
-    ] ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onDataRange xsd:string ;
-      owl:onProperty pi:postalCode ;
     ] ;
 .
 pi:LocationCoordinate
@@ -301,7 +301,7 @@ pi:cityName
 pi:countryISOCode
   a owl:DatatypeProperty ;
   rdfs:comment "This property identifies a country following the ISO2 codelist standard." ;
-  rdfs:domain pi:Location ;
+  rdfs:domain pi:Country ;
   rdfs:label "Country Code ISO2" ;
   rdfs:range xsd:string ;
   rdfs:subPropertyOf pi:locationProperties ;
@@ -309,7 +309,7 @@ pi:countryISOCode
 pi:countryISOCodeAlpha3
   a owl:DatatypeProperty ;
   rdfs:comment "ISO 3166-1 alpha-3 codes are three-letter country codes defined in ISO 3166-1, part of the ISO 3166 standard published by the International Organization for Standardization (ISO), to represent countries, dependent territories, and special areas of geographical interest" ;
-  rdfs:domain pi:Location ;
+  rdfs:domain pi:Country ;
   rdfs:label "country ISOCode Alpha3" ;
   rdfs:range xsd:string ;
   rdfs:subPropertyOf pi:locationProperties ;
@@ -317,7 +317,7 @@ pi:countryISOCodeAlpha3
 pi:countryISOCodeNumeric
   a owl:DatatypeProperty ;
   rdfs:comment "Numeric country ISOCode" ;
-  rdfs:domain pi:Location ;
+  rdfs:domain pi:Country ;
   rdfs:label "country ISOCode Numeric" ;
   rdfs:range xsd:string ;
   rdfs:subPropertyOf pi:locationProperties ;
@@ -325,7 +325,7 @@ pi:countryISOCodeNumeric
 pi:countryName
   a owl:DatatypeProperty ;
   rdfs:comment "This property contains the human readable name of the country where the specified location is located in." ;
-  rdfs:domain pi:Location ;
+  rdfs:domain pi:Country ;
   rdfs:label "Country Name" ;
   rdfs:range xsd:string ;
   rdfs:subPropertyOf pi:locationProperties ;
@@ -458,7 +458,7 @@ pi:portSecurityLevel
 pi:postalCode
   a owl:DatatypeProperty ;
   rdfs:comment "This property specific the postal code or ZIP code of the location involved." ;
-  rdfs:domain pi:Location ;
+  rdfs:domain pi:City ;
   rdfs:label "Postal Code" ;
   rdfs:range xsd:string ;
   rdfs:subPropertyOf pi:locationProperties ;
