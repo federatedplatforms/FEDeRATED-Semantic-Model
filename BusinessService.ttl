@@ -586,13 +586,6 @@ businessService:itineraryID
   rdfs:range xsd:string ;
   skos:altLabel "voyageID" ;
 .
-businessService:logisticsRoleID
-  a owl:DatatypeProperty ;
-  rdfs:domain LogisticsRoles:LogisticsRoles ;
-  rdfs:comment "Each logistics role is assigned an unique ID" ;
-  rdfs:label "Logistics Role ID" ;
-  rdfs:range xsd:string ;
-.
 businessService:logisticsRoleName
   a owl:DatatypeProperty ;
   rdfs:domain LogisticsRoles:LogisticsRoles ;
@@ -680,20 +673,7 @@ businessService:usedTransportModality
   rdfs:label "Used transport modality" ;
   rdfs:range Classifications:TransportModality ;
 .
-LogisticsRoles:LogisticsRoles
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onDataRange xsd:string ;
-      owl:onProperty businessService:logisticsRoleID ;
-    ] ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onDataRange xsd:string ;
-      owl:onProperty businessService:logisticsRoleName ;
-    ] ;
-.
+
 DigitalTwin:goodsTypeCode a owl:ObjectProperty;
 .
 

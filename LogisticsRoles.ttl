@@ -346,6 +346,12 @@ LogisticsRoles:LogisticsRoles
   rdfs:comment "Logistics roles that describe the different functions of companies during transportation." ;
   rdfs:label "Logistics Roles" ;
   rdfs:subClassOf LogisticsRoles:ActorRoles ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onDataRange xsd:string ;
+      owl:onProperty businessService:logisticsRoleName ;
+    ] ;
 .
 LogisticsRoles:NotifyParty
   a owl:Class ;
