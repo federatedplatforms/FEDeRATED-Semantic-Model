@@ -1,5 +1,5 @@
 # baseURI: https://ontology.tno.nl/logistics/federated/PhysicalInfrastructure
-# imports: http://www.geonames.org/ontology
+# imports: http://www.w3.org/2003/01/geo/wgs84_pos
 # prefix: pi
 
 @prefix : <https://ontology.tno.nl/logistics/federated/PhysicalInfrastructure#> .
@@ -24,7 +24,7 @@
   dcterms:issued "2021-03-15" ;
   dcterms:language "en" ;
   dcterms:requires <https://ontology.tno.nl/logistics/federated/Classifications> ;
-  #owl:imports <http://www.geonames.org/ontology> ;
+  owl:imports <http://www.w3.org/2003/01/geo/wgs84_pos> ;
   owl:versionIRI <https://ontology.tno.nl/logistics/federated/PhysicalInfrastructurev-0.1> ;
 .
 pi:Airport
@@ -32,6 +32,10 @@ pi:Airport
   rdfs:comment "Location where airplanes pick or drop off freight." ;
   rdfs:label "Airport" ;
   rdfs:subClassOf pi:LogisticalFunction ;
+.
+pi:Airport_1
+  a pi:Airport ;
+  rdfs:label "Airport 1" ;
 .
 pi:Anchorage
   a owl:Class ;
@@ -85,16 +89,15 @@ pi:Country
       a owl:Restriction ;
       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
       owl:onDataRange xsd:string ;
-      owl:onProperty pi:countryName ;
+      owl:onProperty pi:countryISOCode ;
     ] ;
   rdfs:subClassOf [
       a owl:Restriction ;
       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
       owl:onDataRange xsd:string ;
-      owl:onProperty pi:countryISOCode ;
+      owl:onProperty pi:countryName ;
     ] ;
 .
-
 pi:Gate
   a owl:Class ;
   rdfs:comment "An interface between road and air." ;
@@ -149,7 +152,8 @@ pi:Location
   a owl:Class ;
   rdfs:comment "A geographical location where several objects with various logistical functions may be." ;
   rdfs:label "Location" ;
-  rdfs:subClassOf <http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing> , <https://schema.org/Place> ;
+  rdfs:subClassOf <http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing> ;
+  rdfs:subClassOf <https://schema.org/Place> ;
   rdfs:subClassOf [
       a owl:Restriction ;
       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
@@ -195,7 +199,6 @@ pi:Long
   rdfs:range xsd:decimal ;
   rdfs:subPropertyOf pi:LocationCoordinate ;
 .
-
 pi:Platform
   a owl:Class ;
   rdfs:comment "An interface to or from the Railway modality." ;
@@ -282,6 +285,13 @@ pi:cityName
   a owl:DatatypeProperty ;
   rdfs:label "Has Manager" ;
   rdfs:subPropertyOf pi:locationProperties ;
+.
+pi:containsLogisticalInterface
+  a owl:ObjectProperty ;
+  rdfs:comment "Each object with a logistical function contains some interfaces where the logistic modality may change." ;
+  rdfs:domain pi:LogisticalFunction ;
+  rdfs:label "contains logistical interface" ;
+  rdfs:range pi:LogisticalInterface ;
 .
 pi:countryISOCode
   a owl:DatatypeProperty ;
@@ -374,7 +384,7 @@ pi:locatedAt
   rdfs:comment "This property specifies the geographical location that a Logistical Function has." ;
   rdfs:domain pi:LogisticalFunction ;
   rdfs:label "Located At" ;
-  rdfs:range pi:Location ;
+  rdfs:range <http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing> ;
 .
 pi:locationProperties
   a owl:DatatypeProperty ;
@@ -389,7 +399,6 @@ pi:logisticalFunctionProperties
   rdfs:label "Logistical Function Properties" ;
   rdfs:range xsd:anySimpleType ;
 .
-
 pi:portNumber
   a owl:DatatypeProperty ;
   rdfs:comment "The identification number associated with a specific port." ;
