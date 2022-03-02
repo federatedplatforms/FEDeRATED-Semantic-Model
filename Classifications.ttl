@@ -73,6 +73,7 @@ classifications:D
   rdfs:label "Dangerous" ;
 .
 classifications:D_1
+  a classifications:NatureOfCargo ;
   rdfs:label "Reefer" ;
 .
 classifications:DangerousGoods
@@ -159,7 +160,7 @@ as it appears for transport is also specified.""" ;
   rdfs:subClassOf [
       a owl:Restriction ;
       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onDataRange xsd:string ;
+      owl:onDataRange xsd:integer ;
       owl:onProperty classifications:packageTypeNumericCode ;
     ] ;
 .
@@ -245,6 +246,7 @@ classifications:containers
 classifications:dangerousGoodsClassification
   a owl:ObjectProperty ;
   rdfs:domain DigitalTwin:Goods ;
+  rdfs:label "Dangerous Goods Classification" ;
   rdfs:range classifications:DangerousGoods ;
 .
 classifications:dangerousGoodsRegulationCode
@@ -257,13 +259,13 @@ classifications:dangerousGoodsRegulationCode
 classifications:generalCargo
   a classifications:CargoType ;
   rdfs:comment "Contrary to mass or bulk goods, general cargo comprises materials of which the quantity is not registered per size or weight  but per individual item. General cargo is transported in boxes, crates, drums or bales. Examples of general cargo are cars, paper, kerbstone and machinery." ;
-  rdfs:label "visualisation" ;
+  rdfs:label "general cargo" ;
 .
 classifications:hazmatName
   a owl:DatatypeProperty ;
   rdfs:comment "Goods that are classified as dangerous are described in more detail using the hazardous materials UN code system. This is the corresponding name of the applicable UN code." ;
   rdfs:domain classifications:DangerousGoods ;
-  rdfs:label "Dangerous Goods" ;
+  rdfs:label "Hazmat Name" ;
   rdfs:range xsd:string ;
 .
 classifications:hazmatUNCode
@@ -296,7 +298,7 @@ classifications:packageTypeNumericCode
 .
 classifications:pallets
   a classifications:CargoType ;
-  rdfs:label "Number of TEU" ;
+  rdfs:label "pallets" ;
 .
 classifications:transportMovementCode
   a owl:DatatypeProperty ;
@@ -309,6 +311,6 @@ classifications:transportMovementID
   a owl:DatatypeProperty ;
   rdfs:comment "The ID of the transport movement type." ;
   rdfs:domain classifications:TransportMovementType ;
-  rdfs:label "Transport Movement Code" ;
+  rdfs:label "Transport Movement ID" ;
   rdfs:range xsd:string ;
 .
