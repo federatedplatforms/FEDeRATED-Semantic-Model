@@ -176,7 +176,7 @@ DigitalTwin:Goods
       a owl:Restriction ;
       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
       owl:onDataRange xsd:int ;
-      owl:onProperty DigitalTwin:grossMass ;
+      owl:onProperty DigitalTwin:hasGrossMass ;
     ] ;
   rdfs:subClassOf [
       a owl:Restriction ;
@@ -623,14 +623,6 @@ DigitalTwin:goodsWeight
   rdfs:range xsd:integer ;
   rdfs:subPropertyOf DigitalTwin:PhysicalObjectProperties ;
 .
-DigitalTwin:grossMass
-  a owl:DatatypeProperty ;
-  rdfs:domain DigitalTwin:PhysicalObject ;
-  rdfs:label "Gross Mass" ;
-  rdfs:range xsd:integer ;
-  rdfs:subPropertyOf DigitalTwin:PhysicalObjectProperties ;
-  skos:altLabel "Verified Gross Mass" ;
-.
 DigitalTwin:grossWeight
   a owl:DatatypeProperty ;
   rdfs:domain DigitalTwin:PhysicalObject ;
@@ -651,9 +643,17 @@ DigitalTwin:hasDocumentType
   rdfs:label "has Documnet Type" ;
   rdfs:range classifications:DocumentType ;
 .
+DigitalTwin:hasGrossMass
+  a owl:DatatypeProperty ;
+  rdfs:domain DigitalTwin:PhysicalObject ;
+  rdfs:label "Has Gross Mass" ;
+  rdfs:range xsd:integer ;
+  rdfs:subPropertyOf DigitalTwin:PhysicalObjectProperties ;
+  skos:altLabel "Verified Gross Mass" ;
+.
 DigitalTwin:hasLicensePlateNumber
   a owl:DatatypeProperty ;
-  rdfs:domain DigitalTwin:TransportMeans ;
+  rdfs:domain DigitalTwin:Truck ;
   rdfs:label "License Plate Number" ;
   rdfs:range xsd:string ;
   rdfs:subPropertyOf DigitalTwin:transportMeansProperties ;
@@ -699,7 +699,7 @@ DigitalTwin:hasUnitsOfMeasure
 .
 DigitalTwin:hasVIN
   a owl:DatatypeProperty ;
-  rdfs:domain DigitalTwin:TransportMeans ;
+  rdfs:domain DigitalTwin:Truck ;
   rdfs:label "has VIN" ;
   rdfs:range xsd:integer ;
   rdfs:subPropertyOf DigitalTwin:transportMeansProperties ;
