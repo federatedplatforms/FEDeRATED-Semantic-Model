@@ -46,13 +46,6 @@ LogisticsRoles:ActorRoles
       owl:onProperty LogisticsRoles:isAbout ;
     ] ;
 .
-LogisticsRoles:ArrivalLocation
-  a owl:Class ;
-  a sh:NodeShape ;
-  rdfs:comment "A place of a call of a transport means following (in time) the last place of departure (milestone value is departure)" ;
-  rdfs:label "Arrival Location Role" ;
-  rdfs:subClassOf LogisticsRoles:LocationRoles ;
-.
 LogisticsRoles:Authority
   a owl:Class ;
   a sh:NodeShape ;
@@ -66,14 +59,6 @@ LogisticsRoles:Bank
   rdfs:comment "A financial institution licensed to receive deposits and make loans." ;
   rdfs:label "Bank" ;
   rdfs:subClassOf LogisticsRoles:FinancialRoles ;
-.
-LogisticsRoles:BorderCrossingPlace
-  a owl:Class ;
-  a sh:NodeShape ;
-  rdfs:comment "A place where a new customs domain is entered by a transport means during its itinerary." ;
-  rdfs:label "Border Crossing Place Role" ;
-  rdfs:subClassOf LogisticsRoles:LocationRoles ;
-  ReusableTags:isDerived true ;
 .
 LogisticsRoles:BusinessRoles
   a owl:Class ;
@@ -208,13 +193,6 @@ LogisticsRoles:DeliveryParty
   rdfs:label "Delivery Party" ;
   rdfs:subClassOf LogisticsRoles:LogisticsRoles ;
 .
-LogisticsRoles:DepartureLocation
-  a owl:Class ;
-  a sh:NodeShape ;
-  rdfs:comment "The first place of call of a transport means or a place of call of a transport means following arrival." ;
-  rdfs:label "Departure Location Role" ;
-  rdfs:subClassOf LogisticsRoles:LocationRoles ;
-.
 LogisticsRoles:DispatchParty
   a owl:Class ;
   a sh:NodeShape ;
@@ -268,13 +246,6 @@ LogisticsRoles:Importer
   rdfs:comment "Name and address of party who makes - or on whose behalf a Customs clearing agent or other authorized person makes - an import declaration. This may include a person who has possession of the goods or to whom the goods are consigned." ;
   rdfs:label "Importer" ;
   rdfs:subClassOf LogisticsRoles:BusinessRoles ;
-.
-LogisticsRoles:InlandTerminal
-  a owl:Class ;
-  a sh:NodeShape ;
-  rdfs:comment "An inland terminal serves as a transshipment connection for seacargo to inland destinations." ;
-  rdfs:label "Inland Terminal Role" ;
-  rdfs:subClassOf LogisticsRoles:LocationRoles ;
 .
 LogisticsRoles:Insurer
   a owl:Class ;
@@ -393,6 +364,21 @@ LogisticsRoles:PlaceOfAcceptance
   rdfs:label "Place of Acceptance Role" ;
   rdfs:subClassOf LogisticsRoles:LocationRoles ;
 .
+LogisticsRoles:PlaceOfArrival
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:comment "A place of a call of a transport means following (in time) the last place of departure (milestone value is departure)" ;
+  rdfs:label "Arrival Location Role" ;
+  rdfs:subClassOf LogisticsRoles:LocationRoles ;
+.
+LogisticsRoles:PlaceOfBorderCrossing
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:comment "A place where a new customs domain is entered by a transport means during its itinerary." ;
+  rdfs:label "Border Crossing Place Role" ;
+  rdfs:subClassOf LogisticsRoles:LocationRoles ;
+  ReusableTags:isDerived true ;
+.
 LogisticsRoles:PlaceOfCall
   a owl:Class ;
   a sh:NodeShape ;
@@ -411,6 +397,8 @@ LogisticsRoles:PlaceOfDeparture
   a owl:Class ;
   a sh:NodeShape ;
   rdfs:comment "A place where a transport means arrived (milestone value: arrival) and is able to depart." ;
+  rdfs:comment "The first place of call of a transport means or a place of call of a transport means following arrival." ;
+  rdfs:label "Departure Location Role" ;
   rdfs:label "Place of Departure Role" ;
   rdfs:subClassOf LogisticsRoles:LocationRoles ;
 .
@@ -428,6 +416,12 @@ LogisticsRoles:PlaceOfLoading
   rdfs:label "Place of Loading Role" ;
   rdfs:subClassOf LogisticsRoles:LocationRoles ;
   ReusableTags:isDerived true ;
+.
+LogisticsRoles:PlaceOfReceipt
+  a owl:Class ;
+  rdfs:comment "A place of receipt is the place where the cargo is offered for transport by a business transaction to the service provider that is the carrier and has to be transported by that carrier to the place of loading of the main transport. The cargo has to be at that location." ;
+  rdfs:label "Place of Receipt" ;
+  rdfs:subClassOf LogisticsRoles:LocationRoles ;
 .
 LogisticsRoles:PlaceOfStripping
   a owl:Class ;

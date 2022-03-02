@@ -1,5 +1,5 @@
 # baseURI: https://ontology.tno.nl/logistics/federated/PhysicalInfrastructure
-# imports: http://www.geonames.org/ontology
+# imports: http://www.w3.org/2003/01/geo/wgs84_pos
 # prefix: pi
 
 @prefix : <https://ontology.tno.nl/logistics/federated/PhysicalInfrastructure#> .
@@ -24,7 +24,7 @@
   dcterms:issued "2021-03-15" ;
   dcterms:language "en" ;
   dcterms:requires <https://ontology.tno.nl/logistics/federated/Classifications> ;
-  #owl:imports <http://www.geonames.org/ontology> ;
+  owl:imports <http://www.w3.org/2003/01/geo/wgs84_pos> ;
   owl:versionIRI <https://ontology.tno.nl/logistics/federated/PhysicalInfrastructurev-0.1> ;
 .
 pi:Airport
@@ -32,6 +32,10 @@ pi:Airport
   rdfs:comment "Location where airplanes pick or drop off freight." ;
   rdfs:label "Airport" ;
   rdfs:subClassOf pi:LogisticalFunction ;
+.
+pi:Airport_1
+  a pi:Airport ;
+  rdfs:label "Airport 1" ;
 .
 pi:Anchorage
   a owl:Class ;
@@ -85,18 +89,14 @@ pi:Country
       a owl:Restriction ;
       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
       owl:onDataRange xsd:string ;
-      owl:onProperty pi:countryName ;
+      owl:onProperty pi:countryISOCode ;
     ] ;
   rdfs:subClassOf [
       a owl:Restriction ;
       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
       owl:onDataRange xsd:string ;
-      owl:onProperty pi:countryISOCode ;
+      owl:onProperty pi:countryName ;
     ] ;
-.
-pi:DropOffLocation
-  a owl:Class ; 
-  rdfs:label "Drop Off Location" ;
 .
 pi:Gate
   a owl:Class ;
@@ -152,7 +152,8 @@ pi:Location
   a owl:Class ;
   rdfs:comment "A geographical location where several objects with various logistical functions may be." ;
   rdfs:label "Location" ;
-  rdfs:subClassOf <http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing> , <https://schema.org/Place> ;
+  rdfs:subClassOf <http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing> ;
+  rdfs:subClassOf <https://schema.org/Place> ;
   rdfs:subClassOf [
       a owl:Restriction ;
       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
@@ -197,19 +198,6 @@ pi:Long
   rdfs:label "Longitude" ;
   rdfs:range xsd:decimal ;
   rdfs:subPropertyOf pi:LocationCoordinate ;
-.
-pi:PickUpLocation
-  a owl:Class ;
-  rdfs:label "Pickup Location" ;
-.
-pi:PlaceOfArrival
-  a owl:Class ;
-  rdfs:comment "A place of a call of a transport means following (in time) the last place of departure (milestone value is departure)" ;
-  rdfs:label "Place of Arrival" ;
-.
-pi:PlaceOfCall
-  a owl:Class ;
-  rdfs:label "Place of Call" ;
 .
 pi:Platform
   a owl:Class ;
@@ -297,6 +285,13 @@ pi:cityName
   a owl:DatatypeProperty ;
   rdfs:label "Has Manager" ;
   rdfs:subPropertyOf pi:locationProperties ;
+.
+pi:containsLogisticalInterface
+  a owl:ObjectProperty ;
+  rdfs:comment "Each object with a logistical function contains some interfaces where the logistic modality may change." ;
+  rdfs:domain pi:LogisticalFunction ;
+  rdfs:label "contains logistical interface" ;
+  rdfs:range pi:LogisticalInterface ;
 .
 pi:countryISOCode
   a owl:DatatypeProperty ;
@@ -389,7 +384,7 @@ pi:locatedAt
   rdfs:comment "This property specifies the geographical location that a Logistical Function has." ;
   rdfs:domain pi:LogisticalFunction ;
   rdfs:label "Located At" ;
-  rdfs:range pi:Location ;
+  rdfs:range <http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing> ;
 .
 pi:locationProperties
   a owl:DatatypeProperty ;
@@ -403,41 +398,6 @@ pi:logisticalFunctionProperties
   rdfs:domain pi:LogisticalFunction ;
   rdfs:label "Logistical Function Properties" ;
   rdfs:range xsd:anySimpleType ;
-.
-pi:placeOfAcceptance
-  a owl:Class ;
-  rdfs:comment "Place at which the goods are taken over by the carrier." ;
-  rdfs:label "Place of Acceptance" ;
-.
-pi:placeOfBorderCrossing
-  a owl:Class ;
-  rdfs:comment "A place where a new customs domain is entered by a transport means during its itinerary " ;
-  rdfs:label "Place of Border Crossing" ;
-.
-pi:placeOfDelivery
-  a owl:Class ;
-  rdfs:comment "Place to which the goods are to be finally delivered under transport contract terms (operational term)." ;
-  rdfs:label "Place of Delivery" ;
-.
-pi:placeOfDeparture
-  a owl:Class ;
-  rdfs:comment "A place where a transport means arrived (milestone value: arrival) and is able to depart." ;
-  rdfs:label "Place of Departure" ;
-.
-pi:placeOfLoading
-  a owl:Class ;
-  rdfs:comment "Seaport, airport, freight terminal, rail station or other place at which the goods (cargo) are loaded on to the means of transport being used for their carriage." ;
-  rdfs:label "Place of Loading" ;
-.
-pi:placeOfReceipt
-  a owl:Class ;
-  rdfs:comment "A place of receipt is the place where the cargo is offered for transport by a business transaction to the service provider that is the carrier and has to be transported by that carrier to the place of loading of the main transport. The cargo has to be at that location." ;
-  rdfs:label "Place of Receipt" ;
-.
-pi:placeOfUnloading
-  a owl:Class ;
-  rdfs:comment "A place of unloading is the place to where the cargo has to be transported by a business transaction to the service provider that is the carrier and will be discharged/unloaded from that transport means. The cargo and the transport means have to be at that location." ;
-  rdfs:label "Place of Unloading" ;
 .
 pi:portNumber
   a owl:DatatypeProperty ;
