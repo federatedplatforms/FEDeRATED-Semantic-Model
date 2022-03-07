@@ -1,5 +1,4 @@
 # baseURI: https://ontology.tno.nl/logistics/federated/BusinessService
-# imports: https://ontology.tno.nl/logistics/federated/LogisticsRoles
 # prefix: businessService
 
 @prefix : <https://ontology.tno.nl/logistics/federated/BusinessService#> .
@@ -29,8 +28,6 @@
   dcterms:language "en" ;
   dcterms:requires <https://ontology.tno.nl/logistics/federated/Classifications> ;
   dcterms:requires <https://ontology.tno.nl/logistics/federated/LogisticsRoles> ;
-  #owl:imports <https://ontology.tno.nl/logistics/federated/LogisticsRoles> ;
-  #owl:versionIRI <https://ontology.tno.nl/logistics/federated/BusinessServicev-0.1> ;
   owl:versionInfo "Created with TopBraid Composer" ;
 .
 businessService:Booking
@@ -72,6 +69,12 @@ businessService:Consignment
   rdfs:subClassOf [
       a owl:Restriction ;
       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onClass DigitalTwin:Equipment ;
+      owl:onProperty businessService:usedTransportEquipment ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
       owl:onClass DigitalTwin:Goods ;
       owl:onProperty businessService:usedGoods ;
     ] ;
@@ -80,12 +83,6 @@ businessService:Consignment
       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
       owl:onClass DigitalTwin:Package ;
       owl:onProperty businessService:usedPackage ;
-    ] ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onClass DigitalTwin:Equipment ;
-      owl:onProperty businessService:usedTransportEquipment ;
     ] ;
   rdfs:subClassOf [
       a owl:Restriction ;
@@ -158,6 +155,12 @@ businessService:LegalPerson
   rdfs:subClassOf [
       a owl:Restriction ;
       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onClass pi:Location ;
+      owl:onProperty businessService:actorAddress ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
       owl:onDataRange xsd:string ;
       owl:onProperty businessService:actorName ;
     ] ;
@@ -166,12 +169,6 @@ businessService:LegalPerson
       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
       owl:onDataRange xsd:string ;
       owl:onProperty businessService:actorWebsite ;
-    ] ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onClass pi:Location ;
-      owl:onProperty businessService:actorAddress ;
     ] ;
 .
 businessService:LogisticsService
@@ -249,6 +246,7 @@ businessService:Shipment
   a sh:NodeShape ;
   rdfs:comment "A shipment is a business transaction with a carrier for the transport of goods or containers from one location to another, where all goods and containers have to arrive in a given time period. This is similar to a consignment; however, it is always a carrier acting as service provider." ;
   rdfs:label "Shipment" ;
+  rdfs:subClassOf businessService:BusinessTransaction ;
   ReusableTags:isDerived true ;
 .
 businessService:StorageServiceCargo
@@ -588,8 +586,8 @@ businessService:itineraryID
 .
 businessService:logisticsRoleName
   a owl:DatatypeProperty ;
-  rdfs:domain LogisticsRoles:LogisticsRoles ;
   rdfs:comment "Each logistics role has a unique name" ;
+  rdfs:domain LogisticsRoles:LogisticsRoles ;
   rdfs:label "Logistics Role Name" ;
   rdfs:range xsd:string ;
 .
@@ -673,9 +671,9 @@ businessService:usedTransportModality
   rdfs:label "Used transport modality" ;
   rdfs:range Classifications:TransportModality ;
 .
-
-DigitalTwin:goodsTypeCode a owl:ObjectProperty;
+DigitalTwin:goodsTypeCode
+  a owl:ObjectProperty ;
 .
-
-DigitalTwin:numberofPackages a owl:DatatypeProperty;
+DigitalTwin:numberofPackages
+  a owl:DatatypeProperty ;
 .
