@@ -321,7 +321,7 @@ LogisticsRoles:LogisticsRoles
       a owl:Restriction ;
       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
       owl:onDataRange xsd:string ;
-      owl:onProperty businessService:logisticsRoleName ;
+      owl:onProperty BusinessService:logisticsRoleName ;
     ] ;
 .
 LogisticsRoles:NotifyParty
