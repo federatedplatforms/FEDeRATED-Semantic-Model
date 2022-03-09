@@ -9,7 +9,7 @@
 # imports: https://ontology.tno.nl/logistics/federated/DerivedConcepts
 # imports: https://ontology.tno.nl/logistics/federated/DigitalTwin
 # imports: https://ontology.tno.nl/logistics/federated/Event
-# imports: https://ontology.tno.nl/logistics/federated/LogisticsRoles
+# imports: https://ontology.tno.nl/logistics/federated/LogisticRoles
 # imports: https://ontology.tno.nl/logistics/federated/PhysicalInfrastructure
 # imports: https://ontology.tno.nl/logistics/federated/ReusableTags
 # prefix: profile
@@ -23,7 +23,7 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <http://ontology.tno.nl/profileExtension>
-  rdf:type owl:Ontology ;
+  a owl:Ontology ;
   owl:imports <http://purl.org/dc/elements/1.1/> ;
   owl:imports <http://purl.org/dc/terms/> ;
   owl:imports <http://topbraid.org/schema/schema-single-range> ;
@@ -34,7 +34,7 @@
   owl:imports <https://ontology.tno.nl/logistics/federated/DerivedConcepts> ;
   owl:imports <https://ontology.tno.nl/logistics/federated/DigitalTwin> ;
   owl:imports <https://ontology.tno.nl/logistics/federated/Event> ;
-  owl:imports <https://ontology.tno.nl/logistics/federated/LogisticsRoles> ;
+  owl:imports <https://ontology.tno.nl/logistics/federated/LogisticRoles> ;
   owl:imports <https://ontology.tno.nl/logistics/federated/PhysicalInfrastructure> ;
   owl:imports <https://ontology.tno.nl/logistics/federated/ReusableTags> ;
   owl:versionInfo "Created with TopBraid Composer" ;

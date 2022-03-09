@@ -384,7 +384,7 @@ businessService:involvedActor
 businessService:involvedAuthority
   a owl:ObjectProperty ;
   rdfs:label "involved authority" ;
-  rdfs:range LogisticsRoles:Authority ;
+  rdfs:range <https://ontology.tno.nl/logistics/federated/LogisticRoles#Authority> ;
   rdfs:subPropertyOf businessService:involvedCommercialActor ;
 .
 businessService:involvedBank
@@ -423,25 +423,25 @@ businessService:involvedConsumer
 businessService:involvedContactPerson
   a owl:ObjectProperty ;
   rdfs:label "involved contact person" ;
-  rdfs:range LogisticsRoles:ContactPerson ;
+  rdfs:range <https://ontology.tno.nl/logistics/federated/LogisticRoles#ContactPerson> ;
   rdfs:subPropertyOf businessService:involvedCommercialActor ;
 .
 businessService:involvedCustomer
   a owl:ObjectProperty ;
   rdfs:label "involved customer" ;
-  rdfs:range LogisticsRoles:Customer ;
+  rdfs:range <https://ontology.tno.nl/logistics/federated/LogisticRoles#Customer> ;
   rdfs:subPropertyOf businessService:involvedCommercialActor ;
 .
 businessService:involvedCustomsAuthority
   a owl:ObjectProperty ;
   rdfs:label "involved customs authority" ;
-  rdfs:range LogisticsRoles:CustomsAuthority ;
+  rdfs:range <https://ontology.tno.nl/logistics/federated/LogisticRoles#CustomsAuthority> ;
   rdfs:subPropertyOf businessService:involvedAuthority ;
 .
 businessService:involvedDeclarant
   a owl:ObjectProperty ;
   rdfs:label "involved declarant" ;
-  rdfs:range LogisticsRoles:Declarant ;
+  rdfs:range <https://ontology.tno.nl/logistics/federated/LogisticRoles#Declarant> ;
   rdfs:subPropertyOf businessService:involvedBusinessActor ;
 .
 businessService:involvedDeliveryParty
@@ -465,7 +465,7 @@ businessService:involvedEvent
 businessService:involvedExporter
   a owl:ObjectProperty ;
   rdfs:label "involved exporter" ;
-  rdfs:range LogisticsRoles:Exporter ;
+  rdfs:range <https://ontology.tno.nl/logistics/federated/LogisticRoles#Exporter> ;
   rdfs:subPropertyOf businessService:involvedBusinessActor ;
 .
 businessService:involvedFinancialActor
@@ -481,7 +481,7 @@ businessService:involvedForwarder
 businessService:involvedImporter
   a owl:ObjectProperty ;
   rdfs:label "involved importer" ;
-  rdfs:range LogisticsRoles:Importer ;
+  rdfs:range <https://ontology.tno.nl/logistics/federated/LogisticRoles#Importer> ;
   rdfs:subPropertyOf businessService:involvedBusinessActor ;
 .
 businessService:involvedInsurer
@@ -492,7 +492,7 @@ businessService:involvedInsurer
 businessService:involvedIssuer
   a owl:ObjectProperty ;
   rdfs:label "involved issuer" ;
-  rdfs:range LogisticsRoles:Issuer ;
+  rdfs:range <https://ontology.tno.nl/logistics/federated/LogisticRoles#Issuer> ;
   rdfs:subPropertyOf businessService:involvedBusinessActor ;
 .
 businessService:involvedLogisticsActor
@@ -528,7 +528,7 @@ businessService:involvedPayer
 businessService:involvedPortAuthority
   a owl:ObjectProperty ;
   rdfs:label "involved port authority" ;
-  rdfs:range LogisticsRoles:PortAuthority ;
+  rdfs:range <https://ontology.tno.nl/logistics/federated/LogisticRoles#PortAuthority> ;
   rdfs:subPropertyOf businessService:involvedAuthority ;
 .
 businessService:involvedProducer
@@ -544,7 +544,7 @@ businessService:involvedRetailer
 businessService:involvedSender
   a owl:ObjectProperty ;
   rdfs:label "involved sender" ;
-  rdfs:range LogisticsRoles:Sender ;
+  rdfs:range <https://ontology.tno.nl/logistics/federated/LogisticRoles#Sender> ;
   rdfs:subPropertyOf businessService:involvedBusinessActor ;
 .
 businessService:involvedServiceProvider
@@ -587,7 +587,7 @@ businessService:itineraryID
 businessService:logisticsRoleName
   a owl:DatatypeProperty ;
   rdfs:comment "Each logistics role has a unique name" ;
-  rdfs:domain LogisticsRoles:LogisticsRoles ;
+  rdfs:domain <https://ontology.tno.nl/logistics/federated/LogisticRoles#LogisticsRoles> ;
   rdfs:label "Logistics Role Name" ;
   rdfs:range xsd:string ;
 .
