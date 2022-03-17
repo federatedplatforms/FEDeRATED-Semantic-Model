@@ -47,7 +47,6 @@ businessService:BusinessTransaction
 .
 businessService:Consignment
   a owl:Class ;
-  a sh:NodeShape ;
   rdfs:comment "A consignment is a business transaction of a shipper as customer with a service provider (e.g. a carrier or forwarder) for the transport of goods or containers from one location to another, where all goods and containers have to arrive in a given time period. The time period indicates that the goods or containers can arrive with different transport means at different times, but they all have to present after the period has ended." ;
   rdfs:label "Consignment" ;
   rdfs:subClassOf businessService:BusinessTransaction ;
@@ -310,19 +309,12 @@ businessService:bookingNumber
   rdfs:label "Booking number" ;
   rdfs:range xsd:string ;
 .
-businessService:bookingStatus
+businessService:HasBookingStatus
   a owl:ObjectProperty ;
-  rdfs:comment "if the booking is active, canceled, or combined" ;
+  rdfs:comment "The relationship between booking and booking status" ;
   rdfs:domain businessService:Booking ;
   rdfs:label "Booking Status" ;
-  rdfs:range [
-      a rdfs:Datatype ;
-      owl:oneOf (
-          "active"
-          "canceled"
-          "combined"
-        ) ;
-    ] ;
+  rdfs:range businessService:BookingStatus;
 .
 businessService:consignmentCreationTime
   a owl:DatatypeProperty ;
@@ -338,14 +330,10 @@ businessService:consignmentUpdateTime
   rdfs:label "consignment Update Time" ;
   rdfs:range xsd:dateTime ;
 .
-businessService:contractCarriageCondition
-  a owl:DatatypeProperty ;
-  rdfs:domain businessService:BusinessTransaction ;
-  rdfs:label "Contract Carriage Condition" ;
-.
+
 businessService:createdBy
   a owl:DatatypeProperty ;
-  rdfs:comment "creator of Business Transaction and its types for example booking" ;
+  rdfs:comment "Creator of business transaction and its types for example booking" ;
   rdfs:domain businessService:BusinessTransaction ;
   rdfs:label "Created By" ;
   rdfs:range xsd:string ;
@@ -366,6 +354,7 @@ businessService:hasSequenceNumber
   a owl:DatatypeProperty ;
   rdfs:domain businessService:BusinessTransaction ;
   rdfs:label "Has Sequence Number" ;
+  rdfs:comment "The relationship between the business transaction and its sequence number expressed as a string" ;
   rdfs:range xsd:string ;
 .
 businessService:hasService
@@ -377,7 +366,7 @@ businessService:hasService
 .
 businessService:involvedActor
   a owl:ObjectProperty ;
-  rdfs:comment "An Enterprise, Person or Organization can have different roles depending on the context. This property and its subproperties define the different roles that Legal Persons can play in the context of a business transaction." ;
+  rdfs:comment "An Enterprise, Person or Organization can have different roles depending on the context. This property and its subproperties define the different roles that legal persons can play in the context of a business transaction." ;
   rdfs:domain businessService:BusinessTransaction ;
   rdfs:label "Involved actor" ;
   rdfs:range businessService:LegalPerson ;
@@ -386,7 +375,6 @@ businessService:involvedActor
 businessService:involvedAuthority
   a owl:ObjectProperty ;
   rdfs:label "involved authority" ;
-  rdfs:range LogisticsRoles:Authority ;
   rdfs:subPropertyOf businessService:involvedCommercialActor ;
 .
 businessService:involvedBank
@@ -425,7 +413,6 @@ businessService:involvedConsumer
 businessService:involvedContactPerson
   a owl:ObjectProperty ;
   rdfs:label "involved contact person" ;
-  rdfs:range LogisticsRoles:ContactPerson ;
   rdfs:subPropertyOf businessService:involvedCommercialActor ;
 .
 businessService:involvedCustomer
@@ -437,13 +424,11 @@ businessService:involvedCustomer
 businessService:involvedCustomsAuthority
   a owl:ObjectProperty ;
   rdfs:label "involved customs authority" ;
-  rdfs:range LogisticsRoles:CustomsAuthority ;
   rdfs:subPropertyOf businessService:involvedAuthority ;
 .
 businessService:involvedDeclarant
   a owl:ObjectProperty ;
   rdfs:label "involved declarant" ;
-  rdfs:range LogisticsRoles:Declarant ;
   rdfs:subPropertyOf businessService:involvedBusinessActor ;
 .
 businessService:involvedDeliveryParty
@@ -467,7 +452,6 @@ businessService:involvedEvent
 businessService:involvedExporter
   a owl:ObjectProperty ;
   rdfs:label "involved exporter" ;
-  rdfs:range LogisticsRoles:Exporter ;
   rdfs:subPropertyOf businessService:involvedBusinessActor ;
 .
 businessService:involvedFinancialActor
@@ -483,7 +467,6 @@ businessService:involvedForwarder
 businessService:involvedImporter
   a owl:ObjectProperty ;
   rdfs:label "involved importer" ;
-  rdfs:range LogisticsRoles:Importer ;
   rdfs:subPropertyOf businessService:involvedBusinessActor ;
 .
 businessService:involvedInsurer
@@ -494,7 +477,6 @@ businessService:involvedInsurer
 businessService:involvedIssuer
   a owl:ObjectProperty ;
   rdfs:label "involved issuer" ;
-  rdfs:range LogisticsRoles:Issuer ;
   rdfs:subPropertyOf businessService:involvedBusinessActor ;
 .
 businessService:involvedLogisticsActor
@@ -530,7 +512,6 @@ businessService:involvedPayer
 businessService:involvedPortAuthority
   a owl:ObjectProperty ;
   rdfs:label "involved port authority" ;
-  rdfs:range LogisticsRoles:PortAuthority ;
   rdfs:subPropertyOf businessService:involvedAuthority ;
 .
 businessService:involvedProducer
@@ -546,7 +527,6 @@ businessService:involvedRetailer
 businessService:involvedSender
   a owl:ObjectProperty ;
   rdfs:label "involved sender" ;
-  rdfs:range LogisticsRoles:Sender ;
   rdfs:subPropertyOf businessService:involvedBusinessActor ;
 .
 businessService:involvedServiceProvider
@@ -672,6 +652,27 @@ businessService:usedTransportModality
   rdfs:domain businessService:TransportService ;
   rdfs:label "Used transport modality" ;
   rdfs:range Classifications:TransportModality ;
+.
+
+businessService:BookingStatus
+  a owl:Class ;
+  rdfs:comment "The booking status can be canceled, combined or active" ;
+  rdfs:label "Booking Status" ;
+.
+businessService:canceled 
+  a businessService:BookingStatus;
+  rdfs:comment " Booking status: canceled"
+  rdfs:label "canceled" ;
+.
+businessService:combined 
+  a businessService:BookingStatus;
+  rdfs:comment " Booking status: combined"
+  rdfs:label "combined" ;
+.
+businessService:active 
+  a businessService:BookingStatus;
+  rdfs:comment " Booking status: active"
+  rdfs:label "active" ;
 .
 
 DigitalTwin:goodsTypeCode a owl:ObjectProperty;
