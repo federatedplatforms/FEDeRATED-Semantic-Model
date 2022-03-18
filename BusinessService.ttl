@@ -15,7 +15,6 @@
 @prefix pi: <https://ontology.tno.nl/logistics/federated/PhysicalInfrastructure#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
@@ -114,7 +113,6 @@ businessService:FrameworkContract
 .
 businessService:Itinerary
   a owl:Class ;
-  a sh:NodeShape ;
   rdfs:comment "A timed sequence of places of call of a transport means. Potentially, an itinerary has a unique ID, e.g. voyage number and flight number." ;
   rdfs:label "Itinerary" ;
   rdfs:subClassOf owl:Thing ;
@@ -152,6 +150,7 @@ businessService:LegalEntity
 .
 businessService:LegalPerson
   a owl:Class ;
+  rdfs:subClassOf owl:Thing ;
   rdfs:comment "The role of a Person, Enterprise or Organization is context dependant, and therefore should be described using the LogisticsRoles:Roles class." ;
   rdfs:label "Logistics Actor" ;
   rdfs:subClassOf [
@@ -205,21 +204,18 @@ businessService:Organization
 .
 businessService:PrivateEnterprise
   a owl:Class ;
-  a sh:NodeShape ;
   rdfs:comment "A private business or company" ;
   rdfs:label "Private Enterprise" ;
   rdfs:subClassOf businessService:Enterprise ;
 .
 businessService:PublicEnterprise
   a owl:Class ;
-  a sh:NodeShape ;
   rdfs:comment "A public business or company" ;
   rdfs:label "Public Enterprise" ;
   rdfs:subClassOf businessService:Enterprise ;
 .
 businessService:Route
   a owl:Class ;
-  a sh:NodeShape ;
   rdfs:comment "The use of infrastructure (sea, road, rail etc.) taken by transport means between any two locations of its itinerary." ;
   rdfs:label "Route" ;
   rdfs:subClassOf owl:Thing ;
@@ -245,9 +241,9 @@ businessService:Route
 .
 businessService:Shipment
   a owl:Class ;
-  a sh:NodeShape ;
   rdfs:comment "A shipment is a business transaction with a carrier for the transport of goods or containers from one location to another, where all goods and containers have to arrive in a given time period. This is similar to a consignment; however, it is always a carrier acting as service provider." ;
   rdfs:label "Shipment" ;
+  rdfs:subClassOf owl:Thing ;
   ReusableTags:isDerived true ;
 .
 businessService:StorageServiceCargo
@@ -661,20 +657,19 @@ businessService:BookingStatus
 .
 businessService:canceled 
   a businessService:BookingStatus;
-  rdfs:comment " Booking status: canceled"
+  rdfs:comment " Booking status: canceled";
   rdfs:label "canceled" ;
 .
 businessService:combined 
   a businessService:BookingStatus;
-  rdfs:comment " Booking status: combined"
+  rdfs:comment " Booking status: combined";
   rdfs:label "combined" ;
 .
 businessService:active 
   a businessService:BookingStatus;
-  rdfs:comment " Booking status: active"
+  rdfs:comment " Booking status: active";
   rdfs:label "active" ;
 .
-
 
 DigitalTwin:goodsTypeCode a owl:ObjectProperty;
 .
