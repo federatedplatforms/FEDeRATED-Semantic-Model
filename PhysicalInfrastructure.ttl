@@ -352,7 +352,7 @@ pi:hasLocationRole
   rdfs:comment "This property describes the role a location plays in the context of an event." ;
   rdfs:domain pi:Location ;
   rdfs:label "Has Location Role" ;
-  rdfs:range <https://ontology.tno.nl/logistics/federated/LogisticsRoles#LocationRoles> ;
+  rdfs:range <https://ontology.tno.nl/logistics/federated/LogisticRoles#LocationRoles> ;
 .
 pi:hasManager
   a owl:ObjectProperty ;
