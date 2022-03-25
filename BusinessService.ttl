@@ -145,6 +145,7 @@ businessService:Itinerary
 businessService:LegalEntity
   a owl:Class ;
   rdfs:label "Legal entity" ;
+  rdfs:comment "An entity processing separate and distinct legal rights." ;
   rdfs:subClassOf businessService:LegalPerson ;
   skos:prefLabel "Legal entity" ;
 .
@@ -270,13 +271,6 @@ businessService:TransshipmentService
   rdfs:label "Transshipment Service" ;
   rdfs:subClassOf businessService:LogisticsService ;
 .
-businessService:actorAddress
-  a owl:Objectproperty ;
-  rdfs:comment "Address of the logistics actor" ;
-  rdfs:domain businessService:LegalPerson ;
-  rdfs:label "Actor address" ;
-  rdfs:range pi:Location ;
-.
 businessService:actorID
   a owl:DatatypeProperty ;
   rdfs:comment "ID of the logistics actor" ;
@@ -326,7 +320,6 @@ businessService:consignmentUpdateTime
   rdfs:label "consignment Update Time" ;
   rdfs:range xsd:dateTime ;
 .
-
 businessService:createdBy
   a owl:DatatypeProperty ;
   rdfs:comment "Creator of business transaction and its types for example booking" ;
@@ -343,6 +336,7 @@ businessService:deviationDuration
 .
 businessService:hasLocation
   rdfs:comment "Location of the logistics service" ;
+  rdfs:label "has location" ;
   rdfs:domain businessService:LogisticsService ;
   rdfs:range pi:Location ;
 .
@@ -360,6 +354,13 @@ businessService:hasService
   rdfs:label "Has service" ;
   rdfs:range businessService:LogisticsService ;
 .
+businessService:actorAddress
+  a owl:ObjectProperty ;
+  rdfs:comment "Address of the logistics actor" ;
+  rdfs:domain businessService:LegalPerson ;
+  rdfs:label "Actor address" ;
+  rdfs:range pi:Location ;
+.
 businessService:involvedActor
   a owl:ObjectProperty ;
   rdfs:comment "An Enterprise, Person or Organization can have different roles depending on the context. This property and its subproperties define the different roles that legal persons can play in the context of a business transaction." ;
@@ -371,70 +372,85 @@ businessService:involvedActor
 businessService:involvedAuthority
   a owl:ObjectProperty ;
   rdfs:label "involved authority" ;
+  rdfs:comment "The realtionship between a business transaction and an authority that has been instantiated as a businessService:legalperson."; 
   rdfs:subPropertyOf businessService:involvedCommercialActor ;
 .
 businessService:involvedBank
   a owl:ObjectProperty ;
   rdfs:label "involved bank" ;
+  rdfs:comment "The realtionship between a business transaction and a bank that has been instantiated as a businessService:legalperson."; 
   rdfs:subPropertyOf businessService:involvedFinancialActor ;
 .
 businessService:involvedBusinessActor
   a owl:ObjectProperty ;
   rdfs:label "involved business person" ;
+  rdfs:comment "The realtionship between a business transaction and a business actor that has been instantiated as a businessService:legalperson.";  
   rdfs:subPropertyOf businessService:involvedActor ;
 .
 businessService:involvedCarrier
   a owl:ObjectProperty ;
   rdfs:label "involved carrier" ;
+  rdfs:comment "The realtionship between a business transaction and a carrier that has been instantiated as a businessService:legalperson."; 
   rdfs:subPropertyOf businessService:involvedLogisticsActor ;
 .
 businessService:involvedCommercialActor
   a owl:ObjectProperty ;
   rdfs:label "involved commercial person" ;
+  rdfs:comment "The realtionship between a business transaction and a commercial actor that has been instantiated as a businessService:legalperson."; 
   rdfs:subPropertyOf businessService:involvedActor ;
 .
 businessService:involvedConsignee
   a owl:ObjectProperty ;
+  rdfs:label "involved Consignee" ;
+  rdfs:comment "The realtionship between a business transaction and a consignee that has been instantiated as a businessService:legalperson."; 
   rdfs:subPropertyOf businessService:involvedLogisticsActor ;
 .
 businessService:involvedConsignor
   a owl:ObjectProperty ;
+  rdfs:label "involved Consignor" ;
+  rdfs:comment "The realtionship between a business transaction and a consignor that has been instantiated as a businessService:legalperson."; 
   rdfs:subPropertyOf businessService:involvedLogisticsActor ;
 .
 businessService:involvedConsumer
   a owl:ObjectProperty ;
   rdfs:label "involved consumer" ;
+  rdfs:comment "The realtionship between a business transaction and a consumer that has been instantiated as a businessService:legalperson."; 
   rdfs:subPropertyOf businessService:involvedSupplyChainActor ;
 .
 businessService:involvedContactPerson
   a owl:ObjectProperty ;
   rdfs:label "involved contact person" ;
+  rdfs:comment "The realtionship between a business transaction and an involved contact person that has been instantiated as a businessService:legalperson."; 
   rdfs:subPropertyOf businessService:involvedCommercialActor ;
 .
 businessService:involvedCustomer
   a owl:ObjectProperty ;
   rdfs:label "involved customer" ;
-  rdfs:range LogisticsRoles:Customer ;
+  rdfs:comment "The realtionship between a business transaction and a customer that has been instantiated as a businessService:legalperson."; 
   rdfs:subPropertyOf businessService:involvedCommercialActor ;
 .
 businessService:involvedCustomsAuthority
   a owl:ObjectProperty ;
   rdfs:label "involved customs authority" ;
+  rdfs:comment "The realtionship between a business transaction and an involved customs authority that has been instantiated as a businessService:legalperson."; 
   rdfs:subPropertyOf businessService:involvedAuthority ;
 .
 businessService:involvedDeclarant
   a owl:ObjectProperty ;
   rdfs:label "involved declarant" ;
+  rdfs:comment "The realtionship between a business transaction and a declarant that has been instantiated as a businessService:legalperson."; 
   rdfs:subPropertyOf businessService:involvedBusinessActor ;
 .
 businessService:involvedDeliveryParty
   a owl:ObjectProperty ;
   rdfs:label "involved delivery party" ;
+  rdfs:comment "The realtionship between a business transaction and an involved delivery party that has been instantiated as a businessService:legalperson."; 
   rdfs:subPropertyOf businessService:involvedLogisticsActor ;
 .
 businessService:involvedDispatchParty
   a owl:ObjectProperty ;
   rdfs:label "involved dispatch party" ;
+  rdfs:comment "The realtionship between a business transaction and an involved dispatch party that has been instantiated as a businessService:legalperson."; 
   rdfs:subPropertyOf businessService:involvedLogisticsActor ;
 .
 businessService:involvedEvent
@@ -448,110 +464,132 @@ businessService:involvedEvent
 businessService:involvedExporter
   a owl:ObjectProperty ;
   rdfs:label "involved exporter" ;
+  rdfs:comment "The realtionship between a business transaction and an involved exporter that has been instantiated as a businessService:legalperson."; 
   rdfs:subPropertyOf businessService:involvedBusinessActor ;
 .
 businessService:involvedFinancialActor
   a owl:ObjectProperty ;
   rdfs:label "involved financial person" ;
+  rdfs:comment "The realtionship between a business transaction and an involved financial actor that has been instantiated as a businessService:legalperson."; 
   rdfs:subPropertyOf businessService:involvedActor ;
 .
 businessService:involvedForwarder
   a owl:ObjectProperty ;
   rdfs:label "involved forwarder" ;
+  rdfs:comment "The realtionship between a business transaction and an involved forwarder that has been instantiated as a businessService:legalperson."; 
   rdfs:subPropertyOf businessService:involvedLogisticsActor ;
 .
 businessService:involvedImporter
   a owl:ObjectProperty ;
   rdfs:label "involved importer" ;
+  rdfs:comment "The realtionship between a business transaction and an involved importerer that has been instantiated as a businessService:legalperson."; 
   rdfs:subPropertyOf businessService:involvedBusinessActor ;
 .
 businessService:involvedInsurer
   a owl:ObjectProperty ;
   rdfs:label "involved insurer" ;
+  rdfs:comment "The realtionship between a business transaction and an involved insurer that has been instantiated as a businessService:legalperson."; 
   rdfs:subPropertyOf businessService:involvedFinancialActor ;
 .
 businessService:involvedIssuer
   a owl:ObjectProperty ;
   rdfs:label "involved issuer" ;
+  rdfs:comment "The realtionship between a business transaction and an involved issuer that has been instantiated as a businessService:legalperson."; 
   rdfs:subPropertyOf businessService:involvedBusinessActor ;
 .
 businessService:involvedLogisticsActor
   a owl:ObjectProperty ;
   rdfs:label "involved logistics actor" ;
+  rdfs:comment "The realtionship between a business transaction and an involved logistics actor that has been instantiated as a businessService:legalperson."; 
   rdfs:subPropertyOf businessService:involvedActor ;
 .
 businessService:involvedLogisticsServiceProvider
   a owl:ObjectProperty ;
   rdfs:label "involved logistics service provider" ;
+  rdfs:comment "The realtionship between a business transaction and an involved logistics service provider that has been instantiated as a businessService:legalperson."; 
   rdfs:subPropertyOf businessService:involvedLogisticsActor ;
 .
 businessService:involvedNotifyParty
   a owl:ObjectProperty ;
   rdfs:label "involved notify party" ;
+  rdfs:comment "The realtionship between a business transaction and an involved notify party that has been instantiated as a businessService:legalperson."; 
   rdfs:subPropertyOf businessService:involvedLogisticsActor ;
 .
 businessService:involvedOperator
   a owl:ObjectProperty ;
   rdfs:label "involved operator" ;
+  rdfs:comment "The realtionship between a business transaction and an involved operator that has been instantiated as a businessService:legalperson."; 
   rdfs:subPropertyOf businessService:involvedLogisticsActor ;
 .
 businessService:involvedPayee
   a owl:ObjectProperty ;
   rdfs:label "involved payee" ;
+  rdfs:comment "The realtionship between a business transaction and an involved payee that has been instantiated as a businessService:legalperson."; 
   rdfs:subPropertyOf businessService:involvedFinancialActor ;
 .
 businessService:involvedPayer
   a owl:ObjectProperty ;
   rdfs:label "involved payer" ;
+  rdfs:comment "The realtionship between a business transaction and an involved payer that has been instantiated as a businessService:legalperson."; 
   rdfs:subPropertyOf businessService:involvedFinancialActor ;
 .
 businessService:involvedPortAuthority
   a owl:ObjectProperty ;
   rdfs:label "involved port authority" ;
+  rdfs:comment "The realtionship between a business transaction and an involved port authority that has been instantiated as a businessService:legalperson."; 
   rdfs:subPropertyOf businessService:involvedAuthority ;
 .
 businessService:involvedProducer
   a owl:ObjectProperty ;
   rdfs:label "involved producer" ;
+  rdfs:comment "The realtionship between a business transaction and an involved producer that has been instantiated as a businessService:legalperson."; 
   rdfs:subPropertyOf businessService:involvedSupplyChainActor ;
 .
 businessService:involvedRetailer
   a owl:ObjectProperty ;
   rdfs:label "involved retailer" ;
+  rdfs:comment "The realtionship between a business transaction and an involved retailer that has been instantiated as a businessService:legalperson."; 
   rdfs:subPropertyOf businessService:involvedSupplyChainActor ;
 .
 businessService:involvedSender
   a owl:ObjectProperty ;
   rdfs:label "involved sender" ;
+  rdfs:comment "The realtionship between a business transaction and an involved sender that has been instantiated as a businessService:legalperson."; 
   rdfs:subPropertyOf businessService:involvedBusinessActor ;
 .
 businessService:involvedServiceProvider
   a owl:ObjectProperty ;
   rdfs:label "involved service provider" ;
+  rdfs:comment "The realtionship between a business transaction and an involved service provider that has been instantiated as a businessService:legalperson."; 
   rdfs:subPropertyOf businessService:involvedCommercialActor ;
 .
 businessService:involvedShuntingYard
   a owl:ObjectProperty ;
   rdfs:label "involved shunting yard" ;
+  rdfs:comment "The realtionship between a business transaction and an involved shunting yard that has been instantiated as a businessService:legalperson."; 
   rdfs:subPropertyOf businessService:involvedLogisticsActor ;
 .
 businessService:involvedSupplyChainActor
   a owl:ObjectProperty ;
   rdfs:label "involved supply chain actor" ;
+  rdfs:comment "The realtionship between a business transaction and an involved supply chain actor that has been instantiated as a businessService:legalperson."; 
   rdfs:subPropertyOf businessService:involvedActor ;
 .
 businessService:involvedTerminalOperator
   a owl:ObjectProperty ;
   rdfs:label "involved terminal operator" ;
+  rdfs:comment "The realtionship between a business transaction and an involved terminal operator that has been instantiated as a businessService:legalperson."; 
   rdfs:subPropertyOf businessService:involvedOperator ;
 .
 businessService:involvedWarehouseOperator
   a owl:ObjectProperty ;
   rdfs:label "involved warehouse operator" ;
+  rdfs:comment "The realtionship between a business transaction and an involved warehouse operator that has been instantiated as a businessService:legalperson."; 
   rdfs:subPropertyOf businessService:involvedOperator ;
 .
 businessService:involves
   a owl:ObjectProperty ;
+  rdfs:label "Involves" ;
   rdfs:comment "Abstract property -- do not instantiate" ;
 .
 businessService:itineraryID
