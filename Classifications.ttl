@@ -28,6 +28,7 @@
 .
 classifications:Air
   a classifications:TransportModality ;
+  rdfs:label "Air" ;
 .
 classifications:Atlantic_Corridor
   a classifications:CorridorName ;
@@ -109,6 +110,10 @@ classifications:GoodsTypeCode
   rdfs:label "Goods Type Code" ;
   rdfs:subClassOf classifications:Classifications ;
 .
+classifications:InlandWaterways
+  a classifications:TransportModality ;
+  rdfs:label "Inland waterways" ;
+.
 classifications:LCL-LCL
   a classifications:TransportMovementType ;
   rdfs:comment """ Defines the movement of cargo packed in and unpacked
@@ -148,6 +153,12 @@ as it appears for transport is also specified.""" ;
   rdfs:subClassOf [
       a owl:Restriction ;
       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onDataRange xsd:integer ;
+      owl:onProperty classifications:packageTypeNumericCode ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
       owl:onDataRange xsd:string ;
       owl:onProperty classifications:packageCode ;
     ] ;
@@ -157,12 +168,10 @@ as it appears for transport is also specified.""" ;
       owl:onDataRange xsd:string ;
       owl:onProperty classifications:packageTypeName ;
     ] ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onDataRange xsd:integer ;
-      owl:onProperty classifications:packageTypeNumericCode ;
-    ] ;
+.
+classifications:Pipelines
+  a classifications:TransportModality ;
+  rdfs:label "Pipelines" ;
 .
 classifications:R
   a classifications:NatureOfCargo ;
@@ -170,6 +179,10 @@ classifications:R
 .
 classifications:RO-RO
   a classifications:ContainerType ;
+.
+classifications:Rail
+  a classifications:TransportModality ;
+  rdfs:label "Rail" ;
 .
 classifications:Rhine-Alpine_Corridor
   a classifications:CorridorName ;
@@ -182,6 +195,7 @@ classifications:Rhine_Alpine_Corridor
 .
 classifications:Road
   a classifications:TransportModality ;
+  rdfs:label "Road" ;
 .
 classifications:SEA_WAYBILL
   a classifications:DocumentType ;
@@ -196,6 +210,7 @@ classifications:Scandinavian-Mediterranean_Corridor
 .
 classifications:Sea
   a classifications:TransportModality ;
+  rdfs:label "Sea" ;
 .
 classifications:SealConditionCodeType
   a owl:Class ;
