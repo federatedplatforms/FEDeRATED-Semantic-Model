@@ -441,14 +441,14 @@ DigitalTwin:cargoMaximumTemperature
   rdfs:label "Cargo Maximum Temperature" ;
   rdfs:range xsd:string ;
   rdfs:subPropertyOf DigitalTwin:PhysicalObjectProperties ;
-  owl:someValuesFrom DigitalTwin:Equipment ;
+  rdfs:domain DigitalTwin:Equipment ;
 .
 DigitalTwin:cargoMaximumVolume
   a owl:DatatypeProperty ;
   rdfs:label "Cargo Maximum Volume" ;
   rdfs:range xsd:integer ;
   rdfs:subPropertyOf DigitalTwin:PhysicalObjectProperties ;
-  owl:someValuesFrom DigitalTwin:Equipment ;
+  rdfs:domain DigitalTwin:Equipment ;
 .
 DigitalTwin:cargoMinimumSize
   a owl:DatatypeProperty ;
@@ -461,14 +461,14 @@ DigitalTwin:cargoMinimumTemperature
   rdfs:label "Cargo Minimum Temperature" ;
   rdfs:range xsd:string ;
   rdfs:subPropertyOf DigitalTwin:PhysicalObjectProperties ;
-  owl:someValuesFrom DigitalTwin:Equipment ;
+  rdfs:domain DigitalTwin:Equipment ;
 .
 DigitalTwin:cargoMinimumVolume
   a owl:DatatypeProperty ;
   rdfs:label "Cargo Minimum Volume" ;
   rdfs:range xsd:integer ;
   rdfs:subPropertyOf DigitalTwin:PhysicalObjectProperties ;
-  owl:someValuesFrom DigitalTwin:Equipment ;
+  rdfs:domain DigitalTwin:Equipment ;
 .
 DigitalTwin:cargoTareWeight
   a owl:DatatypeProperty ;
@@ -506,7 +506,6 @@ DigitalTwin:containerNumber
   rdfs:label "Container Number" ;
   rdfs:range xsd:string ;
   rdfs:subPropertyOf DigitalTwin:PhysicalObjectProperties ;
-  owl:someValuesFrom DigitalTwin:Equipment ;
 .
 DigitalTwin:containerSize
   a owl:DatatypeProperty ;
@@ -589,7 +588,7 @@ DigitalTwin:equipmentSize
   rdfs:subPropertyOf DigitalTwin:equipmentProperties ;
 .
 DigitalTwin:equipmentTypeCode
-  a owl:DatatypeProperty ;
+  a owl:ObjectProperty ;
   rdfs:domain DigitalTwin:Equipment ;
   rdfs:label "Equipment Type Code" ;
   rdfs:range classifications:EquipmentTypeCode ;
