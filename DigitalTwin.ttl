@@ -520,12 +520,6 @@ DigitalTwin:containerType
   rdfs:range classifications:ContainerType ;
   rdfs:subPropertyOf DigitalTwin:PhysicalObjectProperties ;
 .
-DigitalTwin:containerTypeDetail
-  a owl:ObjectProperty ;
-  rdfs:domain DigitalTwin:Container ;
-  rdfs:range classifications:ContainerType ;
-  rdfs:subPropertyOf DigitalTwin:classifications_detail ;
-.
 DigitalTwin:damageRemarks
   a owl:DatatypeProperty ;
   rdfs:domain DigitalTwin:PhysicalObject ;
