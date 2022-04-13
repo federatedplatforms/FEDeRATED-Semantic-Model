@@ -677,8 +677,13 @@ DigitalTwin:hasTransportmeansNationality
 .
 DigitalTwin:hasUNNumber
   a owl:ObjectProperty ;
-  rdfs:domain DigitalTwin:Equipment ;
-  rdfs:domain DigitalTwin:Package ;
+  rdfs:domain [
+      a owl:Class ;
+      owl:unionOf (
+          DigitalTwin:Equipment
+          DigitalTwin:Package
+        ) ;
+    ] ;
   rdfs:label "Has UN Number" ;
   rdfs:range classifications:UNNumberCodeList ;
   rdfs:subPropertyOf DigitalTwin:PhysicalObjectProperties ;
