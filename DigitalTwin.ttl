@@ -550,7 +550,6 @@ DigitalTwin:dryBulk
   rdfs:label "Dry Bulk" ;
   rdfs:range xsd:boolean ;
   rdfs:subPropertyOf DigitalTwin:PhysicalObjectProperties ;
-  owl:deprecated true ;
 .
 DigitalTwin:equipmentCategoryCode
   a owl:DatatypeProperty ;
