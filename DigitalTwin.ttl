@@ -979,6 +979,6 @@ DigitalTwin:wagonNrAxel
   a owl:DatatypeProperty ;
   rdfs:domain DigitalTwin:RailwayWagon ;
   rdfs:label "Wagon Nr Axel" ;
-  rdfs:range xsd:string ;
+  rdfs:range xsd:integer ;
   rdfs:subPropertyOf DigitalTwin:transportMeansProperties ;
 .
