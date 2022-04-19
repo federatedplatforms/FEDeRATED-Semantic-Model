@@ -12,6 +12,15 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+classifications:PackageTypeNumericCode
+  a owl:DatatypeProperty ;
+.
+classifications:packageCode
+  a owl:DatatypeProperty ;
+.
+classifications:packageTypeName
+  a owl:DatatypeProperty ;
+.
 <https://ontology.tno.nl/logistics/federated/DigitalTwin>
   a owl:Ontology ;
   dc:creator "Dena Tahvildari, Cornelis Bouter, Maaike Burghoorn" ;
@@ -589,11 +598,10 @@ DigitalTwin:equipmentSize
   rdfs:subPropertyOf DigitalTwin:equipmentProperties ;
 .
 DigitalTwin:equipmentTypeCode
-  a owl:DatatypeProperty ;
+  a owl:ObjectProperty ;
   rdfs:domain DigitalTwin:Equipment ;
   rdfs:label "Equipment Type Code" ;
   rdfs:range classifications:EquipmentTypeCode ;
-  rdfs:subPropertyOf DigitalTwin:equipmentProperties ;
 .
 DigitalTwin:goodsDescription
   a owl:DatatypeProperty ;
@@ -1001,13 +1009,4 @@ DigitalTwin:wagonNrAxel
   rdfs:label "Wagon Nr Axel" ;
   rdfs:range xsd:string ;
   rdfs:subPropertyOf DigitalTwin:transportMeansProperties ;
-.
-classifications:packageCode
-  a owl:DatatypeProperty ;
-.
-classifications:packageTypeName
-  a owl:DatatypeProperty ;
-.
-classifications:PackageTypeNumericCode 
-  a owl:DatatypeProperty ;
 .
