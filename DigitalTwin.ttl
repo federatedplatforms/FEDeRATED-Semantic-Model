@@ -483,8 +483,15 @@ DigitalTwin:cargoMinimumVolume
 .
 DigitalTwin:cargoTareWeight
   a owl:DatatypeProperty ;
+  rdfs:domain [
+      a owl:Class ;
+      owl:unionOf (
+          DigitalTwin:Goods
+          DigitalTwin:Product
+        ) ;
+    ] ;
   rdfs:label "Cargo Tar Weight" ;
-  rdfs:range xsd:integer ;
+  rdfs:range xsd:decimal ;
   rdfs:subPropertyOf DigitalTwin:PhysicalObjectProperties ;
 .
 DigitalTwin:cargoTemperature
