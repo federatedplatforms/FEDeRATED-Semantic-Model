@@ -135,6 +135,12 @@ DigitalTwin:Equipment
       a owl:Restriction ;
       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
       owl:onDataRange xsd:string ;
+      owl:onProperty DigitalTwin:ID ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onDataRange xsd:string ;
       owl:onProperty DigitalTwin:equipmentCategoryCode ;
     ] ;
   rdfs:subClassOf [
@@ -142,12 +148,6 @@ DigitalTwin:Equipment
       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
       owl:onDataRange xsd:string ;
       owl:onProperty DigitalTwin:equipmentContainerITUCode ;
-    ] ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onDataRange xsd:string ;
-      owl:onProperty DigitalTwin:equipmentID ;
     ] ;
   owl:disjointWith DigitalTwin:Product ;
   owl:disjointWith DigitalTwin:TransportMeans ;
@@ -202,6 +202,8 @@ DigitalTwin:Hold
 .
 DigitalTwin:ID
   a owl:DatatypeProperty ;
+  rdfs:domain DigitalTwin:PhysicalObject ;
+  rdfs:range xsd:string ;
   rdfs:subPropertyOf DigitalTwin:PhysicalObjectProperties ;
 .
 DigitalTwin:Locomotive
@@ -213,13 +215,13 @@ DigitalTwin:Locomotive
       a owl:Restriction ;
       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
       owl:onDataRange xsd:string ;
-      owl:onProperty DigitalTwin:locomotiveBrakeType ;
+      owl:onProperty DigitalTwin:ID ;
     ] ;
   rdfs:subClassOf [
       a owl:Restriction ;
       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
       owl:onDataRange xsd:string ;
-      owl:onProperty DigitalTwin:locomotiveID ;
+      owl:onProperty DigitalTwin:locomotiveBrakeType ;
     ] ;
 .
 DigitalTwin:Package
@@ -501,13 +503,6 @@ DigitalTwin:classifications_detail
   rdfs:comment "this object property links the any type of digital twin to the needed classification type and its controlled vocabularies" ;
   rdfs:range classifications:classifications ;
 .
-DigitalTwin:containerID
-  a owl:DatatypeProperty ;
-  rdfs:domain DigitalTwin:Container ;
-  rdfs:label "Container ID" ;
-  rdfs:range xsd:string ;
-  rdfs:subPropertyOf DigitalTwin:ID ;
-.
 DigitalTwin:containerNumber
   a owl:DatatypeProperty ;
   rdfs:comment "Container number" ;
@@ -579,13 +574,6 @@ DigitalTwin:equipmentContainerITUCode
   rdfs:domain DigitalTwin:Equipment ;
   rdfs:label "Equipment Container ITU Code" ;
   rdfs:subPropertyOf DigitalTwin:equipmentProperties ;
-.
-DigitalTwin:equipmentID
-  a owl:DatatypeProperty ;
-  rdfs:domain DigitalTwin:Equipment ;
-  rdfs:label "Equipment ID" ;
-  rdfs:range xsd:string ;
-  rdfs:subPropertyOf DigitalTwin:ID ;
 .
 DigitalTwin:equipmentProperties
   a owl:DatatypeProperty ;
@@ -774,14 +762,6 @@ DigitalTwin:locomotiveDriverIndication
   rdfs:range xsd:string ;
   rdfs:subPropertyOf DigitalTwin:transportMeansProperties ;
 .
-DigitalTwin:locomotiveID
-  a owl:DatatypeProperty ;
-  rdfs:domain DigitalTwin:Locomotive ;
-  rdfs:label "Locomotive Identifier" ;
-  rdfs:range xsd:string ;
-  rdfs:subPropertyOf DigitalTwin:ID ;
-  rdfs:subPropertyOf DigitalTwin:transportMeansProperties ;
-.
 DigitalTwin:locomotiveTractionType
   a owl:DatatypeProperty ;
   rdfs:domain DigitalTwin:Locomotive ;
@@ -874,14 +854,6 @@ DigitalTwin:sealConditionCode
   rdfs:domain DigitalTwin:Seal ;
   rdfs:label "Seal Condition Code" ;
   rdfs:subPropertyOf DigitalTwin:classifications_detail ;
-.
-DigitalTwin:sealID
-  a owl:DatatypeProperty ;
-  rdfs:domain DigitalTwin:Seal ;
-  rdfs:label "Seal ID" ;
-  rdfs:range xsd:integer ;
-  rdfs:subPropertyOf DigitalTwin:ID ;
-  rdfs:subPropertyOf DigitalTwin:sealProperties ;
 .
 DigitalTwin:sealIndicator
   a owl:DatatypeProperty ;
