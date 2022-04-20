@@ -14,9 +14,12 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-
-BusinessService:logisticsRoleName
+LogisticsRoles:logisticsRoleName
   a owl:DatatypeProperty ;
+  rdfs:domain LogisticsRoles:LogisticsRoles ;
+  rdfs:comment "Each logistics role has a unique name" ;
+  rdfs:label "Logistics Role Name" ;
+  rdfs:range xsd:string ;
 .
 skos:broader 
   a owl:ObjectProperty ;
@@ -191,7 +194,7 @@ LogisticRoles:LogisticsRoles
       a owl:Restriction ;
       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
       owl:onDataRange xsd:string ;
-      owl:onProperty BusinessService:logisticsRoleName ;
+      owl:onProperty LogisticRoles:logisticsRoleName ;
     ] ;
 .
 LogisticRoles:NotifyParty

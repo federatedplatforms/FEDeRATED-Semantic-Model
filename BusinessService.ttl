@@ -600,13 +600,6 @@ businessService:itineraryID
   rdfs:range xsd:string ;
   skos:altLabel "voyageID" ;
 .
-businessService:logisticsRoleName
-  a owl:DatatypeProperty ;
-  rdfs:domain LogisticsRoles:LogisticsRoles ;
-  rdfs:comment "Each logistics role has a unique name" ;
-  rdfs:label "Logistics Role Name" ;
-  rdfs:range xsd:string ;
-.
 businessService:partOfTransportMovementType
   a owl:ObjectProperty ;
   rdfs:comment "Describes if the business transaction if part of main-, on-, or precarriage" ;
