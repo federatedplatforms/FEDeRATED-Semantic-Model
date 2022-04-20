@@ -64,7 +64,7 @@ derivedConcept:Consignment
   rdfs:subClassOf [
       a owl:Restriction ;
       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onClass <https://ontology.tno.nl/logistics/federated/LogisticsRoles#ServiceProvider> ;
+      owl:onClass <https://ontology.tno.nl/logistics/federated/LogisticRoles#ServiceProvider> ;
       owl:onProperty derivedConcept:involves ;
     ] ;
   rdfs:subClassOf [

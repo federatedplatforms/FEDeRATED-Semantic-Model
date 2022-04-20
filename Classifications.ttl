@@ -28,6 +28,7 @@
 .
 classifications:Air
   a classifications:TransportModality ;
+  rdfs:label "Air" ;
 .
 classifications:Atlantic_Corridor
   a classifications:CorridorName ;
@@ -73,6 +74,7 @@ classifications:D
   rdfs:label "Dangerous" ;
 .
 classifications:D_1
+  a classifications:NatureOfCargo ;
   rdfs:label "Reefer" ;
 .
 classifications:DangerousGoods
@@ -107,6 +109,10 @@ classifications:GoodsTypeCode
   rdfs:comment "A classification of codes that specify the different type of goods within the industry." ;
   rdfs:label "Goods Type Code" ;
   rdfs:subClassOf classifications:Classifications ;
+.
+classifications:InlandWaterways
+  a classifications:TransportModality ;
+  rdfs:label "Inland waterways" ;
 .
 classifications:LCL-LCL
   a classifications:TransportMovementType ;
@@ -147,6 +153,12 @@ as it appears for transport is also specified.""" ;
   rdfs:subClassOf [
       a owl:Restriction ;
       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onDataRange xsd:integer ;
+      owl:onProperty classifications:packageTypeNumericCode ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
       owl:onDataRange xsd:string ;
       owl:onProperty classifications:packageCode ;
     ] ;
@@ -156,12 +168,10 @@ as it appears for transport is also specified.""" ;
       owl:onDataRange xsd:string ;
       owl:onProperty classifications:packageTypeName ;
     ] ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onDataRange xsd:string ;
-      owl:onProperty classifications:packageTypeNumericCode ;
-    ] ;
+.
+classifications:Pipelines
+  a classifications:TransportModality ;
+  rdfs:label "Pipelines" ;
 .
 classifications:R
   a classifications:NatureOfCargo ;
@@ -169,6 +179,10 @@ classifications:R
 .
 classifications:RO-RO
   a classifications:ContainerType ;
+.
+classifications:Rail
+  a classifications:TransportModality ;
+  rdfs:label "Rail" ;
 .
 classifications:Rhine-Alpine_Corridor
   a classifications:CorridorName ;
@@ -181,6 +195,7 @@ classifications:Rhine_Alpine_Corridor
 .
 classifications:Road
   a classifications:TransportModality ;
+  rdfs:label "Road" ;
 .
 classifications:SEA_WAYBILL
   a classifications:DocumentType ;
@@ -195,6 +210,7 @@ classifications:Scandinavian-Mediterranean_Corridor
 .
 classifications:Sea
   a classifications:TransportModality ;
+  rdfs:label "Sea" ;
 .
 classifications:SealConditionCodeType
   a owl:Class ;
@@ -245,6 +261,7 @@ classifications:containers
 classifications:dangerousGoodsClassification
   a owl:ObjectProperty ;
   rdfs:domain DigitalTwin:Goods ;
+  rdfs:label "Dangerous Goods Classification" ;
   rdfs:range classifications:DangerousGoods ;
 .
 classifications:dangerousGoodsRegulationCode
@@ -257,13 +274,13 @@ classifications:dangerousGoodsRegulationCode
 classifications:generalCargo
   a classifications:CargoType ;
   rdfs:comment "Contrary to mass or bulk goods, general cargo comprises materials of which the quantity is not registered per size or weight  but per individual item. General cargo is transported in boxes, crates, drums or bales. Examples of general cargo are cars, paper, kerbstone and machinery." ;
-  rdfs:label "visualisation" ;
+  rdfs:label "general cargo" ;
 .
 classifications:hazmatName
   a owl:DatatypeProperty ;
   rdfs:comment "Goods that are classified as dangerous are described in more detail using the hazardous materials UN code system. This is the corresponding name of the applicable UN code." ;
   rdfs:domain classifications:DangerousGoods ;
-  rdfs:label "Dangerous Goods" ;
+  rdfs:label "Hazmat Name" ;
   rdfs:range xsd:string ;
 .
 classifications:hazmatUNCode
@@ -296,7 +313,7 @@ classifications:packageTypeNumericCode
 .
 classifications:pallets
   a classifications:CargoType ;
-  rdfs:label "Number of TEU" ;
+  rdfs:label "pallets" ;
 .
 classifications:transportMovementCode
   a owl:DatatypeProperty ;
@@ -309,6 +326,6 @@ classifications:transportMovementID
   a owl:DatatypeProperty ;
   rdfs:comment "The ID of the transport movement type." ;
   rdfs:domain classifications:TransportMovementType ;
-  rdfs:label "Transport Movement Code" ;
+  rdfs:label "Transport Movement ID" ;
   rdfs:range xsd:string ;
 .

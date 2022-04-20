@@ -220,7 +220,7 @@ DigitalTwin:Package
   rdfs:subClassOf [
       a owl:Restriction ;
       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onDataRange xsd:string ;
+      owl:onDataRange xsd:integer ;
       owl:onProperty classifications:PackageTypeNumericCode ;
     ] ;
   rdfs:subClassOf [
@@ -441,14 +441,14 @@ DigitalTwin:cargoMaximumTemperature
   rdfs:label "Cargo Maximum Temperature" ;
   rdfs:range xsd:string ;
   rdfs:subPropertyOf DigitalTwin:PhysicalObjectProperties ;
-  owl:someValuesFrom DigitalTwin:Equipment ;
+  rdfs:domain DigitalTwin:Equipment ;
 .
 DigitalTwin:cargoMaximumVolume
   a owl:DatatypeProperty ;
   rdfs:label "Cargo Maximum Volume" ;
   rdfs:range xsd:integer ;
   rdfs:subPropertyOf DigitalTwin:PhysicalObjectProperties ;
-  owl:someValuesFrom DigitalTwin:Equipment ;
+  rdfs:domain DigitalTwin:Equipment ;
 .
 DigitalTwin:cargoMinimumSize
   a owl:DatatypeProperty ;
@@ -461,14 +461,14 @@ DigitalTwin:cargoMinimumTemperature
   rdfs:label "Cargo Minimum Temperature" ;
   rdfs:range xsd:string ;
   rdfs:subPropertyOf DigitalTwin:PhysicalObjectProperties ;
-  owl:someValuesFrom DigitalTwin:Equipment ;
+  rdfs:domain DigitalTwin:Equipment ;
 .
 DigitalTwin:cargoMinimumVolume
   a owl:DatatypeProperty ;
   rdfs:label "Cargo Minimum Volume" ;
   rdfs:range xsd:integer ;
   rdfs:subPropertyOf DigitalTwin:PhysicalObjectProperties ;
-  owl:someValuesFrom DigitalTwin:Equipment ;
+  rdfs:domain DigitalTwin:Equipment ;
 .
 DigitalTwin:cargoTareWeight
   a owl:DatatypeProperty ;
@@ -506,7 +506,6 @@ DigitalTwin:containerNumber
   rdfs:label "Container Number" ;
   rdfs:range xsd:string ;
   rdfs:subPropertyOf DigitalTwin:PhysicalObjectProperties ;
-  owl:someValuesFrom DigitalTwin:Equipment ;
 .
 DigitalTwin:containerSize
   a owl:DatatypeProperty ;
@@ -520,12 +519,6 @@ DigitalTwin:containerType
   rdfs:label "Container Type" ;
   rdfs:range classifications:ContainerType ;
   rdfs:subPropertyOf DigitalTwin:PhysicalObjectProperties ;
-.
-DigitalTwin:containerTypeDetail
-  a owl:ObjectProperty ;
-  rdfs:domain DigitalTwin:Container ;
-  rdfs:range classifications:ContainerType ;
-  rdfs:subPropertyOf DigitalTwin:classifications_detail ;
 .
 DigitalTwin:damageRemarks
   a owl:DatatypeProperty ;
@@ -557,7 +550,6 @@ DigitalTwin:dryBulk
   rdfs:label "Dry Bulk" ;
   rdfs:range xsd:boolean ;
   rdfs:subPropertyOf DigitalTwin:PhysicalObjectProperties ;
-  owl:deprecated true ;
 .
 DigitalTwin:equipmentCategoryCode
   a owl:DatatypeProperty ;
@@ -589,9 +581,9 @@ DigitalTwin:equipmentSize
   rdfs:subPropertyOf DigitalTwin:equipmentProperties ;
 .
 DigitalTwin:equipmentTypeCode
-  a owl:DatatypeProperty ;
+  a owl:ObjectProperty ;
   rdfs:domain DigitalTwin:Equipment ;
-  rdfs:label "Equipment ID" ;
+  rdfs:label "Equipment Type Code" ;
   rdfs:range classifications:EquipmentTypeCode ;
   rdfs:subPropertyOf DigitalTwin:equipmentProperties ;
 .
@@ -653,7 +645,7 @@ DigitalTwin:hasGrossMass
 .
 DigitalTwin:hasLicensePlateNumber
   a owl:DatatypeProperty ;
-  rdfs:domain DigitalTwin:TransportMeans ;
+  rdfs:domain DigitalTwin:Truck ;
   rdfs:label "License Plate Number" ;
   rdfs:range xsd:string ;
   rdfs:subPropertyOf DigitalTwin:transportMeansProperties ;
@@ -685,8 +677,13 @@ DigitalTwin:hasTransportmeansNationality
 .
 DigitalTwin:hasUNNumber
   a owl:ObjectProperty ;
-  rdfs:domain DigitalTwin:Equipment ;
-  rdfs:domain DigitalTwin:Package ;
+  rdfs:domain [
+      a owl:Class ;
+      owl:unionOf (
+          DigitalTwin:Equipment
+          DigitalTwin:Package
+        ) ;
+    ] ;
   rdfs:label "Has UN Number" ;
   rdfs:range classifications:UNNumberCodeList ;
   rdfs:subPropertyOf DigitalTwin:PhysicalObjectProperties ;
@@ -699,7 +696,7 @@ DigitalTwin:hasUnitsOfMeasure
 .
 DigitalTwin:hasVIN
   a owl:DatatypeProperty ;
-  rdfs:domain DigitalTwin:TransportMeans ;
+  rdfs:domain DigitalTwin:Truck ;
   rdfs:label "has VIN" ;
   rdfs:range xsd:integer ;
   rdfs:subPropertyOf DigitalTwin:transportMeansProperties ;
@@ -1001,4 +998,13 @@ DigitalTwin:wagonNrAxel
   rdfs:label "Wagon Nr Axel" ;
   rdfs:range xsd:string ;
   rdfs:subPropertyOf DigitalTwin:transportMeansProperties ;
+.
+classifications:packageCode
+  a owl:DatatypeProperty ;
+.
+classifications:packageTypeName
+  a owl:DatatypeProperty ;
+.
+classifications:PackageTypeNumericCode 
+  a owl:DatatypeProperty ;
 .
