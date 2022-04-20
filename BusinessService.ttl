@@ -600,6 +600,14 @@ businessService:itineraryID
   rdfs:range xsd:string ;
   skos:altLabel "voyageID" ;
 .
+businessService:hasRole
+  a owl:ObjectProperty ;
+  rdfs:comment "The relationship between legal person and LogisticsRoles:ActorRoles" ;
+  rdfs:domain businessService:LegalPerson ; 
+  rdfs:label "has role" ;
+  rdfs:range LogisticRoles:ActorRoles ;
+.
+
 businessService:partOfTransportMovementType
   a owl:ObjectProperty ;
   rdfs:comment "Describes if the business transaction if part of main-, on-, or precarriage" ;
