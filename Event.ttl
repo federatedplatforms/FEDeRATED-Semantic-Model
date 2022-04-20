@@ -376,12 +376,7 @@ Event:isInvolvedIn
   owl:inverseOf Event:isInvolvedIn ;
   skos:prefLabel "is involved in" ;
 .
-Event:planned
-  a Event:DateTimeType ;
-.
 Event:requested
   a Event:DateTimeType ;
 .
-Event:start
-  a Event:MileStone ;
-.
+
