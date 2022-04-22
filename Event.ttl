@@ -363,17 +363,10 @@ Event:involvesPhysicalInfrastructure
 .
 Event:isInvolvedIn
   a rdf:Property ;
-  rdfs:domain [
-      a owl:Class ;
-      owl:unionOf (
-          <http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing>
-          businessService:BusinessTransaction
-          DigitalTwin:PhysicalObject
-        ) ;
-    ] ;
+  rdfs:domain owl:Thing ;
   rdfs:label "is involved in" ;
   rdfs:range Event:Event ;
-  owl:inverseOf Event:isInvolvedIn ;
+  owl:inverseOf Event:involves ;
   skos:prefLabel "is involved in" ;
 .
 Event:requested
