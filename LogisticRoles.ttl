@@ -14,9 +14,9 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-LogisticsRoles:logisticsRoleName
+LogisticRoles:logisticsRoleName
   a owl:DatatypeProperty ;
-  rdfs:domain LogisticsRoles:LogisticsRoles ;
+  rdfs:domain LogisticRoles:LogisticsRoles ;
   rdfs:comment "Each logistics role has a unique name" ;
   rdfs:label "Logistics Role Name" ;
   rdfs:range xsd:string ;
