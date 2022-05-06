@@ -605,7 +605,7 @@ businessService:hasRole
   rdfs:comment "The relationship between legal person and LogisticsRoles:ActorRoles" ;
   rdfs:domain businessService:LegalPerson ; 
   rdfs:label "has role" ;
-  rdfs:range LogisticRoles:ActorRoles ;
+  rdfs:range LogisticsRoles:ActorRoles ;
 .
 
 businessService:partOfTransportMovementType
