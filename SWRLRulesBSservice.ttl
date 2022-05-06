@@ -1,0 +1,936 @@
+#################################################################
+#    Rules
+#################################################################
+@prefix businessService: <https://ontology.tno.nl/logistics/federated/BusinessService#> .
+@base <https://ontology.tno.nl/logistics/federated/BusinessService> .
+
+businessService:x rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+businessService:y rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment "This swrl rule allows to infer that when a legal person is involved in a business transaction via the property 'involved carrier', then the legal person is a carrier."^^xsd:string ;
+   rdfs:label "Rule 1"^^xsd:string ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> businessService:BusinessTransaction ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> businessService:x
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> businessService:involvedCarrier ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> businessService:x ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> businessService:y
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#classPredicate> businessService:LegalPerson ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument1> businessService:y
+                                                                           ] ;
+                                                                 rdf:rest rdf:nil
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> businessService:hasRole ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> businessService:y ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> <https://ontology.tno.nl/logistics/federated/LogisticRoles#Carrier>
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+ [ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:label "Rule 2"^^xsd:string ;
+   rdfs:comment "This swrl rule allows to infer that when a legal person is involved in a business transaction via the property 'involved consumer', then the legal person is a consumer."^^xsd:string ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> businessService:BusinessTransaction ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> businessService:x
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> businessService:involvedConsumer ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> businessService:x ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> businessService:y
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#classPredicate> businessService:LegalPerson ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument1> businessService:y
+                                                                           ] ;
+                                                                 rdf:rest rdf:nil
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> businessService:hasRole ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> businessService:y ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> <https://ontology.tno.nl/logistics/federated/LogisticRoles#Consumer>
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+ [ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:label "Rule 3"^^xsd:string ;
+   rdfs:comment "This swrl rule allows to infer that when a legal person is involved in a business transaction via the property 'involved producer', then the legal person is a producer."^^xsd:string ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> businessService:BusinessTransaction ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> businessService:x
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> businessService:involvedProducer ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> businessService:x ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> businessService:y
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#classPredicate> businessService:LegalPerson ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument1> businessService:y
+                                                                           ] ;
+                                                                 rdf:rest rdf:nil
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> businessService:hasRole ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> businessService:y ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> <https://ontology.tno.nl/logistics/federated/LogisticRoles#Producer>
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+ [ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:label "Rule 4"^^xsd:string ;
+   rdfs:comment "This swrl rule allows to infer that when a legal person is involved in a business transaction via the property 'involved retailer', then the legal person is a retailer."^^xsd:string ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> businessService:BusinessTransaction ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> businessService:x
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> businessService:involvedRetailer ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> businessService:x ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> businessService:y
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#classPredicate> businessService:LegalPerson ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument1> businessService:y
+                                                                           ] ;
+                                                                 rdf:rest rdf:nil
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> businessService:hasRole ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> businessService:y ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> <https://ontology.tno.nl/logistics/federated/LogisticRoles#Retailer>
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+ [ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:label "Rule 5"^^xsd:string ;
+   rdfs:comment "This swrl rule allows to infer that when a legal person is involved in a business transaction via the property 'involved shunting yard', then the legal person is a shunting yard."^^xsd:string ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> businessService:BusinessTransaction ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> businessService:x
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> businessService:involvedShuntingYard ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> businessService:x ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> businessService:y
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#classPredicate> businessService:LegalPerson ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument1> businessService:y
+                                                                           ] ;
+                                                                 rdf:rest rdf:nil
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> businessService:hasRole ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> businessService:y ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> <https://ontology.tno.nl/logistics/federated/LogisticRoles#ShuntingYard>
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+ [ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:label "Rule 6"^^xsd:string ;
+   rdfs:comment "This swrl rule allows to infer that when a legal person is involved in a business transaction via the property 'involved logistics service provider', then the legal person is a logistic service provider."^^xsd:string ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> businessService:BusinessTransaction ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> businessService:x
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> businessService:involvedLogisticsServiceProvider ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> businessService:x ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> businessService:y
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#classPredicate> businessService:LegalPerson ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument1> businessService:y
+                                                                           ] ;
+                                                                 rdf:rest rdf:nil
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> businessService:hasRole ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> businessService:y ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> <https://ontology.tno.nl/logistics/federated/LogisticRoles#LogisticServiceProvider>
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+ [ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:label "Rule 7"^^xsd:string ;
+   rdfs:comment "This swrl rule allows to infer that when a legal person is involved in a business transaction via the property 'involved forwarder', then the legal person is a Forwarder."^^xsd:string ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> businessService:BusinessTransaction ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> businessService:x
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> businessService:involvedForwarder ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> businessService:x ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> businessService:y
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#classPredicate> businessService:LegalPerson ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument1> businessService:y
+                                                                           ] ;
+                                                                 rdf:rest rdf:nil
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> businessService:hasRole ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> businessService:y ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> <https://ontology.tno.nl/logistics/federated/LogisticRoles#Forwarder>
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+ [ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:label "Rule 8"^^xsd:string ;
+   rdfs:comment "This swrl rule allows to infer that when a legal person is involved in a business transaction via the property 'involved delivery party', then the legal person is a delivery party."^^xsd:string ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> businessService:BusinessTransaction ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> businessService:x
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> businessService:involvedDeliveryParty ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> businessService:x ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> businessService:y
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#classPredicate> businessService:LegalPerson ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument1> businessService:y
+                                                                           ] ;
+                                                                 rdf:rest rdf:nil
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> businessService:hasRole ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> businessService:y ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> <https://ontology.tno.nl/logistics/federated/LogisticRoles#DeliveryParty>
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+ [ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:label "Rule 9"^^xsd:string ;
+   rdfs:comment "This swrl rule allows to infer that when a legal person is involved in a business transaction via the property 'involved dispatch party', then the legal person is a dispatch party."^^xsd:string ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> businessService:BusinessTransaction ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> businessService:x
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> businessService:involvedDispatchParty ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> businessService:x ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> businessService:y
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#classPredicate> businessService:LegalPerson ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument1> businessService:y
+                                                                           ] ;
+                                                                 rdf:rest rdf:nil
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> businessService:hasRole ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> businessService:y ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> <https://ontology.tno.nl/logistics/federated/LogisticRoles#DispatchParty>
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+ [ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:label "Rule 10"^^xsd:string ;
+   rdfs:comment "This swrl rule allows to infer that when a legal person is involved in a business transaction via the property 'involved consignor', then the legal person is a consignor."^^xsd:string ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> businessService:BusinessTransaction ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> businessService:x
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> businessService:involvedConsignor ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> businessService:x ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> businessService:y
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#classPredicate> businessService:LegalPerson ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument1> businessService:y
+                                                                           ] ;
+                                                                 rdf:rest rdf:nil
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> businessService:hasRole ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> businessService:y ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> <https://ontology.tno.nl/logistics/federated/LogisticRoles#Consignor>
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] . 
+ [ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:label "Rule 11"^^xsd:string ;
+   rdfs:comment "This swrl rule allows to infer that when a legal person is involved in a business transaction via the property 'involved consignee', then the legal person is a consignee."^^xsd:string ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> businessService:BusinessTransaction ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> businessService:x
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> businessService:involvedConsignee ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> businessService:x ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> businessService:y
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#classPredicate> businessService:LegalPerson ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument1> businessService:y
+                                                                           ] ;
+                                                                 rdf:rest rdf:nil
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> businessService:hasRole ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> businessService:y ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> <https://ontology.tno.nl/logistics/federated/LogisticRoles#Consignee>
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+ [ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:label "Rule 12"^^xsd:string ;
+   rdfs:comment "This swrl rule allows to infer that when a legal person is involved in a business transaction via the property 'involved terminal operator', then the legal person is a terminal operator."^^xsd:string ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> businessService:BusinessTransaction ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> businessService:x
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> businessService:involvedTerminalOperator ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> businessService:x ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> businessService:y
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#classPredicate> businessService:LegalPerson ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument1> businessService:y
+                                                                           ] ;
+                                                                 rdf:rest rdf:nil
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> businessService:hasRole ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> businessService:y ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> <https://ontology.tno.nl/logistics/federated/LogisticRoles#TerminalOperator>
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] . 
+ [ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:label "Rule 13"^^xsd:string ;
+   rdfs:comment "This swrl rule allows to infer that when a legal person is involved in a business transaction via the property 'involved warehouse operator', then the legal person is a warehouse operator."^^xsd:string ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> businessService:BusinessTransaction ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> businessService:x
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> businessService:involvedWarehouseOperator ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> businessService:x ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> businessService:y
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#classPredicate> businessService:LegalPerson ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument1> businessService:y
+                                                                           ] ;
+                                                                 rdf:rest rdf:nil
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> businessService:hasRole ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> businessService:y ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> <https://ontology.tno.nl/logistics/federated/LogisticRoles#WarehouseOperator>
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+ [ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:label "Rule 14"^^xsd:string ;
+   rdfs:comment "This swrl rule allows to infer that when a legal person is involved in a business transaction via the property 'involved insurer', then the legal person is an insurer."^^xsd:string ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> businessService:BusinessTransaction ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> businessService:x
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> businessService:involvedInsurer ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> businessService:x ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> businessService:y
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#classPredicate> businessService:LegalPerson ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument1> businessService:y
+                                                                           ] ;
+                                                                 rdf:rest rdf:nil
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> businessService:hasRole ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> businessService:y ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> <https://ontology.tno.nl/logistics/federated/LogisticRoles#Insurer>
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+ [ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:label "Rule 15"^^xsd:string ;
+   rdfs:comment "This swrl rule allows to infer that when a legal person is involved in a business transaction via the property 'involved bank', then the legal person is a bank."^^xsd:string ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> businessService:BusinessTransaction ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> businessService:x
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> businessService:involvedBank ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> businessService:x ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> businessService:y
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#classPredicate> businessService:LegalPerson ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument1> businessService:y
+                                                                           ] ;
+                                                                 rdf:rest rdf:nil
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> businessService:hasRole ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> businessService:y ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> <https://ontology.tno.nl/logistics/federated/LogisticRoles#Bank>
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+ [ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:label "Rule 16"^^xsd:string ;
+   rdfs:comment "This swrl rule allows to infer that when a legal person is involved in a business transaction via the property 'involved payee', then the legal person is a payee."^^xsd:string ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> businessService:BusinessTransaction ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> businessService:x
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> businessService:involvedPayee ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> businessService:x ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> businessService:y
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#classPredicate> businessService:LegalPerson ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument1> businessService:y
+                                                                           ] ;
+                                                                 rdf:rest rdf:nil
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> businessService:hasRole ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> businessService:y ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> <https://ontology.tno.nl/logistics/federated/LogisticRoles#Payee>
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+ [ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:label "Rule 17"^^xsd:string ;
+   rdfs:comment "This swrl rule allows to infer that when a legal person is involved in a business transaction via the property 'involved payer', then the legal person is a payer."^^xsd:string ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> businessService:BusinessTransaction ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> businessService:x
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> businessService:involvedPayer ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> businessService:x ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> businessService:y
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#classPredicate> businessService:LegalPerson ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument1> businessService:y
+                                                                           ] ;
+                                                                 rdf:rest rdf:nil
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> businessService:hasRole ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> businessService:y ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> <https://ontology.tno.nl/logistics/federated/LogisticRoles#Payer>
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+ [ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:label "Rule 18"^^xsd:string ;
+   rdfs:comment "This swrl rule allows to infer that when a legal person is involved in a business transaction via the property 'involved service provider', then the legal person is a service provider."^^xsd:string ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> businessService:BusinessTransaction ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> businessService:x
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> businessService:involvedServiceProvider ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> businessService:x ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> businessService:y
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#classPredicate> businessService:LegalPerson ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument1> businessService:y
+                                                                           ] ;
+                                                                 rdf:rest rdf:nil
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> businessService:hasRole ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> businessService:y ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> <https://ontology.tno.nl/logistics/federated/LogisticRoles#ServiceProvider>
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+ [ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:label "Rule 19"^^xsd:string ;
+   rdfs:comment "This swrl rule allows to infer that when a legal person is involved in a business transaction via the property 'involved customer', then the legal person is a customer."^^xsd:string ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> businessService:BusinessTransaction ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> businessService:x
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> businessService:involvedCustomer ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> businessService:x ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> businessService:y
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#classPredicate> businessService:LegalPerson ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument1> businessService:y
+                                                                           ] ;
+                                                                 rdf:rest rdf:nil
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> businessService:hasRole ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> businessService:y ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> <https://ontology.tno.nl/logistics/federated/LogisticRoles#Customer>
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+ [ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:label "Rule 20"^^xsd:string ;
+   rdfs:comment "This swrl rule allows to infer that when a legal person is involved in a business transaction via the property 'involved authority', then the legal person is an authority."^^xsd:string ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> businessService:BusinessTransaction ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> businessService:x
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> businessService:involvedAuthority ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> businessService:x ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> businessService:y
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#classPredicate> businessService:LegalPerson ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument1> businessService:y
+                                                                           ] ;
+                                                                 rdf:rest rdf:nil
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> businessService:hasRole ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> businessService:y ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> <https://ontology.tno.nl/logistics/federated/LogisticRoles#Authority>
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+ [ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:label "Rule 21"^^xsd:string ;
+   rdfs:comment "This swrl rule allows to infer that when a legal person is involved in a business transaction via the property 'involved declarant', then the legal person is a declarant."^^xsd:string ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> businessService:BusinessTransaction ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> businessService:x
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> businessService:involvedDeclarant ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> businessService:x ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> businessService:y
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#classPredicate> businessService:LegalPerson ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument1> businessService:y
+                                                                           ] ;
+                                                                 rdf:rest rdf:nil
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> businessService:hasRole ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> businessService:y ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> <https://ontology.tno.nl/logistics/federated/LogisticRoles#Declarant>
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+ [ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:label "Rule 22"^^xsd:string ;
+   rdfs:comment "This swrl rule allows to infer that when a legal person is involved in a business transaction via the property 'involved port authority', then the legal person is a port authority."^^xsd:string ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> businessService:BusinessTransaction ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> businessService:x
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> businessService:involvedPortAuthority ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> businessService:x ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> businessService:y
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#classPredicate> businessService:LegalPerson ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument1> businessService:y
+                                                                           ] ;
+                                                                 rdf:rest rdf:nil
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> businessService:hasRole ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> businessService:y ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> <https://ontology.tno.nl/logistics/federated/LogisticRoles#PortAuthority>
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+ [ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:label "Rule 23"^^xsd:string ;
+   rdfs:comment "This swrl rule allows to infer that when a legal person is involved in a business transaction via the property 'involved customs authority', then the legal person is a custom authority."^^xsd:string ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> businessService:BusinessTransaction ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> businessService:x
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> businessService:involvedCustomsAuthority ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> businessService:x ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> businessService:y
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#classPredicate> businessService:LegalPerson ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument1> businessService:y
+                                                                           ] ;
+                                                                 rdf:rest rdf:nil
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> businessService:hasRole ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> businessService:y ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> <https://ontology.tno.nl/logistics/federated/LogisticRoles#CustomsAuthority>
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+ [ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:label "Rule 24"^^xsd:string ;
+   rdfs:comment "This swrl rule allows to infer that when a legal person is involved in a business transaction via the property 'involved contact person', then the legal person is a contact person."^^xsd:string ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> businessService:BusinessTransaction ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> businessService:x
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> businessService:involvedContactPerson ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> businessService:x ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> businessService:y
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#classPredicate> businessService:LegalPerson ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument1> businessService:y
+                                                                           ] ;
+                                                                 rdf:rest rdf:nil
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> businessService:hasRole ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> businessService:y ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> <https://ontology.tno.nl/logistics/federated/LogisticRoles#ContactPerson>
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+ [ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:label "Rule 25"^^xsd:string ;
+   rdfs:comment "This swrl rule allows to infer that when a legal person is involved in a business transaction via the property 'involved exporter', then the legal person is an exporter."^^xsd:string ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> businessService:BusinessTransaction ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> businessService:x
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> businessService:involvedExporter ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> businessService:x ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> businessService:y
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#classPredicate> businessService:LegalPerson ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument1> businessService:y
+                                                                           ] ;
+                                                                 rdf:rest rdf:nil
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> businessService:hasRole ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> businessService:y ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> <https://ontology.tno.nl/logistics/federated/LogisticRoles#Exporter>
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+ [ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:label "Rule 26"^^xsd:string ;
+   rdfs:comment "This swrl rule allows to infer that when a legal person is involved in a business transaction via the property 'involved sender', then the legal person is a sender."^^xsd:string ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> businessService:BusinessTransaction ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> businessService:x
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> businessService:involvedSender ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> businessService:x ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> businessService:y
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#classPredicate> businessService:LegalPerson ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument1> businessService:y
+                                                                           ] ;
+                                                                 rdf:rest rdf:nil
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> businessService:hasRole ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> businessService:y ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> <https://ontology.tno.nl/logistics/federated/LogisticRoles#Sender>
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+ [ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:label "Rule 27"^^xsd:string ;
+   rdfs:comment "This swrl rule allows to infer that when a legal person is involved in a business transaction via the property 'involved issuer', then the legal person is a issuer."^^xsd:string ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> businessService:BusinessTransaction ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> businessService:x
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> businessService:involvedIssuer ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> businessService:x ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> businessService:y
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#classPredicate> businessService:LegalPerson ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument1> businessService:y
+                                                                           ] ;
+                                                                 rdf:rest rdf:nil
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> businessService:hasRole ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> businessService:y ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> <https://ontology.tno.nl/logistics/federated/LogisticRoles#Issuer>
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+ [ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:label "Rule 28"^^xsd:string ;
+   rdfs:comment "This swrl rule allows to infer that when a legal person is involved in a business transaction via the property 'involved importer', then the legal person is a issuer."^^xsd:string ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> businessService:BusinessTransaction ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> businessService:x
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> businessService:involvedImporter ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> businessService:x ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> businessService:y
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#classPredicate> businessService:LegalPerson ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument1> businessService:y
+                                                                           ] ;
+                                                                 rdf:rest rdf:nil
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> businessService:hasRole ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> businessService:y ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> <https://ontology.tno.nl/logistics/federated/LogisticRoles#Importer>
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
