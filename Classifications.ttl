@@ -73,10 +73,6 @@ classifications:D
   a classifications:NatureOfCargo ;
   rdfs:label "Dangerous" ;
 .
-classifications:D_1
-  a classifications:NatureOfCargo ;
-  rdfs:label "Reefer" ;
-.
 classifications:DangerousGoods
   a owl:Class ;
   rdfs:comment "A hazardous or non-hazardous substance which may pose risks to people and/or the environment for which the transportation is regulated by dangerous goods regulations." ;
@@ -188,9 +184,6 @@ classifications:Rhine-Alpine_Corridor
   a classifications:CorridorName ;
 .
 classifications:Rhine-Danube_Corridor
-  a classifications:CorridorName ;
-.
-classifications:Rhine_Alpine_Corridor
   a classifications:CorridorName ;
 .
 classifications:Road
