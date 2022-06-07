@@ -75,7 +75,6 @@ pi:City
 .
 pi:Corridor
   a owl:Class ;
-  a sh:NodeShape ;
   rdfs:comment "A logistic corridor is a generalised route. It may consist of several modalities. For example, the route between Europoort and Northern Italy is a corridor, since it's a comman and important route." ;
   rdfs:label "Corridor" ;
   rdfs:subClassOf pi:Trajectory ;
@@ -283,7 +282,7 @@ pi:cityLoCode
 .
 pi:cityName
   a owl:DatatypeProperty ;
-  rdfs:label "Has Manager" ;
+  rdfs:label "City Name" ;
   rdfs:subPropertyOf pi:locationProperties ;
 .
 pi:containsLogisticalInterface
@@ -329,7 +328,7 @@ pi:geonamesReference
   a owl:ObjectProperty ;
   rdfs:comment "Reference to a geonames feature corresponding to the Location that is the domain of this property." ;
   rdfs:domain pi:Location ;
-  rdfs:label "Geonames Feature" ;
+  rdfs:label "Geonames Reference" ;
   rdfs:range <http://www.geonames.org/ontology#Feature> ;
 .
 pi:hasCorridorCode
