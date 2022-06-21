@@ -71,7 +71,7 @@ LogisticRoles:CommercialRoles
 LogisticRoles:Consignee
   a LogisticRoles:LogisticsRoles ;
   rdfs:comment """A consignee is the role of an enterprise where it is the operator and/or owner of a logistical function at a place with the role 'place of delivery'. A consignee can act as customer (e.g. Terms of Delivery is 'ex works').  
-defintions 2: A consignee is the role of an enterprise where it is the operator and/or owner of a logistical function at a place with the role 'place of delivery'. A consignee can act as customer (e.g. Terms of Delivery is 'ex works').""" ;
+""" ;
   rdfs:label "Consignee" ;
   ReusableTags:isDerived true ;
 .
