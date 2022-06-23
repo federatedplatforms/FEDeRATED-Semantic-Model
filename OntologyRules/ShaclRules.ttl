@@ -1,0 +1,449 @@
+@prefix sh: <http://www.w3.org/ns/shacl#>.
+@prefix : <https://ontology.tno.nl/logistics/federated/BusinessService#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix LogisticsRoles: <https://ontology.tno.nl/logistics/federated/LogisticsRoles#> .
+@prefix businessService: <https://ontology.tno.nl/logistics/federated/BusinessService#> .
+
+
+
+:RuleConsumer
+    a sh:NodeShape ;
+    sh:targetClass businessService:LegalPerson ;
+    sh:rule [
+        a sh:SPARQLRule ;
+        sh:construct """
+            CONSTRUCT {
+                $this <https://ontology.tno.nl/logistics/federated/BusinessService#hasRole> <https://ontology.tno.nl/logistics/federated/LogisticsRoles#Consumer>  .
+            }
+            WHERE {
+                ?bs <https://ontology.tno.nl/logistics/federated/BusinessService#involvedConsumer> $this .
+            }
+            """ ;
+    ] ;
+.
+:RuleProducer
+    a sh:NodeShape ;
+    sh:targetClass businessService:LegalPerson ;
+    sh:rule [
+        a sh:SPARQLRule ;
+        sh:construct """
+            CONSTRUCT {
+                $this <https://ontology.tno.nl/logistics/federated/BusinessService#hasRole> <https://ontology.tno.nl/logistics/federated/LogisticsRoles#Producer>  .
+            }
+            WHERE {
+                ?bs <https://ontology.tno.nl/logistics/federated/BusinessService#involvedProducer> $this .
+            }
+            """ ;
+    ] ;
+.
+:RuleRetailer
+    a sh:NodeShape ;
+    sh:targetClass businessService:LegalPerson ;
+    sh:rule [
+        a sh:SPARQLRule ;
+        sh:construct """
+            CONSTRUCT {
+                $this <https://ontology.tno.nl/logistics/federated/BusinessService#hasRole> <https://ontology.tno.nl/logistics/federated/LogisticsRoles#Retailer>  .
+            }
+            WHERE {
+                ?bs <https://ontology.tno.nl/logistics/federated/BusinessService#involvedRetailer> $this .
+            }
+            """ ;
+    ] ;
+.
+:RuleShuntingYard
+    a sh:NodeShape ;
+    sh:targetClass businessService:LegalPerson ;
+    sh:rule [
+        a sh:SPARQLRule ;
+        sh:construct """
+            CONSTRUCT {
+                $this <https://ontology.tno.nl/logistics/federated/BusinessService#hasRole> <https://ontology.tno.nl/logistics/federated/LogisticsRoles#ShuntingYard>  .
+            }
+            WHERE {
+                ?bs <https://ontology.tno.nl/logistics/federated/BusinessService#involvedShuntingYard> $this .
+            }
+            """ ;
+    ] ;
+.
+:RuleLogisticsServiceProvider
+    a sh:NodeShape ;
+    sh:targetClass businessService:LegalPerson ;
+    sh:rule [
+        a sh:SPARQLRule ;
+        sh:construct """
+            CONSTRUCT {
+                $this <https://ontology.tno.nl/logistics/federated/BusinessService#hasRole> <https://ontology.tno.nl/logistics/federated/LogisticsRoles#LogisticServiceProvider>  .
+            }
+            WHERE {
+                ?bs <https://ontology.tno.nl/logistics/federated/BusinessService#involvedLogisticsServiceProvider> $this .
+            }
+            """ ;
+    ] ;
+.
+:RuleNotifyParty
+    a sh:NodeShape ;
+    sh:targetClass businessService:LegalPerson ;
+    sh:rule [
+        a sh:SPARQLRule ;
+        sh:construct """
+            CONSTRUCT {
+                $this <https://ontology.tno.nl/logistics/federated/BusinessService#hasRole> <https://ontology.tno.nl/logistics/federated/LogisticsRoles#NotifyParty>  .
+            }
+            WHERE {
+                ?bs <https://ontology.tno.nl/logistics/federated/BusinessService#involvedNotifyParty> $this .
+            }
+            """ ;
+    ] ;
+.
+:RuleForwarder
+    a sh:NodeShape ;
+    sh:targetClass businessService:LegalPerson ;
+    sh:rule [
+        a sh:SPARQLRule ;
+        sh:construct """
+            CONSTRUCT {
+                $this <https://ontology.tno.nl/logistics/federated/BusinessService#hasRole> <https://ontology.tno.nl/logistics/federated/LogisticsRoles#Forwarder>  .
+            }
+            WHERE {
+                ?bs <https://ontology.tno.nl/logistics/federated/BusinessService#involvedForwarder> $this .
+            }
+            """ ;
+    ] ;
+.
+:RuleDeliveryParty
+    a sh:NodeShape ;
+    sh:targetClass businessService:LegalPerson ;
+    sh:rule [
+        a sh:SPARQLRule ;
+        sh:construct """
+            CONSTRUCT {
+                $this <https://ontology.tno.nl/logistics/federated/BusinessService#hasRole> <https://ontology.tno.nl/logistics/federated/LogisticsRoles#DeliveryParty>  .
+            }
+            WHERE {
+                ?bs <https://ontology.tno.nl/logistics/federated/BusinessService#involvedDeliveryParty> $this .
+            }
+            """ ;
+    ] ;
+.
+:RuleDispatchParty
+    a sh:NodeShape ;
+    sh:targetClass businessService:LegalPerson ;
+    sh:rule [
+        a sh:SPARQLRule ;
+        sh:construct """
+            CONSTRUCT {
+                $this <https://ontology.tno.nl/logistics/federated/BusinessService#hasRole> <https://ontology.tno.nl/logistics/federated/LogisticsRoles#DispatchParty>  .
+            }
+            WHERE {
+                ?bs <https://ontology.tno.nl/logistics/federated/BusinessService#involvedDispatchParty> $this .
+            }
+            """ ;
+    ] ;
+.
+:RuleConsignor
+    a sh:NodeShape ;
+    sh:targetClass businessService:LegalPerson ;
+    sh:rule [
+        a sh:SPARQLRule ;
+        sh:construct """
+            CONSTRUCT {
+                $this <https://ontology.tno.nl/logistics/federated/BusinessService#hasRole> <https://ontology.tno.nl/logistics/federated/LogisticsRoles#Consignor>  .
+            }
+            WHERE {
+                ?bs <https://ontology.tno.nl/logistics/federated/BusinessService#involvedConsignor> $this .
+            }
+            """ ;
+    ] ;
+.
+:RuleConsignee
+    a sh:NodeShape ;
+    sh:targetClass businessService:LegalPerson ;
+    sh:rule [
+        a sh:SPARQLRule ;
+        sh:construct """
+            CONSTRUCT {
+                $this <https://ontology.tno.nl/logistics/federated/BusinessService#hasRole> <https://ontology.tno.nl/logistics/federated/LogisticsRoles#Consignee>  .
+            }
+            WHERE {
+                ?bs <https://ontology.tno.nl/logistics/federated/BusinessService#involvedConsignee> $this .
+            }
+            """ ;
+    ] ;
+.
+:RuleOperator
+    a sh:NodeShape ;
+    sh:targetClass businessService:LegalPerson ;
+    sh:rule [
+        a sh:SPARQLRule ;
+        sh:construct """
+            CONSTRUCT {
+                $this <https://ontology.tno.nl/logistics/federated/BusinessService#hasRole> <https://ontology.tno.nl/logistics/federated/LogisticsRoles#OperatorRoles>  .
+            }
+            WHERE {
+                ?bs <https://ontology.tno.nl/logistics/federated/BusinessService#involvedOperator> $this .
+            }
+            """ ;
+    ] ;
+.
+:RuleTerminalOperator
+    a sh:NodeShape ;
+    sh:targetClass businessService:LegalPerson ;
+    sh:rule [
+        a sh:SPARQLRule ;
+        sh:construct """
+            CONSTRUCT {
+                $this <https://ontology.tno.nl/logistics/federated/BusinessService#hasRole> <https://ontology.tno.nl/logistics/federated/LogisticsRoles#TerminalOperator>  .
+            }
+            WHERE {
+                ?bs <https://ontology.tno.nl/logistics/federated/BusinessService#involvedTerminalOperator> $this .
+            }
+            """ ;
+    ] ;
+.
+:RuleWarehouseOperator
+    a sh:NodeShape ;
+    sh:targetClass businessService:LegalPerson ;
+    sh:rule [
+        a sh:SPARQLRule ;
+        sh:construct """
+            CONSTRUCT {
+                $this <https://ontology.tno.nl/logistics/federated/BusinessService#hasRole> <https://ontology.tno.nl/logistics/federated/LogisticsRoles#WarehouseOperator>  .
+            }
+            WHERE {
+                ?bs <https://ontology.tno.nl/logistics/federated/BusinessService#involvedWarehouseOperator> $this .
+            }
+            """ ;
+    ] ;
+.
+:RuleCarrier
+    a sh:NodeShape ;
+    sh:targetClass businessService:LegalPerson ;
+    sh:rule [
+        a sh:SPARQLRule ;
+        sh:construct """
+            CONSTRUCT {
+                $this <https://ontology.tno.nl/logistics/federated/BusinessService#hasRole> <https://ontology.tno.nl/logistics/federated/LogisticsRoles#Carrier>  .
+            }
+            WHERE {
+                ?bs <https://ontology.tno.nl/logistics/federated/BusinessService#involvedCarrier> $this .
+            }
+            """ ;
+    ] ;
+.
+:RuleInsurer
+    a sh:NodeShape ;
+    sh:targetClass businessService:LegalPerson ;
+    sh:rule [
+        a sh:SPARQLRule ;
+        sh:construct """
+            CONSTRUCT {
+                $this <https://ontology.tno.nl/logistics/federated/BusinessService#hasRole> <https://ontology.tno.nl/logistics/federated/LogisticsRoles#Insurer>  .
+            }
+            WHERE {
+                ?bs <https://ontology.tno.nl/logistics/federated/BusinessService#involvedInsurer> $this .
+            }
+            """ ;
+    ] ;
+.
+:RuleBank
+    a sh:NodeShape ;
+    sh:targetClass businessService:LegalPerson ;
+    sh:rule [
+        a sh:SPARQLRule ;
+        sh:construct """
+            CONSTRUCT {
+                $this <https://ontology.tno.nl/logistics/federated/BusinessService#hasRole> <https://ontology.tno.nl/logistics/federated/LogisticsRoles#Bank>  .
+            }
+            WHERE {
+                ?bs <https://ontology.tno.nl/logistics/federated/BusinessService#involvedBank> $this .
+            }
+            """ ;
+    ] ;
+.
+:RulePayer
+    a sh:NodeShape ;
+    sh:targetClass businessService:LegalPerson ;
+    sh:rule [
+        a sh:SPARQLRule ;
+        sh:construct """
+            CONSTRUCT {
+                $this <https://ontology.tno.nl/logistics/federated/BusinessService#hasRole> <https://ontology.tno.nl/logistics/federated/LogisticsRoles#Payer>  .
+            }
+            WHERE {
+                ?bs <https://ontology.tno.nl/logistics/federated/BusinessService#involvedPayer> $this .
+            }
+            """ ;
+    ] ;
+.
+:RuleServiceProvider
+    a sh:NodeShape ;
+    sh:targetClass businessService:LegalPerson ;
+    sh:rule [
+        a sh:SPARQLRule ;
+        sh:construct """
+            CONSTRUCT {
+                $this <https://ontology.tno.nl/logistics/federated/BusinessService#hasRole> <https://ontology.tno.nl/logistics/federated/LogisticsRoles#ServiceProvider>  .
+            }
+            WHERE {
+                ?bs <https://ontology.tno.nl/logistics/federated/BusinessService#involvedServiceProvider> $this .
+            }
+            """ ;
+    ] ;
+.
+:RuleCustomer
+    a sh:NodeShape ;
+    sh:targetClass businessService:LegalPerson ;
+    sh:rule [
+        a sh:SPARQLRule ;
+        sh:construct """
+            CONSTRUCT {
+                $this <https://ontology.tno.nl/logistics/federated/BusinessService#hasRole> <https://ontology.tno.nl/logistics/federated/LogisticsRoles#Customer>  .
+            }
+            WHERE {
+                ?bs <https://ontology.tno.nl/logistics/federated/BusinessService#involvedCustomer> $this .
+            }
+            """ ;
+    ] ;
+.
+:RuleAuthority
+    a sh:NodeShape ;
+    sh:targetClass businessService:LegalPerson ;
+    sh:rule [
+        a sh:SPARQLRule ;
+        sh:construct """
+            CONSTRUCT {
+                $this <https://ontology.tno.nl/logistics/federated/BusinessService#hasRole> <https://ontology.tno.nl/logistics/federated/LogisticsRoles#Authority>  .
+            }
+            WHERE {
+                ?bs <https://ontology.tno.nl/logistics/federated/BusinessService#involvedAuthority> $this .
+            }
+            """ ;
+    ] ;
+.
+:RulePortAuthority
+    a sh:NodeShape ;
+    sh:targetClass businessService:LegalPerson ;
+    sh:rule [
+        a sh:SPARQLRule ;
+        sh:construct """
+            CONSTRUCT {
+                $this <https://ontology.tno.nl/logistics/federated/BusinessService#hasRole> <https://ontology.tno.nl/logistics/federated/LogisticsRoles#Authority>  .
+            }
+            WHERE {
+                ?bs <https://ontology.tno.nl/logistics/federated/BusinessService#involvedPortAuthority> $this .
+            }
+            """ ;
+    ] ;
+.
+:RuleCustomsAuthority
+    a sh:NodeShape ;
+    sh:targetClass businessService:LegalPerson ;
+    sh:rule [
+        a sh:SPARQLRule ;
+        sh:construct """
+            CONSTRUCT {
+                $this <https://ontology.tno.nl/logistics/federated/BusinessService#hasRole> <https://ontology.tno.nl/logistics/federated/LogisticsRoles#CustomsAuthority>  .
+            }
+            WHERE {
+                ?bs <https://ontology.tno.nl/logistics/federated/BusinessService#involvedPortAuthority> $this .
+            }
+            """ ;
+    ] ;
+.
+:RuleContactPerson
+    a sh:NodeShape ;
+    sh:targetClass businessService:LegalPerson ;
+    sh:rule [
+        a sh:SPARQLRule ;
+        sh:construct """
+            CONSTRUCT {
+                $this <https://ontology.tno.nl/logistics/federated/BusinessService#hasRole> <https://ontology.tno.nl/logistics/federated/LogisticsRoles#ContactPerson>  .
+            }
+            WHERE {
+                ?bs <https://ontology.tno.nl/logistics/federated/BusinessService#involvedContactPerson> $this .
+            }
+            """ ;
+    ] ;
+.
+:RuleExporter
+    a sh:NodeShape ;
+    sh:targetClass businessService:LegalPerson ;
+    sh:rule [
+        a sh:SPARQLRule ;
+        sh:construct """
+            CONSTRUCT {
+                $this <https://ontology.tno.nl/logistics/federated/BusinessService#hasRole> <https://ontology.tno.nl/logistics/federated/LogisticsRoles#Exporter>  .
+            }
+            WHERE {
+                ?bs <https://ontology.tno.nl/logistics/federated/BusinessService#involvedExporter> $this .
+            }
+            """ ;
+    ] ;
+.
+:RuleSender
+    a sh:NodeShape ;
+    sh:targetClass businessService:LegalPerson ;
+    sh:rule [
+        a sh:SPARQLRule ;
+        sh:construct """
+            CONSTRUCT {
+                $this <https://ontology.tno.nl/logistics/federated/BusinessService#hasRole> <https://ontology.tno.nl/logistics/federated/LogisticsRoles#Sender>  .
+            }
+            WHERE {
+                ?bs <https://ontology.tno.nl/logistics/federated/BusinessService#involvedSender> $this .
+            }
+            """ ;
+    ] ;
+.
+:RuleIssuer
+    a sh:NodeShape ;
+    sh:targetClass businessService:LegalPerson ;
+    sh:rule [
+        a sh:SPARQLRule ;
+        sh:construct """
+            CONSTRUCT {
+                $this <https://ontology.tno.nl/logistics/federated/BusinessService#hasRole> <https://ontology.tno.nl/logistics/federated/LogisticsRoles#Issuer>  .
+            }
+            WHERE {
+                ?bs <https://ontology.tno.nl/logistics/federated/BusinessService#involvedIssuer> $this .
+            }
+            """ ;
+    ] ;
+.
+:RuleImporter
+    a sh:NodeShape ;
+    sh:targetClass businessService:LegalPerson ;
+    sh:rule [
+        a sh:SPARQLRule ;
+        sh:construct """
+            CONSTRUCT {
+                $this <https://ontology.tno.nl/logistics/federated/BusinessService#hasRole> <https://ontology.tno.nl/logistics/federated/LogisticsRoles#Importer>  .
+            }
+            WHERE {
+                ?bs <https://ontology.tno.nl/logistics/federated/BusinessService#involvedImporter> $this .
+            }
+            """ ;
+    ] ;
+.
+:RuleDeclarant
+    a sh:NodeShape ;
+    sh:targetClass businessService:LegalPerson ;
+    sh:rule [
+        a sh:SPARQLRule ;
+        sh:construct """
+            CONSTRUCT {
+                $this <https://ontology.tno.nl/logistics/federated/BusinessService#hasRole> <https://ontology.tno.nl/logistics/federated/LogisticsRoles#Declarant>  .
+            }
+            WHERE {
+                ?bs <https://ontology.tno.nl/logistics/federated/BusinessService#involvedDeclarant> $this .
+            }
+            """ ;
+    ] ;
+.

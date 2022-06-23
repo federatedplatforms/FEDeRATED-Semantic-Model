@@ -1,0 +1,98 @@
+@prefix : <https://ontology.tno.nl/logistics/federated/BusinessService#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix pi: <https://ontology.tno.nl/logistics/federated/PhysicalInfrastructure#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix Event: <https://ontology.tno.nl/logistics/federated/Event#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix DigitalTwin: <https://ontology.tno.nl/logistics/federated/DigitalTwin#> .
+@prefix ReusableTags: <https://ontology.tno.nl/logistics/federated/ReusableTags#> .
+@prefix LogisticsRoles: <https://ontology.tno.nl/logistics/federated/LogisticsRoles#> .
+@prefix Classifications: <https://ontology.tno.nl/logistics/federated/Classifications#> .
+@prefix businessService: <https://ontology.tno.nl/logistics/federated/BusinessService#> .
+@base <http://www.w3.org/2002/07/owl#> .
+
+[ rdf:type owl:Ontology ;
+   owl:imports <https://ontology.tno.nl/logistics/federated/BusinessService>
+ ] .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  https://ontology.tno.nl/logistics/federated/BusinessService#hasRole
+businessService:hasRole rdf:type owl:ObjectProperty .
+
+
+###  https://ontology.tno.nl/logistics/federated/BusinessService#involvedConsumer
+businessService:involvedConsumer rdf:type owl:ObjectProperty ;
+                                 rdfs:comment "The realtionship between a business transaction and a consumer that has been instantiated as a businessService:legalperson." ;
+                                 rdfs:label "involved consumer" .
+
+
+###  https://ontology.tno.nl/logistics/federated/BusinessService#involvedProducer
+businessService:involvedProducer rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  https://ontology.tno.nl/logistics/federated/BusinessService#BusinessTransaction
+businessService:BusinessTransaction rdf:type owl:Class ;
+                                    rdfs:subClassOf owl:Thing ;
+                                    rdfs:comment "All data shared by interactions for executing a business service" ;
+                                    rdfs:label "Business Transaction" .
+
+
+###  https://ontology.tno.nl/logistics/federated/BusinessService#LegalPerson
+businessService:LegalPerson rdf:type owl:Class ;
+                            rdfs:subClassOf owl:Thing ;
+                            rdfs:comment "The role of a Person, Enterprise or Organization is context dependant, and therefore should be described using the LogisticsRoles:Roles class." ;
+                            rdfs:label "Logistics Actor" .
+
+
+###  https://ontology.tno.nl/logistics/federated/LogisticsRoles#SupplyChainRoles
+LogisticsRoles:SupplyChainRoles rdf:type owl:Class ;
+                                rdfs:comment "These are roles that are found elsewhere in the supply chain than described by bussiness, commercial, financial or logistical roles. Such as the consumer or producer of products." ;
+                                rdfs:label "Supply Chain Roles" .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  https://ontology.tno.nl/logistics/federated/BusinessService#b
+businessService:b rdf:type owl:NamedIndividual ,
+                           businessService:BusinessTransaction ;
+                  businessService:involvedAuthority businessService:c ;
+                  businessService:involvedConsignor businessService:c ;
+                  businessService:involvedConsumer businessService:c ;
+                  businessService:involvedDeclarant businessService:c ;
+                  businessService:involvedForwarder businessService:c ;
+                  businessService:involvedPayee businessService:c ;
+                  businessService:involvedProducer businessService:c ;
+                  businessService:involvedShuntingYard businessService:c .
+
+
+###  https://ontology.tno.nl/logistics/federated/BusinessService#c
+businessService:c rdf:type owl:NamedIndividual ,
+                           businessService:LegalPerson .
+
+
+###  https://ontology.tno.nl/logistics/federated/LogisticsRoles#Consumer
+LogisticsRoles:Consumer rdf:type owl:NamedIndividual ,
+                                 LogisticsRoles:SupplyChainRoles ;
+                        rdfs:comment "A consumer consumes the goods that were supplied through the supply chain." ;
+                        rdfs:label "Consumer" .
+
+
+###  https://ontology.tno.nl/logistics/federated/LogisticsRoles#Producer
+LogisticsRoles:Producer rdf:type owl:NamedIndividual .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
