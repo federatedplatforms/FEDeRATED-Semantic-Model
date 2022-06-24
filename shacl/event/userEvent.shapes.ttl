@@ -1,0 +1,123 @@
+@prefix : <https://ontology.tno.nl/logistics/federated/shapes/userEvent#> .
+@prefix eventsh: <https://ontology.tno.nl/logistics/federated/shapes/event#> .
+@prefix event: <https://ontology.tno.nl/logistics/federated/Event#> .
+@prefix DT: <https://ontology.tno.nl/logistics/federated/DigitalTwin#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+<https://ontology.tno.nl/logistics/federated/shapes/userEvent>
+  a owl:Ontology ;
+  owl:imports <http://datashapes.org/dash> ;
+
+
+:ContainerDischargeEventShape
+  rdf:type sh:NodeShape ;
+  sh:name "Container Discharge Event Shape" ;
+  sh:description "A Container Discharge Event is a Discharge Event that involves a Container";
+  sh:node eventsh:DischargeEventShape ;
+  sh:property [
+    rdf:type sh:PropertyShape ;
+    sh:path event:involvesDigitalTwin ;
+    sh:class DT:Container ;
+    sh:minCount 1;
+  ] ;
+  sh:targetClass event:ContainerDischargeEvent ;
+.
+
+:BulkDischargeEventShape
+  rdf:type sh:NodeShape ;
+  sh:name "Bulk Discharge Event Shape" ;
+  sh:description "A Bulk Discharge Event is a Discharge Event that involves Bulk Product";
+  sh:node eventsh:DischargeEventShape ;
+  sh:property [
+    rdf:type sh:PropertyShape ;
+    sh:path event:involvesDigitalTwin ;
+    sh:class DT:BulkProduct ;
+    sh:minCount 1;
+  ] ;
+  sh:targetClass event:BulkDischargeEvent ;
+.
+
+:GoodsDischargeEventShape
+  rdf:type sh:NodeShape ;
+  sh:name "Goods Discharge Event Shape" ;
+  sh:description "A Goods Discharge Event is a Discharge Event that involves Goods";
+  sh:node eventsh:DischargeEventShape ;
+  sh:property [
+    rdf:type sh:PropertyShape ;
+    sh:path event:involvesDigitalTwin ;
+    sh:class DT:Goods ;
+    sh:minCount 1;
+  ] ;
+  sh:targetClass event:GoodsDischargeEvent ;
+.
+
+:BulkLoadEventShape
+  rdf:type sh:NodeShape ;
+  sh:name "Bulk Load Event Shape" ;
+  sh:description "A Bulk Load Event is a Load Event that involves Bulk Product";
+  sh:node eventsh:LoadEventShape ;
+  sh:property [
+    rdf:type sh:PropertyShape ;
+    sh:path event:involvesDigitalTwin ;
+    sh:class DT:BulkProduct ;
+    sh:minCount 1;
+  ] ;
+  sh:targetClass event:BulkLoadEvent ;
+.
+
+:GoodsLoadEventShape
+  rdf:type sh:NodeShape ;
+  sh:name "Goods Load Event Shape" ;
+  sh:description "A Goods Load Event is a Load Event that involves Goods";
+  sh:node eventsh:LoadEventShape ;
+  sh:property [
+    rdf:type sh:PropertyShape ;
+    sh:path event:involvesDigitalTwin ;
+    sh:class DT:Goods ;
+    sh:minCount 1;
+  ] ;
+  sh:targetClass event:GoodsLoadEvent ;
+.
+
+:EquipmentLoadEventShape
+  rdf:type sh:NodeShape ;
+  sh:name "Equipment Load Event Shape" ;
+  sh:description "An Equipment Load Event is a Load Event that involves Equipment";
+  sh:node eventsh:LoadEventShape ;
+  sh:property [
+    rdf:type sh:PropertyShape ;
+    sh:path event:involvesDigitalTwin ;
+    sh:class DT:Equipment ;
+    sh:minCount 1;
+  ] ;
+  sh:targetClass event:EquipmentLoadEvent ;
+.
+
+:RailwayWagonLoadEventShape
+  rdf:type sh:NodeShape ;
+  sh:name "RailwayWagon Load Event Shape" ;
+  sh:description "A RailwayWagon Load Event is a Load Event that involves a Railway Wagon";
+  sh:node eventsh:LoadEventShape ;
+  sh:property [
+    rdf:type sh:PropertyShape ;
+    sh:path event:involvesDigitalTwin ;
+    sh:class DT:RailwayWagon ;
+    sh:minCount 1;
+  ] ;
+  sh:targetClass event:RailwayWagonLoadEvent ;
+.
+
+:PushBargeLoadEventShape
+  rdf:type sh:NodeShape ;
+  sh:name "PushBarge Load Event Shape" ;
+  sh:description "A PushBarge Load Event is a Load Event that involves a PushBarge";
+  sh:node eventsh:LoadEventShape ;
+  sh:property [
+    rdf:type sh:PropertyShape ;
+    sh:path event:involvesDigitalTwin ;
+    sh:class DT:PushBarge ;
+    sh:minCount 1;
+  ] ;
+  sh:targetClass event:PushBargeLoadEvent ;
+.
