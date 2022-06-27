@@ -9,7 +9,7 @@
 <https://ontology.tno.nl/logistics/federated/shapes/userEvent>
   a owl:Ontology ;
   owl:imports <http://datashapes.org/dash> ;
-
+.
 
 :ContainerDischargeEventShape
   rdf:type sh:NodeShape ;
