@@ -33,10 +33,6 @@ pi:Airport
   rdfs:label "Airport" ;
   rdfs:subClassOf pi:LogisticalFunction ;
 .
-pi:Airport_1
-  a pi:Airport ;
-  rdfs:label "Airport 1" ;
-.
 pi:Anchorage
   a owl:Class ;
   rdfs:comment "A location where a ship can 'park'." ;
@@ -436,7 +432,7 @@ pi:securityMeasure
   rdfs:domain pi:InfrastructuralFunction ;
   rdfs:label "Security Measure" ;
   rdfs:range xsd:string ;
-  rdfs:subPropertyOf pi:logisticalFunctionProperties ;
+  rdfs:subPropertyOf pi:InfrastructuralFunction ;
 .
 pi:terminalDescription
   a owl:DatatypeProperty ;
