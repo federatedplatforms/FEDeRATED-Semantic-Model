@@ -55,18 +55,6 @@ Event:AtomicEvent
   rdfs:label "Located At" ;
   rdfs:subClassOf Event:Event ;
 .
-Event:BulkDischarge
-  a owl:Class ;
-  rdfs:label "Bulk Discharge" ;
-  rdfs:subClassOf Event:BulkTransportEvent ;
-  rdfs:subClassOf Event:DischargeEvent ;
-.
-Event:BulkLoadEvent
-  a owl:Class ;
-  rdfs:label "Bulk Load Event" ;
-  rdfs:subClassOf Event:BulkTransportEvent ;
-  rdfs:subClassOf Event:LoadEvent ;
-.
 Event:BulkTransportEvent
   a owl:Class ;
   rdfs:label "Bulk Transport Event" ;
@@ -90,19 +78,6 @@ Event:ComplexEvent
   rdfs:comment "Abstract class." ;
   rdfs:label "Complex Event" ;
   rdfs:subClassOf Event:Event ;
-.
-Event:ContainerDischargeEvent
-  a owl:Class ;
-  rdfs:comment "In a Container Discharge Event an equipment of type Container is discharged from its transportation means." ;
-  rdfs:label "Container Discharge Event" ;
-  rdfs:subClassOf Event:DischargeEvent ;
-  rdfs:subClassOf Event:EquipmentTransportEvent ;
-.
-Event:ContainerLoadEvent
-  a owl:Class ;
-  rdfs:comment "With a Container Load Event an association between an equipment of type Container and a transport means is established, because the container is loaded on some transport means." ;
-  rdfs:label "Container Load Event" ;
-  rdfs:subClassOf Event:EquipmentLoadEvent ;
 .
 Event:DateTimeType
   a owl:Class ;
@@ -149,13 +124,6 @@ Event:End
   a Event:Milestone ;
   rdfs:label "End" ;
 .
-Event:EquipmentLoadEvent
-  a owl:Class ;
-  rdfs:comment "With a Cargo Load Event an association between equipment and transport means is established, because the equipment is loaded on the transport means." ;
-  rdfs:label "Equipment Load Event" ;
-  rdfs:subClassOf Event:EquipmentTransportEvent ;
-  rdfs:subClassOf Event:LoadEvent ;
-.
 Event:EquipmentTransportEvent
   a owl:Class ;
   rdfs:comment "In a Cargo Discharge Event the connection between equipment and transport means is released, since the equipment is discharged off the transport means." ;
@@ -175,24 +143,11 @@ Event:Expected
   a Event:DateTimeType ;
   rdfs:label "Expected" ;
 .
-Event:GoodsDischargeEvent
-  a owl:Class ;
-  rdfs:label "Goods Discharge Event" ;
-  rdfs:subClassOf Event:DischargeEvent ;
-  rdfs:subClassOf Event:GoodsTransportEvent ;
-.
 Event:GoodsEquipmentEvent
   a owl:Class ;
   rdfs:comment "A Goods Equipment Event establishes the association between a goods or packaged product and an equipment." ;
   rdfs:label "Goods Equipment Event" ;
   rdfs:subClassOf Event:CargoEvent ;
-.
-Event:GoodsLoadEvent
-  a owl:Class ;
-  rdfs:comment "Association Transport Means - Goods. Load goods without intermediate equipment." ;
-  rdfs:label "Goods Load Event" ;
-  rdfs:subClassOf Event:GoodsTransportEvent ;
-  rdfs:subClassOf Event:LoadEvent ;
 .
 Event:GoodsStructuringEvent
   a owl:Class ;
@@ -247,18 +202,6 @@ Event:PickupTimeWindowEvent
 Event:Planned
   a Event:DateTimeType ;
   rdfs:label "Planned" ;
-.
-Event:PushBargeLoadEvent
-  a owl:Class ;
-  rdfs:comment "An association between an equipment of type PushBarge and a transport means of type Ship is established via this event. The push barge is connected to the ship pushing it forward." ;
-  rdfs:label "Push Barge Load Event" ;
-  rdfs:subClassOf Event:EquipmentLoadEvent ;
-.
-Event:RailwayWagonLoadEvent
-  a owl:Class ;
-  rdfs:comment "With the Railway Wagon Load Event a railway wagon is an association between an equipment and a railway wagon." ;
-  rdfs:label "Railway Wagon Load Event" ;
-  rdfs:subClassOf Event:EquipmentLoadEvent ;
 .
 Event:SplitEvent
   a owl:Class ;
