@@ -279,6 +279,8 @@ pi:cityLoCode
 pi:cityName
   a owl:DatatypeProperty ;
   rdfs:label "City Name" ;
+  rdfs:domain pi:City ;
+  rdfs:range xsd:string ;
   rdfs:subPropertyOf pi:locationProperties ;
 .
 pi:containsLogisticalInterface
