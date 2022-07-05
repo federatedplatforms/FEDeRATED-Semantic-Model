@@ -355,12 +355,6 @@ DigitalTwin:Trailer
       a owl:Restriction ;
       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
       owl:onDataRange xsd:string ;
-      owl:onProperty DigitalTwin:trailerID ;
-    ] ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onDataRange xsd:string ;
       owl:onProperty DigitalTwin:trailerLicensePlate ;
     ] ;
 .
@@ -508,7 +502,7 @@ DigitalTwin:cargoWeight
 DigitalTwin:classifications_detail
   a owl:ObjectProperty ;
   rdfs:comment "this object property links the any type of digital twin to the needed classification type and its controlled vocabularies" ;
-  rdfs:range classifications:classifications ;
+  rdfs:range classifications:Classifications ;
 .
 DigitalTwin:containerNumber
   a owl:DatatypeProperty ;
