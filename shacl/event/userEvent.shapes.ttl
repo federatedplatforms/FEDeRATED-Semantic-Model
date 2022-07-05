@@ -53,6 +53,62 @@
   sh:targetClass event:GoodsDischargeEvent ;
 .
 
+:EquipmentDischargeEventShape
+  rdf:type sh:NodeShape ;
+  sh:name "Equipment Discharge Event Shape" ;
+  sh:description "An Equipment Discharge Event is a Discharge Event that involves Equipment";
+  sh:node eventsh:DischargeEventShape ;
+  sh:property [
+    rdf:type sh:PropertyShape ;
+    sh:path event:involvesDigitalTwin ;
+    sh:class DT:Equipment ;
+    sh:minCount 1;
+  ] ;
+  sh:targetClass event:EquipmentDischargeEvent ;
+.
+
+:RailwayWagonDischargeEventShape
+  rdf:type sh:NodeShape ;
+  sh:name "RailwayWagon Discharge Event Shape" ;
+  sh:description "A RailwayWagon Discharge Event is a Discharge Event that involves a Railway Wagon";
+  sh:node eventsh:DischargeEventShape ;
+  sh:property [
+    rdf:type sh:PropertyShape ;
+    sh:path event:involvesDigitalTwin ;
+    sh:class DT:RailwayWagon ;
+    sh:minCount 1;
+  ] ;
+  sh:targetClass event:RailwayWagonDischargeEvent ;
+.
+
+:PushBargeDischargeEventShape
+  rdf:type sh:NodeShape ;
+  sh:name "PushBarge Discharge Event Shape" ;
+  sh:description "A PushBarge Discharge Event is a Discharge Event that involves a PushBarge";
+  sh:node eventsh:DischargeEventShape ;
+  sh:property [
+    rdf:type sh:PropertyShape ;
+    sh:path event:involvesDigitalTwin ;
+    sh:class DT:PushBarge ;
+    sh:minCount 1;
+  ] ;
+  sh:targetClass event:PushBargeDischargeEvent ;
+.
+
+:ContainerLoadEventShape
+  rdf:type sh:NodeShape ;
+  sh:name "Container Load Event Shape" ;
+  sh:description "A Container Load Event is a Load Event that involves a Container";
+  sh:node eventsh:LoadEventShape ;
+  sh:property [
+    rdf:type sh:PropertyShape ;
+    sh:path event:involvesDigitalTwin ;
+    sh:class DT:Container ;
+    sh:minCount 1;
+  ] ;
+  sh:targetClass event:ContainerLoadEvent ;
+.
+
 :BulkLoadEventShape
   rdf:type sh:NodeShape ;
   sh:name "Bulk Load Event Shape" ;
