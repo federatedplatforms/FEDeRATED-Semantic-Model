@@ -118,7 +118,7 @@ pi:InfrastructuralObject
   rdfs:label "Infrastructural Object" ;
   rdfs:subClassOf pi:InfrastructuralFunction ;
 .
-pi:InfrastructurelFunctionProperty
+pi:InfrastructuralFunctionProperty
   a owl:DatatypeProperty ;
   rdfs:comment "A super property for all properties related to infrastructural functions. -- Abstract property, do not instantiate." ;
   rdfs:label "Infrastructural Function Property" ;
@@ -254,7 +254,7 @@ pi:TrajectoryProperty
   rdfs:domain pi:Trajectory ;
   rdfs:label "Trajectory Property" ;
   rdfs:range xsd:anySimpleType ;
-  rdfs:subPropertyOf pi:InfrastructurelFunctionProperty ;
+  rdfs:subPropertyOf pi:InfrastructuralFunctionProperty ;
 .
 pi:Transshipment
   a owl:Class ;
@@ -434,7 +434,7 @@ pi:securityMeasure
   rdfs:domain pi:InfrastructuralFunction ;
   rdfs:label "Security Measure" ;
   rdfs:range xsd:string ;
-  rdfs:subPropertyOf pi:InfrastructuralFunction ;
+  rdfs:subPropertyOf pi:InfrastructuralFunctionProperty ;
 .
 pi:terminalDescription
   a owl:DatatypeProperty ;
