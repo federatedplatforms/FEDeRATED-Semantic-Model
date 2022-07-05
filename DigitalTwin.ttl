@@ -617,7 +617,7 @@ DigitalTwin:grossWeight
   rdfs:domain DigitalTwin:PhysicalObject ;
   rdfs:label "Gross Weight" ;
   rdfs:range xsd:integer ;
-  rdfs:subPropertyOf DigitalTwin:equipmentProperties ;
+  rdfs:subPropertyOf DigitalTwin:PhysicalObjectProperties  ;
 .
 DigitalTwin:hasAWB_Number
   a owl:DatatypeProperty ;
