@@ -52,7 +52,7 @@ Event:ArrivalEvent
 .
 Event:AtomicEvent
   a owl:Class ;
-  rdfs:label "Located At" ;
+  rdfs:label "Atomic Event" ;
   rdfs:subClassOf Event:Event ;
 .
 Event:BulkTransportEvent
