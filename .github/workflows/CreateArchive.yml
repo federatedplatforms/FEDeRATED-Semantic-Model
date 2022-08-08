@@ -13,7 +13,7 @@ jobs:
       with:
         type: 'zip'
         filename: 'ontologies.zip'
-        exclusions: '*.git* /*node_modules/* .editorconfig alignmentModules importedOntologies relatedOntologies sparql'
+        exclusions: '*.git* /*node_modules/* .editorconfig /alignmentModules /importedOntologies /relatedOntologies /sparql'
     - uses: actions/upload-artifact@v2
       with:
         name: federated-ontologies
