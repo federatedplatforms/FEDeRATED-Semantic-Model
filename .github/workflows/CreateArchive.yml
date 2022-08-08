@@ -1,0 +1,20 @@
+name: Select and Archive Ontology Files
+on:
+  push:
+    branches:
+      - master 
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: federated-ontologies
+      uses: TheDoctor0/zip-release@main
+      with:
+        type: 'zip'
+        filename: 'ontologies.zip'
+        exclusions: '*.git* /*node_modules/* .editorconfig /alignmentModules/* /importedOntologies/* /profile/* "/Codelists RDF/*" /relatedOntologies/* /sparql/*'
+    - uses: actions/upload-artifact@v2
+      with:
+        name: federated-ontologies
+        path: ./ontologies.zip
