@@ -2,7 +2,7 @@
 # imports: http://datashapes.org/dash
 # prefix: complexEvent
 
-@prefix : <https://ontology.tno.nl/logistics/federated/complexEvent#>
+@prefix : <https://ontology.tno.nl/logistics/federated/complexEvent#> .
 @prefix complexEvent: <https://ontology.tno.nl/logistics/federated/complexEvent#> .
 @prefix dash: <http://datashapes.org/dash#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
@@ -10,7 +10,7 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix event: <https://ontology.tno.nl/logistics/federated/Event#>
+@prefix event: <https://ontology.tno.nl/logistics/federated/Event#> .
 
 <https://ontology.tno.nl/logistics/federated/complexEvent>
   rdf:type owl:Ontology ;
@@ -83,4 +83,4 @@
     sh:class event:CallEvent ;
   ] ;
   sh:targetClass event:MilkRun ;
-]
+.
