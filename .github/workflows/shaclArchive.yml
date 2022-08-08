@@ -13,8 +13,8 @@ jobs:
       with:
         type: 'zip'
         filename: 'federated-shacl.zip'
-        exclusions: '*.git* /*node_modules/* .editorconfig /alignmentModules/* /importedOntologies/* /OntologyRules/* /profile/* /CodelistsRDF/* /relatedOntologies/* /sparql/*'
+        exclusions: '*.git* /*node_modules/* .editorconfig /alignmentModules/* /importedOntologies/* /OntologyRules/* /profile/* /CodelistsRDF/* /relatedOntologies/* /sparql/* *.ttl'
     - uses: actions/upload-artifact@v2
       with:
-        name: federated-ontologies
+        name: federated-shacl
         path: ./federated-shacl.zip
