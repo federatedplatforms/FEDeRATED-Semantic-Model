@@ -1,4 +1,4 @@
-name: Create Archive
+name: Select and Archive Ontology Files
 on: [push]
 jobs:
   build:
