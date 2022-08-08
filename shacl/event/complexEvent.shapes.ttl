@@ -2,7 +2,7 @@
 # imports: http://datashapes.org/dash
 # prefix: complexEvent
 
-@prefix : <https://ontology.tno.nl/logistics/federated/complexEvent#>
+@prefix : <https://ontology.tno.nl/logistics/federated/complexEvent#> .
 @prefix complexEvent: <https://ontology.tno.nl/logistics/federated/complexEvent#> .
 @prefix dash: <http://datashapes.org/dash#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
