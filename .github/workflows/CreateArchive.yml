@@ -5,10 +5,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
-    - name: Archive Release
-      uses: thedoctor0/zip-release@main
+    - name: federated-ontologies
+      uses: TheDoctor0/zip-release@main
       with:
         type: 'zip'
         filename: 'ontologies.zip'
         directory: 'shacl'
         exclusions: '*.git* /*node_modules/* .editorconfig'
+    - uses: actions/upload-artifact@v2
+      with:
+        name: federated-ontologies
+        path: ./ontologies.zip
