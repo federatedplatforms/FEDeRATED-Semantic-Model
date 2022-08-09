@@ -13,7 +13,7 @@ jobs:
       with:
         type: 'zip'
         filename: 'federated-shacl.zip'
-        exclusions: '*.git* /*node_modules/* .editorconfig /alignmentModules/* /importedOntologies/* /OntologyRules/* /profile/* /CodelistsRDF/* /relatedOntologies/* /sparql/* *.ttl /shacl/[Incident]EFTIRetrieval.shapes.ttl /shacl/[Incident]MetadataSearch.shapes.ttl /shacl/pyshaclValidation.py /shacl/searchFind.Shapes.ttl'
+        exclusions: '*.git* /*node_modules/* .editorconfig /alignmentModules/* /importedOntologies/* /OntologyRules/* /profile/* /CodelistsRDF/* /relatedOntologies/* /sparql/* *.ttl /shacl/\[Incident\]EFTIRetrieval.shapes.ttl /shacl/\[Incident\]MetadataSearch.shapes.ttl /shacl/pyshaclValidation.py /shacl/searchFind.Shapes.ttl'
     - uses: actions/upload-artifact@v2
       with:
         name: federated-shacl
