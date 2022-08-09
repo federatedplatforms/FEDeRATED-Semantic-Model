@@ -62,11 +62,13 @@
   ];
   sh:property [
     rdf:type sh:PropertyShape ;
+	sh:path event:hasTimestamp ;
     sh:description "The Arrival Event should have the earliest timestamp.";
     sh:deactivated true;
   ] ;
   sh:property [
     rdf:type sh:PropertyShape ;
+	sh:path event:hasTimestamp ;
     sh:description "The Departure Event should have the latest timestamp.";
     sh:deactivated true;
   ];
