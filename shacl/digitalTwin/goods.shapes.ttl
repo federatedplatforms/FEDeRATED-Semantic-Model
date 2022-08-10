@@ -20,9 +20,9 @@
 .
 
 :GoodsShape
+    rdfs:label "Goods Shape" ;
+	rdfs:comment "Goods have a description, a goods type code, a goods weight and gross mass.";
     rdf:type sh:NodeShape ;
-    sh:name "Goods Shape" ;
-    sh:description "Goods have a description, a goods type code, a goods weight and gross mass." ;
     sh:property [
         rdf:type sh:PropertyShape ;
         sh:path DT:goodsDescription ;

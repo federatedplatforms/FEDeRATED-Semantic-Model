@@ -20,8 +20,8 @@
 
 :ComplexEventShape 
   rdf:type sh:NodeShape ;
-  sh:name "Complex Event Shape";
-  sh:description "A Complex Event contains several associations to other atomic or complex events. It cannot contain associations to DTs, Locations, etc.";
+  rdfs:label "Complex Event Shape";
+  rdfs:comment "A Complex Event contains several associations to other atomic or complex events. It cannot contain associations to DTs, Locations, etc.";
   sh:property [
     rdf:type sh:PropertyShape ;
     sh:path event:involvesEvent ;
@@ -32,8 +32,8 @@
 
 :CallEventShape 
   rdf:type sh:NodeShape ;
-  sh:name "Place of Call Event Shape";
-  sh:description "Example shape for the place of call described in Wout's flow diagram.";
+  rdfs:label "Place of Call Event Shape";
+  rdfs:comment "Example shape for the place of call described in Wout's flow diagram.";
   sh:property [
     rdf:type sh:PropertyShape ;
     sh:description "This Event should contain an association to an actual ArrivalEvent.";
@@ -77,8 +77,8 @@
 
 :MilkRunShape
   rdf:type sh:NodeShape ;
-  sh:name "Milk Run Shape";
-  sh:description "A Milk Run is a sequence of places of call (following Wout's example flow diagram).";
+  rdfs:label "Milk Run Shape";
+  rdfs:comment "A Milk Run is a sequence of places of call (following Wout's example flow diagram).";
   sh:property [
     rdf:type sh:PropertyShape ;
     sh:path event:involvesEvent ;

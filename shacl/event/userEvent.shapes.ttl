@@ -13,8 +13,8 @@
 
 :ContainerDischargeEventShape
   rdf:type sh:NodeShape ;
-  sh:name "Container Discharge Event Shape" ;
-  sh:description "A Container Discharge Event is a Discharge Event that involves a Container";
+  rdfs:label "Container Discharge Event Shape" ;
+  rdfs:comment "A Container Discharge Event is a Discharge Event that involves a Container";
   sh:node eventsh:DischargeEventShape ;
   sh:property [
     rdf:type sh:PropertyShape ;
@@ -27,8 +27,8 @@
 
 :BulkDischargeEventShape
   rdf:type sh:NodeShape ;
-  sh:name "Bulk Discharge Event Shape" ;
-  sh:description "A Bulk Discharge Event is a Discharge Event that involves Bulk Product";
+  rdfs:label "Bulk Discharge Event Shape" ;
+  rdfs:comment "A Bulk Discharge Event is a Discharge Event that involves Bulk Product";
   sh:node eventsh:DischargeEventShape ;
   sh:property [
     rdf:type sh:PropertyShape ;
@@ -41,8 +41,8 @@
 
 :GoodsDischargeEventShape
   rdf:type sh:NodeShape ;
-  sh:name "Goods Discharge Event Shape" ;
-  sh:description "A Goods Discharge Event is a Discharge Event that involves Goods";
+  rdfs:label "Goods Discharge Event Shape" ;
+  rdfs:comment "A Goods Discharge Event is a Discharge Event that involves Goods";
   sh:node eventsh:DischargeEventShape ;
   sh:property [
     rdf:type sh:PropertyShape ;
@@ -55,8 +55,8 @@
 
 :EquipmentDischargeEventShape
   rdf:type sh:NodeShape ;
-  sh:name "Equipment Discharge Event Shape" ;
-  sh:description "An Equipment Discharge Event is a Discharge Event that involves Equipment";
+  rdfs:label "Equipment Discharge Event Shape" ;
+  rdfs:comment "An Equipment Discharge Event is a Discharge Event that involves Equipment";
   sh:node eventsh:DischargeEventShape ;
   sh:property [
     rdf:type sh:PropertyShape ;
@@ -69,8 +69,8 @@
 
 :RailwayWagonDischargeEventShape
   rdf:type sh:NodeShape ;
-  sh:name "RailwayWagon Discharge Event Shape" ;
-  sh:description "A RailwayWagon Discharge Event is a Discharge Event that involves a Railway Wagon";
+  rdfs:label "RailwayWagon Discharge Event Shape" ;
+  rdfs:comment "A RailwayWagon Discharge Event is a Discharge Event that involves a Railway Wagon";
   sh:node eventsh:DischargeEventShape ;
   sh:property [
     rdf:type sh:PropertyShape ;
@@ -83,8 +83,8 @@
 
 :PushBargeDischargeEventShape
   rdf:type sh:NodeShape ;
-  sh:name "PushBarge Discharge Event Shape" ;
-  sh:description "A PushBarge Discharge Event is a Discharge Event that involves a PushBarge";
+  rdfs:label "PushBarge Discharge Event Shape" ;
+  rdfs:comment "A PushBarge Discharge Event is a Discharge Event that involves a PushBarge";
   sh:node eventsh:DischargeEventShape ;
   sh:property [
     rdf:type sh:PropertyShape ;
@@ -97,8 +97,8 @@
 
 :ContainerLoadEventShape
   rdf:type sh:NodeShape ;
-  sh:name "Container Load Event Shape" ;
-  sh:description "A Container Load Event is a Load Event that involves a Container";
+  rdfs:label "Container Load Event Shape" ;
+  rdfs:comment "A Container Load Event is a Load Event that involves a Container";
   sh:node eventsh:LoadEventShape ;
   sh:property [
     rdf:type sh:PropertyShape ;
@@ -111,8 +111,8 @@
 
 :BulkLoadEventShape
   rdf:type sh:NodeShape ;
-  sh:name "Bulk Load Event Shape" ;
-  sh:description "A Bulk Load Event is a Load Event that involves Bulk Product";
+  rdfs:label "Bulk Load Event Shape" ;
+  rdfs:comment "A Bulk Load Event is a Load Event that involves Bulk Product";
   sh:node eventsh:LoadEventShape ;
   sh:property [
     rdf:type sh:PropertyShape ;
@@ -125,8 +125,8 @@
 
 :GoodsLoadEventShape
   rdf:type sh:NodeShape ;
-  sh:name "Goods Load Event Shape" ;
-  sh:description "A Goods Load Event is a Load Event that involves Goods";
+  rdfs:label "Goods Load Event Shape" ;
+  rdfs:comment "A Goods Load Event is a Load Event that involves Goods";
   sh:node eventsh:LoadEventShape ;
   sh:property [
     rdf:type sh:PropertyShape ;
@@ -139,8 +139,8 @@
 
 :EquipmentLoadEventShape
   rdf:type sh:NodeShape ;
-  sh:name "Equipment Load Event Shape" ;
-  sh:description "An Equipment Load Event is a Load Event that involves Equipment";
+  rdfs:label "Equipment Load Event Shape" ;
+  rdfs:comment "An Equipment Load Event is a Load Event that involves Equipment";
   sh:node eventsh:LoadEventShape ;
   sh:property [
     rdf:type sh:PropertyShape ;
@@ -153,8 +153,8 @@
 
 :RailwayWagonLoadEventShape
   rdf:type sh:NodeShape ;
-  sh:name "RailwayWagon Load Event Shape" ;
-  sh:description "A RailwayWagon Load Event is a Load Event that involves a Railway Wagon";
+  rdfs:label "RailwayWagon Load Event Shape" ;
+  rdfs:comment "A RailwayWagon Load Event is a Load Event that involves a Railway Wagon";
   sh:node eventsh:LoadEventShape ;
   sh:property [
     rdf:type sh:PropertyShape ;
@@ -167,8 +167,8 @@
 
 :PushBargeLoadEventShape
   rdf:type sh:NodeShape ;
-  sh:name "PushBarge Load Event Shape" ;
-  sh:description "A PushBarge Load Event is a Load Event that involves a PushBarge";
+  rdfs:label "PushBarge Load Event Shape" ;
+  rdfs:comment "A PushBarge Load Event is a Load Event that involves a PushBarge";
   sh:node eventsh:LoadEventShape ;
   sh:property [
     rdf:type sh:PropertyShape ;

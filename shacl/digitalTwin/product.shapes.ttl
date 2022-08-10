@@ -21,8 +21,8 @@
 
 :ProductShape
     rdf:type sh:NodeShape ;
-    sh:name "Product Shape" ;
-    sh:description "A Product has a product ID and a product name." ;
+    rdfs:label "Product Shape" ;
+    rdfs:comment "A Product has a product ID and a product name." ;
     sh:property [
         rdf:type sh:PropertyShape ;
         sh:path DT:productID ;

@@ -21,8 +21,8 @@
 
 :PackageShape
     rdf:type sh:NodeShape ;
-    sh:name "Package Shape" ;
-    sh:description "A Package has a package type numeric code, package code and package type name." ;
+    rdfs:label "Package Shape" ;
+    rdfs:comment "A Package has a package type numeric code, package code and package type name." ;
     sh:property [
         rdf:type sh:PropertyShape ;
         sh:path DT:packageTypeNumericCode ;

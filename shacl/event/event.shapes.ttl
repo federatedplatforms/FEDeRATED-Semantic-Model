@@ -20,8 +20,8 @@
 
 :EventTypeShape
   rdf:type sh:NodeShape ;
-  sh:name "Event Shape" ;
-  sh:description "An Event contains a milestone, timestamp, submission timestamp, datetime type and two associations.";
+  rdfs:label "Event Shape" ;
+  rdfs:comment "An Event contains a milestone, timestamp, submission timestamp, datetime type and two associations.";
   sh:property [
       rdf:type sh:PropertyShape ;
       sh:path event:hasDateTimeType ;
@@ -99,8 +99,8 @@
 
 :ArrivalEventShape 
   rdf:type sh:NodeShape ;
-  sh:label "ArrivalEventShape" ;
-  sh:description "An Arrival event has Milestone start and an association with a DT and some PhysicalInfrastructure. When the milestone is changed to Start it is a departure event." ;
+  rdfs:label "ArrivalEventShape" ;
+  rdfs:comment "An Arrival event has Milestone start and an association with a DT and some PhysicalInfrastructure. When the milestone is changed to Start it is a departure event." ;
   sh:property [
     rdf:type sh:PropertyShape ;
     sh:path event:involvesDigitalTwin ;
@@ -131,8 +131,8 @@
  
  :DepartureEventShape 
   rdf:type sh:NodeShape ;
-  sh:label "DepartureEventShape" ;
-  sh:description "A Departure Event has milestone End an association with a DT and some Physical Infrastructure.";
+  rdfs:label "DepartureEventShape" ;
+  rdfs:comment "A Departure Event has milestone End an association with a DT and some Physical Infrastructure.";
   sh:property [
     rdf:type sh:PropertyShape ;
     sh:path event:involvesDigitalTwin ;
@@ -163,8 +163,8 @@
   
 :ATAEventShape 
   rdf:type sh:NodeShape ;
-  sh:label "ATAEventShape" ;
-  sh:description "An ATA Event has DateTime type Actual.";
+  rdfs:label "ATAEventShape" ;
+  rdfs:comment "An ATA Event has DateTime type Actual.";
   sh:property [
     rdf:type sh:PropertyShape ;
     sh:path event:hasDateTimeType ;
@@ -175,8 +175,8 @@
  
 :ETAEventShape 
   rdf:type sh:NodeShape ;
-  sh:label "ETAEventShape" ;
-  sh:description "An ETA Event has DateTime type Expected.";
+  rdfs:label "ETAEventShape" ;
+  rdfs:comment "An ETA Event has DateTime type Expected.";
   sh:property [
     rdf:type sh:PropertyShape ;
     sh:path event:hasDateTimeType ;
@@ -187,8 +187,8 @@
 
 :GoodsStructuringEventShape
   rdf:type sh:NodeShape ;
-  sh:label "Goods Structuring Event Shape" ;
-  sh:label "A goods structuring event (i.e., Merge, split, etc) contains two associations of (combinations of) Product, Package, or Goods.";
+  rdfs:label "Goods Structuring Event Shape" ;
+  rdfs:comment "A goods structuring event (i.e., Merge, split, etc) contains two associations of (combinations of) Product, Package, or Goods.";
   sh:property [
     rdf:type sh:PropertyShape ;
     sh:path event:involvesDigitalTwin ;
@@ -205,8 +205,8 @@
 
 :CargoEventShape 
   rdf:type sh:NodeShape ;
-  sh:label "Cargo Structure Event" ;
-  sh:description "A Cargo event contains two DT associations";
+  rdfs:label "Cargo Structure Event" ;
+  rdfs:comment "A Cargo event contains two DT associations";
   sh:property [
     rdf:type sh:PropertyShape ;
     sh:path event:involvesDigitalTwin ;
@@ -220,8 +220,8 @@
 
 :DischargeEventShape
   rdf:type sh:NodeShape ;
-  sh:label "Discharge Event Shape";
-  sh:description "A Discharge Event contains an association with a Transport Means or Equipment and an Equipment, Goods, or Bulk Product with milestone End." ;
+  rdfs:label "Discharge Event Shape";
+  rdfs:comment "A Discharge Event contains an association with a Transport Means or Equipment and an Equipment, Goods, or Bulk Product with milestone End." ;
   sh:property [
     rdf:type sh:PropertyShape ;
     sh:path event:involvesDigitalTwin ;
@@ -255,8 +255,8 @@
 
 :BulkTransportEventShape 
   rdf:type sh:NodeShape ;
-  sh:name "Bulk Transport Event Shape"; 
-  sh:description "This Event contains an association with Bulk Product and an association with a Transport Means.";
+  rdfs:label "Bulk Transport Event Shape"; 
+  rdfs:comment "This Event contains an association with Bulk Product and an association with a Transport Means.";
   sh:property [
     rdf:type sh:PropertyShape ;
     sh:path event:involvesDigitalTwin ;
@@ -269,8 +269,8 @@
 
 :EquipmentTransportEventShape
   rdf:type sh:NodeShape ;
-  sh:name "Equipment Transport Event Shape";
-  sh:description "This Event involves usually the discharge or load of an Equipment on/off a Transport Means.";
+  rdfs:label "Equipment Transport Event Shape";
+  rdfs:comment "This Event involves usually the discharge or load of an Equipment on/off a Transport Means.";
   sh:property [
     rdf:type sh:PropertyShape ;
     sh:path event:involvesDigitalTwin ;
@@ -290,8 +290,8 @@
     
 :GoodsTransportEventShape
   rdf:type sh:NodeShape ;
-  sh:name "Goods Transport Event Shape";
-  sh:description "This Event involves usually the discharge or load of some Goods or Products on/off a Transport Means. These Goods or (Bulk)Products are not carried within Equipment but directly with the Transport Means." ;
+  rdfs:label "Goods Transport Event Shape";
+  rdfs:comment "This Event involves usually the discharge or load of some Goods or Products on/off a Transport Means. These Goods or (Bulk)Products are not carried within Equipment but directly with the Transport Means." ;
   sh:property [
     rdf:type sh:PropertyShape ;
     sh:path event:involvesDigitalTwin ;
@@ -314,8 +314,8 @@
 
 :GoodsEquipmentEventShape
   rdf:type sh:NodeShape ;
-  sh:name "Goods Equipment Event Shape";
-  sh:description "This Event involves usually the stripping or stuffing of some Goods or Products in/off an Equipment." ;
+  rdfs:label "Goods Equipment Event Shape";
+  rdfs:comment "This Event involves usually the stripping or stuffing of some Goods or Products in/off an Equipment." ;
   sh:property [
     rdf:type sh:PropertyShape ;
     sh:path event:involvesDigitalTwin ;
@@ -338,8 +338,8 @@
 
 :LoadEventShape
   rdf:type sh:NodeShape ;
-  sh:name "Load Event Shape";
-  sh:description "A Load Event is an association between Transport Means or Equipment and Equipment/Goods/Products with milestone Start." ;
+  rdfs:label "Load Event Shape";
+  rdfs:comment "A Load Event is an association between Transport Means or Equipment and Equipment/Goods/Products with milestone Start." ;
   sh:property [
     rdf:type sh:PropertyShape ;
     sh:path event:involvesDigitalTwin ;

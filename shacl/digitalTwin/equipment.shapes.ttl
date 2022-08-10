@@ -21,7 +21,7 @@
 :EquipmentShape
     rdf:type sh:NodeShape ;
     rdf:name "Equipment Shape" ;
-    sh:description "A piece of Equipment has an equipment category, container ITU code, ID, size, gross weight and tare weight." ;
+    rdfs:comment "A piece of Equipment has an equipment category, container ITU code, ID, size, gross weight and tare weight." ;
     sh:property [
         rdf:type sh:PropertyShape ;
         sh:path DT:equipmentCategoryCode ;
@@ -76,8 +76,8 @@
 
 :RailwayWagonShape
     rdf:type sh:NodeShape ;
-    sh:name "Railway Wagon Shape" ;
-    sh:description "A railway wagon has a wagon brake type, a wagon brake weight, a wagon maximum speed and a wagon number of axels." ;
+    rdfs:label "Railway Wagon Shape" ;
+    rdfs:comment "A railway wagon has a wagon brake type, a wagon brake weight, a wagon maximum speed and a wagon number of axels." ;
     sh:property [
         rdf:type sh:PropertyShape ;
         sh:path DT:wagonBrakeType ;
@@ -111,8 +111,8 @@
 
 :TrailerShape
     rdf:type sh:NodeShape ;
-    sh:name "Trailer Shape" ;
-    sh:description "A trailer has a trailer ID and a trailer license plate." ;
+    rdfs:label "Trailer Shape" ;
+    rdfs:comment "A trailer has a trailer ID and a trailer license plate." ;
     sh:property [
         rdf:type sh:PropertyShape ;
         sh:path DT:trailerID ;

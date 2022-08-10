@@ -21,8 +21,8 @@
 
 :TransportMeansShape
     rdf:type sh:NodeShape ;
-    sh:name "Transport Means Shape" ;
-    sh:description "A transportmeans has a transportmeans ID and a transport means nationality." ;
+    rdfs:label "Transport Means Shape" ;
+    rdfs:comment "A transportmeans has a transportmeans ID and a transport means nationality." ;
     sh:property [
         rdf:type sh:PropertyShape ;
         sh:path DT:hasTransportMeansID ;
@@ -49,7 +49,8 @@
 
 :LocomotiveShape
     rdf:type sh:NodeShape ;
-    sh:description "A locomotive has a locomotive brake type and a locomotive ID." ;
+	rdfs:label "Locomotive Shape";
+    rdfs:comment "A locomotive has a locomotive brake type and a locomotive ID." ;
     sh:property [
         rdf:type sh:PropertyShape ;
         sh:path DT:locomotiveBrakeType ;
@@ -76,7 +77,8 @@
 
 :TruckShape
     rdf:type sh:NodeShape ;
-    sh:description "A truck has a truck license plate." ;
+	rdfs:label "Truck Shape";
+    rdfs:comment "A truck has a truck license plate." ;
     sh:property [
         rdf:type sh:PropertyShape ;
         sh:path DT:truckLicensePlate ;
@@ -90,7 +92,8 @@
 
 :VesselShape
     rdf:type sh:NodeShape ;
-    sh:description "A vessel has a vessel name and a vessel type." ;
+	rdfs:label "Vessel Shape";
+    rdfs:comment "A vessel has a vessel name and a vessel type." ;
     sh:property [
         rdf:type sh:PropertyShape ;
         sh:path DT:vesselName ;
