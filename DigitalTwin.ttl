@@ -420,6 +420,12 @@ DigitalTwin:Vessel
       owl:onProperty DigitalTwin:vesselType ;
     ] ;
 .
+DigitalTwin:billOfLadingNumber
+  a owl:DatatypeProperty ;
+  rdfs:domain DigitalTwin:PhysicalObject ;
+  rdfs:range xsd:string ;
+  rdfs:subPropertyOf DigitalTwin:PhysicalObjectProperties ;
+.
 DigitalTwin:bulkVolume
   a owl:DatatypeProperty ;
   rdfs:comment "the measure of volume expressed in m3" ;
@@ -443,17 +449,17 @@ DigitalTwin:cargoMaxSize
 .
 DigitalTwin:cargoMaximumTemperature
   a owl:DatatypeProperty ;
+  rdfs:domain DigitalTwin:Equipment ;
   rdfs:label "Cargo Maximum Temperature" ;
   rdfs:range xsd:string ;
   rdfs:subPropertyOf DigitalTwin:PhysicalObjectProperties ;
-  rdfs:domain DigitalTwin:Equipment ;
 .
 DigitalTwin:cargoMaximumVolume
   a owl:DatatypeProperty ;
+  rdfs:domain DigitalTwin:Equipment ;
   rdfs:label "Cargo Maximum Volume" ;
   rdfs:range xsd:integer ;
   rdfs:subPropertyOf DigitalTwin:PhysicalObjectProperties ;
-  rdfs:domain DigitalTwin:Equipment ;
 .
 DigitalTwin:cargoMinimumSize
   a owl:DatatypeProperty ;
@@ -463,17 +469,17 @@ DigitalTwin:cargoMinimumSize
 .
 DigitalTwin:cargoMinimumTemperature
   a owl:DatatypeProperty ;
+  rdfs:domain DigitalTwin:Equipment ;
   rdfs:label "Cargo Minimum Temperature" ;
   rdfs:range xsd:string ;
   rdfs:subPropertyOf DigitalTwin:PhysicalObjectProperties ;
-  rdfs:domain DigitalTwin:Equipment ;
 .
 DigitalTwin:cargoMinimumVolume
   a owl:DatatypeProperty ;
+  rdfs:domain DigitalTwin:Equipment ;
   rdfs:label "Cargo Minimum Volume" ;
   rdfs:range xsd:integer ;
   rdfs:subPropertyOf DigitalTwin:PhysicalObjectProperties ;
-  rdfs:domain DigitalTwin:Equipment ;
 .
 DigitalTwin:cargoTareWeight
   a owl:DatatypeProperty ;
@@ -539,12 +545,6 @@ DigitalTwin:documentID
   rdfs:subPropertyOf DigitalTwin:PhysicalObjectProperties ;
 .
 DigitalTwin:documentVersion
-  a owl:DatatypeProperty ;
-  rdfs:domain DigitalTwin:Document ;
-  rdfs:range xsd:string ;
-  rdfs:subPropertyOf DigitalTwin:PhysicalObjectProperties ;
-.
-DigitalTwin:documentbillOfLadingNumber
   a owl:DatatypeProperty ;
   rdfs:domain DigitalTwin:Document ;
   rdfs:range xsd:string ;
@@ -617,7 +617,7 @@ DigitalTwin:grossWeight
   rdfs:domain DigitalTwin:PhysicalObject ;
   rdfs:label "Gross Weight" ;
   rdfs:range xsd:integer ;
-  rdfs:subPropertyOf DigitalTwin:PhysicalObjectProperties  ;
+  rdfs:subPropertyOf DigitalTwin:PhysicalObjectProperties ;
 .
 DigitalTwin:hasAWB_Number
   a owl:DatatypeProperty ;
