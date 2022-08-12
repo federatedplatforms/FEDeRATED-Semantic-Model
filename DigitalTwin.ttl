@@ -824,6 +824,14 @@ DigitalTwin:productProperties
   rdfs:domain DigitalTwin:Product ;
   rdfs:subPropertyOf DigitalTwin:PhysicalObjectProperties ;
 .
+DigitalTwin:properShippingName
+  a owl:DatatypeProperty ;
+  rdfs:comment "Proper shipping name" ;
+  rdfs:label "Proper Shipping Name" ;
+  rdfs:domain DigitalTwin:PhysicalObject ;
+  rdfs:range xsd:string ;
+  rdfs:subPropertyOf DigitalTwin:PhysicalObjectProperties ;
+.
 DigitalTwin:sealConditionCode
   a owl:ObjectProperty ;
   rdfs:comment "A code specifying a condition of this logistics seal." ;
