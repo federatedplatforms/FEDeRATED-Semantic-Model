@@ -141,6 +141,11 @@ LogisticRoles:Forwarder
   rdfs:comment "A forwarder is the service provider in a business transaction providing a transport - and other (administrative) services to a consignor or consignee acting as customer." ;
   rdfs:label "Forwarder" ;
 .
+LogisticRoles:SealingParty
+  a LogisticRoles:LogisticsRoles ;
+  rdfs:comment "The sealing party" ;
+  rdfs:label "Sealing Party" ;
+.
 LogisticRoles:Importer
   a LogisticRoles:BusinessRoles ;
   rdfs:comment "Name and address of party who makes - or on whose behalf a Customs clearing agent or other authorized person makes - an import declaration. This may include a person who has possession of the goods or to whom the goods are consigned." ;
