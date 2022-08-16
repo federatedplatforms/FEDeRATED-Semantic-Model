@@ -165,6 +165,23 @@ DigitalTwin:Ferry
   rdfs:label "Ferry" ;
   rdfs:subClassOf DigitalTwin:Vessel ;
 .
+DigitalTwin:FlashpointTemperature
+  a owl:Class ;
+  rdfs:comment " The flashpoint temperature of a physical object" ;
+  rdfs:label "Flashpoint Temperature" ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onDataRange xsd:integer ;
+      owl:onProperty DigitalTwin:FlashpointTemperatureNumericalValue ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onClass <http://www.ontology-of-units-of-measure.org/resource/om-2/Unit> ;
+      owl:onProperty DigitalTwin:hasUnitsOfMeasure ;
+    ] ;  
+.
 DigitalTwin:Goods
   a owl:Class ;
   rdfs:comment "Defintions is needed" ;
@@ -584,6 +601,12 @@ DigitalTwin:equipmentTypeCode
   rdfs:label "Equipment Type Code" ;
   rdfs:range classifications:EquipmentTypeCode ;
 .
+DigitalTwin:FlashpointTemperatureNumericalValue
+  a owl:DatatypeProperty ;
+  rdfs:domain DigitalTwin:FlashpointTemperature ;
+  rdfs:label "Flashpoint Temperature Numerical Value" ;
+  rdfs:range xsd:integer ;
+.
 DigitalTwin:goodsDescription
   a owl:DatatypeProperty ;
   rdfs:domain DigitalTwin:Goods ;
@@ -632,6 +655,13 @@ DigitalTwin:hasDocumentType
   rdfs:label "has Documnet Type" ;
   rdfs:range classifications:DocumentType ;
 .
+DigitalTwin:hasFlashpointTemperature
+  a owl:ObjectProperty ;
+  rdfs:comment "This property relates a physical object with its flashpoint temperature" ;
+  rdfs:domain DigitalTwin:PhysicalObject ;
+  rdfs:label "has flashpoint temperature" ;
+  rdfs:range DigitalTwin:FlashpointTemperature ;
+.
 DigitalTwin:hasGrossMass
   a owl:DatatypeProperty ;
   rdfs:domain DigitalTwin:PhysicalObject ;
@@ -651,6 +681,13 @@ DigitalTwin:hasNumberOfCollies
   rdfs:label "has Number of Collies" ;
   rdfs:range xsd:integer ;
 .
+DigitalTwin:hasSealIncidentCode
+  a owl:ObjectProperty ;
+  rdfs:comment "This property relates a seal with its incident code" ;
+  rdfs:range classifications:SealIncidentCode ;
+  rdfs:label "has seal incident code"
+  rdfs:subPropertyOf DigitalTwin:classifications_detail ;
+.  
 DigitalTwin:hasTransportmeansID
   a owl:DatatypeProperty ;
   rdfs:domain DigitalTwin:TransportMeans ;
@@ -683,6 +720,13 @@ DigitalTwin:hazardouseMaterialDetail
   a owl:ObjectProperty ;
   rdfs:range classifications:DangerousGoods ;
   rdfs:subPropertyOf DigitalTwin:classifications_detail ;
+.
+DigitalTwin:isConnectedToSealingParty
+  a owl:ObjectProperty ;
+  rdfs:domain DigitalTwin:Seal ;
+  rdfs:label "is connected to sealing party" ;
+  rdfs:range <https://ontology.tno.nl/logistics/federated/BusinessService#LegalPerson> ;
+  rdfs:comment "This property relates the seal with the sealing party involved (that will be instantiated as a legal person)." ;
 .
 DigitalTwin:isEmpty
   a owl:DatatypeProperty ;
@@ -789,6 +833,13 @@ DigitalTwin:packageProperties
   a owl:DatatypeProperty ;
   rdfs:comment "Do not Instantiate -- Made only for grouping" ;
   rdfs:subPropertyOf DigitalTwin:PhysicalObjectProperties ;
+.
+DigitalTwin:packagingDangerLevelCode
+  a owl:DatatypeProperty ;
+  rdfs:comment "The packaging danger level code." ;
+  rdfs:domain  DigitalTwin:PhysicalObject ;
+  rdfs:label "Packaging danger level code" ;
+  rdfs:range xsd:integer ;
 .
 DigitalTwin:packagingType
   a owl:ObjectProperty ;
