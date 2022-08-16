@@ -27,6 +27,24 @@
   owl:imports <http://www.w3.org/2003/01/geo/wgs84_pos> ;
   owl:versionIRI <https://ontology.tno.nl/logistics/federated/PhysicalInfrastructurev-0.1> ;
 .
+pi:Address
+  a owl:Class ;
+  rdfs:comment "The address of a location." ;
+  rdfs:label "Address" ;
+  rdfs:subClassOf pi:Location ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onDataRange xsd:string ;
+      owl:onProperty pi:StreetName ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onDataRange xsd:string ;
+      owl:onProperty pi:BuildingNumber ;
+    ] ;
+.
 pi:Airport
   a owl:Class ;
   rdfs:comment "Location where airplanes pick or drop off freight." ;
@@ -268,6 +286,14 @@ pi:Warehouse
   rdfs:label "Warehouse" ;
   rdfs:subClassOf pi:LogisticalFunction ;
 .
+pi:BuildingNumber
+  a owl:DatatypeProperty ;
+  rdfs:comment "this property relates an address to its building number given as string." ;
+  rdfs:domain pi:Address ;
+  rdfs:label "Building Number" ;
+  rdfs:range xsd:string ;
+  rdfs:subPropertyOf pi:locationProperties ;
+.
 pi:cityLoCode
   a owl:DatatypeProperty ;
   rdfs:comment "Code uniquely identifying a City following the LoCode standard." ;
@@ -435,6 +461,14 @@ pi:securityMeasure
   rdfs:label "Security Measure" ;
   rdfs:range xsd:string ;
   rdfs:subPropertyOf pi:InfrastructuralFunctionProperty ;
+.
+pi:StreetName
+  a owl:DatatypeProperty ;
+  rdfs:comment "The property that relates an address to its street name given as string." ;
+  rdfs:domain pi:Address ;
+  rdfs:label "street name" ;
+  rdfs:range xsd:string ;
+  rdfs:subPropertyOf pi:locationProperties ;
 .
 pi:terminalDescription
   a owl:DatatypeProperty ;
