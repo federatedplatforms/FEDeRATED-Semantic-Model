@@ -26,9 +26,10 @@
   dcterms:language "en" ;
   owl:versionIRI <https://ontology.tno.nl/logistics/federated/Classificationsv-0.1> ;
 .
-classifications:Air
+classifications:0
   a classifications:TransportModality ;
-  rdfs:label "Air" ;
+  rdfs:label "0" ;
+  rdfs:comment "Code 0 can be used to indicate the absence of an entry for the mode of transport." ;
 .
 classifications:Atlantic_Corridor
   a classifications:CorridorName ;
@@ -106,9 +107,10 @@ classifications:GoodsTypeCode
   rdfs:label "Goods Type Code" ;
   rdfs:subClassOf classifications:Classifications ;
 .
-classifications:InlandWaterways
+classifications:1
   a classifications:TransportModality ;
-  rdfs:label "Inland waterways" ;
+  rdfs:label "1" ;
+  rdfs:comment "Code 1 can be used for Maritime transport." ;
 .
 classifications:LCL-LCL
   a classifications:TransportMovementType ;
@@ -165,9 +167,10 @@ as it appears for transport is also specified.""" ;
       owl:onProperty classifications:packageTypeName ;
     ] ;
 .
-classifications:Pipelines
+classifications:5
   a classifications:TransportModality ;
-  rdfs:label "Pipelines" ;
+  rdfs:label "5" ;
+  rdfs:comment "Code 5 can be used for mail(s)." ;
 .
 classifications:R
   a classifications:NatureOfCargo ;
@@ -176,9 +179,10 @@ classifications:R
 classifications:RO-RO
   a classifications:ContainerType ;
 .
-classifications:Rail
+classifications:2
   a classifications:TransportModality ;
-  rdfs:label "Rail" ;
+  rdfs:label "2" ;
+  rdfs:comment "Code 2 can be used for rail transport." ;
 .
 classifications:Rhine-Alpine_Corridor
   a classifications:CorridorName ;
@@ -186,9 +190,10 @@ classifications:Rhine-Alpine_Corridor
 classifications:Rhine-Danube_Corridor
   a classifications:CorridorName ;
 .
-classifications:Road
+classifications:3
   a classifications:TransportModality ;
-  rdfs:label "Road" ;
+  rdfs:label "3" ;
+  rdfs:comment "Code 3 can be used for road transport." ;
 .
 classifications:SEA_WAYBILL
   a classifications:DocumentType ;
@@ -201,14 +206,41 @@ classifications:Safety_and_hazard_data_sheet
 classifications:Scandinavian-Mediterranean_Corridor
   a classifications:CorridorName ;
 .
-classifications:Sea
+classifications:4
   a classifications:TransportModality ;
-  rdfs:label "Sea" ;
+  rdfs:label "4" ;
+  rdfs:comment "Code 4 can be used for air transport." ;
+.
+classifications:7
+  a classifications:TransportModality ;
+  rdfs:label "7" ;
+  rdfs:comment "Code 7 can be used for fixed transport installations (such as pipelines, ropeways and electric power lines)." ;
+.
+classifications:6
+  a classifications:TransportModality ;
+  rdfs:label "6" ;
+  rdfs:comment "Code 6 can be used for multimodal trasport (goods carried by at least two different types of mode of transport)." ;
+.
+classifications:8
+  a classifications:TransportModality ;
+  rdfs:label "6" ;
+  rdfs:comment "Code 8 can be used for inland water transport." ;
+.
+classifications:9
+  a classifications:TransportModality ;
+  rdfs:label "9" ;
+  rdfs:comment "Code 9 can be used when the mode of transport is unknown. " ;
 .
 classifications:SealConditionCodeType
   a owl:Class ;
   rdfs:comment "A classification of codes that specify the conditions of seals e.g. damaged or in right condition." ;
   rdfs:label "Seal Condition Code Type" ;
+  rdfs:subClassOf classifications:Classifications ;
+.
+classifications:SealIncidentCode
+  a owl:Class ;
+  rdfs:comment "A classification of codes that specify the code of the incident damaging the seal" ;
+  rdfs:label "Seal Incident Code" ;
   rdfs:subClassOf classifications:Classifications ;
 .
 classifications:TransportModality
@@ -262,6 +294,13 @@ classifications:dangerousGoodsRegulationCode
   rdfs:comment "Dangerous goods require a dangerous goods regulation code. The code consists of 3 characters." ;
   rdfs:domain classifications:DangerousGoods ;
   rdfs:label "Dangerous Goods Regulation Code" ;
+  rdfs:range xsd:string ;
+.
+classifications:EMS_ID
+  a owl:DatatypeProperty ;
+  rdfs:comment "The EMS ID for dangerous goods." ;
+  rdfs:domain classifications:DangerousGoods ;
+  rdfs:label "EMS ID" ;
   rdfs:range xsd:string ;
 .
 classifications:generalCargo
