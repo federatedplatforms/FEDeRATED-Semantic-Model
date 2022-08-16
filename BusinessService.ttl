@@ -169,7 +169,7 @@ businessService:LegalPerson
   rdfs:subClassOf [
       a owl:Restriction ;
       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onClass pi:Location ;
+      owl:onClass <https://schema.org/Place>  ;
       owl:onProperty businessService:actorAddress ;
     ] ;
 .
@@ -285,6 +285,13 @@ businessService:actorName
   rdfs:label "Actor name" ;
   rdfs:range xsd:string ;
 .
+businessService:actorRoleCode
+  a owl:DatatypeProperty ;
+  rdfs:comment "The code of the role played by the legal person, such as the sealing party role code)." ;
+  rdfs:domain businessService:LegalPerson ;
+  rdfs:label "Actor Role Code" ;
+  rdfs:range xsd:string ;
+.
 businessService:actorWebsite
   a owl:DatatypeProperty ;
   rdfs:comment "URL of the website of the logistics actor" ;
@@ -338,7 +345,7 @@ businessService:hasLocation
   rdfs:comment "Location of the logistics service" ;
   rdfs:label "has location" ;
   rdfs:domain businessService:LogisticsService ;
-  rdfs:range pi:Location ;
+  rdfs:range <https://schema.org/Place>  ;
 .
 businessService:hasSequenceNumber
   a owl:DatatypeProperty ;
@@ -359,7 +366,7 @@ businessService:actorAddress
   rdfs:comment "Address of the logistics actor" ;
   rdfs:domain businessService:LegalPerson ;
   rdfs:label "Actor address" ;
-  rdfs:range pi:Location ;
+  rdfs:range <https://schema.org/Place>  ;
 .
 businessService:involvedActor
   a owl:ObjectProperty ;
