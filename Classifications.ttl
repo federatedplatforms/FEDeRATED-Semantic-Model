@@ -231,16 +231,16 @@ classifications:9
   rdfs:label "9" ;
   rdfs:comment "Code 9 can be used when the mode of transport is unknown. " ;
 .
-classifications:SealConditionCodeType
+classifications:SealConditionCode
   a owl:Class ;
   rdfs:comment "A classification of codes that specify the conditions of seals e.g. damaged or in right condition." ;
-  rdfs:label "Seal Condition Code Type" ;
+  rdfs:label "Seal Condition Code" ;
   rdfs:subClassOf classifications:Classifications ;
 .
-classifications:SealIncidentCode
+classifications:SealPartyRoleCode
   a owl:Class ;
-  rdfs:comment "A classification of codes that specify the code of the incident damaging the seal" ;
-  rdfs:label "Seal Incident Code" ;
+  rdfs:comment "A classification of the role codes of the seal party" ;
+  rdfs:label "Seal Party Role Code " ;
   rdfs:subClassOf classifications:Classifications ;
 .
 classifications:TransportModality
