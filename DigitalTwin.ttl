@@ -681,13 +681,6 @@ DigitalTwin:hasNumberOfCollies
   rdfs:label "has Number of Collies" ;
   rdfs:range xsd:integer ;
 .
-DigitalTwin:hasSealIncidentCode
-  a owl:ObjectProperty ;
-  rdfs:comment "This property relates a seal with its incident code" ;
-  rdfs:range classifications:SealIncidentCode ;
-  rdfs:label "has seal incident code"
-  rdfs:subPropertyOf DigitalTwin:classifications_detail ;
-.  
 DigitalTwin:hasTransportmeansID
   a owl:DatatypeProperty ;
   rdfs:domain DigitalTwin:TransportMeans ;
@@ -721,10 +714,18 @@ DigitalTwin:hazardouseMaterialDetail
   rdfs:range classifications:DangerousGoods ;
   rdfs:subPropertyOf DigitalTwin:classifications_detail ;
 .
-DigitalTwin:isConnectedToSealingParty
+DigitalTwin:relatedSealPartyRoleCode
+  a owl:ObjectProperty ;
+  rdfs:label "Related Seal Party Role Code" ;
+  rdfs:domain DigitalTwin:Seal ;
+  rdfs:comment "This property relates the seal to the role code of the seal party" ;
+  rdfs:range classifications:SealPartyRoleCode ;
+  rdfs:subPropertyOf DigitalTwin:classifications_detail ;
+.
+DigitalTwin:ConnectedToSealingParty
   a owl:ObjectProperty ;
   rdfs:domain DigitalTwin:Seal ;
-  rdfs:label "is connected to sealing party" ;
+  rdfs:label "connected to sealing party" ;
   rdfs:range <https://ontology.tno.nl/logistics/federated/BusinessService#LegalPerson> ;
   rdfs:comment "This property relates the seal with the sealing party involved (that will be instantiated as a legal person)." ;
 .
@@ -883,11 +884,12 @@ DigitalTwin:properShippingName
   rdfs:range xsd:string ;
   rdfs:subPropertyOf DigitalTwin:PhysicalObjectProperties ;
 .
-DigitalTwin:sealConditionCode
+DigitalTwin:hasSealConditionCode
   a owl:ObjectProperty ;
   rdfs:comment "A code specifying a condition of this logistics seal." ;
   rdfs:domain DigitalTwin:Seal ;
-  rdfs:label "Seal Condition Code" ;
+  rdfs:range classifications:SealConditionCode ;
+  rdfs:label "Has Seal Condition Code" ;
   rdfs:subPropertyOf DigitalTwin:classifications_detail ;
 .
 DigitalTwin:sealIndicator
