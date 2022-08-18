@@ -165,23 +165,6 @@ DigitalTwin:Ferry
   rdfs:label "Ferry" ;
   rdfs:subClassOf DigitalTwin:Vessel ;
 .
-DigitalTwin:FlashpointTemperature
-  a owl:Class ;
-  rdfs:comment " The flashpoint temperature of a physical object" ;
-  rdfs:label "Flashpoint Temperature" ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onDataRange xsd:integer ;
-      owl:onProperty DigitalTwin:FlashpointTemperatureNumericalValue ;
-    ] ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onClass <http://www.ontology-of-units-of-measure.org/resource/om-2/Unit> ;
-      owl:onProperty DigitalTwin:hasUnitsOfMeasure ;
-    ] ;  
-.
 DigitalTwin:Goods
   a owl:Class ;
   rdfs:comment "Defintions is needed" ;
@@ -601,12 +584,6 @@ DigitalTwin:equipmentTypeCode
   rdfs:label "Equipment Type Code" ;
   rdfs:range classifications:EquipmentTypeCode ;
 .
-DigitalTwin:FlashpointTemperatureNumericalValue
-  a owl:DatatypeProperty ;
-  rdfs:domain DigitalTwin:FlashpointTemperature ;
-  rdfs:label "Flashpoint Temperature Numerical Value" ;
-  rdfs:range xsd:integer ;
-.
 DigitalTwin:goodsDescription
   a owl:DatatypeProperty ;
   rdfs:domain DigitalTwin:Goods ;
@@ -657,10 +634,10 @@ DigitalTwin:hasDocumentType
 .
 DigitalTwin:hasFlashpointTemperature
   a owl:ObjectProperty ;
-  rdfs:comment "This property relates a physical object with its flashpoint temperature" ;
+  rdfs:comment "This property relates a physical object with its flashpoint temperature given as a measure from Unit of Measure (OUM) ontology" ;
   rdfs:domain DigitalTwin:PhysicalObject ;
   rdfs:label "has flashpoint temperature" ;
-  rdfs:range DigitalTwin:FlashpointTemperature ;
+  rdfs:range <http://www.ontology-of-units-of-measure.org/resource/om-2/Measure> ;
 .
 DigitalTwin:hasGrossMass
   a owl:DatatypeProperty ;
