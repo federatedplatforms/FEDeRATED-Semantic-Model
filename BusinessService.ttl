@@ -101,15 +101,21 @@ businessService:Consignment
 .
 businessService:Enterprise
   a owl:Class ;
-  rdfs:comment "A business or a company" ;
+  rdfs:comment "A business or a company, generally for-profit." ;
   rdfs:label "Enterprise" ;
-  rdfs:subClassOf businessService:LegalEntity ;
+  rdfs:subClassOf businessService:JuridicialPerson ;
 .
 businessService:FrameworkContract
   a owl:Class ;
   rdfs:comment "A contract with a long term validity period between any two enterprise with agreements of business service delivery" ;
   rdfs:label "Framework Contract" ;
   rdfs:subClassOf businessService:BusinessTransaction ;
+.
+businessService:GovernmentalOrganization
+  a owl:Class ;
+  rdfs:comment "A governmental organization." ;
+  rdfs:label "Governmental Organization" ;
+  rdfs:subClassOf businessService:JuridicialPerson ;
 .
 businessService:Itinerary
   a owl:Class ;
@@ -142,12 +148,11 @@ businessService:Itinerary
     ] ;
   ReusableTags:isDerived true ;
 .
-businessService:LegalEntity
+businessService:JuridicialPerson
   a owl:Class ;
-  rdfs:label "Legal entity" ;
-  rdfs:comment "An entity processing separate and distinct legal rights." ;
+  rdfs:comment "A juridical person is a non-human legal person that is not a single natural person but an organization recognized by law as a fictitious person such as a company, governmental organization or NGO." ;
+  rdfs:label "Juridical Person" ;
   rdfs:subClassOf businessService:LegalPerson ;
-  skos:prefLabel "Legal entity" ;
 .
 businessService:LegalPerson
   a owl:Class ;
@@ -197,11 +202,11 @@ businessService:Order
   rdfs:label "Order" ;
   rdfs:subClassOf businessService:BusinessTransaction ;
 .
-businessService:Organization
+businessService:NGO
   a owl:Class ;
-  rdfs:comment "An agent corresponding to social institutions such as companies, societies etc." ;
-  rdfs:label "Organization" ;
-  rdfs:subClassOf businessService:LegalEntity ;
+  rdfs:comment "A non-governmental non-profit organization." ;
+  rdfs:label "NGO" ;
+  rdfs:subClassOf businessService:JuridicialPerson ;
 .
 businessService:PrivateEnterprise
   a owl:Class ;
@@ -299,7 +304,7 @@ businessService:bookingNumber
   rdfs:label "Booking number" ;
   rdfs:range xsd:string ;
 .
-businessService:HasBookingStatus
+businessService:hasBookingStatus
   a owl:ObjectProperty ;
   rdfs:comment "The relationship between booking and booking status" ;
   rdfs:domain businessService:Booking ;
