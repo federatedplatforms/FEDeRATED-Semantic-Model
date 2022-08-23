@@ -237,10 +237,10 @@ classifications:SealConditionCode
   rdfs:label "Seal Condition Code" ;
   rdfs:subClassOf classifications:Classifications ;
 .
-classifications:SealPartyRoleCode
+classifications:SealingPartyRoleCode
   a owl:Class ;
-  rdfs:comment "A classification of the role codes of the seal party" ;
-  rdfs:label "Seal Party Role Code " ;
+  rdfs:comment "A classification of the role codes of the sealing party" ;
+  rdfs:label "Sealing Party Role Code " ;
   rdfs:subClassOf classifications:Classifications ;
 .
 classifications:TransportModality
