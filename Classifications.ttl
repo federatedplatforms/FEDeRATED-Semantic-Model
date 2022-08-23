@@ -296,13 +296,6 @@ classifications:dangerousGoodsRegulationCode
   rdfs:label "Dangerous Goods Regulation Code" ;
   rdfs:range xsd:string ;
 .
-classifications:EMS_ID
-  a owl:DatatypeProperty ;
-  rdfs:comment "The EMS ID for dangerous goods." ;
-  rdfs:domain classifications:DangerousGoods ;
-  rdfs:label "EMS ID" ;
-  rdfs:range xsd:string ;
-.
 classifications:generalCargo
   a classifications:CargoType ;
   rdfs:comment "Contrary to mass or bulk goods, general cargo comprises materials of which the quantity is not registered per size or weight  but per individual item. General cargo is transported in boxes, crates, drums or bales. Examples of general cargo are cars, paper, kerbstone and machinery." ;
