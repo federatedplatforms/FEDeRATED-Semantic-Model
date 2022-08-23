@@ -691,12 +691,12 @@ DigitalTwin:hazardouseMaterialDetail
   rdfs:range classifications:DangerousGoods ;
   rdfs:subPropertyOf DigitalTwin:classifications_detail ;
 .
-DigitalTwin:relatedSealPartyRoleCode
+DigitalTwin:relatedSealingPartyRoleCode
   a owl:ObjectProperty ;
-  rdfs:label "Related Seal Party Role Code" ;
+  rdfs:label "Related Sealing Party Role Code" ;
   rdfs:domain DigitalTwin:Seal ;
   rdfs:comment "This property relates the seal to the role code of the seal party" ;
-  rdfs:range classifications:SealPartyRoleCode ;
+  rdfs:range classifications:SealingPartyRoleCode ;
   rdfs:subPropertyOf DigitalTwin:classifications_detail ;
 .
 DigitalTwin:ConnectedToSealingParty
