@@ -1,0 +1,52 @@
+@prefix : <https://ontology.tno.nl/logistics/federated/Classifications#SealingPartyRoleCode#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://ontology.tno.nl/logistics/federated/Classifications#SealingPartyRoleCode>
+  rdf:type owl:Class ;
+.
+<https://ontology.tno.nl/logistics/federated/Classifications/SealingpartyRoleCode#AA>
+  rdf:type owl:NamedIndividual ;
+  rdf:type <https://ontology.tno.nl/logistics/federated/Classifications#SealingPartyRoleCode> ;
+  rdfs:comment "Consolidator"@en ;
+  rdfs:label "AA" ;
+.
+<https://ontology.tno.nl/logistics/federated/Classifications/SealingpartyRoleCode#AB>
+  rdf:type owl:NamedIndividual ;
+  rdf:type <https://ontology.tno.nl/logistics/federated/Classifications#SealingPartyRoleCode> ;
+  rdfs:comment "Unknown sealing party"@en ;
+  rdfs:label "AB" ;
+.
+<https://ontology.tno.nl/logistics/federated/Classifications/SealingpartyRoleCode#AC>
+  rdf:type owl:NamedIndividual ;
+  rdf:type <https://ontology.tno.nl/logistics/federated/Classifications#SealingPartyRoleCode> ;
+  rdfs:comment "Quarantine agency"@en ;
+  rdfs:label "AC" ;
+.
+<https://ontology.tno.nl/logistics/federated/Classifications/SealingpartyRoleCode#CA>
+  rdf:type owl:NamedIndividual ;
+  rdf:type <https://ontology.tno.nl/logistics/federated/Classifications#SealingPartyRoleCode> ;
+  rdfs:comment "Carrier"@en ;
+  rdfs:label "CA" ;
+.
+<https://ontology.tno.nl/logistics/federated/Classifications/SealingpartyRoleCode#CU>
+  rdf:type owl:NamedIndividual ;
+  rdf:type <https://ontology.tno.nl/logistics/federated/Classifications#SealingPartyRoleCode> ;
+  rdfs:comment "Customs"@en ;
+  rdfs:label "CU" ;
+.
+<https://ontology.tno.nl/logistics/federated/Classifications/SealingpartyRoleCode#SH>
+  rdf:type owl:NamedIndividual ;
+  rdf:type <https://ontology.tno.nl/logistics/federated/Classifications#SealingPartyRoleCode> ;
+  rdfs:comment "Shipper"@en ;
+  rdfs:label "SH" ;
+.
+<https://ontology.tno.nl/logistics/federated/Classifications/SealingpartyRoleCode#TO>
+  rdf:type owl:NamedIndividual ;
+  rdf:type <https://ontology.tno.nl/logistics/federated/Classifications#SealingPartyRoleCode> ;
+  rdfs:comment "Terminal operator"@en ;
+  rdfs:label "TO" ;
+.
