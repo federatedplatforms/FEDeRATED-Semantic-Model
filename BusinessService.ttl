@@ -11,6 +11,7 @@
 @prefix businessService: <https://ontology.tno.nl/logistics/federated/BusinessService#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix pi: <https://ontology.tno.nl/logistics/federated/PhysicalInfrastructure#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -153,12 +154,15 @@ businessService:JuridicialPerson
   rdfs:comment "A juridical person is a non-human legal person that is not a single natural person but an organization recognized by law as a fictitious person such as a company, governmental organization or NGO." ;
   rdfs:label "Juridical Person" ;
   rdfs:subClassOf businessService:LegalPerson ;
+  rdfs:subClassOf <http://www.w3.org/ns/org#Organization> ,
+                  <https://schema.org/Organization> ;
 .
 businessService:LegalPerson
   a owl:Class ;
   rdfs:subClassOf owl:Thing ;
   rdfs:comment "The role of a Person, Enterprise or Organization is context dependant, and therefore should be described using the LogisticsRoles:Roles class." ;
   rdfs:label "Logistics Actor" ;
+  rdfs:subClassOf foaf:Agent ;
   rdfs:subClassOf [
       a owl:Restriction ;
       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
@@ -195,6 +199,7 @@ businessService:NaturalPerson
   rdfs:comment "An individual human being" ;
   rdfs:label "Person" ;
   rdfs:subClassOf businessService:LegalPerson ;
+  rdfs:subClassOf foaf:Person
 .
 businessService:Order
   a owl:Class ;
@@ -207,18 +212,6 @@ businessService:NGO
   rdfs:comment "A non-governmental non-profit organization." ;
   rdfs:label "NGO" ;
   rdfs:subClassOf businessService:JuridicialPerson ;
-.
-businessService:PrivateEnterprise
-  a owl:Class ;
-  rdfs:comment "A private business or company" ;
-  rdfs:label "Private Enterprise" ;
-  rdfs:subClassOf businessService:Enterprise ;
-.
-businessService:PublicEnterprise
-  a owl:Class ;
-  rdfs:comment "A public business or company" ;
-  rdfs:label "Public Enterprise" ;
-  rdfs:subClassOf businessService:Enterprise ;
 .
 businessService:Route
   a owl:Class ;
