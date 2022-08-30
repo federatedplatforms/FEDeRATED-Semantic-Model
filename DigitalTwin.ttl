@@ -626,6 +626,27 @@ DigitalTwin:hasAWB_Number
   rdfs:range xsd:string ;
   skos:prefLabel "has AWB Number" ;
 .
+DigitalTwin:dangerousGoodsRegulationCode
+  a owl:DatatypeProperty ;
+  rdfs:comment "Dangerous goods require a dangerous goods regulation code. The code consists of 3 characters." ;
+  rdfs:domain DigitalTwin:Goods;
+  rdfs:label "Dangerous Goods Regulation Code" ;
+  rdfs:range xsd:string ;
+.
+DigitalTwin:hazmatUNCode
+  a owl:DatatypeProperty ;
+  rdfs:comment "Goods that are classified as dangerous are described in more detail using the hazardous materials UN code" ;
+  rdfs:domain DigitalTwin:Goods ;
+  rdfs:label "Hazmat UN code" ;
+  rdfs:range xsd:string ;
+.
+DigitalTwin:UNDGCode
+  a owl:DatatypeProperty ;
+  rdfs:comment "Goods can be assigned a UNDG code to identify the hazardous nature of the goods." ;
+  rdfs:domain DigitalTwin:Goods ;
+  rdfs:label "UNDG code" ;
+  rdfs:range xsd:string ;
+.
 DigitalTwin:hasDocumentType
   a owl:ObjectProperty ;
   rdfs:domain DigitalTwin:Document ;
