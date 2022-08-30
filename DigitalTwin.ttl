@@ -846,23 +846,23 @@ DigitalTwin:packageCode
   rdfs:domain DigitalTwin:Package ;
   rdfs:label "Package Code" ;
   rdfs:range xsd:string ;
-  rdfs:subPropertyOf DigitalTwin:PhysicalObjectProperties ;
+  rdfs:subPropertyOf DigitalTwin:packageProperties  ;
 .
 DigitalTwin:packageTypeName
   a owl:DatatypeProperty ;
   rdfs:comment "Package type name based on UNECE standardisations. Retrieved from internal project ProfileData postgres database." ;
-  rdfs:domain classifications:PackageType ;
+  rdfs:domain DigitalTwin:Package ;
   rdfs:label "Package Type Name" ;
   rdfs:range xsd:string ;
-  rdfs:subPropertyOf DigitalTwin:PhysicalObjectProperties ;
+  rdfs:subPropertyOf DigitalTwin:packageProperties ;
 .
 DigitalTwin:packageTypeNumericCode
   a owl:DatatypeProperty ;
   rdfs:comment "Two digit numeric code for expressing types of package." ;
-  rdfs:domain classifications:PackageType ;
+  rdfs:domain DigitalTwin:Package;
   rdfs:label "Package Type Numeric Code" ;
   rdfs:range xsd:integer ;
-  rdfs:subPropertyOf DigitalTwin:PhysicalObjectProperties ;
+  rdfs:subPropertyOf DigitalTwin:packageProperties ;
 .
 DigitalTwin:packagingDangerLevelCode
   a owl:DatatypeProperty ;
@@ -870,6 +870,7 @@ DigitalTwin:packagingDangerLevelCode
   rdfs:domain  DigitalTwin:PhysicalObject ;
   rdfs:label "Packaging danger level code" ;
   rdfs:range xsd:integer ;
+  rdfs:subPropertyOf DigitalTwin:PhysicalObjectProperties ;
 .
 DigitalTwin:packagingType
   a owl:ObjectProperty ;

@@ -138,24 +138,6 @@ classifications:PackageType
 as it appears for transport is also specified.""" ;
   rdfs:label "Package Type" ;
   rdfs:subClassOf classifications:Classifications ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onDataRange xsd:integer ;
-      owl:onProperty classifications:packageTypeNumericCode ;
-    ] ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onDataRange xsd:string ;
-      owl:onProperty classifications:packageCode ;
-    ] ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onDataRange xsd:string ;
-      owl:onProperty classifications:packageTypeName ;
-    ] ;
 .
 classifications:R
   a classifications:NatureOfCargo ;
@@ -216,13 +198,6 @@ classifications:bulk
   a classifications:CargoType ;
   rdfs:comment "Typical examples of dry bulk transport are building materials such as sand and gravel or grain and fodder. But also wet bulk such as oil, gas and ore are examples of bulk commodities." ;
 .
-classifications:codeContent
-  a owl:DatatypeProperty ;
-  rdfs:comment "Classification of the seal code conditions type" ;
-  rdfs:domain classifications:SealConditionCodeType ;
-  rdfs:label "Code content" ;
-  rdfs:range xsd:integer ;
-.
 classifications:containers
   a classifications:CargoType ;
 .
@@ -230,27 +205,6 @@ classifications:generalCargo
   a classifications:CargoType ;
   rdfs:comment "Contrary to mass or bulk goods, general cargo comprises materials of which the quantity is not registered per size or weight  but per individual item. General cargo is transported in boxes, crates, drums or bales. Examples of general cargo are cars, paper, kerbstone and machinery." ;
   rdfs:label "general cargo" ;
-.
-classifications:packageCode
-  a owl:DatatypeProperty ;
-  rdfs:comment "Package code based on Unece Standardisations." ;
-  rdfs:domain DigitalTwin:Package ;
-  rdfs:label "Package Code" ;
-  rdfs:range xsd:string ;
-.
-classifications:packageTypeName
-  a owl:DatatypeProperty ;
-  rdfs:comment "Package type name based on UNECE standardisations. Retrieved from internal project ProfileData postgres database." ;
-  rdfs:domain classifications:PackageType ;
-  rdfs:label "Package Type Name" ;
-  rdfs:range xsd:string ;
-.
-classifications:packageTypeNumericCode
-  a owl:DatatypeProperty ;
-  rdfs:comment "Two digit numeric code for expressing types of package." ;
-  rdfs:domain classifications:PackageType ;
-  rdfs:label "Package Type Numeric Code" ;
-  rdfs:range xsd:integer ;
 .
 classifications:pallets
   a classifications:CargoType ;
