@@ -27,24 +27,6 @@
   owl:imports <http://www.w3.org/2003/01/geo/wgs84_pos> ;
   owl:versionIRI <https://ontology.tno.nl/logistics/federated/PhysicalInfrastructurev-0.1> ;
 .
-pi:Address
-  a owl:Class ;
-  rdfs:comment "The address of a location." ;
-  rdfs:label "Address" ;
-  rdfs:subClassOf pi:Location ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onDataRange xsd:string ;
-      owl:onProperty pi:StreetName ;
-    ] ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onDataRange xsd:string ;
-      owl:onProperty pi:BuildingNumber ;
-    ] ;
-.
 pi:Airport
   a owl:Class ;
   rdfs:comment "Location where airplanes pick or drop off freight." ;
@@ -69,47 +51,11 @@ pi:Bridge
   rdfs:label "Bridge" ;
   rdfs:subClassOf pi:InfrastructuralObject ;
 .
-pi:City
-  a owl:Class ;
-  rdfs:comment "A city is one of the various subtypes of Location." ;
-  rdfs:label "City" ;
-  rdfs:subClassOf pi:Location ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onDataRange xsd:string ;
-      owl:onProperty pi:cityLoCode ;
-    ] ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onDataRange xsd:string ;
-      owl:onProperty pi:postalCode ;
-    ] ;
-.
 pi:Corridor
   a owl:Class ;
   rdfs:comment "A logistic corridor is a generalised route. It may consist of several modalities. For example, the route between Europoort and Northern Italy is a corridor, since it's a comman and important route." ;
   rdfs:label "Corridor" ;
   rdfs:subClassOf pi:Trajectory ;
-.
-pi:Country
-  a owl:Class ;
-  rdfs:comment "A Country is a geographic division with national borders." ;
-  rdfs:label "Country" ;
-  rdfs:subClassOf pi:Location ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onDataRange xsd:string ;
-      owl:onProperty pi:countryISOCode ;
-    ] ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onDataRange xsd:string ;
-      owl:onProperty pi:countryName ;
-    ] ;
 .
 pi:Gate
   a owl:Class ;
@@ -147,46 +93,6 @@ pi:InlandTerminal
   rdfs:label "Inland Terminal" ;
   rdfs:subClassOf pi:LogisticalFunction ;
 .
-pi:Landmark
-  a owl:Class ;
-  rdfs:comment "A Land Mark is a an object or feature of a landscape or town that is easily recognised from a distance." ;
-  rdfs:label "Land Mark" ;
-  rdfs:subClassOf pi:Location ;
-.
-pi:Lat
-  a owl:DatatypeProperty ;
-  rdfs:comment "This property specifies the latitude of a specific location." ;
-  rdfs:domain pi:Location ;
-  rdfs:label "Latitude" ;
-  rdfs:range xsd:decimal ;
-  rdfs:subPropertyOf pi:LocationCoordinate ;
-.
-pi:Location
-  a owl:Class ;
-  rdfs:comment "A geographical location where several objects with various logistical functions may be." ;
-  rdfs:label "Location" ;
-  rdfs:subClassOf <http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing> ;
-  rdfs:subClassOf <https://schema.org/Place> ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onDataRange xsd:decimal ;
-      owl:onProperty pi:Lat ;
-    ] ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onDataRange xsd:decimal ;
-      owl:onProperty pi:Long ;
-    ] ;
-.
-pi:LocationCoordinate
-  a owl:DatatypeProperty ;
-  rdfs:comment "The subproperties of this property specify the location coordinates of a specific location." ;
-  rdfs:domain pi:Location ;
-  rdfs:label "Location Coordinate" ;
-  rdfs:range xsd:decimal ;
-.
 pi:LogisticalFunction
   a owl:Class ;
   rdfs:comment "Any location where a logistical activity is performed. A single location may have several logistical functions." ;
@@ -203,14 +109,6 @@ pi:LogisticalInterfaceProperty
   a owl:DatatypeProperty ;
   rdfs:comment "A datatype property for a logistical interface. -- Abstract property, do not instantiate." ;
   rdfs:label "Logistical Interface Property" ;
-.
-pi:Long
-  a owl:DatatypeProperty ;
-  rdfs:comment "This property specifies the longitude of a specific location." ;
-  rdfs:domain pi:Location ;
-  rdfs:label "Longitude" ;
-  rdfs:range xsd:decimal ;
-  rdfs:subPropertyOf pi:LocationCoordinate ;
 .
 pi:Platform
   a owl:Class ;
@@ -286,29 +184,6 @@ pi:Warehouse
   rdfs:label "Warehouse" ;
   rdfs:subClassOf pi:LogisticalFunction ;
 .
-pi:BuildingNumber
-  a owl:DatatypeProperty ;
-  rdfs:comment "this property relates an address to its building number given as string." ;
-  rdfs:domain pi:Address ;
-  rdfs:label "Building Number" ;
-  rdfs:range xsd:string ;
-  rdfs:subPropertyOf pi:locationProperties ;
-.
-pi:cityLoCode
-  a owl:DatatypeProperty ;
-  rdfs:comment "Code uniquely identifying a City following the LoCode standard." ;
-  rdfs:domain pi:City ;
-  rdfs:label "City LoCode" ;
-  rdfs:range xsd:string ;
-  rdfs:subPropertyOf pi:locationProperties ;
-.
-pi:cityName
-  a owl:DatatypeProperty ;
-  rdfs:label "City Name" ;
-  rdfs:domain pi:City ;
-  rdfs:range xsd:string ;
-  rdfs:subPropertyOf pi:locationProperties ;
-.
 pi:containsLogisticalInterface
   a owl:ObjectProperty ;
   rdfs:comment "Each object with a logistical function contains some interfaces where the logistic modality may change." ;
@@ -316,42 +191,10 @@ pi:containsLogisticalInterface
   rdfs:label "contains logistical interface" ;
   rdfs:range pi:LogisticalInterface ;
 .
-pi:countryISOCode
-  a owl:DatatypeProperty ;
-  rdfs:comment "This property identifies a country following the ISO2 codelist standard." ;
-  rdfs:domain pi:Country ;
-  rdfs:label "Country Code ISO2" ;
-  rdfs:range xsd:string ;
-  rdfs:subPropertyOf pi:locationProperties ;
-.
-pi:countryISOCodeAlpha3
-  a owl:DatatypeProperty ;
-  rdfs:comment "ISO 3166-1 alpha-3 codes are three-letter country codes defined in ISO 3166-1, part of the ISO 3166 standard published by the International Organization for Standardization (ISO), to represent countries, dependent territories, and special areas of geographical interest" ;
-  rdfs:domain pi:Country ;
-  rdfs:label "country ISOCode Alpha3" ;
-  rdfs:range xsd:string ;
-  rdfs:subPropertyOf pi:locationProperties ;
-.
-pi:countryISOCodeNumeric
-  a owl:DatatypeProperty ;
-  rdfs:comment "Numeric country ISOCode" ;
-  rdfs:domain pi:Country ;
-  rdfs:label "country ISOCode Numeric" ;
-  rdfs:range xsd:string ;
-  rdfs:subPropertyOf pi:locationProperties ;
-.
-pi:countryName
-  a owl:DatatypeProperty ;
-  rdfs:comment "This property contains the human readable name of the country where the specified location is located in." ;
-  rdfs:domain pi:Country ;
-  rdfs:label "Country Name" ;
-  rdfs:range xsd:string ;
-  rdfs:subPropertyOf pi:locationProperties ;
-.
 pi:geonamesReference
   a owl:ObjectProperty ;
   rdfs:comment "Reference to a geonames feature corresponding to the Location that is the domain of this property." ;
-  rdfs:domain pi:Location ;
+  rdfs:domain <https://schema.org/Place> ;
   rdfs:label "Geonames Reference" ;
   rdfs:range <http://www.geonames.org/ontology#Feature> ;
 .
@@ -370,10 +213,24 @@ pi:hasGateNumber
   rdfs:range xsd:integer ;
   rdfs:subPropertyOf pi:LogisticalInterfaceProperty ;
 .
+pi:LOCode
+  a owl:DatatypeProperty ;
+  rdfs:comment "This property allows to indicate the LOCODE of a schema:city or schema:country." ;
+  rdfs:domain [
+      a owl:Class ;
+      owl:unionOf (
+          <https://schema.org/City>
+          <https://schema.org/Place>
+        ) ;
+    ] ;
+  rdfs:label "LOCODE" ;
+  rdfs:range xsd:string ;
+  rdfs:subPropertyOf <https://schema.org/identifier>;
+.
 pi:hasLocationRole
   a owl:ObjectProperty ;
   rdfs:comment "This property describes the role a location plays in the context of an event." ;
-  rdfs:domain pi:Location ;
+  rdfs:domain <https://schema.org/Place> ;
   rdfs:label "Has Location Role" ;
   rdfs:range <https://ontology.tno.nl/logistics/federated/LogisticRoles#LocationRoles> ;
 .
@@ -409,12 +266,6 @@ pi:locatedAt
   rdfs:label "Located At" ;
   rdfs:range <http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing> ;
 .
-pi:locationProperties
-  a owl:DatatypeProperty ;
-  rdfs:comment "Do not Instantiate. Only for the purpose of grouping. Each subproperty specifies a property of a location." ;
-  rdfs:domain pi:Location ;
-  rdfs:label "Location Properties" ;
-.
 pi:logisticalFunctionProperties
   a owl:DatatypeProperty ;
   rdfs:comment "This abstract property contains all properties intended for logistical functions." ;
@@ -438,14 +289,6 @@ pi:portSecurityLevel
   rdfs:range xsd:string ;
   rdfs:subPropertyOf pi:logisticalFunctionProperties ;
 .
-pi:postalCode
-  a owl:DatatypeProperty ;
-  rdfs:comment "This property specific the postal code or ZIP code of the location involved." ;
-  rdfs:domain pi:City ;
-  rdfs:label "Postal Code" ;
-  rdfs:range xsd:string ;
-  rdfs:subPropertyOf pi:locationProperties ;
-.
 pi:roadName
   a owl:DatatypeProperty ;
   rdfs:comment "This property specifies the name of a road." ;
@@ -461,14 +304,6 @@ pi:securityMeasure
   rdfs:label "Security Measure" ;
   rdfs:range xsd:string ;
   rdfs:subPropertyOf pi:InfrastructuralFunctionProperty ;
-.
-pi:StreetName
-  a owl:DatatypeProperty ;
-  rdfs:comment "The property that relates an address to its street name given as string." ;
-  rdfs:domain pi:Address ;
-  rdfs:label "street name" ;
-  rdfs:range xsd:string ;
-  rdfs:subPropertyOf pi:locationProperties ;
 .
 pi:terminalDescription
   a owl:DatatypeProperty ;
