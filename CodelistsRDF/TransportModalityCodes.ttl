@@ -1,0 +1,75 @@
+# baseURI: http://www.w3.org/2002/07/owl#
+# prefix: owl
+
+@prefix : <http://www.w3.org/2002/07/owl#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix terms: <http://purl.org/dc/terms/> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://ontology.tno.nl/logistics/federated/Classifications#TransportModality>
+  rdf:type owl:Class ;
+.
+<https://ontology.tno.nl/logistics/federated/Classifications/TransportModality#0>
+  rdf:type owl:NamedIndividual ;
+  rdf:type <https://ontology.tno.nl/logistics/federated/Classifications#TransportModality> ;
+  rdfs:comment "Code 0 can be used to indicate the absence of an entry for the mode of transport."@en ;
+  rdfs:label 0 ;
+.
+<https://ontology.tno.nl/logistics/federated/Classifications/TransportModality#1>
+  rdf:type owl:NamedIndividual ;
+  rdf:type <https://ontology.tno.nl/logistics/federated/Classifications#TransportModality> ;
+  rdfs:comment "Code 1 can be used for Maritime transport."@en ;
+  rdfs:label 1 ;
+.
+<https://ontology.tno.nl/logistics/federated/Classifications/TransportModality#2>
+  rdf:type owl:NamedIndividual ;
+  rdf:type <https://ontology.tno.nl/logistics/federated/Classifications#TransportModality> ;
+  rdfs:comment "Code 2 can be used for rail transport."@en ;
+  rdfs:label 2 ;
+.
+<https://ontology.tno.nl/logistics/federated/Classifications/TransportModality#3>
+  rdf:type owl:NamedIndividual ;
+  rdf:type <https://ontology.tno.nl/logistics/federated/Classifications#TransportModality> ;
+  rdfs:comment "Code 3 can be used for road transport."@en ;
+  rdfs:label 3 ;
+.
+<https://ontology.tno.nl/logistics/federated/Classifications/TransportModality#4>
+  rdf:type owl:NamedIndividual ;
+  rdf:type <https://ontology.tno.nl/logistics/federated/Classifications#TransportModality> ;
+  rdfs:comment "Code 4 can be used for air transport."@en ;
+  rdfs:label 4 ;
+.
+<https://ontology.tno.nl/logistics/federated/Classifications/TransportModality#5>
+  rdf:type owl:NamedIndividual ;
+  rdf:type <https://ontology.tno.nl/logistics/federated/Classifications#TransportModality> ;
+  rdfs:comment "Code 5 can be used for mail(s)."@en ;
+  rdfs:label 5 ;
+.
+<https://ontology.tno.nl/logistics/federated/Classifications/TransportModality#6>
+  rdf:type owl:NamedIndividual ;
+  rdf:type <https://ontology.tno.nl/logistics/federated/Classifications#TransportModality> ;
+  rdfs:comment "Code 6 can be used for multimodal trasport (goods carried by at least two different types of mode of transport)."@en ;
+  rdfs:label 6 ;
+.
+<https://ontology.tno.nl/logistics/federated/Classifications/TransportModality#7>
+  rdf:type owl:NamedIndividual ;
+  rdf:type <https://ontology.tno.nl/logistics/federated/Classifications#TransportModality> ;
+  rdfs:comment "Code 7 can be used for fixed transport installations (such as pipelines, ropeways and electric power lines)."@en ;
+  rdfs:label 7 ;
+.
+<https://ontology.tno.nl/logistics/federated/Classifications/TransportModality#8>
+  rdf:type owl:NamedIndividual ;
+  rdf:type <https://ontology.tno.nl/logistics/federated/Classifications#TransportModality> ;
+  rdfs:comment "Code 8 can be used for inland water transport."@en ;
+  rdfs:label 8 ;
+.
+<https://ontology.tno.nl/logistics/federated/Classifications/TransportModality#9>
+  rdf:type owl:NamedIndividual ;
+  rdf:type <https://ontology.tno.nl/logistics/federated/Classifications#TransportModality> ;
+  rdfs:comment "Code 9 can be used when the mode of transport is unknown."@en ;
+  rdfs:label 9 ;
+.
