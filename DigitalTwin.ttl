@@ -840,6 +840,30 @@ DigitalTwin:packageProperties
   rdfs:comment "Do not Instantiate -- Made only for grouping" ;
   rdfs:subPropertyOf DigitalTwin:PhysicalObjectProperties ;
 .
+DigitalTwin:packageCode
+  a owl:DatatypeProperty ;
+  rdfs:comment "Package code based on Unece Standardisations." ;
+  rdfs:domain DigitalTwin:Package ;
+  rdfs:label "Package Code" ;
+  rdfs:range xsd:string ;
+  rdfs:subPropertyOf DigitalTwin:PhysicalObjectProperties ;
+.
+DigitalTwin:packageTypeName
+  a owl:DatatypeProperty ;
+  rdfs:comment "Package type name based on UNECE standardisations. Retrieved from internal project ProfileData postgres database." ;
+  rdfs:domain classifications:PackageType ;
+  rdfs:label "Package Type Name" ;
+  rdfs:range xsd:string ;
+  rdfs:subPropertyOf DigitalTwin:PhysicalObjectProperties ;
+.
+DigitalTwin:packageTypeNumericCode
+  a owl:DatatypeProperty ;
+  rdfs:comment "Two digit numeric code for expressing types of package." ;
+  rdfs:domain classifications:PackageType ;
+  rdfs:label "Package Type Numeric Code" ;
+  rdfs:range xsd:integer ;
+  rdfs:subPropertyOf DigitalTwin:PhysicalObjectProperties ;
+.
 DigitalTwin:packagingDangerLevelCode
   a owl:DatatypeProperty ;
   rdfs:comment "The packaging danger level code." ;
