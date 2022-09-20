@@ -3,6 +3,7 @@
 @prefix ns0: <https://edi3.org/vocabulary/unece#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix schema: <http://schema.org/> .
+@base <http://www.example.com/unece> .
 
 <https://edi3.org/vocabulary/unece#AccountingAccount>
   a rdfs:Class ;
@@ -37727,4 +37728,3 @@ ns0:UNECELOCODE
   a rdfs:Class ;
   rdfs:comment "LOCODE."^^xsd:string ;
   rdfs:label "UNECELOCODE"^^xsd:string .
-This converter is running version 1.1.1 of EasyRdf.
