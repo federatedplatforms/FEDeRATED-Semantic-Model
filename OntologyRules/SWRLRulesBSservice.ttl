@@ -2,6 +2,9 @@
 #    Rules
 #################################################################
 @prefix businessService: <https://ontology.tno.nl/logistics/federated/BusinessService#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @base <https://ontology.tno.nl/logistics/federated/BusinessService> .
 
 businessService:x rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
