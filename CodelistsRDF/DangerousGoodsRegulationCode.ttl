@@ -1,1136 +1,2652 @@
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
-@prefix owl: <http://www.w3.org/2002/07/owl#>.
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
-@prefix classifications: <https://ontology.tno.nl/logistics/federated/Classifications#>.
+# baseURI: https://ontology.tno.nl/logistics/federated/Classifications/dangerousGoodsRegulationCode
 
-<https://ontology.tno.nl/logistics/federated/Classifications#43> a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Bag, super bulk";
-    rdfs:comment "".
-<https://ontology.tno.nl/logistics/federated/Classifications#44> a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Bag, polybag";
-    rdfs:comment "A type of plastic bag, typically used to wrap promotional pieces, publications, product samples, and/or catalogues.".
-<https://ontology.tno.nl/logistics/federated/Classifications#1A> a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Drum, steel";
-    rdfs:comment "".
-<https://ontology.tno.nl/logistics/federated/Classifications#1B> a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Drum, aluminium";
-    rdfs:comment "".
-<https://ontology.tno.nl/logistics/federated/Classifications#1D> a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Drum, plywood";
-    rdfs:comment "".
-<https://ontology.tno.nl/logistics/federated/Classifications#1F> a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Container, flexible";
-    rdfs:comment "A packaging container of flexible construction.".
-<https://ontology.tno.nl/logistics/federated/Classifications#1G> a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Drum, fibre";
-    rdfs:comment "".
-<https://ontology.tno.nl/logistics/federated/Classifications#1W> a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Drum, wooden";
-    rdfs:comment "".
-<https://ontology.tno.nl/logistics/federated/Classifications#2C> a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Barrel, wooden";
-    rdfs:comment "".
-<https://ontology.tno.nl/logistics/federated/Classifications#3A> a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Jerrican, steel";
-    rdfs:comment "".
-<https://ontology.tno.nl/logistics/federated/Classifications#3H> a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Jerrican, plastic";
-    rdfs:comment "".
-<https://ontology.tno.nl/logistics/federated/Classifications#4A> a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Box, steel";
-    rdfs:comment "".
-<https://ontology.tno.nl/logistics/federated/Classifications#4B> a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Box, aluminium";
-    rdfs:comment "".
-<https://ontology.tno.nl/logistics/federated/Classifications#4C> a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Box, natural wood";
-    rdfs:comment "".
-<https://ontology.tno.nl/logistics/federated/Classifications#4D> a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Box, plywood";
-    rdfs:comment "".
-<https://ontology.tno.nl/logistics/federated/Classifications#4F> a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Box, reconstituted wood";
-    rdfs:comment "".
-<https://ontology.tno.nl/logistics/federated/Classifications#4G> a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Box, fibreboard";
-    rdfs:comment "".
-<https://ontology.tno.nl/logistics/federated/Classifications#4H> a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Box, plastic";
-    rdfs:comment "".
-<https://ontology.tno.nl/logistics/federated/Classifications#5H> a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Bag, woven plastic";
-    rdfs:comment "".
-<https://ontology.tno.nl/logistics/federated/Classifications#5L> a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Bag, textile";
-    rdfs:comment "".
-<https://ontology.tno.nl/logistics/federated/Classifications#5M> a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Bag, paper";
-    rdfs:comment "".
-<https://ontology.tno.nl/logistics/federated/Classifications#6H> a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Composite packaging, plastic receptacle";
-    rdfs:comment "".
-<https://ontology.tno.nl/logistics/federated/Classifications#6P> a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Composite packaging, glass receptacle";
-    rdfs:comment "".
-<https://ontology.tno.nl/logistics/federated/Classifications#7A> a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Case, car";
-    rdfs:comment "A type of portable container designed to store equipment for carriage in an automobile.".
-<https://ontology.tno.nl/logistics/federated/Classifications#7B> a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Case, wooden";
-    rdfs:comment "A case made of wood for retaining substances or articles.".
-<https://ontology.tno.nl/logistics/federated/Classifications#8A> a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Pallet, wooden";
-    rdfs:comment "A platform or open-ended box, made of wood, on which goods are retained for ease of mechanical handling during transport and storage.".
-<https://ontology.tno.nl/logistics/federated/Classifications#8B> a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Crate, wooden";
-    rdfs:comment "A receptacle, made of wood, on which goods are retained for ease of mechanical handling during transport and storage.".
-<https://ontology.tno.nl/logistics/federated/Classifications#8C> a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Bundle, wooden";
-    rdfs:comment "Loose or unpacked pieces of wood tied or wrapped together.".
-classifications:AA a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Intermediate bulk container, rigid plastic";
-    rdfs:comment "".
-classifications:AB a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Receptacle, fibre";
-    rdfs:comment "".
-classifications:AC a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Receptacle, paper";
-    rdfs:comment "".
-classifications:AD a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Receptacle, wooden";
-    rdfs:comment "".
-classifications:AE a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Aerosol";
-    rdfs:comment "".
-classifications:AF a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Pallet, modular, collars 80cms × 60cms";
-    rdfs:comment "".
-classifications:AG a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Pallet, shrinkwrapped";
-    rdfs:comment "".
-classifications:AH a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Pallet, 100cms × 110cms";
-    rdfs:comment "".
-classifications:AI a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Clamshell";
-    rdfs:comment "".
-classifications:AJ a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Cone";
-    rdfs:comment "".
-classifications:AL a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Ball";
-    rdfs:comment "A spherical containment vessel for retaining substances or articles.".
-classifications:AM a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Ampoule, non-protected";
-    rdfs:comment "".
-classifications:AP a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Ampoule, protected";
-    rdfs:comment "".
-classifications:AT a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Atomizer";
-    rdfs:comment "".
-classifications:AV a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Capsule";
-    rdfs:comment "".
-classifications:B4 a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Belt";
-    rdfs:comment "A band use to retain multiple articles together.".
-classifications:BA a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Barrel";
-    rdfs:comment "".
-classifications:BB a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Bobbin";
-    rdfs:comment "".
-classifications:BC a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Bottlecrate / bottlerack";
-    rdfs:comment "".
-classifications:BD a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Board";
-    rdfs:comment "".
-classifications:BE a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Bundle";
-    rdfs:comment "".
-classifications:BF a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Balloon, non-protected";
-    rdfs:comment "".
-classifications:BG a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Bag";
-    rdfs:comment "".
-classifications:BH a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Bunch";
-    rdfs:comment "".
-classifications:BI a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Bin";
-    rdfs:comment "".
-classifications:BJ a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Bucket";
-    rdfs:comment "".
-classifications:BK a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Basket";
-    rdfs:comment "".
-classifications:BL a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Bale, compressed";
-    rdfs:comment "".
-classifications:BM a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Basin";
-    rdfs:comment "".
-classifications:BN a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Bale, non-compressed";
-    rdfs:comment "".
-classifications:BO a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Bottle, non-protected, cylindrical";
-    rdfs:comment "".
-classifications:BP a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Balloon, protected";
-    rdfs:comment "".
-classifications:BQ a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Bottle, protected cylindrical";
-    rdfs:comment "".
-classifications:BR a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Bar";
-    rdfs:comment "".
-classifications:BS a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Bottle, non-protected, bulbous";
-    rdfs:comment "".
-classifications:BT a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Bolt";
-    rdfs:comment "".
-classifications:BU a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Butt";
-    rdfs:comment "".
-classifications:BV a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Bottle, protected bulbous";
-    rdfs:comment "".
-classifications:BW a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Box, for liquids";
-    rdfs:comment "".
-classifications:BX a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Box";
-    rdfs:comment "".
-classifications:BY a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Board, in bundle/bunch/truss";
-    rdfs:comment "".
-classifications:BZ a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Bars, in bundle/bunch/truss";
-    rdfs:comment "".
-classifications:CA a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Can, rectangular";
-    rdfs:comment "".
-classifications:CB a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Crate, beer";
-    rdfs:comment "".
-classifications:CC a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Churn";
-    rdfs:comment "".
-classifications:CD a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Can, with handle and spout";
-    rdfs:comment "".
-classifications:CE a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Creel";
-    rdfs:comment "".
-classifications:CF a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Coffer";
-    rdfs:comment "".
-classifications:CG a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Cage";
-    rdfs:comment "".
-classifications:CH a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Chest";
-    rdfs:comment "".
-classifications:CI a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Canister";
-    rdfs:comment "".
-classifications:CJ a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Coffin";
-    rdfs:comment "".
-classifications:CK a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Cask";
-    rdfs:comment "".
-classifications:CL a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Coil";
-    rdfs:comment "".
-classifications:CM a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Card";
-    rdfs:comment "".
-classifications:CN a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Container, not otherwise specified as transport equipment";
-    rdfs:comment "".
-classifications:CO a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Carboy, non-protected";
-    rdfs:comment "".
-classifications:CP a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Carboy, protected";
-    rdfs:comment "".
-classifications:CQ a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Cartridge";
-    rdfs:comment "".
-classifications:CR a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Crate";
-    rdfs:comment "".
-classifications:CS a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Case";
-    rdfs:comment "".
-classifications:CT a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Carton";
-    rdfs:comment "".
-classifications:CU a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Cup";
-    rdfs:comment "".
-classifications:CV a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Cover";
-    rdfs:comment "".
-classifications:CW a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Cage, roll";
-    rdfs:comment "".
-classifications:CX a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Can, cylindrical";
-    rdfs:comment "".
-classifications:CY a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Cylinder";
-    rdfs:comment "".
-classifications:CZ a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Canvas";
-    rdfs:comment "".
-classifications:DA a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Crate, multiple layer, plastic";
-    rdfs:comment "".
-classifications:DB a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Crate, multiple layer, wooden";
-    rdfs:comment "".
-classifications:DC a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Crate, multiple layer, cardboard";
-    rdfs:comment "".
-classifications:DG a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Cage, Commonwealth Handling Equipment Pool  (CHEP)";
-    rdfs:comment "".
-classifications:DH a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Box, Commonwealth Handling Equipment Pool (CHEP), Eurobox";
-    rdfs:comment "".
-classifications:DI a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Drum, iron";
-    rdfs:comment "".
-classifications:DJ a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Demijohn, non-protected";
-    rdfs:comment "".
-classifications:DK a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Crate, bulk, cardboard";
-    rdfs:comment "".
-classifications:DL a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Crate, bulk, plastic";
-    rdfs:comment "".
-classifications:DM a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Crate, bulk, wooden";
-    rdfs:comment "".
-classifications:DN a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Dispenser";
-    rdfs:comment "".
-classifications:DP a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Demijohn, protected";
-    rdfs:comment "".
-classifications:DR a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Drum";
-    rdfs:comment "".
-classifications:DS a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Tray, one layer no cover, plastic";
-    rdfs:comment "".
-classifications:DT a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Tray, one layer no cover, wooden";
-    rdfs:comment "".
-classifications:DU a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Tray, one layer no cover, polystyrene";
-    rdfs:comment "".
-classifications:DV a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Tray, one layer no cover, cardboard";
-    rdfs:comment "".
-classifications:DW a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Tray, two layers no cover, plastic tray";
-    rdfs:comment "".
-classifications:DX a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Tray, two layers no cover, wooden";
-    rdfs:comment "".
-classifications:DY a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Tray, two layers no cover, cardboard";
-    rdfs:comment "".
-classifications:EC a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Bag, plastic";
-    rdfs:comment "".
-classifications:ED a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Case, with pallet base";
-    rdfs:comment "".
-classifications:EE a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Case, with pallet base, wooden";
-    rdfs:comment "".
-classifications:EF a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Case, with pallet base, cardboard";
-    rdfs:comment "".
-classifications:EG a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Case, with pallet base, plastic";
-    rdfs:comment "".
-classifications:EH a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Case, with pallet base, metal";
-    rdfs:comment "".
-classifications:EI a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Case, isothermic";
-    rdfs:comment "".
-classifications:EN a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Envelope";
-    rdfs:comment "".
-classifications:FB a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Flexibag";
-    rdfs:comment "A flexible containment bag made of plastic, typically for the transportation bulk non-hazardous cargoes using standard size shipping containers.".
-classifications:FC a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Crate, fruit";
-    rdfs:comment "".
-classifications:FD a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Crate, framed";
-    rdfs:comment "".
-classifications:FE a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Flexitank";
-    rdfs:comment "A flexible containment tank made of plastic, typically for the transportation bulk non-hazardous cargoes using standard size shipping containers.".
-classifications:FI a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Firkin";
-    rdfs:comment "".
-classifications:FL a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Flask";
-    rdfs:comment "".
-classifications:FO a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Footlocker";
-    rdfs:comment "".
-classifications:FP a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Filmpack";
-    rdfs:comment "".
-classifications:FR a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Frame";
-    rdfs:comment "".
-classifications:FT a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Foodtainer";
-    rdfs:comment "".
-classifications:FW a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Cart, flatbed";
-    rdfs:comment "Wheeled flat bedded device on which trays or other regular shaped items are packed for transportation purposes.".
-classifications:FX a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Bag, flexible container";
-    rdfs:comment "".
-classifications:GB a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Bottle, gas";
-    rdfs:comment "".
-classifications:GI a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Girder";
-    rdfs:comment "".
-classifications:GL a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Container, gallon";
-    rdfs:comment "A container with a capacity of one gallon.".
-classifications:GR a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Receptacle, glass";
-    rdfs:comment "".
-classifications:GU a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Tray, containing horizontally stacked flat items";
-    rdfs:comment "Tray containing flat items stacked on top of one another.".
-classifications:GY a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Bag, gunny";
-    rdfs:comment "A sack made of gunny or burlap, used for transporting coarse commodities, such as grains, potatoes, and other agricultural products.".
-classifications:GZ a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Girders, in bundle/bunch/truss";
-    rdfs:comment "".
-classifications:HA a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Basket, with handle, plastic";
-    rdfs:comment "".
-classifications:HB a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Basket, with handle, wooden";
-    rdfs:comment "".
-classifications:HC a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Basket, with handle, cardboard";
-    rdfs:comment "".
-classifications:HG a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Hogshead";
-    rdfs:comment "".
-classifications:HN a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Hanger";
-    rdfs:comment "A purpose shaped device with a hook at the top for hanging items from a rail.".
-classifications:HR a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Hamper";
-    rdfs:comment "".
-classifications:IA a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Package, display, wooden";
-    rdfs:comment "".
-classifications:IB a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Package, display, cardboard";
-    rdfs:comment "".
-classifications:IC a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Package, display, plastic";
-    rdfs:comment "".
-classifications:ID a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Package, display, metal";
-    rdfs:comment "".
-classifications:IE a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Package, show";
-    rdfs:comment "".
-classifications:IF a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Package, flow";
-    rdfs:comment "".
-classifications:IG a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Package, paper wrapped";
-    rdfs:comment "".
-classifications:IH a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Drum, plastic";
-    rdfs:comment "".
-classifications:IK a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Package, cardboard, with bottle grip-holes";
-    rdfs:comment "".
-classifications:IL a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Tray, rigid, lidded stackable (CEN TS 14482:2002)";
-    rdfs:comment "Lidded stackable rigid tray compliant with CEN TS 14482:2002.".
-classifications:IN a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Ingot";
-    rdfs:comment "".
-classifications:IZ a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Ingots, in bundle/bunch/truss";
-    rdfs:comment "".
-classifications:JB a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Bag, jumbo";
-    rdfs:comment "A flexible containment bag, widely used for storage, transportation and handling of powder, flake or granular materials. Typically constructed from woven polypropylene (PP) fabric in the form of cubic bags.".
-classifications:JC a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Jerrican, rectangular";
-    rdfs:comment "".
-classifications:JG a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Jug";
-    rdfs:comment "".
-classifications:JR a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Jar";
-    rdfs:comment "".
-classifications:JT a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Jutebag";
-    rdfs:comment "".
-classifications:JY a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Jerrican, cylindrical";
-    rdfs:comment "".
-classifications:KG a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Keg";
-    rdfs:comment "".
-classifications:KI a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Kit";
-    rdfs:comment "A set of articles or implements used for a specific purpose.".
-classifications:LE a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Luggage";
-    rdfs:comment "A collection of bags, cases and/or containers which hold personal belongings for a journey.".
-classifications:LG a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Log";
-    rdfs:comment "".
-classifications:LT a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Lot";
-    rdfs:comment "".
-classifications:LU a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Lug";
-    rdfs:comment "A wooden box for the transportation and storage of fruit or vegetables.".
-classifications:LV a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Liftvan";
-    rdfs:comment "".
-classifications:LZ a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Logs, in bundle/bunch/truss";
-    rdfs:comment "".
-classifications:MA a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Crate, metal";
-    rdfs:comment "Containment box made of metal for retaining substances or articles.".
-classifications:MB a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Bag, multiply";
-    rdfs:comment "".
-classifications:MC a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Crate, milk";
-    rdfs:comment "".
-classifications:ME a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Container, metal";
-    rdfs:comment "A type of containment box made of metal for retaining substances or articles, not otherwise specified as transport equipment.".
-classifications:MR a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Receptacle, metal";
-    rdfs:comment "".
-classifications:MS a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Sack, multi-wall";
-    rdfs:comment "".
-classifications:MT a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Mat";
-    rdfs:comment "".
-classifications:MW a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Receptacle, plastic wrapped";
-    rdfs:comment "".
-classifications:MX a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Matchbox";
-    rdfs:comment "".
-classifications:NA a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Not available";
-    rdfs:comment "".
-classifications:NE a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Unpacked or unpackaged";
-    rdfs:comment "".
-classifications:NF a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Unpacked or unpackaged, single unit";
-    rdfs:comment "".
-classifications:NG a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Unpacked or unpackaged, multiple units";
-    rdfs:comment "".
-classifications:NS a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Nest";
-    rdfs:comment "".
-classifications:NT a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Net";
-    rdfs:comment "".
-classifications:NU a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Net, tube, plastic";
-    rdfs:comment "".
-classifications:NV a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Net, tube, textile";
-    rdfs:comment "".
-classifications:OA a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Pallet, CHEP 40 cm x 60 cm";
-    rdfs:comment "CHEP standard pallet of dimensions 40 centimeters x 60 centimeters.".
-classifications:OB a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Pallet, CHEP 80 cm x 120 cm";
-    rdfs:comment "CHEP standard pallet of dimensions 80 centimeters x 120 centimeters.".
-classifications:OC a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Pallet, CHEP 100 cm x 120 cm";
-    rdfs:comment "CHEP standard pallet of dimensions 100 centimeters x 120 centimeters.".
-classifications:OD a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Pallet, AS 4068-1993";
-    rdfs:comment "Australian standard pallet of dimensions 115.5 centimeters x 116.5 centimeters.".
-classifications:OE a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Pallet, ISO T11";
-    rdfs:comment "ISO standard pallet of dimensions 110 centimeters x 110 centimeters, prevalent in Asia - Pacific region.".
-classifications:OF a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Platform, unspecified weight or dimension";
-    rdfs:comment "A pallet equivalent shipping platform of unknown dimensions or unknown weight.".
-classifications:OK a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Block";
-    rdfs:comment "A solid piece of a hard substance, such as granite, having one or more flat sides.".
-classifications:OT a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Octabin";
-    rdfs:comment "A standard cardboard container of large dimensions for storing for example vegetables, granules of plastics or other dry products.".
-classifications:OU a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Container, outer";
-    rdfs:comment "A type of containment box that serves as the outer shipping container, not otherwise specified as transport equipment.".
-classifications:P2 a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Pan";
-    rdfs:comment "A shallow, wide, open container, usually of metal.".
-classifications:PA a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Packet";
-    rdfs:comment "".
-classifications:PB a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Pallet, box";
-    rdfs:comment "".
-classifications:PC a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Parcel";
-    rdfs:comment "".
-classifications:PD a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Pallet, modular, collars 80cms * 100cms";
-    rdfs:comment "".
-classifications:PE a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Pallet, modular, collars 80cms * 120cms";
-    rdfs:comment "".
-classifications:PF a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Pen";
-    rdfs:comment "".
-classifications:PG a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Plate";
-    rdfs:comment "".
-classifications:PH a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Pitcher";
-    rdfs:comment "".
-classifications:PI a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Pipe";
-    rdfs:comment "".
-classifications:PJ a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Punnet";
-    rdfs:comment "".
-classifications:PK a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Package";
-    rdfs:comment "".
-classifications:PL a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Pail";
-    rdfs:comment "".
-classifications:PN a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Plank";
-    rdfs:comment "".
-classifications:PO a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Pouch";
-    rdfs:comment "".
-classifications:PP a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Piece";
-    rdfs:comment "A loose or unpacked article.".
-classifications:PR a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Receptacle, plastic";
-    rdfs:comment "".
-classifications:PT a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Pot";
-    rdfs:comment "".
-classifications:PU a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Tray pack";
-    rdfs:comment "".
-classifications:PV a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Pipes, in bundle/bunch/truss";
-    rdfs:comment "".
-classifications:PX a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Pallet";
-    rdfs:comment "".
-classifications:PY a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Plates, in bundle/bunch/truss";
-    rdfs:comment "".
-classifications:PZ a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Planks, in bundle/bunch/truss";
-    rdfs:comment "".
-classifications:QA a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Drum, steel, non-removable head";
-    rdfs:comment "".
-classifications:QB a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Drum, steel, removable head";
-    rdfs:comment "".
-classifications:QC a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Drum, aluminium, non-removable head";
-    rdfs:comment "".
-classifications:QD a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Drum, aluminium, removable head";
-    rdfs:comment "".
-classifications:QF a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Drum, plastic, non-removable head";
-    rdfs:comment "".
-classifications:QG a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Drum, plastic, removable head";
-    rdfs:comment "".
-classifications:QH a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Barrel, wooden, bung type";
-    rdfs:comment "".
-classifications:QJ a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Barrel, wooden, removable head";
-    rdfs:comment "".
-classifications:QK a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Jerrican, steel, non-removable head";
-    rdfs:comment "".
-classifications:QL a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Jerrican, steel, removable head";
-    rdfs:comment "".
-classifications:QM a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Jerrican, plastic, non-removable head";
-    rdfs:comment "".
-classifications:QN a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Jerrican, plastic, removable head";
-    rdfs:comment "".
-classifications:QP a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Box, wooden, natural wood, ordinary";
-    rdfs:comment "".
-classifications:QQ a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Box, wooden, natural wood, with sift proof walls";
-    rdfs:comment "".
-classifications:QR a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Box, plastic, expanded";
-    rdfs:comment "".
-classifications:QS a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Box, plastic, solid";
-    rdfs:comment "".
-classifications:RD a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Rod";
-    rdfs:comment "".
-classifications:RG a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Ring";
-    rdfs:comment "".
-classifications:RJ a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Rack, clothing hanger";
-    rdfs:comment "".
-classifications:RK a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Rack";
-    rdfs:comment "".
-classifications:RL a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Reel";
-    rdfs:comment "".
-classifications:RO a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Roll";
-    rdfs:comment "".
-classifications:RT a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Rednet";
-    rdfs:comment "".
-classifications:RZ a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Rods, in bundle/bunch/truss";
-    rdfs:comment "".
-classifications:SA a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Sack";
-    rdfs:comment "".
-classifications:SB a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Slab";
-    rdfs:comment "".
-classifications:SC a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Crate, shallow";
-    rdfs:comment "".
-classifications:SD a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Spindle";
-    rdfs:comment "".
-classifications:SE a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Sea-chest";
-    rdfs:comment "".
-classifications:SH a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Sachet";
-    rdfs:comment "".
-classifications:SI a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Skid";
-    rdfs:comment "".
-classifications:SK a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Case, skeleton";
-    rdfs:comment "".
-classifications:SL a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Slipsheet";
-    rdfs:comment "".
-classifications:SM a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Sheetmetal";
-    rdfs:comment "".
-classifications:SO a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Spool";
-    rdfs:comment "".
-classifications:SP a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Sheet, plastic wrapping";
-    rdfs:comment "".
-classifications:SS a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Case, steel";
-    rdfs:comment "".
-classifications:ST a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Sheet";
-    rdfs:comment "".
-classifications:SU a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Suitcase";
-    rdfs:comment "".
-classifications:SV a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Envelope, steel";
-    rdfs:comment "".
-classifications:SW a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Shrinkwrapped";
-    rdfs:comment "".
-classifications:SY a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Sleeve";
-    rdfs:comment "".
-classifications:SZ a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Sheets, in bundle/bunch/truss";
-    rdfs:comment "".
-classifications:T1 a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Tablet";
-    rdfs:comment "A loose or unpacked article in the form of a bar, block or piece.".
-classifications:TB a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Tub";
-    rdfs:comment "".
-classifications:TC a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Tea-chest";
-    rdfs:comment "".
-classifications:TD a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Tube, collapsible";
-    rdfs:comment "".
-classifications:TE a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Tyre";
-    rdfs:comment "A ring made of rubber and/or metal surrounding a wheel.".
-classifications:TG a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Tank container, generic";
-    rdfs:comment "A specially constructed container for transporting liquids and gases in bulk.".
-classifications:TI a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Tierce TI";
-    rdfs:comment "".
-classifications:TK a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Tank, rectangular";
-    rdfs:comment "".
-classifications:TL a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Tub, with lid";
-    rdfs:comment "".
-classifications:TN a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Tin";
-    rdfs:comment "".
-classifications:TO a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Tun";
-    rdfs:comment "".
-classifications:TR a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Trunk";
-    rdfs:comment "".
-classifications:TS a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Truss";
-    rdfs:comment "".
-classifications:TT a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Bag, tote";
-    rdfs:comment "A capacious bag or basket.".
-classifications:TU a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Tube";
-    rdfs:comment "".
-classifications:TV a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Tube, with nozzle";
-    rdfs:comment "".
-classifications:TW a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Pallet, triwall";
-    rdfs:comment "A lightweight pallet made from heavy duty corrugated board.".
-classifications:TY a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Tank, cylindrical";
-    rdfs:comment "".
-classifications:TZ a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Tubes, in bundle/bunch/truss";
-    rdfs:comment "".
-classifications:UC a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Uncaged";
-    rdfs:comment "".
-classifications:UN a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Unit";
-    rdfs:comment "A type of package composed of a single item or object, not otherwise specified as a unit of transport equipment.".
-classifications:VA a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Vat";
-    rdfs:comment "".
-classifications:VG a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Bulk, gas (at 1031 mbar and 15 degree C)";
-    rdfs:comment "".
-classifications:VI a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Vial";
-    rdfs:comment "".
-classifications:VK a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Vanpack";
-    rdfs:comment "".
-classifications:VL a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Bulk, liquid";
-    rdfs:comment "".
-classifications:VN a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Vehicle";
-    rdfs:comment "A self-propelled means of conveyance.".
-classifications:VO a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Bulk, solid, large particles (\"nodules\")";
-    rdfs:comment "".
-classifications:VP a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Vacuum-packed";
-    rdfs:comment "".
-classifications:VQ a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Bulk, liquefied gas (at abnormal temperature/pressure)";
-    rdfs:comment "".
-classifications:VR a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Bulk, solid, granular particles (\"grains\")";
-    rdfs:comment "".
-classifications:VS a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Bulk, scrap metal";
-    rdfs:comment "Loose or unpacked scrap metal transported in bulk form.".
-classifications:VY a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Bulk, solid, fine particles (\"powders\")";
-    rdfs:comment "".
-classifications:WA a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Intermediate bulk container";
-    rdfs:comment "".
-classifications:WB a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Wickerbottle";
-    rdfs:comment "".
-classifications:WC a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Intermediate bulk container, steel";
-    rdfs:comment "".
-classifications:WD a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Intermediate bulk container, aluminium";
-    rdfs:comment "".
-classifications:WF a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Intermediate bulk container, metal";
-    rdfs:comment "".
-classifications:WG a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Intermediate bulk container, steel, pressurised > 10 kpa";
-    rdfs:comment "".
-classifications:WH a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Intermediate bulk container, aluminium, pressurised > 10 kpa";
-    rdfs:comment "".
-classifications:WJ a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Intermediate bulk container, metal, pressure 10 kpa";
-    rdfs:comment "".
-classifications:WK a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Intermediate bulk container, steel, liquid";
-    rdfs:comment "".
-classifications:WL a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Intermediate bulk container, aluminium, liquid";
-    rdfs:comment "".
-classifications:WM a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Intermediate bulk container, metal, liquid";
-    rdfs:comment "".
-classifications:WN a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Intermediate bulk container, woven plastic, without coat/liner";
-    rdfs:comment "".
-classifications:WP a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Intermediate bulk container, woven plastic, coated";
-    rdfs:comment "".
-classifications:WQ a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Intermediate bulk container, woven plastic, with liner";
-    rdfs:comment "".
-classifications:WR a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Intermediate bulk container, woven plastic, coated and liner";
-    rdfs:comment "".
-classifications:WS a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Intermediate bulk container, plastic film";
-    rdfs:comment "".
-classifications:WT a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Intermediate bulk container, textile with out coat/liner";
-    rdfs:comment "".
-classifications:WU a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Intermediate bulk container, natural wood, with inner liner";
-    rdfs:comment "".
-classifications:WV a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Intermediate bulk container, textile, coated";
-    rdfs:comment "".
-classifications:WW a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Intermediate bulk container, textile, with liner";
-    rdfs:comment "".
-classifications:WX a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Intermediate bulk container, textile, coated and liner";
-    rdfs:comment "".
-classifications:WY a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Intermediate bulk container, plywood, with inner liner";
-    rdfs:comment "".
-classifications:WZ a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Intermediate bulk container, reconstituted wood, with inner liner";
-    rdfs:comment "".
-classifications:XA a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Bag, woven plastic, without inner coat/liner";
-    rdfs:comment "".
-classifications:XB a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Bag, woven plastic, sift proof";
-    rdfs:comment "".
-classifications:XC a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Bag, woven plastic, water resistant";
-    rdfs:comment "".
-classifications:XD a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Bag, plastics film";
-    rdfs:comment "".
-classifications:XF a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Bag, textile, without inner coat/liner";
-    rdfs:comment "".
-classifications:XG a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Bag, textile, sift proof";
-    rdfs:comment "".
-classifications:XH a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Bag, textile, water resistant";
-    rdfs:comment "".
-classifications:XJ a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Bag, paper, multi-wall";
-    rdfs:comment "".
-classifications:XK a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Bag, paper, multi-wall, water resistant";
-    rdfs:comment "".
-classifications:YA a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Composite packaging, plastic receptacle in steel drum";
-    rdfs:comment "".
-classifications:YB a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Composite packaging, plastic receptacle in steel crate box";
-    rdfs:comment "".
-classifications:YC a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Composite packaging, plastic receptacle in aluminium drum";
-    rdfs:comment "".
-classifications:YD a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Composite packaging, plastic receptacle in aluminium crate";
-    rdfs:comment "".
-classifications:YF a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Composite packaging, plastic receptacle in wooden box";
-    rdfs:comment "".
-classifications:YG a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Composite packaging, plastic receptacle in plywood drum";
-    rdfs:comment "".
-classifications:YH a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Composite packaging, plastic receptacle in plywood box";
-    rdfs:comment "".
-classifications:YJ a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Composite packaging, plastic receptacle in fibre drum";
-    rdfs:comment "".
-classifications:YK a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Composite packaging, plastic receptacle in fibreboard box";
-    rdfs:comment "".
-classifications:YL a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Composite packaging, plastic receptacle in plastic drum";
-    rdfs:comment "".
-classifications:YM a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Composite packaging, plastic receptacle in solid plastic box";
-    rdfs:comment "".
-classifications:YN a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Composite packaging, glass receptacle in steel drum";
-    rdfs:comment "".
-classifications:YP a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Composite packaging, glass receptacle in steel crate box";
-    rdfs:comment "".
-classifications:YQ a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Composite packaging, glass receptacle in aluminium drum";
-    rdfs:comment "".
-classifications:YR a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Composite packaging, glass receptacle in aluminium crate";
-    rdfs:comment "".
-classifications:YS a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Composite packaging, glass receptacle in wooden box";
-    rdfs:comment "".
-classifications:YT a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Composite packaging, glass receptacle in plywood drum";
-    rdfs:comment "".
-classifications:YV a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Composite packaging, glass receptacle in wickerwork hamper";
-    rdfs:comment "".
-classifications:YW a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Composite packaging, glass receptacle in fibre drum";
-    rdfs:comment "".
-classifications:YX a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Composite packaging, glass receptacle in fibreboard box";
-    rdfs:comment "".
-classifications:YY a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Composite packaging, glass receptacle in expandable plastic pack";
-    rdfs:comment "".
-classifications:YZ a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Composite packaging, glass receptacle in solid plastic pack";
-    rdfs:comment "".
-classifications:ZA a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Intermediate bulk container, paper, multi-wall";
-    rdfs:comment "".
-classifications:ZB a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Bag, large";
-    rdfs:comment "".
-classifications:ZC a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Intermediate bulk container, paper, multi-wall, water resistant";
-    rdfs:comment "".
-classifications:ZD a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Intermediate bulk container, rigid plastic, with structural equipment, solids";
-    rdfs:comment "".
-classifications:ZF a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Intermediate bulk container, rigid plastic, freestanding, solids";
-    rdfs:comment "".
-classifications:ZG a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Intermediate bulk container, rigid plastic, with structural equipment, pressurised";
-    rdfs:comment "".
-classifications:ZH a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Intermediate bulk container, rigid plastic, freestanding, pressurised";
-    rdfs:comment "".
-classifications:ZJ a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Intermediate bulk container, rigid plastic, with structural equipment, liquids";
-    rdfs:comment "".
-classifications:ZK a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Intermediate bulk container, rigid plastic, freestanding, liquids";
-    rdfs:comment "".
-classifications:ZL a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Intermediate bulk container, composite, rigid plastic, solids";
-    rdfs:comment "".
-classifications:ZM a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Intermediate bulk container, composite, flexible plastic, solids";
-    rdfs:comment "".
-classifications:ZN a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Intermediate bulk container, composite, rigid plastic, pressurised";
-    rdfs:comment "".
-classifications:ZP a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Intermediate bulk container, composite, flexible plastic, pressurised";
-    rdfs:comment "".
-classifications:ZQ a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Intermediate bulk container, composite, rigid plastic, liquids";
-    rdfs:comment "".
-classifications:ZR a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Intermediate bulk container, composite, flexible plastic, liquids";
-    rdfs:comment "".
-classifications:ZS a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Intermediate bulk container, composite";
-    rdfs:comment "".
-classifications:ZT a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Intermediate bulk container, fibreboard";
-    rdfs:comment "".
-classifications:ZU a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Intermediate bulk container, flexible";
-    rdfs:comment "".
-classifications:ZV a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Intermediate bulk container, metal, other than steel";
-    rdfs:comment "".
-classifications:ZW a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Intermediate bulk container, natural wood";
-    rdfs:comment "".
-classifications:ZX a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Intermediate bulk container, plywood";
-    rdfs:comment "".
-classifications:ZY a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Intermediate bulk container, reconstituted wood";
-    rdfs:comment "".
-classifications:ZZ a classifications:DangerousGoodsRegulationCode, owl:NamedIndividual;
-    rdfs:label "Mutually defined";
-    rdfs:comment "".
+@prefix : <https://ontology.tno.nl/logistics/federated/Classifications/dangerousGoodsRegulationCode#> .
+@prefix classifications: <https://ontology.tno.nl/logistics/federated/Classifications#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://ontology.tno.nl/logistics/federated/Classifications/dangerousGoodsRegulationCode>
+  a owl:Ontology ;
+.
+<https://ontology.tno.nl/logistics/federated/Classifications/dangerousGoodsRegulationCode#1A>
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "1A" ;
+  rdfs:label "Drum, steel"@en ;
+.
+<https://ontology.tno.nl/logistics/federated/Classifications/dangerousGoodsRegulationCode#1B>
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "1B" ;
+  rdfs:label "Drum, aluminium"@en ;
+.
+<https://ontology.tno.nl/logistics/federated/Classifications/dangerousGoodsRegulationCode#1D>
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "1D" ;
+  rdfs:label "Drum, plywood"@en ;
+.
+<https://ontology.tno.nl/logistics/federated/Classifications/dangerousGoodsRegulationCode#1F>
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "A packaging container of flexible construction." ;
+  rdfs:label "1F" ;
+  rdfs:label "Container, flexible"@en ;
+.
+<https://ontology.tno.nl/logistics/federated/Classifications/dangerousGoodsRegulationCode#1G>
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "1G" ;
+  rdfs:label "Drum, fibre"@en ;
+.
+<https://ontology.tno.nl/logistics/federated/Classifications/dangerousGoodsRegulationCode#1W>
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "1W" ;
+  rdfs:label "Drum, wooden"@en ;
+.
+<https://ontology.tno.nl/logistics/federated/Classifications/dangerousGoodsRegulationCode#2C>
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "2C" ;
+  rdfs:label "Barrel, wooden"@en ;
+.
+<https://ontology.tno.nl/logistics/federated/Classifications/dangerousGoodsRegulationCode#3A>
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "3A" ;
+  rdfs:label "Jerrican, steel"@en ;
+.
+<https://ontology.tno.nl/logistics/federated/Classifications/dangerousGoodsRegulationCode#3H>
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "3H" ;
+  rdfs:label "Jerrican, plastic"@en ;
+.
+<https://ontology.tno.nl/logistics/federated/Classifications/dangerousGoodsRegulationCode#43>
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "43" ;
+  rdfs:label "Bag, super bulk"@en ;
+.
+<https://ontology.tno.nl/logistics/federated/Classifications/dangerousGoodsRegulationCode#44>
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "A type of plastic bag, typically used to wrap promotional pieces, publications, product samples, and/or catalogues." ;
+  rdfs:label "44" ;
+  rdfs:label "Bag, polybag"@en ;
+.
+<https://ontology.tno.nl/logistics/federated/Classifications/dangerousGoodsRegulationCode#4A>
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "4A" ;
+  rdfs:label "Box, steel"@en ;
+.
+<https://ontology.tno.nl/logistics/federated/Classifications/dangerousGoodsRegulationCode#4B>
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "4B" ;
+  rdfs:label "Box, aluminium"@en ;
+.
+<https://ontology.tno.nl/logistics/federated/Classifications/dangerousGoodsRegulationCode#4C>
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "4C" ;
+  rdfs:label "Box, natural wood"@en ;
+.
+<https://ontology.tno.nl/logistics/federated/Classifications/dangerousGoodsRegulationCode#4D>
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "4D" ;
+  rdfs:label "Box, plywood"@en ;
+.
+<https://ontology.tno.nl/logistics/federated/Classifications/dangerousGoodsRegulationCode#4F>
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "4F" ;
+  rdfs:label "Box, reconstituted wood"@en ;
+.
+<https://ontology.tno.nl/logistics/federated/Classifications/dangerousGoodsRegulationCode#4G>
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "4G" ;
+  rdfs:label "Box, fibreboard"@en ;
+.
+<https://ontology.tno.nl/logistics/federated/Classifications/dangerousGoodsRegulationCode#4H>
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "4H" ;
+  rdfs:label "Box, plastic"@en ;
+.
+<https://ontology.tno.nl/logistics/federated/Classifications/dangerousGoodsRegulationCode#5H>
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "5H" ;
+  rdfs:label "Bag, woven plastic"@en ;
+.
+<https://ontology.tno.nl/logistics/federated/Classifications/dangerousGoodsRegulationCode#5L>
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "5L" ;
+  rdfs:label "Bag, textile"@en ;
+.
+<https://ontology.tno.nl/logistics/federated/Classifications/dangerousGoodsRegulationCode#5M>
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "5M" ;
+  rdfs:label "Bag, paper"@en ;
+.
+<https://ontology.tno.nl/logistics/federated/Classifications/dangerousGoodsRegulationCode#6H>
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "6H" ;
+  rdfs:label "Composite packaging, plastic receptacle"@en ;
+.
+<https://ontology.tno.nl/logistics/federated/Classifications/dangerousGoodsRegulationCode#6P>
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "6P" ;
+  rdfs:label "Composite packaging, glass receptacle"@en ;
+.
+<https://ontology.tno.nl/logistics/federated/Classifications/dangerousGoodsRegulationCode#7A>
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "A type of portable container designed to store equipment for carriage in an automobile." ;
+  rdfs:label "7A" ;
+  rdfs:label "Case, car"@en ;
+.
+<https://ontology.tno.nl/logistics/federated/Classifications/dangerousGoodsRegulationCode#7B>
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "A case made of wood for retaining substances or articles." ;
+  rdfs:label "7B" ;
+  rdfs:label "Case, wooden"@en ;
+.
+<https://ontology.tno.nl/logistics/federated/Classifications/dangerousGoodsRegulationCode#8A>
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "A platform or open-ended box, made of wood, on which goods are retained for ease of mechanical handling during transport and storage." ;
+  rdfs:label "8A" ;
+  rdfs:label "Pallet, wooden"@en ;
+.
+<https://ontology.tno.nl/logistics/federated/Classifications/dangerousGoodsRegulationCode#8B>
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "A receptacle, made of wood, on which goods are retained for ease of mechanical handling during transport and storage." ;
+  rdfs:label "8B" ;
+  rdfs:label "Crate, wooden"@en ;
+.
+<https://ontology.tno.nl/logistics/federated/Classifications/dangerousGoodsRegulationCode#8C>
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "Loose or unpacked pieces of wood tied or wrapped together." ;
+  rdfs:label "8C" ;
+  rdfs:label "Bundle, wooden"@en ;
+.
+:AA
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "AA" ;
+  rdfs:label "Intermediate bulk container, rigid plastic"@en ;
+.
+:AB
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "AB" ;
+  rdfs:label "Receptacle, fibre"@en ;
+.
+:AC
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "AC" ;
+  rdfs:label "Receptacle, paper"@en ;
+.
+:AD
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "AD" ;
+  rdfs:label "AD"@en ;
+  rdfs:label "Receptacle, wooden"@en ;
+.
+:AE
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "AE" ;
+  rdfs:label "Aerosol"@en ;
+.
+:AF
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "AF" ;
+  rdfs:label "Pallet, modular, collars 80cms × 60cms"@en ;
+.
+:AG
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "AG" ;
+  rdfs:label "Pallet, shrinkwrapped"@en ;
+.
+:AH
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "AH" ;
+  rdfs:label "Pallet, 100cms × 110cms"@en ;
+.
+:AI
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "AI" ;
+  rdfs:label "Clamshell"@en ;
+.
+:AJ
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "AJ" ;
+  rdfs:label "Cone"@en ;
+.
+:AL
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "A spherical containment vessel for retaining substances or articles." ;
+  rdfs:label "AL" ;
+  rdfs:label "Ball"@en ;
+.
+:AM
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "AM" ;
+  rdfs:label "Ampoule, non-protected"@en ;
+.
+:AP
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "AP" ;
+  rdfs:label "Ampoule, protected"@en ;
+.
+:AT
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "AT" ;
+  rdfs:label "Atomizer"@en ;
+.
+:AV
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "AV" ;
+  rdfs:label "Capsule"@en ;
+.
+:B4
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "A band use to retain multiple articles together." ;
+  rdfs:label "B4" ;
+  rdfs:label "Belt"@en ;
+.
+:BA
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "BA" ;
+  rdfs:label "Barrel"@en ;
+.
+:BB
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "BB" ;
+  rdfs:label "Bobbin"@en ;
+.
+:BC
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "BC" ;
+  rdfs:label "Bottlecrate / bottlerack"@en ;
+.
+:BD
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "BD" ;
+  rdfs:label "Board"@en ;
+.
+:BE
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "BE" ;
+  rdfs:label "Bundle"@en ;
+.
+:BF
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "BF" ;
+  rdfs:label "Balloon, non-protected"@en ;
+.
+:BG
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "BG" ;
+  rdfs:label "Bag"@en ;
+.
+:BH
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "BH" ;
+  rdfs:label "Bunch"@en ;
+.
+:BI
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "BI" ;
+  rdfs:label "Bin"@en ;
+.
+:BJ
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "BJ" ;
+  rdfs:label "Bucket"@en ;
+.
+:BK
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "BK" ;
+  rdfs:label "Basket"@en ;
+.
+:BL
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "BL" ;
+  rdfs:label "Bale, compressed"@en ;
+.
+:BM
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "BM" ;
+  rdfs:label "Basin"@en ;
+.
+:BN
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "BN" ;
+  rdfs:label "Bale, non-compressed"@en ;
+.
+:BO
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "BO" ;
+  rdfs:label "Bottle, non-protected, cylindrical"@en ;
+.
+:BP
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "BP" ;
+  rdfs:label "Balloon, protected"@en ;
+.
+:BQ
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "BQ" ;
+  rdfs:label "Bottle, protected cylindrical"@en ;
+.
+:BR
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "BR" ;
+  rdfs:label "Bar"@en ;
+.
+:BS
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "BS" ;
+  rdfs:label "Bottle, non-protected, bulbous"@en ;
+.
+:BT
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "BT" ;
+  rdfs:label "Bolt"@en ;
+.
+:BU
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "BU" ;
+  rdfs:label "Butt"@en ;
+.
+:BV
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "BV" ;
+  rdfs:label "Bottle, protected bulbous"@en ;
+.
+:BW
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "BW" ;
+  rdfs:label "Box, for liquids"@en ;
+.
+:BX
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "BX" ;
+  rdfs:label "Box"@en ;
+.
+:BY
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "BY" ;
+  rdfs:label "Board, in bundle/bunch/truss"@en ;
+.
+:BZ
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "BZ" ;
+  rdfs:label "Bars, in bundle/bunch/truss"@en ;
+.
+:CA
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "CA" ;
+  rdfs:label "Can, rectangular"@en ;
+.
+:CB
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "CB" ;
+  rdfs:label "Crate, beer"@en ;
+.
+:CC
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "CC" ;
+  rdfs:label "Churn"@en ;
+.
+:CD
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "CD" ;
+  rdfs:label "Can, with handle and spout"@en ;
+.
+:CE
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "CE" ;
+  rdfs:label "Creel"@en ;
+.
+:CF
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "CF" ;
+  rdfs:label "Coffer"@en ;
+.
+:CG
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "CG" ;
+  rdfs:label "Cage"@en ;
+.
+:CH
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "CH" ;
+  rdfs:label "Chest"@en ;
+.
+:CI
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "CI" ;
+  rdfs:label "Canister"@en ;
+.
+:CJ
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "CJ" ;
+  rdfs:label "Coffin"@en ;
+.
+:CK
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "CK" ;
+  rdfs:label "Cask"@en ;
+.
+:CL
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "CL" ;
+  rdfs:label "Coil"@en ;
+.
+:CM
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "CM" ;
+  rdfs:label "Card"@en ;
+.
+:CN
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "CN" ;
+  rdfs:label "Container, not otherwise specified as transport equipment"@en ;
+.
+:CO
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "CO" ;
+  rdfs:label "Carboy, non-protected"@en ;
+.
+:CP
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "CP" ;
+  rdfs:label "Carboy, protected"@en ;
+.
+:CQ
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "CQ" ;
+  rdfs:label "Cartridge"@en ;
+.
+:CR
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "CR" ;
+  rdfs:label "Crate"@en ;
+.
+:CS
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "CS" ;
+  rdfs:label "Case"@en ;
+.
+:CT
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "CT" ;
+  rdfs:label "Carton"@en ;
+.
+:CU
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "CU" ;
+  rdfs:label "Cup"@en ;
+.
+:CV
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "CV" ;
+  rdfs:label "Cover"@en ;
+.
+:CW
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "CW" ;
+  rdfs:label "Cage, roll"@en ;
+.
+:CX
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "CX" ;
+  rdfs:label "Can, cylindrical"@en ;
+.
+:CY
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "CY" ;
+  rdfs:label "Cylinder"@en ;
+.
+:CZ
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "CZ" ;
+  rdfs:label "Canvas"@en ;
+.
+:DA
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "Crate, multiple layer, plastic"@en ;
+  rdfs:label "DA" ;
+.
+:DB
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "Crate, multiple layer, wooden"@en ;
+  rdfs:label "DB" ;
+.
+:DC
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "Crate, multiple layer, cardboard"@en ;
+  rdfs:label "DC" ;
+.
+:DG
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "Cage, Commonwealth Handling Equipment Pool  (CHEP)"@en ;
+  rdfs:label "DG" ;
+.
+:DH
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "Box, Commonwealth Handling Equipment Pool (CHEP), Eurobox"@en ;
+  rdfs:label "DH" ;
+.
+:DI
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "DI" ;
+  rdfs:label "Drum, iron"@en ;
+.
+:DJ
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "DJ" ;
+  rdfs:label "Demijohn, non-protected"@en ;
+.
+:DK
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "Crate, bulk, cardboard"@en ;
+  rdfs:label "DK" ;
+.
+:DL
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "Crate, bulk, plastic"@en ;
+  rdfs:label "DL" ;
+.
+:DM
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "Crate, bulk, wooden"@en ;
+  rdfs:label "DM" ;
+.
+:DN
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "DN" ;
+  rdfs:label "Dispenser"@en ;
+.
+:DP
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "DP" ;
+  rdfs:label "Demijohn, protected"@en ;
+.
+:DR
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "DR" ;
+  rdfs:label "Drum"@en ;
+.
+:DS
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "DS" ;
+  rdfs:label "Tray, one layer no cover, plastic"@en ;
+.
+:DT
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "DT" ;
+  rdfs:label "Tray, one layer no cover, wooden"@en ;
+.
+:DU
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "DU" ;
+  rdfs:label "Tray, one layer no cover, polystyrene"@en ;
+.
+:DV
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "DV" ;
+  rdfs:label "Tray, one layer no cover, cardboard"@en ;
+.
+:DW
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "DW" ;
+  rdfs:label "Tray, two layers no cover, plastic tray"@en ;
+.
+:DX
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "DX" ;
+  rdfs:label "Tray, two layers no cover, wooden"@en ;
+.
+:DY
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "DY" ;
+  rdfs:label "Tray, two layers no cover, cardboard"@en ;
+.
+:EC
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "Bag, plastic"@en ;
+  rdfs:label "EC" ;
+.
+:ED
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "Case, with pallet base"@en ;
+  rdfs:label "ED" ;
+.
+:EE
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "Case, with pallet base, wooden"@en ;
+  rdfs:label "EE" ;
+.
+:EF
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "Case, with pallet base, cardboard"@en ;
+  rdfs:label "EF" ;
+.
+:EG
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "Case, with pallet base, plastic"@en ;
+  rdfs:label "EG" ;
+.
+:EH
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "Case, with pallet base, metal"@en ;
+  rdfs:label "EH" ;
+.
+:EI
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "Case, isothermic"@en ;
+  rdfs:label "EI" ;
+.
+:EN
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "EN" ;
+  rdfs:label "Envelope"@en ;
+.
+:FB
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "A flexible containment bag made of plastic, typically for the transportation bulk non-hazardous cargoes using standard size shipping containers." ;
+  rdfs:label "FB" ;
+  rdfs:label "Flexibag"@en ;
+.
+:FC
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "Crate, fruit"@en ;
+  rdfs:label "FC" ;
+.
+:FD
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "Crate, framed"@en ;
+  rdfs:label "FD" ;
+.
+:FE
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "A flexible containment tank made of plastic, typically for the transportation bulk non-hazardous cargoes using standard size shipping containers." ;
+  rdfs:label "FE" ;
+  rdfs:label "Flexitank"@en ;
+.
+:FI
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "FI" ;
+  rdfs:label "Firkin"@en ;
+.
+:FL
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "FL" ;
+  rdfs:label "Flask"@en ;
+.
+:FO
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "FO" ;
+  rdfs:label "Footlocker"@en ;
+.
+:FP
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "FP" ;
+  rdfs:label "Filmpack"@en ;
+.
+:FR
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "FR" ;
+  rdfs:label "Frame"@en ;
+.
+:FT
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "FT" ;
+  rdfs:label "Foodtainer"@en ;
+.
+:FW
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "Wheeled flat bedded device on which trays or other regular shaped items are packed for transportation purposes." ;
+  rdfs:label "Cart, flatbed"@en ;
+  rdfs:label "FW" ;
+.
+:FX
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "Bag, flexible container"@en ;
+  rdfs:label "FX" ;
+.
+:GB
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "Bottle, gas"@en ;
+  rdfs:label "GB" ;
+.
+:GI
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "GI" ;
+  rdfs:label "Girder"@en ;
+.
+:GL
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "A container with a capacity of one gallon." ;
+  rdfs:label "Container, gallon"@en ;
+  rdfs:label "GL" ;
+.
+:GR
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "GR" ;
+  rdfs:label "Receptacle, glass"@en ;
+.
+:GU
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "Tray containing flat items stacked on top of one another." ;
+  rdfs:label "GU" ;
+  rdfs:label "Tray, containing horizontally stacked flat items"@en ;
+.
+:GY
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "A sack made of gunny or burlap, used for transporting coarse commodities, such as grains, potatoes, and other agricultural products." ;
+  rdfs:label "Bag, gunny"@en ;
+  rdfs:label "GY" ;
+.
+:GZ
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "GZ" ;
+  rdfs:label "Girders, in bundle/bunch/truss"@en ;
+.
+:HA
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "Basket, with handle, plastic"@en ;
+  rdfs:label "HA" ;
+.
+:HB
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "Basket, with handle, wooden"@en ;
+  rdfs:label "HB" ;
+.
+:HC
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "Basket, with handle, cardboard"@en ;
+  rdfs:label "HC" ;
+.
+:HG
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "HG" ;
+  rdfs:label "Hogshead"@en ;
+.
+:HN
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "A purpose shaped device with a hook at the top for hanging items from a rail." ;
+  rdfs:label "HN" ;
+  rdfs:label "Hanger"@en ;
+.
+:HR
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "HR" ;
+  rdfs:label "Hamper"@en ;
+.
+:IA
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "IA" ;
+  rdfs:label "Package, display, wooden"@en ;
+.
+:IB
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "IB" ;
+  rdfs:label "Package, display, cardboard"@en ;
+.
+:IC
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "IC" ;
+  rdfs:label "Package, display, plastic"@en ;
+.
+:ID
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "ID" ;
+  rdfs:label "Package, display, metal"@en ;
+.
+:IE
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "IE" ;
+  rdfs:label "Package, show"@en ;
+.
+:IF
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "IF" ;
+  rdfs:label "Package, flow"@en ;
+.
+:IG
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "IG" ;
+  rdfs:label "Package, paper wrapped"@en ;
+.
+:IH
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "Drum, plastic"@en ;
+  rdfs:label "IH" ;
+.
+:IK
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "IK" ;
+  rdfs:label "Package, cardboard, with bottle grip-holes"@en ;
+.
+:IL
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "Lidded stackable rigid tray compliant with CEN TS 14482:2002." ;
+  rdfs:label "IL" ;
+  rdfs:label "Tray, rigid, lidded stackable (CEN TS 14482:2002)"@en ;
+.
+:IN
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "IN" ;
+  rdfs:label "Ingot"@en ;
+.
+:IZ
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "IZ" ;
+  rdfs:label "Ingots, in bundle/bunch/truss"@en ;
+.
+:JB
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "A flexible containment bag, widely used for storage, transportation and handling of powder, flake or granular materials. Typically constructed from woven polypropylene (PP) fabric in the form of cubic bags." ;
+  rdfs:label "Bag, jumbo"@en ;
+  rdfs:label "JB" ;
+.
+:JC
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "JC" ;
+  rdfs:label "Jerrican, rectangular"@en ;
+.
+:JG
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "JG" ;
+  rdfs:label "Jug"@en ;
+.
+:JR
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "JR" ;
+  rdfs:label "Jar"@en ;
+.
+:JT
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "JT" ;
+  rdfs:label "Jutebag"@en ;
+.
+:JY
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "JY" ;
+  rdfs:label "Jerrican, cylindrical"@en ;
+.
+:KG
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "KG" ;
+  rdfs:label "Keg"@en ;
+.
+:KI
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "A set of articles or implements used for a specific purpose." ;
+  rdfs:label "KI" ;
+  rdfs:label "Kit"@en ;
+.
+:LE
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "A collection of bags, cases and/or containers which hold personal belongings for a journey." ;
+  rdfs:label "LE" ;
+  rdfs:label "Luggage"@en ;
+.
+:LG
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "LG" ;
+  rdfs:label "Log"@en ;
+.
+:LT
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "LT" ;
+  rdfs:label "Lot"@en ;
+.
+:LU
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "A wooden box for the transportation and storage of fruit or vegetables." ;
+  rdfs:label "LU" ;
+  rdfs:label "Lug"@en ;
+.
+:LV
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "LV" ;
+  rdfs:label "Liftvan"@en ;
+.
+:LZ
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "LZ" ;
+  rdfs:label "Logs, in bundle/bunch/truss"@en ;
+.
+:MA
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "Containment box made of metal for retaining substances or articles." ;
+  rdfs:label "Crate, metal"@en ;
+  rdfs:label "MA" ;
+.
+:MB
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "Bag, multiply"@en ;
+  rdfs:label "MB" ;
+.
+:MC
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "Crate, milk"@en ;
+  rdfs:label "MC" ;
+.
+:ME
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "A type of containment box made of metal for retaining substances or articles, not otherwise specified as transport equipment." ;
+  rdfs:label "Container, metal"@en ;
+  rdfs:label "ME" ;
+.
+:MR
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "MR" ;
+  rdfs:label "Receptacle, metal"@en ;
+.
+:MS
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "MS" ;
+  rdfs:label "Sack, multi-wall"@en ;
+.
+:MT
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "MT" ;
+  rdfs:label "Mat"@en ;
+.
+:MW
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "MW" ;
+  rdfs:label "Receptacle, plastic wrapped"@en ;
+.
+:MX
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "MX" ;
+  rdfs:label "Matchbox"@en ;
+.
+:NA
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "NA" ;
+  rdfs:label "Not available"@en ;
+.
+:NE
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "NE" ;
+  rdfs:label "Unpacked or unpackaged"@en ;
+.
+:NF
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "NF" ;
+  rdfs:label "Unpacked or unpackaged, single unit"@en ;
+.
+:NG
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "NG" ;
+  rdfs:label "Unpacked or unpackaged, multiple units"@en ;
+.
+:NS
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "NS" ;
+  rdfs:label "Nest"@en ;
+.
+:NT
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "NT" ;
+  rdfs:label "Net"@en ;
+.
+:NU
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "NU" ;
+  rdfs:label "Net, tube, plastic"@en ;
+.
+:NV
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "NV" ;
+  rdfs:label "Net, tube, textile"@en ;
+.
+:OA
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "CHEP standard pallet of dimensions 40 centimeters x 60 centimeters." ;
+  rdfs:label "OA" ;
+  rdfs:label "Pallet, CHEP 40 cm x 60 cm"@en ;
+.
+:OB
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "CHEP standard pallet of dimensions 80 centimeters x 120 centimeters." ;
+  rdfs:label "OB" ;
+  rdfs:label "Pallet, CHEP 80 cm x 120 cm"@en ;
+.
+:OC
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "CHEP standard pallet of dimensions 100 centimeters x 120 centimeters." ;
+  rdfs:label "OC" ;
+  rdfs:label "Pallet, CHEP 100 cm x 120 cm"@en ;
+.
+:OD
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "Australian standard pallet of dimensions 115.5 centimeters x 116.5 centimeters." ;
+  rdfs:label "OD" ;
+  rdfs:label "Pallet, AS 4068-1993"@en ;
+.
+:OE
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "ISO standard pallet of dimensions 110 centimeters x 110 centimeters, prevalent in Asia - Pacific region." ;
+  rdfs:label "OE" ;
+  rdfs:label "Pallet, ISO T11"@en ;
+.
+:OF
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "A pallet equivalent shipping platform of unknown dimensions or unknown weight." ;
+  rdfs:label "OF" ;
+  rdfs:label "Platform, unspecified weight or dimension"@en ;
+.
+:OK
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "A solid piece of a hard substance, such as granite, having one or more flat sides." ;
+  rdfs:label "Block"@en ;
+  rdfs:label "OK" ;
+.
+:OT
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "A standard cardboard container of large dimensions for storing for example vegetables, granules of plastics or other dry products." ;
+  rdfs:label "OT" ;
+  rdfs:label "Octabin"@en ;
+.
+:OU
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "A type of containment box that serves as the outer shipping container, not otherwise specified as transport equipment." ;
+  rdfs:label "Container, outer"@en ;
+  rdfs:label "OU" ;
+.
+:P2
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "A shallow, wide, open container, usually of metal." ;
+  rdfs:label "P2" ;
+  rdfs:label "Pan"@en ;
+.
+:PA
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "PA" ;
+  rdfs:label "Packet"@en ;
+.
+:PB
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "PB" ;
+  rdfs:label "Pallet, box"@en ;
+.
+:PC
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "PC" ;
+  rdfs:label "Parcel"@en ;
+.
+:PD
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "PD" ;
+  rdfs:label "Pallet, modular, collars 80cms * 100cms"@en ;
+.
+:PE
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "PE" ;
+  rdfs:label "Pallet, modular, collars 80cms * 120cms"@en ;
+.
+:PF
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "PF" ;
+  rdfs:label "Pen"@en ;
+.
+:PG
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "PG" ;
+  rdfs:label "Plate"@en ;
+.
+:PH
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "PH" ;
+  rdfs:label "Pitcher"@en ;
+.
+:PI
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "PI" ;
+  rdfs:label "Pipe"@en ;
+.
+:PJ
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "PJ" ;
+  rdfs:label "Punnet"@en ;
+.
+:PK
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "PK" ;
+  rdfs:label "Package"@en ;
+.
+:PL
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "PL" ;
+  rdfs:label "Pail"@en ;
+.
+:PN
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "PN" ;
+  rdfs:label "Plank"@en ;
+.
+:PO
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "PO" ;
+  rdfs:label "Pouch"@en ;
+.
+:PP
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "A loose or unpacked article." ;
+  rdfs:label "PP" ;
+  rdfs:label "Piece"@en ;
+.
+:PR
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "PR" ;
+  rdfs:label "Receptacle, plastic"@en ;
+.
+:PT
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "PT" ;
+  rdfs:label "Pot"@en ;
+.
+:PU
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "PU" ;
+  rdfs:label "Tray pack"@en ;
+.
+:PV
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "PV" ;
+  rdfs:label "Pipes, in bundle/bunch/truss"@en ;
+.
+:PX
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "PX" ;
+  rdfs:label "Pallet"@en ;
+.
+:PY
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "PY" ;
+  rdfs:label "Plates, in bundle/bunch/truss"@en ;
+.
+:PZ
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "PZ" ;
+  rdfs:label "Planks, in bundle/bunch/truss"@en ;
+.
+:QA
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "Drum, steel, non-removable head"@en ;
+  rdfs:label "QA" ;
+.
+:QB
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "Drum, steel, removable head"@en ;
+  rdfs:label "QB" ;
+.
+:QC
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "Drum, aluminium, non-removable head"@en ;
+  rdfs:label "QC" ;
+.
+:QD
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "Drum, aluminium, removable head"@en ;
+  rdfs:label "QD" ;
+.
+:QF
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "Drum, plastic, non-removable head"@en ;
+  rdfs:label "QF" ;
+.
+:QG
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "Drum, plastic, removable head"@en ;
+  rdfs:label "QG" ;
+.
+:QH
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "Barrel, wooden, bung type"@en ;
+  rdfs:label "QH" ;
+.
+:QJ
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "Barrel, wooden, removable head"@en ;
+  rdfs:label "QJ" ;
+.
+:QK
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "Jerrican, steel, non-removable head"@en ;
+  rdfs:label "QK" ;
+.
+:QL
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "Jerrican, steel, removable head"@en ;
+  rdfs:label "QL" ;
+.
+:QM
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "Jerrican, plastic, non-removable head"@en ;
+  rdfs:label "QM" ;
+.
+:QN
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "Jerrican, plastic, removable head"@en ;
+  rdfs:label "QN" ;
+.
+:QP
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "Box, wooden, natural wood, ordinary"@en ;
+  rdfs:label "QP" ;
+.
+:QQ
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "Box, wooden, natural wood, with sift proof walls"@en ;
+  rdfs:label "QQ" ;
+.
+:QR
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "Box, plastic, expanded"@en ;
+  rdfs:label "QR" ;
+.
+:QS
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "Box, plastic, solid"@en ;
+  rdfs:label "QS" ;
+.
+:RD
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "RD" ;
+  rdfs:label "Rod"@en ;
+.
+:RG
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "RG" ;
+  rdfs:label "Ring"@en ;
+.
+:RJ
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "RJ" ;
+  rdfs:label "Rack, clothing hanger"@en ;
+.
+:RK
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "RK" ;
+  rdfs:label "Rack"@en ;
+.
+:RL
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "RL" ;
+  rdfs:label "Reel"@en ;
+.
+:RO
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "RO" ;
+  rdfs:label "Roll"@en ;
+.
+:RT
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "RT" ;
+  rdfs:label "Rednet"@en ;
+.
+:RZ
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "RZ" ;
+  rdfs:label "Rods, in bundle/bunch/truss"@en ;
+.
+:SA
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "SA" ;
+  rdfs:label "Sack"@en ;
+.
+:SB
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "SB" ;
+  rdfs:label "Slab"@en ;
+.
+:SC
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "Crate, shallow"@en ;
+  rdfs:label "SC" ;
+.
+:SD
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "SD" ;
+  rdfs:label "Spindle"@en ;
+.
+:SE
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "SE" ;
+  rdfs:label "Sea-chest"@en ;
+.
+:SH
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "SH" ;
+  rdfs:label "Sachet"@en ;
+.
+:SI
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "SI" ;
+  rdfs:label "Skid"@en ;
+.
+:SK
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "Case, skeleton"@en ;
+  rdfs:label "SK" ;
+.
+:SL
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "SL" ;
+  rdfs:label "Slipsheet"@en ;
+.
+:SM
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "SM" ;
+  rdfs:label "Sheetmetal"@en ;
+.
+:SO
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "SO" ;
+  rdfs:label "Spool"@en ;
+.
+:SP
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "SP" ;
+  rdfs:label "Sheet, plastic wrapping"@en ;
+.
+:SS
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "Case, steel"@en ;
+  rdfs:label "SS" ;
+.
+:ST
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "ST" ;
+  rdfs:label "Sheet"@en ;
+.
+:SU
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "SU" ;
+  rdfs:label "Suitcase"@en ;
+.
+:SV
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "Envelope, steel"@en ;
+  rdfs:label "SV" ;
+.
+:SW
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "SW" ;
+  rdfs:label "Shrinkwrapped"@en ;
+.
+:SY
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "SY" ;
+  rdfs:label "Sleeve"@en ;
+.
+:SZ
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "SZ" ;
+  rdfs:label "Sheets, in bundle/bunch/truss"@en ;
+.
+:T1
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "A loose or unpacked article in the form of a bar, block or piece." ;
+  rdfs:label "T1" ;
+  rdfs:label "Tablet"@en ;
+.
+:TB
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "TB" ;
+  rdfs:label "Tub"@en ;
+.
+:TC
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "TC" ;
+  rdfs:label "Tea-chest"@en ;
+.
+:TD
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "TD" ;
+  rdfs:label "Tube, collapsible"@en ;
+.
+:TE
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "A ring made of rubber and/or metal surrounding a wheel." ;
+  rdfs:label "TE" ;
+  rdfs:label "Tyre"@en ;
+.
+:TG
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "A specially constructed container for transporting liquids and gases in bulk." ;
+  rdfs:label "TG" ;
+  rdfs:label "Tank container, generic"@en ;
+.
+:TI
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "TI" ;
+  rdfs:label "Tierce TI"@en ;
+.
+:TK
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "TK" ;
+  rdfs:label "Tank, rectangular"@en ;
+.
+:TL
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "TL" ;
+  rdfs:label "Tub, with lid"@en ;
+.
+:TN
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "TN" ;
+  rdfs:label "Tin"@en ;
+.
+:TO
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "TO" ;
+  rdfs:label "Tun"@en ;
+.
+:TR
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "TR" ;
+  rdfs:label "Trunk"@en ;
+.
+:TS
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "TS" ;
+  rdfs:label "Truss"@en ;
+.
+:TT
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "A capacious bag or basket." ;
+  rdfs:label "Bag, tote"@en ;
+  rdfs:label "TT" ;
+.
+:TU
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "TU" ;
+  rdfs:label "Tube"@en ;
+.
+:TV
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "TV" ;
+  rdfs:label "Tube, with nozzle"@en ;
+.
+:TW
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "A lightweight pallet made from heavy duty corrugated board." ;
+  rdfs:label "Pallet, triwall"@en ;
+  rdfs:label "TW" ;
+.
+:TY
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "TY" ;
+  rdfs:label "Tank, cylindrical"@en ;
+.
+:TZ
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "TZ" ;
+  rdfs:label "Tubes, in bundle/bunch/truss"@en ;
+.
+:UC
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "UC" ;
+  rdfs:label "Uncaged"@en ;
+.
+:UN
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "A type of package composed of a single item or object, not otherwise specified as a unit of transport equipment." ;
+  rdfs:label "UN" ;
+  rdfs:label "Unit"@en ;
+.
+:VA
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "VA" ;
+  rdfs:label "Vat"@en ;
+.
+:VG
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "Bulk, gas (at 1031 mbar and 15 degree C)"@en ;
+  rdfs:label "VG" ;
+.
+:VI
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "VI" ;
+  rdfs:label "Vial"@en ;
+.
+:VK
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "VK" ;
+  rdfs:label "Vanpack"@en ;
+.
+:VL
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "Bulk, liquid"@en ;
+  rdfs:label "VL" ;
+.
+:VN
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "A self-propelled means of conveyance." ;
+  rdfs:label "VN" ;
+  rdfs:label "Vehicle"@en ;
+.
+:VO
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "Bulk, solid, large particles (\"nodules\")"@en ;
+  rdfs:label "VO" ;
+.
+:VP
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "VP" ;
+  rdfs:label "Vacuum-packed"@en ;
+.
+:VQ
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "Bulk, liquefied gas (at abnormal temperature/pressure)"@en ;
+  rdfs:label "VQ" ;
+.
+:VR
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "Bulk, solid, granular particles (\"grains\")"@en ;
+  rdfs:label "VR" ;
+.
+:VS
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "Loose or unpacked scrap metal transported in bulk form." ;
+  rdfs:label "Bulk, scrap metal"@en ;
+  rdfs:label "VS" ;
+.
+:VY
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "Bulk, solid, fine particles (\"powders\")"@en ;
+  rdfs:label "VY" ;
+.
+:WA
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "Intermediate bulk container"@en ;
+  rdfs:label "WA" ;
+.
+:WB
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "WB" ;
+  rdfs:label "Wickerbottle"@en ;
+.
+:WC
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "Intermediate bulk container, steel"@en ;
+  rdfs:label "WC" ;
+.
+:WD
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "Intermediate bulk container, aluminium"@en ;
+  rdfs:label "WD" ;
+.
+:WF
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "Intermediate bulk container, metal"@en ;
+  rdfs:label "WF" ;
+.
+:WG
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "Intermediate bulk container, steel, pressurised > 10 kpa"@en ;
+  rdfs:label "WG" ;
+.
+:WH
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "Intermediate bulk container, aluminium, pressurised > 10 kpa"@en ;
+  rdfs:label "WH" ;
+.
+:WJ
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "Intermediate bulk container, metal, pressure 10 kpa"@en ;
+  rdfs:label "WJ" ;
+.
+:WK
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "Intermediate bulk container, steel, liquid"@en ;
+  rdfs:label "WK" ;
+.
+:WL
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "Intermediate bulk container, aluminium, liquid"@en ;
+  rdfs:label "WL" ;
+.
+:WM
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "Intermediate bulk container, metal, liquid"@en ;
+  rdfs:label "WM" ;
+.
+:WN
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "Intermediate bulk container, woven plastic, without coat/liner"@en ;
+  rdfs:label "WN" ;
+.
+:WP
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "Intermediate bulk container, woven plastic, coated"@en ;
+  rdfs:label "WP" ;
+.
+:WQ
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "Intermediate bulk container, woven plastic, with liner"@en ;
+  rdfs:label "WQ" ;
+.
+:WR
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "Intermediate bulk container, woven plastic, coated and liner"@en ;
+  rdfs:label "WR" ;
+.
+:WS
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "Intermediate bulk container, plastic film"@en ;
+  rdfs:label "WS" ;
+.
+:WT
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "Intermediate bulk container, textile with out coat/liner"@en ;
+  rdfs:label "WT" ;
+.
+:WU
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "Intermediate bulk container, natural wood, with inner liner"@en ;
+  rdfs:label "WU" ;
+.
+:WV
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "Intermediate bulk container, textile, coated"@en ;
+  rdfs:label "WV" ;
+.
+:WW
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "Intermediate bulk container, textile, with liner"@en ;
+  rdfs:label "WW" ;
+.
+:WX
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "Intermediate bulk container, textile, coated and liner"@en ;
+  rdfs:label "WX" ;
+.
+:WY
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "Intermediate bulk container, plywood, with inner liner"@en ;
+  rdfs:label "WY" ;
+.
+:WZ
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "Intermediate bulk container, reconstituted wood, with inner liner"@en ;
+  rdfs:label "WZ" ;
+.
+:XA
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "Bag, woven plastic, without inner coat/liner"@en ;
+  rdfs:label "XA" ;
+.
+:XB
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "Bag, woven plastic, sift proof"@en ;
+  rdfs:label "XB" ;
+.
+:XC
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "Bag, woven plastic, water resistant"@en ;
+  rdfs:label "XC" ;
+.
+:XD
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "Bag, plastics film"@en ;
+  rdfs:label "XD" ;
+.
+:XF
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "Bag, textile, without inner coat/liner"@en ;
+  rdfs:label "XF" ;
+.
+:XG
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "Bag, textile, sift proof"@en ;
+  rdfs:label "XG" ;
+.
+:XH
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "Bag, textile, water resistant"@en ;
+  rdfs:label "XH" ;
+.
+:XJ
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "Bag, paper, multi-wall"@en ;
+  rdfs:label "XJ" ;
+.
+:XK
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "Bag, paper, multi-wall, water resistant"@en ;
+  rdfs:label "XK" ;
+.
+:YA
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "Composite packaging, plastic receptacle in steel drum"@en ;
+  rdfs:label "YA" ;
+.
+:YB
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "Composite packaging, plastic receptacle in steel crate box"@en ;
+  rdfs:label "YB" ;
+.
+:YC
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "Composite packaging, plastic receptacle in aluminium drum"@en ;
+  rdfs:label "YC" ;
+.
+:YD
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "Composite packaging, plastic receptacle in aluminium crate"@en ;
+  rdfs:label "YD" ;
+.
+:YF
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "Composite packaging, plastic receptacle in wooden box"@en ;
+  rdfs:label "YF" ;
+.
+:YG
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "Composite packaging, plastic receptacle in plywood drum"@en ;
+  rdfs:label "YG" ;
+.
+:YH
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "Composite packaging, plastic receptacle in plywood box"@en ;
+  rdfs:label "YH" ;
+.
+:YJ
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "Composite packaging, plastic receptacle in fibre drum"@en ;
+  rdfs:label "YJ" ;
+.
+:YK
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "Composite packaging, plastic receptacle in fibreboard box"@en ;
+  rdfs:label "YK" ;
+.
+:YL
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "Composite packaging, plastic receptacle in plastic drum"@en ;
+  rdfs:label "YL" ;
+.
+:YM
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "Composite packaging, plastic receptacle in solid plastic box"@en ;
+  rdfs:label "YM" ;
+.
+:YN
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "Composite packaging, glass receptacle in steel drum"@en ;
+  rdfs:label "YN" ;
+.
+:YP
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "Composite packaging, glass receptacle in steel crate box"@en ;
+  rdfs:label "YP" ;
+.
+:YQ
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "Composite packaging, glass receptacle in aluminium drum"@en ;
+  rdfs:label "YQ" ;
+.
+:YR
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "Composite packaging, glass receptacle in aluminium crate"@en ;
+  rdfs:label "YR" ;
+.
+:YS
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "Composite packaging, glass receptacle in wooden box"@en ;
+  rdfs:label "YS" ;
+.
+:YT
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "Composite packaging, glass receptacle in plywood drum"@en ;
+  rdfs:label "YT" ;
+.
+:YV
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "Composite packaging, glass receptacle in wickerwork hamper"@en ;
+  rdfs:label "YV" ;
+.
+:YW
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "Composite packaging, glass receptacle in fibre drum"@en ;
+  rdfs:label "YW" ;
+.
+:YX
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "Composite packaging, glass receptacle in fibreboard box"@en ;
+  rdfs:label "YX" ;
+.
+:YY
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "Composite packaging, glass receptacle in expandable plastic pack"@en ;
+  rdfs:label "YY" ;
+.
+:YZ
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "Composite packaging, glass receptacle in solid plastic pack"@en ;
+  rdfs:label "YZ" ;
+.
+:ZA
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "Intermediate bulk container, paper, multi-wall"@en ;
+  rdfs:label "ZA" ;
+.
+:ZB
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "Bag, large"@en ;
+  rdfs:label "ZB" ;
+.
+:ZC
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "Intermediate bulk container, paper, multi-wall, water resistant"@en ;
+  rdfs:label "ZC" ;
+.
+:ZD
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "Intermediate bulk container, rigid plastic, with structural equipment, solids"@en ;
+  rdfs:label "ZD" ;
+.
+:ZF
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "Intermediate bulk container, rigid plastic, freestanding, solids"@en ;
+  rdfs:label "ZF" ;
+.
+:ZG
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "Intermediate bulk container, rigid plastic, with structural equipment, pressurised"@en ;
+  rdfs:label "ZG" ;
+.
+:ZH
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "Intermediate bulk container, rigid plastic, freestanding, pressurised"@en ;
+  rdfs:label "ZH" ;
+.
+:ZJ
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "Intermediate bulk container, rigid plastic, with structural equipment, liquids"@en ;
+  rdfs:label "ZJ" ;
+.
+:ZK
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "Intermediate bulk container, rigid plastic, freestanding, liquids"@en ;
+  rdfs:label "ZK" ;
+.
+:ZL
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "Intermediate bulk container, composite, rigid plastic, solids"@en ;
+  rdfs:label "ZL" ;
+.
+:ZM
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "Intermediate bulk container, composite, flexible plastic, solids"@en ;
+  rdfs:label "ZM" ;
+.
+:ZN
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "Intermediate bulk container, composite, rigid plastic, pressurised"@en ;
+  rdfs:label "ZN" ;
+.
+:ZP
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "Intermediate bulk container, composite, flexible plastic, pressurised"@en ;
+  rdfs:label "ZP" ;
+.
+:ZQ
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "Intermediate bulk container, composite, rigid plastic, liquids"@en ;
+  rdfs:label "ZQ" ;
+.
+:ZR
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "Intermediate bulk container, composite, flexible plastic, liquids"@en ;
+  rdfs:label "ZR" ;
+.
+:ZS
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "Intermediate bulk container, composite"@en ;
+  rdfs:label "ZS" ;
+.
+:ZT
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "Intermediate bulk container, fibreboard"@en ;
+  rdfs:label "ZT" ;
+.
+:ZU
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "Intermediate bulk container, flexible"@en ;
+  rdfs:label "ZU" ;
+.
+:ZV
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "Intermediate bulk container, metal, other than steel"@en ;
+  rdfs:label "ZV" ;
+.
+:ZW
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "Intermediate bulk container, natural wood"@en ;
+  rdfs:label "ZW" ;
+.
+:ZX
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "Intermediate bulk container, plywood"@en ;
+  rdfs:label "ZX" ;
+.
+:ZY
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "Intermediate bulk container, reconstituted wood"@en ;
+  rdfs:label "ZY" ;
+.
+:ZZ
+  a owl:NamedIndividual ;
+  a classifications:DangerousGoodsRegulationCode ;
+  rdfs:comment "" ;
+  rdfs:label "Mutually defined"@en ;
+  rdfs:label "ZZ" ;
+.

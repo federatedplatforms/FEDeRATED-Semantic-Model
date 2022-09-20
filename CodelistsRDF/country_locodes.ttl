@@ -1,501 +1,1500 @@
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
-@prefix owl: <http://www.w3.org/2002/07/owl#>.
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
-@prefix classifications: <https://ontology.tno.nl/logistics/federated/Classifications#>.
+# baseURI: https://ontology.tno.nl/logistics/federated/Classifications/countryCode
 
-classifications:AD a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Andorra".
-classifications:AE a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "United Arab Emirates".
-classifications:AF a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Afghanistan".
-classifications:AG a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Antigua and Barbuda".
-classifications:AI a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Anguilla".
-classifications:AL a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Albania".
-classifications:AM a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Armenia".
-classifications:AO a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Angola".
-classifications:AQ a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Antarctica".
-classifications:AR a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Argentina".
-classifications:AS a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "American Samoa".
-classifications:AT a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Austria".
-classifications:AU a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Australia".
-classifications:AW a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Aruba".
-classifications:AZ a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Azerbaijan".
-classifications:BA a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Bosnia and Herzegovina".
-classifications:BB a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Barbados".
-classifications:BI a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Burundi".
-classifications:BE a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Belgium".
-classifications:BF a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Burkina Faso".
-classifications:BG a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Bulgaria".
-classifications:BH a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Bahrain".
-classifications:BD a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Bangladesh".
-classifications:BJ a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Benin".
-classifications:BM a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Bermuda".
-classifications:BN a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Brunei Darussalam".
-classifications:BO a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Bolivia, Plurinational State of".
-classifications:BR a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Brazil".
-classifications:BS a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Bahamas".
-classifications:BT a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Bhutan".
-classifications:BW a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Botswana".
-classifications:BY a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Belarus".
-classifications:BZ a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Belize".
-classifications:CA a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Canada".
-classifications:CC a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Cocos (Keeling) Islands".
-classifications:CD a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Congo, The Democratic Republic of the".
-classifications:CF a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Central African Republic".
-classifications:CG a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Congo".
-classifications:CH a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Switzerland".
-classifications:CI a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Côte d'Ivoire".
-classifications:CK a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Cook Islands".
-classifications:CL a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Chile".
-classifications:CM a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Cameroon".
-classifications:CN a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "China".
-classifications:CO a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Colombia".
-classifications:CR a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Costa Rica".
-classifications:CU a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Cuba".
-classifications:CV a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Cape Verde".
-classifications:CX a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Christmas Island".
-classifications:CY a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Cyprus".
-classifications:CZ a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Czech Republic".
-classifications:DE a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Germany".
-classifications:DJ a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Djibouti".
-classifications:DK a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Denmark".
-classifications:DM a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Dominica".
-classifications:DO a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Dominican Republic".
-classifications:DZ a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Algeria".
-classifications:EC a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Ecuador".
-classifications:EE a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Estonia".
-classifications:EG a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Egypt".
-classifications:EH a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Western Sahara".
-classifications:ER a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Eritrea".
-classifications:ES a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Spain".
-classifications:ET a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Ethiopia".
-classifications:FI a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Finland".
-classifications:FJ a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Fiji".
-classifications:FK a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Falkland Islands (Malvinas)".
-classifications:FM a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Micronesia, Federated States of".
-classifications:FO a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Faroe Islands".
-classifications:FR a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "France".
-classifications:GA a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Gabon".
-classifications:GB a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "United Kingdom".
-classifications:GD a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Grenada".
-classifications:GE a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Georgia".
-classifications:GF a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "French Guiana".
-classifications:GH a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Ghana".
-classifications:GI a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Gibraltar".
-classifications:GL a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Greenland".
-classifications:GM a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Gambia".
-classifications:GN a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Guinea".
-classifications:GP a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Guadeloupe".
-classifications:GQ a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Equatorial Guinea".
-classifications:GR a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Greece".
-classifications:GS a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "South Georgia and the South Sandwich Islands".
-classifications:GT a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Guatemala".
-classifications:GU a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Guam".
-classifications:GW a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Guinea-Bissau".
-classifications:GY a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Guyana".
-classifications:HK a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Hong Kong".
-classifications:HM a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Heard Island and McDonald Islands".
-classifications:HN a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Honduras".
-classifications:HR a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Croatia".
-classifications:HT a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Haiti".
-classifications:HU a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Hungary".
-classifications:ID a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Indonesia".
-classifications:IE a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Ireland".
-classifications:IL a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Israel".
-classifications:IN a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "India".
-classifications:IO a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "British Indian Ocean Territory".
-classifications:IQ a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Iraq".
-classifications:IR a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Iran, Islamic Republic of".
-classifications:IS a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Iceland".
-classifications:IT a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Italy".
-classifications:JM a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Jamaica".
-classifications:JO a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Jordan".
-classifications:JP a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Japan".
-classifications:KE a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Kenya".
-classifications:KG a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Kyrgyzstan".
-classifications:KH a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Cambodia".
-classifications:KI a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Kiribati".
-classifications:KM a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Comoros".
-classifications:KN a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Saint Kitts and Nevis".
-classifications:KP a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Korea, Democratic People's Republic of".
-classifications:KR a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Korea, Republic of".
-classifications:KW a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Kuwait".
-classifications:KY a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Cayman Islands".
-classifications:KZ a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Kazakhstan".
-classifications:LA a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Lao People's Democratic Republic".
-classifications:LB a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Lebanon".
-classifications:LC a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Saint Lucia".
-classifications:LI a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Liechtenstein".
-classifications:LK a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Sri Lanka".
-classifications:LR a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Liberia".
-classifications:LS a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Lesotho".
-classifications:LT a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Lithuania".
-classifications:LU a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Luxembourg".
-classifications:LV a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Latvia".
-classifications:LY a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Libya".
-classifications:MA a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Morocco".
-classifications:MC a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Monaco".
-classifications:MD a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Moldova, Republic of".
-classifications:MG a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Madagascar".
-classifications:MH a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Marshall Islands".
-classifications:MK a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Macedonia, The former Yugoslav Republic of".
-classifications:ML a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Mali".
-classifications:MM a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Myanmar".
-classifications:MN a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Mongolia".
-classifications:MO a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Macao".
-classifications:MP a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Northern Mariana Islands".
-classifications:MQ a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Martinique".
-classifications:MR a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Mauritania".
-classifications:MS a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Montserrat".
-classifications:MT a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Malta".
-classifications:MU a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Mauritius".
-classifications:MV a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Maldives".
-classifications:MW a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Malawi".
-classifications:MX a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Mexico".
-classifications:MY a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Malaysia".
-classifications:MZ a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Mozambique".
-classifications:NC a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "New Caledonia".
-classifications:NE a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Niger".
-classifications:NF a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Norfolk Island".
-classifications:NG a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Nigeria".
-classifications:NI a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Nicaragua".
-classifications:NL a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Netherlands".
-classifications:NO a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Norway".
-classifications:NP a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Nepal".
-classifications:NR a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Nauru".
-classifications:NU a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Niue".
-classifications:NZ a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "New Zealand".
-classifications:OM a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Oman".
-classifications:PA a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Panama".
-classifications:PE a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Peru".
-classifications:PF a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "French Polynesia".
-classifications:PG a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Papua New Guinea".
-classifications:PH a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Philippines".
-classifications:PK a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Pakistan".
-classifications:PL a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Poland".
-classifications:PM a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Saint Pierre and Miquelon".
-classifications:PN a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Pitcairn".
-classifications:PR a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Puerto Rico".
-classifications:PS a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Palestine, State of".
-classifications:PT a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Portugal".
-classifications:PW a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Palau".
-classifications:PY a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Paraguay".
-classifications:QA a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Qatar".
-classifications:RE a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Réunion".
-classifications:RO a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Romania".
-classifications:RU a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Russian Federation".
-classifications:RW a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Rwanda".
-classifications:SA a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Saudi Arabia".
-classifications:SB a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Solomon Islands".
-classifications:SC a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Seychelles".
-classifications:SD a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Sudan".
-classifications:SE a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Sweden".
-classifications:SG a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Singapore".
-classifications:SH a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Saint Helena, Ascension and Tristan Da Cunha".
-classifications:SI a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Slovenia".
-classifications:SJ a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Svalbard and Jan Mayen".
-classifications:SK a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Slovakia".
-classifications:SL a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Sierra Leone".
-classifications:SM a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "San Marino".
-classifications:SN a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Senegal".
-classifications:SO a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Somalia".
-classifications:SR a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Suriname".
-classifications:ST a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Sao Tome and Principe".
-classifications:SV a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "El Salvador".
-classifications:SY a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Syrian Arab Republic".
-classifications:SZ a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Eswatini".
-classifications:TC a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Turks and Caicos Islands".
-classifications:TD a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Chad".
-classifications:TF a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "French Southern Territories".
-classifications:TG a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Togo".
-classifications:TH a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Thailand".
-classifications:TJ a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Tajikistan".
-classifications:TK a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Tokelau".
-classifications:TM a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Turkmenistan".
-classifications:TN a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Tunisia".
-classifications:TO a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Tonga".
-classifications:TL a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Timor-Leste".
-classifications:TR a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Turkey".
-classifications:TT a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Trinidad and Tobago".
-classifications:TV a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Tuvalu".
-classifications:TW a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Taiwan, Province of China".
-classifications:TZ a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Tanzania, United Republic of".
-classifications:UA a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Ukraine".
-classifications:UG a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Uganda".
-classifications:UM a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "United States Minor Outlying Islands".
-classifications:US a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "United States".
-classifications:UY a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Uruguay".
-classifications:UZ a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Uzbekistan".
-classifications:VA a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Holy See (Vatican City State)".
-classifications:VC a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Saint Vincent and the Grenadines".
-classifications:VE a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Venezuela".
-classifications:VG a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Virgin Islands, British".
-classifications:VI a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Virgin Islands, U.S.".
-classifications:VN a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Viet Nam".
-classifications:VU a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Vanuatu".
-classifications:WF a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Wallis and Futuna".
-classifications:WS a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Samoa".
-classifications:YE a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Yemen".
-classifications:YT a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Mayotte".
-classifications:ZA a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "South Africa".
-classifications:ZM a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Zambia".
-classifications:ZW a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Zimbabwe".
-classifications:XZ a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Installations in International Waters".
-classifications:RS a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Serbia".
-classifications:ME a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Montenegro".
-classifications:JE a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Jersey".
-classifications:GG a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Guernsey".
-classifications:IM a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Isle of Man".
-classifications:AX a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Åland Islands".
-classifications:CW a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Curaçao".
-classifications:BQ a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Bonaire, Sint Eustatius and Saba".
-classifications:BL a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Saint Barthélemy".
-classifications:MF a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Saint Martin (French Part)".
-classifications:SX a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "Sint Maarten (Dutch Part)".
-classifications:SS a <classification:CountryCode>, owl:NamedIndividual;
-    rdfs:label "South Sudan".
+@prefix : <https://ontology.tno.nl/logistics/federated/Classifications/countryCode#> .
+@prefix classifications: <https://ontology.tno.nl/logistics/federated/Classifications#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://ontology.tno.nl/logistics/federated/Classifications/countryCode>
+  a owl:Ontology ;
+.
+:AD
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "AD" ;
+  rdfs:label "Andorra"@en ;
+.
+:AE
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "AE" ;
+  rdfs:label "United Arab Emirates"@en ;
+.
+:AF
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "AF" ;
+  rdfs:label "Afghanistan"@en ;
+.
+:AG
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "AG" ;
+  rdfs:label "Antigua and Barbuda"@en ;
+.
+:AI
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "AI" ;
+  rdfs:label "Anguilla"@en ;
+.
+:AL
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "AL" ;
+  rdfs:label "Albania"@en ;
+.
+:AM
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "AM" ;
+  rdfs:label "Armenia"@en ;
+.
+:AO
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "AO" ;
+  rdfs:label "Angola"@en ;
+.
+:AQ
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "AQ" ;
+  rdfs:label "Antarctica"@en ;
+.
+:AR
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "AR" ;
+  rdfs:label "Argentina"@en ;
+.
+:AS
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "AS" ;
+  rdfs:label "American Samoa"@en ;
+.
+:AT
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "AT" ;
+  rdfs:label "Austria"@en ;
+.
+:AU
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "AU" ;
+  rdfs:label "Australia"@en ;
+.
+:AW
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "AW" ;
+  rdfs:label "Aruba"@en ;
+.
+:AX
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "AX" ;
+  rdfs:label "Åland Islands"@en ;
+.
+:AZ
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "AZ" ;
+  rdfs:label "Azerbaijan"@en ;
+.
+:BA
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "BA" ;
+  rdfs:label "Bosnia and Herzegovina"@en ;
+.
+:BB
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "BB" ;
+  rdfs:label "Barbados"@en ;
+.
+:BD
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "BD" ;
+  rdfs:label "Bangladesh"@en ;
+.
+:BE
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "BE" ;
+  rdfs:label "Belgium"@en ;
+.
+:BF
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "BF" ;
+  rdfs:label "Burkina Faso"@en ;
+.
+:BG
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "BG" ;
+  rdfs:label "Bulgaria"@en ;
+.
+:BH
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "BH" ;
+  rdfs:label "Bahrain"@en ;
+.
+:BI
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "BI" ;
+  rdfs:label "Burundi"@en ;
+.
+:BJ
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "BJ" ;
+  rdfs:label "Benin"@en ;
+.
+:BL
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "BL" ;
+  rdfs:label "Saint Barthélemy"@en ;
+.
+:BM
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "BM" ;
+  rdfs:label "Bermuda"@en ;
+.
+:BN
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "BN" ;
+  rdfs:label "Brunei Darussalam"@en ;
+.
+:BO
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "BO" ;
+  rdfs:label "Bolivia, Plurinational State of"@en ;
+.
+:BQ
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "BQ" ;
+  rdfs:label "Bonaire, Sint Eustatius and Saba"@en ;
+.
+:BR
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "BR" ;
+  rdfs:label "Brazil"@en ;
+.
+:BS
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "BS" ;
+  rdfs:label "Bahamas"@en ;
+.
+:BT
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "BT" ;
+  rdfs:label "Bhutan"@en ;
+.
+:BW
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "BW" ;
+  rdfs:label "Botswana"@en ;
+.
+:BY
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "BY" ;
+  rdfs:label "Belarus"@en ;
+.
+:BZ
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "BZ" ;
+  rdfs:label "Belize"@en ;
+.
+:CA
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "CA" ;
+  rdfs:label "Canada"@en ;
+.
+:CC
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "CC" ;
+  rdfs:label "Cocos (Keeling) Islands"@en ;
+.
+:CD
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "CD" ;
+  rdfs:label "Congo, The Democratic Republic of the"@en ;
+.
+:CF
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "CF" ;
+  rdfs:label "Central African Republic"@en ;
+.
+:CG
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "CG" ;
+  rdfs:label "Congo"@en ;
+.
+:CH
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "CH" ;
+  rdfs:label "Switzerland"@en ;
+.
+:CI
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "CI" ;
+  rdfs:label "Côte d'Ivoire"@en ;
+.
+:CK
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "CK" ;
+  rdfs:label "Cook Islands"@en ;
+.
+:CL
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "CL" ;
+  rdfs:label "Chile"@en ;
+.
+:CM
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "CM" ;
+  rdfs:label "Cameroon"@en ;
+.
+:CN
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "CN" ;
+  rdfs:label "China"@en ;
+.
+:CO
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "CO" ;
+  rdfs:label "Colombia"@en ;
+.
+:CR
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "CR" ;
+  rdfs:label "Costa Rica"@en ;
+.
+:CU
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "CU" ;
+  rdfs:label "Cuba"@en ;
+.
+:CV
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "CV" ;
+  rdfs:label "Cape Verde"@en ;
+.
+:CW
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "CW" ;
+  rdfs:label "Curaçao"@en ;
+.
+:CX
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "CX" ;
+  rdfs:label "Christmas Island"@en ;
+.
+:CY
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "CY" ;
+  rdfs:label "Cyprus"@en ;
+.
+:CZ
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "CZ" ;
+  rdfs:label "Czech Republic"@en ;
+.
+:DE
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "DE" ;
+  rdfs:label "Germany"@en ;
+.
+:DJ
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "DJ" ;
+  rdfs:label "Djibouti"@en ;
+.
+:DK
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "DK" ;
+  rdfs:label "Denmark"@en ;
+.
+:DM
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "DM" ;
+  rdfs:label "Dominica"@en ;
+.
+:DO
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "DO" ;
+  rdfs:label "Dominican Republic"@en ;
+.
+:DZ
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "Algeria"@en ;
+  rdfs:label "DZ" ;
+.
+:EC
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "EC" ;
+  rdfs:label "Ecuador"@en ;
+.
+:EE
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "EE" ;
+  rdfs:label "Estonia"@en ;
+.
+:EG
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "EG" ;
+  rdfs:label "Egypt"@en ;
+.
+:EH
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "EH" ;
+  rdfs:label "Western Sahara"@en ;
+.
+:ER
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "ER" ;
+  rdfs:label "Eritrea"@en ;
+.
+:ES
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "ES" ;
+  rdfs:label "Spain"@en ;
+.
+:ET
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "ET" ;
+  rdfs:label "Ethiopia"@en ;
+.
+:FI
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "FI" ;
+  rdfs:label "Finland"@en ;
+.
+:FJ
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "FJ" ;
+  rdfs:label "Fiji"@en ;
+.
+:FK
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "FK" ;
+  rdfs:label "Falkland Islands (Malvinas)"@en ;
+.
+:FM
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "FM" ;
+  rdfs:label "Micronesia, Federated States of"@en ;
+.
+:FO
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "FO" ;
+  rdfs:label "Faroe Islands"@en ;
+.
+:FR
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "FR" ;
+  rdfs:label "France"@en ;
+.
+:GA
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "GA" ;
+  rdfs:label "Gabon"@en ;
+.
+:GB
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "GB" ;
+  rdfs:label "United Kingdom"@en ;
+.
+:GD
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "GD" ;
+  rdfs:label "Grenada"@en ;
+.
+:GE
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "GE" ;
+  rdfs:label "Georgia"@en ;
+.
+:GF
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "French Guiana"@en ;
+  rdfs:label "GF" ;
+.
+:GG
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "GG" ;
+  rdfs:label "Guernsey"@en ;
+.
+:GH
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "GH" ;
+  rdfs:label "Ghana"@en ;
+.
+:GI
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "GI" ;
+  rdfs:label "Gibraltar"@en ;
+.
+:GL
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "GL" ;
+  rdfs:label "Greenland"@en ;
+.
+:GM
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "GM" ;
+  rdfs:label "Gambia"@en ;
+.
+:GN
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "GN" ;
+  rdfs:label "Guinea"@en ;
+.
+:GP
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "GP" ;
+  rdfs:label "Guadeloupe"@en ;
+.
+:GQ
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "Equatorial Guinea"@en ;
+  rdfs:label "GQ" ;
+.
+:GR
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "GR" ;
+  rdfs:label "Greece"@en ;
+.
+:GS
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "GS" ;
+  rdfs:label "South Georgia and the South Sandwich Islands"@en ;
+.
+:GT
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "GT" ;
+  rdfs:label "Guatemala"@en ;
+.
+:GU
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "GU" ;
+  rdfs:label "Guam"@en ;
+.
+:GW
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "GW" ;
+  rdfs:label "Guinea-Bissau"@en ;
+.
+:GY
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "GY" ;
+  rdfs:label "Guyana"@en ;
+.
+:HK
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "HK" ;
+  rdfs:label "Hong Kong"@en ;
+.
+:HM
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "HM" ;
+  rdfs:label "Heard Island and McDonald Islands"@en ;
+.
+:HN
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "HN" ;
+  rdfs:label "Honduras"@en ;
+.
+:HR
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "Croatia"@en ;
+  rdfs:label "HR" ;
+.
+:HT
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "HT" ;
+  rdfs:label "Haiti"@en ;
+.
+:HU
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "HU" ;
+  rdfs:label "Hungary"@en ;
+.
+:ID
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "ID" ;
+  rdfs:label "Indonesia"@en ;
+.
+:IE
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "IE" ;
+  rdfs:label "Ireland"@en ;
+.
+:IL
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "IL" ;
+  rdfs:label "Israel"@en ;
+.
+:IM
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "IM" ;
+  rdfs:label "Isle of Man"@en ;
+.
+:IN
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "IN" ;
+  rdfs:label "India"@en ;
+.
+:IO
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "British Indian Ocean Territory"@en ;
+  rdfs:label "IO" ;
+.
+:IQ
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "IQ" ;
+  rdfs:label "Iraq"@en ;
+.
+:IR
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "IR" ;
+  rdfs:label "Iran, Islamic Republic of"@en ;
+.
+:IS
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "IS" ;
+  rdfs:label "Iceland"@en ;
+.
+:IT
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "IT" ;
+  rdfs:label "Italy"@en ;
+.
+:JE
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "JE" ;
+  rdfs:label "Jersey"@en ;
+.
+:JM
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "JM" ;
+  rdfs:label "Jamaica"@en ;
+.
+:JO
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "JO" ;
+  rdfs:label "Jordan"@en ;
+.
+:JP
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "JP" ;
+  rdfs:label "Japan"@en ;
+.
+:KE
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "KE" ;
+  rdfs:label "Kenya"@en ;
+.
+:KG
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "KG" ;
+  rdfs:label "Kyrgyzstan"@en ;
+.
+:KH
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "Cambodia"@en ;
+  rdfs:label "KH" ;
+.
+:KI
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "KI" ;
+  rdfs:label "Kiribati"@en ;
+.
+:KM
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "Comoros"@en ;
+  rdfs:label "KM" ;
+.
+:KN
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "KN" ;
+  rdfs:label "Saint Kitts and Nevis"@en ;
+.
+:KP
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "KP" ;
+  rdfs:label "Korea, Democratic People's Republic of"@en ;
+.
+:KR
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "KR" ;
+  rdfs:label "Korea, Republic of"@en ;
+.
+:KW
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "KW" ;
+  rdfs:label "Kuwait"@en ;
+.
+:KY
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "Cayman Islands"@en ;
+  rdfs:label "KY" ;
+.
+:KZ
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "KZ" ;
+  rdfs:label "Kazakhstan"@en ;
+.
+:LA
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "LA" ;
+  rdfs:label "Lao People's Democratic Republic"@en ;
+.
+:LB
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "LB" ;
+  rdfs:label "Lebanon"@en ;
+.
+:LC
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "LC" ;
+  rdfs:label "Saint Lucia"@en ;
+.
+:LI
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "LI" ;
+  rdfs:label "Liechtenstein"@en ;
+.
+:LK
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "LK" ;
+  rdfs:label "Sri Lanka"@en ;
+.
+:LR
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "LR" ;
+  rdfs:label "Liberia"@en ;
+.
+:LS
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "LS" ;
+  rdfs:label "Lesotho"@en ;
+.
+:LT
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "LT" ;
+  rdfs:label "Lithuania"@en ;
+.
+:LU
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "LU" ;
+  rdfs:label "Luxembourg"@en ;
+.
+:LV
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "LV" ;
+  rdfs:label "Latvia"@en ;
+.
+:LY
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "LY" ;
+  rdfs:label "Libya"@en ;
+.
+:MA
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "MA" ;
+  rdfs:label "Morocco"@en ;
+.
+:MC
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "MC" ;
+  rdfs:label "Monaco"@en ;
+.
+:MD
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "MD" ;
+  rdfs:label "Moldova, Republic of"@en ;
+.
+:ME
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "ME" ;
+  rdfs:label "Montenegro"@en ;
+.
+:MF
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "MF" ;
+  rdfs:label "Saint Martin (French Part)"@en ;
+.
+:MG
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "MG" ;
+  rdfs:label "Madagascar"@en ;
+.
+:MH
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "MH" ;
+  rdfs:label "Marshall Islands"@en ;
+.
+:MK
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "MK" ;
+  rdfs:label "Macedonia, The former Yugoslav Republic of"@en ;
+.
+:ML
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "ML" ;
+  rdfs:label "Mali"@en ;
+.
+:MM
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "MM" ;
+  rdfs:label "Myanmar"@en ;
+.
+:MN
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "MN" ;
+  rdfs:label "Mongolia"@en ;
+.
+:MO
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "MO" ;
+  rdfs:label "Macao"@en ;
+.
+:MP
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "MP" ;
+  rdfs:label "Northern Mariana Islands"@en ;
+.
+:MQ
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "MQ" ;
+  rdfs:label "Martinique"@en ;
+.
+:MR
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "MR" ;
+  rdfs:label "Mauritania"@en ;
+.
+:MS
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "MS" ;
+  rdfs:label "Montserrat"@en ;
+.
+:MT
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "MT" ;
+  rdfs:label "Malta"@en ;
+.
+:MU
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "MU" ;
+  rdfs:label "Mauritius"@en ;
+.
+:MV
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "MV" ;
+  rdfs:label "Maldives"@en ;
+.
+:MW
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "MW" ;
+  rdfs:label "Malawi"@en ;
+.
+:MX
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "MX" ;
+  rdfs:label "Mexico"@en ;
+.
+:MY
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "MY" ;
+  rdfs:label "Malaysia"@en ;
+.
+:MZ
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "MZ" ;
+  rdfs:label "Mozambique"@en ;
+.
+:NC
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "NC" ;
+  rdfs:label "New Caledonia"@en ;
+.
+:NE
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "NE" ;
+  rdfs:label "Niger"@en ;
+.
+:NF
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "NF" ;
+  rdfs:label "Norfolk Island"@en ;
+.
+:NG
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "NG" ;
+  rdfs:label "Nigeria"@en ;
+.
+:NI
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "NI" ;
+  rdfs:label "Nicaragua"@en ;
+.
+:NL
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "NL" ;
+  rdfs:label "Netherlands"@en ;
+.
+:NO
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "NO" ;
+  rdfs:label "Norway"@en ;
+.
+:NP
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "NP" ;
+  rdfs:label "Nepal"@en ;
+.
+:NR
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "NR" ;
+  rdfs:label "Nauru"@en ;
+.
+:NU
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "NU" ;
+  rdfs:label "Niue"@en ;
+.
+:NZ
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "NZ" ;
+  rdfs:label "New Zealand"@en ;
+.
+:OM
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "OM" ;
+  rdfs:label "Oman"@en ;
+.
+:PA
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "PA" ;
+  rdfs:label "Panama"@en ;
+.
+:PE
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "PE" ;
+  rdfs:label "Peru"@en ;
+.
+:PF
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "French Polynesia"@en ;
+  rdfs:label "PF" ;
+.
+:PG
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "PG" ;
+  rdfs:label "Papua New Guinea"@en ;
+.
+:PH
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "PH" ;
+  rdfs:label "Philippines"@en ;
+.
+:PK
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "PK" ;
+  rdfs:label "Pakistan"@en ;
+.
+:PL
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "PL" ;
+  rdfs:label "Poland"@en ;
+.
+:PM
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "PM" ;
+  rdfs:label "Saint Pierre and Miquelon"@en ;
+.
+:PN
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "PN" ;
+  rdfs:label "Pitcairn"@en ;
+.
+:PR
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "PR" ;
+  rdfs:label "Puerto Rico"@en ;
+.
+:PS
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "PS" ;
+  rdfs:label "Palestine, State of"@en ;
+.
+:PT
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "PT" ;
+  rdfs:label "Portugal"@en ;
+.
+:PW
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "PW" ;
+  rdfs:label "Palau"@en ;
+.
+:PY
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "PY" ;
+  rdfs:label "Paraguay"@en ;
+.
+:QA
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "QA" ;
+  rdfs:label "Qatar"@en ;
+.
+:RE
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "RE" ;
+  rdfs:label "Réunion"@en ;
+.
+:RO
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "RO" ;
+  rdfs:label "Romania"@en ;
+.
+:RS
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "RS" ;
+  rdfs:label "Serbia"@en ;
+.
+:RU
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "RU" ;
+  rdfs:label "Russian Federation"@en ;
+.
+:RW
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "RW" ;
+  rdfs:label "Rwanda"@en ;
+.
+:SA
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "SA" ;
+  rdfs:label "Saudi Arabia"@en ;
+.
+:SB
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "SB" ;
+  rdfs:label "Solomon Islands"@en ;
+.
+:SC
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "SC" ;
+  rdfs:label "Seychelles"@en ;
+.
+:SD
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "SD" ;
+  rdfs:label "Sudan"@en ;
+.
+:SE
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "SE" ;
+  rdfs:label "Sweden"@en ;
+.
+:SG
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "SG" ;
+  rdfs:label "Singapore"@en ;
+.
+:SH
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "SH" ;
+  rdfs:label "Saint Helena, Ascension and Tristan Da Cunha"@en ;
+.
+:SI
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "SI" ;
+  rdfs:label "Slovenia"@en ;
+.
+:SJ
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "SJ" ;
+  rdfs:label "Svalbard and Jan Mayen"@en ;
+.
+:SK
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "SK" ;
+  rdfs:label "Slovakia"@en ;
+.
+:SL
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "SL" ;
+  rdfs:label "Sierra Leone"@en ;
+.
+:SM
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "SM" ;
+  rdfs:label "San Marino"@en ;
+.
+:SN
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "SN" ;
+  rdfs:label "Senegal"@en ;
+.
+:SO
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "SO" ;
+  rdfs:label "Somalia"@en ;
+.
+:SR
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "SR" ;
+  rdfs:label "Suriname"@en ;
+.
+:SS
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "SS" ;
+  rdfs:label "South Sudan"@en ;
+.
+:ST
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "ST" ;
+  rdfs:label "Sao Tome and Principe"@en ;
+.
+:SV
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "El Salvador"@en ;
+  rdfs:label "SV" ;
+.
+:SX
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "SX" ;
+  rdfs:label "Sint Maarten (Dutch Part)"@en ;
+.
+:SY
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "SY" ;
+  rdfs:label "Syrian Arab Republic"@en ;
+.
+:SZ
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "Eswatini"@en ;
+  rdfs:label "SZ" ;
+.
+:TC
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "TC" ;
+  rdfs:label "Turks and Caicos Islands"@en ;
+.
+:TD
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "Chad"@en ;
+  rdfs:label "TD" ;
+.
+:TF
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "French Southern Territories"@en ;
+  rdfs:label "TF" ;
+.
+:TG
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "TG" ;
+  rdfs:label "Togo"@en ;
+.
+:TH
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "TH" ;
+  rdfs:label "Thailand"@en ;
+.
+:TJ
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "TJ" ;
+  rdfs:label "Tajikistan"@en ;
+.
+:TK
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "TK" ;
+  rdfs:label "Tokelau"@en ;
+.
+:TL
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "TL" ;
+  rdfs:label "Timor-Leste"@en ;
+.
+:TM
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "TM" ;
+  rdfs:label "Turkmenistan"@en ;
+.
+:TN
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "TN" ;
+  rdfs:label "Tunisia"@en ;
+.
+:TO
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "TO" ;
+  rdfs:label "Tonga"@en ;
+.
+:TR
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "TR" ;
+  rdfs:label "Turkey"@en ;
+.
+:TT
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "TT" ;
+  rdfs:label "Trinidad and Tobago"@en ;
+.
+:TV
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "TV" ;
+  rdfs:label "Tuvalu"@en ;
+.
+:TW
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "TW" ;
+  rdfs:label "Taiwan, Province of China"@en ;
+.
+:TZ
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "TZ" ;
+  rdfs:label "Tanzania, United Republic of"@en ;
+.
+:UA
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "UA" ;
+  rdfs:label "Ukraine"@en ;
+.
+:UG
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "UG" ;
+  rdfs:label "Uganda"@en ;
+.
+:UM
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "UM" ;
+  rdfs:label "United States Minor Outlying Islands"@en ;
+.
+:US
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "US" ;
+  rdfs:label "United States"@en ;
+.
+:UY
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "UY" ;
+  rdfs:label "Uruguay"@en ;
+.
+:UZ
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "UZ" ;
+  rdfs:label "Uzbekistan"@en ;
+.
+:VA
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "Holy See (Vatican City State)"@en ;
+  rdfs:label "VA" ;
+.
+:VC
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "Saint Vincent and the Grenadines"@en ;
+  rdfs:label "VC" ;
+.
+:VE
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "VE" ;
+  rdfs:label "Venezuela"@en ;
+.
+:VG
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "VG" ;
+  rdfs:label "Virgin Islands, British"@en ;
+.
+:VI
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "VI" ;
+  rdfs:label "Virgin Islands, U.S."@en ;
+.
+:VN
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "VN" ;
+  rdfs:label "Viet Nam"@en ;
+.
+:VU
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "VU" ;
+  rdfs:label "Vanuatu"@en ;
+.
+:WF
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "WF" ;
+  rdfs:label "Wallis and Futuna"@en ;
+.
+:WS
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "Samoa"@en ;
+  rdfs:label "WS" ;
+.
+:XZ
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "Installations in International Waters"@en ;
+  rdfs:label "XZ" ;
+.
+:YE
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "YE" ;
+  rdfs:label "Yemen"@en ;
+.
+:YT
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "Mayotte"@en ;
+  rdfs:label "YT" ;
+.
+:ZA
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "South Africa"@en ;
+  rdfs:label "ZA" ;
+.
+:ZM
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "ZM" ;
+  rdfs:label "Zambia"@en ;
+.
+:ZW
+  a owl:NamedIndividual ;
+  a classifications:CountryCode ;
+  rdfs:label "ZW" ;
+  rdfs:label "Zimbabwe"@en ;
+.
