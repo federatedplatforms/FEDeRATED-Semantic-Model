@@ -730,7 +730,7 @@ DigitalTwin:ConnectedToSealingParty
 DigitalTwin:EMS_ID
   a owl:DatatypeProperty ;
   rdfs:comment "The EMS ID." ;
-  rdfs:domain  ;
+  rdfs:domain DigitalTwin:PhysicalObject ;
   rdfs:label "EMS ID" ;
   rdfs:range xsd:string ;
 .
