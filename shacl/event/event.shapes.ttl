@@ -56,7 +56,7 @@
     ] ;
     sh:property [
       rdf:type sh:PropertyShape ;
-      sh:path event:hasSubmissionTime ;
+      sh:path event:hasSubmissionTimestamp ;
       sh:datatype xsd:dateTime ;
       sh:minCount 1;
       sh:maxCount 1;
