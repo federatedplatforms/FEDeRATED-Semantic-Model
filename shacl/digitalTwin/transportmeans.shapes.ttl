@@ -33,7 +33,7 @@
     sh:property [
         rdf:type sh:PropertyShape ;
         sh:path DT:hasTransportMeansID ;
-        sh:minCount 1 ;
+        sh:maxCount 1 ;
         sh:name "A transportmeans should have at least one ID." ;
         sh:severity sh:Warning ;
     ] ;
