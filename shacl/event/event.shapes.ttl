@@ -56,46 +56,13 @@
     ] ;
     sh:property [
       rdf:type sh:PropertyShape ;
-      sh:path event:hasSubmissionTimestamp ;
+      sh:path event:hasSubmissionTime ;
       sh:datatype xsd:dateTime ;
       sh:minCount 1;
       sh:maxCount 1;
     ] ;
     sh:targetClass event:Event ;
 .
-# to be moved to a separate shape  
-#  sh:property [
-#      rdf:type sh:PropertyShape ;
-#      sh:path event:involvesBusinessTransaction ;
-#      sh:class businessService:BusinessTransaction ;
-#      sh:minCount 1 ;
-#      sh:name "involves business transaction" ;
-#      sh:nodeKind sh:IRI
-#    ] ;
-#  sh:property [
-#      rdf:type sh:PropertyShape ;
-#      sh:path event:involvesDigitalTwin ;
-#      sh:class DT:DigitalTwin ;
-#      sh:minCount 1 ;
-#      sh:name "involves digital twin" ;
-#       sh:nodeKind sh:IRI
-#    ] ;
-#  sh:property [
-#      rdf:type sh:PropertyShape ;
-#      sh:path event:involvesLocation ;
-#      sh:class pi:Location ;
-#      sh:minCount 1 ;
-#      sh:name "invovles location" ;
-#       sh:nodeKind sh:IRI
-#    ] ;
-#  sh:property [
-#      rdf:type sh:PropertyShape ;
-#      sh:path event:involvesLogisticsActor ;
-#      sh:class businessService:logisticsActor ;
-#      sh:minCount 1 ;
-#      sh:name "involves logistics actor" ;
-#       sh:nodeKind sh:IRI
-#    ] ;
 
 :ArrivalEventShape 
   rdf:type sh:NodeShape ;
@@ -214,6 +181,7 @@
     sh:minCount 2;
     sh:maxCount 2;
     sh:nodeKind sh:IRI ;
+	sh:severity sh:Warning ;
   ] ;
   sh:targetClass event:CargoEvent ;
 .
@@ -348,7 +316,7 @@
       [ sh:class DT:Equipment ; ]
     ) ;
     sh:minCount 1;
-    sh:maxCount 1;
+    sh:maxCount 2;
   ] ;
   sh:property [
     rdf:type sh:PropertyShape ;
@@ -359,7 +327,7 @@
       [ sh:class DT:Product ; ]
     ) ;
     sh:minCount 1;
-    sh:maxCount 1;
+    sh:maxCount 2;
   ] ;
   sh:property [
     rdf:type sh:PropertyShape ;
