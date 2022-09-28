@@ -619,6 +619,13 @@ DigitalTwin:grossWeight
   rdfs:range xsd:integer ;
   rdfs:subPropertyOf DigitalTwin:PhysicalObjectProperties ;
 .
+DigitalTwin:harmonizedSystemCode
+  a owl:DatatypeProperty ;
+  rdfs:domain DigitalTwin:PhysicalObject ;
+  rdfs:label "Harmonized System Code" ;
+  rdfs:comment "Standardized code to categorize products, used by customs authorities" ;
+  rdfs:range xsd:string ;
+.
 DigitalTwin:hasAWB_Number
   a owl:DatatypeProperty ;
   rdfs:domain DigitalTwin:PhysicalObject ;
