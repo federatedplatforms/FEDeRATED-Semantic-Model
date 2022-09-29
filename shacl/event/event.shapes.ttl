@@ -56,7 +56,7 @@
     ] ;
     sh:property [
       rdf:type sh:PropertyShape ;
-      sh:path event:hasSubmissionTime ;
+      sh:path event:hasSubmissionTimestamp ;
       sh:datatype xsd:dateTime ;
       sh:minCount 1;
       sh:maxCount 1;
@@ -308,16 +308,16 @@
   rdf:type sh:NodeShape ;
   rdfs:label "Load Event Shape";
   rdfs:comment "A Load Event is an association between Transport Means or Equipment and Equipment/Goods/Products with milestone Start." ;
-  sh:property [
-    rdf:type sh:PropertyShape ;
-    sh:path event:involvesDigitalTwin ;
-    sh:or (
-      [ sh:class DT:TransportMeans ; ]
-      [ sh:class DT:Equipment ; ]
-    ) ;
-    sh:minCount 1;
-    sh:maxCount 2;
-  ] ;
+# sh:property [
+#   rdf:type sh:PropertyShape ;
+#   sh:path event:involvesDigitalTwin ;
+#   sh:or (
+#     [ sh:class DT:TransportMeans ; ]
+#     [ sh:class DT:Equipment ; ]
+#   ) ;
+#   sh:minCount 1;
+#   sh:maxCount 2;
+# ] ;
   sh:property [
     rdf:type sh:PropertyShape ;
     sh:path event:involvesDigitalTwin ;
@@ -325,8 +325,9 @@
       [ sh:class DT:Goods ; ]
       [ sh:class DT:Equipment ; ]
       [ sh:class DT:Product ; ]
+      [ sh:class DT:TransportMeans ; ]
     ) ;
-    sh:minCount 1;
+    sh:minCount 2
     sh:maxCount 2;
   ] ;
   sh:property [
