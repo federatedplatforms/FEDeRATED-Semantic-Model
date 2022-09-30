@@ -327,7 +327,7 @@
       [ sh:class DT:Product ; ]
       [ sh:class DT:TransportMeans ; ]
     ) ;
-    sh:minCount 2
+    sh:minCount 2 ;
     sh:maxCount 2;
   ] ;
   sh:property [
