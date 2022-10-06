@@ -4,17 +4,22 @@
 @prefix classifications: <https://ontology.tno.nl/logistics/federated/Classifications/sealConditionCode#>.
 
 <https://ontology.tno.nl/logistics/federated/Classifications/sealConditionCode#1> a classifications:CountryCode, owl:NamedIndividual;
-    rdfs:label "In right condition";
+    rdfs:label 1 ;
+    rdfs:label "In right condition"@en;
     rdfs:comment "The seal is in right condition.".
 <https://ontology.tno.nl/logistics/federated/Classifications/sealConditionCode#2> a classifications:CountryCode, owl:NamedIndividual;
-    rdfs:label "Damaged";
+	rdfs:label 2 ;
+    rdfs:label "Damaged"@en;
     rdfs:comment "The seal is damaged.".
 <https://ontology.tno.nl/logistics/federated/Classifications/sealConditionCode#3> a classifications:CountryCode, owl:NamedIndividual;
-    rdfs:label "Missing";
+	rdfs:label 3 ;
+    rdfs:label "Missing"@en;
     rdfs:comment "A seal that is missing.".
 <https://ontology.tno.nl/logistics/federated/Classifications/sealConditionCode#4> a classifications:CountryCode, owl:NamedIndividual;
-    rdfs:label "Broken";
+    rdfs:label 4 ;
+    rdfs:label "Broken"@en;
     rdfs:comment "Used to specify that the seal is broken. ".
 <https://ontology.tno.nl/logistics/federated/Classifications/sealConditionCode#5> a classifications:CountryCode, owl:NamedIndividual;
-    rdfs:label "Faulty electronic seal";
+    rdfs:label 5 ;
+    rdfs:label "Faulty electronic seal"@en;
     rdfs:comment "The electronic seal is faulty.".
