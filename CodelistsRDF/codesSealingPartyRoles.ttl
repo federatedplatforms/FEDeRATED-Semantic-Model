@@ -13,40 +13,47 @@
   rdf:type <https://ontology.tno.nl/logistics/federated/Classifications#SealingPartyRoleCode> ;
   rdfs:comment "Consolidator"@en ;
   rdfs:label "AA" ;
+  rdfs:label "Consolidator"@en ;
 .
 <https://ontology.tno.nl/logistics/federated/Classifications/SealingpartyRoleCode#AB>
   rdf:type owl:NamedIndividual ;
   rdf:type <https://ontology.tno.nl/logistics/federated/Classifications#SealingPartyRoleCode> ;
   rdfs:comment "Unknown sealing party"@en ;
   rdfs:label "AB" ;
+   rdfs:label "Unknown sealing party"@en ;
 .
 <https://ontology.tno.nl/logistics/federated/Classifications/SealingpartyRoleCode#AC>
   rdf:type owl:NamedIndividual ;
   rdf:type <https://ontology.tno.nl/logistics/federated/Classifications#SealingPartyRoleCode> ;
   rdfs:comment "Quarantine agency"@en ;
   rdfs:label "AC" ;
+  rdfs:label "Quarantine agency"@en ;
 .
 <https://ontology.tno.nl/logistics/federated/Classifications/SealingpartyRoleCode#CA>
   rdf:type owl:NamedIndividual ;
   rdf:type <https://ontology.tno.nl/logistics/federated/Classifications#SealingPartyRoleCode> ;
   rdfs:comment "Carrier"@en ;
   rdfs:label "CA" ;
+  rdfs:label "Carrier"@en ;
 .
 <https://ontology.tno.nl/logistics/federated/Classifications/SealingpartyRoleCode#CU>
   rdf:type owl:NamedIndividual ;
   rdf:type <https://ontology.tno.nl/logistics/federated/Classifications#SealingPartyRoleCode> ;
   rdfs:comment "Customs"@en ;
   rdfs:label "CU" ;
+  rdfs:label "Customs"@en ;
 .
 <https://ontology.tno.nl/logistics/federated/Classifications/SealingpartyRoleCode#SH>
   rdf:type owl:NamedIndividual ;
   rdf:type <https://ontology.tno.nl/logistics/federated/Classifications#SealingPartyRoleCode> ;
   rdfs:comment "Shipper"@en ;
   rdfs:label "SH" ;
+  rdfs:label "Shipper"@en ;
 .
 <https://ontology.tno.nl/logistics/federated/Classifications/SealingpartyRoleCode#TO>
   rdf:type owl:NamedIndividual ;
   rdf:type <https://ontology.tno.nl/logistics/federated/Classifications#SealingPartyRoleCode> ;
   rdfs:comment "Terminal operator"@en ;
   rdfs:label "TO" ;
+  rdfs:label "Terminal operator"@en ;
 .
