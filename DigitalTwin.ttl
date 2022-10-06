@@ -727,7 +727,7 @@ DigitalTwin:ConnectedToSealingParty
   rdfs:range <https://ontology.tno.nl/logistics/federated/BusinessService#LegalPerson> ;
   rdfs:comment "This property relates the seal with the sealing party involved (instantiated as legal person)." ;
 .
-DigitalTwin:EMS_ID
+DigitalTwin:ems_id
   a owl:DatatypeProperty ;
   rdfs:comment "The EMS ID." ;
   rdfs:domain DigitalTwin:PhysicalObject ;
