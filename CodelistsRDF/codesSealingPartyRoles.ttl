@@ -11,49 +11,49 @@
 <https://ontology.tno.nl/logistics/federated/Classifications/SealingpartyRoleCode#AA>
   rdf:type owl:NamedIndividual ;
   rdf:type <https://ontology.tno.nl/logistics/federated/Classifications#SealingPartyRoleCode> ;
-  rdfs:comment "Consolidator"@en ;
+  rdfs:comment "Party which consolidates cargo"@en ;
   rdfs:label "AA" ;
   rdfs:label "Consolidator"@en ;
 .
 <https://ontology.tno.nl/logistics/federated/Classifications/SealingpartyRoleCode#AB>
   rdf:type owl:NamedIndividual ;
   rdf:type <https://ontology.tno.nl/logistics/federated/Classifications#SealingPartyRoleCode> ;
-  rdfs:comment "Unknown sealing party"@en ;
+  rdfs:comment "The sealing party is unknown"@en ;
   rdfs:label "AB" ;
    rdfs:label "Unknown sealing party"@en ;
 .
 <https://ontology.tno.nl/logistics/federated/Classifications/SealingpartyRoleCode#AC>
   rdf:type owl:NamedIndividual ;
   rdf:type <https://ontology.tno.nl/logistics/federated/Classifications#SealingPartyRoleCode> ;
-  rdfs:comment "Quarantine agency"@en ;
+  rdfs:comment "Agency responsible for the administration of statutory disease controls on the movement of people, animals and plants"@en ;
   rdfs:label "AC" ;
   rdfs:label "Quarantine agency"@en ;
 .
 <https://ontology.tno.nl/logistics/federated/Classifications/SealingpartyRoleCode#CA>
   rdf:type owl:NamedIndividual ;
   rdf:type <https://ontology.tno.nl/logistics/federated/Classifications#SealingPartyRoleCode> ;
-  rdfs:comment "Carrier"@en ;
+  rdfs:comment "Party undertaking or arranging transport of goods between named points"@en ;
   rdfs:label "CA" ;
   rdfs:label "Carrier"@en ;
 .
 <https://ontology.tno.nl/logistics/federated/Classifications/SealingpartyRoleCode#CU>
   rdf:type owl:NamedIndividual ;
   rdf:type <https://ontology.tno.nl/logistics/federated/Classifications#SealingPartyRoleCode> ;
-  rdfs:comment "Customs"@en ;
+  rdfs:comment "Customs' means the Government Service which is responsible for the administration of Customs law and the collection of duties and taxes and which also has the responsibility for the application of other laws and regulations relating to the importation, exportation, movement or storage of good"@en ;
   rdfs:label "CU" ;
   rdfs:label "Customs"@en ;
 .
 <https://ontology.tno.nl/logistics/federated/Classifications/SealingpartyRoleCode#SH>
   rdf:type owl:NamedIndividual ;
   rdf:type <https://ontology.tno.nl/logistics/federated/Classifications#SealingPartyRoleCode> ;
-  rdfs:comment "Shipper"@en ;
+  rdfs:comment "Party which, by contract with a carrier, consigns or sends goods with the carrier, or has them conveyed by him"@en ;
   rdfs:label "SH" ;
   rdfs:label "Shipper"@en ;
 .
 <https://ontology.tno.nl/logistics/federated/Classifications/SealingpartyRoleCode#TO>
   rdf:type owl:NamedIndividual ;
   rdf:type <https://ontology.tno.nl/logistics/federated/Classifications#SealingPartyRoleCode> ;
-  rdfs:comment "Terminal operator"@en ;
+  rdfs:comment "Party which handles the loading and unloading of marine vessels"@en ;
   rdfs:label "TO" ;
   rdfs:label "Terminal operator"@en ;
 .
