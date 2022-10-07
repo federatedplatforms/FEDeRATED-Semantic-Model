@@ -626,12 +626,12 @@ DigitalTwin:hasAWB_Number
   rdfs:range xsd:string ;
   skos:prefLabel "has AWB Number" ;
 .
-DigitalTwin:dangerousGoodsRegulationCode
-  a owl:DatatypeProperty ;
-  rdfs:comment "Dangerous goods require a dangerous goods regulation code. The code consists of 3 characters." ;
+DigitalTwin:hasDangerousGoodsRegulationCode
+  a owl:ObjectProperty ;
+  rdfs:comment "Dangerous goods require a dangerous goods regulation code." ;
   rdfs:domain DigitalTwin:Goods;
   rdfs:label "Dangerous Goods Regulation Code" ;
-  rdfs:range xsd:string ;
+  rdfs:range classifications:DangerousGoodsRegulationCode ;
 .
 DigitalTwin:hazmatUNCode
   a owl:DatatypeProperty ;
