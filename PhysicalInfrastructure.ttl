@@ -15,6 +15,108 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+<http://schema.org/AdministrativeArea>
+  a owl:Class ;
+  rdfs:comment "A geographical region, typically under the jurisdiction of a particular government." ;
+  rdfs:label "Administrative area" ;
+  rdfs:subClassOf <http://schema.org/Place> ;
+.
+<http://schema.org/City>
+  a owl:Class ;
+  rdfs:comment "A city or town." ;
+  rdfs:label "City" ;
+  rdfs:subClassOf <http://schema.org/AdministrativeArea> ;
+.
+<http://schema.org/Country>
+  a owl:Class ;
+  rdfs:comment "A country." ;
+  rdfs:label "Country" ;
+  rdfs:subClassOf <http://schema.org/AdministrativeArea> ;
+.
+<http://schema.org/Place>
+  a owl:Class ;
+  rdfs:comment "Entities that have a somewhat fixed, physical extension." ;
+  rdfs:label "Place" ;
+  rdfs:subClassOf owl:Thing ;
+.
+<http://schema.org/State>
+  a owl:Class ;
+  rdfs:comment "A state or province of a country." ;
+  rdfs:label "State" ;
+  rdfs:subClassOf <http://schema.org/AdministrativeArea> ;
+.
+<http://schema.org/address>
+  a rdf:Property ;
+  rdfs:comment "Physical address of the item." ;
+  rdfs:domain [
+      a owl:Class ;
+      owl:unionOf (
+          <http://schema.org/GeoCoordinates>
+          <http://schema.org/GeoShape>
+          <http://schema.org/Organization>
+          <http://schema.org/Person>
+          <http://schema.org/Place>
+        ) ;
+    ] ;
+  rdfs:label "address" ;
+  rdfs:range [
+      a owl:Class ;
+      owl:unionOf (
+          <http://schema.org/PostalAddress>
+          xsd:string
+        ) ;
+    ] ;
+.
+<http://schema.org/addressCountry>
+  a rdf:Property ;
+  rdfs:comment "The country. For example, USA. You can also provide the two-letter [ISO 3166-1 alpha-2 country code](http://en.wikipedia.org/wiki/ISO_3166-1)." ;
+  rdfs:domain [
+      a owl:Class ;
+      owl:unionOf (
+          <http://schema.org/GeoCoordinates>
+          <http://schema.org/GeoShape>
+          <http://schema.org/PostalAddress>
+        ) ;
+    ] ;
+  rdfs:label "address country" ;
+  rdfs:range [
+      a owl:Class ;
+      owl:unionOf (
+          <http://schema.org/Country>
+          xsd:string
+        ) ;
+    ] ;
+.
+<http://schema.org/containedInPlace>
+  a owl:ObjectProperty ;
+  <http://schema.org/inverseOf> <http://schema.org/containsPlace> ;
+  rdfs:comment "The basic containment relation between a place and one that contains it." ;
+  rdfs:domain <http://schema.org/Place> ;
+  rdfs:label "contained in place" ;
+  rdfs:range <http://schema.org/Place> ;
+.
+<http://schema.org/containsPlace>
+  a owl:ObjectProperty ;
+  <http://schema.org/inverseOf> <http://schema.org/containedInPlace> ;
+  rdfs:comment "The basic containment relation between a place and another that it contains." ;
+  rdfs:domain <http://schema.org/Place> ;
+  rdfs:label "contains place" ;
+  rdfs:range <http://schema.org/Place> ;
+.
+<http://schema.org/latitude>
+  a owl:DatatypeProperty ;
+  rdfs:comment "The latitude of a location. For example ```37.42242``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System))." ;
+  rdfs:domain <http://schema.org/GeoCoordinates> ;
+  rdfs:label "latitude" ;
+  rdfs:range xsd:float ;
+.
+<http://schema.org/longitude>
+  a owl:DatatypeProperty ;
+  rdfs:comment "The longitude of a location. For example ```-122.08585``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System))." ;
+  rdfs:domain <http://schema.org/GeoCoordinates> ;
+  rdfs:label "longitude" ;
+  rdfs:range xsd:float ;
+.
 <https://ontology.tno.nl/logistics/federated/PhysicalInfrastructure>
   a owl:Ontology ;
   dc:creator "Dena Tahvildari, Maaike Burghoorn, Cornelis Bouter" ;
@@ -76,16 +178,16 @@ pi:InfrastructuralFunction
   rdfs:subClassOf <http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing> ;
   owl:disjointWith pi:LogisticalFunction ;
 .
+pi:InfrastructuralFunctionProperty
+  a owl:DatatypeProperty ;
+  rdfs:comment "A super property for all properties related to infrastructural functions. -- Abstract property, do not instantiate." ;
+  rdfs:label "Infrastructural Function Property" ;
+.
 pi:InfrastructuralObject
   a owl:Class ;
   rdfs:comment "Any element in an infrastructure that might cause for a delay (e.g. bridge, lock)." ;
   rdfs:label "Infrastructural Object" ;
   rdfs:subClassOf pi:InfrastructuralFunction ;
-.
-pi:InfrastructuralFunctionProperty
-  a owl:DatatypeProperty ;
-  rdfs:comment "A super property for all properties related to infrastructural functions. -- Abstract property, do not instantiate." ;
-  rdfs:label "Infrastructural Function Property" ;
 .
 pi:InlandTerminal
   a owl:Class ;
@@ -213,20 +315,6 @@ pi:hasGateNumber
   rdfs:range xsd:integer ;
   rdfs:subPropertyOf pi:LogisticalInterfaceProperty ;
 .
-pi:LOCode
-  a owl:DatatypeProperty ;
-  rdfs:comment "This property allows to indicate the LOCODE of a schema:city or schema:country." ;
-  rdfs:domain [
-      a owl:Class ;
-      owl:unionOf (
-          <https://schema.org/City>
-          <https://schema.org/Place>
-        ) ;
-    ] ;
-  rdfs:label "LOCODE" ;
-  rdfs:range xsd:string ;
-  rdfs:subPropertyOf <https://schema.org/identifier>;
-.
 pi:hasLocationRole
   a owl:ObjectProperty ;
   rdfs:comment "This property describes the role a location plays in the context of an event." ;
@@ -265,6 +353,14 @@ pi:locatedAt
   rdfs:domain pi:LogisticalFunction ;
   rdfs:label "Located At" ;
   rdfs:range <http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing> ;
+.
+pi:locode
+  a owl:DatatypeProperty ;
+  rdfs:comment "This property allows to indicate the LOCODE of a schema:city or schema:country." ;
+  rdfs:domain <https://schema.org/Place> ;
+  rdfs:label "LOCODE" ;
+  rdfs:range xsd:string ;
+  rdfs:subPropertyOf <https://schema.org/identifier> ;
 .
 pi:logisticalFunctionProperties
   a owl:DatatypeProperty ;
