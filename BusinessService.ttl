@@ -286,11 +286,11 @@ businessService:actorName
   rdfs:range xsd:string ;
 .
 businessService:actorRoleCode
-  a owl:DatatypeProperty ;
+  a owl:ObjectProperty ;
   rdfs:comment "The code of the role played by the legal person, such as the sealing party role code)." ;
   rdfs:domain businessService:LegalPerson ;
   rdfs:label "Actor Role Code" ;
-  rdfs:range xsd:string ;
+  rdfs:range Classifications:Classifications ;
 .
 businessService:actorWebsite
   a owl:DatatypeProperty ;
