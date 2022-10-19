@@ -75,6 +75,12 @@ classifications:DangerousGoodsRegulationCode
   rdfs:label "Dangerous Goods" ;
   rdfs:subClassOf classifications:Classifications ;
 .
+classifications:DangerousGoodsRegulationCode
+  a owl:Class ;
+  rdfs:comment "Dangerous goods regulation code" ;
+  rdfs:label "Dangerous Goods Regulation Code" ;
+  rdfs:subClassOf classifications:Classifications ;
+.
 classifications:DocumentType
   a owl:Class ;
   rdfs:label "Document" ;
