@@ -1,0 +1,169 @@
+# baseURI: https://ontology.tno.nl/logistics/federated/Classifications/DangerousGoodsRegulationCode
+
+@prefix : <https://ontology.tno.nl/logistics/federated/Classifications/DangerousGoodsRegulationCode#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://ontology.tno.nl/logistics/federated/Classifications#DangerousGoodsRegulationCode>
+  rdf:type owl:Class ;
+.
+<https://ontology.tno.nl/logistics/federated/Classifications/DangerousGoodsRegulationCode>
+  rdf:type owl:Ontology ;
+.
+:ADR
+  rdf:type owl:NamedIndividual ;
+  rdf:type <https://ontology.tno.nl/logistics/federated/Classifications#DangerousGoodsRegulationCode> ;
+  rdfs:comment "European agreement on the international carriage of dangerous goods on road. ADR is the abbreviation of \"Accord europeen relatif au transport international des marchandises dangereuses par route\"" ;
+  rdfs:label "ADR" ;
+.
+:ADS
+  rdf:type owl:NamedIndividual ;
+  rdf:type <https://ontology.tno.nl/logistics/federated/Classifications#DangerousGoodsRegulationCode> ;
+  rdfs:comment """- NDR European agreement for the transport of dangerous goods on the river Rhine
+
+- European agreement giving regulations for the transport of dangerous goods on the river Rhine, officially known as: \"Accord europeen relatif au transport international des marchandises dangereuses par navigation sur le Rhin.\".""" ;
+  rdfs:label "ADS" ;
+.
+:ADT
+  rdf:type owl:NamedIndividual ;
+  rdf:type <https://ontology.tno.nl/logistics/federated/Classifications#DangerousGoodsRegulationCode> ;
+  rdfs:comment """-CA, Transport Canada's dangerous goods requirements
+
+- Canadian transport of dangerous goods requirements as published by Transport Canada in the Canadian Gazette, Part II.""" ;
+  rdfs:label "ADT" ;
+.
+:ADU
+  rdf:type owl:NamedIndividual ;
+  rdf:type <https://ontology.tno.nl/logistics/federated/Classifications#DangerousGoodsRegulationCode> ;
+  rdfs:comment """- JP, Japanese maritime safety agency dangerous goods regulation code
+
+- Regulation regarding the handling of dangerous goods on vessels issued by Japanese maritime safety agency.""" ;
+  rdfs:label "ADU" ;
+.
+:ADV
+  rdf:type owl:NamedIndividual ;
+  rdf:type <https://ontology.tno.nl/logistics/federated/Classifications#DangerousGoodsRegulationCode> ;
+  rdfs:comment """- MARPOL 73/78
+
+- International Convention for the Prevention of Pollution from Ships, 1973, as modified by the Protocol of 1978 relating.""" ;
+  rdfs:label "ADV" ;
+.
+:ADW
+  rdf:type owl:NamedIndividual ;
+  rdf:type <https://ontology.tno.nl/logistics/federated/Classifications#DangerousGoodsRegulationCode> ;
+  rdfs:comment """- GHS regulation
+
+- The United Nations Globally Harmonized System of Classification and Labelling of Chemicals.""" ;
+  rdfs:label "ADW" ;
+.
+:ADX
+  rdf:type owl:NamedIndividual ;
+  rdf:type <https://ontology.tno.nl/logistics/federated/Classifications#DangerousGoodsRegulationCode> ;
+  rdfs:comment """- Transport emergency (TREM) card
+
+- A card providing details on procedures for emergencies during transportation according to ADR.""" ;
+  rdfs:label "ADX" ;
+.
+:AGS
+  rdf:type owl:NamedIndividual ;
+  rdf:type <https://ontology.tno.nl/logistics/federated/Classifications#DangerousGoodsRegulationCode> ;
+  rdfs:comment """- DE, ADR and GGVS combined regulations for combined transport
+
+-Combined German and European regulations for the transportation of dangerous goods on German and other European roads. ADR means: Accord Europeen relatif au Transport international des marchandises Dangereuses par Route. GGVS means: Gefahrgutverordnung Strasse.""" ;
+.
+:ANR
+  rdf:type owl:NamedIndividual ;
+  rdf:type <https://ontology.tno.nl/logistics/federated/Classifications#DangerousGoodsRegulationCode> ;
+  rdfs:comment """- ADNR, Autorisation de transport de matieres Dangereuses pour la Navigation sur le Rhin
+
+- Regulations for dangerous goods transportation on the Rhine.""" ;
+  rdfs:label "ANR" ;
+.
+:ARD
+  rdf:type owl:NamedIndividual ;
+  rdf:type <https://ontology.tno.nl/logistics/federated/Classifications#DangerousGoodsRegulationCode> ;
+  rdfs:comment """- DE, ARD and RID - Combined regulations for combined transport
+
+- Combined European regulations for the combined transportation of dangerous goods on roads and rails. ARD means: Autorisation de transport par Route de matieres dangereuses. RID means: Reglement International concernant le transport des marchandises Dangereuses par chemin de fer.""" ;
+  rdfs:label "ARD" ;
+.
+:CFR
+  rdf:type owl:NamedIndividual ;
+  rdf:type <https://ontology.tno.nl/logistics/federated/Classifications#DangerousGoodsRegulationCode> ;
+  rdfs:comment """- US, 49 Code of federal regulations
+
+- United States federal regulations issued by the US Department of transportation covering the domestic transportation of dangerous goods by truck, rail, water and air.""" ;
+  rdfs:label "CFR" ;
+.
+:COM
+  rdf:type owl:NamedIndividual ;
+  rdf:type <https://ontology.tno.nl/logistics/federated/Classifications#DangerousGoodsRegulationCode> ;
+  rdfs:comment """- DE, ADR, RID, GGVS and GGVE - Combined regulations for combined transport
+
+- Combined German and European regulations for the combined transportation of dangerous goods on German and other European roads and rails. ADR means: Accord Europeen relatif au transport international des marchandises Dangereuse par Route. RID means: Reglement International concernant le transport des marchandises Dangereuses par chemin de fer. GGVS means: Gefahrgutverordnung Strasse. GGVE means: Gefahrgutverordnung Eisenbahn.""" ;
+  rdfs:label "COM" ;
+.
+:GVE
+  rdf:type owl:NamedIndividual ;
+  rdf:type <https://ontology.tno.nl/logistics/federated/Classifications#DangerousGoodsRegulationCode> ;
+  rdfs:comment """- DE, GGVE (Gefahrgutverordnung Eisenbahn)
+
+- German regulation for the transportation of dangerous goods on rail.""" ;
+  rdfs:label "GVE" ;
+.
+:GVS
+  rdf:type owl:NamedIndividual ;
+  rdf:type <https://ontology.tno.nl/logistics/federated/Classifications#DangerousGoodsRegulationCode> ;
+  rdfs:comment """- DE, GGVS (Gefahrgutverordnung Strasse)
+
+- German regulation for the transportation of dangerous goods on road.""" ;
+  rdfs:label "GVS" ;
+.
+:ICA
+  rdf:type owl:NamedIndividual ;
+  rdf:type <https://ontology.tno.nl/logistics/federated/Classifications#DangerousGoodsRegulationCode> ;
+  rdfs:comment """- IATA ICAO
+
+- Regulations covering the international transportation of dangerous goods issued by the International Air Transport Association and the International Civil Aviation Organization.""" ;
+  rdfs:label "ICA" ;
+.
+:IMD
+  rdf:type owl:NamedIndividual ;
+  rdf:type <https://ontology.tno.nl/logistics/federated/Classifications#DangerousGoodsRegulationCode> ;
+  rdfs:comment """- IMO IMDG code
+
+- Regulations regarding the transportation of dangerous goods on ocean-going vessels issued by the International Maritime Organization.""" ;
+  rdfs:label "IMD" ;
+.
+:RGE
+  rdf:type owl:NamedIndividual ;
+  rdf:type <https://ontology.tno.nl/logistics/federated/Classifications#DangerousGoodsRegulationCode> ;
+  rdfs:comment """- DE, RID and GGVE, Combined regulations for combined transport on rails
+
+- Combined German and European regulations for the transportation of dangerous goods on German and other European rails. RID means: Reglement International concernant le transport des marchandises Dangereuses par chemin de fer. GGVE means: Gefahrgutverordnung Eisenbahn.""" ;
+  rdfs:label "RGE" ;
+.
+:RID
+  rdf:type owl:NamedIndividual ;
+  rdf:type <https://ontology.tno.nl/logistics/federated/Classifications#DangerousGoodsRegulationCode> ;
+  rdfs:comment """- Railroad dangerous goods book (RID) International regulations concerning the international carriage of dangerous goods by rail.
+
+- RID is the abbreviation of \"Reglement International concernant le transport des marchandises Dangereuses par chemin de fer\".""" ;
+  rdfs:label "RID" ;
+.
+:UI
+  rdf:type owl:NamedIndividual ;
+  rdf:type <https://ontology.tno.nl/logistics/federated/Classifications#DangerousGoodsRegulationCode> ;
+  rdfs:comment """- UK IMO book
+
+- The United Kingdom (UK) version of the International Maritime Organisation (IMO) book on dangerous goods.""" ;
+  rdfs:label "UI" ;
+.
+:ZZZ
+  rdf:type owl:NamedIndividual ;
+  rdf:type <https://ontology.tno.nl/logistics/federated/Classifications#DangerousGoodsRegulationCode> ;
+  rdfs:comment "Additional and/or other information for the transportation of dangerous goods which are mutually defined." ;
+.

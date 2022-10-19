@@ -1,0 +1,303 @@
+# baseURI: file:/C:/Users/bouterca/git/federatedSemanticModel/Ontology/CodelistsRDF/transport_equipment_size_type.ttl
+
+@prefix classifications: <https://ontology.tno.nl/logistics/federated/Classifications#> .
+@prefix codelist: <https://ontology.tno.nl/logistics/federated/Classifications/transportEquipmentSizeType#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://ontology.tno.nl/logistics/federated/Classifications/transportEquipmentSizeType#1>
+  a owl:NamedIndividual ;
+  a classifications:TransportEquipmentSizeType ;
+  rdfs:comment "A tank coated with dime." ;
+  rdfs:label "1" ;
+  rdfs:label "Dime coated tank"@en ;
+.
+<https://ontology.tno.nl/logistics/federated/Classifications/transportEquipmentSizeType#10>
+  a owl:NamedIndividual ;
+  a classifications:TransportEquipmentSizeType ;
+  rdfs:comment "A 40 foot refrigerated container that is not actively controlling temperature of the product." ;
+  rdfs:label "10" ;
+  rdfs:label "Nonworking reefer container 40 ft"@en ;
+.
+<https://ontology.tno.nl/logistics/federated/Classifications/transportEquipmentSizeType#12>
+  a owl:NamedIndividual ;
+  a classifications:TransportEquipmentSizeType ;
+  rdfs:comment "80 x 120 cm." ;
+  rdfs:label "12" ;
+  rdfs:label "Europallet"@en ;
+.
+<https://ontology.tno.nl/logistics/federated/Classifications/transportEquipmentSizeType#13>
+  a owl:NamedIndividual ;
+  a classifications:TransportEquipmentSizeType ;
+  rdfs:comment "100 x 120 cm." ;
+  rdfs:label "13" ;
+  rdfs:label "Scandinavian pallet"@en ;
+.
+<https://ontology.tno.nl/logistics/federated/Classifications/transportEquipmentSizeType#14>
+  a owl:NamedIndividual ;
+  a classifications:TransportEquipmentSizeType ;
+  rdfs:comment "Non self-propelled vehicle designed for the carriage of cargo so that it can be towed by a motor vehicle." ;
+  rdfs:label "14" ;
+  rdfs:label "Trailer"@en ;
+.
+<https://ontology.tno.nl/logistics/federated/Classifications/transportEquipmentSizeType#15>
+  a owl:NamedIndividual ;
+  a classifications:TransportEquipmentSizeType ;
+  rdfs:comment "A 20 foot refrigerated container that is not actively controlling temperature of the product." ;
+  rdfs:label "15" ;
+  rdfs:label "Nonworking reefer container 20 ft"@en ;
+.
+<https://ontology.tno.nl/logistics/federated/Classifications/transportEquipmentSizeType#16>
+  a owl:NamedIndividual ;
+  a classifications:TransportEquipmentSizeType ;
+  rdfs:comment "Standard pallet exchangeable following international convention." ;
+  rdfs:label "16" ;
+  rdfs:label "Exchangeable pallet"@en ;
+.
+<https://ontology.tno.nl/logistics/federated/Classifications/transportEquipmentSizeType#17>
+  a owl:NamedIndividual ;
+  a classifications:TransportEquipmentSizeType ;
+  rdfs:comment "Non self propelled vehicle without front wheels designed for the carriage of cargo and provided with a kingpin." ;
+  rdfs:label "17" ;
+  rdfs:label "Semi-trailer"@en ;
+.
+<https://ontology.tno.nl/logistics/federated/Classifications/transportEquipmentSizeType#18>
+  a owl:NamedIndividual ;
+  a classifications:TransportEquipmentSizeType ;
+  rdfs:comment "A tank container with a length of 20 feet." ;
+  rdfs:label "18" ;
+  rdfs:label "Tank container 20 feet"@en ;
+.
+<https://ontology.tno.nl/logistics/federated/Classifications/transportEquipmentSizeType#19>
+  a owl:NamedIndividual ;
+  a classifications:TransportEquipmentSizeType ;
+  rdfs:comment "A tank container with a length of 30 feet." ;
+  rdfs:label "19" ;
+  rdfs:label "Tank container 30 feet"@en ;
+.
+<https://ontology.tno.nl/logistics/federated/Classifications/transportEquipmentSizeType#2>
+  a owl:NamedIndividual ;
+  a classifications:TransportEquipmentSizeType ;
+  rdfs:comment "A tank coated with epoxy." ;
+  rdfs:label "2" ;
+  rdfs:label "Epoxy coated tank"@en ;
+.
+<https://ontology.tno.nl/logistics/federated/Classifications/transportEquipmentSizeType#20>
+  a owl:NamedIndividual ;
+  a classifications:TransportEquipmentSizeType ;
+  rdfs:comment "A tank container with a length of 40 feet." ;
+  rdfs:label "20" ;
+  rdfs:label "Tank container 40 feet"@en ;
+.
+<https://ontology.tno.nl/logistics/federated/Classifications/transportEquipmentSizeType#21>
+  a owl:NamedIndividual ;
+  a classifications:TransportEquipmentSizeType ;
+  rdfs:comment "A container owned by InterContainer, a European railway subsidiary, with a length of 20 feet." ;
+  rdfs:label "21" ;
+  rdfs:label "Container IC 20 feet"@en ;
+.
+<https://ontology.tno.nl/logistics/federated/Classifications/transportEquipmentSizeType#22>
+  a owl:NamedIndividual ;
+  a classifications:TransportEquipmentSizeType ;
+  rdfs:comment "A container owned by InterContainer, a European railway subsidiary, with a length of 30 feet." ;
+  rdfs:label "22" ;
+  rdfs:label "Container IC 30 feet"@en ;
+.
+<https://ontology.tno.nl/logistics/federated/Classifications/transportEquipmentSizeType#23>
+  a owl:NamedIndividual ;
+  a classifications:TransportEquipmentSizeType ;
+  rdfs:comment "A container owned by InterContainer, a European railway subsidiary, with a length of 40 feet." ;
+  rdfs:label "23" ;
+  rdfs:label "Container IC 40 feet"@en ;
+.
+<https://ontology.tno.nl/logistics/federated/Classifications/transportEquipmentSizeType#24>
+  a owl:NamedIndividual ;
+  a classifications:TransportEquipmentSizeType ;
+  rdfs:comment "A refrigerated tank with a length of 20 feet." ;
+  rdfs:label "24" ;
+  rdfs:label "Refrigerated tank 20 feet"@en ;
+.
+<https://ontology.tno.nl/logistics/federated/Classifications/transportEquipmentSizeType#25>
+  a owl:NamedIndividual ;
+  a classifications:TransportEquipmentSizeType ;
+  rdfs:comment "A refrigerated tank with a length of 30 feet." ;
+  rdfs:label "25" ;
+  rdfs:label "Refrigerated tank 30 feet"@en ;
+.
+<https://ontology.tno.nl/logistics/federated/Classifications/transportEquipmentSizeType#26>
+  a owl:NamedIndividual ;
+  a classifications:TransportEquipmentSizeType ;
+  rdfs:comment "A refrigerated tank with a length of 40 feet." ;
+  rdfs:label "26" ;
+  rdfs:label "Refrigerated tank 40 feet"@en ;
+.
+<https://ontology.tno.nl/logistics/federated/Classifications/transportEquipmentSizeType#27>
+  a owl:NamedIndividual ;
+  a classifications:TransportEquipmentSizeType ;
+  rdfs:comment "A tank container owned by InterContainer, a European railway subsidiary, with a length of 20 feet." ;
+  rdfs:label "27" ;
+  rdfs:label "Tank container IC 20 feet"@en ;
+.
+<https://ontology.tno.nl/logistics/federated/Classifications/transportEquipmentSizeType#28>
+  a owl:NamedIndividual ;
+  a classifications:TransportEquipmentSizeType ;
+  rdfs:comment "A tank container owned by InterContainer, a European railway subsidiary, with a length of 30 feet." ;
+  rdfs:label "28" ;
+  rdfs:label "Tank container IC 30 feet"@en ;
+.
+<https://ontology.tno.nl/logistics/federated/Classifications/transportEquipmentSizeType#29>
+  a owl:NamedIndividual ;
+  a classifications:TransportEquipmentSizeType ;
+  rdfs:comment "A tank container, owned by InterContainer, a European railway subsidiary, with a length of 40 feet." ;
+  rdfs:label "29" ;
+  rdfs:label "Tank container IC 40 feet"@en ;
+.
+<https://ontology.tno.nl/logistics/federated/Classifications/transportEquipmentSizeType#30>
+  a owl:NamedIndividual ;
+  a classifications:TransportEquipmentSizeType ;
+  rdfs:comment "A refrigerated tank owned by InterContainer, a European railway subsidiary, with a length of 20 feet." ;
+  rdfs:label "30" ;
+  rdfs:label "Refrigerated tank IC 20 feet"@en ;
+.
+<https://ontology.tno.nl/logistics/federated/Classifications/transportEquipmentSizeType#31>
+  a owl:NamedIndividual ;
+  a classifications:TransportEquipmentSizeType ;
+  rdfs:comment "Temperature controlled container measuring 30 feet." ;
+  rdfs:label "31" ;
+  rdfs:label "Temperature controlled container 30 ft."@en ;
+.
+<https://ontology.tno.nl/logistics/federated/Classifications/transportEquipmentSizeType#32>
+  a owl:NamedIndividual ;
+  a classifications:TransportEquipmentSizeType ;
+  rdfs:comment "A refrigerated tank owned by InterContainer, a European railway subsidiary, with a length of 40 feet." ;
+  rdfs:label "32" ;
+  rdfs:label "Refrigerated tank IC 40 feet"@en ;
+.
+<https://ontology.tno.nl/logistics/federated/Classifications/transportEquipmentSizeType#33>
+  a owl:NamedIndividual ;
+  a classifications:TransportEquipmentSizeType ;
+  rdfs:comment "A movable case with a length less than 6,15 metres." ;
+  rdfs:label "33" ;
+  rdfs:label "Movable case: L < 6,15m"@en ;
+.
+<https://ontology.tno.nl/logistics/federated/Classifications/transportEquipmentSizeType#34>
+  a owl:NamedIndividual ;
+  a classifications:TransportEquipmentSizeType ;
+  rdfs:comment "A movable case with a length between 6,15 metres and 7,82 metres." ;
+  rdfs:label "34" ;
+  rdfs:label "Movable case: 6,15m < L < 7,82m"@en ;
+.
+<https://ontology.tno.nl/logistics/federated/Classifications/transportEquipmentSizeType#35>
+  a owl:NamedIndividual ;
+  a classifications:TransportEquipmentSizeType ;
+  rdfs:comment "A movable case with a length between 7,82 metres and 9,15 metres." ;
+  rdfs:label "35" ;
+  rdfs:label "Movable case: 7,82m < L < 9,15m"@en ;
+.
+<https://ontology.tno.nl/logistics/federated/Classifications/transportEquipmentSizeType#36>
+  a owl:NamedIndividual ;
+  a classifications:TransportEquipmentSizeType ;
+  rdfs:comment "A movable case with a length between 9,15 metres and 10,90 metres." ;
+  rdfs:label "36" ;
+  rdfs:label "Movable case: 9,15m < L < 10,90m"@en ;
+.
+<https://ontology.tno.nl/logistics/federated/Classifications/transportEquipmentSizeType#37>
+  a owl:NamedIndividual ;
+  a classifications:TransportEquipmentSizeType ;
+  rdfs:comment "A movable case with a length between 10,90 metres and 13,75 metres." ;
+  rdfs:label "37" ;
+  rdfs:label "Movable case: 10,90m < L < 13,75m"@en ;
+.
+<https://ontology.tno.nl/logistics/federated/Classifications/transportEquipmentSizeType#38>
+  a owl:NamedIndividual ;
+  a classifications:TransportEquipmentSizeType ;
+  rdfs:comment "A steel open top unit of about 1,5 * 1,5 * 2,5 meters for road transport of bulk cargo." ;
+  rdfs:label "38" ;
+  rdfs:label "Totebin"@en ;
+.
+<https://ontology.tno.nl/logistics/federated/Classifications/transportEquipmentSizeType#39>
+  a owl:NamedIndividual ;
+  a classifications:TransportEquipmentSizeType ;
+  rdfs:comment "Temperature controlled container measuring 20 feet." ;
+  rdfs:label "39" ;
+  rdfs:label "Temperature controlled container 20 ft"@en ;
+.
+<https://ontology.tno.nl/logistics/federated/Classifications/transportEquipmentSizeType#40>
+  a owl:NamedIndividual ;
+  a classifications:TransportEquipmentSizeType ;
+  rdfs:comment "A temperature controlled container measuring 40 feet." ;
+  rdfs:label "40" ;
+  rdfs:label "Temperature controlled container 40 ft"@en ;
+.
+<https://ontology.tno.nl/logistics/federated/Classifications/transportEquipmentSizeType#41>
+  a owl:NamedIndividual ;
+  a classifications:TransportEquipmentSizeType ;
+  rdfs:comment "A 30 foot refrigerated (reefer) container that is not actively cooling the product." ;
+  rdfs:label "41" ;
+  rdfs:label "Non working refrigerated (reefer) container 30ft."@en ;
+.
+<https://ontology.tno.nl/logistics/federated/Classifications/transportEquipmentSizeType#42>
+  a owl:NamedIndividual ;
+  a classifications:TransportEquipmentSizeType ;
+  rdfs:comment "Two trailers linked together one behind another and pulled by one tractor." ;
+  rdfs:label "42" ;
+  rdfs:label "Dual trailers"@en ;
+.
+<https://ontology.tno.nl/logistics/federated/Classifications/transportEquipmentSizeType#43>
+  a owl:NamedIndividual ;
+  a classifications:TransportEquipmentSizeType ;
+  rdfs:comment "An open top container that is 20 feet in internal length." ;
+  rdfs:label "20 ft IL container (open top)"@en ;
+  rdfs:label "43" ;
+.
+<https://ontology.tno.nl/logistics/federated/Classifications/transportEquipmentSizeType#44>
+  a owl:NamedIndividual ;
+  a classifications:TransportEquipmentSizeType ;
+  rdfs:comment "A closed top container that is 20 feet in internal length." ;
+  rdfs:label "20 ft IL container (closed top)"@en ;
+  rdfs:label "44" ;
+.
+<https://ontology.tno.nl/logistics/federated/Classifications/transportEquipmentSizeType#45>
+  a owl:NamedIndividual ;
+  a classifications:TransportEquipmentSizeType ;
+  rdfs:comment "A closed top container that is 40 feet in internal length." ;
+  rdfs:label "40 ft IL container (closed top)"@en ;
+  rdfs:label "45" ;
+.
+<https://ontology.tno.nl/logistics/federated/Classifications/transportEquipmentSizeType#46>
+  a owl:NamedIndividual ;
+  a classifications:TransportEquipmentSizeType ;
+  rdfs:comment "A standard pallet with standard dimensions 80*120cm made of a synthetic material for hygienic reasons." ;
+  rdfs:label "46" ;
+  rdfs:label "Synthetic pallet ISO 1"@en ;
+.
+<https://ontology.tno.nl/logistics/federated/Classifications/transportEquipmentSizeType#47>
+  a owl:NamedIndividual ;
+  a classifications:TransportEquipmentSizeType ;
+  rdfs:comment "A standard pallet with standard dimensions 100*120cm made of a synthetic material for hygienic reasons." ;
+  rdfs:label "47" ;
+  rdfs:label "Synthetic pallet ISO 2"@en ;
+.
+<https://ontology.tno.nl/logistics/federated/Classifications/transportEquipmentSizeType#6>
+  a owl:NamedIndividual ;
+  a classifications:TransportEquipmentSizeType ;
+  rdfs:comment "A tank capable of holding pressurized goods." ;
+  rdfs:label "6" ;
+  rdfs:label "Pressurized tank"@en ;
+.
+<https://ontology.tno.nl/logistics/federated/Classifications/transportEquipmentSizeType#7>
+  a owl:NamedIndividual ;
+  a classifications:TransportEquipmentSizeType ;
+  rdfs:comment "A tank capable of keeping goods refrigerated." ;
+  rdfs:label "7" ;
+  rdfs:label "Refrigerated tank"@en ;
+.
+<https://ontology.tno.nl/logistics/federated/Classifications/transportEquipmentSizeType#9>
+  a owl:NamedIndividual ;
+  a classifications:TransportEquipmentSizeType ;
+  rdfs:comment "A tank made of stainless steel." ;
+  rdfs:label "9" ;
+  rdfs:label "Stainless steel tank"@en ;
+.
