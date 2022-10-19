@@ -1,4 +1,5 @@
 # baseURI: https://ontology.tno.nl/logistics/federated/PhysicalInfrastructure
+# imports: http://topbraid.org/schema/
 # imports: http://www.w3.org/2003/01/geo/wgs84_pos
 # prefix: pi
 
@@ -126,6 +127,7 @@
   dcterms:issued "2021-03-15" ;
   dcterms:language "en" ;
   dcterms:requires <https://ontology.tno.nl/logistics/federated/Classifications> ;
+  owl:imports <http://topbraid.org/schema/> ;
   owl:imports <http://www.w3.org/2003/01/geo/wgs84_pos> ;
   owl:versionIRI <https://ontology.tno.nl/logistics/federated/PhysicalInfrastructurev-0.1> ;
 .

@@ -69,7 +69,7 @@ classifications:D
   a classifications:NatureOfCargo ;
   rdfs:label "Dangerous" ;
 .
-classifications:DangerousGoods
+classifications:DangerousGoodsRegulationCode
   a owl:Class ;
   rdfs:comment "A hazardous or non-hazardous substance which may pose risks to people and/or the environment for which the transportation is regulated by dangerous goods regulations." ;
   rdfs:label "Dangerous Goods" ;

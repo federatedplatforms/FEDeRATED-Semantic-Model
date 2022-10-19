@@ -113,7 +113,7 @@ retrieve:CargoShape
           ] ;
         sh:property [
             sh:path classifications:HazmatCode ;
-            sh:class classifications:DangerousGoods ;
+            sh:class classifications:DangerousGoodsRegulationCode ;
             sh:minCount 1 ;
           ] ;
         sh:property [
@@ -237,7 +237,6 @@ retrieve:LocationShape
     ] ;
   sh:targetClass pi:Location ;
 .
-
 retrieve:TransportMeansRouteShape
   a sh:NodeShape ;
   rdfs:label "Rout Shape" ;
