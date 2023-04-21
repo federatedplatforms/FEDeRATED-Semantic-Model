@@ -1,0 +1,124 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix event: <https://ontology.tno.nl/logistics/federated/Event#> .
+@prefix state: <https://ontology.tno.nl/logistics/federated/State#> .
+@prefix lr: <https://ontology.tno.nl/logistics/federated/LogisticRoles#> .
+@prefix : <https://ontology.tno.nl/logistics/federated/InteractionPattern#> .
+
+<https://ontology.tno.nl/logistics/federated/InteractionPattern>
+  a owl:Ontology ;
+  dc:creator "Thom van Gessel (TNO)" ;
+  dcterms:description "First draft for an ontology that describes interaction patterns (choreographies) in logistics." ;
+  dcterms:language "en" ;
+  owl:versionIRI <https://ontology.tno.nl/logistics/federated/InteractionPatternv-0.1.0> ;
+  owl:versionInfo "0.1.0" ;
+.
+
+:InteractionPattern
+  a owl:Class ;
+  rdfs:comment "An interaction pattern containing states, transitions, an initial state and final state(s)." ;
+  rdfs:label "Interaction pattern" ;
+.
+
+:Transition
+  a owl:Class ;
+  rdfs:comment "A transition with a source and target state type, and a sender and recipient role." ;
+  rdfs:label "State transition" ;
+.
+
+:EventType
+  a owl:Class ;
+  rdfs:comment "Any subclass of event:Event" ;
+  rdfs:label "Event type" ;
+  owl:equivalentClass [ a owl:Restriction ; #TO DO: add this also as SHACL constraint (an instance of :EventType must be a subclass of event:Event)
+    owl:onProperty rdfs:subClassOf ;
+    owl:hasValue event:Event ;
+  ] ;
+.
+
+:StateType
+  a owl:Class ;
+  rdfs:comment "Any subclass of state:State" ;
+  rdfs:label "State type" ;
+  owl:equivalentClass [ a owl:Restriction ; #TO DO: add this also as SHACL constraint (an instance of :StateType must be a subclass of state:State)
+    owl:onProperty rdfs:subClassOf ;
+    owl:hasValue state:State ;
+  ] ;
+.
+
+:transition
+  a owl:ObjectProperty ;
+  rdfs:comment "Indicates that a transition occurs in an interaction pattern." ;
+  rdfs:label "Interaction pattern contains transition" ;
+  rdfs:domain :InteractionPattern ;
+  rdfs:range :Transition ;
+.
+
+:state
+  a owl:ObjectProperty ;
+  rdfs:comment "Indicates that a state occurs in an interaction pattern." ;
+  rdfs:label "Interaction pattern contains state" ;
+  rdfs:domain :InteractionPattern ;
+  rdfs:range :StateType ;
+.
+
+:initialState
+  a owl:ObjectProperty ;
+  rdfs:subPropertyOf :state ;
+  rdfs:comment "Indicates the initial state in an interaction pattern." ;
+  rdfs:label "Interaction pattern has initial state" ;
+  rdfs:domain :InteractionPattern ;
+  rdfs:range :StateType ;
+.
+
+:finalState
+  a owl:ObjectProperty ;
+  rdfs:subPropertyOf :state ;
+  rdfs:comment "Indicates a final state in an interaction pattern." ;
+  rdfs:label "Interaction pattern has final state" ;
+  rdfs:domain :InteractionPattern ;
+  rdfs:range :StateType ;
+.
+
+:interaction
+  a owl:ObjectProperty ;
+  rdfs:comment "Connects a state transition to its corresponding event type." ;
+  rdfs:label "has interaction" ;
+  rdfs:domain :Transition ;
+  rdfs:range :EventType ;
+.
+
+:source
+  a owl:ObjectProperty ;
+  rdfs:comment "Connects a state transition to its source state type." ;
+  rdfs:label "has source state type" ;
+  rdfs:domain :Transition ;
+  rdfs:range :StateType ;
+.
+
+:target
+  a owl:ObjectProperty ;
+  rdfs:comment "Connects a state transition to its target state type." ;
+  rdfs:label "has target state type" ;
+  rdfs:domain :Transition ;
+  rdfs:range :StateType ;
+.
+
+:senderRole
+  a owl:ObjectProperty ;
+  rdfs:comment "Connects a state transition to the role of its sender, typically lr:Customer or lr:LogisticServiceProvider." ;
+  rdfs:label "has sender role" ;
+  rdfs:domain :Transition ;
+  rdfs:range lr:LogisticsRoles ;
+.
+
+:recipientRole
+  a owl:ObjectProperty ;
+  rdfs:comment "Connects a state transition to the role of its recipient, typically lr:Customer or lr:LogisticServiceProvider." ;
+  rdfs:label "has recipient role" ;
+  rdfs:domain :Transition ;
+  rdfs:range lr:LogisticsRoles ;
+.

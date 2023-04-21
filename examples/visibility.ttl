@@ -1,0 +1,80 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix event: <https://ontology.tno.nl/logistics/federated/Event#> .
+@prefix state: <https://ontology.tno.nl/logistics/federated/State#> .
+@prefix lr: <https://ontology.tno.nl/logistics/federated/LogisticRoles#> .
+@prefix ip: <https://ontology.tno.nl/logistics/federated/InteractionPattern#> .
+@prefix : <https://ontology.tno.nl/logistics/federated/data/examples/visibility#> .
+
+# Example of an interaction pattern (visibility choreography)
+
+:visibility
+  a ip:InteractionPattern ;
+  ip:initialState state:AgreedOrderState ;
+  ip:state state:InExecutionState ;
+  ip:state state:ToBeCancelledState ;
+  ip:finalState state:CompletedState ;
+  ip:transition :start ;
+  ip:transition :etaUpdate ;
+  ip:transition :positionUpdate ;
+  ip:transition :incident ;
+  ip:transition :complete ;
+.
+
+:start
+  a ip:Transition ;
+  rdfs:label "Start" ;
+  ip:source state:AgreedOrderState ;
+  ip:target state:InExecutionState ;
+  ip:interaction event:StartEvent ; #Not defined yet
+  ip:senderRole lr:LogisticServiceProvider ;
+  ip:recipientRole lr:Customer ;
+.
+
+:etaUpdate
+  a ip:Transition ;
+  rdfs:label "ETA update" ;
+  ip:source state:InExecutionState ;
+  ip:target state:InExecutionState ;
+  ip:interaction event:ETAEvent ;
+  ip:senderRole lr:LogisticServiceProvider ;
+  ip:recipientRole lr:Customer ;
+.
+
+:positionUpdate
+  a ip:Transition ;
+  rdfs:label "Position update" ;
+  ip:source state:InExecutionState ;
+  ip:target state:InExecutionState ;
+  ip:interaction event:PositionEvent ; #Not defined yet
+  ip:senderRole lr:LogisticServiceProvider ;
+  ip:recipientRole lr:Customer ;
+.
+
+:incident
+  a ip:Transition ;
+  rdfs:label "Incident/accident" ;
+  ip:source state:InExecutionState ;
+  ip:target state:InExecutionState ;
+  ip:target state:ToBeCancelledState ;
+  ip:interaction event:IncidentEvent ; #Not defined yet
+  ip:senderRole lr:LogisticServiceProvider ;
+  ip:recipientRole lr:Customer ;
+.
+
+:complete
+  a ip:Transition ;
+  rdfs:label "Complete" ;
+  ip:source state:InExecutionState ;
+  ip:target state:CompletedState ;
+  ip:interaction event:EndEvent ; #Not defined yet
+  ip:senderRole lr:LogisticServiceProvider ;
+  ip:recipientRole lr:Customer ;
+.
+
+:otherInteractionPattern
+  a ip:InteractionPattern ;
+  ip:initialState state:CompletedState ;
+  # The final state of the interaction pattern can be the initial state of another interaction pattern.
+.

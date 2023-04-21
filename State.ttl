@@ -1,0 +1,45 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix : <https://ontology.tno.nl/logistics/federated/State#> .
+
+<https://ontology.tno.nl/logistics/federated/State>
+  a owl:Ontology ;
+  dc:creator "Thom van Gessel (TNO)" ;
+  dcterms:description "First draft for an ontology that describes states in logistics processes." ;
+  dcterms:language "en" ;
+  owl:versionIRI <https://ontology.tno.nl/logistics/federated/Statev-0.1.0> ;
+  owl:versionInfo "0.1.0" ;
+.
+
+:State
+  a owl:Class ;
+  rdfs:comment "A state reflects a circumstance in a concrete logistics process." ;
+  rdfs:label "State" ;
+.
+:AgreedOrderState
+  a owl:Class ;
+  rdfs:comment "A state in which agreement about a concrete order is reached." ;
+  rdfs:label "Agreed order state" ;
+  rdfs:subClassOf :State ;
+.
+:InExecutionState
+  a owl:Class ;
+  rdfs:comment "A state in which a concrete order is in execution." ;
+  rdfs:label "In execution state" ;
+  rdfs:subClassOf :State ;
+.
+:CompletedState
+  a owl:Class ;
+  rdfs:comment "A state in which a concrete order is completed." ;
+  rdfs:label "Completed state" ;
+  rdfs:subClassOf :State ;
+.
+:ToBeCancelledState
+  a owl:Class ;
+  rdfs:comment "A state in which a concrete order is to be cancelled." ;
+  rdfs:label "To be cancelled state" ;
+  rdfs:subClassOf :State ;
+.
