@@ -52,11 +52,11 @@
       rdf:type sh:PropertyShape ;
       sh:path event:involves ;
       sh:nodeKind sh:IRI ;
-      sh:minCount 2 ;
+      sh:minCount 1 ;
     ] ;
     sh:property [
       rdf:type sh:PropertyShape ;
-      sh:path event:hasSubmissionTime ;
+      sh:path event:hasSubmissionTimestamp ;
       sh:datatype xsd:dateTime ;
       sh:minCount 1;
       sh:maxCount 1;
@@ -72,7 +72,7 @@
     rdf:type sh:PropertyShape ;
     sh:path event:involvesDigitalTwin ;
     sh:class DT:TransportMeans ;
-    sh:minCount 1 ;
+#    sh:minCount 1 ;
     sh:maxCount 1 ;
     sh:nodeKind sh:IRI ;
     sh:name "Involves Transport Means"
@@ -81,7 +81,7 @@
     rdf:type sh:PropertyShape ;
     sh:path event:involvesPhysicalInfrastructure ;
     sh:class pi:Location ;
-    sh:minCount 1 ;
+#    sh:minCount 1 ;
     sh:maxCount 1 ;
     sh:nodeKind sh:IRI ;
     sh:name "Involves Physical Infrastructure"
@@ -104,7 +104,7 @@
     rdf:type sh:PropertyShape ;
     sh:path event:involvesDigitalTwin ;
     sh:class DT:TransportMeans ;
-    sh:minCount 1 ;
+#    sh:minCount 1 ;
     sh:maxCount 1 ;
     sh:nodeKind sh:IRI ;
     sh:name "Involves Transport Means"
@@ -114,7 +114,7 @@
     sh:path event:involvesPhysicalInfrastructure ;
     sh:class pi:Location ;
     sh:minCount 1 ;
-    sh:maxCount 1 ;
+#    sh:maxCount 1 ;
     sh:nodeKind sh:IRI ;
     sh:name "Involves Physical Infrastructure"
   ] ;
@@ -164,7 +164,7 @@
       [ sh:class DT:Package ; ]
       [ sh:class DT:Goods ; ]
     ) ;
-    sh:minCount 2;
+#    sh:minCount 2;
     sh:maxCount 2;
   ] ;
   sh:targetClass event:GoodsStructuringEvent ;
@@ -178,7 +178,7 @@
     rdf:type sh:PropertyShape ;
     sh:path event:involvesDigitalTwin ;
     sh:class DT:PhysicalObject ;
-    sh:minCount 2;
+#    sh:minCount 2;
     sh:maxCount 2;
     sh:nodeKind sh:IRI ;
 	sh:severity sh:Warning ;
@@ -197,7 +197,7 @@
       [ sh:class DT:TransportMeans ; ]
       [ sh:class DT:Equipment ; ]
     ) ;
-    sh:minCount 1;
+#    sh:minCount 1;
     sh:maxCount 1;
   ] ;
   sh:property [
@@ -208,7 +208,7 @@
       [ sh:class DT:BulkProduct ; ]
       [ sh:class DT:Equipment ;]
     ) ;
-    sh:minCount 1;
+#    sh:minCount 1;
     sh:maxCount 1;
   ] ;
   sh:property [
@@ -229,7 +229,7 @@
     rdf:type sh:PropertyShape ;
     sh:path event:involvesDigitalTwin ;
     sh:class DT:BulkProduct ;
-    sh:minCount 1;
+ #   sh:minCount 1;
     sh:maxCount 1;
   ] ;
   sh:targetClass event:BulkTransportMeansEvent ;
@@ -308,16 +308,16 @@
   rdf:type sh:NodeShape ;
   rdfs:label "Load Event Shape";
   rdfs:comment "A Load Event is an association between Transport Means or Equipment and Equipment/Goods/Products with milestone Start." ;
-  sh:property [
-    rdf:type sh:PropertyShape ;
-    sh:path event:involvesDigitalTwin ;
-    sh:or (
-      [ sh:class DT:TransportMeans ; ]
-      [ sh:class DT:Equipment ; ]
-    ) ;
-    sh:minCount 1;
-    sh:maxCount 2;
-  ] ;
+# sh:property [
+#   rdf:type sh:PropertyShape ;
+#   sh:path event:involvesDigitalTwin ;
+#   sh:or (
+#     [ sh:class DT:TransportMeans ; ]
+#     [ sh:class DT:Equipment ; ]
+#   ) ;
+#   sh:minCount 1;
+#   sh:maxCount 2;
+# ] ;
   sh:property [
     rdf:type sh:PropertyShape ;
     sh:path event:involvesDigitalTwin ;
@@ -325,8 +325,9 @@
       [ sh:class DT:Goods ; ]
       [ sh:class DT:Equipment ; ]
       [ sh:class DT:Product ; ]
+      [ sh:class DT:TransportMeans ; ]
     ) ;
-    sh:minCount 1;
+#    sh:minCount 2 ;
     sh:maxCount 2;
   ] ;
   sh:property [
