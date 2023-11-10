@@ -1,11 +1,4 @@
-# baseURI: https://ontology.tno.nl/logistics/federated/EraAlignment
-# imports: http://purl.org/dc/elements/1.1/
-# imports: http://purl.org/dc/terms/
-# imports: https://ontology.tno.nl/logistics/federated/BusinessService
-# imports: https://ontology.tno.nl/logistics/federated/DigitalTwin
-# imports: https://ontology.tno.nl/logistics/federated/PhysicalInfrastructure
-
-@prefix BusinessService: <https://ontology.tno.nl/logistics/federated/BusinessService#> .
+@prefix LegalPerson: <https://ontology.tno.nl/logistics/federated/LegalPerson#> .
 @prefix DigitalTwin: <https://ontology.tno.nl/logistics/federated/DigitalTwin#> .
 @prefix EraAlignment: <https://ontology.tno.nl/logistics/federated/EraAlignment#> .
 @prefix PhysicalInfrastructure: <https://ontology.tno.nl/logistics/federated/PhysicalInfrastructure#> .
@@ -17,7 +10,7 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
 era:Manufacturer
-  rdfs:subClassOf BusinessService:JuridicalPerson
+  rdfs:subClassOf LegalPerson:JuridicalPerson
 .
 era:Track
   rdfs:subClassOf PhysicalInfrastructure:RailwayLine
@@ -29,7 +22,7 @@ era:Vehicle
   rdfs:subClassOf DigitalTwin:Train
 .
 era:VehicleKeeper
-  rdfs:subClassOf BusinessService:JuridicalPerson
+  rdfs:subClassOf LegalPerson:JuridicalPerson
 .
 era:Platform
   rdfs:subClassOf PhysicalInfrastructure:Platform
@@ -41,7 +34,7 @@ era:Siding
   rdfs:subClassOf PhysicalInfrastructure:LogisticalFunction
 .
 era:InfrastructureManager
-  rdfs:subClassOf BusinessService:JuridicalPerson
+  rdfs:subClassOf LegalPerson:JuridicalPerson
 .
 era:Tunnel
   rdfs:subClassOf PhysicalInfrastructure:InfrastructuralObject
