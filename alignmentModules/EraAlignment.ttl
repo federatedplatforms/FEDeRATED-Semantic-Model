@@ -1,37 +1,66 @@
 # baseURI: https://ontology.tno.nl/logistics/federated/EraAlignment
 # imports: http://purl.org/dc/elements/1.1/
 # imports: http://purl.org/dc/terms/
-# imports: https://data-interop.era.europa.eu/era-vocabulary/ontology.ttl
 # imports: https://ontology.tno.nl/logistics/federated/BusinessService
 # imports: https://ontology.tno.nl/logistics/federated/DigitalTwin
 # imports: https://ontology.tno.nl/logistics/federated/PhysicalInfrastructure
-# prefix: EraAlignment
 
-@prefix : <https://ontology.tno.nl/logistics/federated/EraAlignment#> .
+@prefix BusinessService: <https://ontology.tno.nl/logistics/federated/BusinessService#> .
+@prefix DigitalTwin: <https://ontology.tno.nl/logistics/federated/DigitalTwin#> .
 @prefix EraAlignment: <https://ontology.tno.nl/logistics/federated/EraAlignment#> .
 @prefix PhysicalInfrastructure: <https://ontology.tno.nl/logistics/federated/PhysicalInfrastructure#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix era: <http://era.europa.eu/ns#> .
+@prefix era: <http://data.europa.eu/949/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix p949: <http://data.europa.eu/949/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-p949:Vehicle
-  rdfs:subClassOf <https://ontology.tno.nl/logistics/federated/DigitalTwin#Train> ;
+era:Manufacturer
+  rdfs:subClassOf BusinessService:JuridicalPerson
 .
 era:Track
-  rdfs:subClassOf PhysicalInfrastructure:Trajectory ;
+  rdfs:subClassOf PhysicalInfrastructure:RailwayLine
+.
+era:SectionOfLine
+  rdfs:subClassOf PhysicalInfrastructure:Trajectory
+.
+era:Vehicle
+  rdfs:subClassOf DigitalTwin:Train
+.
+era:VehicleKeeper
+  rdfs:subClassOf BusinessService:JuridicalPerson
+.
+era:Platform
+  rdfs:subClassOf PhysicalInfrastructure:Platform
+.
+era:PrincipalLocation
+  rdfs:subClassOf PhysicalInfrastructure:LogisticalFunction
+.
+era:Siding
+  rdfs:subClassOf PhysicalInfrastructure:LogisticalFunction
+.
+era:InfrastructureManager
+  rdfs:subClassOf BusinessService:JuridicalPerson
 .
 era:Tunnel
-  rdfs:subClassOf PhysicalInfrastructure:InfrastructuralObject ;
+  rdfs:subClassOf PhysicalInfrastructure:InfrastructuralObject
 .
-
+era:OperationalPoint
+  rdfs:subClassOf PhysicalInfrastructure:InfrastructuralObject
+.
+PhysicalInfrastructure:InfrastructuralObject
+  rdfs:subClassOf era:PhysicalImplementationFeature ;
+.
+PhysicalInfrastructure:LogisticalInterface
+  rdfs:subClassOf era:PhysicalImplementationFeature ;
+.
+PhysicalInfrastructure:Trajectory
+  rdfs:subClassOf era:PhysicalImplementationFeature ;
+.
 <https://ontology.tno.nl/logistics/federated/EraAlignment>
-  a owl:Ontology ;
-  dc:creator "\"Dena Tahvildari, Maaike Burghoorn, Cornelis Bouter\"" ;
+  rdf:type owl:Ontology ;
+  dc:creator "\"Dena Tahvildari, Maaike Burghoorn, Cornelis Bouter, Wouter Korteling\"" ;
   dcterms:description "This ontology aligns the FEDeRATED Semantic Model with the ERA Railway Ontology." ;
   dcterms:requires "<http://era.europe.eu/ns#>" ;
   dcterms:requires "<https://ontology.tno.nl/logistics/federated/BusinessService>" ;
@@ -40,7 +69,6 @@ era:Tunnel
   dcterms:title "ERA Railway to FEDeRATED Alignment Ontology" ;
   owl:imports dc: ;
   owl:imports dcterms: ;
-  owl:imports <https://data-interop.era.europa.eu/era-vocabulary/ontology.ttl> ;
   owl:imports <https://ontology.tno.nl/logistics/federated/BusinessService> ;
   owl:imports <https://ontology.tno.nl/logistics/federated/DigitalTwin> ;
   owl:imports <https://ontology.tno.nl/logistics/federated/PhysicalInfrastructure> ;
