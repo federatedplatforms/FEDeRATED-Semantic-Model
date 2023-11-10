@@ -55,10 +55,10 @@ PhysicalInfrastructure:Trajectory
   rdf:type owl:Ontology ;
   dc:creator "\"Dena Tahvildari, Maaike Burghoorn, Cornelis Bouter, Wouter Korteling\"" ;
   dcterms:description "This ontology aligns the FEDeRATED Semantic Model with the ERA Railway Ontology." ;
-  dcterms:requires "<http://era.europe.eu/ns#>" ;
-  dcterms:requires "<https://ontology.tno.nl/logistics/federated/BusinessService>" ;
-  dcterms:requires "<https://ontology.tno.nl/logistics/federated/DigitalTwin>" ;
-  dcterms:requires "<https://ontology.tno.nl/logistics/federated/PhysicalInfrastructure>" ;
+  dcterms:requires <http://era.europe.eu/ns#> ;
+  dcterms:requires <https://ontology.tno.nl/logistics/federated/BusinessService> ;
+  dcterms:requires <https://ontology.tno.nl/logistics/federated/DigitalTwin> ;
+  dcterms:requires <https://ontology.tno.nl/logistics/federated/PhysicalInfrastructure> ;
   dcterms:title "ERA Railway to FEDeRATED Alignment Ontology" ;
   owl:imports dc: ;
   owl:imports dcterms: ;
@@ -66,5 +66,4 @@ PhysicalInfrastructure:Trajectory
   owl:imports <https://ontology.tno.nl/logistics/federated/DigitalTwin> ;
   owl:imports <https://ontology.tno.nl/logistics/federated/PhysicalInfrastructure> ;
   owl:versionIRI <https://ontology.tno.nl/logistics/federated/EraAlignment-0.1> ;
-  owl:versionInfo "Created with TopBraid Composer" ;
 .
