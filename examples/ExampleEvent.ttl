@@ -1,0 +1,67 @@
+@prefix Event: <https://ontology.tno.nl/logistics/federated/Event#> .
+@prefix ex: <http://example.com/base#> . 
+@prefix Location: <https://ontology.tno.nl/logistics/federated/Location#> .
+@prefix DigitalTwin: <https://ontology.tno.nl/logistics/federated/DigitalTwin#> .
+@prefix LegalPerson: <https://ontology.tno.nl/logistics/federated/LegalPerson#> .
+@prefix LocationRoles: <https://ontology.tno.nl/logistics/federated/LocationRoles#> .
+@prefix ActorRoles: <https://ontology.tno.nl/logistics/federated/ActorRoles#> .
+@prefix Schema: <http://schema.org/> .
+
+ex:Event a Event:PrimitiveEvent ;
+    Event:involvesTimestamp "2023-10-30T09:00:00";
+    Event:involvesMilestone Event:Start ;
+    Event:involvesTimeClassification Event:Planned ;
+    Event:involvesLocation ex:BusinessLocationExample ;
+    Event:involvesActor ex:Party1_Consumer, ex:Party2_Producer ;
+    Event:involvesDigitalTwin ex:VesselExample, ex:ContainerExample
+.
+
+# example Vessel
+ex:VesselExample a owl:NamedIndividual, DigitalTwin:Vessel ;
+    DigitalTwin:vesselType "Vessel type" ;
+    DidigtalTwin:vesselName "De Zeven Provinciën" ;
+    DigitalTwin:UUID "G690SKH" ;
+    DigitalTwin:transportMeansNationality "NL"
+.
+
+# example Container
+ex:DigitalTwin_Goods a owl:NamedIndividual, DigitalTwin:Container ;
+    DigitalTwin:containerNumber "MSCU5285725" ;
+    DigitalTwin:containerType "Intermodal container" ;
+.
+
+# example Actor -- A legal person associated with an actor role
+ex:Party1_Consumer a owl:NamedIndividual, LegalPerson:Actor ;
+    LegalPerson:involvesLegalPerson ex:Party1 ;
+    LegalPerson:actorRole ActorRoles:Consumer
+.
+# example Legal Person -- to be reused in multiple events where actor role may vary
+ex:Party1 a owl:NamedIndividual, LegalPerson:LegalPerson ;
+    LegalPerson:legalPersonName "TNO" ;
+    LegalPerson:legalPersonCountry "NL" ;
+    LegalPerson:legalPersonAddress ex:Party1Address
+.
+
+# example business location -- A place associated with a location role
+ex:BusinessLocationExample a owl:NamedIndividual, Location:BusinessLocation ;
+    Location:involvesPlace ex:PortOfRotterdam ;
+    Location:locationRole LocationRoles:PlaceOfLoading ;
+.
+
+# example place -- address of a company
+ex:Party1Address a owl:NamedIndividual, Schema:Place ;
+    Schema:address "Anna van Buerenplein 1, Den Haag, Netherlands" ;
+    Schema:latitude 52.08242720408006 ;
+    Schema:longitude 4.325905441630678
+.
+
+# example place -- port with terminal specified
+ex:PortOfRotterdam a owl:NamedIndividual, Location:Port ;
+    Location:involvesTerminal [
+        a Location:Terminal ;
+        Location:terminalName "Terminal Name Placeholder" ;
+        Location:terminalDescription "Biggest terminal in the Netherlands"
+    ] ;
+    Location:locode "NLRTM" ;
+.
+

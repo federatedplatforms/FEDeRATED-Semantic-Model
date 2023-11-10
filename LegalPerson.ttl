@@ -1,0 +1,48 @@
+@prefix : <https://ontology.tno.nl/logistics/federated/LegalPerson#> .
+@prefix ActorRoles: <https://ontology.tno.nl/logistics/federated/ActorRoles#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+:Actor
+  a owl:Class ;
+  rdfs:comment "An actor represents an association between a legal person and the logistic role they play in an event instance." ;
+  rdfs:label "Actor" ;
+.
+:actorRole
+  a owl:ObjectProperty ;
+  rdfs:domain :Actor ;
+  rdfs:range ActorRoles:ActorRoles ;
+  rdfs:label "Actor has logistic role" ;
+.
+:LegalPerson
+  a owl:Class ;
+  rdfs:comment "LegalPerson represents the digitalization of the details shared with the commercial world by the legal person." ;
+  rdfs:label "Legal person" ;
+  rdfs:subClassOf foaf:Agent ;
+.
+:involvesLegalPerson
+  a owl:ObjectProperty ;
+  rdfs:domain :Actor ;
+  rdfs:range :LegalPerson ;
+  rdfs:label "Actor is Legal Person" ;
+.
+:legalPersonName
+  a owl:DatatypeProperty ;
+  rdfs:comment "Name of the legal person" ;
+  rdfs:domain :LegalPerson ;
+  rdfs:label "Legal Person Name" ;
+  rdfs:range xsd:string ;
+.
+:legalPersonCountry
+  a owl:DatatypeProperty ;
+  rdfs:comment "Country of origin of legal person" ;
+  rdfs:domain :LegalPerson ;
+  rdfs:label "Legal Person Country" ;
+  rdfs:range xsd:string ;
+.
+:legalPersonAddress
+  a owl:ObjectProperty ;
+  rdfs:comment "Address of a legal person" ;
+  rdfs:domain :LegalPerson ;
+  rdfs:label "Legal Person Country" ;
+  rdfs:range <http://schema.org/Place>;
+.

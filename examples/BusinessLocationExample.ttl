@@ -1,0 +1,44 @@
+@prefix ex: <http://example.com/base#> . 
+@prefix Location: <https://ontology.tno.nl/logistics/federated/Location#> .
+@prefix LocationRoles: <https://ontology.tno.nl/logistics/federated/LocationRoles#> .
+@prefix Event: <https://ontology.tno.nl/logistics/federated/Event#> .
+
+#########################
+### Two properties    ###
+#########################
+
+ex:Event_BLE1 a Event:AssociationEvent ;
+    Event:involvesLocation ex:BusinessLocationExample1
+.
+ex:Event_BLE2 a Event:AssociationEvent ;
+    Event:involvesLocation ex:BusinessLocationExample2
+.
+ex:BusinessLocationExample1 a Location:BusinessLocation ;
+    Location:involvesPlace ex:ExamplePlace ;
+    Location:locationRole LocationRoles:PlaceOfDischarge
+.
+ex:BusinessLocationExample2 a Location:BusinessLocation ;
+    Location:involvesPlace ex:ExamplePlace ;
+    Location:locationRole LocationRoles:PlaceOfLoading
+.
+ex:ExamplePlace a <http://schema.org/Place> ;
+    <http://schema.org/longitude> 122.08585 ;
+    <http://schema.org/latitude> 37.42242 ;
+.
+
+#########################
+### One property    ###
+#########################
+
+ex:Event_BLE1 a Event:AssociationEvent ;
+    Event:placeOfDischarge ex:ExamplePlace ;
+.
+ex:Event_BLE2 a Event:AssociationEvent ;
+    Event:placeOfLoading ex:ExamplePlace ;
+.
+ex:ExamplePlace a <http://schema.org/Place> ;
+    <http://schema.org/longitude> 122.08585 ;
+    <http://schema.org/latitude> 37.42242 ;
+.
+Event:placeOfDischarge rdfs:subPropertyOf Event:involvesLocation .
+Event:placeOfLoading rdfs:subPropertyOf Event:involvesLocation .

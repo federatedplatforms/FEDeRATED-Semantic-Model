@@ -1,0 +1,138 @@
+@prefix : <https://ontology.tno.nl/logistics/federated/ActorRoles#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+skos:broader 
+  a owl:ObjectProperty ;
+.  
+skos:narrower 
+a owl:ObjectProperty ;
+.
+:ActorRoles
+  a owl:Class ;
+  rdfs:comment "An Enterprise, Person or Organization can have different roles depending on the context. This class defines these different roles." ;
+  rdfs:label "Roles" ;
+  rdfs:subClassOf owl:Thing ;
+.
+:CommercialRoles
+  a owl:Class ;
+  rdfs:comment "Logistics roles that describe the different commercial functions of companies." ;
+  rdfs:label "Commercial Roles" ;
+  rdfs:subClassOf :ActorRoles ;
+.
+:Authority
+  a :CommercialRoles ;
+  rdfs:comment "Any public organization responsible for governing one or more regulations and/or maintenance and capacity optimization of public infrastructure can be identified as an Authority. Capacity optimization of public infrastructure can also be expressed by access restrictions, e.g. city distribution restrictions in city centers, expressed by time windows and types of vehicles that are allowed to access. As such, municipalities are also in scope of FEDeRATED." ;
+  rdfs:label "Authority" ;
+  skos:narrower :PortAuthority ;
+  skos:narrower :CustomsAuthority ;
+.
+:PortAuthority
+  a :CommercialRoles ;
+  rdfs:comment "The organization responsible for maintenance and safe and optimal use of the port infrastructure (quays, waterways, roads, rail)" ;
+  rdfs:label "Port Authority" ;
+  skos:broader :Authority ;
+.
+
+:ContactPerson
+  a :CommercialRoles ;
+  rdfs:comment "Any employee that acts as a contact person of an organization towards other organizations" ;
+  rdfs:label "Contact Person" ;
+.
+:Customer
+  a :CommercialRoles ;
+  rdfs:comment "Any enterprise that requires a business service from any other enterprise that is able to provide can be identified as a customer." ;
+  rdfs:label "Customer" ;
+.
+:CustomsAuthority
+  a :CommercialRoles;
+  rdfs:comment "The organization providing permission for goods movements compliant with (VAT) regulations." ;
+  rdfs:label "Customs Authority" ;
+  skos:broader :Authority ;
+.
+:ServiceProvider
+  a :CommercialRoles ;
+  rdfs:comment "Any enterprise that is able to perform a business activity on behalf of customers can be identified as a service provider. A business activity is defined by its business services and/or timetables of itineraries of transport means. A flight or a voyage are examples of these itineraries." ;
+  rdfs:label "Service Provider" ;
+.
+:FinancialRoles
+  a owl:Class ;
+  rdfs:comment "Logistics roles that describe the different financial functions of companies." ;
+  rdfs:label "Financial Roles" ;
+  rdfs:subClassOf :ActorRoles ;
+.
+:Payee
+  a :FinancialRoles ;
+  rdfs:comment "A company that is paid for it services or goods." ;
+  rdfs:label "Payee" ;
+.
+:Payer
+  a :FinancialRoles ;
+  rdfs:comment "A company that pays for services or goods." ;
+  rdfs:label "Payer" ;
+.
+:Bank
+  a :FinancialRoles ;
+  rdfs:comment "A financial institution licensed to receive deposits and make loans." ;
+  rdfs:label "Bank" ;
+.
+:Insurer
+  a :FinancialRoles; 
+  rdfs:comment "A company that issues insurance contracts to provide with financial coverage in the case of unexpected events." ;
+  rdfs:label "Insurer" ;
+.
+:SupplyChainRoles
+  a owl:Class ;
+  rdfs:comment "These are roles that are found elsewhere in the supply chain than described by bussiness, commercial, financial or logistical roles. Such as the consumer or producer of products." ;
+  rdfs:label "Supply Chain Roles" ;
+  rdfs:subClassOf :ActorRoles ;
+.
+:Consumer
+  a :SupplyChainRoles ;
+  rdfs:comment "A consumer consumes the goods that were supplied through the supply chain." ;
+  rdfs:label "Consumer" ;
+.
+:Producer
+  a :SupplyChainRoles ;
+  rdfs:comment "A producer produces the goods that are transported in the supply chain." ;
+  rdfs:label "Producer" ;
+.
+:Retailer
+  a :SupplyChainRoles ;
+  rdfs:comment "A retailer sells goods for use of consumption rather than for resale." ;
+  rdfs:label "Retailer" ;
+.
+:BusinessRoles
+  a owl:Class ;
+  rdfs:comment "Logistics roles that describe the different functions of companies regarding services." ;
+  rdfs:label "Business Roles" ;
+  rdfs:subClassOf :ActorRoles ;
+.
+:Declarant
+  a :BusinessRoles ;
+  rdfs:comment "The enterprise lodging a declaration (on behalf of his customer, it is called a customs agent) based on declaration services it provides. This can be a forwarder (import, export, transit) or a shipping -/airline (ENS, incoming goods). A shipper or consignee can also act as declarant." ;
+  skos:altLabel "Declerant" ;
+.
+:Exporter
+  a :BusinessRoles ;
+  rdfs:comment "Name and address of party who makes - or on whose behalf a Customs clearing agent or other authorized person makes - an export declaration. This may include a manufacturer, seller or other person." ;
+  rdfs:label "Exporter" ;
+.
+:Importer
+  a :BusinessRoles ;
+  rdfs:comment "Name and address of party who makes - or on whose behalf a Customs clearing agent or other authorized person makes - an import declaration. This may include a person who has possession of the goods or to whom the goods are consigned." ;
+  rdfs:label "Importer" ;
+.
+:Issuer
+  a :BusinessRoles ;
+  rdfs:comment "An employee of the authority that issued the security status of a business transaction." ;
+  rdfs:label "Issuer" ;
+.
+:Sender
+  a :BusinessRoles ;
+  rdfs:comment "A sender of goods" ;
+  rdfs:label "Sender" ;
+.

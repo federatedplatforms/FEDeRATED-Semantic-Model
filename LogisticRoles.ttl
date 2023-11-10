@@ -1,9 +1,9 @@
-# baseURI: https://ontology.tno.nl/logistics/federated/LogisticRoles
-# prefix: LogisticRoles
+# baseURI: https://ontology.tno.nl/logistics/federated/
+# prefix: 
 
 @prefix BusinessService: <https://ontology.tno.nl/logistics/federated/BusinessService#> .
-@prefix LogisticRoles: <https://ontology.tno.nl/logistics/federated/LogisticRoles#> .
-@prefix ReusableTags: <https://ontology.tno.nl/logistics/federated/ReusableTags#> .
+@prefix : <https://ontology.tno.nl/logistics/federated/LogisticRoles#> .
+@prefix ActorRoles: <https://ontology.tno.nl/logistics/federated/ActorRoles#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dcterms: <http://purl.org/dc/terms> .
 @prefix ecallUsecase: <https://ontology.tno.nl/logistics/federated/ecallUsecase#> .
@@ -14,371 +14,85 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-LogisticRoles:logisticsRoleName
-  a owl:DatatypeProperty ;
-  rdfs:domain LogisticRoles:LogisticsRoles ;
-  rdfs:comment "Each logistics role has a unique name" ;
-  rdfs:label "Logistics Role Name" ;
-  rdfs:range xsd:string ;
-.
-skos:broader 
-  a owl:ObjectProperty ;
-.  
-skos:narrower 
-a owl:ObjectProperty ;
-.  
-LogisticRoles:ActorRoles
+
+:LogisticsRoles
   a owl:Class ;
-  rdfs:comment "An Enterprise, Person or Organization can have different roles depending on the context. This class defines these different roles." ;
-  rdfs:label "Roles" ;
-  rdfs:subClassOf owl:Thing ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onClass BusinessService:LegalPerson ;
-      owl:onProperty LogisticRoles:isAbout ;
-    ] ;
+  rdfs:comment "Logistics roles that describe the different functions of companies during transportation." ;
+  rdfs:label "Logistics Roles" ;
+  rdfs:subClassOf ActorRoles:ActorRoles ;
 .
-LogisticRoles:Authority
-  a LogisticRoles:CommercialRoles ;
-  rdfs:comment "Any public organization responsible for governing one or more regulations and/or maintenance and capacity optimization of public infrastructure can be identified as an Authority. Capacity optimization of public infrastructure can also be expressed by access restrictions, e.g. city distribution restrictions in city centers, expressed by time windows and types of vehicles that are allowed to access. As such, municipalities are also in scope of FEDeRATED." ;
-  rdfs:label "Authority" ;
-  skos:narrower LogisticRoles:PortAuthority ;
-  skos:narrower LogisticRoles:CustomsAuthority ;
-.
-LogisticRoles:Bank
-  a LogisticRoles:FinancialRoles ;
-  rdfs:comment "A financial institution licensed to receive deposits and make loans." ;
-  rdfs:label "Bank" ;
-.
-LogisticRoles:BusinessRoles
-  a owl:Class ;
-  rdfs:comment "Logistics roles that describe the different functions of companies regarding services." ;
-  rdfs:label "Business Roles" ;
-  rdfs:subClassOf LogisticRoles:ActorRoles ;
-.
-LogisticRoles:Carrier
-  a LogisticRoles:LogisticsRoles ;
+:Carrier
+  a :LogisticsRoles ;
   rdfs:comment "The organization that is responsible for transport of goods/containers with a transport means (truck, vessel, etc.). Each modality has a different name per modality: airline (air), shipping line (sea), barge operator (inlande waterways), railway undertaking (rail), and carrier (road). These should also be supported by the model" ;
   rdfs:label "Carrier" ;
 .
-LogisticRoles:CommercialRoles
-  a owl:Class ;
-  rdfs:comment "Logistics roles that describe the different commercial functions of companies." ;
-  rdfs:label "Commercial Roles" ;
-  rdfs:subClassOf LogisticRoles:ActorRoles ;
-.
-LogisticRoles:Consignee
-  a LogisticRoles:LogisticsRoles ;
+:Consignee
+  a :LogisticsRoles ;
   rdfs:comment """A consignee is the role of an enterprise where it is the operator and/or owner of a logistical function at a place with the role 'place of delivery'. A consignee can act as customer (e.g. Terms of Delivery is 'ex works').  
 """ ;
   rdfs:label "Consignee" ;
-  ReusableTags:isDerived true ;
 .
-LogisticRoles:Consignor
-  a LogisticRoles:LogisticsRoles ;
+:Consignor
+  a :LogisticsRoles ;
   rdfs:comment """A consignor is the role of an enterprise where it is the operator and/or owner of a logistical function at a place with the role 'place of acceptance'. A consignor can act as customer.  Consignor is the person sending a shipment to be delivered whether by land, sea or air. Some carriers, such as national postal entities, use the term \"sender\" or \"shipper\" but in the event of a legal dispute the proper and technical term \"consignor\" will generally be used.
 
 If Sender sends a widget to Receiver via a delivery service, Sender is the consignor and Receiver is the consignee.""" ;
   rdfs:label "Consignor" ;
-  ReusableTags:isDerived true ;
 .
-LogisticRoles:Consumer
-  a LogisticRoles:SupplyChainRoles ;
-  rdfs:comment "A consumer consumes the goods that were supplied through the supply chain." ;
-  rdfs:label "Consumer" ;
-.
-LogisticRoles:ContactPerson
-  a LogisticRoles:CommercialRoles ;
-  rdfs:comment "Any employee that acts as a contact person of an organization towards other organizations" ;
-  rdfs:label "Contact Person" ;
-.
-LogisticRoles:Customer
-  a LogisticRoles:CommercialRoles ;
-  rdfs:comment "Any enterprise that requires a business service from any other enterprise that is able to provide can be identified as a customer.Ã‚Â " ;
-  rdfs:label "Customer" ;
-.
-LogisticRoles:CustomsAuthority
-  a LogisticRoles:CommercialRoles;
-  rdfs:comment "The organization providing permission for goods movements compliant with (VAT) regulations." ;
-  rdfs:label "Customs Authority" ;
-  skos:broader LogisticRoles:Authority ;
-.
-LogisticRoles:Declarant
-  a LogisticRoles:BusinessRoles ;
-  rdfs:comment "The enterprise lodging a declaration (on behalf of his customer, it is called a customs agent) based on declaration services it provides. This can be a forwarder (import, export, transit) or a shipping -/airline (ENS, incoming goods). A shipper or consignee can also act as declarant." ;
-  skos:altLabel "Declerant" ;
-.
-LogisticRoles:DeliveryParty
-  a LogisticRoles:LogisticsRoles ;
+:DeliveryParty
+  a :LogisticsRoles ;
   rdfs:comment "This is the operator of the location for final delivery of the goods." ;
   rdfs:label "Delivery Party" ;
 .
-LogisticRoles:DispatchParty
-  a LogisticRoles:LogisticsRoles ;
+:DispatchParty
+  a :LogisticsRoles ;
   rdfs:comment "This is the operator of the location where the goods have to be shipped from." ;
   rdfs:label "Dispatch Party" ;
 .
-LogisticRoles:DropOffLocation
-  a owl:Class ;
-  rdfs:comment "A place where cargo on a transport means was dropped off. Modality 'road'." ;
-  rdfs:label "Drop Off Location Role" ;
-  rdfs:subClassOf LogisticRoles:PlaceOfDischarge ;
-.
-LogisticRoles:Exporter
-  a LogisticRoles:BusinessRoles ;
-  rdfs:comment "Name and address of party who makes - or on whose behalf a Customs clearing agent or other authorized person makes - an export declaration. This may include a manufacturer, seller or other person." ;
-  rdfs:label "Exporter" ;
-.
-LogisticRoles:FinancialRoles
-  a owl:Class ;
-  rdfs:comment "Logistics roles that describe the different financial functions of companies." ;
-  rdfs:label "Financial Roles" ;
-  rdfs:subClassOf LogisticRoles:ActorRoles ;
-.
-LogisticRoles:Forwarder
-  a LogisticRoles:LogisticsRoles ;
+:Forwarder
+  a :LogisticsRoles ;
   rdfs:comment "A forwarder is the service provider in a business transaction providing a transport - and other (administrative) services to a consignor or consignee acting as customer." ;
   rdfs:label "Forwarder" ;
 .
-LogisticRoles:SealingParty
-  a LogisticRoles:LogisticsRoles ;
+:SealingParty
+  a :LogisticsRoles ;
   rdfs:comment "The sealing party" ;
   rdfs:label "Sealing Party" ;
 .
-LogisticRoles:Importer
-  a LogisticRoles:BusinessRoles ;
-  rdfs:comment "Name and address of party who makes - or on whose behalf a Customs clearing agent or other authorized person makes - an import declaration. This may include a person who has possession of the goods or to whom the goods are consigned." ;
-  rdfs:label "Importer" ;
-.
-LogisticRoles:Insurer
-  a LogisticRoles:FinancialRoles; 
-  rdfs:comment "A company that issues insurance contracts to provide with financial coverage in the case of unexpected events." ;
-  rdfs:label "Insurer" ;
-.
-LogisticRoles:Issuer
-  a LogisticRoles:BusinessRoles ;
-  rdfs:comment "An employee of the authority that issued the security status of a business transaction." ;
-  rdfs:label "Issuer" ;
-.
-LogisticRoles:LocationRoles
-  a owl:Class ;
-  rdfs:comment "A location such as hub or port can have different roles depending on the context. This class defines these different roles." ;
-  rdfs:label "Location Roles" ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onClass <https://ontology.tno.nl/logistics/federated/DigitalTwin#TransportMeans> ;
-      owl:onProperty LogisticRoles:involves ;
-    ] ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onClass <https://ontology.tno.nl/logistics/federated/Event#Event> ;
-      owl:onProperty LogisticRoles:involves ;
-    ] ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onClass <https://ontology.tno.nl/logistics/federated/PhysicalInfrastructure#Location> ;
-      owl:onProperty LogisticRoles:involves ;
-    ] ;
-  ReusableTags:isDerived true ;
-.
-LogisticRoles:LogisticServiceProvider
-  a LogisticRoles:LogisticsRoles ;
+:LogisticServiceProvider
+  a :LogisticsRoles ;
   rdfs:comment "A generic term for all logistics stakeholders that provide business services." ;
   rdfs:label "Logistic Service Provider" ;
 .
-LogisticRoles:LogisticsRoles
-  a owl:Class ;
-  rdfs:comment "Logistics roles that describe the different functions of companies during transportation." ;
-  rdfs:label "Logistics Roles" ;
-  rdfs:subClassOf LogisticRoles:ActorRoles ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onDataRange xsd:string ;
-      owl:onProperty LogisticRoles:logisticsRoleName ;
-    ] ;
-.
-LogisticRoles:NotifyParty
-  a LogisticRoles:LogisticsRoles ;
+:NotifyParty
+  a :LogisticsRoles ;
   rdfs:comment "The contact person to be notified when a shipment arrives at its destination." ;
   rdfs:label "Notify Party" ;
 .
-LogisticRoles:OperatorRoles
-  a LogisticRoles:LogisticsRoles ;
+:OperatorRoles
+  a :LogisticsRoles ;
   rdfs:comment "A generic operator role." ;
   rdfs:label "Operator Roles" ;
-  skos:narrower LogisticRoles:WarehouseOperator;
-  skos:narrower LogisticRoles:TerminalOperator;
+  skos:narrower :WarehouseOperator;
+  skos:narrower :TerminalOperator;
 .
-LogisticRoles:Payee
-  a LogisticRoles:FinancialRoles ;
-  rdfs:comment "A company that is paid for it services or goods." ;
-  rdfs:label "Payee" ;
-.
-LogisticRoles:Payer
-  a LogisticRoles:FinancialRoles ;
-  rdfs:comment "A company that pays for services or goods." ;
-  rdfs:label "Payer" ;
-.
-LogisticRoles:PickupLocation
-  a owl:Class ;
-  rdfs:comment "A location where cargo is picked up by a transport means." ;
-  rdfs:label "Pickup Location Role" ;
-  rdfs:subClassOf LogisticRoles:PlaceOfLoading ;
-.
-LogisticRoles:PlaceOfAcceptance
-  a owl:Class ;
-  rdfs:comment "Place of acceptance of a product." ;
-  rdfs:label "Place of Acceptance Role" ;
-  rdfs:subClassOf LogisticRoles:LocationRoles ;
-.
-LogisticRoles:PlaceOfArrival
-  a owl:Class ;
-  rdfs:comment "A place of a call of a transport means following (in time) the last place of departure (milestone value is departure)" ;
-  rdfs:label "Arrival Location Role" ;
-  rdfs:subClassOf LogisticRoles:LocationRoles ;
-.
-LogisticRoles:PlaceOfBorderCrossing
-  a owl:Class ;
-  rdfs:comment "A place where a new customs domain is entered by a transport means during its itinerary." ;
-  rdfs:label "Border Crossing Place Role" ;
-  rdfs:subClassOf LogisticRoles:LocationRoles ;
-  ReusableTags:isDerived true ;
-.
-LogisticRoles:PlaceOfCall
-  a owl:Class ;
-  rdfs:comment "A place where a transport means stops on a voyage." ;
-  rdfs:label "Place of Call Role" ;
-  rdfs:subClassOf LogisticRoles:LocationRoles ;
-.
-LogisticRoles:PlaceOfDelivery
-  a owl:Class ;
-  rdfs:comment "A place of receipt by a consignee or place of delivery is the place where the cargo is handed over by a carrier according a business transaction to the recipeint (consignee). The transport means and the cargo have to be at the location mentioned in a business transaction between a carrier and its customer." ;
-  rdfs:label "Place of Delivery Role" ;
-  rdfs:subClassOf LogisticRoles:LocationRoles ;
-.
-LogisticRoles:PlaceOfDeparture
-  a owl:Class ;
-  rdfs:comment "A place where a transport means arrived (milestone value: arrival) and is able to depart." ;
-  rdfs:comment "The first place of call of a transport means or a place of call of a transport means following arrival." ;
-  rdfs:label "Departure Location Role" ;
-  rdfs:label "Place of Departure Role" ;
-  rdfs:subClassOf LogisticRoles:LocationRoles ;
-.
-LogisticRoles:PlaceOfDischarge
-  a owl:Class ;
-  rdfs:comment "For modality 'road'. Same as place of discharge." ;
-  rdfs:label "Inland Terminal" ;
-  rdfs:subClassOf LogisticRoles:LocationRoles ;
-.
-LogisticRoles:PlaceOfLoading
-  a owl:Class ;
-  rdfs:comment "A place of loading is the place where the cargo is offered for transport by a business transaction to the service provider that is the carrier, where the transport means is considered to be the main modality. The cargo and the transport means have to be at that location." ;
-  rdfs:label "Place of Loading Role" ;
-  rdfs:subClassOf LogisticRoles:LocationRoles ;
-  ReusableTags:isDerived true ;
-.
-LogisticRoles:PlaceOfReceipt
-  a owl:Class ;
-  rdfs:comment "A place of receipt is the place where the cargo is offered for transport by a business transaction to the service provider that is the carrier and has to be transported by that carrier to the place of loading of the main transport. The cargo has to be at that location." ;
-  rdfs:label "Place of Receipt" ;
-  rdfs:subClassOf LogisticRoles:LocationRoles ;
-.
-LogisticRoles:PlaceOfStripping
-  a owl:Class ;
-  rdfs:comment "A place where goods is unloaded from a container." ;
-  rdfs:label "Place of Stripping Role" ;
-  rdfs:subClassOf LogisticRoles:LocationRoles ;
-.
-LogisticRoles:PlaceOfStuffing
-  a owl:Class ;
-  rdfs:comment "A place where goods is loaded into an empty container which is then sealed and transported to the carrier for loading on a transport means." ;
-  rdfs:label "Place of Stuffing Role" ;
-  rdfs:subClassOf LogisticRoles:LocationRoles ;
-.
-LogisticRoles:PlaceOfUnloading
-  a owl:Class ;
-  rdfs:comment "A place of unloading is the place to where the cargo has to be transported by a business transaction to the service provider that is the carrier and will be discharged/unloaded from that transport means. The cargo and the transport means have to be at that location." ;
-  rdfs:label "Place of Unloading Role" ;
-  rdfs:subClassOf LogisticRoles:LocationRoles ;
-  owl:equivalentClass LogisticRoles:PlaceOfDischarge ;
-.
-LogisticRoles:PortAuthority
-  a LogisticRoles:CommercialRoles ;
-  rdfs:comment "The organization responsible for maintenance and safe and optimal use of the port infrastructure (quays, waterways, roads, rail)" ;
-  rdfs:label "Port Authority" ;
-  skos:broader LogisticRoles:Authority ;
-.
-LogisticRoles:PortOfCall
-  a owl:Class ;
-  rdfs:comment "A place where a vessel stops on a voyage. The necessary context is a location and transport means with modality 'sea'." ;
-  rdfs:label "Port of Call Role" ;
-  rdfs:subClassOf LogisticRoles:PlaceOfCall ;
-.
-LogisticRoles:PortOfDischarge
-  a owl:Class ;
-  rdfs:comment "A place where a vessel (partially) discharges or unloads its shipments." ;
-  rdfs:label "Port of Discharge Role" ;
-  rdfs:subClassOf LogisticRoles:PlaceOfDischarge ;
-.
-LogisticRoles:PortOfLoading
-  a owl:Class ;
-  rdfs:comment "A port where shipments are loaded aboard a vessel for transport." ;
-  rdfs:label "Port of Loading Role" ;
-  rdfs:subClassOf LogisticRoles:PlaceOfLoading ;
-.
-LogisticRoles:Producer
-  a LogisticRoles:SupplyChainRoles ;
-  rdfs:comment "A producer produces the goods that are transported in the supply chain." ;
-  rdfs:label "Producer" ;
-.
-LogisticRoles:Retailer
-  a LogisticRoles:SupplyChainRoles ;
-  rdfs:comment "A retailer sells goods for use of consumption rather than for resale." ;
-  rdfs:label "Retailer" ;
-.
-LogisticRoles:Sender
-  a LogisticRoles:BusinessRoles ;
-  rdfs:comment "A sender of goods" ;
-  rdfs:label "Sender" ;
-.
-LogisticRoles:ServiceProvider
-  a LogisticRoles:CommercialRoles ;
-  rdfs:comment "Any enterprise that is able to perform a business activity on behalf of customers can be identified as a service provider. A business activity is defined by its business services and/or timetables of itineraries of transport means. A flight or a voyage are examples of these itineraries." ;
-  rdfs:label "Service Provider" ;
-.
-LogisticRoles:ShuntingYard
-  a LogisticRoles:LogisticsRoles ;
-  rdfs:comment "A company that is responsible for the movement of trailers in and around a yard site." ;
-  rdfs:label "Shunting Yard" ;
-.
-LogisticRoles:SupplyChainRoles
-  a owl:Class ;
-  rdfs:comment "These are roles that are found elsewhere in the supply chain than described by bussiness, commercial, financial or logistical roles. Such as the consumer or producer of products." ;
-  rdfs:label "Supply Chain Roles" ;
-  rdfs:subClassOf LogisticRoles:ActorRoles ;
-.
-LogisticRoles:TerminalOperator
-  a LogisticRoles:LogisticsRoles ;
+:TerminalOperator
+  a :LogisticsRoles ;
   rdfs:comment "The organization offering transhipment services where one of the modalities is sea. Terminal operators have framework contracts with shipping lines." ;
   rdfs:label "Terminal Operator" ;
-  skos:broader LogisticRoles:OperatorRoles;
+  skos:broader :OperatorRoles;
 .
-LogisticRoles:WarehouseOperator
-  a LogisticRoles:LogisticsRoles ;
+:WarehouseOperator
+  a :LogisticsRoles ;
   rdfs:comment "The organization offering a storage service for products (bulk and other products) and/or goods" ;
   rdfs:label "Warehouse Operator" ;
-  skos:broader LogisticRoles:OperatorRoles; 
+  skos:broader :OperatorRoles; 
 .
-LogisticRoles:involves
+:involves
   a owl:ObjectProperty ;
   rdfs:label "Involves" ;
 .
-LogisticRoles:isAbout
+:isAbout
   a owl:ObjectProperty ;
   rdfs:label "is About" ;
 .

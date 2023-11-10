@@ -1,0 +1,268 @@
+# baseURI: https://ontology.tno.nl/logistics/federated/PhysicalInfrastructure
+# imports: http://topbraid.org/schema/
+# imports: http://www.w3.org/2003/01/geo/wgs84_pos
+# prefix: pi
+
+@prefix : <https://ontology.tno.nl/logistics/federated/Location#> .
+@prefix BusinessService: <https://ontology.tno.nl/logistics/federated/BusinessService#> .
+@prefix classifications: <https://ontology.tno.nl/logistics/federated/Classifications#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix : <https://ontology.tno.nl/logistics/federated/Location#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix LocationRoles: <https://ontology.tno.nl/logistics/federated/LocationRoles#> .
+
+<http://schema.org/AdministrativeArea>
+  a owl:Class ;
+  rdfs:comment "A geographical region, typically under the jurisdiction of a particular government." ;
+  rdfs:label "Administrative area" ;
+  rdfs:subClassOf <http://schema.org/Place> ;
+.
+<http://schema.org/City>
+  a owl:Class ;
+  rdfs:comment "A city or town." ;
+  rdfs:label "City" ;
+  rdfs:subClassOf <http://schema.org/AdministrativeArea> ;
+.
+<http://schema.org/Country>
+  a owl:Class ;
+  rdfs:comment "A country." ;
+  rdfs:label "Country" ;
+  rdfs:subClassOf <http://schema.org/AdministrativeArea> ;
+.
+<http://schema.org/Place>
+  a owl:Class ;
+  rdfs:comment "Entities that have a somewhat fixed, physical extension." ;
+  rdfs:label "Place" ;
+  rdfs:subClassOf owl:Thing ;
+.
+
+:externalIdentifier rdf:type owl:DatatypeProperty ;
+                             rdfs:domain <http://schema.org/Place> ;
+                             rdfs:range xsd:string ;
+                             rdfs:comment "" ;
+                             rdfs:label "External Identifier" .
+
+<http://schema.org/State>
+  a owl:Class ;
+  rdfs:comment "A state or province of a country." ;
+  rdfs:label "State" ;
+  rdfs:subClassOf <http://schema.org/AdministrativeArea> ;
+.
+<http://schema.org/address>
+  a :address ;
+  rdfs:comment "Physical address of the item." ;
+  rdfs:domain <http://schema.org/Place> ;
+  rdfs:label "address" ;
+  rdfs:range [
+      a owl:Class ;
+      owl:unionOf (
+          <http://schema.org/PostalAddress>
+          xsd:string
+        ) ;
+    ] ;
+.
+<http://schema.org/addressCountry>
+  a rdf:Property ;
+  rdfs:comment "The country. For example, USA. You can also provide the two-letter [ISO 3166-1 alpha-2 country code](http://en.wikipedia.org/wiki/ISO_3166-1)." ;
+  rdfs:domain [
+      a owl:Class ;
+      owl:unionOf (
+          <http://schema.org/GeoCoordinates>
+          <http://schema.org/GeoShape>
+          <http://schema.org/PostalAddress>
+        ) ;
+    ] ;
+  rdfs:label "address country" ;
+  rdfs:range [
+      a owl:Class ;
+      owl:unionOf (
+          <http://schema.org/Country>
+          xsd:string
+        ) ;
+    ] ;
+.
+<http://schema.org/containedInPlace>
+  a owl:ObjectProperty ;
+  <http://schema.org/inverseOf> <http://schema.org/containsPlace> ;
+  rdfs:comment "The basic containment relation between a place and one that contains it." ;
+  rdfs:domain <http://schema.org/Place> ;
+  rdfs:label "contained in place" ;
+  rdfs:range <http://schema.org/Place> ;
+.
+<http://schema.org/containsPlace>
+  a owl:ObjectProperty ;
+  <http://schema.org/inverseOf> <http://schema.org/containedInPlace> ;
+  rdfs:comment "The basic containment relation between a place and another that it contains." ;
+  rdfs:domain <http://schema.org/Place> ;
+  rdfs:label "contains place" ;
+  rdfs:range <http://schema.org/Place> ;
+.
+
+<http://schema.org/latitude> a owl:DatatypeProperty ;
+                  rdfs:domain <http://schema.org/Place> ;
+                  rdfs:range xsd:float ;
+                  rdfs:range xsd:string ;
+                  rdfs:comment "The latitude of a location. For example ```37.42242``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System))." ;
+                  rdfs:label "latitude" .
+<http://schema.org/longitude> a owl:DatatypeProperty ;
+                   rdfs:domain <http://schema.org/Place> ;
+                   rdfs:range xsd:float ;
+                   rdfs:range xsd:string ;
+                   rdfs:comment "The longitude of a location. For example ```-122.08585``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System))." ;
+                   rdfs:label "longitude" .
+<http://schema.org/elevation> a owl:DatatypeProperty ;
+                    rdfs:comment "The elevation of a location (WGS 84). Values may be of the form numerical in meters." ;
+                    rdfs:domain <http://schema.org/Place> ;
+                    rdfs:label "elevation" ;
+                    rdfs:range xsd:float .
+<http://schema.org/name> rdf:type owl:DatatypeProperty ;
+              rdfs:domain <http://schema.org/Place> ;
+              rdfs:range xsd:string .
+
+:BusinessLocation
+  a owl:Class ;
+  rdfs:comment "A business location couples the digitalization of the physical location as well as the role it plays in an event instatiation. " ;
+  rdfs:label "Business Location" ;
+.
+:involvesPlace rdf:type owl:ObjectProperty ;
+                       rdfs:domain :BusinessLocation ;
+                       rdfs:range  <http://schema.org/Place>;
+                       rdfs:label "Business Location Involves Location" .
+:locationRole
+  a owl:ObjectProperty ;
+  rdfs:domain <http://schema.org/Place> ;
+  rdfs:label "Business Location has role" ;
+  rdfs:range LocationRoles:LocationRoles ;
+.
+:Corridor
+  a owl:Class ;
+  rdfs:comment "A logistic corridor is a generalised route. It may consist of several modalities. For example, the route between Europoort and Northern Italy is a corridor, since it's a comman and important route." ;
+  rdfs:label "Corridor" ;
+  rdfs:subClassOf :Trajectory ;
+.
+:RailwayLine
+  a owl:Class ;
+  rdfs:comment "A trajectory with modality 'rail'." ;
+  rdfs:label "Railway Line" ;
+  rdfs:subClassOf :Trajectory ;
+.
+:Road
+  a owl:Class ;
+  rdfs:comment "A trajectory with modality 'road'." ;
+  rdfs:label "Road" ;
+  rdfs:subClassOf :Trajectory ;
+.
+:Trajectory
+  a owl:Class ;
+  rdfs:comment "Any part of an infrastructure identified by its infrastructure manager." ;
+  rdfs:label "Trajectory" ;
+  rdfs:subClassOf <http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing> ;
+.
+:TrajectoryProperty
+  a owl:DatatypeProperty ;
+  rdfs:comment "DO NOT Instantiate -- superProperty for grouping. This datatype property contains all datatype properties for trajectories." ;
+  rdfs:domain :Trajectory ;
+  rdfs:label "Trajectory Property" ;
+  rdfs:range xsd:anySimpleType ;
+  rdfs:subPropertyOf :InfrastructuralFunctionProperty ;
+.
+:geonamesReference
+  a owl:ObjectProperty ;
+  rdfs:comment "Reference to a geonames feature corresponding to the Location that is the domain of this property." ;
+  rdfs:domain <http://schema.org/Place> ;
+  rdfs:label "Geonames Reference" ;
+  rdfs:range <http://www.geonames.org/ontology#Feature> ;
+.
+:involvesExternalReference a owl:ObjectProperty ;
+  rdfs:comment "Reference to an external location identification system - presents both the system provider and the IRI resource" ;
+  rdfs:domain <http://schema.org/Place> ;
+  rdfs:label "External Reference" ;
+  rdfs:range :externalReference ;
+.
+:externalReference
+  a owl:Class ;
+  rdfs:comment "" ;
+  rdfs:label "" ;
+.
+:externalReferenceProvider
+  a owl:DatatypeProperty ;
+  rdfs:comment "" ;
+  rdfs:label "External Reference Provider identification (name / IRI)" ;
+  rdfs:domain :externalReference ;
+  rdfs:range xsd:string 
+.
+:externalReferenceResource # the IRI pattern to be verified in SHACL
+  a owl:DatatypeProperty ;
+  rdfs:comment "" ;
+  rdfs:label "External Reference IRI" ;
+  rdfs:domain :externalReference ;
+  rdfs:range xsd:string
+.
+:locode
+  a owl:DatatypeProperty ;
+  rdfs:comment "This property allows to indicate the LOCODE of a schema:city or schema:country." ;
+  rdfs:domain <http://schema.org/Place> ;
+  rdfs:label "LOCODE" ;
+  rdfs:range xsd:string ;
+  rdfs:subPropertyOf <https://schema.org/identifier> ;
+.
+:infrastructuralRole # CODELIST VS STRING DATATYPEPROPERTY
+  a owl:DatatypeProperty ;
+  rdfs:comment "Infrastructural role based on codelist or string" ;
+  rdfs:domain <http://schema.org/Place> ;
+  rdfs:label "Infrastructural code" ;
+  rdfs:range xsd:string ;
+.
+:Port
+  a owl:Class ;
+  rdfs:comment "Location where vessels pick or drop off freight." ;
+  rdfs:label "Port" ;
+  rdfs:subClassOf <http://schema.org/Place> ;
+.
+:involvesTerminal
+  a owl:ObjectProperty ;
+  rdfs:comment "Port involves Terminal" ;
+  rdfs:domain :Port ;
+  rdfs:label "Involves terminal" ;
+  rdfs:range :Terminal ;
+.
+:Terminal
+  a owl:Class ;
+  rdfs:comment "A location interfacing with main modality sea." ;
+  rdfs:label "Terminal" ;
+.
+:terminalName
+  a owl:DatatypeProperty ;
+  rdfs:comment "Terminal name" ;
+  rdfs:domain :Terminal ;
+  rdfs:label "Terminal name" ;
+  rdfs:range xsd:string ;
+  skos:altLabel "IMO0547"
+.
+:terminalDescription
+  a owl:DatatypeProperty ;
+  rdfs:domain :Terminal ;
+  rdfs:label "terminal Description" ;
+  rdfs:range xsd:string ;
+.
+:berthCode
+  a owl:DatatypeProperty ;
+  rdfs:comment "Berth code" ;
+  rdfs:domain :Port ;
+  rdfs:label "Berth code" ;
+  rdfs:range xsd:string ;
+  skos:altLabel "IMO0548"
+.
+:portSecurityLevel
+  a owl:DatatypeProperty ;
+  rdfs:comment "This property specifies the port security level of this specific port." ;
+  rdfs:domain :Port ;
+  rdfs:label "Port Security Level" ;
+  rdfs:range xsd:string ;
+.
