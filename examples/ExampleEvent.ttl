@@ -19,7 +19,7 @@ ex:Event a Event:PrimitiveEvent ;
 # example Vessel
 ex:VesselExample a owl:NamedIndividual, DigitalTwin:Vessel ;
     DigitalTwin:vesselType "Vessel type" ;
-    DidigtalTwin:vesselName "De Zeven Provinciën" ;
+    DigitalTwin:vesselName "De Zeven Provinciën" ;
     DigitalTwin:UUID "G690SKH" ;
     DigitalTwin:transportMeansNationality "NL"
 .
