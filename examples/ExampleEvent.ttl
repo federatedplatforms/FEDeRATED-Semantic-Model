@@ -6,6 +6,7 @@
 @prefix LocationRoles: <https://ontology.tno.nl/logistics/federated/LocationRoles#> .
 @prefix ActorRoles: <https://ontology.tno.nl/logistics/federated/ActorRoles#> .
 @prefix Schema: <http://schema.org/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
 
 ex:Event a Event:PrimitiveEvent ;
     Event:involvesTimestamp "2023-10-30T09:00:00";

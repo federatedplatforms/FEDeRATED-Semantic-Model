@@ -1,6 +1,7 @@
 @prefix ex: <http://example.com/base#> . 
 @prefix Location: <https://ontology.tno.nl/logistics/federated/Location#> .
 @prefix LocationRoles: <https://ontology.tno.nl/logistics/federated/LocationRoles#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix Event: <https://ontology.tno.nl/logistics/federated/Event#> .
 
 #########################

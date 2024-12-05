@@ -15,7 +15,6 @@
 @prefix DigitalTwin: <https://ontology.tno.nl/logistics/federated/DigitalTwin#> .
 @prefix Event: <https://ontology.tno.nl/logistics/federated/Event#> .
 @prefix LogisticsRoles: <https://ontology.tno.nl/logistics/federated/LogisticsRoles#> .
-@prefix MathM: <http://www.w3.org/1998/Math/MathML> .
 @prefix ReusableTags: <https://ontology.tno.nl/logistics/federated/ReusableTags#> .
 @prefix Search: <https://ontology.tno.nl/logistics/federated/search#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
