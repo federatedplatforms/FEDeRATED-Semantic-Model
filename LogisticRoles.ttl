@@ -95,3 +95,8 @@ If Sender sends a widget to Receiver via a delivery service, Sender is the consi
   a owl:ObjectProperty ;
   rdfs:label "is About" ;
 .
+:ShuntingYard
+  a :LogisticsRoles ;
+  rdfs:comment "A company that is responsible for the movement of trailers in and around a yard site." ;
+  rdfs:label "Shunting Yard" ;
+.
