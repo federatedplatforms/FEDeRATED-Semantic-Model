@@ -9,7 +9,6 @@
 @prefix DigitaTwin: <https://ontology.tno.nl/logistics/federated/DigitalTwin#> .
 @prefix DigitalTwin: <https://ontology.tno.nl/logistics/federated/DigitalTwin#> .
 @prefix Event: <https://ontology.tno.nl/logistics/federated/Event#> .
-@prefix MathM: <http://www.w3.org/1998/Math/MathML> .
 @prefix Service: <https://ontology.tno.nl/logistics/federated/Service#> .
 @prefix businessService: <https://ontology.tno.nl/logistics/federated/BusinessService#> .
 @prefix classifications: <https://ontology.tno.nl/logistics/federated/Classifications#> .

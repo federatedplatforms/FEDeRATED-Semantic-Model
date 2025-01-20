@@ -1,5 +1,8 @@
 @prefix : <https://ontology.tno.nl/logistics/federated/LocationRoles#> .
 @prefix LegalPerson: <https://ontology.tno.nl/logistics/federated/LegalPerson#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
 
 :LocationRoles
   a owl:Class ;

@@ -2,16 +2,10 @@
 # prefix: classifications
 
 @prefix : <https://ontology.tno.nl/logistics/federated/Classifications#> .
-@prefix DigitalTwin: <https://ontology.tno.nl/logistics/federated/DigitalTwin#> .
-@prefix businessService: <https://ontology.tno.nl/logistics/federated/businessService#> .
-@prefix classifications: <https://ontology.tno.nl/logistics/federated/Classifications#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix sh: <http://www.w3.org/ns/shacl#> .
-@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://ontology.tno.nl/logistics/federated/Classifications>
@@ -19,214 +13,214 @@
   dc:creator "Dena Tahvildari, Maaike Burghoorn, Cornelis Bouter" ;
   dcterms:created "2020-07-17" ;
   dcterms:description "This ontology contains classes, attributes, relation about from established standards and vocabularies relevant in the Logistics domain. It is intended to be reused by the other ontologies in the namespace." ;
-  dcterms:isRequiredBy <https://ontology.tno.nl/logistics/federated/BusinessService> ;
+  dcterms:isRequiredBy <https://ontology.tno.nl/logistics/federated/LegalPerson> ;
   dcterms:isRequiredBy <https://ontology.tno.nl/logistics/federated/DigitalTwin> ;
-  dcterms:isRequiredBy <https://ontology.tno.nl/logistics/federated/PhysicalInfrastructure> ;
+  dcterms:isRequiredBy <https://ontology.tno.nl/logistics/federated/Location> ;
   dcterms:issued "2021-03-15" ;
   dcterms:language "en" ;
   owl:versionIRI <https://ontology.tno.nl/logistics/federated/Classificationsv-0.1> ;
 .
-classifications:Atlantic_Corridor
-  a classifications:CorridorName ;
+:Atlantic_Corridor
+  a :CorridorName ;
 .
-classifications:BILL_OF_LADING
-  a classifications:DocumentType ;
+:BILL_OF_LADING
+  a :DocumentType ;
 .
-classifications:Baltic-Adriatic_Corridor
-  a classifications:CorridorName ;
+:Baltic-Adriatic_Corridor
+  a :CorridorName ;
 .
-classifications:Breakbulk
-  a classifications:TransportMovementType ;
+:Breakbulk
+  a :TransportMovementType ;
   rdfs:comment "Defines the movement of general cargo not carried in ISO standard containers." ;
   rdfs:label "break bulk" ;
 .
-classifications:CargoType
+:CargoType
   a owl:Class ;
   rdfs:comment "A classification of cargo carried, or intended to be carried, on means of transport, based on its general appearance." ;
   rdfs:label "Cargo Type" ;
-  rdfs:subClassOf classifications:Classifications ;
+  rdfs:subClassOf :Classifications ;
 .
-classifications:Classifications
+:Classifications
   a owl:Class ;
   rdfs:comment "Various classifications of different types of e.g. cargo or container, or codelists for standards such as dangerous goods codes or nature of cargo" ;
   rdfs:label "Classifications" ;
   rdfs:subClassOf owl:Thing ;
 .
-classifications:ContainerType
+:ContainerType
   a owl:Class ;
   rdfs:comment "A classification of container to represent types of container according to community standards." ;
   rdfs:label "Container Type" ;
-  rdfs:subClassOf classifications:Classifications ;
+  rdfs:subClassOf :Classifications ;
 .
-classifications:CorridorName
+:CorridorName
   a owl:Class ;
   rdfs:comment """Core network corridors were introduced to facilitate the coordinated implementation of the core network in Europe. 
 Nine core network corridors are identified in the annex to the CEF Regulation, which includes a list of projects pre-identified for possible EU funding during the period 2014-2020, based on their added value for TEN-T development and their maturity status.""" ;
   rdfs:label "Corridor Name" ;
-  rdfs:subClassOf classifications:Classifications ;
+  rdfs:subClassOf :Classifications ;
 .
-classifications:D
-  a classifications:NatureOfCargo ;
+:D
+  a :NatureOfCargo ;
   rdfs:label "Dangerous" ;
 .
-classifications:DangerousGoodsRegulationCode
+:DangerousGoodsRegulationCode
   a owl:Class ;
   rdfs:comment "A hazardous or non-hazardous substance which may pose risks to people and/or the environment for which the transportation is regulated by dangerous goods regulations." ;
   rdfs:label "Dangerous Goods" ;
-  rdfs:subClassOf classifications:Classifications ;
+  rdfs:subClassOf :Classifications ;
 .
-classifications:DangerousGoodsRegulationCode
+:DangerousGoodsRegulationCode
   a owl:Class ;
   rdfs:comment "Dangerous goods regulation code" ;
   rdfs:label "Dangerous Goods Regulation Code" ;
-  rdfs:subClassOf classifications:Classifications ;
+  rdfs:subClassOf :Classifications ;
 .
-classifications:DocumentType
+:DocumentType
   a owl:Class ;
   rdfs:label "Document" ;
-  rdfs:subClassOf classifications:Classifications ;
+  rdfs:subClassOf :Classifications ;
 .
-classifications:E
-  a classifications:NatureOfCargo ;
+:E
+  a :NatureOfCargo ;
   rdfs:label "Excise" ;
 .
-classifications:EquipmentTypeCode
+:EquipmentTypeCode
   a owl:Class ;
   rdfs:comment "an enumeration of equipment type codes." ;
   rdfs:label "Equipment Type Code" ;
-  rdfs:subClassOf classifications:Classifications ;
+  rdfs:subClassOf :Classifications ;
 .
-classifications:FCL-FCL
-  a classifications:TransportMovementType ;
+:FCL-FCL
+  a :TransportMovementType ;
   rdfs:comment """Defines the movement of cargo packed by the shipper or
               shipper's agent and unpacked by the consignee or
               consignee's agent. 'FCL' means Full Container Load.""" ;
 .
-classifications:GoodsTypeCode
+:GoodsTypeCode
   a owl:Class ;
   rdfs:comment "A classification of codes that specify the different type of goods within the industry." ;
   rdfs:label "Goods Type Code" ;
-  rdfs:subClassOf classifications:Classifications ;
+  rdfs:subClassOf :Classifications ;
 .
-classifications:LCL-LCL
-  a classifications:TransportMovementType ;
+:LCL-LCL
+  a :TransportMovementType ;
   rdfs:comment """ Defines the movement of cargo packed in and unpacked
               from containers by the carrier on behalf of the
               shipper/consignee. 'LCL' means Less than Container Load.""" ;
 .
-classifications:LogisticsTransactionDocument
+:LogisticsTransactionDocument
   a owl:Class ;
   rdfs:comment "A classification of the different types of documents used during logistics transactions." ;
   rdfs:label "Logistics Transaction Document" ;
-  rdfs:subClassOf classifications:Classifications ;
+  rdfs:subClassOf :Classifications ;
 .
-classifications:Mediterranean_Corridor
-  a classifications:CorridorName ;
+:Mediterranean_Corridor
+  a :CorridorName ;
 .
-classifications:NatureOfCargo
+:NatureOfCargo
   a owl:Class ;
   rdfs:comment "A classification of codes or vocabularies that express the nature of cargo." ;
   rdfs:label "Nature of Cargo" ;
-  rdfs:subClassOf classifications:Classifications ;
+  rdfs:subClassOf :Classifications ;
 .
-classifications:North_Sea-Baltic_Corridor
-  a classifications:CorridorName ;
+:North_Sea-Baltic_Corridor
+  a :CorridorName ;
 .
-classifications:North_Sea-Mediterranean_Corridor
-  a classifications:CorridorName ;
+:North_Sea-Mediterranean_Corridor
+  a :CorridorName ;
 .
-classifications:Orient_East-Med_Corridor
-  a classifications:CorridorName ;
+:Orient_East-Med_Corridor
+  a :CorridorName ;
 .
-classifications:PackageType
+:PackageType
   a owl:Class ;
   rdfs:comment """A classification of packaging materials and components used in any packaging operation to wrap, contain and protect articles or substances during transport. The shape or configuration of a package
 as it appears for transport is also specified.""" ;
   rdfs:label "Package Type" ;
-  rdfs:subClassOf classifications:Classifications ;
+  rdfs:subClassOf :Classifications ;
 .
-classifications:R
-  a classifications:NatureOfCargo ;
+:R
+  a :NatureOfCargo ;
   rdfs:label "Reefer" ;
 .
-classifications:RO-RO
-  a classifications:ContainerType ;
+:RO-RO
+  a :ContainerType ;
 .
-classifications:Rhine-Alpine_Corridor
-  a classifications:CorridorName ;
+:Rhine-Alpine_Corridor
+  a :CorridorName ;
 .
-classifications:Rhine-Danube_Corridor
-  a classifications:CorridorName ;
+:Rhine-Danube_Corridor
+  a :CorridorName ;
 .
-classifications:SEA_WAYBILL
-  a classifications:DocumentType ;
+:SEA_WAYBILL
+  a :DocumentType ;
 .
-classifications:Safety_and_hazard_data_sheet
-  a classifications:LogisticsTransactionDocument ;
+:Safety_and_hazard_data_sheet
+  a :LogisticsTransactionDocument ;
   rdfs:comment "A statement of an account containing the booked items as in the ledger of the account servicing financial institution." ;
   rdfs:label "Safety and hazard data sheet" ;
 .
-classifications:Scandinavian-Mediterranean_Corridor
-  a classifications:CorridorName ;
+:Scandinavian-Mediterranean_Corridor
+  a :CorridorName ;
 .
-classifications:SealConditionCode
+:SealConditionCode
   a owl:Class ;
   rdfs:comment "A classification of codes that specify the conditions of seals e.g. damaged or in right condition." ;
   rdfs:label "Seal Condition Code" ;
-  rdfs:subClassOf classifications:Classifications ;
+  rdfs:subClassOf :Classifications ;
 .
-classifications:SealingPartyRoleCode
+:SealingPartyRoleCode
   a owl:Class ;
   rdfs:comment "A classification of the role codes of the sealing party" ;
   rdfs:label "Sealing Party Role Code " ;
-  rdfs:subClassOf classifications:Classifications ;
+  rdfs:subClassOf :Classifications ;
 .
-classifications:TransportModality
+:TransportModality
   a owl:Class ;
   rdfs:comment "A classification of the various modes used for a transportation movement. For each mode, there are several means of transport. They are: a. inland surface transportation (rail, road, and inland waterway); b. sea transport (coastal and ocean); c. air transportation; and d. pipelines. For the purpose of the usecase, we encode the top individulas only. Sea, Road, Air." ;
   rdfs:label "Transport Modality" ;
-  rdfs:subClassOf classifications:Classifications ;
+  rdfs:subClassOf :Classifications ;
 .
-classifications:TransportMovementType
+:TransportMovementType
   a owl:Class ;
   rdfs:comment "A classification which specifies transport movement details for a goods item or equipment. For the purpose of this project ,we selected only few examples to demonstrate in the proof of concept -- the complete list can be found here: https://www.stylusstudio.com/edifact/D04B/8335.htm" ;
   rdfs:label "Transport Movement Type" ;
-  rdfs:subClassOf classifications:Classifications ;
+  rdfs:subClassOf :Classifications ;
 .
-classifications:VERIFY_COPY
-  a classifications:DocumentType ;
+:VERIFY_COPY
+  a :DocumentType ;
 .
-classifications:W
-  a classifications:NatureOfCargo ;
+:W
+  a :NatureOfCargo ;
   rdfs:label "Waste" ;
 .
-classifications:bulk
-  a classifications:CargoType ;
+:bulk
+  a :CargoType ;
   rdfs:comment "Typical examples of dry bulk transport are building materials such as sand and gravel or grain and fodder. But also wet bulk such as oil, gas and ore are examples of bulk commodities." ;
 .
-classifications:containers
-  a classifications:CargoType ;
+:containers
+  a :CargoType ;
 .
-classifications:generalCargo
-  a classifications:CargoType ;
+:generalCargo
+  a :CargoType ;
   rdfs:comment "Contrary to mass or bulk goods, general cargo comprises materials of which the quantity is not registered per size or weight  but per individual item. General cargo is transported in boxes, crates, drums or bales. Examples of general cargo are cars, paper, kerbstone and machinery." ;
   rdfs:label "general cargo" ;
 .
-classifications:pallets
-  a classifications:CargoType ;
+:pallets
+  a :CargoType ;
   rdfs:label "pallets" ;
 .
-classifications:transportMovementCode
+:transportMovementCode
   a owl:DatatypeProperty ;
   rdfs:comment "The code of the transport movement code." ;
-  rdfs:domain classifications:TransportMovementType ;
+  rdfs:domain :TransportMovementType ;
   rdfs:label "Transport Movement Code" ;
   rdfs:range xsd:string ;
 .
-classifications:transportMovementID
+:transportMovementID
   a owl:DatatypeProperty ;
   rdfs:comment "The ID of the transport movement type." ;
-  rdfs:domain classifications:TransportMovementType ;
+  rdfs:domain :TransportMovementType ;
   rdfs:label "Transport Movement ID" ;
   rdfs:range xsd:string ;
 .

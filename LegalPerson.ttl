@@ -1,5 +1,7 @@
 @prefix : <https://ontology.tno.nl/logistics/federated/LegalPerson#> .
 @prefix ActorRoles: <https://ontology.tno.nl/logistics/federated/ActorRoles#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 
 :Actor
@@ -17,7 +19,7 @@
   a owl:Class ;
   rdfs:comment "LegalPerson represents the digitalization of the details shared with the commercial world by the legal person." ;
   rdfs:label "Legal person" ;
-  rdfs:subClassOf foaf:Agent ;
+  rdfs:subClassOf :Agent ;
 .
 :involvesLegalPerson
   a owl:ObjectProperty ;
