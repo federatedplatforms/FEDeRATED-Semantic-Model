@@ -114,11 +114,6 @@
   rdfs:label "Port of Loading Role" ;
   rdfs:subClassOf :PlaceOfLoading ;
 .
-:ShuntingYard
-  a :LogisticsRoles ;
-  rdfs:comment "A company that is responsible for the movement of trailers in and around a yard site." ;
-  rdfs:label "Shunting Yard" ;
-.
 :DropOffLocation
   a owl:Class ;
   rdfs:comment "A place where cargo on a transport means was dropped off. Modality 'road'." ;
@@ -128,7 +123,7 @@
 :securityMeasure
   a owl:DatatypeProperty ;
   rdfs:comment "This property specifies the security measures of a specific infrastuctural function." ;
-  rdfs:domain :LocationRole ;
+  rdfs:domain :LocationRoles ;
   rdfs:label "Security Measure" ;
   rdfs:range xsd:string ;
 .

@@ -291,7 +291,8 @@ trains, airplanes, barges etc.""" ;
 :Cargo 
   a owl:Class ;
   rdfs:comment "Generic cargo object, may be transport equipment, goods or product" ;
-  rdfs:label "Cargo"
+  rdfs:label "Cargo";
+  rdfs:subClassOf :PhysicalObject
 .
 :cargoMaxSize
   a owl:DatatypeProperty ;
@@ -607,6 +608,7 @@ trains, airplanes, barges etc.""" ;
 :natureOfCargo
   a owl:ObjectProperty ;
   rdfs:label "Nature of Cargo" ;
+  rdfs:domain :Cargo ;
   rdfs:range classifications:NatureOfCargo ;
   rdfs:subPropertyOf :classifications_detail ;
 .
@@ -792,6 +794,7 @@ trains, airplanes, barges etc.""" ;
   a owl:ObjectProperty ;
   rdfs:label "Type of Cargo" ;
   rdfs:range classifications:CargoType ;
+  rdfs:domain :Cargo ;
   rdfs:subPropertyOf :classifications_detail ;
 .
 :vesselType
