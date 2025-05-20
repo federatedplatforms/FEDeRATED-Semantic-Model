@@ -190,6 +190,7 @@
   rdfs:label "Timestamp";
   rdfs:range xsd:dateTime ;
   rdfs:subPropertyOf :involves ;
+  rdfs:domain :Event ;
   skos:ältLabel "IMO00748"
 .
 :involvesTransportMeans
