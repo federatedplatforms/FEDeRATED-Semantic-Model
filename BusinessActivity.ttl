@@ -65,3 +65,17 @@
     rdfs:range xsd:integer ;
     rdfs:range foaf:Document
 .
+:externalReference
+    a owl:ObjectProperty ;
+    rdfs:label "External Reference" ;
+    rdfs:comment "Reference to an external identifier" ;
+    rdfs:domain :BusinessActivity ;
+    rdfs:range xsd:string
+.
+:hasMRN_Number
+    a owl:ObjectProperty ;
+    rdfs:label "MRN Number" ;
+    rdfs:comment "Reference to MRN number" ;
+    rdfs:domain :BusinessActivity ;
+    rdfs:range xsd:string
+.
