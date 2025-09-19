@@ -1,0 +1,67 @@
+@prefix : <https://ontology.tno.nl/logistics/federated/BusinessActivity#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix Location: <https://ontology.tno.nl/logistics/federated/Location#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+
+:BusinessActivity
+  a owl:Class ;
+  rdfs:comment "A business activity bundles all the information associated to a business transaction" ;
+  rdfs:label "Business Activity" ;
+.
+:UUID a owl:DatatypeProperty ;
+  rdfs:comment "Every Business Activity has a UUID to identify its' relation to an event" ;
+  rdfs:label "UUID" ;
+  rdfs:domain :BusinessActivity ;
+  rdfs:range xsd:string
+.
+:involvesDate
+    a owl:DatatypeProperty ;
+    rdfs:label "Date" ;
+    rdfs:comment "Bill of lading issue date / voyage charter party date" ;
+    rdfs:domain :BusinessActivity ;
+    rdfs:range xsd:string ;
+    owl:equivalentProperty Location:locode ;
+.
+:involvesLoCode 
+    a owl:DatatypeProperty ;
+    rdfs:label "LoCode" ;
+    rdfs:comment "Bill of lading issued location, coded" ;
+    rdfs:domain :BusinessActivity ;
+    rdfs:range xsd:string ;
+    owl:equivalentProperty Location:locode ;
+.
+:numberOriginal
+    a owl:DatatypeProperty ;
+    rdfs:label "Number Original" ;
+    rdfs:comment "Number of original Bill of Ladings" ;
+    rdfs:domain :BusinessActivity ;
+    rdfs:range xsd:integer ;
+.
+:numberCopies
+    a owl:DatatypeProperty ;
+    rdfs:label "Number Copies" ;
+    rdfs:comment "Number of Bill of Lading copies" ;
+    rdfs:domain :BusinessActivity ;
+    rdfs:range xsd:integer ;
+.
+:termsConditions
+    a owl:ObjectProperty ;
+    rdfs:label "Terms and Conditions" ;
+    rdfs:comment "Terms and conditions in the transport document - can be expressed as plain text or a URL to the publicly accessible document itself" ;
+    rdfs:domain :BusinessActivity ;
+    rdfs:range xsd:integer ;
+    rdfs:range foaf:Document
+.
+:carrierClauses
+    a owl:ObjectProperty ;
+    rdfs:label "Carrier Clauses" ;
+    rdfs:comment "Description of additional clauses for a specific shipment added by carrier to B/L - can be expressed as plain text or a URL to a publicly accessible document" ;
+    rdfs:domain :BusinessActivity ;
+    rdfs:range xsd:integer ;
+    rdfs:range foaf:Document
+.
