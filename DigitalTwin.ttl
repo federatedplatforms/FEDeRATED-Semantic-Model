@@ -393,6 +393,13 @@ trains, airplanes, barges etc.""" ;
   rdfs:range xsd:string ;
   rdfs:subPropertyOf :PhysicalObjectProperties ;
 .
+:documentLocation
+  a owl:DatatypeProperty;
+  rdfs:domain :Document ;
+  rdfs:comment "Accessible web link to the document location" ;
+  rdfs:range xsd:string ;
+  rdfs:label "Document Location"
+.
 :documentVersion
   a owl:DatatypeProperty ;
   rdfs:domain :Document ;
@@ -541,6 +548,12 @@ trains, airplanes, barges etc.""" ;
   a owl:ObjectProperty ;
   rdfs:range classifications:DangerousGoodsRegulationCode ;
   rdfs:subPropertyOf :classifications_detail ;
+.
+:involvesDocument
+  a owl:ObjectProperty ;
+  rdfs:domain owl:Thing ;
+  rdfs:range :Document ;
+  rdfs:label "Involves Document" ;
 .
 :isEmpty
   a owl:DatatypeProperty ;
