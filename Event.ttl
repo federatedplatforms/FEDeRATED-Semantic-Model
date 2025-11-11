@@ -5,6 +5,7 @@
 @prefix : <https://ontology.tno.nl/logistics/federated/Event#> .
 @prefix DigitalTwin: <https://ontology.tno.nl/logistics/federated/DigitalTwin#> .
 @prefix LegalPerson: <https://ontology.tno.nl/logistics/federated/LegalPerson#> .
+@prefix BusinessActivity: <https://ontology.tno.nl/logistics/federated/BusinessActivity#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
@@ -57,12 +58,6 @@
 .
 
 # Association event classes
-:BusinessAssociation
-  a owl:Class ;
-  rdfs:comment "Business association event that may associate digital twin(s) with a business identifier" ;
-  rdfs:label "Business Association" ;
-  rdfs:subClassOf :AssociationEvent ;
-.
 :CargoAssociation
   a owl:Class ;
   rdfs:comment "Cargo association event that may associate (dangerous) goods with a transport equipment" ;
@@ -144,6 +139,13 @@
   rdfs:domain :Event ;
   rdfs:label "Involves" ;
   rdfs:range owl:Thing ;
+.
+:involvesBusinessActivity
+  a owl:ObjectProperty ;
+  rdfs:comment "Business activity to which the event is part of" ;
+  rdfs:domain :Event ;
+  rdfs:label "Involves Business Activity" ;
+  rdfs:range BusinessActivity:BusinessActivity;
 .
 :involvesBusinessIdentifier
   a owl:DatatypeProperty ;
