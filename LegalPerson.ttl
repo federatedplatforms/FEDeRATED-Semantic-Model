@@ -21,6 +21,13 @@
   rdfs:label "Legal person" ;
   rdfs:subClassOf :Agent ;
 .
+:involvesContactPoint
+  a owl:ObjectProperty ;
+  rdfs:domain :Actor ;
+  rdfs:range <https://schema.org/ContactPoint> ;
+  rdfs:label "Contact Point" ;
+  rdfs:comment "Schema.org formatted contact point, used to bundle the different types of contact means"
+.
 :involvesLegalPerson
   a owl:ObjectProperty ;
   rdfs:domain :Actor ;
@@ -41,7 +48,7 @@
   rdfs:label "Legal Person Country" ;
   rdfs:range xsd:string ;
 .
-:legalPersonAddress
+:involvesAddress
   a owl:ObjectProperty ;
   rdfs:comment "Address of a legal person" ;
   rdfs:domain :LegalPerson ;
