@@ -13,11 +13,19 @@
   rdfs:comment "A business activity bundles all the information associated to a business transaction" ;
   rdfs:label "Business Activity" ;
 .
-:UUID a owl:DatatypeProperty ;
-  rdfs:comment "Every Business Activity has a UUID to identify its' relation to an event" ;
-  rdfs:label "UUID" ;
-  rdfs:domain :BusinessActivity ;
-  rdfs:range xsd:string
+:UUID 
+    a owl:DatatypeProperty ;
+    rdfs:comment "Every Business Activity has a UUID to identify its' relation to an event" ;
+    rdfs:label "UUID" ;
+    rdfs:domain :BusinessActivity ;
+    rdfs:range xsd:string
+.
+:type 
+    a owl:DatatypeProperty ;
+    rdfs:comment "Type of business activbity - e.g. consignment, AWB, etc." ;
+    rdfs:label "Business Activity Type" ;
+    rdfs:domain :BusinessActivity ;
+    rdfs:range xsd:string
 .
 :involvesDate
     a owl:DatatypeProperty ;
