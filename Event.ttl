@@ -166,7 +166,7 @@
   rdfs:comment "This relation establishes an association between an Event and a Location. The exact meaning depends on the type of Event, which is inferred from this property and the second association the event has." ;
   rdfs:domain :Event ;
   rdfs:label "Involves Location" ;
-  rdfs:range Location:BusinessLocation ;
+  rdfs:range <http://schema.org/Place> ;
 .
 :involvesActor
   a owl:ObjectProperty ;
