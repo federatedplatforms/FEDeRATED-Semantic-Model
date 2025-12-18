@@ -273,10 +273,10 @@ trains, airplanes, barges etc.""" ;
 .
 # ------------ PROPERTIES ------------ 
 
-:aircraftNumber
+:flightNumber
   a owl:DatatypeProperty ;
   rdfs:comment "" ;
-  rdfs:label "Aircraft number" ;
+  rdfs:label "Flight number" ;
   rdfs:domain :Airplane ;
   rdfs:range xsd:string ;
   rdfs:subPropertyOf :transportMeansPropertiesExternalIdentification
