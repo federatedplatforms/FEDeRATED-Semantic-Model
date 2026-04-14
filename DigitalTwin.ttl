@@ -703,6 +703,12 @@ trains, airplanes, barges etc.""" ;
   rdfs:range xsd:string ;
   rdfs:subPropertyOf :PhysicalObjectProperties ;
 .
+:quantity
+  a owl:DatatypeProperty ;
+  rdfs:label "Quantity" ;
+  rdfs:range xsd:integer ;
+  rdfs:subPropertyOf :PhysicalObjectProperties ;
+.
 :relatedSealingPartyRoleCode
   a owl:ObjectProperty ;
   rdfs:comment "This property relates the seal to the role code of the seal party" ;
