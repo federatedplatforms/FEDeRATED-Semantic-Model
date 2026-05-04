@@ -36,7 +36,7 @@
   a owl:ObjectProperty ;
   rdfs:domain :LegalPerson ;
   rdfs:range :LegalPersonIdentification ;
-  rdfs:label "Legal Person has Legal Person Identification" 
+  rdfs:label "Legal Person Identification" 
 .
 :legalPersonIdentifier
   a owl:DatatypeProperty ;
