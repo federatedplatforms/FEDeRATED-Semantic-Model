@@ -1,0 +1,163 @@
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix adms: <http://www.w3.org/ns/adms#> .
+@prefix : <https://ontology.tno.nl/logistics/federated/> .
+
+# Main Catalog for FEDeRATED Semantic Model
+:FEDeRATEDCatalog
+  a dcat:Catalog ;
+  dct:title "FEDeRATED Semantic Model Ontology Catalog"@en ;
+  dct:description "A data catalog describing the FEDeRATED ontology modules for logistics data modeling, covering physical objects, events, locations, actors, and their respective roles in the logistics domain."@en ;
+  dct:language <http://publications.europa.eu/resource/authority/language/ENG> ;
+  dct:issued "2025-01-01"^^<http://www.w3.org/2001/XMLSchema#date> ;
+  dct:issued "2026-05-04"^^<http://www.w3.org/2001/XMLSchema#date> ;
+  dct:accrualPeriodicity <http://purl.org/cld/accmeth/MONTHLY> ;
+  dcat:dataset :ActorRolesDataset ;
+  dcat:dataset :DigitalTwinDataset ;
+  dcat:dataset :EventDataset ;
+  dcat:dataset :LegalPersonDataset ;
+  dcat:dataset :LocationDataset ;
+  dcat:dataset :LocationRolesDataset ;
+  foaf:homepage <https://github.com/TNO/FEDeRATED-Semantic-Model> ;
+.
+
+# ActorRoles Module
+:ActorRolesDataset
+  a dcat:Dataset ;
+  dct:title "Actor Roles Module"@en ;
+  dct:description "The actor roles module describes the different types of roles logistics actors can have in the context of an event. Logistic actors can have commercial, financial, supply chain, business, and logistics roles. The physical actors themselves are described in the separate LegalPerson ontology."@en ;
+  dct:identifier "ActorRoles" ;
+  dcat:distribution :ActorRolesDistribution ;
+  dct:language <http://publications.europa.eu/resource/authority/language/ENG> ;
+  dcat:keyword "actor" ;
+  dcat:keyword "role" ;
+  dcat:keyword "logistics" ;
+  dcat:keyword "commercial" ;
+  dcat:keyword "financial" ;
+.
+
+:ActorRolesDistribution
+  a dcat:Distribution ;
+  dct:title "ActorRoles.ttl"@en ;
+  # dcat:accessURL <file:///ActorRoles.ttl> ;
+  # dcat:downloadURL <file:///ActorRoles.ttl> ;
+  dct:format <http://publications.europa.eu/resource/authority/file-type/RDF_XML> ;
+  dcat:mediaType "text/turtle" ;
+.
+
+# DigitalTwin Module
+:DigitalTwinDataset
+  a dcat:Dataset ;
+  dct:title "Digital Twin Module"@en ;
+  dct:description "The digital twin module is a generic ontology modeling physical objects in the logistics domain. The main concepts include Equipment, Package, Product, Goods, and Transport Means. It focuses on the physical component of logistics objects, with the virtual component and cyber-physical integration out of scope."@en ;
+  dct:identifier "DigitalTwin" ;
+  dcat:distribution :DigitalTwinDistribution ;
+  dct:language <http://publications.europa.eu/resource/authority/language/ENG> ;
+  dcat:keyword "digital twin" ;
+  dcat:keyword "physical object" ;
+  dcat:keyword "equipment" ;
+  dcat:keyword "goods" ;
+  dcat:keyword "transport" ;
+.
+
+:DigitalTwinDistribution
+  a dcat:Distribution ;
+  dct:title "DigitalTwin.ttl"@en ;
+  # dcat:accessURL <file:///DigitalTwin.ttl> ;
+  # dcat:downloadURL <file:///DigitalTwin.ttl> ;
+  dct:format <http://publications.europa.eu/resource/authority/file-type/RDF_XML> ;
+  dcat:mediaType "text/turtle" ;
+.
+
+# Event Module
+:EventDataset
+  a dcat:Dataset ;
+  dct:title "Event Module"@en ;
+  dct:description "The event module describes logistics activities in the real world, distinguishing between document-mirroring events (such as Purchase Orders, Air Way Bills, eBill of Lading) and track & trace events (such as ETA, gate-out, border crossing). Every atomic event mentions a business identifier and timestamp, with document-mirroring events requiring additional relations between Digital Twins, Transport Means, Locations, and Logistic Actors."@en ;
+  dct:identifier "Event" ;
+  dcat:distribution :EventDistribution ;
+  dct:language <http://publications.europa.eu/resource/authority/language/ENG> ;
+  dcat:keyword "event" ;
+  dcat:keyword "track and trace" ;
+  dcat:keyword "document event" ;
+  dcat:keyword "logistics activity" ;
+.
+
+:EventDistribution
+  a dcat:Distribution ;
+  dct:title "Event.ttl"@en ;
+  # dcat:accessURL <file:///Event.ttl> ;
+  # dcat:downloadURL <file:///Event.ttl> ;
+  dct:format <http://publications.europa.eu/resource/authority/file-type/RDF_XML> ;
+  dcat:mediaType "text/turtle" ;
+.
+
+# LegalPerson Module
+:LegalPersonDataset
+  a dcat:Dataset ;
+  dct:title "Legal Person Module"@en ;
+  dct:description "The legal person module contains information on the possible means of communication of logistics operators, modeling contact details dimensions including name, identification, and address."@en ;
+  dct:identifier "LegalPerson" ;
+  dcat:distribution :LegalPersonDistribution ;
+  dct:language <http://publications.europa.eu/resource/authority/language/ENG> ;
+  dcat:keyword "legal person" ;
+  dcat:keyword "operator" ;
+  dcat:keyword "contact" ;
+  dcat:keyword "address" ;
+.
+
+:LegalPersonDistribution
+  a dcat:Distribution ;
+  dct:title "LegalPerson.ttl"@en ;
+  # dcat:accessURL <file:///LegalPerson.ttl> ;
+  # dcat:downloadURL <file:///LegalPerson.ttl> ;
+  dct:format <http://publications.europa.eu/resource/authority/file-type/RDF_XML> ;
+  dcat:mediaType "text/turtle" ;
+.
+
+# Location Module
+:LocationDataset
+  a dcat:Dataset ;
+  dct:title "Location Module"@en ;
+  dct:description "The location module contains information on infrastructural and logistical functions used in logistics events. It defines logistical functions depicting locations where logistical activities can be performed, and includes trajectories connecting these locations. The module imports and extends concepts from Schema.org."@en ;
+  dct:identifier "Location" ;
+  dcat:distribution :LocationDistribution ;
+  dct:language <http://publications.europa.eu/resource/authority/language/ENG> ;
+  dcat:keyword "location" ;
+  dcat:keyword "infrastructure" ;
+  dcat:keyword "logistical function" ;
+  dcat:keyword "trajectory" ;
+.
+
+:LocationDistribution
+  a dcat:Distribution ;
+  dct:title "Location.ttl"@en ;
+  # dcat:accessURL <file:///Location.ttl> ;
+  # dcat:downloadURL <file:///Location.ttl> ;
+  dct:format <http://publications.europa.eu/resource/authority/file-type/RDF_XML> ;
+  dcat:mediaType "text/turtle" ;
+.
+
+# LocationRoles Module
+:LocationRolesDataset
+  a dcat:Dataset ;
+  dct:title "Location Roles Module"@en ;
+  dct:description "The location roles module contains information about the different types of possible roles a location can have in the context of an event. Location roles define the contextual function of a location for an event (e.g., the same port can be a place of loading for one shipment and a place of arrival for another)."@en ;
+  dct:identifier "LocationRoles" ;
+  dcat:distribution :LocationRolesDistribution ;
+  dct:language <http://publications.europa.eu/resource/authority/language/ENG> ;
+  dcat:keyword "location role" ;
+  dcat:keyword "place" ;
+  dcat:keyword "event context" ;
+.
+
+:LocationRolesDistribution
+  a dcat:Distribution ;
+  dct:title "LocationRoles.ttl"@en ;
+  # dcat:accessURL <file:///LocationRoles.ttl> ;
+  # dcat:downloadURL <file:///LocationRoles.ttl> ;
+  dct:format <http://publications.europa.eu/resource/authority/file-type/RDF_XML> ;
+  dcat:mediaType "text/turtle" ;
+.
