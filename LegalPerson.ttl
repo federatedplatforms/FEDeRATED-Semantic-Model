@@ -21,11 +21,36 @@
   rdfs:label "Legal person" ;
   rdfs:subClassOf :Agent ;
 .
+:LegalPersonIdentification
+  a owl:Class ;
+  rdfs:comment "LegalPersonIdentification represents the different identifiers that can be used to identify a legal person." ;
+  rdfs:label "Legal Person Identification" ;
+.
 :involvesLegalPerson
   a owl:ObjectProperty ;
   rdfs:domain :Actor ;
   rdfs:range :LegalPerson ;
   rdfs:label "Actor is Legal Person" ;
+.
+:involvesLegalPersonIdentification
+  a owl:ObjectProperty ;
+  rdfs:domain :LegalPerson ;
+  rdfs:range :LegalPersonIdentification ;
+  rdfs:label "Legal Person has Legal Person Identification" 
+.
+:legalPersonIdentifier
+  a owl:DatatypeProperty ;
+  rdfs:comment "Identifier of the legal person" ;
+  rdfs:domain :legalpersonIdentification ;
+  rdfs:label "Legal Person Identifier" ;
+  rdfs:range xsd:string 
+.
+:legalPersonIdentificationScheme
+  a owl:DatatypeProperty ;
+  rdfs:comment "The scheme of the legal person identifier, e.g. EORI, VAT, DUNS etc." ;
+  rdfs:domain :legalpersonIdentification ;
+  rdfs:label "Legal Person Identification Scheme" ;
+  rdfs:range xsd:string 
 .
 :legalPersonName
   a owl:DatatypeProperty ;
@@ -45,6 +70,6 @@
   a owl:ObjectProperty ;
   rdfs:comment "Address of a legal person" ;
   rdfs:domain :LegalPerson ;
-  rdfs:label "Legal Person Country" ;
+  rdfs:label "Legal Person Address" ;
   rdfs:range <http://schema.org/Place>;
 .
