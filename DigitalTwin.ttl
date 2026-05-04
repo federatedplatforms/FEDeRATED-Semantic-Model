@@ -2,7 +2,6 @@
 # prefix: DigitalTwin
 
 @prefix : <https://ontology.tno.nl/logistics/federated/DigitalTwin#> .
-@prefix classifications: <https://ontology.tno.nl/logistics/federated/Classifications#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
@@ -11,25 +10,15 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-classifications:PackageTypeNumericCode
-  a owl:DatatypeProperty ;
-.
-classifications:packageCode
-  a owl:DatatypeProperty ;
-.
-classifications:packageTypeName
-  a owl:DatatypeProperty ;
-.
 <https://ontology.tno.nl/logistics/federated/DigitalTwin>
   a owl:Ontology ;
-  dc:creator "Dena Tahvildari, Cornelis Bouter, Maaike Burghoorn" ;
+  dc:creator "Dena Tahvildari, Cornelis Bouter, Maaike Burghoorn, Theodor Chirvasuta" ;
   dcterms:created "2020-07-17" ;
   dcterms:description "This is DigitalTwin ontology. It contains classes, attributes and relationships about logistics physical real world object. The usecase is two: 1. it is part of federated logistics ontology architecture that is referenced and used by Event module. 2. It will be evolved (extended) to cover digital Twin technologies requirements. " ;
   dcterms:isRequiredBy "<https://ontology.tno.nl/logistics/federated/Event>" ;
-  dcterms:issued "2021-03-15" ;
+  dcterms:issued "2026-04-05" ;
   dcterms:language "en" ;
   dcterms:requiredBy <https://ontology.tno.nl/logistics/federated/Event> ;
-  dcterms:requires <https://ontology.tno.nl/logistics/federated/Classifications> ;
   owl:versionIRI <https://ontology.tno.nl/logistics/federated/DigitalTwinv-0.1> ;
 .
 :UUID
@@ -286,7 +275,7 @@ trains, airplanes, barges etc.""" ;
   rdfs:comment "the measure of volume expressed in m3" ;
   rdfs:label "Bulk Volume" ;
   rdfs:range xsd:integer ;
-  rdfs:subPropertyOf :PhysicalObjectProperties ;
+  rdfs:subPropertyOf :volume ;
 .
 :Cargo 
   a owl:Class ;
@@ -313,7 +302,7 @@ trains, airplanes, barges etc.""" ;
   rdfs:domain :Equipment ;
   rdfs:label "Cargo Maximum Volume" ;
   rdfs:range xsd:integer ;
-  rdfs:subPropertyOf :PhysicalObjectProperties ;
+  rdfs:subPropertyOf :volume ;
 .
 :cargoMinimumSize
   a owl:DatatypeProperty ;
@@ -333,18 +322,13 @@ trains, airplanes, barges etc.""" ;
   rdfs:domain :Equipment ;
   rdfs:label "Cargo Minimum Volume" ;
   rdfs:range xsd:integer ;
-  rdfs:subPropertyOf :PhysicalObjectProperties ;
+  rdfs:subPropertyOf :volume ;
 .
 :cargoTemperature
   a owl:DatatypeProperty ;
   rdfs:label "Cargo Temperature" ;
   rdfs:range xsd:string ;
   rdfs:subPropertyOf :PhysicalObjectProperties ;
-.
-:classifications_detail
-  a owl:ObjectProperty ;
-  rdfs:comment "this object property links the any type of digital twin to the needed classification type and its controlled vocabularies" ;
-  rdfs:range classifications:Classifications ;
 .
 :connectedToSealingParty
   a owl:ObjectProperty ;
@@ -452,8 +436,7 @@ trains, airplanes, barges etc.""" ;
   a owl:ObjectProperty ;
   rdfs:domain :Goods ;
   rdfs:label "Goods Type Code" ;
-  rdfs:range xsd:string ;
-  rdfs:subPropertyOf :classifications_detail ;
+  rdfs:range xsd:string
 .
 :grossWeight
   a owl:DatatypeProperty ;
@@ -474,7 +457,7 @@ trains, airplanes, barges etc.""" ;
   rdfs:comment "Dangerous goods require a dangerous goods regulation code." ;
   rdfs:domain :Goods;
   rdfs:label "Dangerous Goods Regulation Code" ;
-  rdfs:range classifications:DangerousGoodsRegulationCode ;
+  rdfs:range xsd:string ;
 .
                                                                                                                                                                                                           
 :UNDGCode
@@ -488,7 +471,7 @@ trains, airplanes, barges etc.""" ;
   a owl:ObjectProperty ;
   rdfs:domain :Document ;
   rdfs:label "has Documnet Type" ;
-  rdfs:range classifications:DocumentType ;
+  rdfs:range xsd:string ;
 .
 :hasFlashpointTemperature
   a owl:DatatypeProperty ;
@@ -512,8 +495,7 @@ trains, airplanes, barges etc.""" ;
   rdfs:comment "A code specifying a condition of this logistics seal." ;
   rdfs:domain :Seal ;
   rdfs:label "Has Seal Condition Code" ;
-  rdfs:range classifications:SealConditionCode ;
-  rdfs:subPropertyOf :classifications_detail ;
+  rdfs:range xsd:string
 .
 :transportMeansMode
   a owl:DatatypeProperty ;
@@ -539,8 +521,7 @@ trains, airplanes, barges etc.""" ;
 .
 :hazardousMaterialDetail
   a owl:ObjectProperty ;
-  rdfs:range classifications:DangerousGoodsRegulationCode ;
-  rdfs:subPropertyOf :classifications_detail ;
+  rdfs:range xsd:string
 .
 :isEmpty
   a owl:DatatypeProperty ;
@@ -609,8 +590,7 @@ trains, airplanes, barges etc.""" ;
   a owl:ObjectProperty ;
   rdfs:label "Nature of Cargo" ;
   rdfs:domain :Cargo ;
-  rdfs:range classifications:NatureOfCargo ;
-  rdfs:subPropertyOf :classifications_detail ;
+  rdfs:range xsd:string
 .
 :netLoad
   a owl:DatatypeProperty ;
@@ -632,30 +612,38 @@ trains, airplanes, barges etc.""" ;
 .
 :numberofPackages
   a owl:DatatypeProperty ;
-  rdfs:domain :Package ;
+  rdfs:domain :PhysicalObject ;
   rdfs:label "Number of Packages" ;
   rdfs:range xsd:integer ;
-  rdfs:subPropertyOf :packageProperties ;
+  rdfs:subPropertyOf :physicalObjectProperties ;
+  :packagePropertiesGroup :PackagePropertyGroup
 .
 :packageCode
   a owl:DatatypeProperty ;
-  rdfs:comment "Package code based on Unece Standardisations." ;
-  rdfs:domain :Package ;
+  rdfs:comment "Package code based on UNECE Standardisations." ;
+  rdfs:domain :PhysicalObject ;
   rdfs:label "Package Code" ;
   rdfs:range xsd:string ;
-  rdfs:subPropertyOf :packageProperties ;
+  rdfs:subPropertyOf :physicalObjectProperties ;
+  :packagePropertiesGroup :PackagePropertyGroup
 .
 :packageLevelType
   a owl:DatatypeProperty ;
-  rdfs:domain :Package ;
+  rdfs:domain :PhysicalObject ;
   rdfs:label "Package Level Type" ;
   rdfs:range xsd:string ;
-  rdfs:subPropertyOf :packageProperties ;
+  rdfs:subPropertyOf :physicalObjectProperties ;
+  :packagePropertiesGroup :PackagePropertyGroup
 .
-:packageProperties
-  a owl:DatatypeProperty ;
-  rdfs:comment "Do not Instantiate -- Made only for grouping" ;
-  rdfs:subPropertyOf :PhysicalObjectProperties ;
+:packagePropertiesGroup
+    a owl:AnnotationProperty ;
+    rdfs:label "Package Properties Group" ;
+    rdfs:comment "Properties annotated with this are all related to package information. This is only for grouping and should not be instantiated."
+.
+:PackagePropertyGroup
+    a skos:Concept ;
+    skos:prefLabel "Package property group";
+    skos:definition "A conceptual group of properties describing package characteristics." 
 .
 :packageTypeName
   a owl:DatatypeProperty ;
@@ -714,8 +702,7 @@ trains, airplanes, barges etc.""" ;
   rdfs:comment "This property relates the seal to the role code of the seal party" ;
   rdfs:domain :Seal ;
   rdfs:label "Related Sealing Party Role Code" ;
-  rdfs:range classifications:SealingPartyRoleCode ;
-  rdfs:subPropertyOf :classifications_detail ;
+  rdfs:range xsd:string ;
 .
 :sealIndicator
   a owl:DatatypeProperty ;
@@ -799,9 +786,8 @@ trains, airplanes, barges etc.""" ;
 :typeOfCargo
   a owl:ObjectProperty ;
   rdfs:label "Type of Cargo" ;
-  rdfs:range classifications:CargoType ;
-  rdfs:domain :Cargo ;
-  rdfs:subPropertyOf :classifications_detail ;
+  rdfs:range xsd:string ;
+  rdfs:domain :Cargo
 .
 :vesselType
   a owl:DatatypeProperty ;
@@ -816,6 +802,14 @@ trains, airplanes, barges etc.""" ;
   rdfs:range xsd:string ;
   rdfs:subPropertyOf :transportMeansPropertiesExternalIdentification ;
   skos:altLabel "IMO0142"
+.
+:volume
+  a owl:DatatypeProperty ;
+  rdfs:label "Volume";
+  rdfs:comment "Volume value and incl. unit of measurement";
+  rdfs:range xsd:integer ;
+  rdfs:domain :PhysicalObject ;
+  rdfs:subPropertyOf :PhysicalObjectProperties 
 .
 :wagonBrakeType
   a owl:DatatypeProperty ;
