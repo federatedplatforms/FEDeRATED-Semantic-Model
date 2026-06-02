@@ -695,6 +695,7 @@ trains, airplanes, barges etc.""" ;
   a owl:DatatypeProperty ;
   rdfs:label "Quantity" ;
   rdfs:range xsd:integer ;
+  rdfs:domain :PhysicalObject ;
   rdfs:subPropertyOf :PhysicalObjectProperties ;
 .
 :relatedSealingPartyRoleCode
