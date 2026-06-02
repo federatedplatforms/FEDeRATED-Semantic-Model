@@ -130,7 +130,7 @@
                        rdfs:label "Business Location Involves Location" .
 :locationRole
   a owl:ObjectProperty ;
-  rdfs:domain <http://schema.org/Place> ;
+  rdfs:domain :BusinessLocation ;
   rdfs:label "Business Location has role" ;
   rdfs:range LocationRoles:LocationRoles ;
 .
