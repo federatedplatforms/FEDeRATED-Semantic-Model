@@ -131,7 +131,13 @@
 :locationRole
   a owl:ObjectProperty ;
   rdfs:domain :BusinessLocation ;
-  rdfs:label "Business Location has role" ;
+  rdfs:label "Business Location Role" ;
+  rdfs:range xsd:string ;
+.
+:explicitLocationRole
+  a owl:ObjectProperty ;
+  rdfs:domain :BusinessLocation ;
+  rdfs:label "Business Location Explicit (Codified) Role" ;
   rdfs:range LocationRoles:LocationRoles ;
 .
 :Corridor
