@@ -12,8 +12,14 @@
 :actorRole
   a owl:ObjectProperty ;
   rdfs:domain :Actor ;
-  rdfs:range ActorRoles:ActorRoles ;
+  rdfs:range xsd:string ;
   rdfs:label "Actor has logistic role" ;
+.
+:explicitActorRole
+  a owl:ObjectProperty ;
+  rdfs:domain :Actor ;
+  rdfs:range ActorRoles:ActorRoles ;
+  rdfs:label "Actor has explicit logistic role" ;
 .
 :LegalPerson
   a owl:Class ;
