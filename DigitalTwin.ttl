@@ -328,6 +328,7 @@ trains, airplanes, barges etc.""" ;
   a owl:DatatypeProperty ;
   rdfs:label "Cargo Temperature" ;
   rdfs:range xsd:string ;
+  rdfs:domain :PhysicalObject ;
   rdfs:subPropertyOf :PhysicalObjectProperties ;
 .
 :connectedToSealingParty
