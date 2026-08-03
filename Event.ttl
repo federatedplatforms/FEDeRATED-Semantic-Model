@@ -34,17 +34,10 @@
   rdfs:comment "An event reflects a conceptual association of digital twins or a virtualization of a physical event" ;
   rdfs:label "Event" ;
 .
-:AssociationEvent
+:BusinessIdentifier
   a owl:Class ;
-  rdfs:comment "Association event that may associate digital twins with business identifiers or other digital twins" ;
-  rdfs:label "Association Event" ;
-  rdfs:subClassOf :Event ;
-.
-:PrimitiveEvent
-  a owl:Class ;
-  rdfs:comment "A primitive event represents a virtualization of a physical event, i.e. arrival, load, discharge etc." ;
-  rdfs:label "Primitive Event" ;
-  rdfs:subClassOf :Event ;
+  rdfs:comment "A Business Identifier enables consistent traceability and linkage between operational events, actors, assets, and related business information. It is made of two elements - the business identifier alphanumeric value, and its description" ;
+  rdfs:label "BusinessIdentifier"
 .
 
 # Unique identifier for storage of event
@@ -56,84 +49,35 @@
   rdfs:range xsd:string
 .
 
-# Association event classes
-:BusinessAssociation
-  a owl:Class ;
-  rdfs:comment "Business association event that may associate digital twin(s) with a business identifier" ;
-  rdfs:label "Business Association" ;
-  rdfs:subClassOf :AssociationEvent ;
-.
-:CargoAssociation
-  a owl:Class ;
-  rdfs:comment "Cargo association event that may associate (dangerous) goods with a transport equipment" ;
-  rdfs:label "Cargo Association" ;
-  rdfs:subClassOf :AssociationEvent ;
-.
-:LocationAssociation
-  a owl:Class ;
-  rdfs:comment "Location Association may associate a legal person or a transport means to a location" ;
-  rdfs:label "Location Association" ;
-  rdfs:subClassOf :AssociationEvent ;
-.
-:TransportMeansAssociation
-  a owl:Class ;
-  rdfs:comment "Transport means association event that may associate cargo (goods or equipment) with a transport means" ;
-  rdfs:label "Transport Means Association" ;
-  rdfs:subClassOf :AssociationEvent ;
-.
-# Time classification
+# Timestamp
 
-:TimeClassification a owl:Class ;
-  rdfs:comment "Time classification can be either Planned, Estimated, Expected, Actual, Requested." ;
-  rdfs:label "Time Classification" ;
+:involvesTimestamp
+  a owl:DatatypeProperty ;
+  rdfs:comment "The timestamp expressed as a date and time, alongside the timezone it is specified";
+  rdfs:label "Involves Timestamp";
+  rdfs:range :Timestamp ;
+  rdfs:subPropertyOf :involves ;
+  rdfs:domain :Event 
 .
-:Actual
-  a :TimeClassification ;
-  rdfs:label "Actual" ;
+
+:Timestamp
+  a owl:Class ;
+  rdfs:comment "Class used to aggregate the datetime timestamp and the classification of the timestamp" ;
+  rdfs:label "Timestamp" ;
 .
-:Estimated
-  a :TimeClassification ;
-  rdfs:label "Estimated" ;
-.
-:Expected
-  a :TimeClassification ;
-  rdfs:label "Expected" ;
-.
-:Planned
-  a :TimeClassification ;
-  rdfs:label "Planned" ;
-.
-:Requested
-  a :TimeClassification ;
-  rdfs:label "Requested" ;
-.
+
 :involvesTimeClassification a owl:DatatypeProperty ;
-  rdfs:comment "Every event should have a time classification. The time classifications may be planned, estimated, expected, actual or requested." ;
-  rdfs:label "Has Time Classification" ;
-  rdfs:domain :Event ;
-  rdfs:range :TimeClassification ;
+  rdfs:comment "Every timestamp should have a time classification. The time classifications may be planned, estimated, expected, actual, requested, or other denominations." ;
+  rdfs:label "Involves Time Classification" ;
+  rdfs:domain :Timestamp ;
+  rdfs:range xsd:string ;
 .
 
-# Milestone
-
-:Milestone
-  a owl:Class ;
-  rdfs:comment "Each Association Event should have a Milestone associated with it. At the moment, only Start and End are allowed milestones." ;
-  rdfs:label "Milestone" ;
-.
-:involvesMilestone a owl:DatatypeProperty ;
-  rdfs:comment "The milestone may be start or end." ;
-  rdfs:label "Milestone" ;
-  rdfs:domain :Event ;
-  rdfs:range :Milestone ;
-.
-:End
-  a :Milestone ;
-  rdfs:label "End" ;
-.
-:Start
-  a :Milestone ;
-  rdfs:label "Start" ;
+:involvesTimestampDateTime a owl:DatatypeProperty ;
+  rdfs:comment "Every timestamp must have the date time specified." ;
+  rdfs:label "Involves DateTime" ;
+  rdfs:domain :Timestamp ;
+  rdfs:range xsd:dateTime ;
 .
 
 # Involves predicates
@@ -150,8 +94,21 @@
   rdfs:comment "Identifier that can be used to refer to an external system the business transaction where the event is involved in (e.g., AWB / eFTI / voyage number (IMO0191))" ;
   rdfs:domain :Event ;
   rdfs:label "Involves Business Identifier" ;
+  rdfs:range :BusinessIdentifier ;
+.
+:involvesAlphanumericBusinessIdentifier
+  a owl:DatatypeProperty ;
+  rdfs:comment "Alphanumeric value of the business identifier" ;
+  rdfs:domain :BusinessIdentifier ;
+  rdfs:label "Business Identifier value" ;
   rdfs:range xsd:string ;
-  skos:altLabel "IMO0191"
+.
+:involvesDescriptionBusinessIdentifier
+  a owl:DatatypeProperty ;
+  rdfs:comment "Description of the business identifier" ;
+  rdfs:domain :BusinessIdentifier ;
+  rdfs:label "Business Identifier description" ;
+  rdfs:range xsd:string ;
 .
 :involvesDigitalTwin
   a owl:ObjectProperty ;
@@ -192,15 +149,7 @@
   rdfs:range xsd:string ;
   skos:altLabel "IMO0029"
 .
-:involvesTimestamp
-  a owl:DatatypeProperty ;
-  rdfs:comment "The timestamp expressed as a date and time, alongside the timezone it is specified";
-  rdfs:label "Timestamp";
-  rdfs:range xsd:dateTime ;
-  rdfs:subPropertyOf :involves ;
-  rdfs:domain :Event ;
-  skos:ältLabel "IMO00748"
-.
+
 :involvesTransportMeans
   a owl:ObjectProperty ;
   rdfs:comment "This relation establishes an association between an Event and a Transport Means Digital Twin. The exact meaning depends on the type of Event and its' milestone" ;
