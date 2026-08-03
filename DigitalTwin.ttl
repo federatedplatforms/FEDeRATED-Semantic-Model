@@ -699,6 +699,13 @@ trains, airplanes, barges etc.""" ;
   rdfs:domain :PhysicalObject ;
   rdfs:subPropertyOf :PhysicalObjectProperties ;
 .
+:quantityType
+  a owl:DatatypeProperty ;
+  rdfs:label "Quantity type" ;
+  rdfs:range xsd:string ;
+  rdfs:domain :PhysicalObject ;
+  rdfs:subPropertyOf :PhysicalObjectProperties ;
+.
 :relatedSealingPartyRoleCode
   a owl:ObjectProperty ;
   rdfs:comment "This property relates the seal to the role code of the seal party" ;
@@ -809,7 +816,7 @@ trains, airplanes, barges etc.""" ;
   a owl:DatatypeProperty ;
   rdfs:label "Volume";
   rdfs:comment "Volume value and incl. unit of measurement";
-  rdfs:range xsd:integer ;
+  rdfs:range xsd:float ;
   rdfs:domain :PhysicalObject ;
   rdfs:subPropertyOf :PhysicalObjectProperties 
 .
