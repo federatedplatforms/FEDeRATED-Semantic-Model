@@ -58,7 +58,7 @@ The event module describes the logistics activities in the real world, distingui
 - **Track & trace events** are expressive from their name, they do not require additional properties. 
 - **Document-mirroring events** on the other hand also require the inclusion of relations between Digital Twins (possibly goods, containers, etc.), Transport Means, Location and Logistic Actors.
 
-For examples of the difference between the 2 event types see the [Examples folder](./Examples/).
+For examples of the difference between the 2 event types see the [Adoption repository](https://github.com/federatedplatforms/Semantic-Model-Adoption).
 
 ### **LegalPerson.ttl**
 
