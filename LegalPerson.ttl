@@ -65,11 +65,11 @@
   rdfs:label "Legal Person Name" ;
   rdfs:range xsd:string ;
 .
-:legalPersonCountry
+:legalPersonCountryOfOrigin
   a owl:DatatypeProperty ;
   rdfs:comment "Country of origin of legal person" ;
   rdfs:domain :LegalPerson ;
-  rdfs:label "Legal Person Country" ;
+  rdfs:label "A person's country of Origin" ;
   rdfs:range xsd:string ;
 .
 :legalPersonAddress

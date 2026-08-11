@@ -392,7 +392,7 @@ trains, airplanes, barges etc.""" ;
 .
 :ems_id
   a owl:DatatypeProperty ;
-  rdfs:comment "The Emergency Medical Services ID." ;
+  rdfs:comment "The Emergency Schedule code." ;
   rdfs:domain :PhysicalObject ;
   rdfs:label "EMS ID" ;
   rdfs:range xsd:string ;
