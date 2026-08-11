@@ -145,7 +145,7 @@
   a owl:DatatypeProperty ;
   rdfs:label "Involves Packaging Type" ;
   rdfs:comment "This property denotes the packaging involved in the association of the product/goods with a package." ;
-  rdfs:domain :CargoAssociation ;
+  rdfs:domain :CargoAssociation ; # TODO this class is not defined.
   rdfs:range xsd:string ;
   skos:altLabel "IMO0029"
 .

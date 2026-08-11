@@ -550,7 +550,7 @@ trains, airplanes, barges etc.""" ;
   rdfs:comment "An optional stationary location for a physical object." ;
   rdfs:domain :PhysicalObject ;
   rdfs:label "Located At" ;
-  rdfs:range <https://ontology.tno.nl/logistics/federated/PhysicalInfrastructure#Location> ;
+  rdfs:range <https://ontology.tno.nl/logistics/federated/PhysicalInfrastructure#Location> ; # FIXME should be: BusinessLocation or just <http://schema.org/Place> ? ?
 .
 :locomotiveBrakeType
   a owl:DatatypeProperty ;
@@ -616,7 +616,7 @@ trains, airplanes, barges etc.""" ;
   rdfs:domain :PhysicalObject ;
   rdfs:label "Number of Packages" ;
   rdfs:range xsd:integer ;
-  rdfs:subPropertyOf :physicalObjectProperties ;
+  rdfs:subPropertyOf :PhysicalObjectProperties ;
   :packagePropertiesGroup :PackagePropertyGroup
 .
 :packageCode
@@ -625,7 +625,7 @@ trains, airplanes, barges etc.""" ;
   rdfs:domain :PhysicalObject ;
   rdfs:label "Package Code" ;
   rdfs:range xsd:string ;
-  rdfs:subPropertyOf :physicalObjectProperties ;
+  rdfs:subPropertyOf :PhysicalObjectProperties ;
   :packagePropertiesGroup :PackagePropertyGroup
 .
 :packageLevelType
@@ -633,7 +633,7 @@ trains, airplanes, barges etc.""" ;
   rdfs:domain :PhysicalObject ;
   rdfs:label "Package Level Type" ;
   rdfs:range xsd:string ;
-  rdfs:subPropertyOf :physicalObjectProperties ;
+  rdfs:subPropertyOf :PhysicalObjectProperties ;
   :packagePropertiesGroup :PackagePropertyGroup
 .
 :packagePropertiesGroup
@@ -645,6 +645,12 @@ trains, airplanes, barges etc.""" ;
     a skos:Concept ;
     skos:prefLabel "Package property group";
     skos:definition "A conceptual group of properties describing package characteristics." 
+.
+:packageProperties
+  a owl:DatatypeProperty ;
+  rdfs:comment "Do not Instantiate -- for grouping Only" ; # FIXME needed?
+  rdfs:domain :Package ;
+  rdfs:subPropertyOf :PhysicalObjectProperties ;
 .
 :packageTypeName
   a owl:DatatypeProperty ;
