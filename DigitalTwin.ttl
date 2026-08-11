@@ -22,7 +22,7 @@
   owl:versionIRI <https://ontology.tno.nl/logistics/federated/DigitalTwin-v0.1> ;
 .
 :UUID
-  a rdf:Property ;
+  a owl:DatatypeProperty ;
   rdfs:comment "" ;
   rdfs:label "UUID" ;
   rdfs:domain :PhysicalObject ;
@@ -30,20 +30,20 @@
   skos:altLabel "IMO0140"
 .
 :externalIdentifier
-  a rdf:Property ;
+  a owl:DatatypeProperty ;
   rdfs:comment "" ;
   rdfs:label "Additional Reference code" ;
   rdfs:domain :PhysicalObject ;
   rdfs:range xsd:string
 .
 :name
-  a rdf:Property ;
+  a owl:DatatypeProperty ;
   rdfs:comment "" ;
   rdfs:domain :PhysicalObject ;
   rdfs:range xsd:string
 .
 :country
-  a rdf:Property ;
+  a owl:DatatypeProperty ;
   rdfs:comment "" ;
   rdfs:domain :PhysicalObject ;
   rdfs:range xsd:string
