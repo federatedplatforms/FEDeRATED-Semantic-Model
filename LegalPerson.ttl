@@ -25,7 +25,7 @@
   a owl:Class ;
   rdfs:comment "LegalPerson represents the digitalization of the details shared with the commercial world by the legal person." ;
   rdfs:label "Legal person" ;
-  rdfs:subClassOf :Agent ;
+  rdfs:subClassOf :Agent ;  # TODO Class doesn't exist. Mean to inherit FOAF agent? The Agent class is the class of agents; things that do stuff. A well known sub-class is Person, representing people. Other kinds of agents include Organization and Group
 .
 :LegalPersonIdentification
   a owl:Class ;
