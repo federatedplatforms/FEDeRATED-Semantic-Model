@@ -129,9 +129,9 @@
                        rdfs:range  <http://schema.org/Place>;
                        rdfs:label "Business Location Involves Location" .
 :locationRole
-  a owl:ObjectProperty ;
+  a owl:DatatypeProperty ;
   rdfs:domain :BusinessLocation ;
-  rdfs:label "Business Location Role" ;
+  rdfs:label "Business Location Role (free form text)" ;
   rdfs:range xsd:string ;
 .
 :explicitLocationRole

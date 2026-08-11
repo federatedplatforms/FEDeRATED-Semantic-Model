@@ -353,9 +353,9 @@ trains, airplanes, barges etc.""" ;
   rdfs:subPropertyOf :PhysicalObjectProperties ;
 .
 :containerType
-  a owl:ObjectProperty ;
+  a owl:DatatypeProperty ;
   rdfs:domain :Container ;
-  rdfs:label "Container Type" ;
+  rdfs:label "Container Type" ; # TODO There are standards for container type codes. Let's pick one and explain.
   rdfs:range xsd:string ;
 .
 :damageRemarks
@@ -421,9 +421,9 @@ trains, airplanes, barges etc.""" ;
   rdfs:subPropertyOf :equipmentProperties ;
 .
 :equipmentTypeCode
-  a owl:ObjectProperty ;
+  a owl:DatatypeProperty ;
   rdfs:domain :Equipment ;
-  rdfs:label "Equipment Type Code" ;
+  rdfs:label "Equipment Type Code" ; # TODO Choose a standard, and explain. Codelist, or reference to other standard.
   rdfs:range xsd:string ;
 .
 :goodsDescription
@@ -434,7 +434,7 @@ trains, airplanes, barges etc.""" ;
   rdfs:subPropertyOf :PhysicalObjectProperties ;
 .
 :goodsTypeCode
-  a owl:ObjectProperty ;
+  a owl:DatatypeProperty ;
   rdfs:domain :Goods ;
   rdfs:label "Goods Type Code" ;
   rdfs:range xsd:string
@@ -469,7 +469,7 @@ trains, airplanes, barges etc.""" ;
   rdfs:range xsd:string ;
 .
 :hasDocumentType
-  a owl:ObjectProperty ;
+  a owl:DatatypeProperty ;
   rdfs:domain :Document ;
   rdfs:label "has Documnet Type" ;
   rdfs:range xsd:string ;
@@ -492,7 +492,7 @@ trains, airplanes, barges etc.""" ;
   rdfs:range xsd:integer ;
 .
 :hasSealConditionCode
-  a owl:ObjectProperty ;
+  a owl:DatatypeProperty ;
   rdfs:comment "A code specifying a condition of this logistics seal." ;
   rdfs:domain :Seal ;
   rdfs:label "Has Seal Condition Code" ;
@@ -521,7 +521,7 @@ trains, airplanes, barges etc.""" ;
   rdfs:subPropertyOf :transportMeansPropertiesExternalIdentification ;
 .
 :hazardousMaterialDetail
-  a owl:ObjectProperty ;
+  a owl:DatatypeProperty ;
   rdfs:range xsd:string
 .
 :isEmpty
@@ -588,7 +588,7 @@ trains, airplanes, barges etc.""" ;
   rdfs:subPropertyOf :transportMeansProperties ;
 .
 :natureOfCargo
-  a owl:ObjectProperty ;
+  a owl:DatatypeProperty ;
   rdfs:label "Nature of Cargo" ;
   rdfs:domain :Cargo ;
   rdfs:range xsd:string
@@ -713,7 +713,7 @@ trains, airplanes, barges etc.""" ;
   rdfs:subPropertyOf :PhysicalObjectProperties ;
 .
 :relatedSealingPartyRoleCode
-  a owl:ObjectProperty ;
+  a owl:DatatypeProperty ;
   rdfs:comment "This property relates the seal to the role code of the seal party" ;
   rdfs:domain :Seal ;
   rdfs:label "Related Sealing Party Role Code" ;
@@ -799,7 +799,7 @@ trains, airplanes, barges etc.""" ;
   rdfs:subPropertyOf :transportMeansPropertiesExternalIdentification
 .
 :typeOfCargo
-  a owl:ObjectProperty ;
+  a owl:DatatypeProperty ;
   rdfs:label "Type of Cargo" ;
   rdfs:range xsd:string ;
   rdfs:domain :Cargo

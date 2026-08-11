@@ -10,10 +10,10 @@
   rdfs:label "Actor" ;
 .
 :actorRole
-  a owl:ObjectProperty ;
+  a owl:DatatypeProperty ;
   rdfs:domain :Actor ;
   rdfs:range xsd:string ;
-  rdfs:label "Actor has logistic role" ;
+  rdfs:label "Actor has logistic role (free form text)" ;
 .
 :explicitActorRole
   a owl:ObjectProperty ;
