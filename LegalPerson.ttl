@@ -47,14 +47,14 @@
 :legalPersonIdentifier
   a owl:DatatypeProperty ;
   rdfs:comment "Identifier of the legal person" ;
-  rdfs:domain :legalpersonIdentification ;
+  rdfs:domain :LegalPersonIdentification ;
   rdfs:label "Legal Person Identifier" ;
   rdfs:range xsd:string 
 .
 :legalPersonIdentificationScheme
   a owl:DatatypeProperty ;
   rdfs:comment "The scheme of the legal person identifier, e.g. EORI, VAT, DUNS etc." ;
-  rdfs:domain :legalpersonIdentification ;
+  rdfs:domain :LegalPersonIdentification ;
   rdfs:label "Legal Person Identification Scheme" ;
   rdfs:range xsd:string 
 .
