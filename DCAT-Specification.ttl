@@ -3,6 +3,7 @@
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
 @prefix adms: <http://www.w3.org/ns/adms#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix : <https://ontology.tno.nl/logistics/federated/> .
 
 # Main Catalog for FEDeRATED Semantic Model
@@ -11,8 +12,8 @@
   dct:title "FEDeRATED Semantic Model Ontology Catalog"@en ;
   dct:description "A data catalog describing the FEDeRATED ontology modules for logistics data modeling, covering physical objects, events, locations, actors, and their respective roles in the logistics domain."@en ;
   dct:language <http://publications.europa.eu/resource/authority/language/ENG> ;
-  dct:issued "2025-01-01"^^<http://www.w3.org/2001/XMLSchema#date> ;
-  dct:issued "2026-05-04"^^<http://www.w3.org/2001/XMLSchema#date> ;
+  dct:issued "2025-01-01"^^xsd:date ;
+  dct:issued "2026-05-04"^^xsd:date ;
   dct:accrualPeriodicity <http://purl.org/cld/accmeth/MONTHLY> ;
   dcat:dataset :ActorRolesDataset ;
   dcat:dataset :DigitalTwinDataset ;
