@@ -16,10 +16,10 @@
 <https://ontology.tno.nl/logistics/federated/Event>
   a owl:Ontology ;
   dc:creator "Dena Tahvildari, Maaike Burghoorn, Cornelis Bouter, Theodor Chirvasuta" ;
-  dcterms:created "2020-07-17" ;
+  dcterms:created "2020-07-17"^^xsd:date ;
   dcterms:description "This ontology contains classes, attributes, relation about logistic Events." ;
-  dcterms:issued "2021-03-15" ;
-  dcterms:modified "2023-07-18" ;
+  dcterms:issued "2021-03-15"^^xsd:date ;
+  dcterms:modified "2023-07-18"^^xsd:date ;
   dcterms:language "en" ;
   dcterms:requires <https://ontology.tno.nl/logistics/federated/LegalPerson> ;
   dcterms:requires <https://ontology.tno.nl/logistics/federated/DigitalTwin> ;
