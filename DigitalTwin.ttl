@@ -15,11 +15,10 @@
   dc:creator "Dena Tahvildari, Cornelis Bouter, Maaike Burghoorn, Theodor Chirvasuta" ;
   dcterms:created "2020-07-17" ;
   dcterms:description "This is DigitalTwin ontology. It contains classes, attributes and relationships about logistics physical real world object. The usecase is two: 1. it is part of federated logistics ontology architecture that is referenced and used by Event module. 2. It will be evolved (extended) to cover digital Twin technologies requirements. " ;
-  dcterms:isRequiredBy "<https://ontology.tno.nl/logistics/federated/Event>" ;
+  dcterms:isRequiredBy <https://ontology.tno.nl/logistics/federated/Event> ;
   dcterms:issued "2026-04-05" ;
   dcterms:language "en" ;
-  dcterms:requiredBy <https://ontology.tno.nl/logistics/federated/Event> ;
-  owl:versionIRI <https://ontology.tno.nl/logistics/federated/DigitalTwinv-0.1> ;
+  owl:versionIRI <https://ontology.tno.nl/logistics/federated/DigitalTwin-v0.1> ;
 .
 :UUID
   a rdf:Property ;

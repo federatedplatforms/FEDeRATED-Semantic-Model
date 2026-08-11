@@ -24,7 +24,7 @@
   dcterms:requires <https://ontology.tno.nl/logistics/federated/LegalPerson> ;
   dcterms:requires <https://ontology.tno.nl/logistics/federated/DigitalTwin> ;
   dcterms:requires <https://ontology.tno.nl/logistics/federated/Location> ;
-  owl:versionIRI <https://ontology.tno.nl/logistics/federated/Eventv-0.1> ;
+  owl:versionIRI <https://ontology.tno.nl/logistics/federated/Event-v0.1> ;
 .
 
 # High level Event classes
