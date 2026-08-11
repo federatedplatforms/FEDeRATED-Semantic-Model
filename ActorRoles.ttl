@@ -64,7 +64,7 @@ a owl:ObjectProperty ;
 .
 :Payee
   a :FinancialRoles ;
-  rdfs:comment "A company that is paid for it services or goods." ;
+  rdfs:comment "A company that is paid for its services or goods." ;
   rdfs:label "Payee" ;
 .
 :Payer
@@ -84,7 +84,7 @@ a owl:ObjectProperty ;
 .
 :SupplyChainRoles
   a owl:Class ;
-  rdfs:comment "These are roles that are found elsewhere in the supply chain than described by bussiness, commercial, financial or logistical roles. Such as the consumer or producer of products." ;
+  rdfs:comment "These are roles that are found elsewhere in the supply chain than described by business, commercial, financial or logistical roles. Such as the consumer or producer of products." ;
   rdfs:label "Supply Chain Roles" ;
   rdfs:subClassOf :ActorRoles ;
 .
@@ -144,7 +144,7 @@ a owl:ObjectProperty ;
 .
 :Carrier
   a :LogisticsRoles ;
-  rdfs:comment "The organization that is responsible for transport of goods/containers with a transport means (truck, vessel, etc.). Each modality has a different name per modality: airline (air), shipping line (sea), barge operator (inlande waterways), railway undertaking (rail), and carrier (road). These should also be supported by the model" ;
+  rdfs:comment "The organization that is responsible for transport of goods/containers with a transport means (truck, vessel, etc.). Each modality has a different name per modality: airline (air), shipping line (sea), barge operator (inland waterways), railway undertaking (rail), and carrier (road). These should also be supported by the model" ;
   rdfs:label "Carrier" ;
 .
 :Consignee

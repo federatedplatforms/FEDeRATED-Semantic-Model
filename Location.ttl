@@ -121,7 +121,7 @@
 
 :BusinessLocation
   a owl:Class ;
-  rdfs:comment "A business location couples the digitalization of the physical location as well as the role it plays in an event instatiation. " ;
+  rdfs:comment "A business location couples the digitalization of the physical location as well as the role it plays in an event instantiation. " ;
   rdfs:label "Business Location" ;
 .
 :involvesPlace rdf:type owl:ObjectProperty ;

@@ -84,7 +84,7 @@
 
 :involves
   a owl:ObjectProperty ;
-  rdfs:comment "An Event has associations established with Digital Twins, Locations or Logistic Actors. The meaning of this association depends on the type of event and the its' milestone." ;
+  rdfs:comment "An Event has associations established with Digital Twins, Locations or Logistic Actors. The meaning of this association depends on the type of event and its milestone." ;
   rdfs:domain :Event ;
   rdfs:label "Involves" ;
   rdfs:range owl:Thing ;
@@ -144,7 +144,7 @@
 :involvesPackagingType
   a owl:DatatypeProperty ;
   rdfs:label "Involves Packaging Type" ;
-  rdfs:comment "This property denotes the packaging invovled in the association of the product/goods with a package." ;
+  rdfs:comment "This property denotes the packaging involved in the association of the product/goods with a package." ;
   rdfs:domain :CargoAssociation ;
   rdfs:range xsd:string ;
   skos:altLabel "IMO0029"
@@ -152,7 +152,7 @@
 
 :involvesTransportMeans
   a owl:ObjectProperty ;
-  rdfs:comment "This relation establishes an association between an Event and a Transport Means Digital Twin. The exact meaning depends on the type of Event and its' milestone" ;
+  rdfs:comment "This relation establishes an association between an Event and a Transport Means Digital Twin. The exact meaning depends on the type of Event and its milestone" ;
   rdfs:domain :Event ;
   rdfs:label "Involves Transport Means" ;
   rdfs:range DigitalTwin:TransportMeans ;
