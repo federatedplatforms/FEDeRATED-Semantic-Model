@@ -453,14 +453,6 @@ trains, airplanes, barges etc.""" ;
   rdfs:comment "Standardized code to categorize products, used by customs authorities" ;
   rdfs:range xsd:string ;
 .
-:hasDangerousGoodsRegulationCode
-  a owl:ObjectProperty ;
-  rdfs:comment "Dangerous goods require a dangerous goods regulation code." ;
-  rdfs:domain :Goods;
-  rdfs:label "Dangerous Goods Regulation Code" ;
-  rdfs:range xsd:string ;
-.
-                                                                                                                                                                                                          
 :UNDGCode
   a owl:DatatypeProperty ;
   rdfs:comment "Goods can be assigned a UNDG code to identify the hazardous nature of the goods." ;
