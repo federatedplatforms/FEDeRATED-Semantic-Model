@@ -537,13 +537,6 @@ trains, airplanes, barges etc.""" ;
   rdfs:range xsd:integer ;
   rdfs:subPropertyOf :PhysicalObjectProperties ;
 .
-:locatedAt
-  a owl:ObjectProperty ;
-  rdfs:comment "An optional stationary location for a physical object." ;
-  rdfs:domain :PhysicalObject ;
-  rdfs:label "Located At" ;
-  rdfs:range <https://ontology.tno.nl/logistics/federated/PhysicalInfrastructure#Location> ; # FIXME should be: BusinessLocation or just <http://schema.org/Place> ? ?
-.
 :locomotiveBrakeType
   a owl:DatatypeProperty ;
   rdfs:domain :Locomotive ;
