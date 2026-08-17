@@ -1,10 +1,21 @@
+# baseURI: https://ontology.tno.nl/logistics/federated/ActorRoles
+# prefix: ActorRoles
+
 @prefix : <https://ontology.tno.nl/logistics/federated/ActorRoles#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
+<https://ontology.tno.nl/logistics/federated/ActorRoles>
+  a owl:Ontology ;
+  dcterms:description "Taxonomy of logistics actor roles (commercial, financial, supply chain)." ;
+  dcterms:language "en" ;
+  owl:versionIRI <https://ontology.tno.nl/logistics/federated/ActorRoles-v0.1> ;
+.
+
 skos:broader 
-  a owl:ObjectProperty ;
+  a owl:ObjectProperty ; # FIXME this is redefining the property without the inverseOf and acyclicity semantics, so add that or just load skos somehow (owl:importsFrom).
 .  
 skos:narrower 
 a owl:ObjectProperty ;

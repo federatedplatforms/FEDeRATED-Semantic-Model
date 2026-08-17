@@ -1,8 +1,19 @@
+# baseURI: https://ontology.tno.nl/logistics/federated/LocationRoles
+# prefix: LocationRoles
+
 @prefix : <https://ontology.tno.nl/logistics/federated/LocationRoles#> .
 @prefix LegalPerson: <https://ontology.tno.nl/logistics/federated/LegalPerson#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+<https://ontology.tno.nl/logistics/federated/LocationRoles>
+  a owl:Ontology ;
+  dcterms:description "Taxonomy of location roles in logistics contexts." ;
+  dcterms:language "en" ;
+  owl:versionIRI <https://ontology.tno.nl/logistics/federated/LocationRoles-v0.1> ;
+.
 
 :LocationRoles
   a owl:Class ;

@@ -1,5 +1,7 @@
 # baseURI: https://ontology.tno.nl/logistics/federated/Event
-# imports: https://ontology.tno.nl/logistics/federated/BusinessService
+# imports: https://ontology.tno.nl/logistics/federated/DigitalTwin
+# imports: https://ontology.tno.nl/logistics/federated/LegalPerson
+# imports: https://ontology.tno.nl/logistics/federated/Location
 # prefix: Event
 
 @prefix : <https://ontology.tno.nl/logistics/federated/Event#> .
@@ -21,9 +23,9 @@
   dcterms:issued "2021-03-15"^^xsd:date ;
   dcterms:modified "2023-07-18"^^xsd:date ;
   dcterms:language "en" ;
-  dcterms:requires <https://ontology.tno.nl/logistics/federated/LegalPerson> ;
-  dcterms:requires <https://ontology.tno.nl/logistics/federated/DigitalTwin> ;
-  dcterms:requires <https://ontology.tno.nl/logistics/federated/Location> ;
+  owl:imports <https://ontology.tno.nl/logistics/federated/DigitalTwin> ;
+  owl:imports <https://ontology.tno.nl/logistics/federated/LegalPerson> ;
+  owl:imports <https://ontology.tno.nl/logistics/federated/Location> ;
   owl:versionIRI <https://ontology.tno.nl/logistics/federated/Event-v0.1> ;
 .
 

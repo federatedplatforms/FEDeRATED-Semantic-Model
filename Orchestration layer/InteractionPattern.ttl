@@ -14,7 +14,9 @@
   dc:creator "Thom van Gessel (TNO)" ;
   dcterms:description "First draft for an ontology that describes interaction patterns (choreographies) in logistics." ;
   dcterms:language "en" ;
-  owl:versionIRI <https://ontology.tno.nl/logistics/federated/InteractionPatternv-0.1.0> ;
+  owl:imports <https://ontology.tno.nl/logistics/federated/Event> ;
+  owl:imports <https://ontology.tno.nl/logistics/federated/State> ;
+  owl:versionIRI <https://ontology.tno.nl/logistics/federated/InteractionPattern-v0.1.0> ;
   owl:versionInfo "0.1.0" ;
 .
 
