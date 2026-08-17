@@ -85,3 +85,16 @@ The location roles module contains information about the different types of poss
 - **Examples/** - SPARQL query examples and usage demonstrations
 
 - **Mapping Examples/** - Mapping resources from logistics standardized ontologies to the FEDeRATED semantic model
+
+## Dependency graph
+
+```mermaid
+graph TD
+    Event --> DigitalTwin
+    Event --> LegalPerson
+    Event --> Location
+    LegalPerson --> ActorRoles
+    Location --> LocationRoles
+    InteractionPattern --> Event
+    InteractionPattern --> State
+```
