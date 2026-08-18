@@ -1,13 +1,14 @@
-# baseURI: https://ontology.tno.nl/logistics/federated/Event
-# imports: https://ontology.tno.nl/logistics/federated/DigitalTwin
-# imports: https://ontology.tno.nl/logistics/federated/LegalPerson
-# imports: https://ontology.tno.nl/logistics/federated/Location
-# prefix: Event
+# baseURI: https://ontology.tno.nl/logistics/federated/Event#
+# imports: https://ontology.tno.nl/logistics/federated/DigitalTwin#
+# imports: https://ontology.tno.nl/logistics/federated/LegalPerson#
+# imports: https://ontology.tno.nl/logistics/federated/Location#
+# prefix: fedevt
 
 @prefix : <https://ontology.tno.nl/logistics/federated/Event#> .
-@prefix DigitalTwin: <https://ontology.tno.nl/logistics/federated/DigitalTwin#> .
-@prefix LegalPerson: <https://ontology.tno.nl/logistics/federated/LegalPerson#> .
-@prefix Location: <https://ontology.tno.nl/logistics/federated/Location#> .
+@prefix feddtw: <https://ontology.tno.nl/logistics/federated/DigitalTwin#> .
+@prefix fedevt: <https://ontology.tno.nl/logistics/federated/Event#> .
+@prefix fedlgp: <https://ontology.tno.nl/logistics/federated/LegalPerson#> .
+@prefix fedloc: <https://ontology.tno.nl/logistics/federated/Location#> .
 
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
@@ -17,7 +18,7 @@
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://ontology.tno.nl/logistics/federated/Event>
+fedevt:
   a owl:Ontology ;
   dc:creator "Dena Tahvildari, Maaike Burghoorn, Cornelis Bouter, Theodor Chirvasuta" ;
   dcterms:created "2020-07-17"^^xsd:date ;
@@ -25,9 +26,9 @@
   dcterms:issued "2021-03-15"^^xsd:date ;
   dcterms:license <https://creativecommons.org/licenses/by-sa/4.0/> ; # FIXME check with stakeholders.
   dcterms:modified "2023-07-18"^^xsd:date ;
-  owl:imports <https://ontology.tno.nl/logistics/federated/DigitalTwin> ;
-  owl:imports <https://ontology.tno.nl/logistics/federated/LegalPerson> ;
-  owl:imports <https://ontology.tno.nl/logistics/federated/Location> ;
+  owl:imports <https://ontology.tno.nl/logistics/federated/DigitalTwin#> ;
+  owl:imports <https://ontology.tno.nl/logistics/federated/LegalPerson#> ;
+  owl:imports <https://ontology.tno.nl/logistics/federated/Location#> ;
   owl:versionIRI <https://ontology.tno.nl/logistics/federated/Event/v0.1.0/> ;
   owl:versionInfo "v0.1.0" ;
   vann:preferredNamespacePrefix "fedevt" ;
@@ -123,7 +124,7 @@
   rdfs:label "Involves Digital Twin" ;
   rdfs:comment "Used for grouping -- do not instantiate" ;
   rdfs:domain :Event ;
-  rdfs:range DigitalTwin:PhysicalObject ;
+  rdfs:range feddtw:PhysicalObject ;
   rdfs:subPropertyOf :involves ;
 .
 :involvesEvent
@@ -139,14 +140,14 @@
   rdfs:comment "This relation establishes an association between an Event and a Location. The exact meaning depends on the type of Event, which is inferred from this property and the second association the event has." ;
   rdfs:domain :Event ;
   rdfs:label "Involves Location" ;
-  rdfs:range Location:BusinessLocation ;
+  rdfs:range fedloc:BusinessLocation ;
 .
 :involvesActor
   a owl:ObjectProperty ;
   rdfs:label "Involves Actor" ;
   rdfs:comment "This relation establishes an association between an Event and an Actor." ;
   rdfs:domain :Event ;
-  rdfs:range LegalPerson:Actor ;
+  rdfs:range fedlgp:Actor ;
   rdfs:subPropertyOf :involves ;
 .
 :involvesPackagingType
@@ -163,6 +164,6 @@
   rdfs:comment "This relation establishes an association between an Event and a Transport Means Digital Twin. The exact meaning depends on the type of Event and its milestone" ;
   rdfs:domain :Event ;
   rdfs:label "Involves Transport Means" ;
-  rdfs:range DigitalTwin:TransportMeans ;
+  rdfs:range feddtw:TransportMeans ;
   rdfs:subPropertyOf :involvesDigitalTwin ;
 .

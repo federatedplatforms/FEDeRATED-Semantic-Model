@@ -1,9 +1,10 @@
-# baseURI: https://ontology.tno.nl/logistics/federated/Location
-# imports: https://ontology.tno.nl/logistics/federated/LocationRoles
-# prefix: Location
+# baseURI: https://ontology.tno.nl/logistics/federated/Location#
+# imports: https://ontology.tno.nl/logistics/federated/LocationRoles#
+# prefix: fedloc
 
 @prefix : <https://ontology.tno.nl/logistics/federated/Location#> .
-@prefix LocationRoles: <https://ontology.tno.nl/logistics/federated/LocationRoles#> .
+@prefix fedloc: <https://ontology.tno.nl/logistics/federated/Location#> .
+@prefix fedlcr: <https://ontology.tno.nl/logistics/federated/LocationRoles#> .
 
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
@@ -12,10 +13,10 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://ontology.tno.nl/logistics/federated/Location>
+fedloc:
   a owl:Ontology ;
   dcterms:description "Ontology for physical infrastructure locations and geographic entities."@en ;
-  owl:imports <https://ontology.tno.nl/logistics/federated/LocationRoles> ;
+  owl:imports <https://ontology.tno.nl/logistics/federated/LocationRoles#> ;
   owl:versionIRI <https://ontology.tno.nl/logistics/federated/Location/v0.1.0/> ;
   owl:versionInfo "v0.1.0" ;
 .

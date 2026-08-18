@@ -1,15 +1,16 @@
-# baseURI: https://ontology.tno.nl/logistics/federated/LocationRoles
-# prefix: LocationRoles
+# baseURI: https://ontology.tno.nl/logistics/federated/LocationRoles#
+# prefix: fedlcr
 
 @prefix : <https://ontology.tno.nl/logistics/federated/LocationRoles#> .
-@prefix LegalPerson: <https://ontology.tno.nl/logistics/federated/LegalPerson#> .
+@prefix fedlcr: <https://ontology.tno.nl/logistics/federated/LocationRoles#> .
+@prefix fedlgp: <https://ontology.tno.nl/logistics/federated/LegalPerson#> .
 
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 
-<https://ontology.tno.nl/logistics/federated/LocationRoles>
+fedlcr:
   a owl:Ontology ;
   dcterms:description "Taxonomy of location roles in logistics contexts."@en ;
   owl:versionIRI <https://ontology.tno.nl/logistics/federated/LocationRoles/v0.1.0/> ;
@@ -229,12 +230,12 @@
   rdfs:comment "The organisation that manages a specific logistical function" ;
   rdfs:domain :LocationRoles ;
   rdfs:label "Has Manager" ;
-  rdfs:range LegalPerson:LegalPerson ;
+  rdfs:range fedlgp:LegalPerson ;
 .
 :hasOperator # not actor because role is inferred in the name of the property
   a owl:ObjectProperty ;
   rdfs:label "Has Operator" ;
   rdfs:domain :LocationRoles ;
-  rdfs:range LegalPerson:LegalPerson ;
+  rdfs:range fedlgp:LegalPerson ;
 .
 
