@@ -384,6 +384,26 @@ skos:altLabel
   a owl:DatatypeProperty ;
   rdfs:comment "The flight number identifying the scheduled flight operated by an airplane, composed of the airline designator and a numeric suffix."@en;
   rdfs:label "Flight number"@en;
+  rdfs:domain :LogisticsObject ;
+  rdfs:range xsd:string ;
+.
+:LogisticsObjectMaxSize
+  a owl:DatatypeProperty ;
+  rdfs:comment "the measure of volume expressed in m3" ;
+  rdfs:label "Bulk Volume" ;
+  rdfs:range xsd:integer ;
+  rdfs:subPropertyOf :volume ;
+.
+:Cargo 
+  a owl:Class ;
+  rdfs:comment "Generic cargo object, may be transport equipment, goods or product" ;
+  rdfs:label "Cargo";
+  rdfs:subClassOf :PhysicalObject
+.
+:flightNumber
+  a owl:DatatypeProperty ;
+  rdfs:comment "The flight number identifying the scheduled flight operated by an airplane, composed of the airline designator and a numeric suffix."@en;
+  rdfs:label "Flight number"@en;
   rdfs:domain :Airplane ;
   rdfs:range xsd:string ;
 .
