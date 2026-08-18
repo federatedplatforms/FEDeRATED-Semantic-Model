@@ -178,7 +178,6 @@
   rdfs:domain :Trajectory ;
   rdfs:label "Trajectory Property" ;
   rdfs:range xsd:anySimpleType ;
-  rdfs:subPropertyOf :InfrastructuralFunctionProperty ; # FIXME doesn't exist. Remove?
 .
 :geonamesReference
   a owl:ObjectProperty ;
