@@ -3,6 +3,7 @@
 
 @prefix : <https://ontology.tno.nl/logistics/federated/LocationRoles#> .
 @prefix LegalPerson: <https://ontology.tno.nl/logistics/federated/LegalPerson#> .
+
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .

@@ -2,6 +2,8 @@
 # prefix: DigitalTwin
 
 @prefix : <https://ontology.tno.nl/logistics/federated/DigitalTwin#> .
+@prefix LegalPerson: <https://ontology.tno.nl/logistics/federated/LegalPerson#> .
+
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
@@ -9,7 +11,6 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix LegalPerson: <https://ontology.tno.nl/logistics/federated/LegalPerson#> .
 
 <https://ontology.tno.nl/logistics/federated/DigitalTwin>
   a owl:Ontology ;
@@ -463,7 +464,7 @@ trains, airplanes, barges etc.""" ;
 :hasDocumentType
   a owl:DatatypeProperty ;
   rdfs:domain :Document ;
-  rdfs:label "has Documnet Type" ;
+  rdfs:label "has Document Type" ;
   rdfs:range xsd:string ;
 .
 :hasFlashpointTemperature
@@ -807,8 +808,8 @@ trains, airplanes, barges etc.""" ;
   a owl:DatatypeProperty ;
   rdfs:label "Volume";
   rdfs:comment "Volume value and incl. unit of measurement";
-  rdfs:range xsd:float ;
   rdfs:domain :PhysicalObject ;
+  rdfs:range xsd:float ;
   rdfs:subPropertyOf :PhysicalObjectProperties 
 .
 :wagonBrakeType
