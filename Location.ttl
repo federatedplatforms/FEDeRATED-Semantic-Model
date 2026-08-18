@@ -110,14 +110,12 @@
 
 <http://schema.org/latitude> a owl:DatatypeProperty ;
                   rdfs:domain <http://schema.org/Place> ;
-                  rdfs:range xsd:float ;
-                  rdfs:range xsd:string ;
+                  rdfs:range xsd:decimal ;
                   rdfs:comment "The latitude of a location. For example ```37.42242``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System))." ;
                   rdfs:label "latitude" .
 <http://schema.org/longitude> a owl:DatatypeProperty ;
                    rdfs:domain <http://schema.org/Place> ;
-                   rdfs:range xsd:float ;
-                   rdfs:range xsd:string ;
+                   rdfs:range xsd:decimal
                    rdfs:comment "The longitude of a location. For example ```-122.08585``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System))." ;
                    rdfs:label "longitude" .
 <http://schema.org/elevation> a owl:DatatypeProperty ;
