@@ -22,16 +22,8 @@ FEDeRATED-Semantic-Model/
 │   └── LocationRoles.ttl
 │       
 │
-├── 📂 CodelistsRDF/
-│   
-│
-├── 📂 Orchestration layer/
-│   
-│
 ├── 📂 Examples/
 │   
-│
-└── 📂 Mapping Examples/
     
 ```
 
@@ -43,26 +35,63 @@ The actor roles module describes the different types of roles logistics actors c
 
 ### **DigitalTwin.ttl**
 
-The digital twin module is a generic ontology modeling physical objects, including also specializations for logistics objects. The main concepts in the Digital Twin ontology module are the following, each containing several subclasses. Additional subclasses can be taken from ontological models produced by the various modalities.
+The digital twin module models the physical objects of the logistics domain. Every physical object is a subclass of `LogisticsObject`, the top-level concept, which represents any physical object that can be loaded onto a transport means. It branches into five main concepts:
 
-- Equipment
-- Package
-- Product
-- Goods
-- Transport Means
+- **Equipment** — any asset used to facilitate transport and handling of cargo.
+- **Goods** — cargo to be carried by a transport means, requiring an equipment.
+- **Transport Means** — the vehicles that carry the cargo.
+- **Package** — an individual packaged unit.
+- **Document** — a legal document involved in event and business transactions.
 
-Digital twin is an old term, which was coined 20 years ago, surfacing now as our society becomes more interconnected. Several studies refer to a DT as a “cyber-physical integration", with the term “Digital Twin” representing the ultimate, unachievable goal, as no model abstraction can mirror real world things with identical fidelity. For the purposes of this project we created a namespace Digital Twin in which we model the physical component of the logistics domain. The virtual component and the relation between physical and virtual component of DT are out of the the scope of this repository [Reference: https://www.sciencedirect.com/science/article/pii/S0926580519314785].
+#### Classification by physical form
+
+Both **Equipment** and **Goods** are classified according to the physical form of the cargo, and the two are kept in sync via the `involvesGoods` property (an equipment is associated with the goods it can hold):
+
+| Physical form | Equipment class | Goods class |
+|---|---|---|
+| Loose, unpackaged dry solids | `BulkEquipment` | `BulkGoods` |
+| Liquids | `LiquidEquipment` | `LiquidGoods` |
+| Compressed / liquefied gases | `GasEquipment` | `GaseousGoods` |
+| Individually handled solid units | `PiecesEquipment` | `PiecesGoods` |
+
+`Equipment` also directly includes `RailwayWagon`, `Seal`, and `Trailer`.
+
+#### UN Recommendation 21 packaging types
+
+Concrete packaging types are modelled as subclasses of the equipment form-classes above and are aligned to the UN Recommendation 21 packaging codes. A packaging type may belong to more than one form-class (e.g., a `Tank` is at once gas, liquid, and bulk equipment). These include: `Drum`, `Jerrican`, `Bottle`, `Box`, `Crate`, `Bag`, `Basket`, `Tray`, `Can`, `Pail`, `PressureReceptacle`, `Tank`, `Container` (with `ULD` — air-freight Unit Load Devices — as a subclass), `IntermediateBulkContainer`, `CompositePackaging`, `Reel`, `Pallet`, `Bundle`, `Wrapping`, and `Rack`.
+
+#### Transport means
+
+`TransportMeans` covers the vehicles that move cargo across modalities: `Airplane`, `Vessel` (with `Barge` as a subclass), `Truck`, and `Train` (with `Locomotive` as a subclass).
 
 ### **Event.ttl**
 
 The event module describes the logistics activities in the real world, distinguishing between document-mirroring events (such as Purchase Orders, Air Way Bills, House Way Bills, eBill of Lading, etc) and track & trace events (such as ETA, gate-out, border crossing, etc).
 
- An atomic event always mentions the business identifier (could be AWB/PO/eBoL identifier) it is associated to and the timestamp.
-
 - **Track & trace events** are expressive from their name, they do not require additional properties.
 - **Document-mirroring events** on the other hand also require the inclusion of relations between Digital Twins (possibly goods, containers, etc.), Transport Means, Location and Logistic Actors.
 
-For examples of the difference between the 2 event types see the [Adoption repository](https://github.com/federatedplatforms/Semantic-Model-Adoption).
+#### Event properties
+
+Every event carries the following properties:
+
+- **UUID** — a unique string identifier for storage and retrieval in a database.
+- **involvesBusinessIdentifier** — links the event to a `BusinessIdentifier` object, which contains:
+  - `involvesAlphanumericBusinessIdentifier` — the alphanumeric value of the identifier (e.g., AWB number, voyage number IMO0191).
+  - `involvesDescriptionBusinessIdentifier` — a human-readable description of what the identifier refers to.
+- **involvesTimestamp** — links the event to a `Timestamp` object, which contains:
+  - `involvesTimestampDateTime` — the date and time of the event (`xsd:dateTime`).
+  - `involvesTimeClassification` — the nature of the timestamp (e.g., planned, estimated, expected, actual, requested).
+
+The following object properties associate an event with other model elements:
+
+| Property | Range | Description |
+|---|---|---|
+| `involvesCargo` | `DigitalTwin:LogisticsObject` | Cargo involved in the event (goods, empty equipment, or another transport means) |
+| `involvesLocation` | `Location:BusinessLocation` | Location associated with the event |
+| `involvesActor` | `LegalPerson:Actor` | Logistic actor associated with the event |
+| `involvesTransportMeans` | `DigitalTwin:TransportMeans` | Transport means associated with the event |
+| `involvesEvent` | `Event` | Reference to another event (used for ETA, ATA, ETD, ATD, etc.) |
 
 ### **LegalPerson.ttl**
 
@@ -78,10 +107,6 @@ The location roles module contains information about the different types of poss
 
 ## 📂 Directories
 
-- **CodelistsRDF/** - Collection of RDF codelists and reference data
-
-- **Orchestration layer/** - Orchestration and interaction pattern definitions
-
 - **Examples/** - SPARQL query examples and usage demonstrations
 
 - **Mapping Examples/** - Mapping resources from logistics standardized ontologies to the FEDeRATED semantic model
@@ -95,6 +120,4 @@ graph TD
     Event --> Location
     LegalPerson --> ActorRoles
     Location --> LocationRoles
-    InteractionPattern --> Event
-    InteractionPattern --> State
 ```
