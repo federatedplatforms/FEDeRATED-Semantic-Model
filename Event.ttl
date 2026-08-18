@@ -14,6 +14,7 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://ontology.tno.nl/logistics/federated/Event>
@@ -29,6 +30,8 @@
   owl:imports <https://ontology.tno.nl/logistics/federated/Location> ;
   owl:versionIRI <https://ontology.tno.nl/logistics/federated/Event/v0.1.0/> ;
   owl:versionInfo "v0.1.0" ;
+  vann:preferredNamespacePrefix "fedevt" ;
+  vann:preferredNamespaceUri "https://ontology.tno.nl/federated/Event#" ;
   rdfs:seeAlso <https://github.com/federatedplatforms/FEDeRATED-Semantic-Model> ;
 .
 
