@@ -1,8 +1,21 @@
+# baseURI: https://ontology.tno.nl/logistics/federated/LegalPerson
+# imports: https://ontology.tno.nl/logistics/federated/ActorRoles
+# prefix: LegalPerson
+
 @prefix : <https://ontology.tno.nl/logistics/federated/LegalPerson#> .
 @prefix ActorRoles: <https://ontology.tno.nl/logistics/federated/ActorRoles#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+<https://ontology.tno.nl/logistics/federated/LegalPerson>
+  a owl:Ontology ;
+  dcterms:description "Ontology for legal persons, actors and their identifications." ;
+  dcterms:language "en" ;
+  owl:imports <https://ontology.tno.nl/logistics/federated/ActorRoles> ;
+  owl:versionIRI <https://ontology.tno.nl/logistics/federated/LegalPerson-v0.1> ;
+.
 
 :Actor
   a owl:Class ;
@@ -10,10 +23,10 @@
   rdfs:label "Actor" ;
 .
 :actorRole
-  a owl:ObjectProperty ;
+  a owl:DatatypeProperty ;
   rdfs:domain :Actor ;
   rdfs:range xsd:string ;
-  rdfs:label "Actor has logistic role" ;
+  rdfs:label "Actor has logistic role (free form text)" ;
 .
 :explicitActorRole
   a owl:ObjectProperty ;
@@ -25,7 +38,7 @@
   a owl:Class ;
   rdfs:comment "LegalPerson represents the digitalization of the details shared with the commercial world by the legal person." ;
   rdfs:label "Legal person" ;
-  rdfs:subClassOf :Agent ;
+  rdfs:subClassOf :Agent ;  # TODO Class doesn't exist. Mean to inherit FOAF agent? The Agent class is the class of agents; things that do stuff. A well known sub-class is Person, representing people. Other kinds of agents include Organization and Group
 .
 :LegalPersonIdentification
   a owl:Class ;
@@ -47,14 +60,14 @@
 :legalPersonIdentifier
   a owl:DatatypeProperty ;
   rdfs:comment "Identifier of the legal person" ;
-  rdfs:domain :legalpersonIdentification ;
+  rdfs:domain :LegalPersonIdentification ;
   rdfs:label "Legal Person Identifier" ;
   rdfs:range xsd:string 
 .
 :legalPersonIdentificationScheme
   a owl:DatatypeProperty ;
   rdfs:comment "The scheme of the legal person identifier, e.g. EORI, VAT, DUNS etc." ;
-  rdfs:domain :legalpersonIdentification ;
+  rdfs:domain :LegalPersonIdentification ;
   rdfs:label "Legal Person Identification Scheme" ;
   rdfs:range xsd:string 
 .
@@ -65,11 +78,11 @@
   rdfs:label "Legal Person Name" ;
   rdfs:range xsd:string ;
 .
-:legalPersonCountry
+:legalPersonCountryOfOrigin
   a owl:DatatypeProperty ;
   rdfs:comment "Country of origin of legal person" ;
   rdfs:domain :LegalPerson ;
-  rdfs:label "Legal Person Country" ;
+  rdfs:label "A person's country of Origin" ;
   rdfs:range xsd:string ;
 .
 :legalPersonAddress

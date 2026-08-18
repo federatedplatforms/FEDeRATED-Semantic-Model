@@ -1,15 +1,23 @@
-# baseURI: https://ontology.tno.nl/logistics/federated/PhysicalInfrastructure
-# imports: http://topbraid.org/schema/
-# imports: http://www.w3.org/2003/01/geo/wgs84_pos
-# prefix: pi
+# baseURI: https://ontology.tno.nl/logistics/federated/Location
+# imports: https://ontology.tno.nl/logistics/federated/LocationRoles
+# prefix: Location
 
 @prefix : <https://ontology.tno.nl/logistics/federated/Location#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix LocationRoles: <https://ontology.tno.nl/logistics/federated/LocationRoles#> .
+
+<https://ontology.tno.nl/logistics/federated/Location>
+  a owl:Ontology ;
+  dcterms:description "Ontology for physical infrastructure locations and geographic entities." ;
+  dcterms:language "en" ;
+  owl:imports <https://ontology.tno.nl/logistics/federated/LocationRoles> ;
+  owl:versionIRI <https://ontology.tno.nl/logistics/federated/Location-v0.1> ;
+.
 
 <http://schema.org/AdministrativeArea>
   a owl:Class ;
@@ -121,7 +129,7 @@
 
 :BusinessLocation
   a owl:Class ;
-  rdfs:comment "A business location couples the digitalization of the physical location as well as the role it plays in an event instatiation. " ;
+  rdfs:comment "A business location couples the digitalization of the physical location as well as the role it plays in an event instantiation. " ;
   rdfs:label "Business Location" ;
 .
 :involvesPlace rdf:type owl:ObjectProperty ;
@@ -129,9 +137,9 @@
                        rdfs:range  <http://schema.org/Place>;
                        rdfs:label "Business Location Involves Location" .
 :locationRole
-  a owl:ObjectProperty ;
+  a owl:DatatypeProperty ;
   rdfs:domain :BusinessLocation ;
-  rdfs:label "Business Location Role" ;
+  rdfs:label "Business Location Role (free form text)" ;
   rdfs:range xsd:string ;
 .
 :explicitLocationRole
@@ -170,7 +178,6 @@
   rdfs:domain :Trajectory ;
   rdfs:label "Trajectory Property" ;
   rdfs:range xsd:anySimpleType ;
-  rdfs:subPropertyOf :InfrastructuralFunctionProperty ;
 .
 :geonamesReference
   a owl:ObjectProperty ;

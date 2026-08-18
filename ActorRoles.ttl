@@ -1,10 +1,21 @@
+# baseURI: https://ontology.tno.nl/logistics/federated/ActorRoles
+# prefix: ActorRoles
+
 @prefix : <https://ontology.tno.nl/logistics/federated/ActorRoles#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
+<https://ontology.tno.nl/logistics/federated/ActorRoles>
+  a owl:Ontology ;
+  dcterms:description "Taxonomy of logistics actor roles (commercial, financial, supply chain)." ;
+  dcterms:language "en" ;
+  owl:versionIRI <https://ontology.tno.nl/logistics/federated/ActorRoles-v0.1> ;
+.
+
 skos:broader 
-  a owl:ObjectProperty ;
+  a owl:ObjectProperty ; # FIXME this is redefining the property without the inverseOf and acyclicity semantics, so add that or just load skos somehow (owl:importsFrom).
 .  
 skos:narrower 
 a owl:ObjectProperty ;
@@ -64,7 +75,7 @@ a owl:ObjectProperty ;
 .
 :Payee
   a :FinancialRoles ;
-  rdfs:comment "A company that is paid for it services or goods." ;
+  rdfs:comment "A company that is paid for its services or goods." ;
   rdfs:label "Payee" ;
 .
 :Payer
@@ -84,7 +95,7 @@ a owl:ObjectProperty ;
 .
 :SupplyChainRoles
   a owl:Class ;
-  rdfs:comment "These are roles that are found elsewhere in the supply chain than described by bussiness, commercial, financial or logistical roles. Such as the consumer or producer of products." ;
+  rdfs:comment "These are roles that are found elsewhere in the supply chain than described by business, commercial, financial or logistical roles. Such as the consumer or producer of products." ;
   rdfs:label "Supply Chain Roles" ;
   rdfs:subClassOf :ActorRoles ;
 .
@@ -113,7 +124,6 @@ a owl:ObjectProperty ;
   a :BusinessRoles ;
   rdfs:comment "The enterprise lodging a declaration (on behalf of his customer, it is called a customs agent) based on declaration services it provides. This can be a forwarder (import, export, transit) or a shipping -/airline (ENS, incoming goods). A shipper or consignee can also act as declarant." ;
   rdfs:label "Declarant" ;
-  skos:altLabel "Declerant" ;
 .
 :Exporter
   a :BusinessRoles ;
@@ -144,7 +154,7 @@ a owl:ObjectProperty ;
 .
 :Carrier
   a :LogisticsRoles ;
-  rdfs:comment "The organization that is responsible for transport of goods/containers with a transport means (truck, vessel, etc.). Each modality has a different name per modality: airline (air), shipping line (sea), barge operator (inlande waterways), railway undertaking (rail), and carrier (road). These should also be supported by the model" ;
+  rdfs:comment "The organization that is responsible for transport of goods/containers with a transport means (truck, vessel, etc.). Each modality has a different name per modality: airline (air), shipping line (sea), barge operator (inland waterways), railway undertaking (rail), and carrier (road). These should also be supported by the model" ;
   rdfs:label "Carrier" ;
 .
 :Consignee
