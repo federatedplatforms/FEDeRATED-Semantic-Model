@@ -8,7 +8,7 @@
   a owl:Ontology ;
   dc:creator "Thom van Gessel (TNO)" ;
   dcterms:description "First draft for an ontology that describes states in logistics processes."@en ;
-  owl:versionIRI <https://ontology.tno.nl/logistics/federated/State/v-0.1.0/> ;
+  owl:versionIRI <https://ontology.tno.nl/logistics/federated/State/v0.1.0/> ;
   owl:versionInfo "v0.1.0" ;
 .
 
