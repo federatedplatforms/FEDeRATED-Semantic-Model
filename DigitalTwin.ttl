@@ -571,6 +571,13 @@ trains, airplanes, barges etc.""" ;
   rdfs:label "Is Full" ;
   rdfs:range xsd:boolean ;
 .
+:involvesGoods
+  a owl:ObjectProperty ;
+  rdfs:domain :Equipment ;
+  rdfs:range :Goods ;
+  rdfs:label "Involves goods" ;
+  rdfs:comment "An equipment is associated to goods based on the type of goods that can be held by the equipment, and the type of the goods."
+.
 :licensePlate
   a owl:DatatypeProperty ;
   rdfs:domain :Truck ;
