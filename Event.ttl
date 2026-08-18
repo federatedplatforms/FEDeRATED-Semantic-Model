@@ -22,6 +22,7 @@
   dcterms:created "2020-07-17"^^xsd:date ;
   dcterms:description "This ontology contains classes, attributes, relation about logistic Events." ;
   dcterms:issued "2021-03-15"^^xsd:date ;
+  dcterms:license <https://creativecommons.org/licenses/by-sa/4.0/> ; # FIXME check with stakeholders.
   dcterms:modified "2023-07-18"^^xsd:date ;
   dcterms:language "en" ;
   owl:imports <https://ontology.tno.nl/logistics/federated/DigitalTwin> ;
