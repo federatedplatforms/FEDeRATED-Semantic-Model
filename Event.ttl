@@ -58,7 +58,6 @@
   rdfs:comment "The timestamp expressed as a date and time, alongside the timezone it is specified";
   rdfs:label "Involves Timestamp";
   rdfs:range :Timestamp ;
-  rdfs:subPropertyOf :involves ;
   rdfs:domain :Event 
 .
 
@@ -112,13 +111,12 @@
   rdfs:label "Business Identifier description" ;
   rdfs:range xsd:string ;
 .
-:involvesDigitalTwin
+:involvesCargo
   a owl:ObjectProperty ;
   rdfs:label "Involves Digital Twin" ;
-  rdfs:comment "Used for grouping -- do not instantiate" ;
+  rdfs:comment "Event involves cargo object (can be goods / empty equipment / another transport means)" ;
   rdfs:domain :Event ;
-  rdfs:range DigitalTwin:PhysicalObject ;
-  rdfs:subPropertyOf :involves ;
+  rdfs:range DigitalTwin:LogisticsObject ;
 .
 :involvesEvent
   a owl:ObjectProperty ;
@@ -126,7 +124,6 @@
   rdfs:comment "Used for referencing track & trace events (ETA, ATA, ETD, ATD, etc)" ;
   rdfs:domain :Event ;
   rdfs:range :Event ;
-  rdfs:subPropertyOf :involves ;
 .
 :involvesLocation
   a owl:ObjectProperty ;
@@ -141,22 +138,11 @@
   rdfs:comment "This relation establishes an association between an Event and an Actor." ;
   rdfs:domain :Event ;
   rdfs:range LegalPerson:Actor ;
-  rdfs:subPropertyOf :involves ;
 .
-:involvesPackagingType
-  a owl:DatatypeProperty ;
-  rdfs:label "Involves Packaging Type" ;
-  rdfs:comment "This property denotes the packaging involved in the association of the product/goods with a package." ;
-  rdfs:domain :CargoAssociation ; # TODO this class is not defined.
-  rdfs:range xsd:string ;
-  skos:altLabel "IMO0029"
-.
-
 :involvesTransportMeans
   a owl:ObjectProperty ;
-  rdfs:comment "This relation establishes an association between an Event and a Transport Means Digital Twin. The exact meaning depends on the type of Event and its milestone" ;
+  rdfs:comment "This relation establishes an association between an Event and a Transport Means Digital Twin." ;
   rdfs:domain :Event ;
   rdfs:label "Involves Transport Means" ;
   rdfs:range DigitalTwin:TransportMeans ;
-  rdfs:subPropertyOf :involvesDigitalTwin ;
 .
