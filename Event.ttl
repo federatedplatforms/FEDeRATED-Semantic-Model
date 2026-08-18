@@ -27,7 +27,9 @@
   owl:imports <https://ontology.tno.nl/logistics/federated/DigitalTwin> ;
   owl:imports <https://ontology.tno.nl/logistics/federated/LegalPerson> ;
   owl:imports <https://ontology.tno.nl/logistics/federated/Location> ;
-  owl:versionIRI <https://ontology.tno.nl/logistics/federated/Event-v0.1> ;
+  owl:versionIRI <https://ontology.tno.nl/logistics/federated/Event/v0.1.0/> ;
+  owl:versionInfo "v0.1.0" ;
+  rdfs:seeAlso <https://github.com/federatedplatforms/FEDeRATED-Semantic-Model> ;
 .
 
 # High level Event classes

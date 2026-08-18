@@ -13,7 +13,8 @@
   a owl:Ontology ;
   dcterms:description "Taxonomy of location roles in logistics contexts." ;
   dcterms:language "en" ;
-  owl:versionIRI <https://ontology.tno.nl/logistics/federated/LocationRoles-v0.1> ;
+  owl:versionIRI <https://ontology.tno.nl/logistics/federated/LocationRoles/v0.1.0/> ;
+  owl:versionInfo "v0.1.0" ;
 .
 
 :LocationRoles

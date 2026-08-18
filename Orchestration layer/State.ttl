@@ -9,8 +9,8 @@
   dc:creator "Thom van Gessel (TNO)" ;
   dcterms:description "First draft for an ontology that describes states in logistics processes." ;
   dcterms:language "en" ;
-  owl:versionIRI <https://ontology.tno.nl/logistics/federated/Statev-0.1.0> ;
-  owl:versionInfo "0.1.0" ;
+  owl:versionIRI <https://ontology.tno.nl/logistics/federated/State/v-0.1.0/> ;
+  owl:versionInfo "v0.1.0" ;
 .
 
 :State

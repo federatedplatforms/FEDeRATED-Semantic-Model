@@ -15,7 +15,8 @@
   dcterms:description "Ontology for legal persons, actors and their identifications." ;
   dcterms:language "en" ;
   owl:imports <https://ontology.tno.nl/logistics/federated/ActorRoles> ;
-  owl:versionIRI <https://ontology.tno.nl/logistics/federated/LegalPerson-v0.1.0> ;
+  owl:versionIRI <https://ontology.tno.nl/logistics/federated/LegalPerson/v0.1.0/> ;
+  owl:versionInfo "v0.1.0" ;
 .
 
 :Actor
