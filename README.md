@@ -95,6 +95,4 @@ graph TD
     Event --> Location
     LegalPerson --> ActorRoles
     Location --> LocationRoles
-    InteractionPattern --> Event
-    InteractionPattern --> State
 ```
