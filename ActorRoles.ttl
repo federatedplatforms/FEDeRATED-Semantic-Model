@@ -10,8 +10,7 @@
 
 <https://ontology.tno.nl/logistics/federated/ActorRoles>
   a owl:Ontology ;
-  dcterms:description "Taxonomy of logistics actor roles (commercial, financial, supply chain)." ;
-  dcterms:language "en" ;
+  dcterms:description "Taxonomy of logistics actor roles (commercial, financial, supply chain)."@en ;
   owl:versionIRI <https://ontology.tno.nl/logistics/federated/ActorRoles/v0.1.0/> ;
   owl:versionInfo "v0.1.0" ;
 .

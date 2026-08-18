@@ -14,8 +14,7 @@
 
 <https://ontology.tno.nl/logistics/federated/Location>
   a owl:Ontology ;
-  dcterms:description "Ontology for physical infrastructure locations and geographic entities." ;
-  dcterms:language "en" ;
+  dcterms:description "Ontology for physical infrastructure locations and geographic entities."@en ;
   owl:imports <https://ontology.tno.nl/logistics/federated/LocationRoles> ;
   owl:versionIRI <https://ontology.tno.nl/logistics/federated/Location/v0.1.0/> ;
   owl:versionInfo "v0.1.0" ;
