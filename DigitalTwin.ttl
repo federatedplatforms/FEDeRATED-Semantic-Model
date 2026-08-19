@@ -641,7 +641,6 @@ skos:altLabel
   rdfs:domain :TransportMeans ;
   rdfs:label "Transport Means Nationality"@en;
   rdfs:range xsd:string ;
-  rdfs:subPropertyOf :transportMeansProperties ;
 .
 :hasVolume
   a owl:ClassProperty ;
@@ -695,7 +694,6 @@ skos:altLabel
     ] ;
   rdfs:label "License Plate"@en;
   rdfs:range xsd:string ;
-  rdfs:subPropertyOf :transportMeansPropertiesExternalIdentification
 .
 :loadCapacity
   a owl:DatatypeProperty ;
@@ -711,7 +709,6 @@ skos:altLabel
   rdfs:domain :Locomotive ;
   rdfs:label "Locomotive Brake Type"@en;
   rdfs:range xsd:string ;
-  rdfs:subPropertyOf :transportMeansProperties ;
 .
 :locomotiveBrakeWeight
   a owl:DatatypeProperty ;
@@ -719,7 +716,6 @@ skos:altLabel
   rdfs:domain :Locomotive ;
   rdfs:label "Locomotive Brake Weight"@en;
   rdfs:range xsd:string ;
-  rdfs:subPropertyOf :transportMeansProperties ;
 .
 :locomotiveDriverIndication
   a owl:DatatypeProperty ;
@@ -727,7 +723,6 @@ skos:altLabel
   rdfs:domain :Locomotive ;
   rdfs:label "Locomotive Driver Indication"@en;
   rdfs:range xsd:string ;
-  rdfs:subPropertyOf :transportMeansProperties ;
 .
 :locomotiveTractionType
   a owl:DatatypeProperty ;
@@ -735,7 +730,6 @@ skos:altLabel
   rdfs:domain :Locomotive ;
   rdfs:label "Locomotive Traction Type"@en;
   rdfs:range xsd:string ;
-  rdfs:subPropertyOf :transportMeansProperties ;
 .
 :locomotiveTypeNumber
   a owl:DatatypeProperty ;
@@ -743,7 +737,6 @@ skos:altLabel
   rdfs:domain :Locomotive ;
   rdfs:label "Locomotive Type Number"@en;
   rdfs:range xsd:string ;
-  rdfs:subPropertyOf :transportMeansProperties ;
 .
 :natureOfCargo
   a owl:DatatypeProperty ;
@@ -809,7 +802,6 @@ skos:altLabel
   rdfs:domain :PiecesGoods ;
   rdfs:label "Package Type Name"@en;
   rdfs:range xsd:string ;
-  rdfs:subPropertyOf :packageProperties ;
 .
 :packageTypeNumericCode
   a owl:DatatypeProperty ;
@@ -817,7 +809,6 @@ skos:altLabel
   rdfs:domain :PiecesGoods ;
   rdfs:label "Package Type Numeric Code"@en;
   rdfs:range xsd:integer ;
-  rdfs:subPropertyOf :packageProperties ;
 .
 :packagingDangerLevelCode
   a owl:DatatypeProperty ;
