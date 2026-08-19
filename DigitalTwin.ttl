@@ -123,9 +123,8 @@
 .
 :Seal
   a owl:Class ;
-  rdfs:comment "Type of Transport Equipment" ;
+  rdfs:comment "Additional support Logistic Object that can only be introduced for an Equipment / Goods" ;
   rdfs:label "Seal" ;
-  rdfs:subClassOf :Equipment ;
 .
 :Trailer
   a owl:Class ;
@@ -362,7 +361,6 @@ trains, airplanes, barges etc.""" ;
   rdfs:label "Flight number" ;
   rdfs:domain :Airplane ;
   rdfs:range xsd:string ;
-  rdfs:subPropertyOf :transportMeansPropertiesExternalIdentification
 .
 :LogisticsObjectMaxSize
   a owl:DatatypeProperty ;
@@ -399,7 +397,6 @@ trains, airplanes, barges etc.""" ;
   rdfs:domain :Equipment ;
   rdfs:label "Cargo Minimum Volume" ;
   rdfs:range xsd:integer ;
-  rdfs:subPropertyOf :volume ;
 .
 :LogisticsObjectTemperature
   a owl:DatatypeProperty ;
@@ -456,25 +453,15 @@ trains, airplanes, barges etc.""" ;
   rdfs:domain :Document ;
   rdfs:range xsd:string ;
 .
-:ems_id
-  a owl:DatatypeProperty ;
-  rdfs:comment "The Emergency Schedule code." ;
-  rdfs:domain :LogisticsObject ;
-  rdfs:label "EMS ID" ;
-  rdfs:range xsd:string ;
-  rdfs:seeAlso <https://svn.gefeg.com/svn/efti-publication/HTML/041.htm?https://svn.gefeg.com/svn/efti-publication/HTML/0476.htm> ;
-.
 :equipmentCategoryCode
   a owl:DatatypeProperty ;
   rdfs:domain :Equipment ;
   rdfs:label "Equipment Container Type" ;
-  rdfs:subPropertyOf :equipmentProperties ;
 .
 :equipmentContainerITUCode
   a owl:DatatypeProperty ;
   rdfs:domain :Equipment ;
   rdfs:label "Equipment Container ITU Code" ;
-  rdfs:subPropertyOf :equipmentProperties ;
 .
 :equipmentProperties
   a owl:DatatypeProperty ;
@@ -542,6 +529,13 @@ trains, airplanes, barges etc.""" ;
   rdfs:label "Number of Collies" ;
   rdfs:domain :PiecesGoods ;
   rdfs:range xsd:integer ;
+.
+:hasSeal
+  a owl:ObjectProperty ;
+  rdfs:comment "A goods/equipment involves seal" ;
+  rdfs:domain :Goods ;
+  rdfs:domain :Equipment ;
+  rdfs:label "Involved Seal"
 .
 :hasSealConditionCode
   a owl:DatatypeProperty ;
@@ -723,33 +717,18 @@ trains, airplanes, barges etc.""" ;
   rdfs:range xsd:string ;
   rdfs:domain :LogisticsObject ;
 .
-:relatedSealingPartyRoleCode
+:sealNumber
   a owl:DatatypeProperty ;
-  rdfs:comment "This property relates the seal to the role code of the seal party" ;
+  rdfs:comment "The identification number of applied seal." ;
   rdfs:domain :Seal ;
-  rdfs:label "Related Sealing Party Role Code" ;
+  rdfs:label "Seal Number" ;
   rdfs:range xsd:string ;
-.
-:sealIndicator
-  a owl:DatatypeProperty ;
-  rdfs:comment "The indication of whether or not this piece of logistics transport equipment is sealed." ;
-  rdfs:domain :Seal ;
-  rdfs:label "Seal Indicator" ;
-  rdfs:range xsd:string ;
-  rdfs:subPropertyOf :sealProperties ;
-.
-:sealProperties
-  a owl:DatatypeProperty ;
-  rdfs:comment "Super Property to group properties of Seal. DO NO INSTANTIATE." ;
-  rdfs:domain :Seal ;
-  rdfs:label "Seal Properties" ;
 .
 :sealQuantity
   a owl:DatatypeProperty ;
   rdfs:domain :Seal ;
   rdfs:label "Seal Quantity" ;
   rdfs:range xsd:integer ;
-  rdfs:subPropertyOf :sealProperties ;
 .
 :shippingMarks
   a owl:DatatypeProperty ;
@@ -766,25 +745,12 @@ trains, airplanes, barges etc.""" ;
   a owl:DatatypeProperty ;
   rdfs:domain :Equipment ;
   rdfs:range xsd:integer ;
-  rdfs:subPropertyOf :equipmentProperties ;
 .
 :totalLoadCapacity
   a owl:DatatypeProperty ;
   rdfs:domain :Barge ;
   rdfs:label "Total Load Capacity" ;
   rdfs:range xsd:integer ;
-.
-:transportMeansProperties
-  a owl:DatatypeProperty ;
-  rdfs:domain :TransportMeans ;
-  rdfs:comment "Used for grouping -- do not instantiate" ;
-  rdfs:label "Transport Means Properties" .
-
-:transportMeansPropertiesExternalIdentification
-  a owl:DatatypeProperty ;
-  rdfs:domain :TransportMeans ;
-  rdfs:comment "Used for grouping external identification methods of a transport means" ;
-  rdfs:label "Transport Means Properties" 
 .
 :typeOfCargo
   a owl:DatatypeProperty ;
@@ -803,7 +769,6 @@ trains, airplanes, barges etc.""" ;
   rdfs:domain :Vessel ;
   rdfs:label "Vessel Name" ;
   rdfs:range xsd:string ;
-  rdfs:subPropertyOf :transportMeansPropertiesExternalIdentification ;
   skos:altLabel "IMO0142"
 .
 :VIN
@@ -811,7 +776,6 @@ trains, airplanes, barges etc.""" ;
   rdfs:domain :Truck ;
   rdfs:label "VIN" ;
   rdfs:range xsd:integer ;
-  rdfs:subPropertyOf :transportMeansPropertiesExternalIdentification ;
 .
 :volume
   a owl:DatatypeProperty ;
@@ -825,28 +789,24 @@ trains, airplanes, barges etc.""" ;
   rdfs:domain :RailwayWagon ;
   rdfs:label "Wagon Brake Type" ;
   rdfs:range xsd:string ;
-  rdfs:subPropertyOf :equipmentProperties ;
 .
 :wagonBrakeWeight
   a owl:DatatypeProperty ;
   rdfs:domain :RailwayWagon ;
   rdfs:label "Wagon Brake Weight" ;
   rdfs:range xsd:integer ;
-  rdfs:subPropertyOf :equipmentProperties ;
 .
 :wagonMaximumSpeed
   a owl:DatatypeProperty ;
   rdfs:domain :RailwayWagon ;
   rdfs:label "Wagon Maximum Speed" ;
   rdfs:range xsd:integer ;
-  rdfs:subPropertyOf :equipmentProperties ;
 .
 :wagonNrAxel
   a owl:DatatypeProperty ;
   rdfs:domain :RailwayWagon ;
   rdfs:label "Wagon Nr Axel" ;
   rdfs:range xsd:integer ;
-  rdfs:subPropertyOf :equipmentProperties ;
 .
 # ------------ CLASSIFICATIONS ------------ 
 :Ferry
