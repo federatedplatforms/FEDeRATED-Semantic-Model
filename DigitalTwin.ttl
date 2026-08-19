@@ -485,11 +485,29 @@ trains, airplanes, barges etc.""" ;
   rdfs:label "Goods Type Code" ;
   rdfs:range xsd:string
 .
-:grossWeight
+:WeightMeasurement
+  a owl:Class ;
+  rdfs:label "Weight Measurement" ;
+  rdfs:comment "Measured weight of logistics object, alongside description of gross/net and unit of measure used"
+.
+:weightValue
   a owl:DatatypeProperty ;
-  rdfs:domain :LogisticsObject ;
-  rdfs:label "Gross Weight" ;
-  rdfs:range xsd:integer ;
+  rdfs:domain :WeightMeasurement ;
+  rdfs:label "Weight Numerical Value" ;
+  rdfs:range xsd:float ;
+.
+:weightUnitOfMeasure
+  a owl:DatatypeProperty ;
+  rdfs:domain :WeightMeasurement ;
+  rdfs:label "Weight Numerical Value" ;
+  rdfs:range xsd:string ; # TODO: to be assessed against pilot findings if a separate, explicit unit of measure pointing to an uOM ontology property needs to be introduced or this one is transformed 
+.
+:weightDescription
+  a owl:DatatypeProperty ;
+  rdfs:domain :WeightMeasurement ;
+  rdfs:label "Weight Description" ;
+  rdfs:comment "Weight Description as either gross or net" ;
+  rdfs:range xsd:string ;
 .
 :harmonizedSystemCode
   a owl:DatatypeProperty ;
@@ -559,7 +577,19 @@ trains, airplanes, barges etc.""" ;
   rdfs:range xsd:string ;
   rdfs:subPropertyOf :transportMeansProperties ;
 .
-
+:hasVolume
+  a owl:ClassProperty ;
+  rdfs:domain :Goods ;
+  rdfs:domain :Equipment ;
+  rdfs:range :VolumeMeasurement ;
+  rdfs:label "Volume" ;
+.
+:hasWeight
+  a owl:ClassProperty ;
+  rdfs:domain :LogisticsObject ;
+  rdfs:range :WeightMeasurement ;
+  rdfs:label "Weight"
+.
 :hazardousMaterialDetail
   a owl:DatatypeProperty ;
   rdfs:domain :LogisticsObject ;
@@ -741,11 +771,6 @@ trains, airplanes, barges etc.""" ;
   rdfs:domain :LogisticsObject ;
   rdfs:range xsd:string
 .
-:tareWeight
-  a owl:DatatypeProperty ;
-  rdfs:domain :Equipment ;
-  rdfs:range xsd:integer ;
-.
 :totalLoadCapacity
   a owl:DatatypeProperty ;
   rdfs:domain :Barge ;
@@ -777,12 +802,22 @@ trains, airplanes, barges etc.""" ;
   rdfs:label "VIN" ;
   rdfs:range xsd:integer ;
 .
-:volume
+:VolumeMeasurement
+  a owl:Class ;
+  rdfs:label "Volume Measurement" ;
+  rdfs:comment "Volume measurement value alongside its' associated unit of measure used"
+.
+:volumeValue
   a owl:DatatypeProperty ;
-  rdfs:label "Volume";
-  rdfs:comment "Volume value and incl. unit of measurement";
+  rdfs:label "Volume Numerical Value" ;
   rdfs:range xsd:float ;
-  rdfs:domain :LogisticsObject ;
+  rdfs:domain :VolumeMeasurement ;
+.
+:volumeUnitOfMeasure
+  a owl:DatatypeProperty ;
+  rdfs:label "Volume Unit of Measure" ;
+  rdfs:range xsd:string ; # TODO: to be assessed from pilots if this needs an explicit uOM ontology or string is to be kept
+  rdfs:domain :VolumeMeasurement
 .
 :wagonBrakeType
   a owl:DatatypeProperty ;
