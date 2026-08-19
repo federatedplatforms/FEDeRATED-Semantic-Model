@@ -325,11 +325,23 @@ trains, airplanes, barges etc.""" ;
   rdfs:range xsd:string ;
   skos:altLabel "IMO0140"
 .
-:externalIdentifier
-  a owl:DatatypeProperty ;
+:ExternalIdentifier
+  a owl:Class ;
+  rdfs:label "External Identifier" ;
+  rdfs:comment "Identifier external of the data sharing system - can be HS / CN code"
+.
+:externalIdentifierValue
+  a owl:ObjectProperty ;
   rdfs:comment "" ;
-  rdfs:label "Additional Reference code" ;
-  rdfs:domain :LogisticsObject ;
+  rdfs:label "External Identifier value" ;
+  rdfs:domain :ExternalIdentifier ;
+  rdfs:range xsd:string
+.
+:externalIdentifierDescription
+  a owl:ObjectProperty ;
+  rdfs:comment "" ;
+  rdfs:label "External Identifier description" ;
+  rdfs:domain :ExternalIdentifier ;
   rdfs:range xsd:string
 .
 :name
