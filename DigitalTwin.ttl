@@ -575,7 +575,6 @@ trains, airplanes, barges etc.""" ;
   rdfs:domain :TransportMeans ;
   rdfs:label "Transport Means Nationality" ;
   rdfs:range xsd:string ;
-  rdfs:subPropertyOf :transportMeansProperties ;
 .
 :hasVolume
   a owl:ClassProperty ;
@@ -620,7 +619,6 @@ trains, airplanes, barges etc.""" ;
   rdfs:domain :Trailer ;
   rdfs:label "License Plate" ;
   rdfs:range xsd:string ;
-  rdfs:subPropertyOf :transportMeansPropertiesExternalIdentification
 .
 :loadCapacity
   a owl:DatatypeProperty ;
@@ -633,35 +631,30 @@ trains, airplanes, barges etc.""" ;
   rdfs:domain :Locomotive ;
   rdfs:label "Locomotive Brake Type" ;
   rdfs:range xsd:string ;
-  rdfs:subPropertyOf :transportMeansProperties ;
 .
 :locomotiveBrakeWeight
   a owl:DatatypeProperty ;
   rdfs:domain :Locomotive ;
   rdfs:label "Locomotive Brake Weight" ;
   rdfs:range xsd:string ;
-  rdfs:subPropertyOf :transportMeansProperties ;
 .
 :locomotiveDriverIndication
   a owl:DatatypeProperty ;
   rdfs:domain :Locomotive ;
   rdfs:label "Locomotive Driver Indication" ;
   rdfs:range xsd:string ;
-  rdfs:subPropertyOf :transportMeansProperties ;
 .
 :locomotiveTractionType
   a owl:DatatypeProperty ;
   rdfs:domain :Locomotive ;
   rdfs:label "Locomotive Traction Type" ;
   rdfs:range xsd:string ;
-  rdfs:subPropertyOf :transportMeansProperties ;
 .
 :locomotiveTypeNumber
   a owl:DatatypeProperty ;
   rdfs:domain :Locomotive ;
   rdfs:label "Locomotive Type Number" ;
   rdfs:range xsd:string ;
-  rdfs:subPropertyOf :transportMeansProperties ;
 .
 :natureOfCargo
   a owl:DatatypeProperty ;
@@ -707,11 +700,10 @@ trains, airplanes, barges etc.""" ;
 .
 :packageTypeName
   a owl:DatatypeProperty ;
-  rdfs:comment "Package type name based on UNECE standardisations. Retrieved from internal project ProfileData postgres database." ;
+  rdfs:comment "Package type name" ;
   rdfs:domain :PiecesGoods ;
   rdfs:label "Package Type Name" ;
   rdfs:range xsd:string ;
-  rdfs:subPropertyOf :packageProperties ;
 .
 :packageTypeNumericCode
   a owl:DatatypeProperty ;
@@ -719,7 +711,6 @@ trains, airplanes, barges etc.""" ;
   rdfs:domain :PiecesGoods ;
   rdfs:label "Package Type Numeric Code" ;
   rdfs:range xsd:integer ;
-  rdfs:subPropertyOf :packageProperties ;
 .
 :packagingDangerLevelCode
   a owl:DatatypeProperty ;
