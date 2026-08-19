@@ -590,6 +590,12 @@ skos:altLabel
   rdfs:label "has Document Type"@en;
   rdfs:range xsd:string ;
 .
+:hasExternalIdentifier
+  a owl:ClassProperty ;
+  rdfs:domain :LogisticsObject ;
+  rdfs:range :ExternalIdentifier ;
+  rdfs:label "External Identifier" 
+.
 :hasFlashpointTemperature
   a owl:DatatypeProperty ;
   rdfs:comment "This property relates a physical object with its flashpoint temperature. Typed as a string so that the value and its unit of measure can be carried together; a unit-aware representation based on the Units of Measure (OM) ontology is foreseen for a later version."@en;
