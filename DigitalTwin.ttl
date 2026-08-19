@@ -386,7 +386,6 @@ skos:altLabel
   rdfs:label "Flight number"@en;
   rdfs:domain :Airplane ;
   rdfs:range xsd:string ;
-  rdfs:subPropertyOf :transportMeansPropertiesExternalIdentification
 .
 :LogisticsObjectMaxSize
   a owl:DatatypeProperty ;
@@ -430,7 +429,6 @@ skos:altLabel
   rdfs:domain :Equipment ;
   rdfs:label "Cargo Minimum Volume"@en;
   rdfs:range xsd:integer ;
-  rdfs:subPropertyOf :volume ;
 .
 :LogisticsObjectTemperature
   a owl:DatatypeProperty ;
@@ -595,6 +593,13 @@ skos:altLabel
   rdfs:label "Number of Collies"@en;
   rdfs:domain :PiecesGoods ;
   rdfs:range xsd:integer ;
+.
+:hasSeal
+  a owl:ObjectProperty ;
+  rdfs:comment "A goods/equipment involves seal" ;
+  rdfs:domain :Goods ;
+  rdfs:domain :Equipment ;
+  rdfs:label "Involved Seal"
 .
 :hasSealConditionCode
   a owl:DatatypeProperty ;
@@ -813,7 +818,7 @@ skos:altLabel
   rdfs:range xsd:string ;
   rdfs:domain :LogisticsObject ;
 .
-:relatedSealingPartyRoleCode
+:sealNumber
   a owl:DatatypeProperty ;
   rdfs:comment "This property relates the seal to the role code of the sealing party, for example carrier, consignor or customs. Deliberately permissive in this version: any string is accepted so that use case data can be ingested before the prevalent values are known. Expected to be narrowed to a codelist in a later version."@en;
   rdfs:domain :Seal ;
@@ -841,7 +846,6 @@ skos:altLabel
   rdfs:domain :Seal ;
   rdfs:label "Seal Quantity"@en;
   rdfs:range xsd:integer ;
-  rdfs:subPropertyOf :sealProperties ;
 .
 :shippingMarks
   a owl:DatatypeProperty ;
@@ -863,7 +867,6 @@ skos:altLabel
   rdfs:domain :Equipment ;
   rdfs:label "Tare Weight"@en;
   rdfs:range xsd:integer ;
-  rdfs:subPropertyOf :equipmentProperties ;
 .
 :totalLoadCapacity
   a owl:DatatypeProperty ;
@@ -905,7 +908,6 @@ skos:altLabel
   rdfs:domain :Vessel ;
   rdfs:label "Vessel Name"@en;
   rdfs:range xsd:string ;
-  rdfs:subPropertyOf :transportMeansPropertiesExternalIdentification ;
   skos:altLabel "IMO0142"
 .
 :VIN
@@ -929,7 +931,6 @@ skos:altLabel
   rdfs:domain :RailwayWagon ;
   rdfs:label "Wagon Brake Type"@en;
   rdfs:range xsd:string ;
-  rdfs:subPropertyOf :equipmentProperties ;
 .
 :wagonBrakeWeight
   a owl:DatatypeProperty ;
@@ -937,7 +938,6 @@ skos:altLabel
   rdfs:domain :RailwayWagon ;
   rdfs:label "Wagon Brake Weight"@en;
   rdfs:range xsd:integer ;
-  rdfs:subPropertyOf :equipmentProperties ;
 .
 :wagonMaximumSpeed
   a owl:DatatypeProperty ;
@@ -945,7 +945,6 @@ skos:altLabel
   rdfs:domain :RailwayWagon ;
   rdfs:label "Wagon Maximum Speed"@en;
   rdfs:range xsd:integer ;
-  rdfs:subPropertyOf :equipmentProperties ;
 .
 :wagonNrAxel
   a owl:DatatypeProperty ;
@@ -953,7 +952,6 @@ skos:altLabel
   rdfs:domain :RailwayWagon ;
   rdfs:label "Wagon Nr Axel"@en;
   rdfs:range xsd:integer ;
-  rdfs:subPropertyOf :equipmentProperties ;
 .
 # ------------ CLASSIFICATIONS ------------ 
 # TODO The terms below are declared as individuals of :Vessel / :Container rather than as
