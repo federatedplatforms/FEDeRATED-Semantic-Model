@@ -529,6 +529,12 @@ trains, airplanes, barges etc.""" ;
   rdfs:label "has Document Type" ;
   rdfs:range xsd:string ;
 .
+:hasExternalIdentifier
+  a owl:ClassProperty ;
+  rdfs:domain :LogisticsObject ;
+  rdfs:range :ExternalIdentifier ;
+  rdfs:label "External Identifier" 
+.
 :hasFlashpointTemperature
   a owl:DatatypeProperty ;
   rdfs:comment "This property relates a physical object with its flashpoint temperature given as a measure from Unit of Measure (OUM) ontology" ;
