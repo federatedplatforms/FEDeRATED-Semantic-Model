@@ -1,17 +1,19 @@
-# baseURI: https://ontology.tno.nl/logistics/federated/ActorRoles
-# prefix: ActorRoles
+# baseURI: https://ontology.tno.nl/logistics/federated/ActorRoles#
+# prefix: fedacr
 
 @prefix : <https://ontology.tno.nl/logistics/federated/ActorRoles#> .
+@prefix fedacr: <https://ontology.tno.nl/logistics/federated/ActorRoles#> .
+
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 
-<https://ontology.tno.nl/logistics/federated/ActorRoles>
+fedacr:
   a owl:Ontology ;
-  dcterms:description "Taxonomy of logistics actor roles (commercial, financial, supply chain)." ;
-  dcterms:language "en" ;
-  owl:versionIRI <https://ontology.tno.nl/logistics/federated/ActorRoles-v0.1> ;
+  dcterms:description "Taxonomy of logistics actor roles (commercial, financial, supply chain)."@en ;
+  owl:versionIRI <https://ontology.tno.nl/logistics/federated/ActorRoles/v0.1.0/> ;
+  owl:versionInfo "v0.1.0" ;
 .
 
 skos:broader 

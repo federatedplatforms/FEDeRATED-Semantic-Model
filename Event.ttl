@@ -1,32 +1,39 @@
-# baseURI: https://ontology.tno.nl/logistics/federated/Event
-# imports: https://ontology.tno.nl/logistics/federated/DigitalTwin
-# imports: https://ontology.tno.nl/logistics/federated/LegalPerson
-# imports: https://ontology.tno.nl/logistics/federated/Location
-# prefix: Event
+# baseURI: https://ontology.tno.nl/logistics/federated/Event#
+# imports: https://ontology.tno.nl/logistics/federated/DigitalTwin#
+# imports: https://ontology.tno.nl/logistics/federated/LegalPerson#
+# imports: https://ontology.tno.nl/logistics/federated/Location#
+# prefix: fedevt
 
 @prefix : <https://ontology.tno.nl/logistics/federated/Event#> .
-@prefix DigitalTwin: <https://ontology.tno.nl/logistics/federated/DigitalTwin#> .
-@prefix LegalPerson: <https://ontology.tno.nl/logistics/federated/LegalPerson#> .
+@prefix feddtw: <https://ontology.tno.nl/logistics/federated/DigitalTwin#> .
+@prefix fedevt: <https://ontology.tno.nl/logistics/federated/Event#> .
+@prefix fedlgp: <https://ontology.tno.nl/logistics/federated/LegalPerson#> .
+@prefix fedloc: <https://ontology.tno.nl/logistics/federated/Location#> .
+
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix Location: <https://ontology.tno.nl/logistics/federated/Location#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://ontology.tno.nl/logistics/federated/Event>
+fedevt:
   a owl:Ontology ;
   dc:creator "Dena Tahvildari, Maaike Burghoorn, Cornelis Bouter, Theodor Chirvasuta" ;
   dcterms:created "2020-07-17"^^xsd:date ;
-  dcterms:description "This ontology contains classes, attributes, relation about logistic Events." ;
+  dcterms:description "This ontology contains classes, attributes, relation about logistic Events."@en ;
   dcterms:issued "2021-03-15"^^xsd:date ;
+  dcterms:license <https://creativecommons.org/licenses/by-sa/4.0/> ; # FIXME check with stakeholders.
   dcterms:modified "2023-07-18"^^xsd:date ;
-  dcterms:language "en" ;
-  owl:imports <https://ontology.tno.nl/logistics/federated/DigitalTwin> ;
-  owl:imports <https://ontology.tno.nl/logistics/federated/LegalPerson> ;
-  owl:imports <https://ontology.tno.nl/logistics/federated/Location> ;
-  owl:versionIRI <https://ontology.tno.nl/logistics/federated/Event-v0.1> ;
+  owl:imports <https://ontology.tno.nl/logistics/federated/DigitalTwin#> ;
+  owl:imports <https://ontology.tno.nl/logistics/federated/LegalPerson#> ;
+  owl:imports <https://ontology.tno.nl/logistics/federated/Location#> ;
+  owl:versionIRI <https://ontology.tno.nl/logistics/federated/Event/v0.1.0/> ;
+  owl:versionInfo "v0.1.0" ;
+  vann:preferredNamespacePrefix "fedevt" ;
+  vann:preferredNamespaceUri "https://ontology.tno.nl/federated/Event#" ;
+  rdfs:seeAlso <https://github.com/federatedplatforms/FEDeRATED-Semantic-Model> ;
 .
 
 # High level Event classes

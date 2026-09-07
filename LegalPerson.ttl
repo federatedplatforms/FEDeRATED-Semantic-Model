@@ -1,20 +1,22 @@
-# baseURI: https://ontology.tno.nl/logistics/federated/LegalPerson
-# imports: https://ontology.tno.nl/logistics/federated/ActorRoles
-# prefix: LegalPerson
+# baseURI: https://ontology.tno.nl/logistics/federated/LegalPerson#
+# imports: https://ontology.tno.nl/logistics/federated/ActorRoles#
+# prefix: fedlgp
 
 @prefix : <https://ontology.tno.nl/logistics/federated/LegalPerson#> .
-@prefix ActorRoles: <https://ontology.tno.nl/logistics/federated/ActorRoles#> .
+@prefix fedlgp: <https://ontology.tno.nl/logistics/federated/LegalPerson#> .
+@prefix fedacr: <https://ontology.tno.nl/logistics/federated/ActorRoles#> .
+
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 
-<https://ontology.tno.nl/logistics/federated/LegalPerson>
+fedlgp:
   a owl:Ontology ;
-  dcterms:description "Ontology for legal persons, actors and their identifications." ;
-  dcterms:language "en" ;
-  owl:imports <https://ontology.tno.nl/logistics/federated/ActorRoles> ;
-  owl:versionIRI <https://ontology.tno.nl/logistics/federated/LegalPerson-v0.1> ;
+  dcterms:description "Ontology for legal persons, actors and their identifications."@en ;
+  owl:imports <https://ontology.tno.nl/logistics/federated/ActorRoles#> ;
+  owl:versionIRI <https://ontology.tno.nl/logistics/federated/LegalPerson/v0.1.0/> ;
+  owl:versionInfo "v0.1.0" ;
 .
 
 :Actor
@@ -31,7 +33,7 @@
 :explicitActorRole
   a owl:ObjectProperty ;
   rdfs:domain :Actor ;
-  rdfs:range ActorRoles:ActorRoles ;
+  rdfs:range fedacr:ActorRoles ;
   rdfs:label "Actor has explicit logistic role" ;
 .
 :LegalPerson
