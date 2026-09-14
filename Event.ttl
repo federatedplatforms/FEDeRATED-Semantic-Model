@@ -120,7 +120,7 @@ fedevt:
 .
 :involvesCargo
   a owl:ObjectProperty ;
-  rdfs:label "Involves Digital Twin" ;
+  rdfs:label "Involves Logistics Object" ;
   rdfs:comment "Event involves cargo object (can be goods / empty equipment / another transport means)" ;
   rdfs:domain :Event ;
   rdfs:range DigitalTwin:LogisticsObject ;
