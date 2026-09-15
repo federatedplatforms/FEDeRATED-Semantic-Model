@@ -8,21 +8,28 @@
 
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 fedlgp:
   a owl:Ontology ;
-  dcterms:description "Ontology for legal persons, actors and their identifications."@en ;
   dc:creator "Dena Tahvildari" ;
   dc:creator "Maaike Burghoorn" ;
   dc:creator "Cornelis Bouter" ;
   dc:creator "Theodor Chirvasuta" ;
   dc:creator "J.P. Wijbenga" ;
+  dcterms:description "Ontology for legal persons, actors and their identifications."@en ;
+  dcterms:created "2020-07-17"^^xsd:date ;
+  dcterms:modified "2026-04-05"^^xsd:date ;
   owl:imports <https://ontology.tno.nl/logistics/federated/ActorRoles#> ;
   owl:versionIRI <https://ontology.tno.nl/logistics/federated/LegalPerson/v0.2.0/> ;
   owl:versionInfo "v0.2.0" ;
+  vann:preferredNamespacePrefix "fedlgp" ;
+  vann:preferredNamespaceUri "https://ontology.tno.nl/logistics/federated/LegalPerson#" ;
+  rdfs:seeAlso <https://github.com/federatedplatforms/FEDeRATED-Semantic-Model> ;
+  rdfs:seeAlso <https://github.com/federatedplatforms/Semantic-Model-Adoption> ;
 .
 
 :Actor
@@ -63,7 +70,7 @@ fedlgp:
   a owl:ObjectProperty ;
   rdfs:domain :LegalPerson ;
   rdfs:range :LegalPersonIdentification ;
-  rdfs:label "Legal Person Identification" 
+  rdfs:label "Legal Person Identification"@en 
 .
 :legalPersonIdentifier
   a owl:DatatypeProperty ;

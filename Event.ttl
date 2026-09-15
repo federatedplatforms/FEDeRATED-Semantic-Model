@@ -14,7 +14,6 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
@@ -25,8 +24,8 @@ fedevt:
   dc:creator "Cornelis Bouter" ;
   dc:creator "Theodor Chirvasuta" ;
   dc:creator "J.P. Wijbenga" ;
+  dcterms:description "This ontology contains classes, attributes, relation about various logistic events. The events fall into two categories: Track & Trace events and Document Bearing events."@en ;
   dcterms:created "2020-07-17"^^xsd:date ;
-  dcterms:description "This ontology contains classes, attributes, relation about logistic Events."@en ;
   dcterms:issued "2021-03-15"^^xsd:date ;
   dcterms:modified "2026-09-14"^^xsd:date ;
   owl:imports <https://ontology.tno.nl/logistics/federated/DigitalTwin#> ;
@@ -35,8 +34,9 @@ fedevt:
   owl:versionIRI <https://ontology.tno.nl/logistics/federated/Event/v0.2.0/> ;
   owl:versionInfo "v0.2.0" ;
   vann:preferredNamespacePrefix "fedevt" ;
-  vann:preferredNamespaceUri "https://ontology.tno.nl/federated/Event#" ;
+  vann:preferredNamespaceUri "https://ontology.tno.nl/logistics/federated/Event#" ;
   rdfs:seeAlso <https://github.com/federatedplatforms/FEDeRATED-Semantic-Model> ;
+  rdfs:seeAlso <https://github.com/federatedplatforms/Semantic-Model-Adoption> ;
 .
 
 # High level Event classes
@@ -48,15 +48,15 @@ fedevt:
 .
 :BusinessIdentifier
   a owl:Class ;
-  rdfs:comment "A Business Identifier enables consistent traceability and linkage between operational events, actors, assets, and related business information. It is made of two elements - the business identifier alphanumeric value, and its description"@en ;
-  rdfs:label "BusinessIdentifier"
+  rdfs:comment "A Business Identifier enables consistent traceability and linkage between operational events, actors, assets, and related business information. It is made of two elements - the business identifier alphanumeric value, and the description of the identifier (e.g. 'XXX-87654324' and 'IATA Air Waybill number')"@en ;
+  rdfs:label "Business Identifier"@en
 .
 
 # Unique identifier for storage of event
 
 :UUID a owl:DatatypeProperty ;
-  rdfs:comment "Every event has a UUID to be distinguishable when stored in a database."@en ;
-  rdfs:label "UUID" ;
+  rdfs:comment "Every event has a UUID to be distinguishable when stored in a database. This property is instantiated by the Federated node."@en ;
+  rdfs:label "UUID"@en ;
   rdfs:domain :Event ;
   rdfs:range xsd:string
 .
@@ -65,27 +65,28 @@ fedevt:
 
 :involvesTimestamp
   a owl:DatatypeProperty ;
-  rdfs:comment "The timestamp expressed as a date and time, alongside the timezone it is specified";
-  rdfs:label "Involves Timestamp";
+  rdfs:comment "The timestamp expressed as a date and time as well as the classification of this datetime (e.g. 'estimated', 'actual')"@en ;
+  rdfs:label "Involves Timestamp"@en ;
   rdfs:range :Timestamp ;
   rdfs:domain :Event 
 .
 
 :Timestamp
   a owl:Class ;
-  rdfs:comment "Class used to aggregate the datetime timestamp and the classification of the timestamp"@en ;
+  rdfs:comment "Class used to aggregate the datetime timestamp and the classification of the timestamp (e.g. 'estimated', '2026-09-01T09:13:00Z')"@en ;
   rdfs:label "Timestamp"@en ;
 .
 
 :involvesTimeClassification a owl:DatatypeProperty ;
   rdfs:comment "Every timestamp should have a time classification. The time classifications may be planned, estimated, expected, actual, requested, or other denominations."@en ;
+  # TODO to be further codified after use cases
   rdfs:label "Involves Time Classification"@en ;
   rdfs:domain :Timestamp ;
   rdfs:range xsd:string ;
 .
 
 :involvesTimestampDateTime a owl:DatatypeProperty ;
-  rdfs:comment "Every timestamp must have the date time specified."@en ;
+  rdfs:comment "The actual date time associated with this Timestamp object."@en ;
   rdfs:label "Involves DateTime"@en ;
   rdfs:domain :Timestamp ;
   rdfs:range xsd:dateTime ;
@@ -126,7 +127,7 @@ fedevt:
   rdfs:label "Involves Logistics Object"@en ;
   rdfs:comment "Event involves cargo object (can be goods / empty equipment / another transport means)"@en ;
   rdfs:domain :Event ;
-  rdfs:range DigitalTwin:LogisticsObject ;
+  rdfs:range feddtw:LogisticsObject ;
 .
 :involvesEvent
   a owl:ObjectProperty ;
@@ -140,19 +141,19 @@ fedevt:
   rdfs:comment "This relation establishes an association between an Event and a Location. The exact meaning depends on the type of Event, which is inferred from this property and the second association the event has."@en ;
   rdfs:domain :Event ;
   rdfs:label "Involves Location"@en ;
-  rdfs:range Location:BusinessLocation ;
+  rdfs:range fedloc:BusinessLocation ;
 .
 :involvesActor
   a owl:ObjectProperty ;
   rdfs:label "Involves Actor"@en ;
   rdfs:comment "This relation establishes an association between an Event and an Actor."@en ;
   rdfs:domain :Event ;
-  rdfs:range LegalPerson:Actor ;
+  rdfs:range fedlgp:Actor ;
 .
 :involvesTransportMeans
   a owl:ObjectProperty ;
   rdfs:comment "This relation establishes an association between an Event and a Transport Means Digital Twin."@en ;
   rdfs:domain :Event ;
   rdfs:label "Involves Transport Means"@en ;
-  rdfs:range DigitalTwin:TransportMeans ;
+  rdfs:range feddtw:TransportMeans ;
 .
