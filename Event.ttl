@@ -89,7 +89,7 @@ fedevt:
   rdfs:comment "The actual date time associated with this Timestamp object."@en ;
   rdfs:label "Involves DateTime"@en ;
   rdfs:domain :Timestamp ;
-  rdfs:range xsd:dateTime ;
+  rdfs:range xsd:dateTimeStamp ;
 .
 
 # Involves predicates
