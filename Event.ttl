@@ -64,7 +64,7 @@ fedevt:
 # Timestamp
 
 :involvesTimestamp
-  a owl:DatatypeProperty ;
+  a owl:ObjectProperty ;
   rdfs:comment "The timestamp expressed as a date and time as well as the classification of this datetime (e.g. 'estimated', 'actual')"@en ;
   rdfs:label "Involves Timestamp"@en ;
   rdfs:range :Timestamp ;
@@ -102,7 +102,7 @@ fedevt:
   rdfs:range owl:Thing ;
 .
 :involvesBusinessIdentifier
-  a owl:DatatypeProperty ;
+  a owl:ObjectProperty ;
   rdfs:comment "Identifier that can be used to refer to an external system the business transaction where the event is involved in (e.g., AWB / eFTI / voyage number (IMO0191))"@en ;
   rdfs:domain :Event ;
   rdfs:label "Involves Business Identifier"@en ;
