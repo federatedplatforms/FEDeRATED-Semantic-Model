@@ -6,7 +6,6 @@
 @prefix fedlgp: <https://ontology.tno.nl/logistics/federated/LegalPerson#> .
 @prefix fedacr: <https://ontology.tno.nl/logistics/federated/ActorRoles#> .
 
-@prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -15,11 +14,11 @@
 
 fedlgp:
   a owl:Ontology ;
-  dc:creator "Dena Tahvildari" ;
-  dc:creator "Maaike Burghoorn" ;
-  dc:creator "Cornelis Bouter" ;
-  dc:creator "Theodor Chirvasuta" ;
-  dc:creator "J.P. Wijbenga" ;
+  dcterms:creator <https://www.linkedin.com/in/denatah/> ;
+  dcterms:creator <https://www.linkedin.com/in/maaike-burghoorn/> ;
+  dcterms:creator <https://www.linkedin.com/in/bouterca/> ;
+  dcterms:creator <https://www.linkedin.com/in/theodor-christian-chirvasuta/> ;
+  dcterms:creator <https://www.linkedin.com/in/jan-pieter-wijbenga-19441032/> ;
   dcterms:description "Ontology for legal persons, actors and their identifications."@en ;
   dcterms:created "2020-07-17"^^xsd:date ;
   dcterms:modified "2026-04-05"^^xsd:date ;
