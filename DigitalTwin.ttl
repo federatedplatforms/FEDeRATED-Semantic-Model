@@ -451,7 +451,7 @@ skos:altLabel
   a owl:DatatypeProperty ;
   rdfs:comment "The type of a container. Deliberately permissive in this version: any string is accepted so that use case data can be ingested before the prevalent values are known. Expected to be narrowed to a codelist (ISO 6346 size/type codes are the leading candidate) in a later version."@en;
   rdfs:domain :Container ;
-  rdfs:label "Container Type"@en; # TODO There are standards for container type codes. Let's pick one and explain.
+  rdfs:label "Container Type"@en;
   rdfs:range xsd:string ;
 .
 :damageRemarks
@@ -516,7 +516,7 @@ skos:altLabel
   a owl:DatatypeProperty ;
   rdfs:comment "The type of an equipment. Deliberately permissive in this version: any string is accepted so that use case data can be ingested before the prevalent values are known. Expected to be narrowed to a codelist in a later version."@en;
   rdfs:domain :Equipment ;
-  rdfs:label "Equipment Type Code"@en; # TODO Choose a standard, and explain. Codelist, or reference to other standard.
+  rdfs:label "Equipment Type Code"@en;
   rdfs:range xsd:string ;
   rdfs:subPropertyOf :equipmentProperties ;
 .
