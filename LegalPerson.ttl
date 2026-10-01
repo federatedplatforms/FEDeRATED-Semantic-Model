@@ -25,8 +25,9 @@ fedlgp:
   dcterms:created "2020-07-17"^^xsd:date ;
   dcterms:modified "2026-04-05"^^xsd:date ;
   owl:imports <https://ontology.tno.nl/logistics/federated/ActorRoles#> ;
-  owl:versionIRI <https://ontology.tno.nl/logistics/federated/LegalPerson/v0.2.0/> ;
-  owl:versionInfo "v0.2.0" ;
+  owl:versionIRI <https://ontology.tno.nl/logistics/federated/LegalPerson/v0.3.0/> ;
+  owl:versionInfo "v0.3.0" ;
+  adms:prev <https://ontology.tno.nl/logistics/federated/LegalPerson/v0.2.0/> ;
   adms:status <http://purl.org/adms/status/UnderDevelopment> ;
   vann:preferredNamespacePrefix "fedlgp" ;
   vann:preferredNamespaceUri "https://ontology.tno.nl/logistics/federated/LegalPerson#" ;

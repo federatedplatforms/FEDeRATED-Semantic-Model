@@ -32,8 +32,9 @@ fedevt:
   owl:imports <https://ontology.tno.nl/logistics/federated/DigitalTwin#> ;
   owl:imports <https://ontology.tno.nl/logistics/federated/LegalPerson#> ;
   owl:imports <https://ontology.tno.nl/logistics/federated/Location#> ;
-  owl:versionIRI <https://ontology.tno.nl/logistics/federated/Event/v0.2.0/> ;
-  owl:versionInfo "v0.2.0" ;
+  owl:versionIRI <https://ontology.tno.nl/logistics/federated/Event/v0.3.0/> ;
+  owl:versionInfo "v0.3.0" ;
+  adms:prev <https://ontology.tno.nl/logistics/federated/Event/v0.2.0/> ;
   adms:status <http://purl.org/adms/status/UnderDevelopment> ;
   vann:preferredNamespacePrefix "fedevt" ;
   vann:preferredNamespaceUri "https://ontology.tno.nl/logistics/federated/Event#" ;

@@ -23,9 +23,10 @@ fedacr:
   dcterms:creator <https://www.linkedin.com/in/jan-pieter-wijbenga-19441032/> ;
   dcterms:created "2020-07-17"^^xsd:date ;
   dcterms:modified "2026-04-05"^^xsd:date ;
-  owl:versionIRI <https://ontology.tno.nl/logistics/federated/ActorRoles/v0.2.0/> ;
-  owl:versionInfo "v0.2.0" ;
+  owl:versionIRI <https://ontology.tno.nl/logistics/federated/ActorRoles/v0.3.0/> ;
+  owl:versionInfo "v0.3.0" ;
   adms:status <http://purl.org/adms/status/UnderDevelopment> ;
+  adms:prev <https://ontology.tno.nl/logistics/federated/ActorRoles/v0.2.0/> ;
   vann:preferredNamespacePrefix "fedacr" ;
   vann:preferredNamespaceUri "https://ontology.tno.nl/logistics/federated/ActorRoles#" ;
   rdfs:seeAlso <https://github.com/federatedplatforms/FEDeRATED-Semantic-Model> ;
