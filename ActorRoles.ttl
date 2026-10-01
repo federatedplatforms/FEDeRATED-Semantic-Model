@@ -4,6 +4,7 @@
 @prefix : <https://ontology.tno.nl/logistics/federated/ActorRoles#> .
 @prefix fedacr: <https://ontology.tno.nl/logistics/federated/ActorRoles#> .
 
+@prefix adms: <http://www.w3.org/ns/adms#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -13,34 +14,46 @@
 
 fedacr:
   a owl:Ontology ;
+  dcterms:title "FEDeRATED Actor Roles"@en ;
+  dcterms:description "Taxonomy of logistics actor roles (business, commercial, financial, logistics and supply chain). The taxonomy is a reference vocabulary: it is offered as the codified counterpart of the free-text role properties elsewhere in the model, which stay permissive until the prevalent values observed in use cases justify a closed codelist."@en ;
   dcterms:creator <https://www.linkedin.com/in/denatah/> ;
   dcterms:creator <https://www.linkedin.com/in/maaike-burghoorn/> ;
   dcterms:creator <https://www.linkedin.com/in/bouterca/> ;
   dcterms:creator <https://www.linkedin.com/in/theodor-christian-chirvasuta/> ;
   dcterms:creator <https://www.linkedin.com/in/jan-pieter-wijbenga-19441032/> ;
-  dcterms:description "Taxonomy of logistics actor roles (commercial, financial, supply chain)."@en ;
-  dcterms:description "To be refined when more information is clear about prevalent values."@en ;
   dcterms:created "2020-07-17"^^xsd:date ;
   dcterms:modified "2026-04-05"^^xsd:date ;
   owl:versionIRI <https://ontology.tno.nl/logistics/federated/ActorRoles/v0.2.0/> ;
   owl:versionInfo "v0.2.0" ;
-  owl:versionInfo "draft" ;
+  adms:status <http://purl.org/adms/status/UnderDevelopment> ;
   vann:preferredNamespacePrefix "fedacr" ;
   vann:preferredNamespaceUri "https://ontology.tno.nl/logistics/federated/ActorRoles#" ;
   rdfs:seeAlso <https://github.com/federatedplatforms/FEDeRATED-Semantic-Model> ;
   rdfs:seeAlso <https://github.com/federatedplatforms/Semantic-Model-Adoption> ;
 .
 
-skos:broader 
+skos:altLabel
+  a owl:AnnotationProperty ;
+  rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core> ;
+.
+# skos:broader / skos:narrower are re-declared locally as owl:ObjectProperty so that this module
+# stays within OWL DL without having to import the full SKOS vocabulary.
+skos:broader
   a owl:ObjectProperty ;
-.  
-skos:narrower 
-a owl:ObjectProperty ;
+  rdfs:comment "Relates a role to a more general role. Re-declaration of the SKOS property."@en ;
+  rdfs:label "Has Broader Role"@en ;
+  rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core> ;
+.
+skos:narrower
+  a owl:ObjectProperty ;
+  rdfs:comment "Relates a role to a more specific role. Re-declaration of the SKOS property."@en ;
+  rdfs:label "Has Narrower Role"@en ;
+  rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core> ;
 .
 :ActorRoles
   a owl:Class ;
   rdfs:comment "An Enterprise, Person or Organization can have different roles depending on the context. This class defines these different roles."@en ;
-  rdfs:label "Roles"@en ;
+  rdfs:label "Actor Roles"@en ;
   rdfs:subClassOf owl:Thing ;
 .
 :CommercialRoles
@@ -159,8 +172,9 @@ a owl:ObjectProperty ;
 .
 :Sender
   a :BusinessRoles ;
-  rdfs:comment "A sender of goods"@en ;
+  rdfs:comment "A sender of goods. In transport documents this role is frequently named consignor or shipper; see fedacr:Consignor for the logistics counterpart."@en ;
   rdfs:label "Sender"@en ;
+  rdfs:seeAlso :Consignor ;
 .
 
 :LogisticsRoles
@@ -236,16 +250,22 @@ If Sender sends a widget to Receiver via a delivery service, Sender is the consi
   rdfs:label "Warehouse Operator"@en ;
   skos:broader :OperatorRoles; 
 .
+# TODO :involves and :isAbout are unconstrained generic properties without domain or range.
+# Decide whether they belong in this role taxonomy at all, or should be removed in favour of
+# fedevt:involves.
 :involves
   a owl:ObjectProperty ;
+  rdfs:comment "Generic, deliberately unconstrained association between a role and any other resource. Placeholder pending a decision on whether role-specific associations are needed in this module."@en ;
   rdfs:label "Involves"@en ;
 .
 :isAbout
   a owl:ObjectProperty ;
+  rdfs:comment "Generic, deliberately unconstrained association indicating the subject matter a role relates to. Placeholder pending a decision on whether role-specific associations are needed in this module."@en ;
   rdfs:label "is About"@en ;
 .
 :ShuntingYard
   a :LogisticsRoles ;
-  rdfs:comment "A company that is responsible for the movement of trailers in and around a yard site."@en ;
-  rdfs:label "Shunting Yard"@en ;
+  rdfs:comment "A company that is responsible for the movement of trailers or railway wagons in and around a yard site."@en ;
+  rdfs:label "Shunting Yard Operator"@en ;
+  skos:altLabel "Shunting Yard"@en ;
 .

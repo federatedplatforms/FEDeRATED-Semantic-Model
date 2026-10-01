@@ -5,27 +5,29 @@
 @prefix fedloc: <https://ontology.tno.nl/logistics/federated/Location#> .
 @prefix fedlcr: <https://ontology.tno.nl/logistics/federated/LocationRoles#> .
 
+@prefix adms: <http://www.w3.org/ns/adms#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 fedloc:
   a owl:Ontology ;
+  dcterms:title "FEDeRATED Location"@en ;
+  dcterms:description "Ontology for physical places, terminals, ports and trajectories, and for the business location construct that binds a place to the role it plays in an event. Place, city, country and address concepts are reused from Schema.org."@en ;
   dcterms:creator <https://www.linkedin.com/in/denatah/> ;
   dcterms:creator <https://www.linkedin.com/in/maaike-burghoorn/> ;
   dcterms:creator <https://www.linkedin.com/in/bouterca/> ;
   dcterms:creator <https://www.linkedin.com/in/theodor-christian-chirvasuta/> ;
   dcterms:creator <https://www.linkedin.com/in/jan-pieter-wijbenga-19441032/> ;
-  dcterms:description "Ontology for physical infrastructure locations and geographic entities."@en ;
   dcterms:created "2020-07-17"^^xsd:date ;
   dcterms:modified "2026-04-05"^^xsd:date ;
   # owl:imports <https://ontology.tno.nl/logistics/federated/LocationRoles#> ; Later version will codify the string values based on prevalent values in use cases.
   owl:versionIRI <https://ontology.tno.nl/logistics/federated/Location/v0.2.0/> ;
   owl:versionInfo "v0.2.0" ;
+  adms:status <http://purl.org/adms/status/UnderDevelopment> ;
   vann:preferredNamespacePrefix "fedloc" ;
   vann:preferredNamespaceUri "https://ontology.tno.nl/logistics/federated/Location#" ;
   rdfs:seeAlso <https://github.com/federatedplatforms/FEDeRATED-Semantic-Model> ;
@@ -60,7 +62,7 @@ fedloc:
 :externalIdentifier rdf:type owl:DatatypeProperty ;
                              rdfs:domain <http://schema.org/Place> ;
                              rdfs:range xsd:string ;
-                             rdfs:comment "" ;
+                             rdfs:comment "An identifier for a place taken from a system outside the FEDeRATED model, recorded as a plain value. Use fedloc:involvesExternalReference instead when the issuing system has to be recorded alongside the identifier, and fedloc:locode when the identifier is a UN/LOCODE."@en ;
                              rdfs:label "External Identifier"@en .
 
 <http://schema.org/State>
@@ -70,7 +72,7 @@ fedloc:
   rdfs:subClassOf <http://schema.org/AdministrativeArea> ;
 .
 <http://schema.org/address>
-  a :address ;
+  a rdf:Property ; # rdf:Property, not owl:ObjectProperty: the range is a union of a class and a datatype.
   rdfs:comment "Physical address of the item."@en ;
   rdfs:domain <http://schema.org/Place> ;
   rdfs:label "address"@en ;
@@ -104,7 +106,7 @@ fedloc:
 .
 <http://schema.org/containedInPlace>
   a owl:ObjectProperty ;
-  <http://schema.org/inverseOf> <http://schema.org/containsPlace> ;
+  owl:inverseOf <http://schema.org/containsPlace> ;
   rdfs:comment "The basic containment relation between a place and one that contains it."@en ;
   rdfs:domain <http://schema.org/Place> ;
   rdfs:label "contained in place"@en ;
@@ -112,7 +114,7 @@ fedloc:
 .
 <http://schema.org/containsPlace>
   a owl:ObjectProperty ;
-  <http://schema.org/inverseOf> <http://schema.org/containedInPlace> ;
+  owl:inverseOf <http://schema.org/containedInPlace> ;
   rdfs:comment "The basic containment relation between a place and another that it contains."@en ;
   rdfs:domain <http://schema.org/Place> ;
   rdfs:label "contains place"@en ;
@@ -136,7 +138,9 @@ fedloc:
                     rdfs:range xsd:float .
 <http://schema.org/name> rdf:type owl:DatatypeProperty ;
               rdfs:domain <http://schema.org/Place> ;
-              rdfs:range xsd:string .
+              rdfs:range xsd:string ;
+              rdfs:comment "The name by which a place is known. Deliberately permissive in this version: any string is accepted, with no length restriction and no required naming authority, so that use case data can be ingested as received."@en ;
+              rdfs:label "name"@en .
 
 :BusinessLocation
   a owl:Class ;
@@ -146,13 +150,14 @@ fedloc:
 :involvesPlace rdf:type owl:ObjectProperty ;
                        rdfs:domain :BusinessLocation ;
                        rdfs:range  <http://schema.org/Place>;
+                       rdfs:comment "Relates a business location to the physical place it refers to. Together with fedloc:locationRole this completes the business location construct."@en ;
                        rdfs:label "Business Location Involves Location"@en .
 :locationRole
   a owl:DatatypeProperty ;
+  rdfs:comment "The role a place plays in the context of the event the business location belongs to, expressed as free-form text (e.g. 'Port of loading', 'Port of unloading'). This property is deliberately permissive in this version: any string is accepted so that use case data can be ingested before the prevalent values are known. Once the observed value ranges support a meaningful codelist, the fedlcr:LocationRoles taxonomy becomes the preferred way to express the role (see the commented-out fedloc:explicitLocationRole below) and this property is expected to be narrowed or deprecated."@en ;
   rdfs:domain :BusinessLocation ;
   rdfs:label "Business Location Role (free-form text), e.g. 'Port of loading', 'Port of unloading'."@en ;
   rdfs:range xsd:string ;
-  # TODO codify further after use evaluating use case data.
 .
 # :explicitLocationRole
 #   a owl:ObjectProperty ;
@@ -201,39 +206,40 @@ fedloc:
 :involvesExternalReference a owl:ObjectProperty ;
   rdfs:comment "Reference to an external location identification system - presents both the system provider and the IRI resource"@en ;
   rdfs:domain <http://schema.org/Place> ;
-  rdfs:label "External Reference"@en ;
+  rdfs:label "Involves External Reference"@en ;
   rdfs:range :externalReference ;
 .
 :externalReference
   a owl:Class ;
-  rdfs:comment "" ;
-  rdfs:label "" ;
+  rdfs:comment "The identification of a place in a system outside the FEDeRATED model, pairing the issuing system with the identifier it assigned. Used when knowing which system issued an identifier matters; use fedloc:externalIdentifier when only the bare value is available."@en ;
+  rdfs:label "External Reference"@en ;
 .
 :externalReferenceProvider
   a owl:DatatypeProperty ;
-  rdfs:comment "" ;
+  rdfs:comment "The organisation or system that issued the external reference, given as a name or an IRI. Deliberately permissive in this version: any string is accepted so that use case data can be ingested before the prevalent providers are known."@en ;
   rdfs:label "External Reference Provider identification (name / IRI)"@en ;
   rdfs:domain :externalReference ;
   rdfs:range xsd:string 
 .
 :externalReferenceResource # the IRI pattern to be verified in SHACL
   a owl:DatatypeProperty ;
-  rdfs:comment ""@en ;
+  rdfs:comment "The identifier assigned by the external reference provider, given as an IRI where the provider publishes resolvable identifiers. Typed as xsd:string rather than an IRI so that non-resolvable identifiers can also be carried; the IRI pattern is to be verified in SHACL."@en ;
   rdfs:label "External Reference IRI"@en ;
   rdfs:domain :externalReference ;
   rdfs:range xsd:string
 .
 :locode
   a owl:DatatypeProperty ;
-  rdfs:comment "This property allows to indicate the LOCODE of a schema:city or schema:country."@en ;
+  rdfs:comment "The UN/LOCODE of a place. The value must be a valid UN/LOCODE, being a two-letter ISO 3166-1 alpha-2 country code followed by a three-character location code drawn from A-Z and 2-9, matching the pattern ^[A-Z]{2}[A-Z2-9]{3}$ when written without the conventional separating space."@en ;
   rdfs:domain <http://schema.org/Place> ;
   rdfs:label "LOCODE"@en ;
   rdfs:range xsd:string ;
-  rdfs:subPropertyOf <https://schema.org/identifier> ;
+  rdfs:seeAlso <https://unece.org/trade/cefact/unlocode-code-list-country-and-territory> ;
+  rdfs:subPropertyOf <http://schema.org/identifier> ;
 .
 :infrastructuralRole # CODELIST VS STRING DATATYPEPROPERTY
   a owl:DatatypeProperty ;
-  rdfs:comment "Infrastructural role based on codelist or string"@en ;
+  rdfs:comment "The infrastructural function a place fulfils, such as airport, quay, platform or warehouse, expressed as free-form text. This property is deliberately permissive in this version: any string is accepted so that use case data can be ingested before the prevalent values are known. Once the observed value ranges support a meaningful codelist, the fedlcr:InfrastructuralRole taxonomy becomes the preferred way to express it and this property is expected to be narrowed or deprecated."@en ;
   rdfs:domain <http://schema.org/Place> ;
   rdfs:label "Infrastructural code"@en ;
   rdfs:range xsd:string ;
@@ -253,8 +259,9 @@ fedloc:
 .
 :Terminal
   a owl:Class ;
-  rdfs:comment "A location interfacing with main modality sea."@en ;
+  rdfs:comment "A facility within a port where cargo is transferred between transport means, with sea as one of the interfacing modalities."@en ;
   rdfs:label "Terminal"@en ;
+  rdfs:subClassOf <http://schema.org/Place> ;
 .
 :terminalName
   a owl:DatatypeProperty ;
@@ -265,20 +272,21 @@ fedloc:
 .
 :terminalDescription
   a owl:DatatypeProperty ;
+  rdfs:comment "A free-form textual description of the terminal, for example its facilities, interfacing modalities or operating restrictions."@en ;
   rdfs:domain :Terminal ;
   rdfs:label "terminal Description"@en ;
   rdfs:range xsd:string ;
 .
 :berthCode
   a owl:DatatypeProperty ;
-  rdfs:comment "Berth code"@en ;
+  rdfs:comment "The code identifying a berth within a port, as assigned by the port authority. Deliberately permissive in this version: any string is accepted, as berth coding schemes differ per port."@en ;
   rdfs:domain :Port ;
   rdfs:label "Berth code"@en ;
   rdfs:range xsd:string ;
 .
 :portSecurityLevel
   a owl:DatatypeProperty ;
-  rdfs:comment "This property specifies the port security level of this specific port."@en ;
+  rdfs:comment "This property specifies the port security level of this specific port. Deliberately permissive in this version: any string is accepted, although the ISPS Code levels 1, 2 and 3 are the expected values and a codelist is foreseen for a later version."@en ;
   rdfs:domain :Port ;
   rdfs:label "Port Security Level"@en ;
   rdfs:range xsd:string ;

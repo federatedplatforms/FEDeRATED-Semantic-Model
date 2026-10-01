@@ -6,33 +6,39 @@
 @prefix fedlcr: <https://ontology.tno.nl/logistics/federated/LocationRoles#> .
 @prefix fedlgp: <https://ontology.tno.nl/logistics/federated/LegalPerson#> .
 
+@prefix adms: <http://www.w3.org/ns/adms#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 fedlcr:
   a owl:Ontology ;
+  dcterms:title "FEDeRATED Location Roles"@en ;
+  dcterms:description "Taxonomy of the roles a location can play in the context of a logistics event, together with the infrastructural roles a location can fulfil. The taxonomy is a reference vocabulary: it is offered as the codified counterpart of fedloc:locationRole, which stays a permissive free-text property until the prevalent values observed in use cases justify a closed codelist."@en ;
   dcterms:creator <https://www.linkedin.com/in/denatah/> ;
   dcterms:creator <https://www.linkedin.com/in/maaike-burghoorn/> ;
   dcterms:creator <https://www.linkedin.com/in/bouterca/> ;
   dcterms:creator <https://www.linkedin.com/in/theodor-christian-chirvasuta/> ;
   dcterms:creator <https://www.linkedin.com/in/jan-pieter-wijbenga-19441032/> ;
-  dcterms:description "Taxonomy of location roles in logistics contexts."@en ;
-  dcterms:description "To be refined when more information is clear about prevalent values."@en ;
   dcterms:created "2020-07-17"^^xsd:date ;
   dcterms:modified "2026-04-05"^^xsd:date ;
   owl:imports <https://ontology.tno.nl/logistics/federated/LegalPerson#> ;
   owl:versionIRI <https://ontology.tno.nl/logistics/federated/LocationRoles/v0.2.0/> ;
   owl:versionInfo "v0.2.0" ;
-  owl:versionInfo "draft" ;
+  adms:status <http://purl.org/adms/status/UnderDevelopment> ;
   vann:preferredNamespacePrefix "fedlcr" ;
   vann:preferredNamespaceUri "https://ontology.tno.nl/logistics/federated/LocationRoles#" ;
   rdfs:seeAlso <https://github.com/federatedplatforms/FEDeRATED-Semantic-Model> ;
   rdfs:seeAlso <https://github.com/federatedplatforms/Semantic-Model-Adoption> ;
 .
 
+skos:altLabel
+  a owl:AnnotationProperty ;
+  rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core> ;
+.
 :LocationRoles
   a owl:Class ;
   rdfs:comment "A location such as hub or port can have different roles depending on the context. This class defines these different roles."@en ;
@@ -40,7 +46,7 @@ fedlcr:
 .
 :InfrastructuralRole
   a owl:Class ;
-  rdfs:comment "A location is designed to have an infrastructural role in its' landascape."@en ;
+  rdfs:comment "The role a location fulfils by virtue of the infrastructure it provides, independently of any single event. Unlike the event-contextual roles (place of loading, place of arrival), an infrastructural role is a stable property of the location itself."@en ;
   rdfs:label "Infrastructural Role"@en ;
   rdfs:subClassOf :LocationRoles
 .
@@ -82,22 +88,21 @@ fedlcr:
 .
 :PlaceOfDelivery
   a owl:Class ;
-  rdfs:comment "A place of receipt by a consignee or place of delivery is the place where the cargo is handed over by a carrier according a business transaction to the recipeint (consignee). The transport means and the cargo have to be at the location mentioned in a business transaction between a carrier and its customer."@en ;
+  rdfs:comment "A place of receipt by a consignee or place of delivery is the place where the cargo is handed over by a carrier according a business transaction to the recipient (consignee). The transport means and the cargo have to be at the location mentioned in a business transaction between a carrier and its customer."@en ;
   rdfs:label "Place of Delivery Role"@en ;
   rdfs:subClassOf :LocationRoles ;
 .
 :PlaceOfDeparture
   a owl:Class ;
-  rdfs:comment "A place where a transport means arrived (milestone value: arrival) and is able to depart."@en ;
-  rdfs:comment "The first place of call of a transport means or a place of call of a transport means following arrival."@en ;
-  rdfs:label "Departure Location Role"@en ;
+  rdfs:comment "A place where a transport means arrived (milestone value: arrival) and is able to depart. It is the first place of call of a transport means, or a place of call of a transport means following arrival."@en ;
   rdfs:label "Place of Departure Role"@en ;
+  skos:altLabel "Departure Location Role"@en ;
   rdfs:subClassOf :LocationRoles ;
 .
 :PlaceOfDischarge
   a owl:Class ;
-  rdfs:comment "For modality 'road'. Same as place of discharge."@en ;
-  rdfs:label "Inland Terminal"@en ;
+  rdfs:comment "A place where cargo is discharged from a transport means. Equivalent to place of unloading; for modality 'road' this is the place where cargo is taken off the vehicle."@en ;
+  rdfs:label "Place of Discharge Role"@en ;
   rdfs:subClassOf :LocationRoles ;
 .
 :PlaceOfLoading
@@ -109,7 +114,7 @@ fedlcr:
 :PlaceOfReceipt
   a owl:Class ;
   rdfs:comment "A place of receipt is the place where the cargo is offered for transport by a business transaction to the service provider that is the carrier and has to be transported by that carrier to the place of loading of the main transport. The cargo has to be at that location."@en ;
-  rdfs:label "Place of Receipt"@en ;
+  rdfs:label "Place of Receipt Role"@en ;
   rdfs:subClassOf :LocationRoles ;
 .
 :PlaceOfStripping
@@ -151,8 +156,8 @@ fedlcr:
 .
 :securityMeasure
   a owl:DatatypeProperty ;
-  rdfs:comment "This property specifies the security measures of a specific infrastuctural function."@en ;
-  rdfs:domain :LocationRoles ;
+  rdfs:comment "This property specifies the security measures of a specific infrastuctural function. Deliberately permissive in this version: any string is accepted so that use case data can be ingested before the prevalent values are known."@en ;
+  rdfs:domain :InfrastructuralRole ;
   rdfs:label "Security Measure"@en ;
   rdfs:range xsd:string ;
 .
@@ -160,61 +165,61 @@ fedlcr:
   a owl:Class ;
   rdfs:comment "Location where airplanes pick or drop off freight."@en ;
   rdfs:label "Airport"@en ;
-  rdfs:subClassOf :LocationRoles ;
+  rdfs:subClassOf :InfrastructuralRole ;
 .
 :Anchorage
   a owl:Class ;
   rdfs:comment "A location where a ship can 'park'."@en ;
   rdfs:label "Anchorage"@en ;
-  rdfs:subClassOf :LocationRoles ;
+  rdfs:subClassOf :InfrastructuralRole ;
 .
 :BargeTerminal
   a owl:Class ;
   rdfs:comment "A terminal with main modality waterways where cargo of barges can be loaded/discharged."@en ;
   rdfs:label "Barge Terminal"@en ;
-  rdfs:subClassOf :LocationRoles ;
+  rdfs:subClassOf :InfrastructuralRole ;
 .
 :Bridge
   a owl:Class ;
   rdfs:comment "A road crossing water."@en ;
   rdfs:label "Bridge"@en ;
-  rdfs:subClassOf :LocationRoles ;
+  rdfs:subClassOf :InfrastructuralRole ;
 .
 :Hub
   a owl:Class ;
   rdfs:comment "A place where cargo is exchanged between vehicles or/and between transport modes."@en ;
   rdfs:label "Hub"@en ;
-  rdfs:subClassOf :LocationRoles ;
+  rdfs:subClassOf :InfrastructuralRole ;
 .
 :InlandTerminal
   a owl:Class ;
   rdfs:comment "An Inland Terminal can have an interface with more than one modality like inland waterways, rail and/or road (note: there are also inland terminals that have only road as modality (e.g. Interporto Bologna) or road and rail (e.g. Zaragoza Logistics Center)."@en ;
   rdfs:label "Inland Terminal"@en ;
-  rdfs:subClassOf :LocationRoles ;
+  rdfs:subClassOf :InfrastructuralRole ;
 .
 :Transshipment
   a owl:Class ;
   rdfs:comment "An intermediate destination for transiting cargo to another destination."@en ;
   rdfs:label "Transshipment"@en ;
-  rdfs:subClassOf :LocationRoles ;
+  rdfs:subClassOf :InfrastructuralRole ;
 .
 :Warehouse
   a owl:Class ;
   rdfs:comment "A place where cargo or its content (products) is stored for a longer period of time"@en ;
   rdfs:label "Warehouse"@en ;
-  rdfs:subClassOf :LocationRoles ;
+  rdfs:subClassOf :InfrastructuralRole ;
 .
 :Platform
   a owl:Class ;
   rdfs:comment "An interface to or from the Railway modality."@en ;
   rdfs:label "Platform"@en ;
-  rdfs:subClassOf :LocationRoles ;
+  rdfs:subClassOf :InfrastructuralRole ;
 .
 :Quay
   a owl:Class ;
   rdfs:comment "An interface to or from sea and inland waterways."@en ;
   rdfs:label "Quay"@en ;
-  rdfs:subClassOf :LocationRoles ;
+  rdfs:subClassOf :InfrastructuralRole ;
 .
 :RailwayStation
   a owl:Class ;
@@ -232,14 +237,14 @@ fedlcr:
   a owl:Class ;
   rdfs:comment "An interface between road and air."@en ;
   rdfs:label "Gate"@en ;
-  rdfs:subClassOf :LocationRoles ;
+  rdfs:subClassOf :InfrastructuralRole ;
 .
 :hasGateNumber
   a owl:DatatypeProperty ;
-  rdfs:comment "The number associated with a gate at a logistical function location of type Airport."@en ;
+  rdfs:comment "The number associated with a gate at a logistical function location of type Airport. Typed as a string because gate designations are commonly alphanumeric (e.g. 'D7')."@en ;
   rdfs:domain :Gate ;
   rdfs:label "Has Gate Number"@en ;
-  rdfs:range xsd:integer ;
+  rdfs:range xsd:string ;
 .
 :hasManager # not actor because role is inferred in the name of the property
   a owl:ObjectProperty ;
@@ -250,8 +255,9 @@ fedlcr:
 .
 :hasOperator # not actor because role is inferred in the name of the property
   a owl:ObjectProperty ;
-  rdfs:label "Has Operator"@en ;
+  rdfs:comment "The organisation that operates a specific logistical function on a day-to-day basis, which need not be the organisation that manages it."@en ;
   rdfs:domain :LocationRoles ;
+  rdfs:label "Has Operator"@en ;
   rdfs:range fedlgp:LegalPerson ;
 .
 
