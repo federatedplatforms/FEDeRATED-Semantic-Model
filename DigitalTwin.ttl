@@ -611,7 +611,7 @@ skos:altLabel
   rdfs:range xsd:string ;
 .
 :hasExternalIdentifier
-  a owl:ClassProperty ;
+  a owl:ObjectProperty ;
   rdfs:domain :LogisticsObject ;
   rdfs:range :ExternalIdentifier ;
   rdfs:label "External Identifier" 
@@ -669,14 +669,14 @@ skos:altLabel
   rdfs:range xsd:string ;
 .
 :hasVolume
-  a owl:ClassProperty ;
+  a owl:ObjectProperty ;
   rdfs:domain :Goods ;
   rdfs:domain :Equipment ;
   rdfs:range :VolumeMeasurement ;
   rdfs:label "Volume" ;
 .
 :hasWeight
-  a owl:ClassProperty ;
+  a owl:ObjectProperty ;
   rdfs:domain :LogisticsObject ;
   rdfs:range :WeightMeasurement ;
   rdfs:label "Weight"
