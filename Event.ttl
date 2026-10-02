@@ -1,52 +1,69 @@
-# baseURI: https://ontology.tno.nl/logistics/federated/Event
-# imports: https://ontology.tno.nl/logistics/federated/DigitalTwin
-# imports: https://ontology.tno.nl/logistics/federated/LegalPerson
-# imports: https://ontology.tno.nl/logistics/federated/Location
-# prefix: Event
+# baseURI: https://ontology.tno.nl/logistics/federated/Event#
+# imports: https://ontology.tno.nl/logistics/federated/DigitalTwin#
+# imports: https://ontology.tno.nl/logistics/federated/LegalPerson#
+# imports: https://ontology.tno.nl/logistics/federated/Location#
+# prefix: fedevt
 
 @prefix : <https://ontology.tno.nl/logistics/federated/Event#> .
-@prefix DigitalTwin: <https://ontology.tno.nl/logistics/federated/DigitalTwin#> .
-@prefix LegalPerson: <https://ontology.tno.nl/logistics/federated/LegalPerson#> .
-@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix feddtw: <https://ontology.tno.nl/logistics/federated/DigitalTwin#> .
+@prefix fedevt: <https://ontology.tno.nl/logistics/federated/Event#> .
+@prefix fedlgp: <https://ontology.tno.nl/logistics/federated/LegalPerson#> .
+@prefix fedloc: <https://ontology.tno.nl/logistics/federated/Location#> .
+
+@prefix adms: <http://www.w3.org/ns/adms#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix Location: <https://ontology.tno.nl/logistics/federated/Location#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://ontology.tno.nl/logistics/federated/Event>
+fedevt:
   a owl:Ontology ;
-  dc:creator "Dena Tahvildari, Maaike Burghoorn, Cornelis Bouter, Theodor Chirvasuta" ;
+  dcterms:title "FEDeRATED Event"@en ;
+  dcterms:description "Core ontology of the FEDeRATED Semantic Model, containing the classes, attributes and relations of logistics events. Events fall into two categories: track & trace events (ETA, gate-out, border crossing) and document-bearing events (purchase order, air waybill, electronic bill of lading). An event associates a timestamp and a business identifier with digital twins, business locations and actors."@en ;
+  dcterms:creator <https://www.linkedin.com/in/denatah/> ;
+  dcterms:creator <https://www.linkedin.com/in/maaike-burghoorn/> ;
+  dcterms:creator <https://www.linkedin.com/in/bouterca/> ;
+  dcterms:creator <https://www.linkedin.com/in/theodor-christian-chirvasuta/> ;
+  dcterms:creator <https://www.linkedin.com/in/jan-pieter-wijbenga-19441032/> ;
   dcterms:created "2020-07-17"^^xsd:date ;
-  dcterms:description "This ontology contains classes, attributes, relation about logistic Events." ;
   dcterms:issued "2021-03-15"^^xsd:date ;
-  dcterms:modified "2023-07-18"^^xsd:date ;
-  dcterms:language "en" ;
-  owl:imports <https://ontology.tno.nl/logistics/federated/DigitalTwin> ;
-  owl:imports <https://ontology.tno.nl/logistics/federated/LegalPerson> ;
-  owl:imports <https://ontology.tno.nl/logistics/federated/Location> ;
-  owl:versionIRI <https://ontology.tno.nl/logistics/federated/Event-v0.1> ;
+  dcterms:modified "2026-09-14"^^xsd:date ;
+  owl:imports <https://ontology.tno.nl/logistics/federated/DigitalTwin#> ;
+  owl:imports <https://ontology.tno.nl/logistics/federated/LegalPerson#> ;
+  owl:imports <https://ontology.tno.nl/logistics/federated/Location#> ;
+  owl:versionIRI <https://ontology.tno.nl/logistics/federated/Event/v0.3.0/> ;
+  owl:versionInfo "v0.3.0" ;
+  adms:prev <https://ontology.tno.nl/logistics/federated/Event/v0.2.0/> ;
+  adms:status <http://purl.org/adms/status/UnderDevelopment> ;
+  vann:preferredNamespacePrefix "fedevt" ;
+  vann:preferredNamespaceUri "https://ontology.tno.nl/logistics/federated/Event#" ;
+  rdfs:seeAlso <https://github.com/federatedplatforms/FEDeRATED-Semantic-Model> ;
+  rdfs:seeAlso <https://github.com/federatedplatforms/Semantic-Model-Adoption> ;
 .
 
 # High level Event classes
 
 :Event
   a owl:Class ;
-  rdfs:comment "An event reflects a conceptual association of digital twins or a virtualization of a physical event" ;
-  rdfs:label "Event" ;
+  rdfs:comment "An event reflects a conceptual association of digital twins or a virtualization of a physical event"@en ;
+  rdfs:label "Event"@en ;
 .
+# TODO An event carries no property stating its own type or milestone (e.g. 'container stuffing',
+# 'arrival', 'departure'). After mapping, instances are typed only as fedevt:Event, so the kind of
+# event may not be recoverable from the triples. In future version, may decide between a subclass hierarchy of Event and a
+# dedicated (initially permissive, later codified) milestone property.
 :BusinessIdentifier
   a owl:Class ;
-  rdfs:comment "A Business Identifier enables consistent traceability and linkage between operational events, actors, assets, and related business information. It is made of two elements - the business identifier alphanumeric value, and its description" ;
-  rdfs:label "BusinessIdentifier"
+  rdfs:comment "A Business Identifier enables consistent traceability and linkage between operational events, actors, assets, and related business information. It is made of two elements - the business identifier alphanumeric value, and the description of the identifier (e.g. 'XXX-87654324' and 'IATA Air Waybill number')"@en ;
+  rdfs:label "Business Identifier"@en
 .
 
 # Unique identifier for storage of event
 
 :UUID a owl:DatatypeProperty ;
-  rdfs:comment "Every event has a UUID to be distinguishable when stored in a database." ;
-  rdfs:label "UUID" ;
+  rdfs:comment "Every event has a UUID to be distinguishable when stored in a database. This property is instantiated by the Federated node."@en ;
+  rdfs:label "UUID"@en ;
   rdfs:domain :Event ;
   rdfs:range xsd:string
 .
@@ -54,95 +71,96 @@
 # Timestamp
 
 :involvesTimestamp
-  a owl:DatatypeProperty ;
-  rdfs:comment "The timestamp expressed as a date and time, alongside the timezone it is specified";
-  rdfs:label "Involves Timestamp";
+  a owl:ObjectProperty ;
+  rdfs:comment "The timestamp expressed as a date and time as well as the classification of this datetime (e.g. 'estimated', 'actual')"@en ;
+  rdfs:label "Involves Timestamp"@en ;
   rdfs:range :Timestamp ;
   rdfs:domain :Event 
 .
 
 :Timestamp
   a owl:Class ;
-  rdfs:comment "Class used to aggregate the datetime timestamp and the classification of the timestamp" ;
-  rdfs:label "Timestamp" ;
+  rdfs:comment "Class used to aggregate the datetime timestamp and the classification of the timestamp (e.g. 'estimated', '2026-09-01T09:13:00Z')"@en ;
+  rdfs:label "Timestamp"@en ;
 .
 
 :involvesTimeClassification a owl:DatatypeProperty ;
-  rdfs:comment "Every timestamp should have a time classification. The time classifications may be planned, estimated, expected, actual, requested, or other denominations." ;
-  rdfs:label "Involves Time Classification" ;
+  rdfs:comment "Every timestamp should have a time classification. The time classifications may be planned, estimated, expected, actual, requested, or other denominations."@en ;
+  # TODO to be further codified after use cases
+  rdfs:label "Involves Time Classification"@en ;
   rdfs:domain :Timestamp ;
   rdfs:range xsd:string ;
 .
 
 :involvesTimestampDateTime a owl:DatatypeProperty ;
-  rdfs:comment "Every timestamp must have the date time specified." ;
-  rdfs:label "Involves DateTime" ;
+  rdfs:comment "The actual date time associated with this Timestamp object."@en ;
+  rdfs:label "Involves DateTime"@en ;
   rdfs:domain :Timestamp ;
-  rdfs:range xsd:dateTime ;
+  rdfs:range xsd:dateTimeStamp ;
 .
 
 # Involves predicates
 
 :involves
   a owl:ObjectProperty ;
-  rdfs:comment "An Event has associations established with Digital Twins, Locations or Logistic Actors. The meaning of this association depends on the type of event and its milestone." ;
+  rdfs:comment "An Event has associations established with Digital Twins, Locations or Logistic Actors. The meaning of this association depends on the type of event and its milestone."@en ;
   rdfs:domain :Event ;
-  rdfs:label "Involves" ;
+  rdfs:label "Involves"@en ;
   rdfs:range owl:Thing ;
 .
 :involvesBusinessIdentifier
-  a owl:DatatypeProperty ;
-  rdfs:comment "Identifier that can be used to refer to an external system the business transaction where the event is involved in (e.g., AWB / eFTI / voyage number (IMO0191))" ;
+  a owl:ObjectProperty ;
+  rdfs:comment "Identifier that can be used to refer to an external system the business transaction where the event is involved in (e.g., AWB / eFTI / voyage number (IMO0191))"@en ;
   rdfs:domain :Event ;
-  rdfs:label "Involves Business Identifier" ;
+  rdfs:label "Involves Business Identifier"@en ;
   rdfs:range :BusinessIdentifier ;
 .
 :involvesAlphanumericBusinessIdentifier
   a owl:DatatypeProperty ;
-  rdfs:comment "Alphanumeric value of the business identifier" ;
+  rdfs:comment "Alphanumeric value of the business identifier"@en ;
   rdfs:domain :BusinessIdentifier ;
-  rdfs:label "Business Identifier value" ;
+  rdfs:label "Business Identifier value"@en ;
   rdfs:range xsd:string ;
 .
 :involvesDescriptionBusinessIdentifier
   a owl:DatatypeProperty ;
-  rdfs:comment "Description of the business identifier" ;
+  rdfs:comment "Description of the business identifier"@en ;
   rdfs:domain :BusinessIdentifier ;
-  rdfs:label "Business Identifier description" ;
+  rdfs:label "Business Identifier description"@en ;
   rdfs:range xsd:string ;
 .
 :involvesCargo
   a owl:ObjectProperty ;
-  rdfs:label "Involves Digital Twin" ;
-  rdfs:comment "Event involves cargo object (can be goods / empty equipment / another transport means)" ;
+  rdfs:label "Involves Logistics Object"@en ;
+  rdfs:comment "Event involves cargo object (can be goods / empty equipment / another transport means)"@en ;
   rdfs:domain :Event ;
-  rdfs:range DigitalTwin:LogisticsObject ;
+  rdfs:range feddtw:LogisticsObject ;
 .
 :involvesEvent
   a owl:ObjectProperty ;
-  rdfs:label "Involves Event" ;
-  rdfs:comment "Used for referencing track & trace events (ETA, ATA, ETD, ATD, etc)" ;
+  rdfs:label "Involves Event"@en ;
+  rdfs:comment "Used for referencing track & trace events (ETA, ATA, ETD, ATD, etc)"@en ;
   rdfs:domain :Event ;
   rdfs:range :Event ;
 .
 :involvesLocation
   a owl:ObjectProperty ;
-  rdfs:comment "This relation establishes an association between an Event and a Location. The exact meaning depends on the type of Event, which is inferred from this property and the second association the event has." ;
+  rdfs:comment "This relation establishes an association between an Event and a Location. The exact meaning depends on the type of Event, which is inferred from this property and the second association the event has."@en ;
   rdfs:domain :Event ;
-  rdfs:label "Involves Location" ;
-  rdfs:range Location:BusinessLocation ;
+  rdfs:label "Involves Location"@en ;
+  rdfs:range fedloc:BusinessLocation ;
 .
 :involvesActor
   a owl:ObjectProperty ;
-  rdfs:label "Involves Actor" ;
-  rdfs:comment "This relation establishes an association between an Event and an Actor." ;
+  rdfs:label "Involves Actor"@en ;
+  rdfs:comment "This relation establishes an association between an Event and an Actor."@en ;
   rdfs:domain :Event ;
-  rdfs:range LegalPerson:Actor ;
+  rdfs:range fedlgp:Actor ;
 .
 :involvesTransportMeans
   a owl:ObjectProperty ;
-  rdfs:comment "This relation establishes an association between an Event and a Transport Means Digital Twin." ;
+  rdfs:comment "This relation establishes an association between an Event and a Transport Means Digital Twin."@en ;
   rdfs:domain :Event ;
-  rdfs:label "Involves Transport Means" ;
-  rdfs:range DigitalTwin:TransportMeans ;
+  rdfs:label "Involves Transport Means"@en ;
+  rdfs:range feddtw:TransportMeans ;
 .

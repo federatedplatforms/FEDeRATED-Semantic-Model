@@ -48,7 +48,7 @@ The digital twin module models the physical objects of the logistics domain. Eve
 Both **Equipment** and **Goods** are classified according to the physical form of the cargo, and the two are kept in sync via the `involvesGoods` property (an equipment is associated with the goods it can hold):
 
 | Physical form | Equipment class | Goods class |
-|---|---|---|
+| --- | --- | --- |
 | Loose, unpackaged dry solids | `BulkEquipment` | `BulkGoods` |
 | Liquids | `LiquidEquipment` | `LiquidGoods` |
 | Compressed / liquefied gases | `GasEquipment` | `GaseousGoods` |
@@ -80,7 +80,7 @@ Every event carries the following properties:
   - `involvesAlphanumericBusinessIdentifier` — the alphanumeric value of the identifier (e.g., AWB number, voyage number IMO0191).
   - `involvesDescriptionBusinessIdentifier` — a human-readable description of what the identifier refers to.
 - **involvesTimestamp** — links the event to a `Timestamp` object, which contains:
-  - `involvesTimestampDateTime` — the date and time of the event (`xsd:dateTime`).
+  - `involvesTimestampDateTime` — the date and time of the event (`xsd:dateTimeStamp`).
   - `involvesTimeClassification` — the nature of the timestamp (e.g., planned, estimated, expected, actual, requested).
 
 The following object properties associate an event with other model elements:

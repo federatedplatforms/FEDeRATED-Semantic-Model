@@ -1,94 +1,116 @@
-# baseURI: https://ontology.tno.nl/logistics/federated/LegalPerson
-# imports: https://ontology.tno.nl/logistics/federated/ActorRoles
-# prefix: LegalPerson
+# baseURI: https://ontology.tno.nl/logistics/federated/LegalPerson#
+# imports: https://ontology.tno.nl/logistics/federated/ActorRoles#
+# prefix: fedlgp
 
 @prefix : <https://ontology.tno.nl/logistics/federated/LegalPerson#> .
-@prefix ActorRoles: <https://ontology.tno.nl/logistics/federated/ActorRoles#> .
-@prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix fedlgp: <https://ontology.tno.nl/logistics/federated/LegalPerson#> .
+@prefix fedacr: <https://ontology.tno.nl/logistics/federated/ActorRoles#> .
 
-<https://ontology.tno.nl/logistics/federated/LegalPerson>
+@prefix adms: <http://www.w3.org/ns/adms#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+fedlgp:
   a owl:Ontology ;
-  dcterms:description "Ontology for legal persons, actors and their identifications." ;
-  dcterms:language "en" ;
-  owl:imports <https://ontology.tno.nl/logistics/federated/ActorRoles> ;
-  owl:versionIRI <https://ontology.tno.nl/logistics/federated/LegalPerson-v0.1> ;
+  dcterms:title "FEDeRATED Legal Person"@en ;
+  dcterms:description "Ontology for legal persons, the actor construct that binds a legal person to the role it plays in an event, and the identification schemes used to identify a legal person."@en ;
+  dcterms:creator <https://www.linkedin.com/in/denatah/> ;
+  dcterms:creator <https://www.linkedin.com/in/maaike-burghoorn/> ;
+  dcterms:creator <https://www.linkedin.com/in/bouterca/> ;
+  dcterms:creator <https://www.linkedin.com/in/theodor-christian-chirvasuta/> ;
+  dcterms:creator <https://www.linkedin.com/in/jan-pieter-wijbenga-19441032/> ;
+  dcterms:created "2020-07-17"^^xsd:date ;
+  dcterms:modified "2026-04-05"^^xsd:date ;
+  owl:imports <https://ontology.tno.nl/logistics/federated/ActorRoles#> ;
+  owl:versionIRI <https://ontology.tno.nl/logistics/federated/LegalPerson/v0.3.0/> ;
+  owl:versionInfo "v0.3.0" ;
+  adms:prev <https://ontology.tno.nl/logistics/federated/LegalPerson/v0.2.0/> ;
+  adms:status <http://purl.org/adms/status/UnderDevelopment> ;
+  vann:preferredNamespacePrefix "fedlgp" ;
+  vann:preferredNamespaceUri "https://ontology.tno.nl/logistics/federated/LegalPerson#" ;
+  rdfs:seeAlso <https://github.com/federatedplatforms/FEDeRATED-Semantic-Model> ;
+  rdfs:seeAlso <https://github.com/federatedplatforms/Semantic-Model-Adoption> ;
 .
 
 :Actor
   a owl:Class ;
-  rdfs:comment "An actor represents an association between a legal person and the logistic role they play in an event instance." ;
-  rdfs:label "Actor" ;
+  rdfs:comment "An actor represents an association between a legal person and the logistic role they play in an event instance."@en ;
+  rdfs:label "Actor"@en ;
 .
 :actorRole
   a owl:DatatypeProperty ;
+  rdfs:comment "The logistic role an actor plays in an event, expressed as free-form text. This property is deliberately permissive in this version: any string is accepted so that use case data can be ingested before the prevalent values are known. Once the observed value ranges support a meaningful codelist, fedlgp:explicitActorRole (pointing into the fedacr:ActorRoles taxonomy) becomes the preferred way to express the role, and this property is expected to be narrowed or deprecated."@en ;
   rdfs:domain :Actor ;
   rdfs:range xsd:string ;
-  rdfs:label "Actor has logistic role (free form text)" ;
+  rdfs:label "Actor has logistic role (free form text)"@en ;
 .
 :explicitActorRole
   a owl:ObjectProperty ;
+  rdfs:comment "The logistic role an actor plays in an event, expressed as a codified reference into the fedacr:ActorRoles taxonomy. Use this property in preference to fedlgp:actorRole wherever the role is known to be one of the taxonomy values."@en ;
   rdfs:domain :Actor ;
-  rdfs:range ActorRoles:ActorRoles ;
-  rdfs:label "Actor has explicit logistic role" ;
+  rdfs:range fedacr:ActorRoles ;
+  rdfs:label "Actor has explicit logistic role"@en ;
 .
 :LegalPerson
   a owl:Class ;
-  rdfs:comment "LegalPerson represents the digitalization of the details shared with the commercial world by the legal person." ;
-  rdfs:label "Legal person" ;
+  rdfs:comment "LegalPerson represents the digitalization of the details shared with the commercial world by the legal person."@en ;
+  rdfs:label "Legal person"@en ;
   rdfs:subClassOf :Agent ;  # TODO Class doesn't exist. Mean to inherit FOAF agent? The Agent class is the class of agents; things that do stuff. A well known sub-class is Person, representing people. Other kinds of agents include Organization and Group
 .
 :LegalPersonIdentification
   a owl:Class ;
-  rdfs:comment "LegalPersonIdentification represents the different identifiers that can be used to identify a legal person." ;
-  rdfs:label "Legal Person Identification" ;
+  rdfs:comment "LegalPersonIdentification represents the different identifiers that can be used to identify a legal person."@en ;
+  rdfs:label "Legal Person Identification"@en ;
 .
 :involvesLegalPerson
   a owl:ObjectProperty ;
+  rdfs:comment "Relates an actor to the legal person that plays the role. Together with fedlgp:actorRole or fedlgp:explicitActorRole this completes the actor construct."@en ;
   rdfs:domain :Actor ;
   rdfs:range :LegalPerson ;
-  rdfs:label "Actor is Legal Person" ;
+  rdfs:label "Actor is Legal Person"@en ;
 .
 :involvesLegalPersonIdentification
   a owl:ObjectProperty ;
+  rdfs:comment "Relates a legal person to one of the identifications by which it is known. A legal person may carry several identifications, each in a different scheme."@en ;
   rdfs:domain :LegalPerson ;
   rdfs:range :LegalPersonIdentification ;
-  rdfs:label "Legal Person Identification" 
+  rdfs:label "Involves Legal Person Identification"@en 
 .
 :legalPersonIdentifier
   a owl:DatatypeProperty ;
-  rdfs:comment "Identifier of the legal person" ;
+  rdfs:comment "Identifier of the legal person"@en ;
   rdfs:domain :LegalPersonIdentification ;
-  rdfs:label "Legal Person Identifier" ;
+  rdfs:label "Legal Person Identifier"@en ;
   rdfs:range xsd:string 
 .
 :legalPersonIdentificationScheme
   a owl:DatatypeProperty ;
-  rdfs:comment "The scheme of the legal person identifier, e.g. EORI, VAT, DUNS etc." ;
+  rdfs:comment "The scheme of the legal person identifier, e.g. EORI, VAT, DUNS, GLN or LEI. This property is deliberately permissive in this version: any string is accepted so that use case data can be ingested before the prevalent schemes are known. It is expected to be narrowed to a codelist in a later version."@en ;
   rdfs:domain :LegalPersonIdentification ;
-  rdfs:label "Legal Person Identification Scheme" ;
+  rdfs:label "Legal Person Identification Scheme"@en ;
   rdfs:range xsd:string 
 .
 :legalPersonName
   a owl:DatatypeProperty ;
-  rdfs:comment "Name of the legal person" ;
+  rdfs:comment "Name of the legal person"@en ;
   rdfs:domain :LegalPerson ;
-  rdfs:label "Legal Person Name" ;
+  rdfs:label "Legal Person Name"@en ;
   rdfs:range xsd:string ;
 .
 :legalPersonCountryOfOrigin
   a owl:DatatypeProperty ;
-  rdfs:comment "Country of origin of legal person" ;
+  rdfs:comment "Country of origin of the legal person. Deliberately permissive in this version: any string is accepted, although ISO 3166-1 alpha-2 codes are recommended. Expected to be narrowed to an ISO 3166-1 codelist in a later version."@en ;
   rdfs:domain :LegalPerson ;
-  rdfs:label "A person's country of Origin" ;
+  rdfs:label "A person's country of Origin"@en ;
   rdfs:range xsd:string ;
 .
 :legalPersonAddress
   a owl:ObjectProperty ;
-  rdfs:comment "Address of a legal person" ;
+  rdfs:comment "Address of a legal person, expressed as a schema:Place. The schema:Place class is axiomatised in the FEDeRATED Location module."@en ;
   rdfs:domain :LegalPerson ;
-  rdfs:label "Legal Person Address" ;
+  rdfs:label "Legal Person Address"@en ;
   rdfs:range <http://schema.org/Place>;
 .
